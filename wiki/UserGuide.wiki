@@ -1,7 +1,5 @@
 #summary User guide for the specs framework
 
-= Introduction =
-
 This user guide is divided in 4 parts:
 
   * [QuickStart 5 minutes to your first specification with *specs*]
@@ -9,5 +7,6 @@ This user guide is divided in 4 parts:
   * [MatchersGuide The full guide to *specs* matchers]
   * [RunningSpecs How to run your specifications]
 
+ 
  
  
