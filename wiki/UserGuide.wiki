@@ -1,12 +1,14 @@
 #summary User guide for the specs framework
 
-This user guide is divided in 4 parts:
+This user guide is divided in 5 parts:
 
   * [QuickStart 5 minutes to your first specification]
   * [DeclareSpecifications Declare your specifications]
   * [MatchersGuide The full guide to *specs* matchers]
   * [RunningSpecs How to run your specifications]
+  * [UsingMocks How use mock objects]
 
+ 
  
  
  
