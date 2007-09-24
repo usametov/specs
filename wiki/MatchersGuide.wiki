@@ -1,0 +1,11 @@
+#summary to be done
+
+This page will present all different matchers:
+  * matchers for any object like `be_==`
+  * matchers for strings
+  * matchers for iterables (collections)
+  * matchers for numerics
+  * matchers for Options (Scala-specific)
+  * Scalacheck matchers
+  * pattern matchers
+ 
