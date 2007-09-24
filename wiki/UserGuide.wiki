@@ -4,10 +4,11 @@ This user guide is divided in 5 parts:
 
   * [QuickStart 5 minutes to your first specification]
   * [DeclareSpecifications Declare your specifications]
-  * [MatchersGuide The full guide to *specs* matchers]
+  * [MatchersGuide The full guide to specs matchers]
   * [RunningSpecs How to run your specifications]
   * [UsingMocks How use mock objects]
 
+ 
  
  
  
