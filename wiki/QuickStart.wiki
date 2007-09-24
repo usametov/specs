@@ -1,4 +1,4 @@
-#summary your first specification _start__here_
+#summary your first specification start here!
 
   # declare a Specification object
 {{{
@@ -61,6 +61,7 @@ object myGreatSpecification extends Specification {
 }
 }}}
   # compile and run the class named *myGreatSpecificationRunner$* with your favorite JUnit  runner (let's say [http://farm2.static.flickr.com/1098/1433239972_5f3a83e40c.jpg?v=0  Eclipse])
+ 
  
  
  
