@@ -1,4 +1,4 @@
-#summary to be done
+#summary to be done...
 
 This page will present all different matchers:
   * matchers for any object like `be_==`
@@ -8,4 +8,5 @@ This page will present all different matchers:
   * matchers for Options (Scala-specific)
   * Scalacheck matchers
   * pattern matchers
+ 
  
