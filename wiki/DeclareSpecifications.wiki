@@ -1,0 +1,3 @@
+#summary to be done...
+
+This page will explain how to declare specifications, compose them and share examples
