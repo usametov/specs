@@ -38,7 +38,7 @@ object myGreatSpecification extends Specification {
     "save the world" in {
       val world = new World
       save(world) 
-      word.wars must beEmpty
+      world.wars must beEmpty
     }
   }
 }
@@ -55,12 +55,13 @@ object myGreatSpecification extends Specification {
     "save the world" in {
       val world = new World
       save(world) 
-      word.wars must beEmpty
+      world.wars must beEmpty
     }
   }
 }
 }}}
   # compile and run the class named *myGreatSpecificationRunner$* with your favorite JUnit  runner (let's say [http://farm2.static.flickr.com/1098/1433239972_5f3a83e40c.jpg?v=0  Eclipse])
+ 
  
  
  
