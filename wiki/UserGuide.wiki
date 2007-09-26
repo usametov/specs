@@ -1,4 +1,5 @@
 #summary User guide for the specs framework
+#labels Featured
 
 This user guide is divided in 5 parts:
 
