@@ -21,15 +21,18 @@ object newSpecification extends Specification {
 
 Then, when you will execute the specification with either the JUnitRunner or the ConsoleRunner, you will see displayed:
 {{{
-my specification should
+my system should
 ...rest of the specification
 }}}
 
+==Alias for the should keyword==
 You can declare several system in a specification. In that case you can, for instance, specify the main functionalities of your system using a ,,should,, method and add another section using ,,can,, for advanced features:
 {{{
 "For power users, my system" can {...}
 }}}
 
+
+==Without implicit defs==
 If you don't want to use Scala's implicit defs for the String class, you can also use:
 
 {{{
@@ -45,14 +48,53 @@ You specify an example of what your system is supposed to do by adding a descrip
 }
 }}}
 
+==Alias for the in keyword==
 If you don't like the ,,in,, keyword, you can replace it with the meaningless operator ,,>>,,:
 {{{
 "my System" should {
   "be wonderful" >> {...}
+}
 }}}
 
+==Without implicit defs==
 You can also specify an example without using implicits defs:
 {{{
 declare("my System") should {
   forExample("be wonderful") in {...}
+}
+}}}
+
+=Compose specifications=
+
+Big specifications can be cut in several sub-specifications:
+{{{
+object bigSpec extends Specification {
+  "this big specification".isSpecifiedBy(
+                  basicFunctionalitiesSpec,
+                  advancedFunctionalitiesSpec,
+                  extensionsSpec)
+}
+}}}
+
+Alternately, when it makes sense, you can also use ,,areSpecifiedBy,, instead of ,,isSpecifiedBy,,.
+
+When executed, a composed specification will display its results with each sub-specification results being indented:
+{{{
+  this big specification isSpecifiedBy
+    the system basic functionalities are
+       the system should
+         + say hello
+         + say hello world
+    the system advanced functionalities are
+      ...
+}}}
+
+==Change the specification description==
+
+By default the description of a specification, which is displayed in case of a composed specification, is the class name of the specification object (without any ,,$,,).
+If you want to set a more meaningful name, you need to override the description attribute:
+{{{
+object basicFunctionalitiesSpecification extends Specification {
+  override var description = "the system basic functionalities are"
+}
 }}}
