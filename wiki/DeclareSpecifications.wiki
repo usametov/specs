@@ -1,4 +1,4 @@
-#summary to be continued...
+#summary How to structure your specifications
 
 =Declare a specification=
 You can declare a new specification by extending the Specification class:
@@ -8,6 +8,11 @@ import scala.specs._
 object newSpecification extends Specification {
 }
 }}}
+
+A specification is composed of:
+
+ * (optionally) subspecifications (see "Compose a specification")
+ * systems specifications (generally one but you can add several ones)
 
 =Specify your system=
 You specify your system by simply adding a description followed by the method ,,shoud,,:
@@ -25,18 +30,28 @@ my system should
 ...rest of the specification
 }}}
 
-==Alias for the should keyword==
+===Alias for the should keyword===
 You can declare several system in a specification. In that case you can, for instance, specify the main functionalities of your system using a ,,should,, method and add another section using ,,can,, for advanced features:
 {{{
 "For power users, my system" can {...}
 }}}
 
 
-==Without implicit defs==
+===Without implicit defs===
 If you don't want to use Scala's implicit defs for the String class, you can also use:
 
 {{{
 declare("my system") should {...}
+}}}
+
+===Call a function before or after each example===
+
+This is called setup and teardown in the JUnit world. Although this is contreversial (see [http://jamesnewkirk.typepad.com/posts/2007/09/why-you-should-.html here] for example), you can do it with *specs*, by using ,,usingBefore,, and ,,usingAfter,,. Those two methods take a parameterless function as an argument:
+{{{
+"my system" should { usingBefore( () => resetTheSystem )
+  "mess up the system" in {...}
+  "and again" in {...}
+}
 }}}
 
 =Specify an example=
@@ -48,7 +63,7 @@ You specify an example of what your system is supposed to do by adding a descrip
 }
 }}}
 
-==Alias for the in keyword==
+===Alias for the in keyword===
 If you don't like the ,,in,, keyword, you can replace it with the meaningless operator ,,>>,,:
 {{{
 "my System" should {
@@ -56,7 +71,7 @@ If you don't like the ,,in,, keyword, you can replace it with the meaningless op
 }
 }}}
 
-==Without implicit defs==
+===Without implicit defs===
 You can also specify an example without using implicits defs:
 {{{
 declare("my System") should {
@@ -89,12 +104,31 @@ When executed, a composed specification will display its results with each sub-s
       ...
 }}}
 
-==Change the specification description==
+===Change the specification description===
 
 By default the description of a specification, which is displayed in case of a composed specification, is the class name of the specification object (without any ,,$,,).
 If you want to set a more meaningful name, you need to override the description attribute:
 {{{
 object basicFunctionalitiesSpecification extends Specification {
   override var description = "the system basic functionalities are"
+}
+}}}
+
+=Share examples=
+
+If you want to share examples between systems specifications, you can:
+
+ * define a method returning examples:
+{{{
+def sharedFunctionalities = {
+  "provide functionality 1" in {...}   
+  "provide functionality 2" in {...}   
+}
+}}}
+
+ * use this method inside another example:
+{{{
+"my system" should {
+  "provide common functionalities" in { sharedFunctionalities }
 }
 }}}
