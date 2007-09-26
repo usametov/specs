@@ -1,3 +1,58 @@
-#summary to be done...
+#summary to be continued...
 
-This page will explain how to declare specifications, compose them and share examples
+=Declare a specification=
+You can declare a new specification by extending the Specification class:
+{{{
+import scala.specs._
+
+object newSpecification extends Specification {
+}
+}}}
+
+=Specify your system=
+You specify your system by simply adding a description followed by the method ,,shoud,,:
+{{{
+import scala.specs._
+
+object newSpecification extends Specification {
+ "my system" should {...}
+}
+}}}
+
+Then, when you will execute the specification with either the JUnitRunner or the ConsoleRunner, you will see displayed:
+{{{
+my specification should
+...rest of the specification
+}}}
+
+You can declare several system in a specification. In that case you can, for instance, specify the main functionalities of your system using a ,,should,, method and add another section using ,,can,, for advanced features:
+{{{
+"For power users, my system" can {...}
+}}}
+
+If you don't want to use Scala's implicit defs for the String class, you can also use:
+
+{{{
+declare("my system") should {...}
+}}}
+
+=Specify an example=
+You specify an example of what your system is supposed to do by adding a description inside a specified system followed by the method ,,in,,:
+{{{
+"my System" should {
+  "be wonderful" in {...}
+  "be elegant" in {...}
+}
+}}}
+
+If you don't like the ,,in,, keyword, you can replace it with the meaningless operator ,,>>,,:
+{{{
+"my System" should {
+  "be wonderful" >> {...}
+}}}
+
+You can also specify an example without using implicits defs:
+{{{
+declare("my System") should {
+  forExample("be wonderful") in {...}
+}}}
