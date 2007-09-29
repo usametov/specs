@@ -23,6 +23,30 @@ class CustomMatcher extends AbstractMatcher {
 }
 }}} 
 
+===Create the negation of a matcher===
+
+Simply use the `not` method on a matcher:
+
+{{{
+val beOdd = beEven.not
+}}}
+
+In that case, the ok message of the first matcher is used as a ko message and vice-versa.
+
+===Combine matchers===
+
+You can combine matchers with logical operators: `and`, `or`, `xor`, `verifyAll`, `verifyAny`
+
+{{{
+  "ab" must beMatching("a") and beMatching("b")
+  "ab" must beMatching("a") or beMatching("c")
+  "ab" must beMatching("a") xor beMatching("c")
+  "ab" must verifyAll(beMatching("a"), beMatching("b"))
+  "ab" must verifyAny(beMatching("a"), beMatching("b"))
+}}}
+
+`verifyAll` must be ok for all matchers and `verifyAny` must be ok for at least one matcher.
+
 =Matchers applicable to any object=
 
  * `a must be(b)` is ok if `a eq b` (alias: `a mustBe b` or `a mustEq b`)
@@ -56,9 +80,7 @@ class CustomMatcher extends AbstractMatcher {
 
 
 
-This page will present all different matchers:
-  * matchers for any object like `be_==`
-  * matchers for strings
+This page will present all the other matchers:
   * matchers for iterables (collections)
   * matchers for numerics
   * matchers for Options (Scala-specific)
