@@ -1,4 +1,31 @@
-#summary to be done...
+#summary to be finished...
+
+=Matchers presentation=
+
+There are different kind of matchers which are used to assert that some properties must be verified. Generally they are used like this:
+
+{{{
+"This example presents a matcher" in {
+  // myObjectOfTypeT is an object of type T
+  // verifyThisMatcherWith is a Matcher[T]
+  myObjectOfTypeT must verifyThisMatcherWith(value)
+}
+}}}
+
+=Create your own Matcher=
+
+Creating a new Matcher is easy. You extend the `Matcher` trait and implement the `apply` method:
+
+{{{
+class CustomMatcher extends Matcher {
+  // the apply method must return a Tuple[Boolean, String, String]
+  def apply(v: Value) = (booleanFunction(v), "okMessage", "koMessage")
+}
+}}} 
+
+=Matchers applicable to any object=
+... to be continued
+
 
 This page will present all different matchers:
   * matchers for any object like `be_==`
