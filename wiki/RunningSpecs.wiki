@@ -1,4 +1,30 @@
 #summary to be done...
 
-This page will present the use of JUnit3 and the ConsoleRunner to run tests.
- 
+=Run your specification on the Console=
+
+To execute your specification in a Console you need to use the `ConsoleRunner` class:
+{{{
+import scala.specs.runner.ConsoleRunner
+
+object mySpecRunner extends ConsoleRunner(mySpec)
+
+object mySpec extends Specification { ... }
+
+}}}
+
+===How to redirect the results on a different output===
+
+If you want to redirect the result of the execution to a file for example, you have to create a new trait extending the `Output` trait:
+{{{
+trait FileOutput extends Output {
+  def println(m: Any) = {...}
+  def printf(format: String, args: Any*) = {...}
+  def flush() = {...}
+}
+}}}
+
+And then you "mix" it with the `ConsoleRunner`:
+{{{
+object mySpecRunner extends ConsoleRunner(mySpec) with FileOutput
+object mySpec extends Specification { ... }
+}}}
