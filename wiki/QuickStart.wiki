@@ -1,4 +1,4 @@
-#summary your first specification start here!
+#summary Your first specification start here!
 #labels Featured
 (for more information, take a look at the [UserGuide User Guide])
 
