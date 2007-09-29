@@ -14,17 +14,24 @@ There are different kind of matchers which are used to assert that some properti
 
 =Create your own Matcher=
 
-Creating a new Matcher is easy. You extend the `Matcher` trait and implement the `apply` method:
+Creating a new Matcher is easy. You extend the `AbstractMatcher` class and implement the `apply` method:
 
 {{{
-class CustomMatcher extends Matcher {
+class CustomMatcher extends AbstractMatcher {
   // the apply method must return a Tuple[Boolean, String, String]
-  def apply(v: Value) = (booleanFunction(v), "okMessage", "koMessage")
+  def apply[T](v: T) = (booleanFunction(v), "okMessage", "koMessage")
 }
 }}} 
 
 =Matchers applicable to any object=
-... to be continued
+
+ * `a must be(b)` is ok if `a eq b` (alias: `a mustBe b`)
+ * `a must notBe(b)` is ok if `!(a eq b)` (alias: `a must notEq(b)`)
+ * `a must be_==(b)` is ok if `a == b` (alias: `a must_== b`)
+ * `a must be_!=(b)` is ok if `a != b` (alias: `a must_!= b`)
+ * `a must beIn(iterable)` is ok if `iterable.exists(_ == a)`
+ * `a must notBeIn(iterable)` is ok if `!iterable.exists(_ == a)`
+ * `a must beEmpty` is ok if `a` defines a `isEmpty` function and `a.isEmpty`
 
 
 This page will present all different matchers:
