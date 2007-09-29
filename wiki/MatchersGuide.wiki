@@ -31,7 +31,17 @@ class CustomMatcher extends AbstractMatcher {
  * `a must be_!=(b)` is ok if `a != b` (alias: `a must_!= b`)
  * `a must beIn(iterable)` is ok if `iterable.exists(_ == a)`
  * `a must notBeIn(iterable)` is ok if `!iterable.exists(_ == a)`
- * `a must beEmpty` is ok if `a` defines a `isEmpty` function and `a.isEmpty`
+ * `a must beEmpty` is ok if `a` defines a `isEmpty` method and `a.isEmpty`
+ * `a must notBeEmpty` is ok if `a` defines a `isEmpty` method and `!a.isEmpty`
+ * `a must verify(f)` is ok if `f(a) == true`
+
+=If you want to verify that an exception is thrown=
+
+ * `a must throwA(new Exception)` is ok if evaluating `a` throws a Exception (alias: `throwAn`)
+ * `a must throwA(new Exception)like {case Exception(m) => m.startsWith("bad")} ` is ok if evaluating `a` throws an Exception and the message startWith "bad"
+ * `a must throwThis(new Exception("message"))` is ok if evaluating `a` throws an exception e and `e == new Exception("message")`
+ * 
+
 
 
 This page will present all different matchers:
