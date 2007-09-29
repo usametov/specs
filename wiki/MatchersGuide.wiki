@@ -25,22 +25,34 @@ class CustomMatcher extends AbstractMatcher {
 
 =Matchers applicable to any object=
 
- * `a must be(b)` is ok if `a eq b` (alias: `a mustBe b`)
- * `a must notBe(b)` is ok if `!(a eq b)` (alias: `a must notEq(b)`)
- * `a must be_==(b)` is ok if `a == b` (alias: `a must_== b`)
+ * `a must be(b)` is ok if `a eq b` (alias: `a mustBe b` or `a mustEq b`)
+ * `a must notBe(b)` is ok if `!(a eq b)` (alias: `a must notEq(b)` or `a mustNotBe(b)`)
+ * `a must be_==(b)` is ok if `a == b` (alias: `a must_== b` or `a mustEqual b`)
  * `a must be_!=(b)` is ok if `a != b` (alias: `a must_!= b`)
  * `a must beIn(iterable)` is ok if `iterable.exists(_ == a)`
  * `a must notBeIn(iterable)` is ok if `!iterable.exists(_ == a)`
  * `a must beEmpty` is ok if `a` defines a `isEmpty` method and `a.isEmpty`
  * `a must notBeEmpty` is ok if `a` defines a `isEmpty` method and `!a.isEmpty`
- * `a must verify(f)` is ok if `f(a) == true`
+ * `a must verify(f)` is ok if `f(a) == true` (alias: `a mustVerify f` or `a verifies b`)
 
 ===If you want to verify that an exception is thrown===
 
  * `a must throwA(new Exception)` is ok if evaluating `a` throws a Exception (alias: `throwAn`)
  * `a must throwA(new Exception)like {case Exception(m) => m.startsWith("bad")} ` is ok if evaluating `a` throws an Exception and the message startWith "bad"
  * `a must throwThis(new Exception("message"))` is ok if evaluating `a` throws an exception e and `e == new Exception("message")`
- * 
+ 
+=Matchers applicable to Strings=
+ 
+ * `a must equalIgnoreCase(b)` is ok if `a equalsIgnoreCase(b)` (alias: `a must_==/ b`)
+ * `a must notEqualIgnoreCase(b)` is ok if `!(a equalsIgnoreCase(b))` (alias: `a must_!=/ b`)
+ * `a must beMatching(b)` is ok if a matches the regexp b (alias: `a mustMatch b`)
+ * `a must notBeMatching(b)` is ok if a doesn't match the regexp b (alias: `a mustNotMatch b`)
+ * `a must include(b)` is ok if `a.indexOf(b) >= 0`
+ * `a must notInclude(b)` is ok if `a.indexOf(b) < 0`
+ * `a must startWith(b)` is ok if `a startsWith b`
+ * `a must notStartWith(b)` is ok if `!(a startsWith b)`
+ * `a must endWith(b)` is ok if `a endsWith b`
+ * `a must notEndWith(b)` is ok if `!(a endsWith b)`
 
 
 
