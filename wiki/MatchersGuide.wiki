@@ -1,4 +1,4 @@
-#summary how to add assertions to your examples
+#summary How to add assertions to your examples
 
 =Matchers presentation=
 
