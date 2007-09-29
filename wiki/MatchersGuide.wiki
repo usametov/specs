@@ -6,32 +6,47 @@ There are different kind of matchers which are used to assert that some properti
 
 {{{
 "This example presents a matcher" in {
-  // myObjectOfTypeT is an object of type T
-  // verifyThisMatcherWith is a Matcher[T]
-  myObjectOfTypeT must verifyThisMatcherWith(value)
+  // verifyThisProperty is a Matcher
+  myObject must verifyThisProperty(parameter)
 }
 }}}
 
 ===Create your own Matcher===
 
-Creating a new Matcher is easy. You extend the `AbstractMatcher` class and implement the `apply` method:
+Creating a new Matcher is easy. You extend the `Matcher` class and implement the `apply` method:
 
 {{{
-class CustomMatcher extends AbstractMatcher {
+class NewStringMatcher extends Matcher[String] {
   // the apply method must return a Tuple[Boolean, String, String]
   def apply[T](v: T) = (booleanFunction(v), "okMessage", "koMessage")
 }
 }}} 
+
+You must return a tuple containing:
+
+ * a boolean value indicating a success or a failure when applied to the object which `must` match
+ * a message which can be displayed in case of a success
+ * a message which can be displayed in case of a failure
+
+For instance:
+
+{{{
+val beEven = new Matcher[Int] {
+  def apply[Int](b: Int) = (b % 2 == 0, b + " is even", b + " is odd")
+}
+}}}
 
 ===Create the negation of a matcher===
 
 Simply use the `not` method on a matcher:
 
 {{{
-val beOdd = beEven.not
+ 2 must beEven
+ val beOdd = beEven.not
+ 3 must beOdd
 }}}
 
-In that case, the ok message of the first matcher is used as a ko message and vice-versa.
+In that case, the ok message of the first matcher is used as a ko message for the second matcher.
 
 ===Combine matchers===
 
