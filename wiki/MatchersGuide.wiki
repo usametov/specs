@@ -12,7 +12,7 @@ There are different kind of matchers which are used to assert that some properti
 }
 }}}
 
-=Create your own Matcher=
+===Create your own Matcher===
 
 Creating a new Matcher is easy. You extend the `AbstractMatcher` class and implement the `apply` method:
 
@@ -35,7 +35,7 @@ class CustomMatcher extends AbstractMatcher {
  * `a must notBeEmpty` is ok if `a` defines a `isEmpty` method and `!a.isEmpty`
  * `a must verify(f)` is ok if `f(a) == true`
 
-=If you want to verify that an exception is thrown=
+===If you want to verify that an exception is thrown===
 
  * `a must throwA(new Exception)` is ok if evaluating `a` throws a Exception (alias: `throwAn`)
  * `a must throwA(new Exception)like {case Exception(m) => m.startsWith("bad")} ` is ok if evaluating `a` throws an Exception and the message startWith "bad"
