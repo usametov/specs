@@ -65,7 +65,7 @@ trait ButtonAndLight {
 object mockExample extends Specification with ButtonAndLightMock {
   "A button and light mock example" should {
     "not fail if the mock receives the expected messages" in {
-      expect{mock.on; mock.off}
+      expect {mock.on; mock.off}
       button.push
       button.push  // if the button is pressed twice, then the light will go on and off
     }
@@ -73,3 +73,36 @@ object mockExample extends Specification with ButtonAndLightMock {
 }
 }}}
 
+=Mock protocols=
+
+By default, the mock expectations order is not important and any excess message will be ignored. This default decision is motivated by the need to make the specification more robust in case of a minor implementation changes (such as the order of calls).
+
+However you can specify that the calls must happen in sequence:
+{{{
+  expect(inSequence) { mock.on; mock.off }
+}}}
+
+You can also specify that unexpected calls must be reported as failures:
+{{{
+  expect(exclusively) { mock.on; mock.off }
+}}}
+
+===Repeated calls===
+
+You may want to be even more precise when specifying mock expectations by using the following `ProtocolTypes`:
+
+ * anyOf: any of the expected calls
+{{{
+ expect(anyOf) {mock.on; mock.off}
+}}
+
+ * oneOf: the expected calls must be received 1 time only
+{{{
+ expect(oneOf) {mock.on; mock.off}
+ // will fail if `3.times {i => button.push}`
+}}
+
+You use a protocol type by passing it as a parameter to the `expect` function:
+{{{
+  expect(twoOf) { mock.on; mock.off }
+}}}
