@@ -1,4 +1,4 @@
-#summary to be continued...
+#summary How to specify expected calls to other objects
 
 =Mocks presentation=
 
@@ -123,7 +123,9 @@ You can also nest expectations to build more sophisticated expectations. In that
  }
 }}}
 
-=Stub return values=
+=Return values and expected parameter values=
+
+===How to stub return values===
 
 You may want your mock to return specific values sometimes (using it effectively as a stub). In that case, you can use the `recordAndReturn` method to return a specific value:
 {{{
@@ -135,7 +137,7 @@ trait MockedRandomGenerator extends RandomGenerator with Mocker {
 
 If the return value depends on the mocked method parameters, you can use a function to compute the returned value, using the method parameters (see [http://specs.googlecode.com/svn/trunk/src/test/scala/scala/specs/mock/mockParameters.scala here] for an example)
 
-===Defining expected parameters===
+===How to define expected parameters===
 
 You may want to check that the parameters passed to the mocked method verify some specific constraints. In order to do that, you need to build your mock object accordingly. Here's n example:
 {{{
@@ -149,7 +151,7 @@ You may want to check that the parameters passed to the mocked method verify som
   val mock = buildMock((a: Int, m: Movie) => {a must beGreaterThan(0); true})
 }}}
 
-===How to avoid to create complex parameters===
+===How to avoid to create complex parameters in expectations===
 
 Some methods can only be called with complex objects as parameters. Thus, it can be tedious when defining expected calls because such objects need to be build first. In order to avoid this, you can use the `any` function:
 {{{
