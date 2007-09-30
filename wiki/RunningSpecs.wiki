@@ -1,6 +1,6 @@
 #summary to be done...
 
-=Run your specification on the Console=
+=Run your specification in the Console=
 
 To execute your specification in a Console you need to use the `ConsoleRunner` class:
 {{{
