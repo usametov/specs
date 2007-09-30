@@ -1,4 +1,75 @@
-#summary to be done...
+#summary to be continued...
 
-This page will explain how to declare mocked methods and expectations
- 
+=Mocks presentation=
+
+*specs* offers a lightweight framework to create mocks and stubs (see [http://www.mockobjects.com/ this] reference and [http://martinfowler.com/articles/mocksArentStubs.html that one] for a discussion on mocks and stubs).
+
+Using mocks follows a 4 steps process:
+
+  # extend the `Mocker` trait 
+{{{
+  object mySpec extends Specification with scala.specs.mock.Mocker {...}
+}}}
+  # override the methods in the class or trait you want to mock and implement them with the `record` method
+{{{
+  class MockedService extends Service {
+    override def executeService = record
+  }
+}}}
+  # add expectations in your specification example
+{{{
+  object mySpec extends Specification with Mocker {
+    "my system" should {
+      "use mocks" in {
+         val mock = new MockedService
+         expect {
+           mock.executeService
+         }
+         ...
+      }
+    }
+  }
+}}}
+  # use the mock in the rest of your example, expectations will be automatically checked at the end of the example
+
+===A complete example===
+
+Here is a complete example of the use of mocks to specify the interactions between a `Button` and a `Light`:
+{{{
+trait ButtonAndLightMock extends ButtonAndLight with Mocker {
+  val mock = new Light { 
+    override def on = record
+    override def off = record
+  }
+  val button = Button(mock)
+}
+trait ButtonAndLight {
+  case class Button(light: Light) {
+    var lightOn = false
+    def push = {
+      if (lightOn) light.off else light.on 
+      lightOn = !lightOn
+    }
+  }
+  case class Light {
+    var state: LightState = Off
+    def on = state = On
+    def off = state = Off
+    def isOn = state == On
+  }
+  abstract sealed class LightState(s: String)
+  case class On extends LightState("on")
+  case class Off extends LightState("off")
+}
+
+object mockExample extends Specification with ButtonAndLightMock {
+  "A button and light mock example" should {
+    "not fail if the mock receives the expected messages" in {
+      expect{mock.on; mock.off}
+      button.push
+      button.push  // if the button is pressed twice, then the light will go on and off
+    }
+  }
+}
+}}}
+
