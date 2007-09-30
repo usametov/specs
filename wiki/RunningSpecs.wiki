@@ -1,4 +1,4 @@
-#summary to be done...
+#summary How to execute specifications
 
 =Run your specification in the Console=
 
