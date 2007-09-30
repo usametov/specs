@@ -7,10 +7,35 @@ To execute your specification in a Console you need to use the `ConsoleRunner` c
 import scala.specs.runner.ConsoleRunner
 
 object mySpecRunner extends ConsoleRunner(mySpec)
-
 object mySpec extends Specification { ... }
-
 }}}
+
+===Find specifications in a directory path===
+
+You can use the SpecsFinder class to find specifications in a given path:
+{{{
+object displaySpecifications extends SpecsFinder with Application {
+  // print all specifications contained in subdirectories of the project directory
+  // whose names are matching "all.*"
+  specificationNames("project/**/*.scala", "all.*") foreach { println(_) }
+}
+}}}
+
+To be more specific, the name of the specification will be retrieved if the scala file contains:
+{{{
+\\s*object\\s*(" + pattern + ")\\s*extends\\s*.*Spec.*\\s*\\{"
+}}}
+
+===Execute specifications in a directory path===
+
+You simply use the `SpecsFileRunner`, with the parameters required for the `SpecsFinder`:
+{{{
+import scala.specs.runner.SpecsFileRunner
+
+object allSpecsRunner extends SpecsFileRunner("project/**/*.scala", "all.*")
+}}}
+ 
+The `SpecsFileRunner` will find possible specification names with the `SpecsFinder` and will try to instantiate them, keeping them only if the resulting object is an instance of `Specification`.
 
 ===How to redirect the results on a different output===
 
@@ -26,5 +51,15 @@ trait FileOutput extends Output {
 And then you "mix" it with the `ConsoleRunner`:
 {{{
 object mySpecRunner extends ConsoleRunner(mySpec) with FileOutput
+object mySpec extends Specification { ... }
+}}}
+
+=Run your specification with JUnit3=
+
+To execute your specification with JUnit3, you need to use the `JUnit3` class:
+{{{
+import scala.specs.runner.JUnit3
+
+object mySpecSuite extends JUnit3(mySpec)
 object mySpec extends Specification { ... }
 }}}
