@@ -94,15 +94,66 @@ You may want to be even more precise when specifying mock expectations by using 
  * anyOf: any of the expected calls
 {{{
  expect(anyOf) {mock.on; mock.off}
-}}
+}}}
 
  * oneOf: the expected calls must be received 1 time only
 {{{
  expect(oneOf) {mock.on; mock.off}
- // will fail if `3.times {i => button.push}`
-}}
+ 3.times {i => button.push} // will fail
+}}}
 
-You use a protocol type by passing it as a parameter to the `expect` function:
+ * n.Of: the expected calls must be received n times only
 {{{
-  expect(twoOf) { mock.on; mock.off }
+ expect(5.Of) {mock.on}
+}}}
+
+ * atLeastOneOf: the expected calls must be received at least once
+ * n.atLeastOf: the expected calls must be received at least n times
+
+ * atMostOneOf: the expected calls must be received at most once
+ * n.atMostOf: the expected calls must be received at most n times
+
+===Nested expectations===
+
+You can also nest expectations to build more sophisticated expectations. In that case, you can even avoid the `expect` function:
+{{{
+ expect(exclusively) {
+   1.of {mock.on; mock.off; mock.on} 
+   1.of {mock.off} 
+ }
+}}}
+
+=Stub return values=
+
+You may want your mock to return specific values sometimes (using it effectively as a stub). In that case, you can use the `recordAndReturn` method to return a specific value:
+{{{
+trait MockedRandomGenerator extends RandomGenerator with Mocker {
+  // will always return 0.5
+  override def getRandomNumber: Double = recordAndReturn(0.5)
+}
+}}}
+
+If the return value depends on the mocked method parameters, you can use a function to compute the returned value, using the method parameters (see [http://specs.googlecode.com/svn/trunk/src/test/scala/scala/specs/mock/mockParameters.scala here] for an example)
+
+===Defining expected parameters===
+
+You may want to check that the parameters passed to the mocked method verify some specific constraints. In order to do that, you need to build your mock object accordingly. Here's n example:
+{{{
+  // define a mock with a function which will check the passed parameters
+  def buildMock(f: (Int, Movie) => Boolean) = {
+    new MovieRater {
+      override def okForAge(a: Int, m: Movie) =  recordAndReturn(f(a, m))
+    }
+  }
+  // create a new mock object checking that the age is > 0
+  val mock = buildMock((a: Int, m: Movie) => {a must beGreaterThan(0); true})
+}}}
+
+===How to avoid to create complex parameters===
+
+Some methods can only be called with complex objects as parameters. Thus, it can be tedious when defining expected calls because such objects need to be build first. In order to avoid this, you can use the `any` function:
+{{{
+ expect {
+   mock.methodWithComplexParameter(any[ComplexType])
+ }
 }}}
