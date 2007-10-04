@@ -1,7 +1,19 @@
 #summary User guide for the specs framework
 #labels Featured
 
-This user guide is divided in 5 parts:
+===Introduction===
+*specs* is designed as a remplacement for JUnit when specifying and testing Java or Scala projects. Yet, it is able to reuse the existing JUnit infrastructure for execution and reporting since the specifications can be executed as JUnit3 test suites.
+
+*specs* also integrates an innovative feature, the [http://code.google.com/p/scalacheck/ scalacheck] project in order to be able to generate a numerous cases testing a given property.
+
+*specs* takes its inspiration from existing frameworks:
+
+  * [http://rspec.rubyforge.org/ rspec] for trying to have a literal structure to specifications and assertions and also for the possibility to share examples between related specifications (as in the Stack example).
+
+  * [http://www.jmock.org/ jmock] for the mocking part and the idea of having reusable matchers. Still, jmock is more concise in the way that method expectations are declared.
+
+===User Guide===
+This User Guide is divided in 5 parts:
 
   * [QuickStart 5 minutes to your first specification]
   * [DeclareSpecifications Declare your specifications]
@@ -10,7 +22,7 @@ This user guide is divided in 5 parts:
   * [UsingMocks How use mock objects]
 
 
-This documentation is still under construction. For more examples about what you can do with the library, please:
+For more examples about what you can do with the library, please:
 
   * download the API
   * take a look at the specification for the library itself:
