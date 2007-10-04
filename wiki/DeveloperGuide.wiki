@@ -4,6 +4,6 @@
 
 Most of the source code of *specs* is kept in [http://specs.googlecode.com/svn/trunk/ the Subversion repository] of the project.
 
-However, there are a few classes which complete the picture, and those classes belong to another GoogleCode project: [http://code.google.com/p/scala-utils scala-utils] (sources [http://scala-utils.googlecode.com/svn/trunk here]).
+However, there are a few classes which complete the picture, and those classes belong to another Google code project: [http://code.google.com/p/scala-utils scala-utils] (sources [http://scala-utils.googlecode.com/svn/trunk here]).
 
 Those classes have been kept separate since they can be reused in other Scala projects.
