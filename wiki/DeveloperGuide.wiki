@@ -1,4 +1,4 @@
-#summary If you want to hack and extends specs
+#summary If you want to hack and extend specs
 
 = Get _all_ the source code =
 
