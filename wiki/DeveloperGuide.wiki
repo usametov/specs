@@ -7,3 +7,12 @@ Most of the source code of *specs* is kept in [http://specs.googlecode.com/svn/t
 However, there are a few classes which complete the picture, and those classes belong to another Google code project: [http://code.google.com/p/scala-utils scala-utils] (sources [http://scala-utils.googlecode.com/svn/trunk here]).
 
 Those classes have been kept separate since they can be reused in other Scala projects.
+
+
+===How to compile specs?===
+
+The easiest way to compile the project is to:
+  * to create an eclipse project for the scala-utils sources
+  * to create an eclipse project for the spec sources (using the scalacheck jar + the scala-utils project + junit3 in the classpath)
+
+There is a buildr file included in the repository but this is only a prototype and can not be used until there is an official support for Scala in [http://buildr.rubyforge.org Buildr].
