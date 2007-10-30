@@ -16,7 +16,7 @@ This branch will get every bug fix on the 1.0 release and each bugfix release wi
 =How to compile specs?=
 
 The easiest way to compile the project is to:
-  * get eclipse + [the stable scala plugin http://www.scala-lang.org/downloads/eclipse]
+  * get eclipse + [http://www.scala-lang.org/downloads/eclipse the stable scala plugin]
   * create an eclipse/Scala project for the spec sources 
   * include the ScalaCheck jar + junit3.8.1.jar in the classpath
 
