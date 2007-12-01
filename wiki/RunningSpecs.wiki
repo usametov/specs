@@ -69,7 +69,8 @@ The name of the test class will be <package name>.mySpecSuite$
 =Run your specification with JUnit3=
 
 If you want to execute the JUnit test cases using Eclipse, you have first to create a Java project referencing your Scala project. Then you can use the following JUnit test class to run your JUnit specs suite:
-{{{package test;
+{{{ 
+package test;
 import junit.framework.*;
 
 public class SpecsJUnitRunner extends TestCase {
