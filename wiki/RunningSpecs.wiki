@@ -93,4 +93,4 @@ public class SpecsJUnitRunner extends TestCase {
 }
 }}}
 
-You have to run the SpecsJUnitRunner class with the name of your *specs* suite as an argument: -DscalaSuite=scala.specs.mySpecSuite$
+You have to run the SpecsJUnitRunner class with the name of your *specs* suite as an argument: {{{-DscalaSuite=scala.specs.mySpecSuite$}}}
