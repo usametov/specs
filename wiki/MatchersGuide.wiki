@@ -224,13 +224,25 @@ where:
 =Matchers applicable to XML (v1.1)=
 
  * `<a><b/></a> must equalIgnoreSpace(<a> <b/></a>)` is ok if the nodes are same but ignoring space (and inner nodes order). You can use `==/` as an alias
- * You can use the XPath-like `\` matcher to match nodes inside an xml node:{{{ <a><b/></a> must \("b") // or <a><b/></a> must \(<b/>)
+
+ * You can use the XPath-like `\` matcher to match nodes inside an xml node:
+{{{ 
+<a><b/></a> must \("b") // or <a><b/></a> must \(<b/>)
 }}}
 
  * You can use the XPath-like `\\` matcher to match nodes deeply nested inside an xml node: `<a><s><c></c></s></a> must \\("c")`
 
- * `\` and `\\` can be composed to assert more complex statements: {{{<a><b><c><d></d></c></b></a> must \\("c").\("d")}}}
+ * `\` and `\\` can be composed to assert more complex statements: 
+{{{
+<a><b><c><d></d></c></b></a> must \\("c").\("d")
+}}}
 
- * `\` and `\\` can also check for attribute names: {{{<a><b name="value" name2="value"></b></a> must \("b", ("name2", "name")) // with the Sugar object implicitly transforming tuples to Lists }}}
+ * `\` and `\\` can also check for attribute names: 
+{{{
+<a><b name="value" name2="value"></b></a> must \("b", ("name2", "name")) // with the Sugar object implicitly transforming tuples to Lists 
+}}}
 
- * `\` and `\\` can also check for attribute names and values: {{{<a><b name="value"></b></a> must \("b", Map("name"->"value"))}}}
+ * `\` and `\\` can also check for attribute names and values: 
+{{{
+<a><b name="value"></b></a> must \("b", Map("name"->"value"))
+}}}
