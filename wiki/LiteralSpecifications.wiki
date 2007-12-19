@@ -1,0 +1,50 @@
+#summary How to write literal specifications
+
+http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *Experimental!*
+
+= Why literal specifications? =
+
+The literal specifications support in *specs* is intended to provide a more informal way to specify and document the software being developed. The long term vision is that this kind of specification may be accessible to a business user for creation/modification and a developer for the implementation of the executable parts.
+
+= A look at the current experiment: xmlRunnerSpec =
+
+The specification for the XML Runner (producing an xml file containing the specification results) has been developed using the !LiteralSpecification class:
+{{{
+object xmlRunnerSpec extends RunnerFixture { 
+
+"The specification for the XML runner" is <text> 
+A specification can be run by a XML runner object. The XML runner object is responsible for collecting the results of sub-specifications, systems under test and examples and organize them hierarchically as xml elements.
+
+1. File creation 
+1.1 Simple file creation 
+  
+{"Running an XML runner on a specification should create a file whose path is " + "./spec1.xml".as(path) in {checkFilePath}}
+
+1.2 Output directory
+It is possible to indicate the output directory of the runner, for example: {"specresults" as runnerOutputDir}
+In that case, {"the xml file should be created in the output directory with path: " + 
+               ("./" + runner.outputDir + "/spec1.xml").as(path) in checkOutputDirectory}
+
+2. XML content 
+
+Running an XML runner on a specification should create an xml structure:  
+
+- {"containing an element for the specification:\n" +
+  <spec name="spec1" description="spec1" assertions="3" failures="1" errors="1"></spec>.as(xml) in checkXml }
+....
+
+3. Console reporting
+
+The XML runner object should {"output the results of the specification in the console" in checkConsole}, as if it was a ConsoleRunner
+
+</text>  
+}
+}}}
+
+The important points to notice here are:
+ 
+ * !RunnerFixture is the actual class inheriting !LiteralSpecification. It supports all specification methods such as `checkFile` or `checkXml`. This makes this approach kind of _keyword-oriented_ where the programmed behavior is kept separate from the literal text as much as possible
+ * The XML features of Scala are used to mix xml content and Scala code
+ * The xml node is labeled as `text`. This has no importance now but this may be used to discriminate different kinds of text and display them accordingly. `<wiki>` could be used for example to specify that a markup language is used.
+ * "example description" in <_scala code_> is used to create examples. The "example description" string is taken as the usual example description which appears in the reports
+ * If we want to reuse part of the example description as an actual parameter of the specified behavior, it is possible to use the `as(parameter)` function. In that case, `parameter` should be a Property object. This helps keep the specification DRY but obscures readability on the other hand.
