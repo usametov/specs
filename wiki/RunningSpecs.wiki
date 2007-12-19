@@ -66,7 +66,7 @@ object mySpec extends Specification { ... }
 
 The name of the test class will be <package name>.mySpecSuite$
 
-=Run your specification with JUnit3=
+=Run your specification with JUnit3 in Eclipse=
 
 If you want to execute the JUnit test cases using Eclipse, you have first to create a Java project referencing your Scala project. Then you can use the following JUnit test class to run your JUnit specs suite:
 {{{ 
@@ -94,3 +94,35 @@ public class SpecsJUnitRunner extends TestCase {
 }}}
 
 You have to run the SpecsJUnitRunner class with the name of your *specs* suite as an argument: {{{-DscalaSuite=scala.specs.mySpecSuite$}}}
+
+=Run your specifications and get the results as an XML file (v1.1)=
+
+You can use the XmlRunner class to export the results of your specifications as an xml file:
+{{{
+object specResults extends XmlRunner(extendedThrowableUnit)
+}}}
+
+This will create a file named extendedThrowableUnit.xml in the current directory: 
+{{{
+<spec errors="0" description="extendedThrowableUnit" failures="0" assertions="1" name="extendedThrowableUnit">
+  <sut errors="0" description="an extended Throwable" failures="0" assertions="1">
+    <example errors="0" description="provide a location method extracting the name of the file and the line from an exception" failures="0" assertions="1"></example>
+  </sut>
+</spec>
+}}}
+
+and display:
+{{{
+Specification "extendedThrowableUnit"
+  an extended Throwable should
+  + provide a location method extracting the name of the file and the line from an exception
+
+Total for specification "extendedThrowableUnit":
+Finished in 0 second, 16 ms
+1 example, 1 assertion, 0 failure, 0 error
+}}}
+
+It is also possible to specify the output directory with:
+{{{
+object specResults extends XmlRunner(extendedThrowableUnit, "./target/reports/specs")
+}}}
