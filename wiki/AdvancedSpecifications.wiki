@@ -1,5 +1,39 @@
-# How to use !DataTables and syntactic sugar in your specifications
+#summary How to use !DataTables and syntactic sugar to write more concise examples
 
 = How to use !DataTables =
+
+Suppose you want to specify that a directory path and a file name should be combined to provide a proper full path. One way to specify this is to provide examples of different possible combinations and results (taken from the xmlRunnerUnit specification):
+{{{
+    "create an xml file in the specified output directory, handling file separators" in {
+       "output dir" | 	"spec name" | 	"file path"  		|>
+       ""           ! 	"spec1"     !	"./spec1.xml"		|  
+       "result"     !	"spec1"     !	"./result/spec1.xml" 	|  
+       "result/"    !	"spec1"     !	"./result/spec1.xml" 	|  
+       "result\\"   !	"spec1"     !	"./result/spec1.xml" 	|  
+       "/result"    !	"spec1"     !	"/result/spec1.xml" 	|
+       "\\result"   !	"spec1"     !	"/result/spec1.xml" 	|
+       "result/xml" ! 	"spec1"     !	"./result/xml/spec1.xml"| {
+       (dir: String, 	spec: String, 	result: String) => {
+           xmlRunner.outputDir = dir
+           spec1.name = spec
+           xmlRunner.execute
+           xmlRunner.files must haveKey(result)
+         }
+       }
+       
+    }
+}}}
+
+In the example above, you have a !DataTable with:
+ * a header describing the content of the columns
+ * rows being valid combinations
+ * a function which applied to each row, specifies the expected behavior
+
+The resulting output in case of a failure would be:
+{{{
+ |"output dir" | "spec name" | "file path"           |
+x|"wrong"      | "spec1"     | "./spec1.xml"         | Map(./bad/spec1.xml -> <...>) hasn't key './spec1.xml'  
+ |"result"     | "spec1"     | "./result/spec1.xml"  |  
+}}}
 
 = How to add syntactic sugar to your specifications =
