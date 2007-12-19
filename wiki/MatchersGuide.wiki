@@ -242,7 +242,12 @@ where:
 <a><b name="value" name2="value"></b></a> must \("b", ("name2", "name")) // with the Sugar object implicitly transforming tuples to Lists 
 }}}
 
- * `\` and `\\` can also check for attribute names and values: 
+ * `\` and `\\` can also check for inclusion of attribute names and values: 
 {{{
-<a><b name="value"></b></a> must \("b", Map("name"->"value"))
+<a><b name="value" name2="value2"></b></a> must \("b", Map("name"->"value")) // just checks the presence of "name" -> "value"
+}}}
+
+ * `\` and `\\` can also check for the presence of a whole Node: 
+{{{
+<a><b name="value"></b></a> must \(<b name="value"/>)
 }}}
