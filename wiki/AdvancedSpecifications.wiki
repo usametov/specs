@@ -1,6 +1,6 @@
 #summary How to use DataTables and syntactic sugar to write more concise examples
 
-= How to use !DataTables (v 1.1)=
+= How to use !DataTables (v1.1)=
 
 Suppose you want to specify that a directory path and a file name should be combined to provide a proper full path. One way to specify this is to provide examples of different possible combinations and results (taken from the xmlRunnerUnit specification):
 {{{
