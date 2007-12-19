@@ -1,0 +1,5 @@
+#How to use DataTables and syntactic sugar in your specifications
+
+= How to use DataTables =
+
+= How to add syntactic sugar to your specifications =
