@@ -2,15 +2,15 @@
 
 = Get the source code =
 
-All the source code of *specs* is kept in [http://specs.googlecode.com/svn the Subversion repository] of the project.[,,In the RC1 release part of the code was managed in another project. Everything has been grouped for easier management,,]
+All the source code of *specs* is kept in [http://specs.googlecode.com/svn the Subversion repository] of the project.
 
 = How is the versioning managed? =
 
-The code for the release 1.0 is kept in a branch named [http://specs.googlecode.com/svn/branches/SPECS-1.0]
+The code for the release 1.1 is kept in a branch named [http://specs.googlecode.com/svn/branches/SPECS-1.1]
 
-The official 1.0 release has the tag: SPECS-1.0
+The official 1.0 release has the tag: SPECS-1.1
 
-This branch will get every bug fix on the 1.0 release and each bugfix release will be tagged SPECS-1.0x, x being the number of the bugfix release for version 1.0.
+This branch will get every bug fix on the 1.1 release and each bugfix release will be tagged SPECS-1.1x, x being the number of the bugfix release for version 1.1.
 
 
 =How to compile specs?=
@@ -18,6 +18,6 @@ This branch will get every bug fix on the 1.0 release and each bugfix release wi
 The easiest way to compile the project is to:
   * get eclipse + [http://www.scala-lang.org/downloads/eclipse the stable scala plugin]
   * create an eclipse/Scala project for the spec sources 
-  * include the ScalaCheck jar + junit3.8.1.jar in the classpath
+  * include the scalacheck jar + junit3.8.1.jar in the classpath
 
 There is a buildr file included in the repository but this is only a prototype and can not be used until there is an official support for Scala in [http://buildr.rubyforge.org Buildr].
