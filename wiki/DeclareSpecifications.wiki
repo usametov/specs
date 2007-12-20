@@ -3,7 +3,7 @@
 =Declare a specification=
 You can declare a new specification by extending the Specification class:
 {{{
-import scala.specs._
+import org.specs._
 
 object newSpecification extends Specification {
 }
@@ -17,7 +17,7 @@ A specification is composed of:
 =Specify your system=
 You specify your system by simply adding a description followed by the method `should`:
 {{{
-import scala.specs._
+import org.specs._
 
 object newSpecification extends Specification {
  "my system" should {...}
