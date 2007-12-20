@@ -4,7 +4,7 @@
 
 To execute your specification in a Console you need to use the `ConsoleRunner` class:
 {{{
-import scala.specs.runner.ConsoleRunner
+import org.specs.runner.ConsoleRunner
 
 object mySpecRunner extends ConsoleRunner(mySpec)
 object mySpec extends Specification { ... }
