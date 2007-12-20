@@ -30,7 +30,7 @@ To be more specific, the name of the specification will be retrieved if the scal
 
 You simply use the `SpecsFileRunner`, with the parameters required for the `SpecsFinder`:
 {{{
-import scala.specs.runner.SpecsFileRunner
+import org.specs.runner.SpecsFileRunner
 
 object allSpecsRunner extends SpecsFileRunner("project/**/*.scala", "all.*")
 }}}
