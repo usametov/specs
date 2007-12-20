@@ -4,7 +4,7 @@
 
   # declare a Specification object
 {{{
-import scala.specs._
+import org.specs._
 
 object myGreatSpecification extends Specification {
 
@@ -12,7 +12,7 @@ object myGreatSpecification extends Specification {
 }}}
   # add a description for your system to specify:
 {{{
-import scala.specs._
+import org.specs._
 
 object myGreatSpecification extends Specification {
   "This wonderful system" should {
@@ -21,7 +21,7 @@ object myGreatSpecification extends Specification {
 }}}
   # add one example of what your system is supposed to do:
 {{{
-import scala.specs._
+import org.specs._
 
 object myGreatSpecification extends Specification {
   "This wonderful system" should {
@@ -32,7 +32,7 @@ object myGreatSpecification extends Specification {
 }}}
   # back-up your example with assertions:
 {{{
-import scala.specs._
+import org.specs._
 import MySystem._
 
 object myGreatSpecification extends Specification {
@@ -47,9 +47,9 @@ object myGreatSpecification extends Specification {
 }}}
    # add a runner object to execute your specification
 {{{
-import scala.specs._
+import org.specs._
 import MySystem._
-import scala.specs.runner.JUnit3
+import org.specs.runner.JUnit3
 
 object myGreatSpecificationRunner extends JUnit3(myGreatSpecification)
 object myGreatSpecification extends Specification {
