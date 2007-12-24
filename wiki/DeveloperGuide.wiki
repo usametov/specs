@@ -10,14 +10,11 @@ The code for the release 1.1 is kept in a branch named [http://specs.googlecode.
 
 The official 1.1 release has the tag: SPECS-1.1
 
-This branch will get every bug fix on the 1.1 release and each bugfix release will be tagged SPECS-1.1x, x being the number of the bugfix release for version 1.1.
+This branch will get every bug fix on the 1.1 release and each bugfix release will be tagged SPECS-1.1.x, x being the number of the bugfix release for version 1.1.
 
 
 =How to compile specs?=
 
 The easiest way to compile the project is to:
-  * get eclipse + [http://www.scala-lang.org/downloads/eclipse the stable scala plugin]
-  * create an eclipse/Scala project for the spec sources 
-  * include the scalacheck jar + junit3.8.1.jar in the classpath
-
-There is a buildr file included in the repository but this is only a prototype and can not be used until there is an official support for Scala in [http://buildr.rubyforge.org Buildr].
+  * install Maven-2.0.7+
+  * compile with: 'mvn compile'
