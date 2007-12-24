@@ -8,7 +8,7 @@ All the source code of *specs* is kept in [http://specs.googlecode.com/svn the S
 
 The code for the release 1.1 is kept in a branch named [http://specs.googlecode.com/svn/branches/SPECS-1.1]
 
-The official 1.0 release has the tag: SPECS-1.1
+The official 1.1 release has the tag: SPECS-1.1
 
 This branch will get every bug fix on the 1.1 release and each bugfix release will be tagged SPECS-1.1x, x being the number of the bugfix release for version 1.1.
 
