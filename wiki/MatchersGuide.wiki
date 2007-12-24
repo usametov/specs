@@ -197,6 +197,7 @@ You can use Scalacheck generators to generate lists of random size:
 `function must pass(generated_data)` instead of `generated_data must pass(function)`
 
  * You can simply use the `pass` matcher to verify a scalacheck property:
+
 {{{
 // this property will alway be true
 val prop = property((a:Int) => true)
@@ -228,7 +229,7 @@ where:
 
  * the default is: `minTestsOk->100, maxDiscarded->500, minSize->0, maxSize->100`
 
-=Matchers applicable to XML (v1.1)=
+=Matchers applicable to XML=
 
  * `<a><b/></a> must equalIgnoreSpace(<a> <b/></a>)` is ok if the nodes are same but ignoring space (and inner nodes order). You can use `==/` as an alias
 
