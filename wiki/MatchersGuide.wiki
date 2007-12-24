@@ -194,7 +194,14 @@ You can use Scalacheck generators to generate lists of random size:
 
  * You can express things the other way around: 
 
-`property must pass(data)` instead of `data must pass(property)`
+`function must pass(generated_data)` instead of `generated_data must pass(function)`
+
+ * You can simply use the `pass` matcher to verify a scalacheck property:
+{{{
+// this property will alway be true
+val prop = property((a:Int) => true)
+prop must pass
+}}} 
 
  * You can display Scalacheck messages with `display` on the Console:
 
