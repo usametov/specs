@@ -1,0 +1,11 @@
+#summary some ideas for the next releases of specs
+
+= Lift integration =
+
+This is a big topic. The idea is to making the specification and testing of [http://code.google.com/p/liftweb lift] applications as easy and integrated as possible.
+
+= A web application to create and run literal specifications =
+
+This project is related to the first as it should be a good way to experiment on testing a _lift_ application.
+
+But the general purpose of that project is to provide a wiki interface to business users, sot that they can write specifications, being directly stored a executable Scala LiteralSpecification objects. This will allow developers to add the behavior necessary to connect the specification to the application.
