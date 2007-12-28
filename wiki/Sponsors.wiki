@@ -1,0 +1,13 @@
+#summary Companies supporting the project
+#labels Featured
+
+= Zero turnaround =
+
+http://www.zeroturnaround.com/wp-content/themes/zeroturnaround/gfx/logo.gif
+
+The ease of development of a Ruby on Rails environment!
+
+[http://www.zeroturnaround.com Zeroturnaround] is providing the [http://www.zeroturnaround.com/javarebel JavaRebel] library which allows to use [http://code.google.com/p/liftweb lift] without having to restart the webserver when having recompiled a Java class.  
+
+This is used for the FutureDevelopments.
+
