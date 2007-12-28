@@ -7,6 +7,7 @@ http://www.zeroturnaround.com/wp-content/themes/zeroturnaround/gfx/logo.gif
 
 _The ease of development of a Ruby on Rails environment!_
 
-[http://www.zeroturnaround.com Zeroturnaround] is providing the [http://www.zeroturnaround.com/javarebel JavaRebel] library which allows to use [http://code.google.com/p/liftweb lift] without having to restart the webserver when having recompiled a Java class. Those few seconds saved make for countless hours!
+[http://www.zeroturnaround.com Zeroturnaround] is providing the [http://www.zeroturnaround.com/javarebel JavaRebel] library which allows to use [http://code.google.com/p/liftweb lift] without having to restart the webserver when having recompiled a Java class. 
+Those few seconds saved make for countless hours!
 
 This is used for the FutureDevelopments.
