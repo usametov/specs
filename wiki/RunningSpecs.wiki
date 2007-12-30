@@ -105,10 +105,11 @@ object mySpec extends Spec
 }}}
 
 To run this suite, add this configuration to your pom.xml:
+{{{
 <build>
 ...
-<plugins>
-....
+  <plugins>
+...
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -122,11 +123,11 @@ To run this suite, add this configuration to your pom.xml:
         </configuration>
       </plugin>
 ...
-</plugins>
-....
+  </plugins>
+...
 </build>
 
-
+}}}
 =Run your specifications and get the results as an XML file =
 
 You can use the XmlRunner class to export the results of your specifications as an xml file:
