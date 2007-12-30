@@ -1,0 +1,6 @@
+#summary Notable changes to specs releases
+#labels Featured
+
+||12/31/2007||*specs* 1.1.2||passes the test suite using Maven and is uploaded in scala-tools.org || 
+||12/24/2007||*specs* 1.1.1||now fully compatible with scalacheck 1.1.1. || 
+||12/21/2007||*specs* 1.1||xml matchers, xml runner, data tables, literal specifications and package renaming from scala.specs to org.specs|| 
