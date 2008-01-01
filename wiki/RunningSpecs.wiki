@@ -105,6 +105,71 @@ class mySpecTest extends JUnit3(mySpec)
 object mySpec extends Spec
 }}}
 
+=Run your specification with JUnit3 and Ant=
+
+You can use the following Ant build file as a starter to compile and execute your specs as JUnit tests:
+{{{
+<project name="MyFirstSpecsProject" default="test" basedir=".">
+  <description>sample build file</description>
+  <!-- 1. Define common properties. Change the paths according to your installation -->
+  <property name="src.dir" value="src/main/scala" />
+  <property name="src.test.dir" value="src/test/scala" />
+  <property name="build.dir" value="target/classes" />
+  <property name="lib.dir" value="lib" />
+  <property name="repository.home" value="c:/local_repository" />
+  <property name="scala-compiler.jar"
+  value="${repository.home}/org/scala-lang/scala-compiler/2.6.1/scala-compiler-2.6.1.jar" />
+  <property name="scala-library.jar"
+  value="${repository.home}/org/scala-lang/scala-library/2.6.1/scala-library-2.6.1.jar" />
+  <!-- 2. Define Scala CLASSPATH. -->
+  <path id="scala.classpath">
+    <pathelement location="${scala-compiler.jar}" />
+    <pathelement location="${scala-library.jar}" />
+  </path>
+  <!-- 3. Define project CLASSPATH. -->
+  <path id="project.classpath">
+    <path refid="scala.classpath" />
+    <pathelement location="${build.dir}" />
+    <pathelement location="${repository.home}/junit/junit/3.8.1/junit-3.8.1.jar" />
+    <pathelement location="${repository.home}/org/specs/specs/1.1.1/specs-1.1.1.jar" />
+    <pathelement location="${repository.home}/org/scalacheck/scalacheck/1.1.1/scalacheck-1.1.1.jar" />
+  </path>
+  <!-- 4. Define scala compiler command. -->
+  <taskdef resource="scala/tools/ant/antlib.xml">
+    <classpath refid="scala.classpath" />
+  </taskdef>
+  <!-- 5. Compiles sources by using "scalac" command. -->
+  <target name="compile">
+    <mkdir dir="${build.dir}" />
+    <scalac srcdir="${src.dir}" destdir="${build.dir}" classpathref="project.classpath" force="changed">
+      <include name="**/*.scala" />
+    </scalac>
+  </target>
+  <target name="test-compile">
+    <mkdir dir="${build.dir}" />
+    <scalac srcdir="${src.test.dir}" destdir="${build.dir}" classpathref="project.classpath" force="changed">
+      <include name="**/*.scala" />
+    </scalac>
+  </target>
+
+  <!-- 6. Execute the specs as junit tests. -->
+  <target name="test" description="execute the tests">
+    <junit haltonfailure="true" showoutput="true">
+      <classpath refid="project.classpath" />
+      <formatter type="brief" usefile="false" />
+      <batchtest fork="yes">
+        <fileset dir="${build.dir}">
+          <include name="**/*Test.class" />
+          <exclude name="**/All*Test.class" />
+        </fileset>
+      </batchtest>
+    </junit>
+  </target>
+  <taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" />
+</project>
+
+}}}
+
 =Run your specifications and get the results as an XML file =
 
 You can use the XmlRunner class to export the results of your specifications as an xml file:
