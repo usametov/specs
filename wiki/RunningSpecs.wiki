@@ -167,8 +167,9 @@ You can use the following Ant build file as a starter to compile and execute you
   </target>
   <taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" />
 </project>
-
 }}}
+(the initial compile script comes from [http://scriptlandia.blogspot.com/2007/04/how-to-compile-and-run-scala-program.html this blog post])
+
 
 =Run your specifications and get the results as an XML file =
 
