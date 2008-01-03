@@ -13,13 +13,17 @@ There are different kind of matchers which are used to assert that some properti
 
 ===Create your own Matcher===
 
-Creating a new Matcher is easy. You extend the `Matcher` class and implement the `apply` method:
+Creating a new Matcher is easy. You extend the `Matcher` class, using a case class and implement the `apply` method:
 
 {{{
-class NewStringMatcher extends Matcher[String] {
-  // the apply method must return a Tuple[Boolean, String, String]
-  def apply[T](v: => T) = (booleanFunction(v), "okMessage", "koMessage")
-}
+  "A matcher" can {
+    "be created as a case class" in {
+      case class matchHello(a: String) extends Matcher[String]() {
+        def apply(v: => String) = (v == a, "okMessage", "koMessage")
+      }
+      "hello" must matchHello("hello")
+    }
+  }
 }}} 
 
 You must return a tuple containing:
@@ -28,12 +32,30 @@ You must return a tuple containing:
  * a message which can be displayed in case of a success
  * a message which can be displayed in case of a failure
 
-For instance:
+A matcher can also be created through as a val:
 
 {{{
-val beEven = new Matcher[Int] {
-  def apply[Int](b: => Int) = (b % 2 == 0, b + " is even", b + " is odd")
-}
+  "A matcher" can {
+    "be created as a val" in {
+      val beEven = new Matcher[Int] {
+        def apply(b: => Int) = (b % 2 == 0, b + " is even", b + " is odd")
+      }
+      2 must beEven
+    }
+  }
+}}}
+
+Or through a method:
+{{{
+  "A matcher" can {
+    "be created as a method" in {
+      def divide(a: Int) = new Matcher[Int] {
+        def apply(b: => Int) = (a % b == 0, b + " divides " + a, b + " doesn't divide " + a)
+      }
+      10 must divide(100)
+      3 must not(divide(100))
+    }
+  }
 }}}
 
 ===Create the negation of a matcher===
