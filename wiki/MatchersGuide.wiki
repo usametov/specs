@@ -18,7 +18,7 @@ Creating a new Matcher is easy. You extend the `Matcher` class and implement the
 {{{
 class NewStringMatcher extends Matcher[String] {
   // the apply method must return a Tuple[Boolean, String, String]
-  def apply[T](v: T) = (booleanFunction(v), "okMessage", "koMessage")
+  def apply[T](v: => T) = (booleanFunction(v), "okMessage", "koMessage")
 }
 }}} 
 
@@ -32,7 +32,7 @@ For instance:
 
 {{{
 val beEven = new Matcher[Int] {
-  def apply[Int](b: Int) = (b % 2 == 0, b + " is even", b + " is odd")
+  def apply[Int](b: => Int) = (b % 2 == 0, b + " is even", b + " is odd")
 }
 }}}
 
