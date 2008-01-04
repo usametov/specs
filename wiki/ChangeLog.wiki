@@ -1,6 +1,7 @@
 #summary Notable changes to specs releases
 #labels Featured
 
+||1/3/2007||*specs* 1.1.3||the specs declared as a JUnit3 TestSuite can now be executed with JUnit4. The consequence is that specs now depends on JUnit-4.4||
 ||12/31/2007||*specs* 1.1.2||passes the test suite using Maven and is uploaded in scala-tools.org || 
 ||12/24/2007||*specs* 1.1.1||now fully compatible with scalacheck 1.1.1. || 
 ||12/21/2007||*specs* 1.1||xml matchers, xml runner, data tables, literal specifications and package renaming from scala.specs to org.specs|| 
