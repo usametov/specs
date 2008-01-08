@@ -226,7 +226,7 @@ val prop = property((a:Int) => true)
 prop must pass
 }}} 
 
- * You can display Scalacheck messages with `display` on the Console:
+ * You can display Scalacheck messages with `display` on the Console (import `org.specs.matcher.ScalacheckParameters._`):
 
 {{{
 data must pass {
