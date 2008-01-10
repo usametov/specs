@@ -202,3 +202,38 @@ It is also possible to specify the output directory with:
 {{{
 object specResults extends XmlRunner(extendedThrowableUnit, "./target/reports/specs")
 }}}
+
+=Skip examples =
+
+You can skip several examples by using the skip method:
+{{{
+object mySkippedSpecification extends Specification {
+  "These examples" should {
+    skip("those examples don't pass yet")
+    "be skipped" in {...}
+    "be skipped2" in {...}
+  }
+}
+}}}
+You can also skip an individual example if a matcher is not satisfied:
+{{{
+object mySpecification extends Specification {
+  "my web framework" should {
+    "work with DB2" in {
+      // skip the example if the DB2 connection is not available locally
+      DB2Connection.start must not(throwA(ConnectionException(""))).orSkipExample // alias orSkip
+      // use DB2Connection
+    }
+    ...
+  }
+}
+}}}
+
+Skipped examples will appear in the Console runner with a small 'o'
+{{{
+my web framework should
+  o work with DB2
+    skipped because DB2 cannot connect was thrown
+}}}
+
+Otherwise, the skipped examples will be reported in the JUnit reports if using a JUnit3 runner to execute the specs.
