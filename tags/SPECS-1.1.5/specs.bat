@@ -1,0 +1,1 @@
+java -cp ./target/test-classes;./target/classes;./junit-4.4.jar;./scalacheck-1.1.1.jar;./scala-library-2.6.1.jar %1
