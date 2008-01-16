@@ -66,6 +66,8 @@ object mySpec extends Specification { ... }
 
 The name of the test class will be <package name>.mySpecTest
 
+*Note*: we should declare the  JUnit runner as a class and not an object, otherwise Ant and Maven test tasks won't be able to instantiate the class properly. Moreover, following the convention of having 'Test' at the end of the name should be make it being picked up by default.
+
 =Run your specification with JUnit3 in Eclipse=
 
 If you want to execute the JUnit test cases using Eclipse, you have first to create a Java project referencing your Scala project. Then you can use the following JUnit test class to run your JUnit spec:
