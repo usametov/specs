@@ -51,7 +51,7 @@ import org.specs._
 import MySystem._
 import org.specs.runner.JUnit3
 
-object myGreatSpecificationRunner extends JUnit3(myGreatSpecification)
+class myGreatSpecificationTest extends JUnit3(myGreatSpecification)
 object myGreatSpecification extends Specification {
   "This wonderful system" should {
     "save the world" in {
@@ -62,7 +62,7 @@ object myGreatSpecification extends Specification {
   }
 }
 }}}
-  # compile and run the class named *myGreatSpecificationRunner$* with your favorite JUnit  runner (let's say [http://farm2.static.flickr.com/1098/1433239972_5f3a83e40c.jpg?v=0  Eclipse])
+  # compile and run the class named *myGreatSpecificationTest$* with your favorite JUnit  runner (let's say [http://farm2.static.flickr.com/1098/1433239972_5f3a83e40c.jpg?v=0  Eclipse])
  
  
  
