@@ -62,7 +62,9 @@ object myGreatSpecification extends Specification {
   }
 }
 }}}
-  # compile and run the class named *myGreatSpecificationTest$* with your favorite JUnit  runner (let's say [http://farm2.static.flickr.com/1098/1433239972_5f3a83e40c.jpg?v=0  Eclipse])
+  # compile and run the class named *myGreatSpecificationTest$* with your favorite JUnit  runner (using the JUnit4 library only) (let's say [http://farm2.static.flickr.com/1098/1433239972_5f3a83e40c.jpg?v=0  Eclipse])
+
+*Note*: `myGreatSpecificationTest` is declared as a class and not an object to be instantiated properly by JUnit runners.
  
  
  
