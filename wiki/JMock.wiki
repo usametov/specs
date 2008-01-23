@@ -4,7 +4,7 @@
 
 [http://www.jmock.org/ jMock2] allows to define mocks and expectations on mocks very easily.
 
-This page shows how to use jMock with specs. Please refer to the jMock site for more instructions on jMock itself.
+This page shows how to use jMock with specs. Please refer to the jMock site for more instructions on jMock itself. You can also have a look at the [http://specs.googlecode.com/svn/trunk/src/test/scala/org/specs/mock/jmockSpec.scala spec for the jMock integration] for more examples.
 
 = Libraries =
 
@@ -16,7 +16,7 @@ Here is a sample maven snippet you can add to your pom.xml file:
       <artifactId>jmock</artifactId>
       <version>2.4.0</version>
     </dependency>
-    <!-- Those are only needing if you want to mock classes -->
+    <!-- Those are only needed if you want to mock classes -->
     <dependency>
       <groupId>cglib</groupId>
       <artifactId>cglib</artifactId>
@@ -33,12 +33,12 @@ Here is a sample maven snippet you can add to your pom.xml file:
 
 Using mocks follows a 4 steps process:
 
-   1. extend the JMocker trait and add ClassMocker if you want to mock classes as well as interfaces:
+   1. extend the JMocker trait and add !ClassMocker if you want to mock classes as well as interfaces:
 {{{
 import scala.specs.mock._
 object mySpec extends Specification with JMocker with ClassMocker {...}
 }}}
-*Tt is especially important that JMocker is mixed-in with your Specification, otherwise the expectations won't be checked*
+*It is especially important that JMocker is mixed-in with your Specification, otherwise the expectations won't be checked*
 
    2. create mock objects using the `mock` method
 {{{
@@ -66,6 +66,20 @@ object mySpec extends Specification with JMocker with ClassMocker {
 }
 }}}
    4. use the mock in the rest of your example, expectations will be automatically checked at the end of the example 
+{{{
+object mySpec extends Specification with JMocker with ClassMocker {
+  "my system" should {
+    "use mocks" in {
+      val mockedService = mock(classOf[Service])
+      expect {
+        one(mockedService).executeService() // this will be called one time exactly
+      }
+      val whatIWantToTest = new WhatIWantToTest(mockedService)
+      whatIWantToTest.executeMethod // must call once mockedService.executeService or the example will fail
+    }
+  }
+}
+}}}
 
 =A complete example=
 
@@ -130,35 +144,36 @@ Some shortcuts are available to allow or ignore some method calls:
 {{{
   expect {
     allowingMatch("on") // allow any method matching "on"
-    allowingMatch(mock, "on") // allow any method matching "on" on the mock object
+    allowingMatch(mock, "on") // allow any method matching "on" on the object "mock"
     ignoringMatch("on") // ignore any method matching "on"
-    ignoringMatch(mock, "on") // ignore any method matching "on" on the mock object
+    ignoringMatch(mock, "on") // ignore any method matching "on" on the object "mock"
   }
 }}}
 
 ==Returned values==
 
-Scala allows a more natural definition of returned values on mock expectations with `will`, `willReturn` and `willReturnIterable`:
+Scala allows a chain method call expectations with the specification of the returned values with `will`, `willReturn` and `willReturnIterable`:
 {{{
 expect { 
   one(List("hey")).take(anyInt) will returnValue(equal(List("hey"))) // `will` accepts a jMock action, like returnValue
   one(List("hey")).take(anyInt) willReturn List("hey") // `willReturn` specifies a returned value
- one(List("hey")).take(anyInt) willReturnIterable("a", "b") // `willReturnIterable` will return an Iterable whose values are given as varargs parameters
+  one(List("hey")).take(anyInt) willReturnIterable("a", "b") // `willReturnIterable` returns an Iterable with specified values
 }
 }}}
 
 ==Returned values on consecutive calls==
 
-specs offers a shortcut to specify that consecutive calls to a given method will return different values:
+specs offers the `willReturnEach` method to specify that consecutive calls to a given method will return different values:
 {{{
-  1.atLeastOf(list).get(anyInt) willReturnEach ("a", "b", "c") // returns "a" the first time the "get" method is called, "b" the second time and "c" the third time
+  // returns "a" the first time the "get" method is called, "b" the second time and "c" the third time
+  1.atLeastOf(list).get(anyInt) willReturnEach ("a", "b", "c") 
 }}}
 
 ==Nested returned values and mocks==
 
-This is a frequent situation when interacting with object graphs. You need to mock an object, like a Connection, which is supposed to give you access to a service, that you want to mock also and so on. For example, testing some code accessing the Eclipse platform can be very difficult for that reason. 
+There is a frequent situation when interacting with object graphs. You need to mock an object, like a Connection, which is supposed to give you access to a service, that you also want to mock and so on. For example, testing some code accessing the Eclipse platform can be very difficult for that reason. 
 
-Using specs you can declare:
+Using specs you can use blocks to specify nested expectations:
 {{{
   // A workspace gives access to a project and a project to a module
   case class Module(name: String)
@@ -167,10 +182,11 @@ Using specs you can declare:
   val workspace = mock(classOf[Workspace])
   
   expect { 
-    // define nested expectations on the workspace, the project and the module
     one(workspace).project.willReturn(classOf[Project]) {p: Project => 
+        // nested expectations on project
         one(p).name willReturn "hi"
         one(p).module.willReturn(classOf[Module]) {m: Module => 
+          // nested expectation on module
           one(m).name willReturn "module"}
     }
   }
@@ -205,7 +221,7 @@ expect {
 ==Method parameters==
 
 Shortcuts are provided for the most common types of parameters:
-{{
+{{{
   anyInt, anyLong, anyShort, anyByte, anyDouble, anyFloat, anyChar, anyString
   any(<anything>)
   a(classOf[Type])
@@ -213,14 +229,14 @@ Shortcuts are provided for the most common types of parameters:
   aNonNull(classOf[Type])
   equal(value)
   same(value)
-}}
+}}}
 
 ==Matchers adaptation==
 
 A lot of jMock methods are expecting Hamcrest matchers:
 {{{
   expect { 
-    one(list).get(`with`(same(0))) // same(0) == new IsSame(0). Note the `backticks` on with which is a Scala reserved keyword
+    one(list).get(`with`(same(0))) // same(0) == new IsSame(0). Note the `backticks` on "with" which is a Scala reserved keyword
   }
 }}}
 
