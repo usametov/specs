@@ -213,3 +213,55 @@ expect {
   one(list).get(will(be_==(0))) willThrow new java.lang.Exception("ouch") 
 }
 }}}
+
+==Method parameters==
+
+Shortcuts are provided for the most common types of parameters:
+{{
+  anyInt, anyLong, anyShort, anyByte, anyDouble, anyFloat, anyChar, anyString
+  any(<anything>)
+  a(classOf[Type])
+  aNull(classOf[Type])
+  aNonNull(classOf[Type])
+  equal(value)
+  same(value)
+}}
+
+==Matchers adaptation==
+
+A lot of jMock methods are expecting Hamcrest matchers:
+{{{
+  expect { 
+    one(list).get(`with`(same(0))) // same(0) == new IsSame(0). Note the `backticks` on with which is a Scala reserved keyword
+  }
+}}}
+
+Thanks to an implicit conversion from specs matchers to Hamcrest matchers, you can use specs matchers instead, using the `will` method:
+{{{
+  expect { 
+    one(list).get(will(be_==(0))) // be_==(0) is a specs matchers
+  }
+}}}
+
+==Sequence expectations==
+
+You can constrain calls to occur in sequence, with the `then` method:
+{{{
+expect { 
+  one(list).size then 
+  one(list).get(anyInt) then
+  one(list).isEmpty
+}
+}}}
+
+==State expectations==
+
+You can model expectations on some abstracts states, using the `when` and `set` methods
+{{{
+  val readiness = state("readiness")
+  readiness.startsAs("not ready")
+  expect { 
+    one(list).size set readiness.is("ready") 
+    allowing(list).get(anyInt) when readiness.is("ready")
+  }
+}}}
