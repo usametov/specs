@@ -5,7 +5,7 @@ This page is under construction
 
 [http://www.jmock.org/ jMock2] allows to define mocks and expectations on mocks very easily.
 
-This page shows how to use jMock with specs. Please refer to the jMock site for instructions on how to use mocks and define expectations.
+This page shows how to use jMock with specs. Please refer to the jMock site for more instructions on jMock itself.
 
 = Libraries =
 
@@ -45,14 +45,22 @@ In order to use jMock2 with specs, you need to add the following dependencies to
 
 Using mocks follows a 4 steps process:
 
-   1. extend the JMocker trait, add ClassMocker if you want to mock classes as well as interfaces:
+   1. extend the JMocker trait and add ClassMocker if you want to mock classes as well as interfaces:
 {{{
 import scala.specs.mock._
 object mySpec extends Specification with JMocker with ClassMocker {...}
 }}}
+*Tt is especially important that JMocker is mixed-in with your Specification, otherwise the expectations won't be checked*
 
    2. create mock objects using the `mock` method
 {{{
+object mySpec extends Specification with JMocker with ClassMocker {
+  "my system" should {
+    "use mocks" in {
+      val mockedService = mock(classOf[Service])
+    }
+  }
+}
 }}}
 
    3. add expectations in your specification example
@@ -73,13 +81,10 @@ object mySpec extends Specification with JMocker with ClassMocker {
 
 =A complete example=
 
-Here is a complete example of the use of mocks to specify the interactions between a Button and a Light:
-
-trait ButtonAndLightMock extends ButtonAndLight with Mocker {
-  val mock = new Light { 
-    override def on = record
-    override def off = record
-  }
+Here is a complete example of the use of mocks to specify the interactions between a `Button` and a `Light` object:
+{{{
+trait ButtonAndLightMock extends ButtonAndLight with JMocker with ClassMocker {
+  val mock = mock(classOf[Light])
   val button = Button(mock)
 }
 trait ButtonAndLight {
@@ -104,16 +109,41 @@ trait ButtonAndLight {
 object mockExample extends Specification with ButtonAndLightMock {
   "A button and light mock example" should {
     "not fail if the mock receives the expected messages" in {
-      expect {mock.on; mock.off}
+      expect {
+        one(mock).on
+        one(mock).off
+      }
       button.push
       button.push  // if the button is pressed twice, then the light will go on and off
     }
   }
 }
+}}}
 
-Mock protocols
+= Methods expectations =
 
-By default, the mock expectations order is not important and any excess message will be ignored. This default decision is motivated by the need to make the specification more robust in case of a minor implementation changes (such as the order of calls).
+==Methods counters==
+All the standard jMock method expectations are available with specs. However, a little bit of syntactic sugar has been added:
+{{{
+  expect {
+    exactly(2).of(mock).on // is equivalent to 
+    2.of(mock).on
+
+    atLeast(2).of(mock).on // is equivalent to 
+    2.atLeastOf(mock).on
+
+  }
+}}}
+
+==Allowing or ignoring methods==
+
+Some shortcuts are available to allow or ignore some method calls:
+{{{
+  expect {
+    allowingMatching("on") // allow any method called "on"
+    ignoringMatching("on") // ignore any method called "on"
+  }
+}}}
 
 However you can specify that the calls must happen in sequence:
 
