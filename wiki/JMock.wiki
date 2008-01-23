@@ -1,0 +1,43 @@
+#summary how to use jMock in your specs
+This page is under construction
+
+= Introduction =
+
+[http://www.jmock.org/ jMock2] allows to define mocks and expectations on mocks very easily.
+
+This page shows how to use jMock with specs. Please refer to the jMock site for instructions on how to use mocks and define expectations.
+
+= Libraries =
+
+In order to use jMock2 with specs, you need to add the following dependencies to your project:
+{{{
+    <dependency>
+      <groupId>org.jmock</groupId>
+      <artifactId>jmock</artifactId>
+      <version>2.4.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-core</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-library</artifactId>
+      <version>1.1</version>
+    </dependency>   
+    <dependency>
+      <groupId>cglib</groupId>
+      <artifactId>cglib</artifactId>
+      <version>2.1_3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.objenesis</groupId>
+      <artifactId>objenesis</artifactId>
+      <version>1.0</version>
+    </dependency>
+}}}
+
+The last 2
+
+
