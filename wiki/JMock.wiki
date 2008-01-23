@@ -1,5 +1,4 @@
 #summary how to use jMock in your specs
-This page is under construction
 
 = Introduction =
 
@@ -16,18 +15,6 @@ In order to use jMock2 with specs, you need to add the following dependencies to
       <artifactId>jmock</artifactId>
       <version>2.4.0</version>
     </dependency>
-    <!-- included for documentation but redundant since they are a dependency of jmock-2.4.0
-    <dependency>
-      <groupId>org.hamcrest</groupId>
-      <artifactId>hamcrest-core</artifactId>
-      <version>1.1</version>
-    </dependency>
-    <dependency>
-      <groupId>org.hamcrest</groupId>
-      <artifactId>hamcrest-library</artifactId>
-      <version>1.1</version>
-    </dependency>
-    -->   
     <!-- Those are only needing if you want to mock classes -->
     <dependency>
       <groupId>cglib</groupId>
