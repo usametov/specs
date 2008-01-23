@@ -1,7 +1,7 @@
 #summary Notable changes to specs releases
 #labels Featured
 
-||1/23/2008|| *specs* 1.2 || an integration with jMock - see the [http://code.google.com/p/specs/wiki/UsingJMock wiki] and 2 matchers on PartialFunctions: beDefinedAt and beDefinedWith||
+||1/23/2008|| *specs* 1.2 || jMock can now be used to create mocks and define expectations - see the [http://code.google.com/p/specs/wiki/UsingJMock wiki]. 2 matchers have been added for !PartialFunctions: beDefinedAt and beDefinedWith||
 ||1/11/2008|| *specs* 1.1.5 || you can now skip examples or a whole system under test - see the [http://code.google.com/p/specs/wiki/RunningSpecs#Skip_examples wiki]||
 ||1/5/2008||*specs* 1.1.4. ||corrected a bug involving multiple evaluation of an expression to be tested. In a mustBe b, a was evaluated 3 times. ||
 ||1/3/2008||*specs* 1.1.3. ||the specs declared as a JUnit3 !TestSuite can now be executed with JUnit4. The consequence is that specs now depends on JUnit-4.4||
