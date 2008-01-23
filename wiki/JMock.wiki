@@ -8,7 +8,8 @@ This page shows how to use jMock with specs. Please refer to the jMock site for 
 
 = Libraries =
 
-In order to use jMock2 with specs, you need to add the following dependencies to your project: jmock-2.4.0, hamcrest-1.1 and cglib-2.1_3 + objenesis-1.0 if you want to mock classes. Here is a sample maven snippet to realize this
+In order to use jMock2 with specs, you need to add the following dependencies to your project: jmock-2.4.0, hamcrest-1.1 and cglib-2.1_3 + objenesis-1.0 if you want to mock classes. 
+Here is a sample maven snippet you can add to your pom.xml file:
 {{{
     <dependency>
       <groupId>org.jmock</groupId>
