@@ -10,7 +10,7 @@
 
   * [http://rspec.rubyforge.org/ rspec] for trying to have a literal structure to specifications and assertions and also for the possibility to share examples between related specifications (as in the Stack example).
 
-  * [http://www.jmock.org/ jmock] for the mocking part and the idea of having reusable matchers. Still, jmock is more concise in the way that method expectations are declared.
+  * [http://www.jmock.org jmock] for having reusable matchers and expressive assertions. 
 
 ===User Guide===
 This User Guide is divided in 7 parts:
@@ -19,7 +19,7 @@ This User Guide is divided in 7 parts:
   * [DeclareSpecifications Declare your specifications]
   * [MatchersGuide The full guide to specs matchers]
   * [RunningSpecs How to run your specifications]
-  * [UsingMocks How use mock objects]
+  * [UsingJMock How use mock objects with jMock]
   * [AdvancedSpecifications Use DataTables and syntactic sugar in your specifications]
  http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *Experimental!*
  * [LiteralSpecifications How write literal specifications] 
