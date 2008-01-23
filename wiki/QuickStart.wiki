@@ -45,13 +45,14 @@ object myGreatSpecification extends Specification {
   }
 }
 }}}
-   # add a runner object to execute your specification
+  # add a runner object to execute your specification
 {{{
 import org.specs._
 import MySystem._
-import org.specs.runner.JUnit3
+import org.specs.runner.{JUnit3, ConsoleRunner}
 
 class myGreatSpecificationTest extends JUnit3(myGreatSpecification)
+object myGreatSpecificationRunner extends ConsoleRunner(myGreatSpecification)
 object myGreatSpecification extends Specification {
   "This wonderful system" should {
     "save the world" in {
@@ -63,8 +64,10 @@ object myGreatSpecification extends Specification {
 }
 }}}
   # compile and run the class named *myGreatSpecificationTest$* with your favorite JUnit  runner (using the JUnit4 library only) (let's say [http://farm2.static.flickr.com/1098/1433239972_5f3a83e40c.jpg?v=0  Eclipse])
+ (or execute the scala application `myGreatSpecificationRunner`)
 
 *Note*: `myGreatSpecificationTest` is declared as a class and not an object to be instantiated properly by JUnit runners.
+
  
  
  
