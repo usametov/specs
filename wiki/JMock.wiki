@@ -132,6 +132,7 @@ All the standard jMock method expectations are available with specs. However, a 
     atLeast(2).of(mock).on // is equivalent to 
     2.atLeastOf(mock).on
 
+    (2 to 4).of(mock).on // between 2 and 4 calls to list.size
   }
 }}}
 
@@ -140,79 +141,75 @@ All the standard jMock method expectations are available with specs. However, a 
 Some shortcuts are available to allow or ignore some method calls:
 {{{
   expect {
-    allowingMatching("on") // allow any method called "on"
-    ignoringMatching("on") // ignore any method called "on"
+    allowingMatch("on") // allow any method matching "on"
+    allowingMatch(mock, "on") // allow any method matching "on" on the mock object
+    ignoringMatch("on") // ignore any method matching "on"
+    ignoringMatch(mock, "on") // ignore any method matching "on" on the mock object
   }
 }}}
 
-However you can specify that the calls must happen in sequence:
+==Returned values==
 
-  expect(inSequence) { mock.on; mock.off }
-
-You can also specify that unexpected calls must be reported as failures:
-
-  expect(exclusively) { mock.on; mock.off }
-
-Repeated calls
-
-You may want to be even more precise when specifying mock expectations by using the following ProtocolTypes:
-
-    * anyOf: any of the expected calls
-
-       expect(anyOf) {mock.on; mock.off}
-
-    * oneOf: the expected calls must be received 1 time only
-
-       expect(oneOf) {mock.on; mock.off}
-       3.times {i => button.push} // will fail
-
-    * n.Of: the expected calls must be received n times only
-
-       expect(5.Of) {mock.on}
-
-    * atLeastOneOf: the expected calls must be received at least once
-    * n.atLeastOf: the expected calls must be received at least n times 
-
-    * atMostOneOf: the expected calls must be received at most once
-    * n.atMostOf: the expected calls must be received at most n times 
-
-Nested expectations
-
-You can also nest expectations to build more sophisticated expectations. In that case, you can even avoid the expect function:
-
- expect(exclusively) {
-   1.of {mock.on; mock.off; mock.on} 
-   1.of {mock.off} 
- }
-
-Return values and expected parameter values
-How to stub return values
-
-You may want your mock to return specific values sometimes (using it effectively as a stub). In that case, you can use the recordAndReturn method to return a specific value:
-
-trait MockedRandomGenerator extends RandomGenerator with Mocker {
-  // will always return 0.5
-  override def getRandomNumber: Double = recordAndReturn(0.5)
+Scala allows a more natural definition of returned values on mock expectations with `will`, `willReturn` and `willReturnIterable`:
+{{{
+expect { 
+  one(List("hey")).take(anyInt) will returnValue(equal(List("hey"))) // `will` accepts a jMock action, like returnValue
+  one(List("hey")).take(anyInt) willReturn List("hey") // `willReturn` specifies a returned value
+ one(List("hey")).take(anyInt) willReturnIterable("a", "b") // `willReturnIterable` will return an Iterable whose values are given as varargs parameters
 }
+}}}
 
-If the return value depends on the mocked method parameters, you can use a function to compute the returned value, using the method parameters (see here for an example)
-How to define expected parameters
+==Returned values on consecutive calls==
 
-You may want to check that the parameters passed to the mocked method verify some specific constraints. In order to do that, you need to build your mock object accordingly. Here's n example:
+specs offers a shortcut to specify that consecutive calls to a given method will return different values:
+{{{
+  1.atLeastOf(list).get(anyInt) willReturnEach ("a", "b", "c") // returns "a" the first time the "get" method is called, "b" the second time and "c" the third time
+}}}
 
-  // define a mock with a function which will check the passed parameters
-  def buildMock(f: (Int, Movie) => Boolean) = {
-    new MovieRater {
-      override def okForAge(a: Int, m: Movie) =  recordAndReturn(f(a, m))
+==Nested returned values and mocks==
+
+This is a frequent situation when interacting with object graphs. You need to mock an object, like a Connection, which is supposed to give you access to a service, that you want to mock also and so on. For example, testing some code accessing the Eclipse platform can be very difficult for that reason. 
+
+Using specs you can declare:
+{{{
+  // A workspace gives access to a project and a project to a module
+  case class Module(name: String)
+  case class Project(module: Module, name: String)
+  case class Workspace(project: Project)
+  val workspace = mock(classOf[Workspace])
+  
+  expect { 
+    // define nested expectations on the workspace, the project and the module
+    one(workspace).project.willReturn(classOf[Project]) {p: Project => 
+        one(p).name willReturn "hi"
+        one(p).module.willReturn(classOf[Module]) {m: Module => 
+          one(m).name willReturn "module"}
     }
   }
-  // create a new mock object checking that the age is > 0
-  val mock = buildMock((a: Int, m: Movie) => {a must beGreaterThan(0); true})
 
-How to avoid to create complex parameters in expectations
+}}}
 
-Some methods can only be called with complex objects as parameters. Thus, it can be tedious when defining expected calls because such objects need to be build first. In order to avoid this, you can use the any function:
+or
 
- expect {
-   mock.methodWithComplexParameter(any[ComplexType])
- }
+{{{
+  // a workspace is a list of projects
+  case class Project(name: String)
+  case class Workspace(projects: List[Project])
+  val workspace = mock(classOf[Workspace]) 
+  expect { 
+    // the workspace will return project mocks with different expectations
+    one(workspace).projects willReturnIterable(classOf[Project], 
+           {p: Project => one(p).name willReturn "p1" },
+           {p: Project => one(p).name willReturn "p2" })
+  }
+
+}}}
+
+==Thrown exceptions==
+
+You can declare that a method call will throw an exception with `willThrow`:
+{{{
+expect { 
+  one(list).get(will(be_==(0))) willThrow new java.lang.Exception("ouch") 
+}
+}}}
