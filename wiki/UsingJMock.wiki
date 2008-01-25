@@ -221,7 +221,7 @@ or
 You can declare that a method call will throw an exception with `willThrow`:
 {{{
 expect { 
-  one(list).get(will(be_==(0))) willThrow new java.lang.Exception("ouch") 
+  one(list).get(will(beEqual(0))) willThrow new java.lang.Exception("ouch") 
 }
 }}}
 
@@ -250,9 +250,11 @@ A lot of jMock methods are expecting Hamcrest matchers:
 Thanks to an implicit conversion from specs matchers to Hamcrest matchers, you can use specs matchers instead, using the `will` method:
 {{{
   expect { 
-    one(list).get(will(be_==(0))) // be_==(0) is a specs matchers
+    one(list).get(will(beEqual(0))) // beEqual(0) is a specs matchers
   }
 }}}
+
+*Note*: the be_== matcher can't be used here as it is expecting a value of type Any. This is why you should use beEqual[T](a: T).
 
 ==Sequence expectations==
 
