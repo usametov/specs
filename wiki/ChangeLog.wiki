@@ -1,7 +1,7 @@
 #summary Notable changes to specs releases
 #labels Featured
 
-||1/25/2008|| *specs* 1.2.1 || lifted the typing restriction on the be_== matcher (introduced in 1.1.5) and added a new beEqual matcher which constrains both values to have compatible types. This still leaves one typing issue for the beEqual matcher on Iterables. See [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_any_object here]||
+||1/25/2008|| *specs* 1.2.1 || lifted the typing restriction on the `be_==` matcher (introduced in 1.1.5) and added a new beEqual matcher which constrains both values to have compatible types. This still leaves one typing issue for the beEqual matcher on Iterables. See [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_any_object here]||
 ||1/23/2008|| *specs* 1.2 || jMock can now be used to create mocks and define expectations - see the [http://code.google.com/p/specs/wiki/UsingJMock wiki]. 2 matchers have been added for !PartialFunctions: beDefinedAt and beDefinedWith||
 ||1/11/2008|| *specs* 1.1.5 || you can now skip examples or a whole system under test - see the [http://code.google.com/p/specs/wiki/RunningSpecs#Skip_examples wiki]||
 ||1/5/2008||*specs* 1.1.4. ||corrected a bug involving multiple evaluation of an expression to be tested. In a mustBe b, a was evaluated 3 times. ||
