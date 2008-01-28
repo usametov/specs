@@ -46,13 +46,15 @@ declare("my system") should {...}
 
 ===Call a function before or after each example===
 
-This is called setup and teardown in the JUnit world. Although this is contreversial (see [http://jamesnewkirk.typepad.com/posts/2007/09/why-you-should-.html here] for example), you can do it with *specs*, by using `usingBefore` and `usingAfter`. Those two methods take a parameterless function as an argument:
+This is called setup and teardown in the JUnit world. Although this is contreversial (see [http://jamesnewkirk.typepad.com/posts/2007/09/why-you-should-.html here] for example), you can do it with *specs*, by using `doBefore` and `doAfter`:
 {{{
-"my system" should { usingBefore( () => resetTheSystem )
+"my system" should { doBefore { resetTheSystem }
   "mess up the system" in {...}
   "and again" in {...}
 }
 }}}
+
+_Note_: the `usingBefore` and `usingBefore` methods taking a parameterless function are deprecated since they are more verbose for the same effect (from v.1.2.2)
 
 =Specify an example=
 You specify an example of what your system is supposed to do by adding a description inside a specified system followed by the method `in`:
