@@ -1,7 +1,7 @@
 #summary Notable changes to specs releases
 #labels Featured
 
-||to be released|| *specs* 1.2.3 || provided a ScalaTest runner. Refactored the runners so that a single class declaration can support several of them. Fixed issue 9 with JUnit4. Deprecated the JUnit3 runner for JUnit4 as this is the only supported runner for JUnit. Provided a convenience JMocker object to allow the use of JMock in Scala projects without using Specifications ||
+||to be released|| *specs* 1.2.3 || provided a [www.artima.com/scalatest ScalaTest] runner. Refactored the runners so that a single class declaration can support several of them. Fixed issue 9 with JUnit4. Deprecated the JUnit3 runner for JUnit4 as this is the only supported runner for JUnit. Provided a convenience JMocker object to allow the use of JMock in Scala projects without using Specifications ||
 ||1/28/2008|| *specs* 1.2.2 || deprecated the `usingBefore/After` methods using a parameterless function for some simpler methods `doBefore/After` just taking a block of code. Added a `WaitFor` trait to wait during an example. Fixed issue 7||
 ||1/25/2008|| *specs* 1.2.1 || lifted the typing restriction on the `be_==` matcher (introduced in 1.1.5) and added a new beEqual matcher which constrains both values to have compatible types. This still leaves one typing issue for the beEqual matcher on Iterables. See [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_any_object here]||
 ||1/23/2008|| *specs* 1.2 || jMock can now be used to create mocks and define expectations - see the [http://code.google.com/p/specs/wiki/UsingJMock wiki]. 2 matchers have been added for !PartialFunctions: beDefinedAt and beDefinedWith||
