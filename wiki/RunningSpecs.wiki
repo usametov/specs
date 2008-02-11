@@ -184,7 +184,7 @@ It is also possible to specify the output directory with:
 object specResults extends XmlRunner(extendedThrowableUnit, "./target/reports/specs")
 }}}
 
-=Run your specification with ScalaTest=
+=Run your specification with !ScalaTest=
 
 Declare a runner extending the `ScalaTestSuite` runner:
 
@@ -193,7 +193,7 @@ import org.specs.runner._
 class mySpecSuite extends ScalaTestSuite(mySpec)
 }}}
 
-Then use the ScalaTest gui runner: `java -cp ... org.scalatest.Runner -g -s mySpecSuite`
+Then use the !ScalaTest gui runner: `java -cp ... org.scalatest.Runner -g -s mySpecSuite`
 
 =Declare several test runners at once=
 
