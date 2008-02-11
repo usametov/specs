@@ -135,7 +135,7 @@ def sharedFunctionalities = {
 }
 }}}
 
-=Concurrent execution=
+=Sequential execution=
 
 By default, the execution mode of examples of a Specification is "on demand". The examples are only executed when a Runner requests the number of failures or errors. This enables a runner to do a concurrent execution of examples. 
 
