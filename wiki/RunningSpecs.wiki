@@ -54,6 +54,8 @@ object mySpecRunner extends ConsoleRunner(mySpec) with FileOutput
 object mySpec extends Specification { ... }
 }}}
 
+On the command line, you can then invoke: `java -cp ... mySpecRunner`
+
 =Run your specification with JUnit4=
 
 To execute your specification with JUnit, you need to use the `JUnit4` class:
@@ -67,6 +69,8 @@ object mySpec extends Specification { ... }
 The name of the test class will be <package name>.mySpecTest
 
 *Note*: we should declare the  JUnit runner as a class and not an object, otherwise Ant and Maven test tasks won't be able to instantiate the class properly. Moreover, following the convention of having 'Test' at the end of the name should be make it being picked up by default.
+
+On the command line, you can run your suite by executing: `java -cp ... org.junit.runner.JUnitCore mySpecTest`
 
 =Run your specification with JUnit4 in Eclipse=
 
@@ -178,6 +182,37 @@ Finished in 0 second, 16 ms
 It is also possible to specify the output directory with:
 {{{
 object specResults extends XmlRunner(extendedThrowableUnit, "./target/reports/specs")
+}}}
+
+=Run your specification with ScalaTest=
+
+Declare a runner extending the `ScalaTestSuite` runner:
+
+{{{
+import org.specs.runner._
+class mySpecSuite extends ScalaTestSuite(mySpec)
+}}}
+
+Then use the ScalaTest gui runner: `java -cp ... org.scalatest.Runner -g -s mySpecSuite`
+
+=Declare several test runners at once=
+
+You may want to execute a specification with several runners. In that case you can declare:
+
+{{{
+import org.specs.runner._
+class mySpecRunner extends Runner(mySpec) with JUnit with ScalaTest with Console
+
+// or alternately if you also require an xml output
+class mySpecRunner extends Runner(mySpec) with JUnit with ScalaTest with Xml
+}}}
+
+The execution of each runner can be done via:
+{{{
+JUnit4 -> java -cp ... org.junit.runner.JUnitCore mySpecRunner
+ScalaTest -> java -cp ... org.scalatest.Runner -g -s mySpecRunner
+XmlRunner -> scala -cp ... -e "(new mySpecRunner).reportSpecs"
+ConsoleRunner -> scala -cp ... -e "(new mySpecRunner).reportSpecs"
 }}}
 
 =Skip examples =
