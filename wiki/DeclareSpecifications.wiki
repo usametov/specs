@@ -134,3 +134,18 @@ def sharedFunctionalities = {
   "provide common functionalities" in { sharedFunctionalities }
 }
 }}}
+
+=Concurrent execution=
+
+By default, the execution mode of examples of a Specification is "on demand". The examples are only executed when a Runner requests the number of failures or errors. If you need to execute samples sequentially (as in a [http://code.google.com/p/specs/wiki/LiteralSpecifications literal specification]), you can use the method `setSequential`:
+
+{{{
+object mySpec extends Specification {
+  "The first functionality" should { setSequential
+
+    "have example 1 execute first" in {...}
+    // example 2 uses the results of example 1
+    "have example 2 execute in second" in {...}
+  }
+}
+}}}
