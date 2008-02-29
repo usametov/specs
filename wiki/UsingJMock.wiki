@@ -113,8 +113,8 @@ trait ButtonAndLight {
     def isOn = state == On
   }
   abstract sealed class LightState(s: String)
-  case class On extends LightState("on")
-  case class Off extends LightState("off")
+  object On extends LightState("on")
+  object Off extends LightState("off")
 }
 
 object mockExample extends Specification with ButtonAndLightMock {
