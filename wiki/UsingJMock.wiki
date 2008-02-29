@@ -36,8 +36,6 @@ Here is a sample maven snippet you can add to your pom.xml file:
     </dependency>
 }}}
 
-*You also need to add the flags -Ygenerics and -target:jvm-1.5 when compiling (until Scala 2.7.0)*
-
 = A simple mock example with specs and jMock =
 
 Using mocks follows a 4 steps process:
@@ -59,6 +57,8 @@ object mySpec extends Specification with JMocker with ClassMocker {
   }
 }
 }}}
+
+*Important note: * the mock declarations should be done either inside your example our in a trait inherited by your specification. Otherwise you will have expectation errors because the expectations are reset before each example.
 
    3. add expectations in your specification example
 {{{
