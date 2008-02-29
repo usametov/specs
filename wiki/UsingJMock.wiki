@@ -95,7 +95,7 @@ object mySpec extends Specification with JMocker with ClassMocker {
 Here is a complete example of the use of mocks to specify the interactions between a `Button` and a `Light` object:
 {{{
 trait ButtonAndLightMock extends ButtonAndLight with JMocker with ClassMocker {
-  val mock = mock(classOf[Light])
+  val mock: Light = mock(classOf[Light])
   val button = Button(mock)
 }
 trait ButtonAndLight {
