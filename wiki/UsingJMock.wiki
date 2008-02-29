@@ -2,7 +2,7 @@
 
 = Introduction =
 
-[http://www.jmock.org/ jMock2] allows to define mocks and expectations on mocks very easily.
+[http://www.jmock.org/ jMock2] allows to define mocks and expectations on mocks very  easily.
 
 This page shows how to use jMock with specs. Please refer to the jMock site for more instructions on jMock itself. You can also have a look at the [http://specs.googlecode.com/svn/trunk/src/test/scala/org/specs/mock/jmockSpec.scala spec for the jMock integration] for more examples.
 
@@ -58,7 +58,16 @@ object mySpec extends Specification with JMocker with ClassMocker {
 }
 }}}
 
-*Important note: * the mock declarations should be done either inside your example our in a trait inherited by your specification. Otherwise you will have expectation errors because the expectations are reset before each example.
+*Important note: * the mock declarations should be done either inside your example our in a trait inherited by your specification. Otherwise you will have expectation errors because the expectations are reset before and after each example. One way to do that is to use a `doBefore` clause:
+{{{
+  "a statistics component" should {
+    doBefore {
+      blogger = mock(classOf[Blogger])
+      stats = new Statistics(blogger)
+    }
+    "return the number of posts for today" in {...}
+  }
+}}}
 
    3. add expectations in your specification example
 {{{
@@ -95,8 +104,12 @@ object mySpec extends Specification with JMocker with ClassMocker {
 Here is a complete example of the use of mocks to specify the interactions between a `Button` and a `Light` object:
 {{{
 trait ButtonAndLightMock extends ButtonAndLight with JMocker with ClassMocker {
-  val mock: Light = mock(classOf[Light])
-  val button = Button(mock)
+  var mock: Light = _
+  var button: Button = _
+  def init = {
+    mock = mock(classOf[Light])
+    button = Button(mock)
+  }
 }
 trait ButtonAndLight {
   case class Button(light: Light) {
@@ -119,6 +132,7 @@ trait ButtonAndLight {
 
 object mockExample extends Specification with ButtonAndLightMock {
   "A button and light mock example" should {
+    doBefore { init }
     "not fail if the mock receives the expected messages" in {
       expect {
         one(mock).on
