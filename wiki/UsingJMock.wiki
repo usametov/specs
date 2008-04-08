@@ -58,7 +58,7 @@ object mySpec extends Specification with JMocker with ClassMocker {
 }
 }}}
 
-*Important note: * the mock declarations should be done either inside your example our in a trait inherited by your specification. Otherwise you will have expectation errors because the expectations are reset before and after each example. One way to do that is to use a `doBefore` clause:
+*Important note: * the mock declarations should be done either inside your example or in a trait inherited by your specification. Otherwise you will have expectation errors because the expectations are reset before and after each example. One way to do that is to use a `doBefore` clause:
 {{{
   "a statistics component" should {
     doBefore {
@@ -277,6 +277,8 @@ Shortcuts are provided for the most common types of parameters:
   equal(value)
   same(value)
 }}}
+
+*Known issue*: as of now, jMock parameter matching doesn't seem to work with lazy parameters
 
 ==Matchers adaptation==
 
