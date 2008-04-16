@@ -278,7 +278,16 @@ Shortcuts are provided for the most common types of parameters:
   same(value)
 }}}
 
-*Known issue*: as of now, jMock parameter matching doesn't seem to work with lazy parameters
+*Known issue 1*: as of now, jMock parameter matching doesn't seem to work with lazy parameters
+
+*Known issue 2*: working with repeated parameters is tricky. However the following works:
+{{{
+  case class Param(name: String)
+  trait ToMock { def method(p: Param*) = () }
+  val mocked = mock(classOf[ToMock])
+  expect { 1.of(mocked).method(any(classOf[Param])) }
+  mocked.method(Param("hello"))
+}}}
 
 ==Matchers adaptation==
 
