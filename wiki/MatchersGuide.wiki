@@ -143,7 +143,9 @@ List(1, 2) must beLike { case x::y::Nil => true }
  * `a must notEqualIgnoreCase(b)` is ok if `!(a equalsIgnoreCase(b))` (alias: `a must_!=/ b`)
 
  * `a must beMatching(b)` is ok if a matches the regexp b (alias: `a mustMatch b`)
- * `a must notBeMatching(b)` is ok if a doesn't match the regexp b (alias: `a mustNotMatch b`)
+ * `a must notBeMatching(b)` is ok if a doesn't match the regexp b (alias: `a mustNotMatch b`) 
+ * `a must find(regexp)` is ok if the regular expression finds some groups in a (using `java.util.regex.Pattern.compile(a).matcher(b).find()`). For example: `"lallbl" must find("l(.*?)l")` *from 1.2.6*
+ * `a must find(regexp).withGroups(g1, g2)` is ok if the regular expression finds the groups g1 and g2 in a. For example: `"lallbl" must find("l(.*?)l").withGroups("a", "b")` *from 1.2.6*
 
  * `a must include(b)` is ok if `a.indexOf(b) >= 0`
  * `a must notInclude(b)` is ok if `a.indexOf(b) < 0`
