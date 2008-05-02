@@ -304,3 +304,48 @@ where:
 {{{
 <a><b name="value"></b></a> must \(<b name="value"/>)
 }}}
+
+===Match object graphs *from 1.2.6* ===
+
+You may want to combine several existing matchers to be able to match an entire object graph. For example, given the following class definitions:
+
+
+{{{
+trait ObjectGraph { 
+  import scala.collection.mutable 
+
+  case class Foo(val name:String) { 
+    var singlebar: Bar = _ 
+    val bars = mutable.Set[Bar]() 
+  } 
+  
+  case class Bar(val id: Long)
+}
+}}}
+
+You will define the following matchers for the classes Foo and Bar:
+{{{
+trait ObjectGraphMatchers extends ObjectGraph with Matchers {
+  case class matchFoo(foo: Foo) extends Matcher[Foo] {
+    def apply(other: => Foo) = {
+      ((beEqual(_:String)) ^^^ ((f:Foo) => f.name) and
+       (matchBar(_)) ^^^ ((f: Foo) => foo.singlebar) and
+       (matchBar(_)).toSet ^^^ ((f: Foo) => foo.bars))(foo)(other)
+    }
+  }
+  case class matchBar(bar: Bar) extends Matcher[Bar] {
+    def apply(other: => Bar) = {
+      ((beAlsoNull(_:Bar)) or 
+      ((beEqual(_:Long)) ^^^ ((b: Bar) => b.id)))(bar)(other)
+    }
+  }
+}
+}}}
+
+In the code above:
+
+ * `matchBar(_)` is a function returning a matcher for Bar objects. It is composed (using the `^^^` operator) with a function extracting the `singlebar` from Foo objects in order to return a new matcher for Foo object which will also extract the `singlebar` field from the object to match (`other`). 
+
+ * This could also be written using the `^^` operator as: `(((matchBar(_)) ^^ ((f:Foo) => f.singlebar))(foo) ^^ ((f:Foo) => f.singlebar))(other)`. In that expression, the first `^^` operator allows to select the `singlebar` field from foo to create a new Matcher of bar objects. And the second `^^` operator takes the resulting matcher and allow it to be applied to Foo objects which will have their `singlebar` field extracted
+
+ * The `matchBar(_)` matcher is transformed to a matcher for sets of Bar objects using the toSet function. Similarly we could have applied a `toSeq` method to check for a Sequence of Bar objects
