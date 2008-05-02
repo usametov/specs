@@ -305,7 +305,7 @@ where:
 <a><b name="value"></b></a> must \(<b name="value"/>)
 }}}
 
-===Match object graphs *from 1.2.6* ===
+===Match object graphs (from 1.2.6) ===
 
 You may want to combine several existing matchers to be able to match an entire object graph. For example, given the following class definitions:
 
