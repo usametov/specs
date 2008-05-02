@@ -132,7 +132,7 @@ List(1, 2) must beLike { case x::y::Nil => true }
 
  * `a must beNull` is ok if a is null
  * `a must notBeNull` is ok if a is not null
- * `a must beAlsoNull(b)` is ok if a is null when b is null or a is not null when b is null*from 1.2.6*
+ * `a must beAlsoNull(b)` is ok if a is null when b is null or a is not null when b is null *from 1.2.6*
 
 ===If you want to verify that an exception is thrown===
 
