@@ -132,7 +132,7 @@ List(1, 2) must beLike { case x::y::Nil => true }
 
  * `a must beNull` is ok if a is null
  * `a must notBeNull` is ok if a is not null
- * `a must beAlsoNull(b)` is ok if a is null when b is null or a is not null when b is null *from 1.2.6*
+ * `a must beAlsoNull(b)` is ok if a is null when b is null or a is not null when b is null
 
 ===If you want to verify that an exception is thrown===
 
@@ -148,8 +148,8 @@ List(1, 2) must beLike { case x::y::Nil => true }
 
  * `a must beMatching(b)` is ok if a matches the regexp b (alias: `a mustMatch b`)
  * `a must notBeMatching(b)` is ok if a doesn't match the regexp b (alias: `a mustNotMatch b`) 
- * `a must find(regexp)` is ok if the regular expression finds some groups in a (using `java.util.regex.Pattern.compile(a).matcher(b).find()`). For example: `"lallbl" must find("l(.*?)l")` *from 1.2.6*
- * `a must find(regexp).withGroups(g1, g2)` is ok if the regular expression finds the groups g1 and g2 in a. For example: `"lallbl" must find("l(.*?)l").withGroups("a", "b")` *from 1.2.6*
+ * `a must find(regexp)` is ok if the regular expression finds some groups in a (using `java.util.regex.Pattern.compile(a).matcher(b).find()`). For example: `"lallbl" must find("l(.*?)l")`
+ * `a must find(regexp).withGroups(g1, g2)` is ok if the regular expression finds the groups g1 and g2 in a. For example: `"lallbl" must find("l(.*?)l").withGroups("a", "b")`
 
  * `a must include(b)` is ok if `a.indexOf(b) >= 0`
  * `a must notInclude(b)` is ok if `a.indexOf(b) < 0`
@@ -200,7 +200,7 @@ List(1, List(2, 3, List(4)), 5) must haveSameElementsAs(List(5, List(List(4), 2,
 =Matchers applicable to Options=
  
  * `a must beNone` is ok if a is None
- * `a must beAlsoNone(b)` is ok if a is None when b is None or a is not None when b is None *from 1.2.6*
+ * `a must beAlsoNone(b)` is ok if a is None when b is None or a is not None when b is None
  * `a must beSome[Type]` is ok if a is Some(t: Type)
  * `a must beSomething` is ok if a is Some(a: Any)
 
@@ -305,7 +305,7 @@ where:
 <a><b name="value"></b></a> must \(<b name="value"/>)
 }}}
 
-=Matchers composition for object graphs (from 1.2.6)=
+=Matchers composition for object graphs=
 
 You may want to combine several existing matchers to be able to match an entire object graph. For example, given the following class definitions:
 
