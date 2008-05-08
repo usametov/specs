@@ -34,7 +34,6 @@ object helloWorld extends Specification {
   }
 }
 }}}
-
   # compile and run the class named *helloWorld*: `scala -cp bin helloWorld`
 {{{
 Specification "helloWorld"
@@ -46,7 +45,6 @@ Total for specification "helloWorld":
 Finished in 0 second, 63 ms
 2 examples, 2 assertions, 0 failure, 0 error
 }}}
-
   # now, you can more structure to your specification, by grouping your examples:
 {{{
 import org.specs._
@@ -63,7 +61,6 @@ object helloWorld extends Specification {
   "Good bye cruel world" should {...}
 }
 }}}
-
   # You can also use a JUnit runner to run your specification inside [http://farm2.static.flickr.com/1098/1433239972_5f3a83e40c.jpg?v=0  Eclipse] for example (using the JUnit4 library). Add: 
 {{{
 import org.specs.runner._
