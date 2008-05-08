@@ -31,7 +31,7 @@ object helloWorld extends Specification {
   }
 }
 }}}
-  # compile and run the class named *helloWorld*: `scala helloWorld`
+  # compile and run the class named *helloWorld*: `scala -cp specs-<version>.jar helloWorld`
 {{{
 Specification "helloWorld"
   specifies 
