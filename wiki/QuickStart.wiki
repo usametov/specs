@@ -2,8 +2,6 @@
 #labels Featured
 (for more information, take a look at the [UserGuide User Guide])
 
-*This is adapted for the next version 1.2.7*
-
   # declare a Specification object
 {{{
 import org.specs._
