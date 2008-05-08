@@ -227,7 +227,10 @@ You can use Scalacheck generators to generate lists of random size:
                                n <- choose(1, list.size-1);
                                val prefix = list.take(n))
                             yield (prefixes(list), prefix)
-      
+}}}
+
+Then, mixing the org.specs.Scalacheck trait to your specification (*from 1.2.7*), you can check that the prefix property passes all generated data:
+{{{      
   // the generated data must pass the following property
   testData must pass { t: (List[List[Int]], Seq[Int]) => val (prefixes, prefix) = t
     prefixes must contain(prefix)
@@ -249,7 +252,7 @@ val prop = property((a:Int) => true)
 prop must pass
 }}} 
 
- * You can display Scalacheck messages with `display` on the Console (import `org.specs.matcher.ScalacheckParameters._`):
+ * You can display Scalacheck messages with `display` on the Console:
 
 {{{
 data must pass {
