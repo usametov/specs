@@ -2,17 +2,19 @@
 
 =Run your specification in the Console=
 
-To execute your specification in a Console you need to use the `ConsoleRunner` class:
+You can run your specifications in the console just by invoking scala on the Specification class:
 {{{
-import org.specs.runner.ConsoleRunner
+package org.hw
+import org.specs._
 
-object mySpecRunner extends ConsoleRunner(mySpec)
-object mySpec extends Specification { ... }
+object helloWorld extends Specification { ... }
 }}}
+
+`scala -cp ... org.hw.helloWorld`
 
 ===Find specifications in a directory path===
 
-You can use the SpecsFinder class to find specifications in a given path:
+You can use the `SpecsFinder` class to find specifications in a given path:
 {{{
 object displaySpecifications extends SpecsFinder with Application {
   // print all specifications contained in subdirectories of the project directory
