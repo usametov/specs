@@ -349,3 +349,23 @@ In the code above:
  * This could also be written using the `^^` operator as: `(((matchBar(_)) ^^ ((f:Foo) => f.singlebar))(foo) ^^ ((f:Foo) => f.singlebar))(other)`. In that expression, the first `^^` operator allows to select the `singlebar` field from foo to create a new Matcher of bar objects. And the second `^^` operator takes the resulting matcher and allow it to be applied to Foo objects which will have their `singlebar` field extracted
 
  * The `matchBar(_)` matcher is transformed to a matcher for sets of Bar objects using the toSet function. Similarly we could have applied a `toSeq` method to check for a Sequence of Bar objects
+
+===xUnit assertions (from 1.2.7)===
+
+*specs* provides xUnit-like assertions to allow a smooth transition path from Test-Driven Development to Behavior-Driven Development:
+{{{
+object jUnitTest extends Specification {
+  "provide the 'assertTrue' jUnit assertion" {
+    assertTrue(1 == 1 + 1)
+  }
+}
+}}}
+
+ * `assertTrue`        <=> `must beTrue`
+ * `assertFalse`       <=> `must beFalse`
+ * `assertEquals`      <=> `must beEqual`
+ * `assertSame`        <=> `mustBe`
+ * `assertNotSame`     <=> `mustNotBe`
+ * `assertNull`        <=> `must beNull`
+ * `assertNotNull`     <=> `must notBeNull`
+ * `assertArrayEquals` <=> `must ((beEqual(_:T)).toSeq`
