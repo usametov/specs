@@ -1,0 +1,21 @@
+#summary Pitfalls and errors that you can avoid
+#labels Featured
+
+This page lists tips on errors you may encounter while using *specs*.
+
+  * *Strange compilation error*. The following spec would raise a compilation error:
+{{{
+"My Thing" should {
+  "do something" {
+     ...possibly long setup...
+     something must ... other // matcher
+  }
+}}}}
+
+This would generate:
+{{{error: type mismatch;
+[WARNING]  found   : Boolean
+[WARNING]  required: Int
+}}}
+
+  This is because there is a missing "in" after the example description, so everything inside the accolade is expected to be an Int used to access one character of "do something" (see issue 22)
