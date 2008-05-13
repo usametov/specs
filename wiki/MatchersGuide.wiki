@@ -308,6 +308,14 @@ where:
 <a><b name="value"></b></a> must \(<b name="value"/>)
 }}}
 
+ * `==/` check if 2 nodes are equals, ignoring space (alias: `equalsIgnoreSpace`)
+{{{
+<a>
+  <b name="value">
+  </b>
+</a> must ==/(<a><b name="value"></b></a>)
+}}}
+
 =Matchers composition for object graphs=
 
 You may want to combine several existing matchers to be able to match an entire object graph. For example, given the following class definitions:
