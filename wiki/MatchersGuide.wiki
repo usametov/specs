@@ -22,7 +22,7 @@ There are different kind of matchers which are used to assert that some properti
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_properties ScalaCheck matchers]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_XML XML matchers]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_composition_for_object_graphs Matchers for object graphs]
-* [http://code.google.com/p/specs/wiki/MatchersGuide#xUnit_assertions xUnit assertions]
+ * [http://code.google.com/p/specs/wiki/MatchersGuide#xUnit_assertions xUnit assertions]
 
 ===Create your own Matcher===
 
