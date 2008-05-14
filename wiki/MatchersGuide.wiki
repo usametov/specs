@@ -11,6 +11,19 @@ There are different kind of matchers which are used to assert that some properti
 }
 }}}
 
+ * [http://code.google.com/p/specs/w/edit/MatchersGuide#Create_your_own_Matcher Create your own matcher]
+ * [http://code.google.com/p/specs/w/edit/MatchersGuide#Combine_matchers Combine matchers]
+ * [http://code.google.com/p/specs/w/edit/MatchersGuide#Matchers_applicable_to_any_object Matchers applicable to any object]
+ * [http://code.google.com/p/specs/w/edit/MatchersGuide#If_you_want_to_verify_that_an_exception_is_thrown Matchers for exceptions]
+ * [http://code.google.com/p/specs/w/edit/MatchersGuide#Matchers_applicable_to_Iterables Iterables matchers]
+ * [http://code.google.com/p/specs/w/edit/MatchersGuide#Matchers_applicable_to_Maps Maps matchers]
+ * [http://code.google.com/p/specs/w/edit/MatchersGuide#Matchers_applicable_to_numerical_values Numerical matchers]
+ * [http://code.google.com/p/specs/w/edit/MatchersGuide#Matchers_applicable_to_Options Option matchers]
+ * [http://code.google.com/p/specs/w/edit/MatchersGuide#Matchers_applicable_to_properties ScalaCheck matchers]
+ * [http://code.google.com/p/specs/w/edit/MatchersGuide#Matchers_applicable_to_XML XML matchers]
+ * [http://code.google.com/p/specs/w/edit/MatchersGuide#Matchers_composition_for_object_graphs Matchers for object graphs]
+
+
 ===Create your own Matcher===
 
 Creating a new Matcher is easy. You extend the `Matcher` class, using a case class and implement the `apply` method:
