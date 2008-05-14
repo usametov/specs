@@ -28,8 +28,8 @@ For more examples about what you can do with the library, please:
 
   * download the API
   * take a look at the specification for the library itself:
-    * [http://specs.googlecode.com/svn/trunk/src/test/scala/scala/specs/allSpecs.scala all specifications]
-    * [http://specs.googlecode.com/svn/trunk/src/test/scala/scala/specs/matcher/objectMatchers.scala matchers applicable to any object]
+    * [http://specs.googlecode.com/svn/trunk/src/test/scala/org/allSpecs.scala all specifications]
+    * [http://specs.googlecode.com/svn/trunk/src/test/scala/org/specs/matcher/objectMatchersSpec.scala matchers applicable to any object]
  
  
  
