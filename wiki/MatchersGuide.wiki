@@ -342,7 +342,7 @@ where:
 
 =Matchers applicable to Paths and Files (from 1.2.8)=
 
-Most of the time, you should try to minimize the interactions with the File System. However, sometimes this is precisely what you want to specify! The following matchers will help you specify paths and files properties:
+Most of the time, you should try to minimize the interactions with the File System. However, sometimes this is precisely what you want to specify! The following matchers will help you specify paths and files properties.
 
 For paths (as strings):
 
@@ -361,7 +361,22 @@ For paths (as strings):
  * `a must haveParentPath(path)` matches if a has "path" as a parent. For example, "c:/tmp/dir" has "c:/tmp" as a parent
  * `a must listPaths(path1, path2)` matches if a is a directory and has path1 and path2 as children
 
-Note: in the above comparison, separators are always ignored.
+For files:
+
+ * `file must exist` matches if file.exists
+ * `file must beReadable` matches if file.canRead
+ * `file must beWritable` matches if file.canWrite
+ * `file must beAbsolute` matches if file.isAbsolute
+ * `file must beHidden` matches if file.isHidden
+ * `file must beFile` matches if file.isFile
+ * `file must beDirectory` matches if file.isDirectory
+ * `file must haveName(n)` matches if file.getName == n
+ * `file must haveAbsolutePath(p)` matches if file.getAbsolutePath == p
+ * `file must haveCanonicalPath(p)` matches if file.getCanonicalPath == p
+ * `file must haveParent(p)` matches if file.getParent == p
+ * `file must haveList(p1, p2)` matches if file.list == List(p1, p2)
+
+Note: for the above matchers, when paths are compared, separators are always ignored.
 
 =Matchers composition for object graphs=
 
