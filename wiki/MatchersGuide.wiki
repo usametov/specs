@@ -21,6 +21,7 @@ There are different kind of matchers which are used to assert that some properti
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_Options Option matchers]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_properties ScalaCheck matchers]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_XML XML matchers]
+ * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_Paths_and_Files File matchers (*from 1.2.8*)]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_composition_for_object_graphs Matchers for object graphs]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#xUnit_assertions xUnit assertions]
 
@@ -338,6 +339,29 @@ where:
   </b>
 </a> must ==/(<a><b name="value"></b></a>)
 }}}
+
+=Matchers applicable to Paths and Files (from 1.2.8)=
+
+Most of the time, you should try to minimize the interactions with the File System. However, sometimes this is precisely what you want to specify! The following matchers will help you specify paths and files properties:
+
+For paths (as strings):
+
+ * `a must beEqualIgnoringSep(b)` matches if the path for a is the same than the path for b ignoring the system specific separators
+ * `a must beAnExistingPath` matches if a is the path to an existing file or directory
+ * `a must beAReadablePath` matches if a is the path can be read
+ * `a must beAWritablePath` matches if a is the path can be written
+ * `a must beAHiddenPath` matches if a is the path starts with "."
+ * `a must beAnAbsolutePath` matches if a is absolute (starting with "/" under Unix/Linux)
+ * `a must beACanonicalPath` matches if a is canonical (with no relative part like "../..")
+ * `a must beAFilePath` matches if a points to a File
+ * `a must beADirectoryPath` matches if a points to a Directory
+ * `a must havePathName(name)` matches if a has "name" as a name
+ * `a must haveAsAbsolutePath(path)` matches if a has "path" has path as a absolute path. For example, "./tmp" will have "c:/tmp" absolute path if the spec is executed under c:.
+ * `a must haveAsCanonicalPath(path)` matches if a has "path" has path as a canonical path. For example, "c:/tmp/dir/.." has "c:/tmp" as a canonical path
+ * `a must haveParentPath(path)` matches if a has "path" as a parent. For example, "c:/tmp/dir" has "c:/tmp" as a parent
+ * `a must listPaths(path1, path2)` matches if a is a directory and has path1 and path2 as children
+
+Note: in the above comparison, separators are always ignored.
 
 =Matchers composition for object graphs=
 
