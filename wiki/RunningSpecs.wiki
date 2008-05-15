@@ -10,7 +10,9 @@ import org.specs._
 object helloWorld extends Specification { ... }
 }}}
 
-`scala -cp ... org.hw.helloWorld`
+`java -cp ... org.hw.helloWorld`
+
+By default, the stacktraces don't appear on the console, but you can turn them on by passing the `-v` or `--verbose` option (*from 1.2.8*).
 
 ===Find specifications in a directory path===
 
