@@ -77,7 +77,7 @@ Or through a method:
   }
 }}}
 
-_Implementation note: in the above examples, the lazy parameter to the apply method is passed to a local var. This avoids unnecessary evaluations when the parameter is also reused to create the result messages._
+_Implementation note: in the above examples, the lazy parameter to the apply method is passed to a local val. This avoids unnecessary evaluations when the parameter is also reused to create the result messages._
 
 ===Create the negation of a matcher===
 
