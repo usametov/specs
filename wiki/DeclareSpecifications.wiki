@@ -11,8 +11,9 @@ object newSpecification extends Specification {
 
 A specification is composed of:
 
- * (optionally) subspecifications (see [http://code.google.com/p/specs/wiki/DeclareSpecifications#Compose_specifications Compose a specification])
- * systems specifications (generally one but you can add several ones to describe different contexts or usages)
+ * simple examples as in the [http://code.google.com/p/specs/wiki/QuickStart QuickStart example]
+ * systems specifications containing examples. A system specification is used to describe the context or the usage for a list of examples.
+ * other specifications (see [http://code.google.com/p/specs/wiki/DeclareSpecifications#Compose_specifications Compose a specification])
 
 The name of the specification is the name of the specification object by default but you can use a more meaningful name like this (*from 1.2.8*):
 {{{
@@ -31,7 +32,7 @@ object newSpecification extends Specification {
 }
 }}}
 
-Then, when you will execute the specification with either the JUnitRunner or the ConsoleRunner, you will see displayed:
+Then, when you will execute the specification, you will see displayed:
 {{{
 my system should
 ...rest of the specification
