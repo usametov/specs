@@ -51,7 +51,10 @@ A matcher can also be created through as a val:
   "A matcher" can {
     "be created as a val" in {
       val beEven = new Matcher[Int] {
-        def apply(b: => Int) = (b % 2 == 0, b + " is even", b + " is odd")
+        def apply(number: => Int) = {
+          val b = number
+         (b % 2 == 0, b + " is even", b + " is odd")
+        }
       }
       2 must beEven
     }
@@ -63,13 +66,18 @@ Or through a method:
   "A matcher" can {
     "be created as a method" in {
       def divide(a: Int) = new Matcher[Int] {
-        def apply(b: => Int) = (a % b == 0, b + " divides " + a, b + " doesn't divide " + a)
+        def apply(number: => Int) = {
+          val b = number
+          (a % b == 0, b + " divides " + a, b + " doesn't divide " + a)
+        }
       }
       10 must divide(100)
       3 must not(divide(100))
     }
   }
 }}}
+
+_Implementation note: in the above examples, the lazy parameter to the apply method is passed to a local var. This avoids unnecessary evaluations when the parameter is also reused to create the result messages._
 
 ===Create the negation of a matcher===
 
