@@ -11,8 +11,15 @@ object newSpecification extends Specification {
 
 A specification is composed of:
 
- * (optionally) subspecifications (see "Compose a specification")
- * systems specifications (generally one but you can add several ones)
+ * (optionally) subspecifications (see [http://code.google.com/p/specs/wiki/DeclareSpecifications#Compose_specifications Compose a specification])
+ * systems specifications (generally one but you can add several ones to describe different contexts or usages)
+
+The name of the specification is the name of the specification object by default but you can use a more meaningful name like this (*from 1.2.8*):
+{{{
+import org.specs._
+object newSpecification extends Specification("My new Specification") {
+}
+}}}
 
 =Specify your system=
 You specify your system by simply adding a description followed by the method `should`:
