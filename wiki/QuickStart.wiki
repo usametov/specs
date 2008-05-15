@@ -6,8 +6,7 @@
 {{{
 import org.specs._
 
-object helloWorld extends Specification {
-}
+object helloWorld extends Specification
 }}}
   # a Specification is just a list of examples:
 {{{
