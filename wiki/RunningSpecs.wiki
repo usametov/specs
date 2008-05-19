@@ -12,7 +12,7 @@ object helloWorld extends Specification { ... }
 
 `java -cp ... org.hw.helloWorld`
 
-By default, the stacktraces don't appear on the console, but you can turn them on by passing the `-v` or `--verbose` option (*from 1.2.8*).
+If you have several exceptions being thrown and if stacktraces are obscuring the Console output you can turn them off by passing the `-ns` or `--nostacktrace` option (*from 1.2.8*).
 
 ===Find specifications in a directory path===
 
