@@ -278,9 +278,9 @@ Shortcuts are provided for the most common types of parameters:
   same(value)
 }}}
 
-*Known issue 1*: as of now, jMock parameter matching doesn't seem to work with lazy parameters
+*Known issue*: as of now, jMock parameter matching doesn't seem to work with lazy parameters
 
-*Known issue 2*: working with repeated parameters is tricky. However the following works:
+*Known issue*: working with repeated parameters is tricky. However the following works:
 {{{
   case class Param(name: String)
   trait ToMock { def method(p: Param*) = () }
@@ -329,3 +329,15 @@ You can model expectations on some abstracts states, using the `when` and `set` 
     allowing(list).get(anyInt) when readiness.is("ready")
   }
 }}}
+
+==Counting assertions (from 1.2.8)==
+
+You can say that some expectations should be counted as assertions in the statistics:
+{{{
+  expect { 
+    one(list).get(anyInt) will(returnValue("hey")) isAssertion 
+  }
+  list.get(0) must_== "hey"
+}}}
+
+This will report a number of assertions of "1".
