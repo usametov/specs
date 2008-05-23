@@ -340,4 +340,4 @@ You can say that some expectations should be counted as assertions in the statis
   list.get(0) must_== "hey"
 }}}
 
-This will report a number of assertions of "1".
+This will report 2 assertions (one for the mock expectation, the other one for the equality).
