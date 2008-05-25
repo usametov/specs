@@ -143,6 +143,25 @@ def sharedFunctionalities = {
 }
 }}}
 
+You can also:
+
+ * declare a system under specification:
+{{{
+val nonEmptyStack = 
+  "A non-empty stack below full capacity" should {
+    "not be empty" in {
+      stack verifies {!_.isEmpty}
+    }
+...
+}}}
+
+ * re-use those examples in another system under specification:
+{{{
+"A stack below full capacity" should {
+    "behave like a non-empty stack" in nonEmptyStack.examples 
+...
+}}}
+
 =Sequential execution=
 
 By default, the execution mode of examples of a Specification is "on demand". The examples are only executed when a Runner requests the number of failures or errors. This enables a runner to do a concurrent execution of examples. 
