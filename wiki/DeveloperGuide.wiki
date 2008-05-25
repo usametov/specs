@@ -10,7 +10,7 @@ The code for the release 1.1 is kept in a branch named [http://specs.googlecode.
 
 The official 1.1 release has the tag: SPECS-1.1
 
-This branch will get every bug fix on the 1.1 release and each bugfix release will be tagged SPECS-1.1.x, x being the number of the bugfix release for version 1.1.
+This branch will get every bug fix on the 1.1 release and each bugfix/small increment release will be tagged SPECS-1.1.x, x being the number of the bugfix/small increment release for version 1.1.
 
 
 =How to compile specs?=
