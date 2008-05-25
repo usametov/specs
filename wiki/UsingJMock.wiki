@@ -330,7 +330,7 @@ You can model expectations on some abstracts states, using the `when` and `set` 
   }
 }}}
 
-==Counting assertions (from 1.2.8)==
+==Counting assertions==
 
 You can say that some expectations should be counted as assertions in the statistics:
 {{{
