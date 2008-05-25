@@ -21,7 +21,7 @@ There are different kind of matchers which are used to assert that some properti
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_Options Option matchers]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_properties ScalaCheck matchers]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_XML XML matchers]
- * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_Paths_and_Files File matchers (*from 1.2.8*)]
+ * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_Paths_and_Files File matchers]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_composition_for_object_graphs Matchers for object graphs]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#xUnit_assertions xUnit assertions]
 
@@ -171,8 +171,8 @@ You can also introduce a failure with the `fail` function:
  
  * `a must equalIgnoreCase(b)` is ok if `a equalsIgnoreCase(b)` (alias: `a must_==/ b`)
  * `a must notEqualIgnoreCase(b)` is ok if `!(a equalsIgnoreCase(b))` (alias: `a must_!=/ b`)
- * `a must equalIgnoreSpace(b)` is ok if `a.trim == b.trim` (*from 1.2.8*)
- * `a must notEqualIgnoreSpace(b)` is ok if `a.trim != b.trim` (*from 1.2.8*)
+ * `a must equalIgnoreSpace(b)` is ok if `a.trim == b.trim`
+ * `a must notEqualIgnoreSpace(b)` is ok if `a.trim != b.trim`
  * `a must beMatching(b)` is ok if a matches the regexp b (alias: `a mustMatch b`)
  * `a must notBeMatching(b)` is ok if a doesn't match the regexp b (alias: `a mustNotMatch b`) 
  * `a must find(regexp)` is ok if the regular expression finds some groups in a (using `java.util.regex.Pattern.compile(a).matcher(b).find()`). For example: `"lallbl" must find("l(.*?)l")`
@@ -202,7 +202,7 @@ You can also introduce a failure with the `fail` function:
 {{{
 List(1, List(2, 3, List(4)), 5) must haveSameElementsAs(List(5, List(List(4), 2, 3), 1))
 }}}
- * `a must haveSize(3)` matches if there are 3 elements in a (from *1.2.8*)
+ * `a must haveSize(3)` matches if there are 3 elements in a
 
 =Matchers applicable to Maps=
  
@@ -344,7 +344,7 @@ where:
 </a> must ==/(<a><b name="value"></b></a>)
 }}}
 
-=Matchers applicable to Paths and Files (from 1.2.8)=
+=Matchers applicable to Paths and Files=
 
 Most of the time, you should try to minimize the interactions with the File System. However, sometimes this is precisely what you want to specify! The following matchers will help you specify paths and files properties.
 
