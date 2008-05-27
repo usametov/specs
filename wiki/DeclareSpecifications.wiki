@@ -62,7 +62,11 @@ This is called setup and teardown in the JUnit world. Although this is contrever
 }
 }}}
 
-_Note_: the `usingBefore` and `usingBefore` methods taking a parameterless function are deprecated since they are more verbose for the same effect
+_Note_: you can also use syntactic sugar and write:
+{{{
+"my system" should { resetTheSystem.before
+...
+}}}
 
 =Specify an example=
 You specify an example of what your system is supposed to do by adding a description inside a specified system followed by the method `in`:
@@ -141,6 +145,48 @@ def sharedFunctionalities = {
 "my system" should {
   "provide common functionalities" in { sharedFunctionalities }
 }
+}}}
+
+You can also reuse all the examples of another system under specification with the `behave like` declaration:
+{{{
+"A full stack" ->-(full) should { 
+  // you can reference the other system under spec by name
+  behave like "A non-empty stack below full capacity" 
+
+  // or directly if you saved it in a val
+  behave like nonEmptyStackBelowCapacity 
+  ...
+}
+}}}
+
+=Contexts=
+
+You may want sometimes to identify more precisely the `Context` of a system under specification. To do this, you need to create `Context` objects:
+{{{
+object StackSpecification extends Specification {
+  val empty = beforeContext(stack.clear)
+  val full = beforeContext(createStack(stack.capacity))
+  val nonEmpty = beforeContext(createStack(3))
+  val belowCapacity = beforeContext(createStack(3))
+...
+}
+}}}
+
+The `beforeContext`, `afterContext`, `context` methods are factory methods to create `Context` objects:
+{{{
+def context(b: =>Any, a: =>Any) = new Context { before(b); after(a) }
+}}}
+
+`Context` objects are passed to system under specification to specify the before/after actions.
+
+Then, you can reuse contexts with the `->-` operator: 
+{{{
+  "A full stack" ->-(full) should { 
+  ...
+  }
+  "A empty stack" ->-(empty) should { 
+  ...
+  }
 }}}
 
 =Sequential execution=
