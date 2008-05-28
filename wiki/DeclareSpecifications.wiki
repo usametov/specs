@@ -189,8 +189,8 @@ Then, you can reuse contexts with the `->-` operator:
   }
 }}}
 
-=Repeated examples (from 1.3.0)=
-
+=Repeated examples=
+*(from 1.3.0)*
 If you want to repeat the same examples with different data until a condition is true, you can use the `until` method:
 {{{
   "This system" should {
