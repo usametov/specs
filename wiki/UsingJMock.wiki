@@ -347,8 +347,13 @@ This will report 2 assertions (one for the mock expectation, the other one for t
 
 If you want to express only one expectation in your example, you can use this short form:
 {{{
+  // example 1
   classOf[Channel].expects(one(_).isOpen willReturn false) in { _.isOpen must beFalse}
+
+  // example 2
   classOf[OutputStream].expectsOne(_.flush) in { _.flush }
+
+  // example 3
   classOf[OutputStream].neverExpects(_.close) in { stream: OutputStream) => 
     // use the stream mock object
   }
