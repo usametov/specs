@@ -211,6 +211,20 @@ This method is also available on `Context` objects, so you can write:
   }
 }}}
 
+=Anonymous examples=
+(*from 1.3.0*)
+
+Example descriptions are not even necessary to create a specification:
+{{{
+object expectationsOnly extends Specification("Hello world") with JMocker {
+  "hello world".size mustBe 11
+  3 must_== { "abc".size }
+  classOf[java.io.OutputStream].expectsOne(_.flush) in { _.flush }
+}
+}}}
+
+The 3 assertions above will create new examples: example, example 2, example 3
+
 =Sequential execution=
 
 By default, the execution mode of examples of a Specification is "on demand". The examples are only executed when a Runner requests the number of failures or errors. This enables a runner to do a concurrent execution of examples. 
