@@ -211,7 +211,7 @@ This method is also available on `Context` objects, so you can write:
   }
 }}}
 
-==Anonymous examples==
+=Anonymous examples=
 (*from 1.3.0*)
 
 Example descriptions are not even necessary to create a specification:
