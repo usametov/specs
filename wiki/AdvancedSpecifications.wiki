@@ -51,7 +51,6 @@ var j = 0
 3 times {j += _}
 j mustBe 6
 }}}  
- * multiply a piece of string a given number of times: `"s" * 3 must_== "sss"`
  * println any object with `myObject.println` or `myObject.pln`. If you want the myObject to be printed _and_ returned you can use `myObject.pp` ("print and pass")
  * you can use the constants `ok` and `ko` as equivalents of `true` and `false`
  * you can wait for a certain amount of time mixing the `WaitFor` trait and using the `waitFor` method: `waitFor(10.ms)`
