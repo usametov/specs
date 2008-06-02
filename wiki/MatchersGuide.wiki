@@ -196,7 +196,15 @@ You can also get more detailed failure messages for String comparisons with the 
     "abc" must_== "ab"    // 'ab(c)' is not equal to 'ab'
     "abcd" must_== "abd"  // 'ab(c)d' is not equal to 'abd'
     "acd" must_== "abd"   // 'a(c)d' is not equal to 'abd'
+
+    // 'the kitt(en) is pret(ty)' is not equal to 'the (s)kitt(y) is pret(en)'
+    "the kitten is pretty" must_== "the skitty is preten"   
   }
+}}}
+
+Note that you can change the pair of separators used to highlight the differences with:
+{{{
+  detailledDiffs("[]")
 }}}
 
 =Matchers applicable to Iterables=
