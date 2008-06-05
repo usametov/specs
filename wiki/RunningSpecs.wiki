@@ -79,13 +79,13 @@ On the command line, you can run your suite by executing: `java -cp ... org.juni
 =Run your specification with JUnit4 in Eclipse=
 
 In order to be able to select your JUnit4 classes, you need to add the output directory of your project to your build path:
-# Select your project
-# Go to "Build Path / Configure Build Path"
-# In the "Libraries" tab, "Add Class Folder"
-# In the "Class Folder Selection" dialog, do "Create New Folder"
-# In the "New Folder" dialog, select "Advanced" and "Link to folder in the file system"
-# Select the output folder of your project
-# Refresh your project
+ # Select your project
+ # Go to "Build Path / Configure Build Path"
+ # In the "Libraries" tab, "Add Class Folder"
+ # In the "Class Folder Selection" dialog, do "Create New Folder"
+ # In the "New Folder" dialog, select "Advanced" and "Link to folder in the file system"
+ # Select the output folder of your project
+ # Refresh your project
 
 You should now be able to select the JUnit4 classes of your Scala project.
 
