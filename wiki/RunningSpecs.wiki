@@ -78,7 +78,16 @@ On the command line, you can run your suite by executing: `java -cp ... org.juni
 
 =Run your specification with JUnit4 in Eclipse=
 
-Eclipse doesn't seem to be able to pick-up the JUnit4 classes in a Scala project. So if you want to execute the JUnit test cases using Eclipse, you have first to create a Java project referencing the output directory of your Scala project in its build path (File / Properties/Java Build Path/Libraries/Add Class Folder). Then, you need to select `JUnit4` as a test runner in your run configuration.
+In order to be able to select your JUnit4 classes, you need to add the output directory of your project to your build path:
+# Select your project
+# Go to "Build Path / Configure Build Path"
+# In the "Libraries" tab, "Add Class Folder"
+# In the "Class Folder Selection" dialog, do "Create New Folder"
+# In the "New Folder" dialog, select "Advanced" and "Link to folder in the file system"
+# Select the output folder of your project
+# Refresh your project
+
+You should now be able to select the JUnit4 classes of your Scala project.
 
 =Run your specifications with JUnit4 and Maven =
 
