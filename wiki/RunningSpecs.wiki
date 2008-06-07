@@ -167,7 +167,7 @@ You can use the following Ant build file as a starter to compile and execute you
 
 =Run your specifications and get the results as an XML file =
 
-You can use the XmlRunner class to export the results of your specifications as an xml file:
+You can use the `XmlRunner` class to export the results of your specifications as an xml file:
 {{{
 object specResults extends XmlRunner(extendedThrowableUnit)
 }}}
