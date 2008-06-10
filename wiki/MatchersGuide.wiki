@@ -159,6 +159,10 @@ List(1, 2) must beLike { case x::y::Nil => true }
  (*from 1.3.0*)
  * `a must haveClass(c)` is ok if a.getClass == c
  * `a must notHaveClass(c)` is ok if a.getClass != c
+ * `a must haveSuperClass(c)` is ok if c.isAssignableFrom a.getClass
+ * `a must notHaveSuperClass(c)` is ok if !(c.isAssignableFrom a.getClass)
+ * `c1 must beAssignableFrom(c2)` is ok if c1 isAssignableFrom c2
+ * `c1 must notBeAssignableFrom(c2)` is ok if !(c1 isAssignableFrom c2)
 
 You can also introduce a failure with the `fail` function:
 
