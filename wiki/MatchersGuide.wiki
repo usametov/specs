@@ -156,6 +156,10 @@ List(1, 2) must beLike { case x::y::Nil => true }
  * `a must notBeNull` is ok if a is not null
  * `a must beAlsoNull(b)` is ok if a is null when b is null or a is not null when b is null
 
+ (*from 1.3.0*)
+ * `a must beInstanceOf[T]` is ok if a.isInstanceOf[T]
+ * `a must notBeInstanceOf[T]` is ok if !a.isInstanceOf[T]
+
 You can also introduce a failure with the `fail` function:
 
  * `fail("not implemented yet")`
