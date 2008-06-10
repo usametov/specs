@@ -357,7 +357,11 @@ If you want to express only one expectation in your example, you can use this sh
   classOf[OutputStream].neverExpects(_.close) in { stream: OutputStream) => 
     // use the stream mock object
   }
+}}}
 
-  // example 4
-  classOf[OutputStream].isIgnored.mock // returns a mock which ignores everything 
+One-liners are also very effective at creating mocks for objects with just one expectation or which will be ignored:
+{{{
+  val sender = classOf[MailSender].expectsOne(_.send).mock // returns a MailSender mock with one expectation
+  val output = classOf[OutputStream].isIgnored.mock // returns a mock which ignores everything
+  publisher(sender, output).publish
 }}}
