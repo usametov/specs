@@ -357,4 +357,7 @@ If you want to express only one expectation in your example, you can use this sh
   classOf[OutputStream].neverExpects(_.close) in { stream: OutputStream) => 
     // use the stream mock object
   }
+
+  // example 4
+  classOf[OutputStream].isIgnored.mock // returns a mock which ignores everything 
 }}}
