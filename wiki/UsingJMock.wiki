@@ -307,9 +307,16 @@ expect {
 
 Shortcuts are provided for the most common types of parameters:
 {{{
+  // accepts any value, but can't be mixed with other matchers in a method call
   anyInt, anyLong, anyShort, anyByte, anyDouble, anyFloat, anyChar, anyString
-  any(<anything>)
-  a(classOf[Type])
+  any(<anything>) 
+ 
+  // checks the class of the parameter
+  a(classOf[Type]) 
+  
+  // returns always true (*from 1.3.0*), can be mixed with other matchers in a method call
+  a[Type]          
+
   aNull(classOf[Type])
   aNonNull(classOf[Type])
   equal(value)
