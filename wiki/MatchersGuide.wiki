@@ -364,7 +364,7 @@ where:
 <a><b name="value"></b></a> must \(<b name="value"/>)
 }}}
 
- * `==/` check if 2 nodes are equals, ignoring space (alias: `equalsIgnoreSpace`)
+ * `==/` check if 2 nodes are equals, ignoring space (alias: `equalIgnoreSpace`)
 {{{
 <a>
   <b name="value">
