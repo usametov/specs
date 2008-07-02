@@ -2,6 +2,8 @@
 
  * [http://code.google.com/p/specs/wiki/RunningSpecs#Run_your_specification_in_the_Console Run your specification in the Console]
  * [http://code.google.com/p/specs/wiki/RunningSpecs#Run_your_specification_with_JUnit4 Run your specification with JUnit4]
+ * [http://code.google.com/p/specs/wiki/RunningSpecs#Run_your_specifications_with_JUnit4_and_Maven Run your specifications with JUnit4 and Maven]
+ * [http://code.google.com/p/specs/wiki/RunningSpecs#Run_your_specification_with_JUnit4_in_Eclipse Run your specification with JUnit4 in Eclipse]
  * [http://code.google.com/p/specs/wiki/RunningSpecs#Run_your_specification_with_JUnit4_and_Ant Run your specification with JUnit4 and Ant]
  * [http://code.google.com/p/specs/wiki/RunningSpecs#Declare_several_spec_runners_at_once Declare several spec runners at once]
  * [http://code.google.com/p/specs/wiki/RunningSpecs#Run_your_specifications_and_get_the results_as_an_XML_file Run your specifications and get the results as an XML file]
@@ -93,7 +95,7 @@ In order to be able to select your JUnit4 classes, you need to add the output di
  # In the "Class Folder Selection" dialog, do "Create New Folder"
  # In the "New Folder" dialog, select "Advanced" and "Link to folder in the file system"
  # Select the output folder of your project
- # Refresh your project
+ # Refresh your project (F5 on the project's folder)
 
 You should now be able to select the JUnit4 classes of your Scala project.
 
@@ -106,6 +108,8 @@ You need to respect the surefire plugin naming convention:
 class mySpecTest extends JUnit4(mySpec)
 object mySpec extends Spec
 }}}
+
+Then you run the usual `mvn test` to compile main code, test code and execute the tests.
 
 =Run your specification with JUnit4 and Ant=
 
