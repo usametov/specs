@@ -1,5 +1,14 @@
 #summary How to structure your specifications
 
+ * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Declare_a_specification Declare a specification]
+ * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Specify your system Specify your system]
+ * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Call_a_function_before_or_after_each_example Call a function before or after each example]
+ * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Contexts Contexts]
+ * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Compose_specifications Compose specifications]
+ * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Share_examples Share examples]
+ * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Specify_an_example Specify an example]
+ * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Sequential_execution Sequential execution]
+
 =Declare a specification=
 You can declare a new specification by extending the Specification class:
 {{{
@@ -38,21 +47,21 @@ my system should
 ...rest of the specification
 }}}
 
-===Alias for the should keyword===
+==Alias for the should keyword==
 You can declare several system in a specification. In that case you can, for instance, specify the main functionalities of your system using a `should` method and add another section using ,,can,, for advanced features:
 {{{
 "For power users, my system" can {...}
 }}}
 
 
-===Without implicit defs===
+==Without implicit defs==
 If you don't want to use Scala's implicit defs for the String class, you can also use:
 
 {{{
 declare("my system") should {...}
 }}}
 
-===Call a function before or after each example===
+==Call a function before or after each example==
 
 This is called setup and teardown in the JUnit world. Although this is contreversial (see [http://jamesnewkirk.typepad.com/posts/2007/09/why-you-should-.html here] for example), you can do it with *specs*, by using `doBefore` and `doAfter`:
 {{{
@@ -66,6 +75,58 @@ _Note_: you can also use syntactic sugar and write:
 {{{
 "my system" should { resetTheSystem.before
 ...
+}}}
+
+=Contexts=
+
+You may want sometimes to identify more precisely the `Context` of a system under specification. To do this, you need to create `Context` objects:
+{{{
+object StackSpecification extends Specification {
+  val empty = beforeContext(stack.clear)
+  val full = beforeContext(createStack(stack.capacity))
+  val nonEmpty = beforeContext(createStack(3))
+  val belowCapacity = beforeContext(createStack(3))
+...
+}
+}}}
+
+The `beforeContext`, `afterContext`, `context` methods are factory methods to create `Context` objects:
+{{{
+def context(b: =>Any, a: =>Any) = new Context { before(b); after(a) }
+}}}
+
+`Context` objects are passed to system under specification to specify the before/after actions.
+
+Then, you can reuse contexts with the `->-` operator: 
+{{{
+  "A full stack" ->-(full) should { 
+  ...
+  }
+  "A empty stack" ->-(empty) should { 
+  ...
+  }
+}}}
+
+==Repeated examples==
+
+If you want to repeat the same examples with different data until a condition is true, you can use the `until` method:
+{{{
+  "This system" should {
+    var counter = 1
+    doAfter(counter += 1)
+    until(counter == 3)
+
+    "pass the example with an int value" in { counter must_> 0 }
+  }
+}}}
+
+This method is also available on `Context` objects, so you can write:
+{{{
+  val stack = new Stack(1) // stack size is 1
+  val stacks = afterContext(stack.size += 1).until(stack.size == 10)
+  "A non-empty stack" ->-(stacks) should { 
+  ...
+  }
 }}}
 
 =Specify an example=
@@ -92,6 +153,19 @@ declare("my System") should {
   forExample("be wonderful") in {...}
 }
 }}}
+
+==Anonymous examples==
+
+Example descriptions are not even necessary to create a specification:
+{{{
+object expectationsOnly extends Specification("Hello world") with JMocker {
+  "hello world".size mustBe 11
+  3 must_== { "abc".size }
+  classOf[java.io.OutputStream].expectsOne(_.flush) in { _.flush }
+}
+}}}
+
+The 3 assertions above will create new examples: example, example 2, example 3
 
 =Compose specifications=
 
@@ -158,71 +232,6 @@ You can also reuse all the examples of another system under specification with t
   ...
 }
 }}}
-
-=Contexts=
-
-You may want sometimes to identify more precisely the `Context` of a system under specification. To do this, you need to create `Context` objects:
-{{{
-object StackSpecification extends Specification {
-  val empty = beforeContext(stack.clear)
-  val full = beforeContext(createStack(stack.capacity))
-  val nonEmpty = beforeContext(createStack(3))
-  val belowCapacity = beforeContext(createStack(3))
-...
-}
-}}}
-
-The `beforeContext`, `afterContext`, `context` methods are factory methods to create `Context` objects:
-{{{
-def context(b: =>Any, a: =>Any) = new Context { before(b); after(a) }
-}}}
-
-`Context` objects are passed to system under specification to specify the before/after actions.
-
-Then, you can reuse contexts with the `->-` operator: 
-{{{
-  "A full stack" ->-(full) should { 
-  ...
-  }
-  "A empty stack" ->-(empty) should { 
-  ...
-  }
-}}}
-
-==Repeated examples==
-
-If you want to repeat the same examples with different data until a condition is true, you can use the `until` method:
-{{{
-  "This system" should {
-    var counter = 1
-    doAfter(counter += 1)
-    until(counter == 3)
-
-    "pass the example with an int value" in { counter must_> 0 }
-  }
-}}}
-
-This method is also available on `Context` objects, so you can write:
-{{{
-  val stack = new Stack(1) // stack size is 1
-  val stacks = afterContext(stack.size += 1).until(stack.size == 10)
-  "A non-empty stack" ->-(stacks) should { 
-  ...
-  }
-}}}
-
-=Anonymous examples=
-
-Example descriptions are not even necessary to create a specification:
-{{{
-object expectationsOnly extends Specification("Hello world") with JMocker {
-  "hello world".size mustBe 11
-  3 must_== { "abc".size }
-  classOf[java.io.OutputStream].expectsOne(_.flush) in { _.flush }
-}
-}}}
-
-The 3 assertions above will create new examples: example, example 2, example 3
 
 =Sequential execution=
 
