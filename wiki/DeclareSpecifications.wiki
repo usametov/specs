@@ -48,14 +48,35 @@ my system should
 ...rest of the specification
 }}}
 
-==Alias for the should keyword==
+===Alias for the should keyword===
 You can declare several system in a specification. In that case you can, for instance, specify the main functionalities of your system using a `should` method and add another section using ,,can,, for advanced features:
 {{{
 "For power users, my system" can {...}
 }}}
 
+===Extend the should verb===
 
-==Without implicit defs==
+At times, some words can be repeated at the beginning of each example:
+{{{
+  "The project helpers" should {
+    "provide this function" in { ... }
+    "provide that function" in { ... }
+    "provide this other function" in { ... }
+  }
+}}}
+
+You can factor out the "provide" word by adding a new function:
+{{{
+  def provide(e: =>Example) = { currentSut.verb += " provide"; e }
+
+  "The project helpers" should provide {
+    "this function" in { ... }
+    "that function" in { ... }
+    "this other function" in { ... }
+  }
+}}}
+
+===Without implicit defs===
 If you don't want to use Scala's implicit defs for the String class, you can also use:
 
 {{{
@@ -144,6 +165,19 @@ If you don't like the `in` keyword, you can replace it with the meaningless oper
 {{{
 "my System" should {
   "be wonderful" >> {...}
+}
+}}}
+
+===Sub examples===
+It also is possible to nest examples where it makes sense. For instance:
+{{{
+"The Scala language" should {
+  "provide a && operator" >> {
+    "returning true for true && true" >> { true && true must beTrue } 
+    "returning false for true && false" >> { true && false must beFalse } 
+    "returning false for false && true" >> { true && false must beFalse } 
+    "returning false for false && false" >> { false && false must beFalse } 
+  }
 }
 }}}
 
