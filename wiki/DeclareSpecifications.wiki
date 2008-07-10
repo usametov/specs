@@ -272,7 +272,7 @@ You can also reuse all the examples of another system under specification with t
 
 By default, the execution mode of examples of a Specification is "on demand". The examples are only executed when a Runner requests the number of failures or errors. This enables a runner to do a concurrent execution of examples. 
 
-However, if you need to execute samples sequentially (as in a [http://code.google.com/p/specs/wiki/LiteralSpecifications literal specification]), you can use the method `setSequential`:
+However, if you need to execute samples sequentially (as in a [http://code.google.com/p/specs/wiki/LiterateSpecifications literate specification]), you can use the method `setSequential`:
 
 {{{
 object mySpec extends Specification {
