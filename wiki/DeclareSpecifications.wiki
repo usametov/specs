@@ -1,7 +1,7 @@
 #summary How to structure your specifications
 
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Declare_a_specification Declare a specification]
- * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Specify_your_system Specify your system]
+ * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Systems_under_specification Systems under specification]
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Call_a_function_before_or_after_each_example Call a function before or after each example]
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Contexts Contexts]
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Compose_specifications Compose specifications]
@@ -31,8 +31,9 @@ object newSpecification extends Specification("My new Specification") {
 }
 }}}
 
-=Specify your system=
-You specify your system by simply adding a description followed by the method `should`:
+=Systems under specification=
+
+You specify systems by simply adding a description followed by the method `should`:
 {{{
 import org.specs._
 
