@@ -1,14 +1,14 @@
-#summary How to write literal specifications
+#summary How to write literate specifications
 
 http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *Experimental!*
 
-= Why literal specifications? =
+= Why literate specifications? =
 
-The literal specifications support in *specs* is intended to provide a more informal way to specify and document the software being developed. The long term vision is that this kind of specification may be accessible to a business user for creation/modification and a developer for the implementation of the executable parts.
+The literate specifications support in *specs* is intended to provide a more informal way to specify and document the software being developed. The long term vision is that this kind of specification may be accessible to a business user for creation/modification and a developer for the implementation of the executable parts.
 
 = A look at the current experiment: xmlRunnerSpec =
 
-The specification for the XML Runner (producing an xml file containing the specification results) has been developed using the !LiteralSpecification class:
+The specification for the XML Runner (producing an xml file containing the specification results) has been developed using the !LiterateSpecification class:
 {{{
 object xmlRunnerSpec extends RunnerFixture { 
 
@@ -43,7 +43,7 @@ The XML runner object should {"output the results of the specification in the co
 
 The important points to notice here are:
  
- * !RunnerFixture is the actual class inheriting !LiteralSpecification. It supports all specification methods such as `checkFile` or `checkXml`. This makes this approach kind of _keyword-oriented_ where the programmed behavior is kept separate from the literal text as much as possible
+ * !RunnerFixture is the actual class inheriting !LiterateSpecification. It supports all specification methods such as `checkFile` or `checkXml`. This makes this approach kind of _keyword-oriented_ where the programmed behavior is kept separate from the literal text as much as possible
  * The XML features of Scala are used to mix xml content and Scala code
  * The xml node is labeled as `text`. This has no importance now but this may be used to discriminate different kinds of text and display them accordingly. `<wiki>` could be used for example to specify that a markup language is used.
  * "example description" in <_scala code_> is used to create examples. The "example description" string is taken as the usual example description which appears in the reports
