@@ -4,6 +4,10 @@
 
 Suppose you want to specify that a directory path and a file name should be combined to provide a proper full path. One way to specify this is to provide examples of different possible combinations and results (taken from the xmlRunnerUnit specification):
 {{{
+import org.specs.util.DataTables
+
+object xmlRunnerSpec extends Specification with DataTables { // dont forget to mix-in the DataTables trait!
+...
     "create an xml file in the specified output directory, handling file separators" in {
        "output dir" | 	"spec name" | 	"file path"  		|>
        ""           ! 	"spec1"     !	"./spec1.xml"		|  
@@ -12,16 +16,14 @@ Suppose you want to specify that a directory path and a file name should be comb
        "result\\"   !	"spec1"     !	"./result/spec1.xml" 	|  
        "/result"    !	"spec1"     !	"/result/spec1.xml" 	|
        "\\result"   !	"spec1"     !	"/result/spec1.xml" 	|
-       "result/xml" ! 	"spec1"     !	"./result/xml/spec1.xml"| {
-       (dir: String, 	spec: String, 	result: String) => {
+       "result/xml" ! 	"spec1"     !	"./result/xml/spec1.xml"| { (dir, spec, result) =>
            xmlRunner.outputDir = dir
            spec1.name = spec
            xmlRunner.execute
            xmlRunner.files must haveKey(result)
-         }
        }
-       
     }
+...
 }}}
 
 In the example above, you have a !DataTable with:
