@@ -9,7 +9,7 @@
  * [http://code.google.com/p/specs/wiki/RunningSpecs#Declare_several_spec_runners_at_once Declare several spec runners at once]
  * [http://code.google.com/p/specs/wiki/RunningSpecs#Run_your_specifications_and_get_the_results_as_an_XML_file Run your specifications and get the results as an XML file]
  * [http://code.google.com/p/specs/wiki/RunningSpecs#Skip_examples Skip examples]
- * [http://code.google.com/p/specs/wiki/RunningSpecs#Include_or_exclude_examples Include or exclude examples] *from 1.3.1*
+ * [http://code.google.com/p/specs/wiki/RunningSpecs#Include_or_exclude_examples Include or exclude examples]
 
 =Run your specification in the Console=
 
@@ -277,7 +277,7 @@ my web framework should
 Otherwise, the skipped examples will be reported in the JUnit reports if using a JUnit4 runner to execute the specs.
 
 =Include or exclude examples=
-*(from 1.3.1)*
+
 
 Most of the time examples are naturally classified and grouped according to the Specification they belong to. However, sometimes you may want to group examples differently in order to execute them separately for instance. One very common use of this is when you want to run one example only inside a Specification containing a lot of other examples. Instead of commenting out the other examples you can:
 
