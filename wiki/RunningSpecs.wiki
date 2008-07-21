@@ -310,5 +310,7 @@ Tags are also applicable to whole systems under specification so that all includ
 
 From the command line, the tags can be accepted or rejected with the following options:
 
- * `--accept` or `-acc` followed by a comma-separated list of tags
+ * `--accept` or `-acc` followed by a comma-separated list of tags 
  * `--reject` or `-rej` followed by a comma-separated list of tags
+
+For example: `scala mySpecification --accept tag1,tag2 --reject tag3`
