@@ -3,7 +3,7 @@
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Declare_a_specification Declare a specification]
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Systems_under_specification Systems under specification]
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Call_a_function_before_or_after_each_example Call a function before or after each example]
- * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Call_a_function_before_or_ after_each_system_or_specification Call a function before or after each system or specification]
+ * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Call_a_function_before_or_after_each_system_or_specification Call a function before or after each system or specification]
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Contexts Contexts]
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Compose_specifications Compose specifications]
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Share_examples Share examples]
