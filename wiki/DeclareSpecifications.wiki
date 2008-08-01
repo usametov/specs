@@ -99,6 +99,7 @@ _Note_: you can also use syntactic sugar and write:
 "my system" should { resetTheSystem.before
 ...
 }}}
+_Note_: `Contexts` (see below) can also be used to specify before/after actions
 
 ==Call a function before or after each system or specification==
 *(from 1.3.2)*
@@ -133,10 +134,11 @@ object mySpec extends Specification {
 
 }}}
 
+_Note_: doBefore/doAfter or doFirst/doLast declarations can be placed anywhere inside a system, similarly doBeforeSpec and doAfterSpec can be placed anywhere in the spec declaration.
 
 =Contexts=
 
-You may want sometimes to identify more precisely the `Context` of a system under specification. To do this, you need to create `Context` objects:
+You may want sometimes to identify more precisely the `Context` of a system under specification, either to give it a meaningful name or to reuse it across specifications. To do this, you need to create `Context` objects:
 {{{
 object StackSpecification extends Specification {
   val empty = beforeContext(stack.clear)
