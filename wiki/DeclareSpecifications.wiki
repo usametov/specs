@@ -3,6 +3,7 @@
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Declare_a_specification Declare a specification]
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Systems_under_specification Systems under specification]
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Call_a_function_before_or_after_each_example Call a function before or after each example]
+ * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Call_a_function_before_or_ after_each_system_or_specification Call a function before or after each system or specification]
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Contexts Contexts]
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Compose_specifications Compose specifications]
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Share_examples Share examples]
@@ -99,6 +100,40 @@ _Note_: you can also use syntactic sugar and write:
 ...
 }}}
 
+==Call a function before or after each system or specification==
+*(from 1.3.2)*
+
+In addition to the capacity to setup/teardown each example, it is also possible to do a system-wide setup/teardown with the following functions:
+
+{{{
+"my system" should { 
+  doFirst { prepareTheSystem }  // alias: prepareTheSystem.doFirst
+  
+  "execute this" in {...}
+  "and that" in {...}
+
+  doLast { cleanUp } // alias: cleanUp.doLast
+}
+}}}
+
+And more globally, before and after executing the specification for several systems, it is also possible to setup/teardown the environment:
+
+{{{
+object mySpec extends Specification { 
+  beforeSpec { prepareTheWholeEnvironment } // alias: prepareTheWholeEnvironment.beforeSpec
+  
+  "my system" should { 
+    doFirst { prepareTheSystem }
+    "execute this" in {...}
+    "and that" in {...}
+    doLast { cleanUp }
+  }
+
+  afterSpec { cleanupTheWholeEnvironment } // alias: cleanUpTheWholeEnvironment.afterSpec
+
+}}}
+
+
 =Contexts=
 
 You may want sometimes to identify more precisely the `Context` of a system under specification. To do this, you need to create `Context` objects:
@@ -128,6 +163,15 @@ Then, you can reuse contexts with the `->-` operator:
   ...
   }
 }}}
+
+*(from 1.3.2)*
+
+Global context setup and teardown can also be created with the following methods:
+{{{
+  val stackContext  = globalContext(createStack, deleteStack)
+  val stackContext2 = new Context { first(createStack) }
+  val stackContext3 = new Context { last(deleteStack) }
+}}
 
 ==Repeated examples==
 
