@@ -120,7 +120,7 @@ And more globally, before and after executing the specification for several syst
 
 {{{
 object mySpec extends Specification { 
-  beforeSpec { prepareTheWholeEnvironment } // alias: prepareTheWholeEnvironment.beforeSpec
+  doBeforeSpec { prepareTheWholeEnvironment } // alias: prepareTheWholeEnvironment.beforeSpec
   
   "my system" should { 
     doFirst { prepareTheSystem }
@@ -129,7 +129,7 @@ object mySpec extends Specification {
     doLast { cleanUp }
   }
 
-  afterSpec { cleanupTheWholeEnvironment } // alias: cleanUpTheWholeEnvironment.afterSpec
+  doAfterSpec { cleanupTheWholeEnvironment } // alias: cleanUpTheWholeEnvironment.afterSpec
 
 }}}
 
