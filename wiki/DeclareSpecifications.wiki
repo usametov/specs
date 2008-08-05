@@ -173,7 +173,7 @@ Global context setup and teardown can also be created with the following methods
   val stackContext  = globalContext(createStack, deleteStack)
   val stackContext2 = new Context { first(createStack) }
   val stackContext3 = new Context { last(deleteStack) }
-}}
+}}}
 
 ==Repeated examples==
 
