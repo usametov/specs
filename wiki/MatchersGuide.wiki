@@ -23,6 +23,7 @@ There are different kind of matchers which are used to assert that some properti
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_XML XML matchers]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_Paths_and_Files File matchers]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_composition_for_object_graphs Matchers for object graphs]
+ * [http://code.google.com/p/specs/wiki/MatchersGuide#Precise_failures Precise failures (*from 1.3.2*)]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#xUnit_assertions xUnit assertions]
 
 ===Create your own Matcher===
@@ -454,6 +455,23 @@ In the code above:
  * This could also be written using the `^^` operator as: `(((matchBar(_)) ^^ ((f:Foo) => f.singlebar))(foo) ^^ ((f:Foo) => f.singlebar))(other)`. In that expression, the first `^^` operator allows to select the `singlebar` field from foo to create a new Matcher of bar objects. And the second `^^` operator takes the resulting matcher and allow it to be applied to Foo objects which will have their `singlebar` field extracted
 
  * The `matchBar(_)` matcher is transformed to a matcher for sets of Bar objects using the toSet function. Similarly we could have applied a `toSeq` method to check for a Sequence of Bar objects
+
+=Precise failures=
+(*from 1.3.2*)
+
+Most of the failure messages display an expected value and an actual value. But an actual value on what precisely?
+{{{
+  // will fail with "List(ticket1, ticket2) doesn't have size 3" for example
+  machine.tickets must haveSize(3)
+}}}
+
+If you wish to get a more precise failure message on what's being tested you can set an alias with the "aka" method ("also known as"):
+
+{{{
+  // will fail with "the created tickets 'List(ticket1, ticket2)' doesn't have size 3"
+  machine.tickets aka "the created tickets" must haveSize(3)
+}}}
+
 
 ===xUnit assertions===
 
