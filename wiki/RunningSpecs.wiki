@@ -21,7 +21,7 @@ The following libraries are necessary to run specifications.
  * [http://scala-tools.org/repo-releases/org/specs/specs/1.3.1 specs-1.3.1.jar]
  * [http://scala-tools.org/repo-releases/org/scala-lang/scala-library/2.7.1 scala-library-2.7.1.jar]
 
-If you use ScalaCheck you must add
+If you use `ScalaCheck` you must add
 
  * [http://scala-tools.org/repo-releases/org/scalacheck/scalacheck/1.3 scalacheck-1.3.jar]
 
@@ -40,7 +40,7 @@ To run the specifications as JUnit suites:
 
  * [http://repo1.maven.org/maven2/junit/junit/4.4 junit-4.4.jar]
 
-And finally to run the specifications as ScalaTest suites, use
+And finally to run the specifications as `ScalaTest` suites, use
 
  * [http://scala-tools.org/repo-releases/org/scalatest/scalatest/0.9.3 scalatest-0.9.3.jar]
 
