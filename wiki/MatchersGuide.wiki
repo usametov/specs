@@ -345,6 +345,16 @@ By default, the statement `property must pass` will count as one assertion. If y
   property((b: Boolean) => isAssertion(b == true))
 }}}
 
+Furthermore, if this is really the behavior you want for your whole specification, then you can specify `assertProperties` at the beginning of it:
+
+{{{
+  object spec extends Specification with Scalacheck {
+    assertProperties
+    // one assertion will be counted on each property evaluation
+    property((b: Boolean) => b == true)
+  }
+}}}
+
 =Matchers applicable to XML=
 
  * `<a><b/></a> must equalIgnoreSpace(<a> <b/></a>)` is ok if the nodes are same but ignoring space (and inner nodes order). You can use `==/` as an alias
