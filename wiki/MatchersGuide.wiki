@@ -337,20 +337,25 @@ where:
 ===Assertions number===
 *(from 1.3.2)*
 
-By default, the statement `property must pass` will count as one assertion. If you want to better reflect the number of tested properties, you can add `isAssertion` to the body of the function you're testing. Like:
+By default, the statement `property must pass` will count each evaluation as one assertion. You can deactivate this behavior by declaring `dontAssertProperties` at the beginning of your specification and get finer control of what's counted as an assertion with `isAssertion`:
 
 {{{
+  dontAssertProperties()
   property((b: Boolean) => (b == true).isAssertion)
   // or
   property((b: Boolean) => isAssertion(b == true))
 }}}
 
-Furthermore, if this is really the behavior you want for your whole specification, then you can specify `assertProperties` at the beginning of it:
+Of course, you can globally re-enable assertions counting with `assertProperties` for the rest of your specification:
 
 {{{
   object spec extends Specification with Scalacheck {
-    assertProperties
+    // no assertion count when evaluating properties
+    dontAssertProperties()
+    property((b: Boolean) => b == true)
+
     // one assertion will be counted on each property evaluation
+    assertProperties()
     property((b: Boolean) => b == true)
   }
 }}}
