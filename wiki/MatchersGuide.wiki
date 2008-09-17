@@ -399,6 +399,8 @@ Of course, you can globally re-enable assertions counting with `assertProperties
 </a> must ==/(<a><b name="value"></b></a>)
 }}}
 
+Note: this matcher is sensitive to the nodes order! This will be modified, see issue 38.
+
 =Matchers applicable to Paths and Files=
 
 Most of the time, you should try to minimize the interactions with the File System. However, sometimes this is precisely what you want to specify! The following matchers will help you specify paths and files properties.
