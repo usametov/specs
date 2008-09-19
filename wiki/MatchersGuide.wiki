@@ -399,7 +399,17 @@ Of course, you can globally re-enable assertions counting with `assertProperties
 </a> must ==/(<a><b name="value"></b></a>)
 }}}
 
-Note: this matcher is sensitive to the nodes order! This will be modified, see issue 38.
+(*before 1.3.2*)
+Be careful, this matcher checks the nodes order which has been flagged as issue 38.
+
+(*1.3.2*)
+This matcher doesn't check the nodes order, if you want to check the node order, add `ordered` to the matcher:
+{{{
+<a>
+  <b/>
+  <c/>
+</a> must ==/(<a><b/></c></a>).ordered
+}}}
 
 =Matchers applicable to Paths and Files=
 
