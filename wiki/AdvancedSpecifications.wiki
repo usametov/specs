@@ -51,7 +51,7 @@ When you import `org.specs.Sugar._` you get some syntactic sugar that you can ad
 
 var j = 0
 3 times {j += _}
-j mustBe 6
+j must_== 6
 }}}  
  * println any object with `myObject.println` or `myObject.pln`. If you want the myObject to be printed _and_ returned you can use `myObject.pp` ("print and pass")
  * you can use the constants `ok` and `ko` as equivalents of `true` and `false`
