@@ -117,9 +117,6 @@ In some cases, you may want to specify that a matcher is only applicable dependi
 
 =Matchers applicable to any object=
 
- * `a must be(b)` is ok if `a eq b` (alias: `a mustBe b` or `a mustEq b`)
- * `a must notBe(b)` is ok if `!(a eq b)` (alias: `a must notEq(b)` or `a mustNotBe(b)`)
-
  * `a must be_==(b)` is ok if `a == b` (alias: `a must_== b` or `a mustEqual b`)
  * `a must be_!=(b)` is ok if `a != b` (alias: `a must_!= b`)
 
@@ -138,6 +135,11 @@ List(1) must beEqual(list)
 
 
  * `a must beDifferent(b)` is ok if `a != b` and constrains a and b to have the same type at compilation time
+
+ * `a must be(b)` is ok if `a eq b` (alias: `a mustBe b` or `a mustEq b`)
+ * `a must notBe(b)` is ok if `!(a eq b)` (alias: `a must notEq(b)` or `a mustNotBe(b)`)
+
+Note that the `eq` operator can be very tricky, so be careful to use it on purpose. See issue 40 for more details.
 
  * `a must beIn(iterable)` is ok if `iterable.exists(_ == a)`
  * `a must notBeIn(iterable)` is ok if `!iterable.exists(_ == a)`
