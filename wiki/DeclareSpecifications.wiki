@@ -240,7 +240,7 @@ declare("my System") should {
 Example descriptions are not even necessary to create a specification:
 {{{
 object expectationsOnly extends Specification("Hello world") with JMocker {
-  "hello world".size mustBe 11
+  "hello world".size mustEqual 11
   3 must_== { "abc".size }
   classOf[java.io.OutputStream].expectsOne(_.flush) in { _.flush }
 }
