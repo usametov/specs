@@ -23,7 +23,7 @@ import org.specs._
 
 object helloWorld extends Specification {
   "'hello world' has 11 characters" in {
-     "hello world".size mustBe 11
+     "hello world".size must_== 11
   }
   "'hello world' matches 'h.* w.*'" in {
      "hello world" must beMatching("h.* w.*")
@@ -48,7 +48,7 @@ import org.specs._
 object helloWorld extends Specification {
   "hello world" should {
     "have 11 characters" in {
-      "hello world".size mustBe 11
+      "hello world".size must_== 11
     }
     "match 'h.* w.*'" in {
       "hello world" must beMatching("h.* w.*")
