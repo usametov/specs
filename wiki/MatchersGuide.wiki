@@ -229,6 +229,8 @@ Detailed differences are also applicable to the containAll matcher.
 (*from 1.3.2*)
  * `a must containAll(b)` is ok if `b.forall(x => a.exists(_ == x))`
  * `a must notContainAll(b)` is an alias for `containAll(b).not`
+ * `a must containInOrder(b)` is ok if `containAll(b)` and b's elements order is respected
+
 
  * `a must exist(f)` is ok if a contains an element verifying the function f (alias: `mustExist`)
  * `a must notExist(f)` is ok if a doesn't contain an element verifying the function f (alias: `mustNotExist`)
