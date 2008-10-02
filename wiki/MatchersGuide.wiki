@@ -214,14 +214,21 @@ You can also get more detailed failure messages for String comparisons with the 
 
 Note that you can change the pair of separators used to highlight the differences with:
 {{{
-  detailledDiffs("[]")
-  // or detailledDiffs("<<>>") to separate with << and >>
+  detailedDiffs("[]")
+  // or detailedDiffs("<<>>") to separate with << and >>
 }}}
+
+(*from 1.3.2*)
+Detailed differences are also applicable to the containAll matcher.
 
 =Matchers applicable to Iterables=
  
  * `a must contain(b)` is ok if `a.exists(_ == b)` (alias: `mustContain`)
  * `a must notContain(b)` is ok if `!a.exists(_ == b)` (alias: `mustNotContain`)
+
+(*from 1.3.2*)
+ * `a must containAll(b)` is ok if `b.forall(x => a.exists(_ == x))`
+ * `a must notContainAll(b)` is an alias for `containAll(b).not`
 
  * `a must exist(f)` is ok if a contains an element verifying the function f (alias: `mustExist`)
  * `a must notExist(f)` is ok if a doesn't contain an element verifying the function f (alias: `mustNotExist`)
