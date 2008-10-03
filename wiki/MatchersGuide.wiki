@@ -157,7 +157,10 @@ List(1, 2) must beLike { case x::y::Nil => true }
 
  * `a must beNull` is ok if a is null
  * `a must notBeNull` is ok if a is not null
- * `a must beAlsoNull(b)` is ok if a is null when b is null or a is not null when b is null
+ * `a must beAlsoNull(b)` is a shortcut for 2 expectations: 
+{{{a must beNull.when(b == null)
+b must beNull.when(a == null)
+}}}
 
  * `a must haveClass(c)` is ok if a.getClass == c
  * `a must notHaveClass(c)` is ok if a.getClass != c
