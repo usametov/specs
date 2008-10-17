@@ -40,7 +40,7 @@ Here is a sample maven snippet you can add to your pom.xml file:
 
 The next specs release will take advantage of the new "Manifest" feature of Scala and allow to declare mocks like this:
 
-* `val a = mock[String]` 
+ * `val a = mock[String]` 
 
 = A simple mock example with specs and jMock =
 
