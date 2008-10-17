@@ -184,6 +184,21 @@ You can also introduce a failure with the `fail` function:
 
  * `a must throwThis(new Exception("message"))` is ok if evaluating `a` throws an exception e and `e == new Exception("message")`
  
+(*from 1.3.2*)
+
+The syntax is somehow simplified and allow just checking the type of the exception:
+
+ * `a must throwA[SpecialException]` is ok if evaluating `a` throws an Exception witht the type `SpecialException`(alias: `throwAn`)
+
+Or we can check the exception type and message:
+
+ * `a must throwA(SpecialException("message"))` is ok if evaluating `a` throws an exception e of type SpecialException and `e.getMessage == "message"` (alias `throwAn`, `throwThis`)
+
+Or we can use pattern matching for more specific checks:
+
+ * `a must throwA(new Exception) like {case Exception(m) => m.startsWith("bad")} ` is ok if evaluating `a` throws an Exception and the message starts with "bad"
+
+
 =Matchers applicable to Strings=
  
  * `a must equalIgnoreCase(b)` is ok if `a equalsIgnoreCase(b)` (alias: `a must_==/ b`)
