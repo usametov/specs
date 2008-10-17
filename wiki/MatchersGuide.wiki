@@ -192,7 +192,7 @@ The syntax is somehow simplified and allow just checking the type of the excepti
 
 Or we can check the exception type and message:
 
- * `a must throwA(SpecialException("message"))` is ok if evaluating `a` throws an exception e of type SpecialException and `e.getMessage == "message"` (alias `throwAn`, `throwThis`)
+ * `a must throwA(SpecialException("message"))` is ok if evaluating `a` throws an exception e of type `SpecialException` and `e.getMessage == "message"` (alias `throwAn`, `throwThis`)
 
 Or we can use pattern matching for more specific checks:
 
