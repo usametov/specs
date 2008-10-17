@@ -354,6 +354,19 @@ where:
 
  * the default is: `minTestsOk->100, maxDiscarded->500, minSize->0, maxSize->100`
 
+(*from 1.3.2*)
+ * Quick properties
+
+It is possible to specify properties directly with the `verifies` operator:
+{{{
+object StringSpecification extends Specification("String") with Scalacheck {
+   "startsWith" verifies { (a: String, b: String) => (a + b).startsWith(a) }
+   "endsWith" verifies { (a: String, b: String) => (a + b).endsWith(b) }
+}
+}}}
+
+This will create examples which names are "startsWith" and "endsWith"
+
 ===Assertions number===
 *(from 1.3.2)*
 
