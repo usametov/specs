@@ -354,8 +354,8 @@ where:
 
  * the default is: `minTestsOk->100, maxDiscarded->500, minSize->0, maxSize->100`
 
+=One liners=
 (*from 1.3.2*)
- * Quick properties
 
 It is possible to specify properties directly with the `verifies` operator:
 {{{
