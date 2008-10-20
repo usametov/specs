@@ -570,7 +570,9 @@ If you wish to get a more precise failure message on what's being tested you can
 
 *specs* provides xUnit-like assertions to allow a smooth transition path from Test-Driven Development to Behavior-Driven Development:
 {{{
-object jUnitTest extends Specification {
+import org.specs.matcher._
+
+object jUnitTest extends Specification with xUnit {
   "provide the 'assertTrue' jUnit assertion" {
     assertTrue(1 == 1 + 1)
   }
