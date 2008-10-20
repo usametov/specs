@@ -15,6 +15,7 @@ There are different kind of matchers which are used to assert that some properti
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Combine_matchers Combine matchers]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_any_object Matchers applicable to any object]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#If_you_want_to_verify_that_an_exception_is_thrown Matchers for exceptions]
+ * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_Strings String matchers]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_Iterables Iterables matchers]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_Maps Maps matchers]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_numerical_values Numerical matchers]
