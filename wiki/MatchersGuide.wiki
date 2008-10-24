@@ -389,7 +389,7 @@ object StringSpecification extends Specification("String") with Scalacheck {
 
 This will create examples which names are "startsWith" and "endsWith".
 
-Note that you can still use ScalaCheck parameters to control the test generation:
+Note that you can still use `ScalaCheck` parameters to control the test generation:
 {{{
 "startsWith" verifies ((a: String, b: String) => (a + b).startsWith(a)).set(minTestsOk->250)
 }}}
