@@ -68,7 +68,21 @@ At times, some words can be repeated at the beginning of each example:
 
 You can factor out the "provide" word by adding a new function:
 {{{
+  import org.specs.specification.Example
   def provide(e: =>Example) = { currentSut.verb += " provide"; e }
+
+  "The project helpers" should provide {
+    "this function" in { ... }
+    "that function" in { ... }
+    "this other function" in { ... }
+  }
+}}}
+
+(*from 1.3.2*)
+
+Modifying the verb for the System under specification has been better encapsulated:
+{{{
+  def provide = addToSusVerb("provide")
 
   "The project helpers" should provide {
     "this function" in { ... }
@@ -88,7 +102,7 @@ declare("my system") should {...}
 
 This is called setup and teardown in the JUnit world. Although this is contreversial (see [http://jamesnewkirk.typepad.com/posts/2007/09/why-you-should-.html here] for example), you can do it with *specs*, by using `doBefore` and `doAfter`:
 {{{
-"my system" should { doBefore { resetTheSystem }
+"my system" should { doBefore { resetTheSystem() /** user-defined reset function */ }
   "mess up the system" in {...}
   "and again" in {...}
 }
@@ -96,7 +110,7 @@ This is called setup and teardown in the JUnit world. Although this is contrever
 
 _Note_: you can also use syntactic sugar and write:
 {{{
-"my system" should { resetTheSystem.before
+"my system" should { resetTheSystem.before // equivalent as the example before, using an implicit definition.
 ...
 }}}
 _Note_: `Contexts` (see below) can also be used to specify before/after actions
@@ -108,12 +122,14 @@ In addition to the capacity to setup/teardown each example, it is also possible 
 
 {{{
 "my system" should { 
-  doFirst { prepareTheSystem }  // alias: prepareTheSystem.doFirst
+  doFirst { prepareTheSystem() /** user-defined setup function */ }  
+  // can also be written: prepareTheSystem().doFirst
   
   "execute this" in {...}
   "and that" in {...}
 
-  doLast { cleanUp } // alias: cleanUp.doLast
+  doLast { cleanUp() /** user-defined cleanup function */ } 
+  // can also be written: cleanUp().doLast
 }
 }}}
 
@@ -121,16 +137,18 @@ And more globally, before and after executing the specification for several syst
 
 {{{
 object mySpec extends Specification { 
-  doBeforeSpec { prepareTheWholeEnvironment } // alias: prepareTheWholeEnvironment.beforeSpec
+  doBeforeSpec { prepareTheWholeEnvironment() /** user-defined function */ } 
+  // can also be written: prepareTheWholeEnvironment().beforeSpec
   
   "my system" should { 
-    doFirst { prepareTheSystem }
+    doFirst { prepareTheSystem() }
     "execute this" in {...}
     "and that" in {...}
-    doLast { cleanUp }
+    doLast { cleanUp() }
   }
 
-  doAfterSpec { cleanupTheWholeEnvironment } // alias: cleanUpTheWholeEnvironment.afterSpec
+  doAfterSpec { cleanupTheWholeEnvironment() /** user-defined function */ } 
+  // can also be written: cleanUpTheWholeEnvironment().afterSpec
 
 }}}
 
@@ -239,6 +257,8 @@ declare("my System") should {
 
 Example descriptions are not even necessary to create a specification:
 {{{
+import org.specs.mock.JMocker
+
 object expectationsOnly extends Specification("Hello world") with JMocker {
   "hello world".size mustEqual 11
   3 must_== { "abc".size }
@@ -322,7 +342,8 @@ However, if you need to execute samples sequentially (as in a [http://code.googl
 
 {{{
 object mySpec extends Specification {
-  "The first functionality" should { setSequential
+  "The first functionality" should { 
+    setSequential() // ensures that each example is executed as soon as defined
 
     "have example 1 execute first" in {...}
     // example 2 uses the results of example 1
