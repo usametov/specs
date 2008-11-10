@@ -32,6 +32,8 @@ There are different kind of matchers which are used to assert that some properti
 Creating a new Matcher is easy. You extend the `Matcher` class, using a case class and implement the `apply` method:
 
 {{{
+  import org.specs.matcher.Matcher
+
   "A matcher" can {
     "be created as a case class" in {
       case class matchHello(a: String) extends Matcher[String]() {
@@ -51,6 +53,8 @@ You must return a tuple containing:
 A matcher can also be created through as a val:
 
 {{{
+  import org.specs.matcher.Matcher
+
   "A matcher" can {
     "be created as a val" in {
       val beEven = new Matcher[Int] {
@@ -66,6 +70,8 @@ A matcher can also be created through as a val:
 
 Or through a method:
 {{{
+  import org.specs.matcher.Matcher
+
   "A matcher" can {
     "be created as a method" in {
       def divide(a: Int) = new Matcher[Int] {
@@ -87,7 +93,7 @@ _Implementation note: in the above examples, the lazy parameter to the apply met
 Simply use the `not` method on a matcher:
 
 {{{
- 2 must beEven
+ 2 must beEven // beEven is a user-made matcher checking if a number is even
  val beOdd = beEven.not
  3 must beOdd
 }}}
@@ -99,9 +105,9 @@ In that case, the ok message of the first matcher is used as a ko message for th
 You can combine matchers with logical operators: `and`, `or`, `xor`, `verifyAll`, `verifyAny`
 
 {{{
-  "ab" must beMatching("a") and beMatching("b")
-  "ab" must beMatching("a") or beMatching("c")
-  "ab" must beMatching("a") xor beMatching("c")
+  "ab" must (beMatching("a") and beMatching("b"))
+  "ab" must (beMatching("a") or beMatching("c"))
+  "ab" must (beMatching("a") xor beMatching("c"))
   "ab" must verifyAll(beMatching("a"), beMatching("b"))
   "ab" must verifyAny(beMatching("a"), beMatching("b"))
 }}}
@@ -150,7 +156,7 @@ Note that the `eq` operator can be very tricky, so be careful to use it on purpo
 
  * `a must verify(f)` is ok if `f(a) == true` (alias: `a mustVerify f` or `a verifies b`)
 
- * `a must beLike { case p => booleanFunction }` is ok if a matches the pattern `p` and the booleanFunction returns true:
+ * `a must beLike { case p => aBooleanFunction }` is ok if a matches the pattern `p` and the function `aBooleanFunction` returns true:
 
 {{{
 List(1, 2) must beLike { case x::y::Nil => true }
@@ -193,7 +199,7 @@ The syntax is somehow simplified and allow just checking the type of the excepti
 
 Or we can check the exception type and message:
 
- * `a must throwA(SpecialException("message"))` is ok if evaluating `a` throws an exception e of type `SpecialException` and `e.getMessage == "message"` (alias `throwAn`, `throwThis`)
+ * `a must throwA(MyUserException("message"))` is ok if evaluating `a` throws an exception e of type `MyUserException` and `e.getMessage == "message"` (alias `throwAn`, `throwThis`)
 
 Or we can use pattern matching for more specific checks:
 
@@ -224,8 +230,8 @@ Or we can use pattern matching for more specific checks:
 
 You can also get more detailed failure messages for String comparisons with the `detailedDiffs` method:
 {{{
-  object SpecificationWithDetailedFailures {
-    detailedDiffs
+  object SpecificationWithDetailedFailures extends Specification {
+    detailedDiffs() // enable detailed differences
     "abc" must_== "ab"    // 'ab(c)' is not equal to 'ab'
     "abcd" must_== "abd"  // 'ab(c)d' is not equal to 'abd'
     "acd" must_== "abd"   // 'a(c)d' is not equal to 'abd'
@@ -351,7 +357,7 @@ val prop = property((a:Int) => true)
 prop must pass
 }}} 
 
- * You can display Scalacheck messages with `display` on the Console:
+ * You can display `ScalaCheck` messages with `display` on the Console:
 
 {{{
 data must pass {
@@ -359,7 +365,7 @@ data must pass {
 }(display)
 }}} 
 
- * You can set Scalacheck properties with `set` (or `display` to additionally see the result on the Console):
+ * You can set `ScalaCheck` properties with `set` (or `display` to additionally see the result on the Console):
 
 {{{
 data must pass {
@@ -394,28 +400,28 @@ Note that you can still use `ScalaCheck` parameters to control the test generati
 "startsWith" verifies ((a: String, b: String) => (a + b).startsWith(a)).set(minTestsOk->250)
 }}}
 
-===Assertions number===
+===Expectations number===
 *(from 1.3.2)*
 
-By default, the statement `property must pass` will count each evaluation as one assertion. You can deactivate this behavior by declaring `dontAssertProperties` at the beginning of your specification and get finer control of what's counted as an assertion with `isAssertion`:
+By default, the statement `property must pass` will count each evaluation as one expectation. You can deactivate this behavior by declaring `dontExpectProperties` at the beginning of your specification and get finer control of what's counted as an expectation with `isExpectation`:
 
 {{{
-  dontAssertProperties()
-  property((b: Boolean) => (b == true).isAssertion)
+  dontExpectProperties()
+  property((b: Boolean) => (b == true).isExpectation)
   // or
-  property((b: Boolean) => isAssertion(b == true))
+  property((b: Boolean) => isExpectation(b == true))
 }}}
 
-Of course, you can globally re-enable assertions counting with `assertProperties` for the rest of your specification:
+Of course, you can globally re-enable expectations counting with `expectProperties` for the rest of your specification:
 
 {{{
   object spec extends Specification with Scalacheck {
-    // no assertion count when evaluating properties
-    dontAssertProperties()
+    // no expectations count when evaluating properties
+    dontExpectProperties()
     property((b: Boolean) => b == true)
 
-    // one assertion will be counted on each property evaluation
-    assertProperties()
+    // one expectation will be counted on each property evaluation
+    expectProperties()
     property((b: Boolean) => b == true)
   }
 }}}
@@ -529,6 +535,8 @@ trait ObjectGraph {
 
 You will define the following matchers for the classes Foo and Bar:
 {{{
+import org.specs.matcher._
+
 trait ObjectGraphMatchers extends ObjectGraph with Matchers {
   case class matchFoo(foo: Foo) extends Matcher[Foo] {
     def apply(other: => Foo) = {
@@ -560,7 +568,7 @@ In the code above:
 Most of the failure messages display an expected value and an actual value. But an actual value on what precisely?
 {{{
   // will fail with "List(ticket1, ticket2) doesn't have size 3" for example
-  machine.tickets must haveSize(3)
+  machine.tickets must haveSize(3) // machine is a user-defined object
 }}}
 
 If you wish to get a more precise failure message on what's being tested you can set an alias with the "aka" method ("also known as"):
