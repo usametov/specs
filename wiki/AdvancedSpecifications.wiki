@@ -34,7 +34,7 @@ In the example above, you have a !DataTable with:
 The resulting output in case of a failure would be:
 {{{
  |"output dir" | "spec name" | "file path"           |
-x|"wrong"      | "spec1"     | "./spec1.xml"         | Map(./bad/spec1.xml -> <...>) hasn't key './spec1.xml'  
+x|"wrong"      | "spec1"     | "./spec1.xml"         | Map(./bad/spec1.xml -> <...>) doesn't have key './spec1.xml'  
  |"result"     | "spec1"     | "./result/spec1.xml"  |  
 }}}
 
