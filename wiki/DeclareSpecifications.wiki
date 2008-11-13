@@ -68,20 +68,6 @@ At times, some words can be repeated at the beginning of each example:
 
 You can factor out the "provide" word by adding a new function:
 {{{
-  import org.specs.specification.Example
-  def provide(e: =>Example) = { currentSut.verb += " provide"; e }
-
-  "The project helpers" should provide {
-    "this function" in { ... }
-    "that function" in { ... }
-    "this other function" in { ... }
-  }
-}}}
-
-(*from 1.3.2*)
-
-Modifying the verb for the System under specification has been better encapsulated:
-{{{
   def provide = addToSusVerb("provide")
 
   "The project helpers" should provide {
@@ -116,7 +102,6 @@ _Note_: you can also use syntactic sugar and write:
 _Note_: `Contexts` (see below) can also be used to specify before/after actions
 
 ==Call a function before or after each system or specification==
-*(from 1.3.2)*
 
 In addition to the capacity to setup/teardown each example, it is also possible to do a system-wide setup/teardown with the following functions:
 
@@ -183,8 +168,6 @@ Then, you can reuse contexts with the `->-` operator:
   ...
   }
 }}}
-
-*(from 1.3.2)*
 
 Global context setup and teardown can also be created with the following methods:
 {{{
