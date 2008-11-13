@@ -4,7 +4,7 @@
 ===Introduction===
 *specs* is designed as an alternative for JUnit when specifying and testing Java or Scala projects. Yet, it is able to reuse the existing JUnit infrastructure for execution and reporting since the specifications can be executed as JUnit4 test suites.
 
-*specs* also integrates an innovative feature, the [http://code.google.com/p/scalacheck/ scalacheck] project in order to be able to generate a numerous cases testing a given property.
+*specs* also integrates an advanced testing and specification library, the [http://code.google.com/p/scalacheck/ `ScalaCheck`] project in order to be able to generate a numerous cases testing a given property.
 
 *specs* takes its inspiration from existing frameworks:
 
@@ -38,7 +38,7 @@ If you're a Maven user, you need to add the following dependency to your pom fil
     <dependency>
       <groupId>org.specs</groupId>
       <artifactId>specs</artifactId>
-      <version>1.3.0</version> <!-- specify the version here ->
+      <version>1.4.0</version> <!-- specify the version here ->
     </dependency>
 }}}
  
