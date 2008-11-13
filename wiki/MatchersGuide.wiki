@@ -24,7 +24,7 @@ There are different kind of matchers which are used to assert that some properti
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_XML XML matchers]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_Paths_and_Files File matchers]
  * [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_composition_for_object_graphs Matchers for object graphs]
- * (*from 1.3.2*) [http://code.google.com/p/specs/wiki/MatchersGuide#Precise_failures Precise failures] 
+ * [http://code.google.com/p/specs/wiki/MatchersGuide#Precise_failures Precise failures] 
  * [http://code.google.com/p/specs/wiki/MatchersGuide#xUnit_assertions xUnit assertions]
 
 ===Create your own Matcher===
@@ -165,13 +165,11 @@ List(1, 2) must beLike { case x::y::Nil => true }
  * `a must beNull` is ok if a is null
  * `a must notBeNull` is ok if a is not null
 
- * `a must beAlsoNull(b)` is a shortcut for 2 expectations: 
+ * `a must beAsNullAs(b)` is a shortcut for 2 expectations: 
 {{{
 a must beNull.when(b == null)
 b must beNull.when(a == null)
 }}}
-
-(*from 1.3.2*) `beAlsoNull` is deprecated and replaced by `beAsNullAs`
 
  * `a must haveClass(c)` is ok if a.getClass == c
  * `a must notHaveClass(c)` is ok if a.getClass != c
@@ -185,15 +183,6 @@ You can also introduce a failure with the `fail` function:
  * `fail("not implemented yet")`
 
 ===If you want to verify that an exception is thrown===
-
- * `a must throwA(new Exception)` is ok if evaluating `a` throws a Exception (alias: `throwAn`)
- * `a must throwA(new Exception)like {case Exception(m) => m.startsWith("bad")} ` is ok if evaluating `a` throws an Exception and the message starts with "bad"
-
- * `a must throwThis(new Exception("message"))` is ok if evaluating `a` throws an exception e and `e == new Exception("message")`
- 
-(*from 1.3.2*)
-
-The syntax is somehow simplified and allow just checking the type of the exception:
 
  * `a must throwA[SpecialException]` is ok if evaluating `a` throws an Exception witht the type `SpecialException`(alias: `throwAn`)
 
@@ -247,15 +236,13 @@ Note that you can change the pair of separators used to highlight the difference
   // or detailedDiffs("<<>>") to separate with << and >>
 }}}
 
-(*from 1.3.2*)
-Detailed differences are also applicable to the containAll matcher.
+Detailed differences are also applicable to the `containAll` matcher.
 
 =Matchers applicable to Iterables=
  
  * `a must contain(b)` is ok if `a.exists(_ == b)` (alias: `mustContain`)
  * `a must notContain(b)` is ok if `!a.exists(_ == b)` (alias: `mustNotContain`)
 
-(*from 1.3.2*)
  * `a must containAll(b)` is ok if `b.forall(x => a.exists(_ == x))`
  * `a must notContainAll(b)` is an alias for `containAll(b).not`
  * `a must containInOrder(b)` is ok if `containAll(b)` and b's elements order is respected
@@ -284,7 +271,6 @@ List(1, List(2, 3, List(4)), 5) must haveSameElementsAs(List(5, List(List(4), 2,
  * `map must havePair(p)` is ok if `map.exists(p == _)`
  * `map must notHavePair(p)` is ok if `!map.exists(p == _)`
 
-(*from 1.3.2*)
  * `map must havePairs(pairs)` is ok if `pairs.forall(pair => map.exists(pair == _))`
  * `map must notHavePair(pairs)` is ok if `!pairs.forall(pair => map.exists(pair == _))`
 
@@ -302,9 +288,7 @@ List(1, List(2, 3, List(4)), 5) must haveSameElementsAs(List(5, List(List(4), 2,
 =Matchers applicable to Options=
  
  * `a must beNone` is ok if a is None
- * `a must beAlsoNone(b)` is ok if a is None when b is None or a is not None when b is None
-
-(*from 1.3.2*) `beAlsoNone` is deprecated and replaced by `beAsNoneAs`
+ * `a must beAsNoneAs(b)` is ok if a is None when b is None or a is not None when b is None
 
  * `a must beSome[Type]` is ok if a is Some(t: Type)
  * `a must beSomething` is ok if a is Some(a: Any)
@@ -383,7 +367,6 @@ where:
  * the default is: `minTestsOk->100, maxDiscarded->500, minSize->0, maxSize->100`
 
 ===One liners===
-(*from 1.3.2*)
 
 It is possible to specify properties directly with the `verifies` operator:
 {{{
@@ -401,7 +384,6 @@ Note that you can still use `ScalaCheck` parameters to control the test generati
 }}}
 
 ===Expectations number===
-*(from 1.3.2)*
 
 By default, the statement `property must pass` will count each evaluation as one expectation. You can deactivate this behavior by declaring `dontExpectProperties` at the beginning of your specification and get finer control of what's counted as an expectation with `isExpectation`:
 
@@ -465,10 +447,6 @@ Of course, you can globally re-enable expectations counting with `expectProperti
 </a> must ==/(<a><b name="value"></b></a>)
 }}}
 
-(*before 1.3.2*)
-Be careful, this matcher checks the nodes order which has been flagged as issue 38.
-
-(*1.3.2*)
 This matcher doesn't check the nodes order, if you want to check the node order, add `ordered` to the matcher:
 {{{
 <a>
@@ -563,7 +541,6 @@ In the code above:
  * The `matchBar(_)` matcher is transformed to a matcher for sets of Bar objects using the toSet function. Similarly we could have applied a `toSeq` method to check for a Sequence of Bar objects
 
 =Precise failures=
-(*from 1.3.2*)
 
 Most of the failure messages display an expected value and an actual value. But an actual value on what precisely?
 {{{
