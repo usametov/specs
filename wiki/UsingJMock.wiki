@@ -36,12 +36,6 @@ Here is a sample maven snippet you can add to your pom.xml file:
     </dependency>
 }}}
 
-=Note for specs 1.3.2=
-
-The next specs release will take advantage of the new "Manifest" feature of Scala and allow to declare mocks like this:
-
- * `val a = mock[String]` 
-
 = A simple mock example with specs and jMock =
 
 Using mocks follows a 4 steps process:
@@ -58,7 +52,7 @@ object mySpec extends Specification with JMocker with ClassMocker {...}
 object mySpec extends Specification with JMocker with ClassMocker {
   "my system" should {
     "use mocks" in {
-      val mockedService = mock(classOf[Service])
+      val mockedService = mock[Service]
     }
   }
 }
@@ -68,7 +62,7 @@ object mySpec extends Specification with JMocker with ClassMocker {
 {{{
   "a statistics component" should {
     doBefore {
-      blogger = mock(classOf[Blogger])
+      blogger = mock[Blogger]
       stats = new Statistics(blogger)
     }
     "return the number of posts for today" in {...}
@@ -80,7 +74,7 @@ object mySpec extends Specification with JMocker with ClassMocker {
 object mySpec extends Specification with JMocker with ClassMocker {
   "my system" should {
     "use mocks" in {
-      val mockedService = mock(classOf[Service])
+      val mockedService = mock[Service]
       expect {
         one(mockedService).executeService() // this will be called one time exactly
       }
@@ -94,7 +88,7 @@ object mySpec extends Specification with JMocker with ClassMocker {
 object mySpec extends Specification with JMocker with ClassMocker {
   "my system" should {
     "use mocks" in {
-      val mockedService = mock(classOf[Service])
+      val mockedService = mock[Service]
       expect {
         one(mockedService).executeService() // this will be called one time exactly
       }
@@ -113,7 +107,7 @@ trait ButtonAndLightMock extends ButtonAndLight with JMocker with ClassMocker {
   var mock: Light = _
   var button: Button = _
   def init = {
-    mock = mock(classOf[Light])
+    mock = mock[Light]
     button = Button(mock)
   }
 }
@@ -166,7 +160,7 @@ import org.scalatest.Suite
  */
 class jMockerWithScalaTestSuite extends Suite {
   def testMockExpectations {
-    val list: java.util.List[Object] = mock(classOf[java.util.List[Object]])
+    val list: java.util.List[Object] = mock[java.util.List[Object]]
     expecting { one(list).size }
     list.size
     checkContext
@@ -232,13 +226,13 @@ Using specs you can use blocks to specify nested expectations:
   case class Module(name: String)
   case class Project(module: Module, name: String)
   case class Workspace(project: Project)
-  val workspace = mock(classOf[Workspace])
+  val workspace = mock[Workspace]
   
   expect { 
-    one(workspace).project.willReturn(classOf[Project]) {p: Project => 
+    one(workspace).project.willReturn[Project] {p: Project => 
         // nested expectations on project
         one(p).name willReturn "hi"
-        one(p).module.willReturn(classOf[Module]) {m: Module => 
+        one(p).module.willReturn[Module] {m: Module => 
           // nested expectation on module
           one(m).name willReturn "module"}
     }
@@ -252,10 +246,10 @@ or
   // a workspace is a list of projects
   case class Project(name: String)
   case class Workspace(projects: List[Project])
-  val workspace = mock(classOf[Workspace]) 
+  val workspace = mock[Workspace]
   expect { 
     // the workspace will return project mocks with different expectations
-    one(workspace).projects willReturnIterable(classOf[Project], 
+    one(workspace).projects willReturnIterable[Project]( 
            {p: Project => one(p).name willReturn "p1" },
            {p: Project => one(p).name willReturn "p2" })
   }
@@ -316,13 +310,11 @@ Shortcuts are provided for the most common types of parameters:
   any(<anything>) 
  
   // checks the class of the parameter
-  a(classOf[Type]) 
+  a[Type]
   
   // returns always true, can be mixed with other matchers in a method call
-  a[Type]          
-
-  aNull(classOf[Type])
-  aNonNull(classOf[Type])
+  aNull[Type]
+  aNonNull[Type]
   equal(value)
   same(value)
 }}}
@@ -333,8 +325,8 @@ Shortcuts are provided for the most common types of parameters:
 {{{
   case class Param(name: String)
   trait ToMock { def method(p: Param*) = () }
-  val mocked = mock(classOf[ToMock])
-  expect { 1.of(mocked).method(any(classOf[Param])) }
+  val mocked = mock[ToMock]
+  expect { 1.of(mocked).method(any[Param]) }
   mocked.method(Param("hello"))
 }}}
 
@@ -379,20 +371,19 @@ You can model expectations on some abstracts states, using the `when` and `set` 
   }
 }}}
 
-==Counting assertions==
+==Counting expectations==
 
-You can say that some expectations should be counted as assertions in the statistics:
+You can say that some expectations should be counted as such in the statistics:
 {{{
   expect { 
-    one(list).get(anyInt) will(returnValue("hey")) isAssertion 
+    one(list).get(anyInt) will(returnValue("hey")) isExpectation
   }
   list.get(0) must_== "hey"
 }}}
 
-This will report 2 assertions (one for the mock expectation, the other one for the equality).
+This will report 2 expectations (one for the mock expectation, the other one for the equality).
 
 ==One liners==
-
 
 If you want to express only one expectation in your example, you can use this short form:
 {{{
