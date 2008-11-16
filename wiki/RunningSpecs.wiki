@@ -23,9 +23,7 @@ The following libraries are necessary to run specifications.
 
 If you use `ScalaCheck` you must add
 
- * [http://scala-tools.org/repo-snapshots/org/scalacheck/scalacheck/1.4-scSNAPSHOT scalacheck-1.4-scSNAPSHOT.jar]
-
-*Note:* this is a temporary dependency. Specs will migrate to scalacheck-1.5 as soon as it is released.
+ * [http://scala-tools.org/repo-releases/org/scalacheck/scalacheck/1.5 scalacheck-1.5.jar]
 
 If you use mock objects with jMock, add
 
