@@ -147,7 +147,7 @@ object mockExample extends Specification with ButtonAndLightMock {
 
 = Use JMock without a Specification =
 
-You may want to use JMock without necessarily creating a specification (if you use ScalaTest only for example). In that case, you can just import the JMocker object and use its functionalities directly:
+You may want to use JMock without necessarily creating a specification (if you use `ScalaTest` only for example). In that case, you can just import the JMocker object and use its functionalities directly:
 {{{
 package org.specs.mock
 
