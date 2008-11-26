@@ -171,12 +171,12 @@ a must beNull.when(b == null)
 b must beNull.when(a == null)
 }}}
 
- * `a must haveClass(c)` is ok if a.getClass == c
- * `a must notHaveClass(c)` is ok if a.getClass != c
- * `a must haveSuperClass(c)` is ok if c.isAssignableFrom a.getClass
- * `a must notHaveSuperClass(c)` is ok if !(c.isAssignableFrom a.getClass)
- * `c1 must beAssignableFrom(c2)` is ok if c1 isAssignableFrom c2
- * `c1 must notBeAssignableFrom(c2)` is ok if !(c1 isAssignableFrom c2)
+ * `a must haveClass[c]` is ok if a.getClass == c
+ * `a must notHaveClass[c]` is ok if a.getClass != c
+ * `a must haveSuperClass[c]` is ok if c.isAssignableFrom a.getClass
+ * `a must notHaveSuperClass[c]` is ok if !(c.isAssignableFrom a.getClass)
+ * `c1 must beAssignableFrom[c2]` is ok if c1 isAssignableFrom c2
+ * `c1 must notBeAssignableFrom[c2]` is ok if !(c1 isAssignableFrom c2)
 
 You can also introduce a failure with the `fail` function:
 
@@ -184,9 +184,9 @@ You can also introduce a failure with the `fail` function:
 
 ===If you want to verify that an exception is thrown===
 
- * `a must throwA[SpecialException]` is ok if evaluating `a` throws an Exception witht the type `SpecialException`(alias: `throwAn`)
+ * `a must throwA[SpecialException]` is ok if evaluating `a` throws an Exception with the type `SpecialException` (alias: `throwAn[...]`)
 
-Or we can check the exception type and message:
+Or we can check the exception type *and* message:
 
  * `a must throwA(MyUserException("message"))` is ok if evaluating `a` throws an exception e of type `MyUserException` and `e.getMessage == "message"` (alias `throwAn`, `throwThis`)
 
