@@ -18,7 +18,7 @@ The following libraries are necessary to run specifications.
 
 *Please check carefully the version numbers!*
 
- * [http://scala-tools.org/repo-releases/org/specs/specs/1.4.0 specs-1.4.0.jar]
+ * [http://scala-tools.org/repo-releases/org/specs/specs/1.4.1 specs-1.4.1.jar]
  * [http://scala-tools.org/repo-releases/org/scala-lang/scala-library/2.7.2 scala-library-2.7.2.jar]
 
 If you use `ScalaCheck` you must add
