@@ -185,7 +185,7 @@ If you want to repeat the same examples with different data until a condition is
     doAfter(counter += 1)
     until(counter == 3)
 
-    "pass the example with an int value" in { counter must_> 0 }
+    "pass the example with an int value" in { counter must be_>(0) }
   }
 }}}
 
