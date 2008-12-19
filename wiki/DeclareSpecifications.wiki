@@ -2,7 +2,6 @@
 
 <wiki:toc max_depth="2"/>
 
-
 =Declare a specification=
 You can declare a new specification by extending the Specification class:
 {{{
