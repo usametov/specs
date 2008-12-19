@@ -1,5 +1,7 @@
 #summary How to structure your specifications
 
+* [Articles HOWTO articles]
+
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Declare_a_specification Declare a specification]
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Systems_under_specification Systems under specification]
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Call_a_function_before_or_after_each_example Call a function before or after each example]
