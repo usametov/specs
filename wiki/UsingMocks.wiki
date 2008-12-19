@@ -1,5 +1,7 @@
 #summary How to specify expected calls to other objects
 
+<wiki:toc max_depth="2"/>
+
 =Mocks presentation=
 
 *specs* offers a lightweight framework to create mocks and stubs (see [http://www.mockobjects.com/ this] reference and [http://martinfowler.com/articles/mocksArentStubs.html that one] for a discussion on mocks and stubs).
