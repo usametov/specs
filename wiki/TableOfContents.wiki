@@ -1,0 +1,16 @@
+#summary Table of contents used for the sidebar.
+
+[QuickStart	 Your first specification starts here!]
+[UserGuide	 User guide for the specs framework]
+[DeclareSpecifications	 How to structure your specifications]
+[RunningSpecs	 How to execute specifications]
+[MatchersGuide	 How to add expectations to your examples]
+[UsingJMock	 how to use jMock in your specs]
+[UsingMocks	 How to specify expected calls to other objects]
+[LiterateSpecifications	 How to write literate specifications]
+[AdvancedSpecifications	 How to use DataTables and syntactic sugar to write more concise examples]
+[ChangeLog	 Notable changes to specs releases]
+[FutureDevelopments	 some ideas for the next releases of specs]
+[DeveloperGuide	 If you want to hack and extend specs]
+[Troubleshooting	 Pitfalls and errors that you can avoid]
+[Sponsors	 Companies supporting the project]
