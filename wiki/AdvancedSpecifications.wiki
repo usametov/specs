@@ -2,7 +2,7 @@
 
 <wiki:toc max_depth="2"/>
 
-= How to use !DataTables=
+= How to use Data Tables =
 
 Suppose you want to specify that a directory path and a file name should be combined to provide a proper full path. One way to specify this is to provide examples of different possible combinations and results (taken from the xmlRunnerUnit specification):
 {{{
