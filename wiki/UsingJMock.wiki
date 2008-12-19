@@ -1,5 +1,7 @@
 #summary how to use jMock in your specs
 
+<wiki:toc max_depth="2"/>
+
 = Introduction =
 
 [http://www.jmock.org/ jMock2] allows to define mocks and expectations on mocks very  easily.
