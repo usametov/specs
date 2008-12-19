@@ -2,6 +2,8 @@
 
 http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *Experimental!*
 
+<wiki:toc max_depth="2"/>
+
 = Why literate specifications? =
 
 The literate specifications support in *specs* is intended to provide a more informal way to specify and document the software being developed. The long term vision is that this kind of specification may be accessible to a business user for creation/modification and a developer for the implementation of the executable parts.
