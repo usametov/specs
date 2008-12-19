@@ -1,6 +1,5 @@
 #summary How to structure your specifications
 
-#sidebar
 <wiki:toc max_depth="2"/>
 
 
