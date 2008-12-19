@@ -11,7 +11,7 @@ _The ease of development of a Ruby on Rails environment!_
 
 Those few seconds saved make for countless hours! (This is used for the FutureDevelopments)
 
-= JetBrains =
+= `JetBrains` =
 
 http://www.jetbrains.com/img/logos/logo_jetbrains_small.gif
 
