@@ -1,16 +1,6 @@
 #summary How to execute specifications
 
- * [http://code.google.com/p/specs/wiki/RunningSpecs#Dependencies Dependencies]
- * [http://code.google.com/p/specs/wiki/RunningSpecs#Run_your_specification_in_the_Console Run your specification in the Console]
- * [http://code.google.com/p/specs/wiki/RunningSpecs#Run_your_specification_with_JUnit4 Run your specification with JUnit4]
- * [http://code.google.com/p/specs/wiki/RunningSpecs#Run_your_specifications_with_JUnit4_and_Maven Run your specifications with JUnit4 and Maven]
- * [http://code.google.com/p/specs/wiki/RunningSpecs#Run_your_specification_with_JUnit4_in_Eclipse Run your specification with JUnit4 in Eclipse]
- * [http://code.google.com/p/specs/wiki/RunningSpecs#Run_your_specification_with_JUnit4_and_Ant Run your specification with JUnit4 and Ant]
- * [http://code.google.com/p/specs/wiki/RunningSpecs#Run_your_specification_with_ScalaTest Run your specification with ScalaTest]
- * [http://code.google.com/p/specs/wiki/RunningSpecs#Declare_several_spec_runners_at_once Declare several spec runners at once]
- * [http://code.google.com/p/specs/wiki/RunningSpecs#Run_your_specifications_and_get_the_results_as_an_XML_file Run your specifications and get the results as an XML file]
- * [http://code.google.com/p/specs/wiki/RunningSpecs#Skip_examples Skip examples]
- * [http://code.google.com/p/specs/wiki/RunningSpecs#Include_or_exclude_examples Include or exclude examples]
+ <wiki:toc max_depth="2"/>
 
 =Dependencies=
 
