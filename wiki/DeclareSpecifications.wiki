@@ -1,7 +1,7 @@
 #summary How to structure your specifications
 
 #sidebar
-<wiki:toc max_depth="3"/>
+<wiki:toc max_depth="2"/>
 
 
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Declare_a_specification Declare a specification]
