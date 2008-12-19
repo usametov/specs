@@ -10,3 +10,11 @@ _The ease of development of a Ruby on Rails environment!_
 [http://www.zeroturnaround.com Zeroturnaround] is providing the [http://www.zeroturnaround.com/javarebel JavaRebel] library which allows to use [http://code.google.com/p/liftweb lift] without having to restart the webserver when having recompiled Java classes. The changes can be immediately seen upon refreshing the web page.
 
 Those few seconds saved make for countless hours! (This is used for the FutureDevelopments)
+
+= JetBrains =
+
+http://www.jetbrains.com/img/logos/logo_jetbrains_small.gif
+
+_The best Java IDE in the world!_
+
+[http://www.jetbrains.com JetBrains] is entitling me to use the IDEA IntelliJ environment as a support to my open-source project. Needless to say, a final version of the Scala plugin is much awaited!
