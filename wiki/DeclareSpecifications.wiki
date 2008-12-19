@@ -1,6 +1,6 @@
 #summary How to structure your specifications
 
-* [Articles HOWTO articles]
+#sidebar TableOfContents
 
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Declare_a_specification Declare a specification]
  * [http://code.google.com/p/specs/wiki/DeclareSpecifications#Systems_under_specification Systems under specification]
