@@ -246,7 +246,7 @@ Then use the !ScalaTest gui runner: `java -cp ... org.scalatest.Runner -g -s myS
 
 =Run your specification with Team City=
 
-You can use the TeamCityRunner to get an output parsable by [http://www.jetbrains.net/confluence/display/TCD4/Build+Script+Interaction+with+TeamCity TeamCity4]:
+You can use the !TeamCityRunner to get an output parsable by [http://www.jetbrains.net/confluence/display/TCD4/Build+Script+Interaction+with+TeamCity TeamCity4]:
 
 {{{
 import org.specs._
