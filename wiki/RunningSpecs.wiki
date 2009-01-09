@@ -244,7 +244,7 @@ class mySpecSuite extends ScalaTestSuite(mySpec)
 
 Then use the !ScalaTest gui runner: `java -cp ... org.scalatest.Runner -g -s mySpecSuite`
 
-=Run your specification with TeamCity =
+=Run your specification with Team City=
 
 You can use the TeamCityRunner to get an output parsable by [http://www.jetbrains.net/confluence/display/TCD4/Build+Script+Interaction+with+TeamCity TeamCity4]:
 
