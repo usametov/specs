@@ -233,7 +233,7 @@ It is also possible to specify the output directory with:
 object specResults extends XmlRunner(extendedThrowableUnit, "./target/reports/specs")
 }}}
 
-=Run your specification with `ScalaTest`=
+=Run your specification with Scala Test =
 
 Declare a runner extending the `ScalaTestSuite` runner:
 
