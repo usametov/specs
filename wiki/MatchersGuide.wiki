@@ -329,6 +329,8 @@ Then, mixing the org.specs.Scalacheck trait to your specification, you can check
   prop must pass
 }}} 
 
+_Note_: the `property` function is deprecated from ScalaCheck 1.5. You should use Prop.forAll instead.
+
  * You can display !ScalaCheck messages with `display` on the Console:
 
 {{{
