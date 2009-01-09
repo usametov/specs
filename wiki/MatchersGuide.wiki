@@ -285,7 +285,7 @@ List(1, List(2, 3, List(4)), 5) must haveSameElementsAs(List(5, List(List(4), 2,
   Some(x) must beSome[String].which(_.startWith("abc"))
 }}}
 
-=Matchers applicable to [http://code.google.com/p/scalacheck Scala Check] properties=
+=Matchers applicable to Scalacheck properties=
 
 Let's say you want to implement a function which returns all the prefixes of a given list:
 
@@ -293,7 +293,7 @@ Let's say you want to implement a function which returns all the prefixes of a g
 prefixes(List(1, 2, 3)) // => List(List(1), List(1, 2), List(1, 2, 3))
 }}}
 
-You can use Scalacheck generators to generate lists of random size: 
+You can use [http://code.google.com/p/scalacheck ScalaCheck] generators to generate lists of random size: 
 {{{
   // list is an arbitrary list (with at least one element)
   // prefix is a random prefix of list
@@ -319,15 +319,17 @@ Then, mixing the org.specs.Scalacheck trait to your specification, you can check
 
 `function must pass(generated_data)` instead of `generated_data must pass(function)`
 
- * You can simply use the `pass` matcher to verify a scalacheck property:
+ * You can simply use the `pass` matcher to verify a !ScalaCheck property:
 
 {{{
-// this property will alway be true
-val prop = property((a:Int) => true)
-prop must pass
+  import org.scalacheck.Prop
+
+  // this property will alway be true
+  val prop = Prop.forAll((a:Int) => true)
+  prop must pass
 }}} 
 
- * You can display `ScalaCheck` messages with `display` on the Console:
+ * You can display !ScalaCheck messages with `display` on the Console:
 
 {{{
 data must pass {
@@ -335,7 +337,7 @@ data must pass {
 }(display)
 }}} 
 
- * You can set `ScalaCheck` properties with `set` (or `display` to additionally see the result on the Console):
+ * You can set ScalaCheck properties with `set` (or `display` to additionally see the result on the Console):
 
 {{{
 data must pass {
@@ -375,9 +377,9 @@ By default, the statement `property must pass` will count each evaluation as one
 
 {{{
   dontExpectProperties()
-  property((b: Boolean) => (b == true).isExpectation)
+  Prop.forAll((b: Boolean) => (b == true).isExpectation)
   // or
-  property((b: Boolean) => isExpectation(b == true))
+  Prop.forAll((b: Boolean) => isExpectation(b == true))
 }}}
 
 Of course, you can globally re-enable expectations counting with `expectProperties` for the rest of your specification:
@@ -386,11 +388,11 @@ Of course, you can globally re-enable expectations counting with `expectProperti
   object spec extends Specification with Scalacheck {
     // no expectations count when evaluating properties
     dontExpectProperties()
-    property((b: Boolean) => b == true)
+    Prop.forAll((b: Boolean) => b == true)
 
     // one expectation will be counted on each property evaluation
     expectProperties()
-    property((b: Boolean) => b == true)
+    Prop.forAll((b: Boolean) => b == true)
   }
 }}}
 
