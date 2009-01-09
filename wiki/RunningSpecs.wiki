@@ -244,6 +244,20 @@ class mySpecSuite extends ScalaTestSuite(mySpec)
 
 Then use the !ScalaTest gui runner: `java -cp ... org.scalatest.Runner -g -s mySpecSuite`
 
+=Run your specification with TeamCity =
+
+You can use the TeamCityRunner to get an output parsable by [http://www.jetbrains.net/confluence/display/TCD4/Build+Script+Interaction+with+TeamCity TeamCity4]:
+
+{{{
+import org.specs._
+import org.specs.runner._
+
+object mySpec extends Specification { ... }
+object tcRunner extends TeamCityRunner(mySpec)
+}}}
+
+(see some screenshots: [http://screencast.com/t/OpSg3PkcqCZ here] and [http://screencast.com/t/6it9oqcXJ there])
+
 =Declare several spec runners at once=
 
 You may want to execute a specification with several runners. In that case you can declare:
