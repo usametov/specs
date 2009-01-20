@@ -48,6 +48,9 @@ object helloWorld extends Specification { ... }
 
 If you have several exceptions being thrown and if stacktraces are obscuring the Console output you can turn them off by passing the `-ns` or `--nostacktrace` option.
 
+(*from 1.4.3*)
+You can also choose to display only the failed and error examples by using the -xOnly / --failedOnly option ("x" like the symbol showing a failure or an error in the console).
+
 ===Find specifications in a directory path===
 
 You can use the `SpecsFinder` class to find specifications in a given path:
