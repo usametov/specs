@@ -113,19 +113,7 @@ In some cases, you may want to specify that a matcher is only applicable dependi
  * `a must be_==(b)` is ok if `a == b` (alias: `a must_== b` or `a mustEqual b`)
  * `a must be_!=(b)` is ok if `a != b` (alias: `a must_!= b`)
 
- * `a must beEqual(b)` is ok if `a == b` and constrains a and b to have the same type at compilation time. Note that there is still a typing issue if you write
-
-{{{
-List(1) must beEqual(List(1)) // compilation error: expecting Matcher[Iterable[Int]] got Matcher[List[Int]]
-}}}
-
-However, this works:
-
-{{{
-val list: Iterable[Int] = List(1)
-List(1) must beEqual(list)
-}}}
-
+ * `a must beEqual(b)` is ok if `a == b` and constrains a and b to have the same type at compilation time.
 
  * `a must beDifferent(b)` is ok if `a != b` and constrains a and b to have the same type at compilation time
 
