@@ -125,6 +125,10 @@ Note that the `eq` operator can be very tricky, so be careful to use it on purpo
  * `a must beIn(iterable)` is ok if `iterable.exists(_ == a)`
  * `a must notBeIn(iterable)` is ok if `!iterable.exists(_ == a)`
 
+(*from 1.4.3*) variable arguments can also be used with beOneOf:
+ * `1 must beOneOf(1, 2, 3)`
+ * `4 must notBeOneOf(1, 2, 3)`
+
  * `a must beEmpty` is ok if `a` defines a `isEmpty` method and `a.isEmpty`
  * `a must notBeEmpty` is ok if `a` defines a `isEmpty` method and `!a.isEmpty`
 
