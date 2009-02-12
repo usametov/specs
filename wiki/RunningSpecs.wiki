@@ -150,9 +150,9 @@ You can use the following Ant build file as a starter to compile and execute you
   <property name="lib.dir" value="lib" />
   <property name="repository.home" value="c:/local_repository" />
   <property name="scala-compiler.jar"
-  value="${repository.home}/org/scala-lang/scala-compiler/2.7.2/scala-compiler-2.7.2.jar" />
+  value="${repository.home}/org/scala-lang/scala-compiler/2.7.3/scala-compiler-2.7.3.jar" />
   <property name="scala-library.jar"
-  value="${repository.home}/org/scala-lang/scala-library/2.7.2/scala-library-2.7.2.jar" />
+  value="${repository.home}/org/scala-lang/scala-library/2.7.3/scala-library-2.7.3.jar" />
   <!-- 2. Define Scala CLASSPATH. -->
   <path id="scala.classpath">
     <pathelement location="${scala-compiler.jar}" />
@@ -163,8 +163,8 @@ You can use the following Ant build file as a starter to compile and execute you
     <path refid="scala.classpath" />
     <pathelement location="${build.dir}" />
     <pathelement location="${repository.home}/junit/junit/4.4/junit-4.4.jar" />
-    <pathelement location="${repository.home}/org/specs/specs/1.4.0/specs-1.4.0.jar" />
-    <pathelement location="http://scala-tools.org/repo-snapshots/org/scalacheck/scalacheck/1.4-scSNAPSHOT/scalacheck-1.4-scSNAPSHOT.jar" />
+    <pathelement location="${repository.home}/org/specs/specs/1.4.3/specs-1.4.3.jar" />
+    <pathelement location="http://scala-tools.org/repo-snapshots/org/scalacheck/scalacheck/1.5/scalacheck-1.5.jar" />
   </path>
   <!-- 4. Define scala compiler command. -->
   <taskdef resource="scala/tools/ant/antlib.xml">
