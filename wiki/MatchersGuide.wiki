@@ -232,7 +232,6 @@ Detailed differences are also applicable to the `containAll` matcher.
  * `a must containMatch(b)` is ok if a contains a String matching the pattern `b` (alias: `haveMatch`, `mustHaveMatch`, `existMatch` (deprecated), `mustExistMatch` (deprecated))
  * `a must notContainMatch(b)` is ok if a doesn't contain a String matching the pattern `b` (alias: `mustNotContainMatch`, `notHaveMatch`, `mustNotHaveMatch`, `notExistMatch` (deprecated), `mustNotExistMatch` (deprecated))
 
-(*from 1.4.3*)
  * `a must containMatchOnlyOnce(b)` is ok if a contains exactly one String matching the pattern `b` 
 
  * `a must haveSameElementsAs(b)` is ok if a contains the same elements as the iterable b. This verification doesn't check the order of the elements but does a recursive verification is a and b contain iterables: 
