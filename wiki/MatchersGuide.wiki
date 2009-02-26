@@ -279,7 +279,7 @@ List(1, List(2, 3, List(4)), 5) must haveTheSameElementsAs(List(5, List(List(4),
   Some(x) must beSome[String].which(_.startWith("abc"))
 }}}
 
-=Matchers applicable to Scalacheck properties=
+=Matchers applicable to ScalaCheck properties=
 
 Let's say you want to implement a function which returns all the prefixes of a given list:
 
@@ -298,7 +298,7 @@ You can use [http://code.google.com/p/scalacheck ScalaCheck] generators to gener
                             yield (prefixes(list), prefix)
 }}}
 
-Then, mixing the org.specs.Scalacheck trait to your specification, you can check that the prefix property passes all generated data:
+Then, mixing the org.specs.ScalaCheck trait to your specification, you can check that the prefix property passes all generated data:
 {{{      
   // the generated data must pass the following property
   testData must pass { t: (List[List[Int]], Seq[Int]) => val (prefixes, prefix) = t
