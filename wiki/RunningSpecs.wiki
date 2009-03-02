@@ -120,6 +120,8 @@ The name of the test class will be <package name>.mySpecTest
 
 On the command line, you can run your suite by executing: `java -cp ... org.junit.runner.JUnitCore mySpecTest`
 
+Note that subexamples of an example won't be reported as separate tests but their failure messages will be added to the parent example failure messages.
+
 =Run your specification with JUnit4 in Eclipse=
 
 In order to be able to select your JUnit4 classes, you need to add the output directory of your project to your build path:
