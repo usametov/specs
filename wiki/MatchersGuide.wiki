@@ -11,7 +11,7 @@ There are different kind of matchers which are used to assert that some properti
 }
 }}}
 
-<wiki:toc max_depth="2"/>
+<wiki:toc/>
 
 ===Create your own Matcher===
 
