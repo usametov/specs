@@ -48,7 +48,7 @@ object helloWorld extends Specification { ... }
 
 If you have several exceptions being thrown and if stacktraces are obscuring the Console output you can turn them off by passing the `-ns` or `--nostacktrace` option.
 
-You can also choose to display only the failed and error examples by using the -xOnly / --failedOnly option ("x" like the symbol showing a failure or an error in the console).
+You can also choose to display only the failed and error examples by using either the -xonly or the --failedonly option ("x" like the symbol showing a failure or an error in the console).
 
 ===Find specifications in a directory path===
 
