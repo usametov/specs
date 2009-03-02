@@ -1,6 +1,6 @@
 #summary How to structure your specifications
 
-<wiki:toc max_depth="2"/>
+<wiki:toc/>
 
 =Declare a specification=
 You can declare a new specification by extending the Specification class:
