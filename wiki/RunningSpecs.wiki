@@ -46,7 +46,15 @@ object helloWorld extends Specification { ... }
 
 `java -cp ... org.hw.helloWorld`
 
+===Getting some help===
+
+You can display a help message with all available options by passing the `-h` or `--help` options on the command line.
+
+===Removing stacktraces from the report===
+
 If you have several exceptions being thrown and if stacktraces are obscuring the Console output you can turn them off by passing the `-ns` or `--nostacktrace` option.
+
+===Showing only failures and errors===
 
 You can also choose to display only the failed and error examples by using either the -xonly or the --failedonly option ("x" like the symbol showing a failure or an error in the console).
 
