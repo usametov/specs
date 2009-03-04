@@ -76,7 +76,7 @@ The following flags can be used to run only some systems or some examples:
 
 The help flag: -h or --help can be used to display the available flags and their description: {{{
 
-usage java <classpath> package.mySpecification [-h|--help]
+usage java classpath package.mySpecification [-h|--help]
                                                [-ns|--nostacktrace]
                                                [-nostats|--nostatistics]
                                                [-xonly | -failedonly]
