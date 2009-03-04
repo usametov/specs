@@ -67,9 +67,9 @@ For big specifications, if you want to remove the display of statistics, you can
 
 The following flags can be used to run only some systems or some examples:
 
--sus or --system <regexp> runs only the systems which description matches the regular expression
+-sus or --system regexp runs only the systems which description matches the regular expression
 
--ex or --example <regexp> runs only the examples which description matches the regular expression
+-ex or --example regexp runs only the examples which description matches the regular expression
 
 ===Display the help===
 (*from 1.4.4*)
