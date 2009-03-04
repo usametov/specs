@@ -58,6 +58,45 @@ If you have several exceptions being thrown and if stacktraces are obscuring the
 
 You can also choose to display only the failed and error examples by using either the -xonly or the --failedonly option ("x" like the symbol showing a failure or an error in the console).
 
+===Don't show statistics===
+(*from 1.4.4*)
+For big specifications, if you want to remove the display of statistics, you can use the -nostats or --nostatistics flag to prevent statistics to be displayed.
+
+===Filter systems and examples===
+(*from 1.4.4*)
+
+The following flags can be used to run only some systems or some examples:
+
+-sus or --system <regexp> runs only the systems which description matches the regular expression
+
+-ex or --example <regexp> runs only the examples which description matches the regular expression
+
+===Display the help===
+(*from 1.4.4*)
+
+The help flag: -h or --help can be used to display the available flags and their description: {{{
+
+usage java <classpath> package.mySpecification [-h|--help]
+                                               [-ns|--nostacktrace]
+                                               [-nostats|--nostatistics]
+                                               [-xonly | -failedonly]
+                                               [[-acc | --accept] tag1,tag2,...] [[-rej | --reject] tag1,tag2,...]
+                                               [-sus | --system]
+                                               [-ex | --example]
+
+-h, --help           prints this message and doesn't execute the specification
+-ns, --nostacktrace  removes the stacktraces from the reporting
+-nostats, --nostatistics  removes the statistics from the reporting
+-xonly, --failedonly reports only failures and errors
+-acc, --accept tags  accept only the specified tags (comma-separated names)
+-rej, --reject tags  reject the specified tags (comma-separated names)
+-sus, --system  only the systems under specifications matching this regular expression will be executed
+-ex, --example  only the examples matching this regular expression will be executed
+
+}}}
+
+Note that the specification is not executed in that case.
+
 ===Find specifications in a directory path===
 
 You can use the `SpecsFinder` class to find specifications in a given path:
