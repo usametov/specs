@@ -74,15 +74,15 @@ The following flags can be used to run only some systems or some examples:
 ===Display the help===
 (*from 1.4.4*)
 
-The help flag: -h or --help can be used to display the available flags and their description: {{{
-
+The help flag: -h or --help can be used to display the available flags and their description: 
+{{{
 usage java classpath package.mySpecification [-h|--help]
-                                               [-ns|--nostacktrace]
-                                               [-nostats|--nostatistics]
-                                               [-xonly | -failedonly]
-                                               [[-acc | --accept] tag1,tag2,...] [[-rej | --reject] tag1,tag2,...]
-                                               [-sus | --system]
-                                               [-ex | --example]
+                                             [-ns|--nostacktrace]
+                                             [-nostats|--nostatistics]
+                                             [-xonly | -failedonly]
+                                             [[-acc | --accept] tag1,tag2,...] [[-rej | --reject] tag1,tag2,...]
+                                             [-sus | --system]
+                                             [-ex | --example]
 
 -h, --help           prints this message and doesn't execute the specification
 -ns, --nostacktrace  removes the stacktraces from the reporting
