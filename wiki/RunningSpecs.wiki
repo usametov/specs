@@ -1,6 +1,6 @@
 #summary How to execute specifications
 
-<wiki:toc/>
+<wiki:toc />
 
 =Dependencies=
 
