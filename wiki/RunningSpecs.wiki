@@ -71,6 +71,11 @@ The following flags can be used to run only some systems or some examples:
 
 -ex or --example regexp runs only the examples which description matches the regular expression
 
+===Report with colors===
+(*from 1.4.4*)
+
+If your console supports it, you can display success, failures and skipped examples in color with the -c or --color flag.
+
 ===Display the help===
 (*from 1.4.4*)
 
@@ -83,15 +88,17 @@ usage java classpath package.mySpecification [-h|--help]
                                              [[-acc | --accept] tag1,tag2,...] [[-rej | --reject] tag1,tag2,...]
                                              [-sus | --system]
                                              [-ex | --example]
+                                             [-c | --color]
 
--h, --help           prints this message and doesn't execute the specification
--ns, --nostacktrace  removes the stacktraces from the reporting
--nostats, --nostatistics  removes the statistics from the reporting
--xonly, --failedonly reports only failures and errors
--acc, --accept tags  accept only the specified tags (comma-separated names)
--rej, --reject tags  reject the specified tags (comma-separated names)
--sus, --system  only the systems under specifications matching this regular expression will be executed
--ex, --example  only the examples matching this regular expression will be executed
+-h, --help                print this message and doesn't execute the specification
+-ns, --nostacktrace       remove the stacktraces from the reporting
+-nostats, --nostatistics  remove the statistics from the reporting
+-xonly, --failedonly      report only failures and errors
+-acc, --accept tags       accept only the specified tags (comma-separated names)
+-rej, --reject tags       reject the specified tags (comma-separated names)
+-sus, --system            only the systems under specifications matching this regular expression will be executed
+-ex, --example            only the examples matching this regular expression will be executed
+-c, --color               report with colors
 
 }}}
 
