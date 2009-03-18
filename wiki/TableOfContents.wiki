@@ -6,6 +6,7 @@
  * [RunningSpecs Execute specifications]
  * [MatchersGuide Matchers guide]
  * [UsingJMock JMock]
+ * [UsingMockito Mockito]
  * [UsingMocks Light Mocks]
  * [LiterateSpecifications Literate specifications]
  * [AdvancedSpecifications Advanced Specifications]
