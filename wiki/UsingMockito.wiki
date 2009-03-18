@@ -28,6 +28,9 @@ In order to use Mockito mocks in your specification, you need to mix in the Mock
   
     // verify that the call happened, this is an expectation which will throw a FailureException if that is not the case
     m.get(0) was called
-    m.get(1) wasnt called // we can also check that other calls did not occur
+    
+    // we can also check that another call did not occur
+    m.get(1) wasnt called // or m.get(1) was notCalled
+                          
   }
  }}}
