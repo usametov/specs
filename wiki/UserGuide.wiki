@@ -20,6 +20,7 @@ This User Guide is divided in 7 parts:
   * [MatchersGuide The full guide to specs matchers]
   * [RunningSpecs How to run your specifications]
   * [UsingJMock How use mock objects with jMock]
+  * [UsingMockito How use mock objects with Mockito]
   * [AdvancedSpecifications Use DataTables and syntactic sugar in your specifications]
  http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *Experimental!*
  * [LiterateSpecifications How write literate specifications] 
