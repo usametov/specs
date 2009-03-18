@@ -1,13 +1,33 @@
 #summary Using Mockito mocks and stubs.
 
+(*from 1.4.4*)
+
+*This is a draft, work in progress!!!!*
+
 = Introduction =
 
-Add your content here.
+[http://mockito.googlecode.com Mockito] is a mocking library which "lets you write beautiful tests with clean & simple API".
 
+*specs* integrates Mockito expectations and add some syntactic sugar for an even simpler experience of Mockito.
 
-= Details =
+= Usage =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+In order to use Mockito mocks in your specification, you need to mix in the Mockito trait.
+
+{{{
+  
+  object spec extends Specification with Mockito {
+    
+    val m = mock[java.util.List[String]] // a concrete class would be mocked with: mock(new java.util.LinkedList[String])
+    
+    // stub a method call with a return value
+    m.get(0) returns "one"
+  
+    // call the method
+    m.get(0)
+  
+    // verify that the call happened, this is an expectation which will throw a FailureException if that is not the case
+    m.get(0) was called
+    m.get(1) wasnt called // we can also check that other calls did not occur
+  }
+ }}}
