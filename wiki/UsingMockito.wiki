@@ -14,7 +14,8 @@
 
 = Usage =
 
-In order to use Mockito mocks in your specification, you need to mix in the Mockito trait. {{{
+In order to use Mockito mocks in your specification, you need to mix in the Mockito trait.
+{{{
 
   object spec extends Specification with Mockito {
     
@@ -38,36 +39,37 @@ In order to use Mockito mocks in your specification, you need to mix in the Mock
 
 = Stubbing =
 
-Stubbing values is as simple as calling a method on the mock and declaring what should be returned or thrown: {{{
-   
+Stubbing values is as simple as calling a method on the mock and declaring what should be returned or thrown: 
+{{{
   m.get(1) returns "one"
   m.get(2) throws new Exception("forbidden")
 
 }}}
 
-You can specify different consecutive returned values by appending `thenReturns` or `thenThrows`:{{{
-
+You can specify different consecutive returned values by appending `thenReturns` or `thenThrows`:
+{{{
   m.get(1) returns "one" thenReturns "two"
   m.get(2) throws new Exception("forbidden") thenReturns "999"
 
 }}}
 
-= Argument matchers =
+== Argument matchers ==
 
-The built-in Mockito argument matchers can be used to specify the method arguments for stubbing: {{{
-
+The built-in Mockito argument matchers can be used to specify the method arguments for stubbing: 
+{{{
    mockedList.get(anyInt()) returns "element"
    mockedList.get(999) must_== "element"
 }}}
 
-Hamcrest matchers can also be used, allowing to create your own Hamcrest matchers: {{{
-
+Hamcrest matchers can also be used, allowing to create your own Hamcrest matchers: 
+{{{
    // stubbing using hamcrest (let's say IsNull returns your own hamcrest matcher):
    mockedList.contains(argThat(new IsNull)) returns true
 
 }}}
 
-You can even pass specs matchers directly as arguments where the implicit conversion would work: {{{
+You can even pass specs matchers directly as arguments where the implicit conversion would work: 
+{{{
    mockedList.get(==(123)) returns "one" // ==(_) is an alias for beEqualTo(_)
 
    // note that the implicit conversion transforming a specs Matcher to a Hamcrest matcher would not work here as the expected type for the contains method is Object
@@ -75,9 +77,41 @@ You can even pass specs matchers directly as arguments where the implicit conver
 
 }}}
 
+== Callbacks ==
+
+In some rare cases, it is necessary to have the return value depend on the parameters passed to the mocked method: 
+{{{
+   val mockedList = mock[List[String]]
+   
+   mockedList.get(anyInt) answers { i => "The parameter is " + i.toString } 
+ }
+}}}
+
+The function passed to `answers` will be called with each parameter passed to the stubbed method:
+{{{
+  // returns The parameter is 0
+  s.mockedList.get(0)
+
+  // The second call returns a different value: The parameter is 1
+  s.mockedList.get(1) 
+}}}
+
+=== Parameters for the answers function ===
+
+Because of the use of reflection the function passed to `answers` will receive only instances of the java.lang.Object type. 
+
+More precisely, it will:
+
+  * pass the mock object if both the method has no parameters and the function has one parameter: `mock.size answers { mock => mock.hashCode }`
+  * pass the parameter if both the method and the function have one parameter: `mock.get(0) answers ( i => i.toString )`
+  * pass the parameter and the mock object if the method has 1 parameter and the function has 2: `mock.get(0) answers { (i, mock) => i.toString + " for mock " + mock.toString }`
+  * In any other cases, if f is a function of 1 parameter, the array of the method parameters will be passed and if the function has 2 parameters, the second one will be the mock.
+ 
+
 = Verification =
 
-By default Mockito doesn't expect any method to be called. However if your writing interaction-based specifications you want to specify that some methods are indeed called: {{{
+By default Mockito doesn't expect any method to be called. However if your writing interaction-based specifications you want to specify that some methods are indeed called:
+{{{
   mockedList.get(0)
 
   mockedList.get(0) was called
@@ -86,11 +120,12 @@ By default Mockito doesn't expect any method to be called. However if your writi
 
 }}}
 
-If anything fails a new FailureException will be thrown creating a failure for the current example.
+If anything fails a new `FailureException` will be thrown creating a failure for the current example.
 
 == Constraints on call expectations ==
 
-You can be more precise when specifying the number of calls on a mock: {{{
+You can be more precise when specifying the number of calls on a mock: 
+{{{
   val mockedList = mock[List[String]]
 
   mockedList.add("one")
@@ -107,3 +142,5 @@ You can be more precise when specifying the number of calls on a mock: {{{
   mockedList had noMoreCalls
 
 }}}
+
+= Spies =
