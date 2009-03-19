@@ -1,9 +1,6 @@
 #summary Using Mockito mocks and stubs.
 
 (*from 1.4.4*)
-
-*This is a draft, work in progress!!!!*
-
 <wiki:toc/>
 
 = Introduction =
@@ -144,3 +141,30 @@ You can be more precise when specifying the number of calls on a mock:
 }}}
 
 = Spies =
+
+Spies can also be used in order to do some "partial mocking" of real objects:
+{{{
+
+   val spiedList = spy(new LinkedList[String])
+
+   // methods can be stubbed on a spy
+   spiedList.size returns 100
+
+   // other methods can also be used
+   spiedList.add("one")
+   spiedList.add("two") 
+   
+   // and verification can happen on a spy
+   spiedList.add("one") was called
+}}}
+
+However, working with spies can be tricky:
+{{{
+  // if the list is empty, this will throws an IndexOutOfBoundsException
+  spiedList.get(0) returns "one"
+}}}
+
+As advised in the Mockito documentation, `doReturn` must be used in that case: 
+{{{
+  doReturn("one").when(spiedList).get(0)
+}}}
