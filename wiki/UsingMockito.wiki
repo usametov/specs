@@ -4,6 +4,8 @@
 
 *This is a draft, work in progress!!!!*
 
+<wiki:toc/>
+
 = Introduction =
 
 [http://mockito.googlecode.com Mockito] is a mocking library which "lets you write beautiful tests with clean & simple API".
@@ -12,10 +14,8 @@
 
 = Usage =
 
-In order to use Mockito mocks in your specification, you need to mix in the Mockito trait.
+In order to use Mockito mocks in your specification, you need to mix in the Mockito trait. {{{
 
-{{{
-  
   object spec extends Specification with Mockito {
     
     val m = mock[java.util.List[String]] // a concrete class would be mocked with: mock(new java.util.LinkedList[String])
