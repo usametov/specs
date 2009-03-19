@@ -33,7 +33,8 @@ In order to use Mockito mocks in your specification, you need to mix in the Mock
     m.get(1) wasnt called // or m.get(1) was notCalled
                           
   }
- }}}
+
+}}}
 
 = Stubbing =
 
