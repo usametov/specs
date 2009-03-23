@@ -83,6 +83,7 @@ The help flag: -h or --help can be used to display the available flags and their
 {{{
 usage java classpath package.mySpecification [-h|--help]
                                              [-ns|--nostacktrace]
+                                             [-finalstats|--finalstatistics]
                                              [-nostats|--nostatistics]
                                              [-xonly | -failedonly]
                                              [[-acc | --accept] tag1,tag2,...] [[-rej | --reject] tag1,tag2,...]
@@ -90,15 +91,16 @@ usage java classpath package.mySpecification [-h|--help]
                                              [-ex | --example]
                                              [-c | --color]
 
--h, --help                print this message and doesn't execute the specification
--ns, --nostacktrace       remove the stacktraces from the reporting
--nostats, --nostatistics  remove the statistics from the reporting
--xonly, --failedonly      report only failures and errors
--acc, --accept tags       accept only the specified tags (comma-separated names)
--rej, --reject tags       reject the specified tags (comma-separated names)
--sus, --system            only the systems under specifications matching this regular expression will be executed
--ex, --example            only the examples matching this regular expression will be executed
--c, --color               report with colors
+-h, --help                     print this message and doesn't execute the specification
+-ns, --nostacktrace            remove the stacktraces from the reporting
+-nostats, --nostatistics       remove the statistics from the reporting
+-finalstats, --finalstatistics print the final statistics only
+-xonly, --failedonly           report only failures and errors
+-acc, --accept tags            accept only the specified tags (comma-separated names)
+-rej, --reject tags            reject the specified tags (comma-separated names)
+-sus, --system                 only the systems under specifications matching this regular expression will be executed
+-ex, --example                 only the examples matching this regular expression will be executed
+-c, --color                    report with colors
 
 }}}
 
