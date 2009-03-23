@@ -140,6 +140,28 @@ You can be more precise when specifying the number of calls on a mock:
 
 }}}
 
+== Order of calls ==
+
+The order of method calls can be checked by creating calls and chaining them with `then`: 
+{{{
+  val m1 = mock[List[String]]
+  val m2 = mock[List[String]]
+
+  m1.get(0)
+  m1.get(0)
+  m2.get(0)
+
+  // mock calls
+  theMethod(m1.get(0)).on(m1).twice then
+  theMethod(m2.get(0)).on(m2)       were called.inOrder
+}}}
+  
+The implicit definition can also be removed but additional parenthesis are needed:
+{{{
+     (m1.get(0) on m1).twice then
+     (m2.get(0) on m2)       were calledInOrder // alias for called.inOrder
+}}}
+
 = Spies =
 
 Spies can also be used in order to do some "partial mocking" of real objects:
