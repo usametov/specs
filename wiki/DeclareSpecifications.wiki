@@ -203,6 +203,9 @@ When we want to execute examples in parallel or make sure that each example is n
 
 The first way to define a system context is simply to create a `SystemContext` object and either pass it explicitly with `withA` (or `withAn`) to the example, or declare it as an implicit val and use `into` (instead of `in`):
 {{{ 
+
+// the specification must extend SystemContexts to have the possibility to use System contexts
+object stackSpec extends Specification with SystemContexts {
   "A non-empty stack below full capacity" should {
 
     // This creates a new SystemContext[SampleStack] object
