@@ -151,7 +151,7 @@ The `beforeContext`, `afterContext`, `context` methods are factory methods to cr
 def context(b: =>Any, a: =>Any) = new Context { before(b); after(a) }
 }}}
 
-`Context` objects are passed to system under specification to specify the before/after actions. Note that those objects refer to local mutable variables so this means that, like the traditional before/after methods you have the same danger of messing up your context from example to example (for a better alternative around this see [http://code.google.com/p/specs/DeclareSpecifications#System_Contexts System_Contexts])
+`Context` objects are passed to system under specification to specify the before/after actions. Note that those objects refer to local mutable variables so this means that, like the traditional before/after methods you have the same danger of messing up your context from example to example (for a better alternative around this see [http://code.google.com/p/specs/DeclareSpecifications#System_Contexts System Contexts])
 
 Once you've defined a context, you can reuse it with the "threading" operator `->-`: 
 {{{
@@ -197,9 +197,11 @@ This method is also available on `Context` objects, so you can write:
 
 (*from 1.4.4*)
 
-If we want to execute examples in parallel or make sure that each example is not using variables which have possibly been modified another example, we can use `SystemContext`. A `SystemContext` is an object which is passed to each example as a set of data to operate on.
+When we want to execute examples in parallel or make sure that each example is not using variables which have possibly been modified by another example, we can use `SystemContext`. A `SystemContext` is an object which is passed to each example as a set of data to operate on.
 
-The first way to define a system context is simply to create a SystemContext object and either pass it explicitly with `withA` (or `withAn`) to the example, or declare it as an implicit val and use `into` (instead of `in`):
+=== Internal system contexts ===
+
+The first way to define a system context is simply to create a `SystemContext` object and either pass it explicitly with `withA` (or `withAn`) to the example, or declare it as an implicit val and use `into` (instead of `in`):
 {{{ 
   "A non-empty stack below full capacity" should {
 
@@ -216,7 +218,11 @@ The first way to define a system context is simply to create a SystemContext obj
   }
 }}}
 
-The second way of using a System context is to create a SystemContext object and use it to define the system under specification:
+This type of `SystemContext` usage is said to be "internal" because the context is declared inside the System under specification.
+
+=== External system context ===
+
+The second way of using a System context is to create a `SystemContext` object and use it to define the system under specification:
 {{{
   // create a SystemContext class
   case class StackContext(capacity: Int, itemsNb: Int) extends SystemContext[SampleStack] {
@@ -228,6 +234,9 @@ The second way of using a System context is to create a SystemContext object and
 
 
   "A non-empty stack below full capacity" definedAs(nonEmpty) should {
+
+    // warning!!! Unfortunately, the function passed to in is not typechecked against the
+    // type of the context passed to the system under specification
     "not be empty" in { stack: SampleStack =>
       stack verifies { !_.isEmpty }
     }
@@ -241,8 +250,18 @@ The second way of using a System context is to create a SystemContext object and
   }
 }}}
 
+This type of `SystemContext` usage is said to be "external" because the context is declared outside the System under specification.
+
+===Contexts comparison===
+
+There are unfortunately both advantages and disadvantages to each approach for creating the context of a system:
+
+|| *Contexts* || *Shared* || *Internal* || *External* ||
+|| Pro || easy to create || the function passed to the example is typechecked || the context is visible from the system definition line ||
+|| Cons || uses shared variables || the `in` operator is not available (`into` or `withA`) || the function passed to each example is not typechecked ||
 
 =Specify an example=
+
 You specify an example of what your system is supposed to do by adding a description inside a specified system followed by the method `in`:
 {{{
 "my System" should {
