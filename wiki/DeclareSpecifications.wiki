@@ -151,7 +151,7 @@ The `beforeContext`, `afterContext`, `context` methods are factory methods to cr
 def context(b: =>Any, a: =>Any) = new Context { before(b); after(a) }
 }}}
 
-`Context` objects are passed to system under specification to specify the before/after actions. Note that those objects refer to local mutable variables so this means that, like the traditional before/after methods you have the same danger of messing up your context from example to example (for alternative around this see [http://code.google.com/p/specs/DeclareSpecifications#System_contexts])
+`Context` objects are passed to system under specification to specify the before/after actions. Note that those objects refer to local mutable variables so this means that, like the traditional before/after methods you have the same danger of messing up your context from example to example (for a better alternative around this see [http://code.google.com/p/specs/DeclareSpecifications#System_Contexts System_Contexts])
 
 Once you've defined a context, you can reuse it with the "threading" operator `->-`: 
 {{{
@@ -195,9 +195,51 @@ This method is also available on `Context` objects, so you can write:
 
 == System contexts ==
 
-(from 1.4.4)
+(*from 1.4.4*)
 
-to be describe later,....
+If we want to execute examples in parallel or make sure that each example is not using variables which have possibly been modified another example, we can use `SystemContext`. A `SystemContext` is an object which is passed to each example as a set of data to operate on.
+
+The first way to define a system context is simply to create a SystemContext object and either pass it explicitly with `withA` (or `withAn`) to the example, or declare it as an implicit val and use `into` (instead of `in`):
+{{{ 
+  "A non-empty stack below full capacity" should {
+
+    // This creates a new SystemContext[SampleStack] object
+    implicit val nonEmptyStack = systemContext { new SampleStack(10, 5) }
+
+    "not be empty".withA(nonEmptyStack) { stack =>
+      stack verifies { !_.isEmpty }
+    }
+    // here the context is passed implicitly
+    "return the top item when sent #top" into { (s: SampleStack) =>
+      s.top mustBe s.lastItemAdded
+    }
+  }
+}}}
+
+The second way of using a System context is to create a SystemContext object and use it to define the system under specification:
+{{{
+  // create a SystemContext class
+  case class StackContext(capacity: Int, itemsNb: Int) extends SystemContext[SampleStack] {
+    // it is mandatory to define this method. It will be called before each example
+    // and the new system will be passed to the example
+    def newSystem = SampleStack(capacity, itemsNb)
+  }
+  val nonEmpty = StackContext(10, 1)
+
+
+  "A non-empty stack below full capacity" definedAs(nonEmpty) should {
+    "not be empty" in { stack: SampleStack =>
+      stack verifies { !_.isEmpty }
+    }
+    "return the top item when sent #top" in { stack: SampleStack =>
+      stack.top mustBe stack.lastItemAdded
+    }
+    "not remove the top item when sent #top" in { stack: SampleStack =>
+      stack.top mustBe stack.lastItemAdded
+      stack.top mustBe stack.lastItemAdded
+    }
+  }
+}}}
 
 
 =Specify an example=
