@@ -133,6 +133,8 @@ _Note_: doBefore/doAfter or doFirst/doLast declarations can be placed anywhere i
 
 =Contexts=
 
+= Shared contexts =
+
 You may want sometimes to identify more precisely the `Context` of a system under specification, either to give it a meaningful name or to reuse it across specifications. To do this, you need to create `Context` objects:
 {{{
 object StackSpecification extends Specification {
@@ -149,10 +151,11 @@ The `beforeContext`, `afterContext`, `context` methods are factory methods to cr
 def context(b: =>Any, a: =>Any) = new Context { before(b); after(a) }
 }}}
 
-`Context` objects are passed to system under specification to specify the before/after actions.
+`Context` objects are passed to system under specification to specify the before/after actions. Note that those objects refer to local mutable variables so this means that, like the traditional before/after methods you have the same danger of messing up your context from example to example (for alternative around this see [http://code.google.com/p/specs/DeclareSpecifications#System_contexts])
 
-Then, you can reuse contexts with the `->-` operator: 
+Once you've defined a context, you can reuse it with the "threading" operator `->-`: 
 {{{
+  // I'm "threading" the context within each example of the system under specification
   "A full stack" ->-(full) should { 
   ...
   }
@@ -168,7 +171,7 @@ Global context setup and teardown can also be created with the following methods
   val stackContext3 = new Context { last(deleteStack) }
 }}}
 
-==Repeated examples==
+===Repeated examples===
 
 If you want to repeat the same examples with different data until a condition is true, you can use the `until` method:
 {{{
@@ -189,6 +192,13 @@ This method is also available on `Context` objects, so you can write:
   ...
   }
 }}}
+
+== System contexts ==
+
+(from 1.4.4)
+
+to be describe later,....
+
 
 =Specify an example=
 You specify an example of what your system is supposed to do by adding a description inside a specified system followed by the method `in`:
