@@ -252,7 +252,7 @@ The second way of using a System context is to create a `SystemContext` object a
 
 This type of `SystemContext` usage is said to be "external" because the context is declared outside the System under specification.
 
-===Contexts comparison===
+==Contexts comparison==
 
 There are unfortunately both advantages and disadvantages to each approach for creating the context of a system:
 
