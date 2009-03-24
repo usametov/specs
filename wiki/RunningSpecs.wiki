@@ -170,6 +170,22 @@ On the command line, you can run your suite by executing: `java -cp ... org.juni
 
 Note that subexamples of an example won't be reported as separate tests but their failure messages will be added to the parent example failure messages.
 
+(*from 1.4.4*)
+
+The JUnit trait can be directly mixed in the Specification:
+{{{
+  import org.specs.runner.JUnit
+
+  class mySpec extends Specification with JUnit { ... }
+}}}
+
+In that case, the specification can still be run in the console by using the `run` class:
+{{{
+  java -cp <classpath> run org.specs.samples.mySpec -v
+}}}
+
+*Note*: the -v option prints the stacktrace if the Specification class can't be instantiated
+
 =Run your specification with JUnit4 in Eclipse=
 
 In order to be able to select your JUnit4 classes, you need to add the output directory of your project to your build path:
