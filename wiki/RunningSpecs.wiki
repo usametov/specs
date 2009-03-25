@@ -26,13 +26,17 @@ And if you mock classes or traits with attributes you will need
  * [http://repo1.maven.org/maven2/asm/asm/1.5.3 asm-1.5.3.jar]
  * [http://repo1.maven.org/maven2/org/objenesis/objenesis/1.1 objenesis-1.1.jar]
 
+If you use mock objects with Mockito, add
+
+ * [http://repo1.maven.org/maven2/org/mockito/mockito-all/1.7 mockito-all-1.7.jar] 
+
 To run the specifications as JUnit suites:
 
  * [http://repo1.maven.org/maven2/junit/junit/4.4 junit-4.4.jar]
 
 And finally to run the specifications as `ScalaTest` suites, use
 
- * [http://scala-tools.org/repo-releases/org/scalatest/scalatest/0.9.3 scalatest-0.9.3.jar]
+ * [http://scala-tools.org/repo-releases/org/scalatest/scalatest/0.9.5 scalatest-0.9.5.jar]
 
 =Run your specification in the Console=
 
