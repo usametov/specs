@@ -80,6 +80,16 @@ The following flags can be used to run only some systems or some examples:
 
 If your console supports it, you can display success, failures and skipped examples in color with the -c or --color flag.
 
+===Run a Specification class===
+(*from 1.4.4*)
+
+If a Specification is declared as an `object` you can run it directly on the command line. However, if you declare the Specification as a class (to make it a JUnit test for example), you will have to use the `run` class to execute the Specification on the command line:
+{{{
+  java -cp <classpath> run org.specs.samples.mySpec
+}}}
+
+If the class can't be instantiated a stacktrace will be printed.
+
 ===Display the help===
 (*from 1.4.4*)
 
@@ -182,13 +192,6 @@ The JUnit trait can be directly mixed in the Specification:
 
   class mySpec extends Specification with JUnit { ... }
 }}}
-
-In that case, the specification can still be run in the console by using the `run` class:
-{{{
-  java -cp <classpath> run org.specs.samples.mySpec -v
-}}}
-
-*Note*: the -v option prints the stacktrace if the Specification class can't be instantiated
 
 =Run your specification with JUnit4 in Eclipse=
 
