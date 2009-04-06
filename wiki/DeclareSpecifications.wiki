@@ -195,8 +195,6 @@ This method is also available on `Context` objects, so you can write:
 
 == System contexts ==
 
-(*from 1.4.4*)
-
 When we want to execute examples in parallel or make sure that each example is not using variables which have possibly been modified by another example, we can use `SystemContext`. A `SystemContext` is an object which is passed to each example as a set of data to operate on.
 
 === Internal system contexts ===
