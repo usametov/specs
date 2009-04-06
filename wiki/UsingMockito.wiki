@@ -1,6 +1,5 @@
 #summary Using Mockito mocks and stubs.
 
-(*from 1.4.4*)
 <wiki:toc/>
 
 = Introduction =
