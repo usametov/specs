@@ -49,6 +49,18 @@ You can specify different consecutive returned values by appending `thenReturns`
   m.get(2) throws new Exception("forbidden") thenReturns "999"
 
 }}}
+== Smart mocks ==
+
+Mocks can be made to return "smart" null values (look at [http://code.google.com/p/mockito/wiki/ReleaseNotes setting smart return values] for more details): 
+{{{
+  trait Hello {
+    def get(i: Int) = "hello"
+  }
+  val m = smartMock[Hello]
+  m.get(0) must ==("") // instead of null
+}}}
+
+_Note_: there is an internal Mockito bug when doing the same thing on java.util.List[String]
 
 == Argument matchers ==
 
