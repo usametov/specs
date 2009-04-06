@@ -32,11 +32,16 @@ If you use mock objects with Mockito, add
 
 To run the specifications as JUnit suites:
 
- * [http://repo1.maven.org/maven2/junit/junit/4.4 junit-4.4.jar]
+ * [http://repo1.maven.org/maven2/junit/junit/4.5 junit-4.5.jar]
 
-And finally to run the specifications as `ScalaTest` suites, use
+If you want to run the specifications as `ScalaTest` suites, use
 
  * [http://scala-tools.org/repo-releases/org/scalatest/scalatest/0.9.5 scalatest-0.9.5.jar]
+
+And finally if you want to use Textile markup in Literate Specifications, you need to add
+
+ * [http://scala-tools.org/repo-releases/org/eclipse/mylyn/wikitext/wikitext.core/0.9.4.I20090220-1600-e3x wikitext.core-0.9.4.I20090220-1600-e3x.jar]
+ * [http://scala-tools.org/repo-releases/org/eclipse/mylyn/wikitext/wikitext.textile/0.9.4.I20090220-1600-e3x wikitext.textile-0.9.4.I20090220-1600-e3x.jar] 
 
 =Run your specification in the Console=
 
@@ -63,11 +68,10 @@ If you have several exceptions being thrown and if stacktraces are obscuring the
 You can also choose to display only the failed and error examples by using either the -xonly or the --failedonly option ("x" like the symbol showing a failure or an error in the console).
 
 ===Don't show statistics===
-(*from 1.4.4*)
+
 For big specifications, if you want to remove the display of statistics, you can use the -nostats or --nostatistics flag to prevent statistics to be displayed.
 
 ===Filter systems and examples===
-(*from 1.4.4*)
 
 The following flags can be used to run only some systems or some examples:
 
@@ -76,12 +80,10 @@ The following flags can be used to run only some systems or some examples:
 -ex or --example regexp runs only the examples which description matches the regular expression
 
 ===Report with colors===
-(*from 1.4.4*)
 
 If your console supports it, you can display success, failures and skipped examples in color with the -c or --color flag.
 
 ===Run a Specification class===
-(*from 1.4.4*)
 
 If a Specification is declared as an `object` you can run it directly on the command line. However, if you declare the Specification as a class (to make it a JUnit test for example), you will have to use the `run` class to execute the Specification on the command line:
 {{{
@@ -91,7 +93,6 @@ If a Specification is declared as an `object` you can run it directly on the com
 If the class can't be instantiated a stacktrace will be printed.
 
 ===Display the help===
-(*from 1.4.4*)
 
 The help flag: -h or --help can be used to display the available flags and their description: 
 {{{
@@ -183,8 +184,6 @@ The name of the test class will be <package name>.mySpecTest
 On the command line, you can run your suite by executing: `java -cp ... org.junit.runner.JUnitCore mySpecTest`
 
 Note that subexamples of an example won't be reported as separate tests but their failure messages will be added to the parent example failure messages.
-
-(*from 1.4.4*)
 
 The JUnit trait can be directly mixed in the Specification:
 {{{
@@ -328,7 +327,6 @@ class mySpecSuite extends ScalaTestSuite(mySpec)
 Then use the !ScalaTest gui runner: `java -cp ... org.scalatest.Runner -g -s mySpecSuite`
 
 =Run your specification with either the Console, JUnit or `ScalaTest` =
-(*from 1.4.4*)
 
 The following specification: {{{
 package org.specs.samples
