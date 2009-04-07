@@ -24,6 +24,27 @@ object newSpecification extends Specification("My new Specification") {
 }
 }}}
 
+=== "Boosted" Specification ===
+
+If you don't mind getting lots of implicit definitions you can use the following spex.Specification class: {
+package org.spex
+import org.specs.mock.Mockito
+import org.specs.Sugar
+import org.specs.SystemContexts
+import org.specs.runner._
+
+class Specification extends org.specs.Specification with Mockito with Sugar with SystemContexts with JUnit with ScalaTest  
+}
+
+With this only class, you will be able to:
+
+ * use Mocks (with the Mockito library)
+ * use [http://code.google.com/p/specs/wiki/AdvancedSpecifications#How_to_add_syntactic_sugar_to_your_specifications tuples as lists]
+ * execute the specification as JUnit and ScalaTest
+ * use [http://code.google.com/p/specs/wiki/DeclareSpecifications#System_contexts System contexts] to define the systems under specification
+
+(*from 1.4.5*)
+_Note_: the DataTables trait will be added to this class in the next release of specs.
 =Systems under specification=
 
 You specify systems by simply adding a description followed by the method `should`:
