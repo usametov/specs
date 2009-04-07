@@ -37,23 +37,13 @@ For more examples about what you can do with the library, please:
 If you're a Maven user, you need to add the following dependency to your pom file:
 {{{
     <dependency>
-      <groupId>org.specs</groupId>
-      <artifactId>specs</artifactId>
-      <version>1.4.3</version> <!-- specify the version here ->
-    </dependency>
-
-<!-- BE CAREFUL, FROM VERSION 1.4.4 THE GROUP ID IS CHANGING ->
-
-    <dependency>
       <groupId>org.scala-tools.testing</groupId>
       <artifactId>specs</artifactId>
       <version>1.4.4</version> <!-- specify the version here ->
     </dependency>
-
-
 }}}
  
- 
+_Note_: specs versions older than 1.4.4 are using the org.specs groupId 
  
  
  
