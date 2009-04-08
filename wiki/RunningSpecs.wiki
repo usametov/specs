@@ -328,7 +328,8 @@ Then use the !ScalaTest gui runner: `java -cp ... org.scalatest.Runner -g -s myS
 
 =Run your specification with either the Console, JUnit or `ScalaTest` =
 
-The following specification: {{{
+The following specification: 
+{{{
 package org.specs.samples
 import org.specs._
 import org.specs.runner._
@@ -336,11 +337,11 @@ import org.specs.runner._
 class helloWorldTest extends Specification with JUnit with ScalaTest { ... }
 }}}
 
-* can be run in the Console with `java -cp <classpath> run org.specs.samples.helloWorldTest`. This is the default behavior provided by the Specification class. Note that the main class is the `run` class which takes as first argument a string corresponding to the Specification class to be executed. The `run` class instantiates the Specification class and invokes its main method to execute the it (the one which would be called if the specification was declared as an object instead of a class).
+ * can be run in the Console with `java -cp <classpath> run org.specs.samples.helloWorldTest`. This is the default behavior provided by the Specification class. Note that the main class is the `run` class which takes as first argument a string corresponding to the Specification class to be executed. The `run` class instantiates the Specification class and invokes its main method to execute the it (the one which would be called if the specification was declared as an object instead of a class).
 
-* can be run using Eclipse or Maven because of the added JUnit trait. Note that the Specification name has to end with `Test` by default to be included in the test suite by the Maven Surefire plugin.
+ * can be run using Eclipse or Maven because of the added JUnit trait. Note that the Specification name has to end with `Test` by default to be included in the test suite by the Maven Surefire plugin.
 
-* can be run using ScalaTest with `java -cp ... org.scalatest.Runner -g -s helloWorldTest`. This functionality is provided through the additional `ScalaTest` trait.
+ * can be run using `ScalaTest` with `java -cp ... org.scalatest.Runner -g -s helloWorldTest`. This functionality is provided through the additional `ScalaTest` trait.
   
 =Run your specification with Team City=
 
