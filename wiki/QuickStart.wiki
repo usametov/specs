@@ -17,7 +17,7 @@ object helloWorld extends Specification {
   "'hello world' matches 'h.* w.*'" in {}
 }
 }}}
-  # back-up your examples with assertions:
+  # back-up your examples with expectations:
 {{{
 import org.specs._
 
@@ -57,13 +57,21 @@ object helloWorld extends Specification {
   "Good bye cruel world" should {...}
 }
 }}}
-  # You can also use a JUnit runner to run your specification inside [http://farm2.static.flickr.com/1098/1433239972_5f3a83e40c.jpg?v=0  Eclipse] for example (using the JUnit4 library). Add: 
+  # You can also use a JUnit runner to run your specification inside [http://farm2.static.flickr.com/1098/1433239972_5f3a83e40c.jpg?v=0  Eclipse] for example (using the JUnit 4.5 library). Add: 
 {{{
 import org.specs.runner._
 class helloWorldTest extends JUnit4(helloWorld)
+
+// OR declare your specification as a class and mix-in the JUnit trait
+// in that case, the specification can still be run on the command line with
+// `scala -cp specs-<version>.jar run helloWorld` 
+class helloWorld extends Specification with JUnit { ... }
+
 }}}
 
 *Note*: `helloWorldTest` is declared as a class and not an object to be instantiated properly by JUnit runners.
+
+
 
  
  
