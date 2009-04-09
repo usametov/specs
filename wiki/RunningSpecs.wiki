@@ -92,6 +92,21 @@ If a Specification is declared as an `object` you can run it directly on the com
 
 If the class can't be instantiated a stacktrace will be printed.
 
+===Run several Specification classes===
+(*from 1.4.5*)
+
+You can also run many specifications at once with the -k flag (or --classes):
+{{{
+  java -cp <classpath> run -k org.specs.samples.mySpec,org.specs.samples.mySpec2
+}}}
+
+And the package names can be factored with -p (or --packages):
+{{{
+  java -cp <classpath> run -p org.specs.samples -k mySpec,mySpec2
+}}}
+
+Additionally you can display instantiations issues with the -v flag.
+
 ===Display the help===
 
 The help flag: -h or --help can be used to display the available flags and their description: 
