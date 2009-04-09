@@ -326,6 +326,10 @@ class mySpecSuite extends ScalaTestSuite(mySpec)
 
 Then use the !ScalaTest gui runner: `java -cp ... org.scalatest.Runner -g -s mySpecSuite`
 
+=Run your specification with Scala Test in `IDEA IntelliJ` =
+
+Just add the `ScalaTest` trait to your specification (declared as a class, see below) and you're done!
+
 =Run your specification with either the Console, JUnit or `ScalaTest` =
 
 The following specification: 
