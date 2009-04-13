@@ -1,0 +1,82 @@
+<html>
+    <head>
+      <title>fieldsFormSpec</title>
+	    <style type="text/css" media="all">
+	      @import url('./css/maven-base.css');
+	      @import url('./css/maven-theme.css');
+	      @import url('./css/site.css');
+	    </style>
+        <link href="./css/prettify.css" rel="stylesheet" type="text/css"></link>
+        <script type="text/javascript" src="./css/prettify.js"></script>
+        <link href="./css/print.css" type="text/css" rel="stylesheet" media="print"></link>
+        <script type="text/javascript" src="./css/tabber.js"></script> 
+        <link href="./css/tabber.css" type="text/css" rel="stylesheet" media="screen"></link> 
+        <link href="./css/tooltip.css" type="text/css" rel="stylesheet"></link>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <script type="text/javascript" src="./css/tooltip.js"></script>
+        <script language="javascript"> 
+    function init() {
+	   prettyPrint()
+       noNavBar()
+    }
+    // found on : http://www.tek-tips.com/faqs.cfm?fid=6620
+    String.prototype.endsWith = function(str) { return (this.match(str+'$') == str) }
+
+    function changeWidth(id,width) {
+      document.getElementById(id).style.width = width;
+    }
+    function changeMarginLeft(id, margin) {
+      document.getElementById(id).style.marginLeft = margin;
+    }
+    function noNavBar() {
+      changeWidth('leftColumn','0px');
+      changeMarginLeft('bodyColumn', '10px')
+   }
+   function toggleNavBar(image) {
+      toggleImage(image)
+      if (image.src.endsWith('images/expanded.gif')) {
+		changeWidth('leftColumn','20px');
+      	changeMarginLeft('bodyColumn', '35px')
+	  }
+    else {
+		changeWidth('leftColumn','250px');
+      	changeMarginLeft('bodyColumn', '277px')
+	  }
+   }
+   function toggleImage(image) {
+	  if (image.src.endsWith('images/expanded.gif')) {
+	    image.src = 'images/collapsed.gif';
+	  }
+    else {
+        image.src = 'images/expanded.gif';
+	  }
+   }
+	function showHideTable(tableId) {
+	  table = document.getElementById(tableId)
+	  table.style.display = (table.style.display == 'none')? 'block' : 'none';
+	}
+	function showExampleMessage(status, exId, event) {
+    exampleMessage = document.getElementById('rowmess:' + exId)
+    exampleIcon = document.getElementById('rowicon:' + exId)
+    showToolTipWithIcon(status, exampleIcon.src, exampleMessage.innerHTML, event)
+  }
+	function showExampleDesc(exId, event) {
+		exampleDesc = document.getElementById('rowdesc:' + exId)
+        showToolTip('Description', exampleDesc.innerHTML, event)
+	}
+
+
+    </script>
+        <script language="javascript">window.onLoad=prettyPrint();noNavBar()</script>
+    </head>
+    <body>
+      <div id="toolTip"></div>
+      <a name="top"></a>
+      <div id="leftColumn">
+     
+    </div>
+      <div id="bodyColumn">
+        <h2>fieldsFormSpec</h2><a name="A+form+with+fields+specifies"></a><h3>A form with fields specifies<a href="#top">   <img src="images/up.gif"></img></a></h3><html xmlns="http://www.w3.org/1999/xhtml"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta></head><body>  <table class="dataTable"><tr><th colspan="2">Person</th></tr><tr><td>First name</td><td class="value" colspan="2">Eric</td></tr><tr><td>Last name</td><td class="value" colspan="2">Torreborre</td></tr></table>  </body></html>
+      </div>
+    </body>
+  </html>
