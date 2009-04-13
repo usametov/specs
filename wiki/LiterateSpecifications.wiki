@@ -182,7 +182,7 @@ Now if we want to be able to set expectations on data we need to declare propert
   val name = prop("Name", "Eric")
 }}}
 
-Then it is possible to set the expected value of this property with its `apply` method (see the complete example [http://code.google.com/p/specs/wiki/LiterateSpecifications/Nested_forms below]:
+Then it is possible to set the expected value of this property with its `apply` method (see the complete example [http://code.google.com/p/specs/wiki/LiterateSpecifications#Nested_forms below]):
 {{{
   name("Bob") // the enclosing Form object will check that actual value == expected value
 }}}
@@ -212,7 +212,7 @@ trait PersonBusinessEntities {
 }
 }}}
 
-Then let's create a PersonForm which can be instantiated from an actual Person object (retrieved from a database for example):
+Then let's create a `PersonForm` which can be instantiated from an actual Person object (retrieved from a database for example):
 {{{
 trait PersonForms extends LiterateSpecification with PersonBusinessEntities {
 
@@ -244,7 +244,7 @@ In the 2 forms above, we declare:
 
  * some properties like `firstName`. Those properties have their actual value set from a `p` object passed as a parameter
 
- * an iterable property which will display the iterable passed as a parameter with commas
+ * an iterable property which will display its value a bit differently by separating all values with commas
 
  * a nested form, declared with the `form` method
 
@@ -255,8 +255,7 @@ Finally, we can create a literate specification with this form, like this:
 class formSampleSpec extends PersonForms with Html {
   "Forms can be used in a Literate specificatins" is <textile>
 
-This is a Person form, checking that the initials are set properly on a Person object.
-{ 
+This is a Person form, checking that the initials are set properly on a Person object. { 
   val address = Address(37, "Nando-cho")
   val person = Person("Eric", "Torreborre", address, List("Jerome", "Olivier"))
 
@@ -267,7 +266,7 @@ This is a Person form, checking that the initials are set properly on a Person o
     friends("Jerome", "Olivier")
     address.set { a =>
                   a.number(37)
-                  a.street("Nando-cho")}
+                  a.street("Nando-cho") }
     lastName("Torreborre")
    }
 }
@@ -279,13 +278,41 @@ This is a Person form, checking that the initials are set properly on a Person o
 
 When we use the form, we bind it with an actual person object and for each property, we declare what is the expected value. For example, we expect the `initials` property to be properly populated with the initials of the first name and the last name of the Person.
 
+You can also notice the `set` method on a form which provides a way to set a nested form properties in the same block.
+
 When the specification is executed, the result will look like [http://specs.googlecode.com/svn/samples/LiterateSpecifications/org.specs.samples.formSampleSpec.html this].
+
+== Forms execution ==
+
+There are 2 way to relate the form successes/failures to its specification:
+
+ * either you use the `inForm` method as seen above. This will create a new example and one failure if the form fails (but still all the form issues will be displayed)
+ 
+ * or you can just declare the form and call the `report` method on it. This will execute the form and attach each property cell as a separate example on the enclosing specification:
+{{{
+This is a Person form, checking that the initials are set properly on a Person object. { 
+  val address = Address(37, "Nando-cho")
+  val person = Person("Eric", "Torreborre", address, List("Jerome", "Olivier"))
+
+   new PersonForm(person) {
+    firstName("Eric")       
+    initials("et")
+    friends("Jerome", "Olivier")
+    address.set { a =>
+                  a.number(37)
+                  a.street("Nando-cho")}
+    lastName("Torreborre")
+   }.report(this)
+}
+}}}
+
+
 
 == Forms layout ==
 
 Some special methods can be used to help the layout of Forms:
 
- * p(properties/forms): adds all the properties/forms on a new table row, with an empty row above as a separator
+ * *p(properties/forms)*: adds all the properties/forms on a new table row, with an empty row above as a separator
  * th1(title): adds a small box with a caption inside a row
  * th2(title): adds a bold center header on a new row
  * th3(title): adds a bold left-aligned header on a new row
