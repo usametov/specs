@@ -93,7 +93,7 @@ If a Specification is declared as an `object` you can run it directly on the com
 If the class can't be instantiated a stacktrace will be printed.
 
 ===Run several Specification classes===
-(*from 1.4.5*)
+(*from 1.5.0*)
 
 You can also run many specifications at once with the -k flag (or --classes):
 {{{
