@@ -241,5 +241,30 @@ When we use the form, we bind it with an actual person object and for each prope
 
 When the specification is executed, the result will look like [http://specs.googlecode.com/svn/samples/LiterateSpecifications/org.specs.samples.formSampleSpec.html this].
 
+== Forms layout ==
+
+Some special methods can be used to help the layout of Forms:
+
+ * p(properties/forms*): adds all the properties/forms on a new table row, with an empty row above as a separator
+ * th1(title): adds a small box with a caption inside a row
+ * th2(title): adds a bold center header on a new row
+ * th3(title): adds a bold left-aligned header on a new row
+ * th3(title, status): adds a bold left-aligned header on a new row, colored with a specific status ("success" = green, "failure" = yellow, "error" = red, "skipped" = gray, "value" = white)
+ 
+ * tabulations. You can display 2 forms on 2 different tabs with:
+{{{
+  // create a new tabs group
+  new tabs() {
+    // create a new tab
+    new tab("Tab 1") {
+       form1
+    }
+    new tab("Tab 2") {
+       form2
+    }
+  }
+}}}
+ 
+
 
 *TO BE CONTINUED,...*
