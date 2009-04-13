@@ -94,7 +94,7 @@ Sometimes code is not always properly displayed on multiple lines with either Te
    "a" | "b" | "sum" |
     1  !  1  ! 2     |
     1  !  2  ! 3     |
-    1  !  3  ! 4     |> { (a: Int, b: Int, sum: Int) =>
+    1  !  3  ! 4     | { (a: Int, b: Int, sum: Int) =>
      a + b must be equalTo(sum)
    }
  }
@@ -172,15 +172,17 @@ class fieldsFormSpec extends LiterateSpecification with Html {
 }
 }}}
 
+Clearly this Form is not doing much, this is just a way to create a table with input data in the `LiterateSpecification` and to be able to get its values afterwards.
+
 == Properties ==
 
-Fields can be used to display data and Properties can be used to set expectations on this data. A property is declared like a field, but with the `prop` method (inside a Form object):
+Now if we want to be able to set expectations on data we need to declare properties. A property is declared like a field, but with the `prop` method (inside a Form object):
 {{{
   // "Name" is the property label, "Eric" is its actual value
   val name = prop("Name", "Eric")
 }}}
 
-Then it is possible to set the expected value of this property with its `apply` method:
+Then it is possible to set the expected value of this property with its `apply` method (see the complete example [http://code.google.com/p/specs/wiki/LiterateSpecifications/Nested_forms below]:
 {{{
   name("Bob") // the enclosing Form object will check that actual value == expected value
 }}}
