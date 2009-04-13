@@ -2,7 +2,7 @@
 
 http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *Alpha version!*
 
-<wiki:toc max_depth="2"/>
+<wiki:toc/>
 
 = Why literate specifications? =
 
@@ -197,6 +197,14 @@ The default formatter for Double values is `new DecimalFormat("#.###############
      case Some(l) => l.map(p.formatValue(_)).mkString("/") // using the default formatter for Doubles, then separating with "/"
   })
 }}}
+
+The available formatting methods are:
+
+ * `formatWith` to format values _and_ missing values on properties
+ * `formatterIs` to format existing values (an empty string is used for a missing value)
+ * `formatIterableWith` to format iterable properties (for both existing _and_ missing values)
+ * `iterableFormatterIs` to format only existing values on iterable properties
+
 
 == Nested forms ==
 
