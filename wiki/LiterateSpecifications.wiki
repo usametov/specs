@@ -54,7 +54,7 @@ The example above shows the following features:
 
  * when there are several expectations, they must be enclosed in a `eg` function to declare that they belong to the same example (otherwise the first expectation would be attached to the example description, the next ones would be anonymous examples)
 
-When you run the example above, the result should be the following [http://code.google.com/p/specs/source/browse/samples/LiterateSpecifications/org.specs.samples.helloWorld.html html]
+When you run the example above, the result should be the following [http://specs.googlecode.com/svn/samples/LiterateSpecifications/org.specs.samples.helloWorld.html html]
 
 
 = Helper functions =
