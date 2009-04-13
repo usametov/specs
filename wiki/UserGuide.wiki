@@ -22,7 +22,7 @@ This User Guide is divided in 7 parts:
   * [UsingJMock How use mock objects with jMock]
   * [UsingMockito How use mock objects with Mockito]
   * [AdvancedSpecifications Use DataTables and syntactic sugar in your specifications]
- http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *Experimental!*
+ http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *Alpha version!*
  * [LiterateSpecifications How write literate specifications] 
 
 For more examples about what you can do with the library, please:
