@@ -52,6 +52,9 @@ The example above shows the following features:
 
  * when there are several expectations, they must be enclosed in a `eg` function to declare that they belong to the same example (otherwise the first expectation would be attached to the example description, the next ones would be anonymous examples)
 
+When you run the example above, the result should be the following [http://code.google.com/p/specs/wiki/LiterateSpecifications/org.specs.samples.helloWorld.html html]
+
+
 = Helper functions =
 
 The first helper function seen above is the `notImplemented` function. This will just create an example which body throws a `SkippedException` .
@@ -89,7 +92,8 @@ There are other available helper functions:
 
 Snippets of Scala code can be inserted in the specification by adding the `LiterateSnippets` trait to the `LiterateSpecification`:
 {{{
-  This is creating a piece of Scala code. The "println("hello")" code is stored in a variable called "it" (stored in the org.specs.specification.SnipIt trait). It is also displayed in the Html report with a code style:
+  This is creating a piece of Scala code. The "println("hello")" code is stored in a variable called "it" (stored in the org.specs.specification.SnipIt trait). 
+  It is also displayed in the Html report with a code style:
   { "println(\"hello\")" snip it }
   
   This code can then be executed with:
@@ -110,5 +114,22 @@ For a complete example, please have a look at [http://code.google.com/p/specs/so
 = Forms =
 
 Forms are the preferred way in specs to create examples in a table format, so that they are readable by business users.
+
+== Properties ==
+
+A form is a set of Fields or Properties. Here is a simple example of a Form:
+{{{
+class Person extends Form {
+  val firstName = field("First name", "Eric")
+  val lastName = field("Last name", "Torreborre")
+
+  tr(firstName)
+  tr(lastName)
+}
+}}}
+
+This form declares 2 fields attached to the Person form (with the `field` method). They have a distinct label and an initial value. They are displayed on 2 separate rows with the tr method.
+
+
 
 *TO BE CONTINUED,...*
