@@ -115,7 +115,7 @@ For a complete example, please have a look at [http://code.google.com/p/specs/so
 
 Forms are the preferred way in specs to create examples in a table format, so that they are readable by business users.
 
-== Properties ==
+== Fields ==
 
 A form is a set of Fields or Properties. Here is a simple example of a Form:
 {{{
@@ -130,6 +130,116 @@ class Person extends Form {
 
 This form declares 2 fields attached to the Person form (with the `field` method). They have a distinct label and an initial value. They are displayed on 2 separate rows with the tr method.
 
+The following html [http://code.google.com/p/specs/source/browse/samples/LiterateSpecifications/org.specs.samples.fieldFormSpec.html html] is produced with this literate specification: 
+{{{
+class fieldsFormSpec extends LiterateSpecification with Html {
+ class Person extends Form {
+   val firstName = field("First name", "Eric")
+   val lastName = field("Last name", "Torreborre")
+   tr(firstName)
+   tr(lastName)
+ }
+ "A form with fields" is <textile>
+   { new Person().toHtml }  
+  </textile>
+}
+}}}
+
+== Properties ==
+
+Fields can be used to display data and Properties can be used to set expectations on this data. A property is declared like a field, but with the `prop` method (inside a Form object):
+{{{
+  // "Name" is the property label, "Eric" is its actual value
+  val name = prop("Name", "Eric")
+}}}
+
+Then it is possible to set the expected value of this property with its `apply` method:
+{{{
+  name("Bob") // the enclosing Form object will check that actual value == expected value
+}}}
+
+== Nested forms ==
+
+Let's have a look at a complete example, which will also demonstrate that forms can also be nested to create complex business objects:
+
+First of all, let's define some application-level objects modeling a Person and his address:
+{{{
+trait PersonBusinessEntities {
+  case class Person(firstName: String, lastName: String, address: Address, friends: List[String]) {
+    def initials = firstName(0).toString + lastName(0)
+  }
+  case class Address(number: Int, street: String)
+}
+}}}
+
+Then let's create a PersonForm which can be instantiated from an actual Person object (retrieved from a database for example):
+{{{
+trait PersonForms extends LiterateSpecification with PersonBusinessEntities {
+
+  case class PersonForm(t: String, p: Person) extends Form(t) {
+    def this(p: Person) = this("Customer", p)
+    val firstName = prop("First Name", p.firstName)
+    val lastName = prop("Last Name", p.lastName)
+    val initials = prop("Initials", p.initials).matchesWith(beEqualToIgnoringCase(_))
+    val friends =  propIterable("Friends", p.friends)
+    val address = form(AddressForm("Home", p.address))
+
+    tr(firstName, address)
+    tr(lastName, initials)
+    tr(friends)
+  }
+  case class AddressForm(t: String, address: Address) extends Form(t) {
+    def this(a: Address) = this("Home", a)
+    val number = prop("Number", address.number)
+    val street = prop("Street", address.street)
+    tr(number)
+    tr(street)
+  }
+}
+}}}
+
+In the 2 forms above, we declare:
+
+ * a title for the form `extends Form(t)`. This will replace the title by default which is  created by uncamelcasing the class name
+
+ * some properties like `firstName`. Those properties have their actual value set from a `p` object passed as a parameter
+
+ * an iterable property which will display the iterable passed as a parameter with commas
+
+ * a nested form, declared with the `form` method
+
+ * a layout for those properties and forms on 3 different rows with the `tr` method
+
+Finally, we can create a literate specification with this form, like this:
+{{{
+class formSampleSpec extends PersonForms with Html {
+  "Forms can be used in a Literate specificatins" is <textile>
+
+This is a Person form, checking that the initials are set properly on a Person object.
+{ 
+  val address = Address(37, "Nando-cho")
+  val person = Person("Eric", "Torreborre", address, List("Jerome", "Olivier"))
+
+  "Initials are automatically populated" inForm
+   new PersonForm(person) {
+    firstName("Eric")       
+    initials("et")
+    friends("Jerome", "Olivier")
+    address.set { a =>
+                  a.number(37)
+                  a.street("Nando-cho")}
+    lastName("Torreborre")
+   }
+}
+
+  </textile>
+}
+
+}}}
+
+When we use the form, we bind it with an actual person object and for each property, we declare what is the expected value. For example, we expect the `initials` property to be properly populated with the initials of the first name and the last name of the Person.
+
+When the specification is executed, the result will look like [http://specs.googlecode.com/svn/samples/LiterateSpecifications/org.specs.samples.formSampleSpec.html this].
 
 
 *TO BE CONTINUED,...*
