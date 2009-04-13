@@ -111,6 +111,20 @@ Snippets of Scala code can be inserted in the specification by adding the `Liter
 
 }}}
 
+Note that each call to `snip it` will actually clear the `it` variable. If you want to have some code being kept in the `it` variable you can use the `prelude` method:
+{{{
+  { """import scala.collection.immutable._
+       import scala.xml._
+    """ prelude it }
+
+  The prelude method can be called several times
+  { """import org.specs.specification._
+       import org.specs.util._
+    """ prelude it }
+}}}
+
+As you can see, this is very useful when declaring shared imports.
+
 For a complete example, please have a look at [http://code.google.com/p/specs/source/browse/trunk/src/test/scala/org/specs/mock/mockitoSpec.scala the Mockito specification]
 
 = Forms =
