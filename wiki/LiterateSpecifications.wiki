@@ -1,52 +1,114 @@
 #summary How to write literate specifications
 
-http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *Experimental!*
+http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *Alpha version!*
 
 <wiki:toc max_depth="2"/>
 
 = Why literate specifications? =
 
-The literate specifications support in *specs* is intended to provide a more informal way to specify and document the software being developed. The long term vision is that this kind of specification may be accessible to a business user for creation/modification and a developer for the implementation of the executable parts.
+The literate specifications support in *specs* is intended to provide a way to develop Acceptance specifications in a [http://fitnesse.org/FrontPage Fitnesse] style.
 
-= A look at the current experiment: xmlRunnerSpec =
+The basic idea is to define Systems under specification as some informal text, possibly with images. Parts of this text are considered as examples and they are backed up by some Scala code executed against the system being specified.
 
-The specification for the XML Runner (producing an xml file containing the specification results) has been developed using the !LiterateSpecification class:
+== A short example ==
+
+Here is a short example of such a `LiterateSpecification`: 
 {{{
-object xmlRunnerSpec extends RunnerFixture { 
 
-"The specification for the XML runner" is <text> 
-A specification can be run by a XML runner object. The XML runner object is responsible for collecting the results of sub-specifications, systems under test and examples and organize them hierarchically as xml elements.
+class HelloWorldSpecification extends LiterateSpecification with Html {
+ 
+  "The greeting application" is <textile>
 
-1. File creation 
-1.1 Simple file creation 
-  
-{"Running an XML runner on a specification should create a file whose path is " + "./spec1.xml".as(path) in {checkFilePath}}
+h3. Presentation
 
-1.2 Output directory
-It is possible to indicate the output directory of the runner, for example: {"specresults" as runnerOutputDir}
-In that case, {"the xml file should be created in the output directory with path: " + 
-               ("./" + runner.outputDir + "/spec1.xml").as(path) in checkOutputDirectory}
+This new application should say "hello" in different languages.
 
-2. XML content 
-
-Running an XML runner on a specification should create an xml structure:  
-
-- {"containing an element for the specification:\n" +
-  <spec name="spec1" description="spec1" assertions="3" failures="1" errors="1"></spec>.as(xml) in checkXml }
-....
-
-3. Console reporting
-
-The XML runner object should {"output the results of the specification in the console" in checkConsole}, as if it was a ConsoleRunner
-
-</text>  
+For example,<ex>by default, saying hello by default should use English</ex> { greet must_== "hello"}
+ 
+Then, other languages, like <ex>French and German should be supported too</ex> 
+{ eg {
+    greet("French") must_== "bonjour"
+    greet("German") must_== "hallo"
+  } 
 }
+
+<ex>Japanese should be supported also</ex> { notImplemented }
+
+ </textile>
+}
+}}} 
+
+The example above shows the following features:
+
+ * the `HelloWorldSpecification` mixes-in the Html trait to report the LiterateSpecification with the Html runner
+
+ * the name of the first System under specification is "The greeting application" and is defined by an xml Element `<textile></textile>`
+
+ * a title is declared with the `h3.` markup tag, using the [http://en.wikipedia.org/wiki/Textile_(markup_language) Textile] markup language as specified by the name of the xml element. The other supported markup language is [http://en.wikipedia.org/wiki/Markdown Markdown].
+
+ * the first example description is enclosed in the `<ex></ex>` element.
+
+ * it is *immediately* followed by an expectation which is some Scala code enclosed in `{}` curly braces.
+
+ * when there are several expectations, they must be enclosed in a `eg` function to declare that they belong to the same example (otherwise the first expectation would be attached to the example description, the next ones would be anonymous examples)
+
+= Helper functions =
+
+The first helper function seen above is the `notImplemented` function. This will just create an example which body throws a `SkippedException` .
+
+There are other available helper functions:
+
+ * `shh`. To "silence" the result of an expression. If you want to execute an action in the middle of the specification, you can silence it to avoid its result to be printed:
+{{{
+  This some text { doSomething().shh }
+  or This some text { doSomething() <| }
 }}}
 
-The important points to notice here are:
- 
- * !RunnerFixture is the actual class inheriting !LiterateSpecification. It supports all specification methods such as `checkFile` or `checkXml`. This makes this approach kind of _keyword-oriented_ where the programmed behavior is kept separate from the literal text as much as possible
- * The XML features of Scala are used to mix xml content and Scala code
- * The xml node is labeled as `text`. This has no importance now but this may be used to discriminate different kinds of text and display them accordingly. `<wiki>` could be used for example to specify that a markup language is used.
- * "example description" in <_scala code_> is used to create examples. The "example description" string is taken as the usual example description which appears in the reports
- * If we want to reuse part of the example description as an actual parameter of the specified behavior, it is possible to use the `as(parameter)` function. In that case, `parameter` should be a Property object. This helps keep the specification DRY but obscures readability on the other hand.
+ * `consoleOutput(messages: Seq[String])`. This displays the messages with a "prompt", mimicking the Scala interpreter (see [http://code.google.com/p/specs/LiterateSpecifications#Scala_interpreter Scala interpreter]
+
+ * `linkTo(description, otherSpecification)`. Links to sub-specifications can be included with the `linkTo` function. This will include the other specification in the current one (if not already present) and create a Html link to its results.
+
+= Data tables =
+
+[http://code.google.com/p/specs/wiki/AdvancedSpecifications#How_to_use_Data_Tables DataTables] can also be used inside a `LiterateSpecification` with the following syntax:
+{{{
+
+ All those small examples should be ok: {
+   "examples are ok" inTable 
+   "a" | "b" | "sum" |
+    1  !  1  ! 2     |
+    1  !  2  ! 3     |
+    1  !  3  ! 4     |> { (a: Int, b: Int, sum: Int) =>
+     a + b must be equalTo(sum)
+   }
+ }
+
+}}}
+
+= Snippets =
+
+Snippets of Scala code can be inserted in the specification by adding the `LiterateSnippets` trait to the `LiterateSpecification`:
+{{{
+  This is creating a piece of Scala code. The "println("hello")" code is stored in a variable called "it" (stored in the org.specs.specification.SnipIt trait). It is also displayed in the Html report with a code style:
+  { "println(\"hello\")" snip it }
+  
+  This code can then be executed with:
+  { execute(it) }
+
+  You can check that the output indeed contains the expected messages with: {
+    executeIs("hello") // equivalent to execute(it) must include("hello")
+    
+    // same thing but adds a small prompt sign before the output text
+    >("hello")
+    // 
+  }
+
+}}}
+
+For a complete example, please have a look at [http://code.google.com/p/specs/source/browse/trunk/src/test/scala/org/specs/mock/mockitoSpec.scala the Mockito specification]
+
+= Forms =
+
+Forms are the preferred way in specs to create examples in a table format, so that they are readable by business users.
+
+*TO BE CONTINUED,...*
