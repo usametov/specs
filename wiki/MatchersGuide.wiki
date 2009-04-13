@@ -1,5 +1,7 @@
 #summary How to add expectations to your examples
 
+<wiki:toc/>
+
 =Matchers presentation=
 
 There are different kind of matchers which are used to assert that some properties must be verified. Generally they are used like this:
@@ -11,7 +13,31 @@ There are different kind of matchers which are used to assert that some properti
 }
 }}}
 
-<wiki:toc/>
+== Be/Have matchers ==
+(*from 1.5.0*)
+
+Most of the matchers presented below are used with `myObject must matcher`. However some matchers are starting with the words 'be' or 'have'. Those matchers also have alternate forms allowing them to be used with 'be' or 'have' as separated words:
+
+{{{
+
+ // this is equivalent
+ "hello" must beMatching("h.*")
+ "hello" must be matching("h.*")
+
+ // this is equivalent
+ "hello" must not(beMatching("z.*"))
+ "hello" must not be matching("z.*")
+
+ // this is equivalent
+ List("hello") must not(haveSize(2))
+ List("hello") must not have size(2)
+
+ // articles are also allowed
+ Map("hello" -> "world") must have the key("hello")
+
+ // be and have matchers can be combined with logical operators too
+ "hello" must be matching("h.*") and not be matching("z.*")
+}}}
 
 ===Create your own Matcher===
 
@@ -85,6 +111,19 @@ Simply use the `not` method on a matcher:
 }}}
 
 In that case, the ok message of the first matcher is used as a ko message for the second matcher.
+
+=== Create a Be/Have matcher ===
+(*from 1.5.0*)
+
+When you create a matcher like `beEven`, you may want it to be also usable with `be` as a separated words. In order to do so, you need to add an implicit conversion from `org.specs.specification.Result[T]` (which is the result value of the expression `a must be`) and add the expected matcher as a method:
+
+{{{
+  implicit def toOddEvenMatcherResult(result: Result[T]) = new OddEvenMatcherResult(result)
+  class OddEvenMatcherResult(result: Result[T]) {
+    def even = result.matchWithMatcher(beEven)
+    def odd = result.matchWithMatcher(beEven.not)
+  }
+}}}
 
 ===Combine matchers===
 
