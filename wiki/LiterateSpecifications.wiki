@@ -84,6 +84,40 @@ Sometimes code is not always properly displayed on multiple lines with either Te
     // or "println("Hello world")".code without a cabalistic sign
   }
 }}}
+
+== Simple Properties ==
+
+Sometimes, in order to stay [http://en.wikipedia.org/wiki/Don't_repeat_yourself DRY], you may want to extract part of a description as a property to reuse it in the implementation of the example. Here is an example from the xmlRunnerSpec specification
+{{{
+
+It is possible to indicate the output directory of the runner, for example: {"specresults" as runnerOutputDir}
+      In that case, {"the xml file should be created in the output directory with path: " +
+                 "./specresults/org.specs.runner.sp1.xml".as(path) in checkOutputDirectory}
+
+}}}
+
+In the situation above, the `runnerOutputDir` property will hold the "specresults" values which will also be displayed in the literate specification text.
+
+For your convenience, there are several traits with predefined properties that you can mix-in to your specification to avoid creating Property variables:
+
+ * `StringProperties`: a, b, c, d, e, f
+ * `IntProperties`: i, j, k, l, m, n
+ * `DoubleProperties`: u, v, w, x, y, z
+ * `BooleanProperties`: o, p, q, r, s, t
+ * `XmlProperties`: xml, xml2, xml3, xml4, xml5, xml6
+ * `CurrentProperty`: it
+ * `AllProperties`: all the traits above
+
+All those properties offer an additional shortcut to set the property value:
+{{{
+... with AllProperties {
+
+  "the age is " + 10.i " + years  // set the property i and display "the age is 10 years"
+  "c:/temp".a                     // set the property "a"
+  <ex>result<ex>.xml              // set the property "xml"
+}
+}}}
+
 = Data tables =
 
 [http://code.google.com/p/specs/wiki/AdvancedSpecifications#How_to_use_Data_Tables DataTables] can also be used inside a `LiterateSpecification` with the following syntax:
