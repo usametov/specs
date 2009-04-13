@@ -42,7 +42,7 @@ Then, other languages, like <ex>French and German should be supported too</ex>
 
 The example above shows the following features:
 
- * the `HelloWorldSpecification` mixes-in the Html trait to report the LiterateSpecification with the Html runner
+ * the `HelloWorldSpecification` mixes-in the Html trait to report the `LiterateSpecification` with the Html runner
 
  * the name of the first System under specification is "The greeting application" and is defined by an xml Element `<textile></textile>`
 
@@ -73,6 +73,17 @@ There are other available helper functions:
 
  * `linkTo(description, otherSpecification)`. Links to sub-specifications can be included with the `linkTo` function. This will include the other specification in the current one (if not already present) and create a Html link to its results.
 
+== Display code ==
+
+Sometimes code is not always properly displayed on multiple lines with either Textile or Markdown. The workaround for this is to mixin the Textile or Markdown trait and use the following functions which will also add css coloring: 
+{{{
+  This is some code to display properly: {
+    """
+    println("Hello world")
+    """ >@
+    // or "println("Hello world")".code without a cabalistic sign
+  }
+}}}
 = Data tables =
 
 [http://code.google.com/p/specs/wiki/AdvancedSpecifications#How_to_use_Data_Tables DataTables] can also be used inside a `LiterateSpecification` with the following syntax:
