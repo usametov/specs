@@ -13,7 +13,7 @@ There are different kind of matchers which are used to assert that some properti
 }
 }}}
 
-== Be/Have matchers ==
+=== Be/Have matchers ===
 (*from 1.5.0*)
 
 Most of the matchers presented below are used with `myObject must matcher`. However some matchers are starting with the words 'be' or 'have'. Those matchers also have alternate forms allowing them to be used with 'be' or 'have' as separated words:
