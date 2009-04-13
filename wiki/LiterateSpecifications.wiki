@@ -8,7 +8,9 @@ http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.p
 
 The literate specifications support in *specs* is intended to provide a way to develop Acceptance specifications in a [http://fitnesse.org/FrontPage Fitnesse] style.
 
-The basic idea is to define Systems under specification as some informal text, possibly with images. Parts of this text are considered as examples and they are backed up by some Scala code executed against the system being specified.
+The basic idea is to define Systems under specification as some informal text, possibly with images. Parts of this text are considered as examples and they are backed up by some Scala code executed against the system being specified. 
+
+Furthermore, *Forms* add a very convenient way to declare and display expected structured information, like business objects (customers, orders,... the usual ones).
 
 == A short example ==
 
