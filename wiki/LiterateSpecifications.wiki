@@ -170,7 +170,7 @@ Note that each call to `snip it` will actually clear the `it` variable. If you w
 
 As you can see, this is very useful when declaring shared imports.
 
-For a complete example, please have a look at [http://code.google.com/p/specs/source/browse/trunk/src/test/scala/org/specs/mock/mockitoSpec.scala the Mockito specification]
+For a complete example, please have a look at [http://code.google.com/p/specs/source/browse/trunk/src/test/scala/org/specs/mock/mockitoSpec.scala the Mockito specification] and its [http://specs.googlecode.com/svn/samples/LiterateSpecifications/org.specs.mock.mockitoSpec.html Html report]
 
 = Forms =
 
