@@ -158,6 +158,17 @@ Then it is possible to set the expected value of this property with its `apply` 
   name("Bob") // the enclosing Form object will check that actual value == expected value
 }}}
 
+=== Value formatters ===
+
+The default formatter for Double values is `new DecimalFormat("#.###############")`, however if you want to have a specific display for some of your values, you can declare a new value formatter on a property. For example, you may want to display Iterable properties (created with the `propIterable` method) with `\` as a separator:
+{{{
+  p = PropIterable("", List("1.2", "3.4"))
+  p.formatIterableWith((list:Option[Iterable[Double]]) => list match { 
+     case None => "x/x/x" // this is for the case where there are no values
+     case Some(l) => l.map(p.formatValue(_)).mkString("/") // using the default formatter for Doubles, then separating with "/"
+  })
+}}}
+
 == Nested forms ==
 
 Let's have a look at a complete example, which will also demonstrate that forms can also be nested to create complex business objects:
@@ -269,13 +280,14 @@ Some special methods can be used to help the layout of Forms:
 
 == `DataTable` form ==
 
-DataTables can also be used in a Form. Here is an example:
+`DataTables` can also be used in a Form. Here is an example:
 {{{
   new TradePrice {
     
     "Value date"    | "NPV_PAY_NOTIONAL"    | "NPV_REC_NOTIONAL"    |
     "6/1/2007"      ! -1732.34              ! 0.0                   |
     "4/30/2008"     ! -580332.88            ! 0.0                   | { (valueDate: String, pay: Double, rec: Double) =>
+
       tr(valueDate, prop(pricePay(valueDate))(pay), prop(priceRec(valueDate))(rec))
     }
   }.report(this)
@@ -293,4 +305,27 @@ In this example:
 
  * no labels are declared for the fields and properties, they're automatically taken from the `DataTable` header
    
+== Table forms ==
+
+Actually a `DataTableForm` is just a special case of a `TableForm`. A `TableForm` is a form containing only `LineForms`. And a `LineForm` is just a set of properties which should be displayed on a row, without their labels (the labels will be used to create the table header).
+
+The `DataTableForm` example above could then be rewritten as: 
+{{{
+  class PayLine(vDate: String, p: Double, r: Double) extends LineForm {
+    val valueDate = field("Value date", vDate)
+    val pay = prop(pricePay(valueDate))(p)
+    val rec = prop(priceRec(valueDate))(r)
+  }
+  new TableForm {
+    tr(PayLine("6/1/2007", -1732.34, 0.0))
+    tr(PayLine("4/30/2008", -580332.88, 0.0))
+  }.report(this)
+}}}
+
+You can note in this example that there is also an implicit conversion between a Field and its value so you can write `pricePay(valueDate)` instead of `pricePay(valueDate.get)`
+
+== Seq form ==
+
+
+
 *TO BE CONTINUED,...*
