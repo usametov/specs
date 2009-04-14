@@ -457,6 +457,11 @@ Of course, you can globally re-enable expectations counting with `expectProperti
 <a><b name="value" name2="value2"></b></a> must \("b", Map("name"->"value")) // just checks the presence of "name" -> "value"
 }}}
 
+(*from 1.5.0*)
+{{{
+<a><b name="value" name2="value2"></b></a> must \("b", "name"->"value") // a list of pairs can also be used
+}}}
+
  * `\` and `\\` can also check for the presence of a whole Node: 
 {{{
 <a><b name="value"></b></a> must \(<b name="value"/>)
