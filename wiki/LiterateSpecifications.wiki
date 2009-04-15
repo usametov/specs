@@ -239,6 +239,23 @@ The available formatting methods are:
  * `formatIterableWith` to format iterable properties (for both existing _and_ missing values)
  * `iterableFormatterIs` to format only existing values on iterable properties
 
+=== Label and Value decorators ===
+
+On any Field, Prop or Form you can set decorators for labels or values:
+{{{
+  // this will add bold tags around the formatted value
+  myField.decorateValueWith((s:String) => <b>{s}</b>)
+
+  // this will add italic tags around the formatted label
+  myField.decorateLabelWith((s:String) => <i>{s}</i>)
+
+  // and there are convenient shortcuts for italics, bold and strike
+  myField.italicValue    // the value is italic
+  myField.strikeLabel    // the label is strike
+  myField.bold           // all is bold
+
+}}}
+
 
 == Nested forms ==
 
