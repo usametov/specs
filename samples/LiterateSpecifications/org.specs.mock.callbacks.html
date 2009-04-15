@@ -30,6 +30,8 @@
     }
     function noNavBar() {
       changeWidth('leftColumn','0px');
+      document.getElementById('leftColumn').style.visibility = 'hidden'; 
+      document.getElementById('leftColumn').style.display = 'none'; 
       changeMarginLeft('bodyColumn', '10px')
    }
    function toggleNavBar(image) {
@@ -69,7 +71,7 @@
     </script>
         <script language="javascript">window.onLoad=prettyPrint();noNavBar()</script>
     </head>
-    <body>
+    <body init="onload()">
       <div id="toolTip"></div>
       <a name="top"></a>
       <div id="leftColumn">
