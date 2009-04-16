@@ -1,24 +1,18 @@
 <html>
     <head>
       <title>Argument Matchers</title>
-	    <style type="text/css" media="all">
-	      @import url('./css/maven-base.css');
-	      @import url('./css/maven-theme.css');
-	      @import url('./css/site.css');
-	    </style>
+        <style type="text/css" media="all">
+          @import url('./css/maven-base.css');
+          @import url('./css/maven-theme.css');
+          @import url('./css/site.css');
+        </style>
         <link href="./css/prettify.css" rel="stylesheet" type="text/css"></link>
         <script type="text/javascript" src="./css/prettify.js"></script>
         <link href="./css/print.css" type="text/css" rel="stylesheet" media="print"></link>
-        <script type="text/javascript" src="./css/tabber.js"></script> 
-        <link href="./css/tabber.css" type="text/css" rel="stylesheet" media="screen"></link> 
         <link href="./css/tooltip.css" type="text/css" rel="stylesheet"></link>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
         <script type="text/javascript" src="./css/tooltip.js"></script>
-        <script language="javascript"> 
-    function init() {
-	   prettyPrint()
-       noNavBar()
-    }
+        <script language="javascript"> function init() { prettyPrint();noNavBar()}
     // found on : http://www.tek-tips.com/faqs.cfm?fid=6620
     String.prototype.endsWith = function(str) { return (this.match(str+'$') == str) }
 
@@ -32,62 +26,66 @@
       changeWidth('leftColumn','0px');
       document.getElementById('leftColumn').style.visibility = 'hidden'; 
       document.getElementById('leftColumn').style.display = 'none'; 
-      changeMarginLeft('bodyColumn', '10px')
+      changeMarginLeft('bodyColumn', '35px')
    }
    function toggleNavBar(image) {
       toggleImage(image)
       if (image.src.endsWith('images/expanded.gif')) {
-		changeWidth('leftColumn','20px');
-      	changeMarginLeft('bodyColumn', '35px')
-	  }
+        changeWidth('leftColumn','20px');
+        changeMarginLeft('bodyColumn', '35px')
+      }
     else {
-		changeWidth('leftColumn','250px');
-      	changeMarginLeft('bodyColumn', '277px')
-	  }
+        changeWidth('leftColumn','250px');
+        changeMarginLeft('bodyColumn', '277px')
+      }
    }
    function toggleImage(image) {
-	  if (image.src.endsWith('images/expanded.gif')) {
-	    image.src = 'images/collapsed.gif';
-	  }
+      if (image.src.endsWith('images/expanded.gif')) {
+        image.src = 'images/collapsed.gif';
+      }
     else {
         image.src = 'images/expanded.gif';
-	  }
+      }
    }
-	function showHideTable(tableId) {
-	  table = document.getElementById(tableId)
-	  table.style.display = (table.style.display == 'none')? 'block' : 'none';
-	}
-	function showExampleMessage(status, exId, event) {
+    function showHideTable(tableId) {
+      table = document.getElementById(tableId)
+      table.style.display = (table.style.display == 'none')? 'block' : 'none';
+    }
+    function showExampleMessage(status, exId, event) {
     exampleMessage = document.getElementById('rowmess:' + exId)
     exampleIcon = document.getElementById('rowicon:' + exId)
     showToolTipWithIcon(status, exampleIcon.src, exampleMessage.innerHTML, event)
   }
-	function showExampleDesc(exId, event) {
-		exampleDesc = document.getElementById('rowdesc:' + exId)
+    function showExampleDesc(exId, event) {
+        exampleDesc = document.getElementById('rowdesc:' + exId)
         showToolTip('Description', exampleDesc.innerHTML, event)
-	}
+    }
 
 
     </script>
-        <script language="javascript">window.onLoad=prettyPrint();noNavBar()</script>
+        <script language="javascript">window.onload=init;</script>
+        <!-- the tabber.js file must be loaded after the onload function has been set, in order to run the
+             tabber code, then the init code -->
+        <script type="text/javascript" src="./css/tabber.js"></script> 
+        <link href="./css/tabber.css" type="text/css" rel="stylesheet" media="screen"></link> 
     </head>
-    <body onload="init()">
+    <body>
       <div id="toolTip"></div>
       <a name="top"></a>
       <div id="leftColumn">
      
     </div>
       <div id="bodyColumn">
-        <h2>Argument Matchers</h2><a name="Argument+Matchers"></a><html xmlns="http://www.w3.org/1999/xhtml"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta></head><body><h3 id="Argumentmatchers">Argument matchers</h3><p>Argument matchers allow flexible verification or stubbing. Click <a href="http://mockito.googlecode.com/svn/branches/1.7/javadoc/org/mockito/Matchers.html">here</a> for more details.</p><p>Let's import some definitions first: <code class="prettyprint">  </code></br><code class="prettyprint"></code></br><code class="prettyprint">  import org.specs._</code></br><code class="prettyprint">  import org.specs.mock.Mockito</code></br><code class="prettyprint">  import java.util.List</code></br><code class="prettyprint">  import org.mockito.Matchers.{ argThat, anyInt, eq =&gt; isEq }</code></br><code class="prettyprint">  import org.hamcrest.core.{ IsNull }</code></p><p>And create a specification with mocks: <code class="prettyprint"></code></br><code class="prettyprint"></code></br><code class="prettyprint">  object args1 extends Specification with Mockito {</code></br><code class="prettyprint">    val mockedList = mock[List[String]]</code></br><code class="prettyprint">    </code></br><code class="prettyprint">    // stubbing using built-in anyInt() argument matcher</code></br><code class="prettyprint">    mockedList.get(anyInt()) returns &quot;element&quot;</code></br><code class="prettyprint"></code></br><code class="prettyprint">    // stubbing using hamcrest (let's say IsNull returns your own hamcrest matcher):</code></br><code class="prettyprint">    mockedList.contains(argThat(new IsNull[String])) returns true</code></br><code class="prettyprint">  }</code></p><p>Then, <ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('583538',event)" class="success">calling the mocked list with any argument must return &quot;element&quot;</ex>: </p><p><code class="prettyprint">args1.mockedList.get(999)</code></br>&gt; <code class="prettyprint">res0: String = element</code></p><p>and <ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('14922773',event)" class="success">calling the mocked list <code>contains</code> method with a valid argument must return &quot;true&quot; if the passed argument is null</ex>:</p><p><code class="prettyprint">args1.mockedList.contains(null)</code></br>&gt; <code class="prettyprint">res1: Boolean = true</code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('14902002',event)" class="success">It is also possible to verify that a mock was called with an argument matcher</ex>: <code class="prettyprint"></code></br><code class="prettyprint"></code></br><code class="prettyprint">  object args2 extends Specification with Mockito {</code></br><code class="prettyprint">    args1.mockedList.get(999)</code></br><code class="prettyprint">    args1.mockedList.get(isEq(999)) was called</code></br><code class="prettyprint">  }</code></br><code class="prettyprint">  args2.successes</code></br>  &gt; <code class="prettyprint">res2: List[org.specs.specification.Example] = List(example 1)</code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('3588683',event)" class="success">Instead of Hamcrest matchers, a specs matcher can be used</ex>:<code class="prettyprint"></code></br><code class="prettyprint">  object args3 extends Specification with Mockito {</code></br><code class="prettyprint">    val mockedList = mock[List[String]]</code></br><code class="prettyprint">    mockedList.get((123)) returns &quot;one&quot;</code>==</br><code class="prettyprint">  }</code></br><code class="prettyprint">  args3.mockedList.get(123)</code></br><code class="prettyprint">  </code></br>  &gt; <code class="prettyprint">res3: String = one</code></p></body></html><h3><img onclick="toggleImage(this); showHideTable('sus:10511721')" src="images/collapsed.gif"></img>Examples summary</h3><div style="display:none" id="sus:10511721">
+        <h2>Argument Matchers</h2><a name="Argument+Matchers"></a><html xmlns="http://www.w3.org/1999/xhtml"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta></head><body><h3 id="Argumentmatchers">Argument matchers</h3><p>Argument matchers allow flexible verification or stubbing. Click <a href="http://mockito.googlecode.com/svn/branches/1.7/javadoc/org/mockito/Matchers.html">here</a> for more details.</p><p>Let's import some definitions first: <code class="prettyprint">  </code></br><code class="prettyprint"></code></br><code class="prettyprint">  import org.specs._</code></br><code class="prettyprint">  import org.specs.mock.Mockito</code></br><code class="prettyprint">  import java.util.List</code></br><code class="prettyprint">  import org.mockito.Matchers.{ argThat, anyInt, eq =&gt; isEq }</code></br><code class="prettyprint">  import org.hamcrest.core.{ IsNull }</code></p><p>And create a specification with mocks: <code class="prettyprint"></code></br><code class="prettyprint"></code></br><code class="prettyprint">  object args1 extends Specification with Mockito {</code></br><code class="prettyprint">    val mockedList = mock[List[String]]</code></br><code class="prettyprint">    </code></br><code class="prettyprint">    // stubbing using built-in anyInt() argument matcher</code></br><code class="prettyprint">    mockedList.get(anyInt()) returns &quot;element&quot;</code></br><code class="prettyprint"></code></br><code class="prettyprint">    // stubbing using hamcrest (let's say IsNull returns your own hamcrest matcher):</code></br><code class="prettyprint">    mockedList.contains(argThat(new IsNull[String])) returns true</code></br><code class="prettyprint">  }</code></p><p>Then, <ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('33501665',event)" class="success">calling the mocked list with any argument must return &quot;element&quot;</ex>: </p><p><code class="prettyprint">args1.mockedList.get(999)</code></br>&gt; <code class="prettyprint">res0: String = element</code></p><p>and <ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('27200526',event)" class="success">calling the mocked list <code>contains</code> method with a valid argument must return &quot;true&quot; if the passed argument is null</ex>:</p><p><code class="prettyprint">args1.mockedList.contains(null)</code></br>&gt; <code class="prettyprint">res1: Boolean = true</code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('21634001',event)" class="success">It is also possible to verify that a mock was called with an argument matcher</ex>: <code class="prettyprint"></code></br><code class="prettyprint"></code></br><code class="prettyprint">  object args2 extends Specification with Mockito {</code></br><code class="prettyprint">    args1.mockedList.get(999)</code></br><code class="prettyprint">    args1.mockedList.get(isEq(999)) was called</code></br><code class="prettyprint">  }</code></br><code class="prettyprint">  args2.successes</code></br>  &gt; <code class="prettyprint">res2: List[org.specs.specification.Example] = List(example 1)</code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('27947871',event)" class="success">Instead of Hamcrest matchers, a specs matcher can be used</ex>:<code class="prettyprint"></code></br><code class="prettyprint">  object args3 extends Specification with Mockito {</code></br><code class="prettyprint">    val mockedList = mock[List[String]]</code></br><code class="prettyprint">    mockedList.get((123)) returns &quot;one&quot;</code>==</br><code class="prettyprint">  }</code></br><code class="prettyprint">  args3.mockedList.get(123)</code></br><code class="prettyprint">  </code></br>  &gt; <code class="prettyprint">res3: String = one</code></p></body></html><h3><img onclick="toggleImage(this); showHideTable('sus:21659584')" src="images/collapsed.gif"></img>Examples summary</h3><div style="display:none" id="sus:21659584">
           <table class="bodyTable">
              <tr class="b">
-      <td id="rowdesc:583538"><img src="images/icon_success_sml.gif" id="rowicon:583538"></img> <t>calling the mocked list with any argument must return &quot;element&quot;</t></td>
+      <td id="rowdesc:33501665"><img src="images/icon_success_sml.gif" id="rowicon:33501665"></img> <t>calling the mocked list with any argument must return &quot;element&quot;</t></td>
     </tr><tr class="a">
-      <td id="rowdesc:14922773"><img src="images/icon_success_sml.gif" id="rowicon:14922773"></img> <t>calling the mocked list <code>contains</code> method with a valid argument must return &quot;true&quot; if the passed argument is null</t></td>
+      <td id="rowdesc:27200526"><img src="images/icon_success_sml.gif" id="rowicon:27200526"></img> <t>calling the mocked list <code>contains</code> method with a valid argument must return &quot;true&quot; if the passed argument is null</t></td>
     </tr><tr class="b">
-      <td id="rowdesc:14902002"><img src="images/icon_success_sml.gif" id="rowicon:14902002"></img> <t>It is also possible to verify that a mock was called with an argument matcher</t></td>
+      <td id="rowdesc:21634001"><img src="images/icon_success_sml.gif" id="rowicon:21634001"></img> <t>It is also possible to verify that a mock was called with an argument matcher</t></td>
     </tr><tr class="a">
-      <td id="rowdesc:3588683"><img src="images/icon_success_sml.gif" id="rowicon:3588683"></img> <t>Instead of Hamcrest matchers, a specs matcher can be used</t></td>
+      <td id="rowdesc:27947871"><img src="images/icon_success_sml.gif" id="rowicon:27947871"></img> <t>Instead of Hamcrest matchers, a specs matcher can be used</t></td>
     </tr>
           </table>
         </div>

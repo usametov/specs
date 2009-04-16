@@ -1,24 +1,18 @@
 <html>
     <head>
       <title>Return values</title>
-	    <style type="text/css" media="all">
-	      @import url('./css/maven-base.css');
-	      @import url('./css/maven-theme.css');
-	      @import url('./css/site.css');
-	    </style>
+        <style type="text/css" media="all">
+          @import url('./css/maven-base.css');
+          @import url('./css/maven-theme.css');
+          @import url('./css/site.css');
+        </style>
         <link href="./css/prettify.css" rel="stylesheet" type="text/css"></link>
         <script type="text/javascript" src="./css/prettify.js"></script>
         <link href="./css/print.css" type="text/css" rel="stylesheet" media="print"></link>
-        <script type="text/javascript" src="./css/tabber.js"></script> 
-        <link href="./css/tabber.css" type="text/css" rel="stylesheet" media="screen"></link> 
         <link href="./css/tooltip.css" type="text/css" rel="stylesheet"></link>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
         <script type="text/javascript" src="./css/tooltip.js"></script>
-        <script language="javascript"> 
-    function init() {
-	   prettyPrint()
-       noNavBar()
-    }
+        <script language="javascript"> function init() { prettyPrint();noNavBar()}
     // found on : http://www.tek-tips.com/faqs.cfm?fid=6620
     String.prototype.endsWith = function(str) { return (this.match(str+'$') == str) }
 
@@ -32,58 +26,62 @@
       changeWidth('leftColumn','0px');
       document.getElementById('leftColumn').style.visibility = 'hidden'; 
       document.getElementById('leftColumn').style.display = 'none'; 
-      changeMarginLeft('bodyColumn', '10px')
+      changeMarginLeft('bodyColumn', '35px')
    }
    function toggleNavBar(image) {
       toggleImage(image)
       if (image.src.endsWith('images/expanded.gif')) {
-		changeWidth('leftColumn','20px');
-      	changeMarginLeft('bodyColumn', '35px')
-	  }
+        changeWidth('leftColumn','20px');
+        changeMarginLeft('bodyColumn', '35px')
+      }
     else {
-		changeWidth('leftColumn','250px');
-      	changeMarginLeft('bodyColumn', '277px')
-	  }
+        changeWidth('leftColumn','250px');
+        changeMarginLeft('bodyColumn', '277px')
+      }
    }
    function toggleImage(image) {
-	  if (image.src.endsWith('images/expanded.gif')) {
-	    image.src = 'images/collapsed.gif';
-	  }
+      if (image.src.endsWith('images/expanded.gif')) {
+        image.src = 'images/collapsed.gif';
+      }
     else {
         image.src = 'images/expanded.gif';
-	  }
+      }
    }
-	function showHideTable(tableId) {
-	  table = document.getElementById(tableId)
-	  table.style.display = (table.style.display == 'none')? 'block' : 'none';
-	}
-	function showExampleMessage(status, exId, event) {
+    function showHideTable(tableId) {
+      table = document.getElementById(tableId)
+      table.style.display = (table.style.display == 'none')? 'block' : 'none';
+    }
+    function showExampleMessage(status, exId, event) {
     exampleMessage = document.getElementById('rowmess:' + exId)
     exampleIcon = document.getElementById('rowicon:' + exId)
     showToolTipWithIcon(status, exampleIcon.src, exampleMessage.innerHTML, event)
   }
-	function showExampleDesc(exId, event) {
-		exampleDesc = document.getElementById('rowdesc:' + exId)
+    function showExampleDesc(exId, event) {
+        exampleDesc = document.getElementById('rowdesc:' + exId)
         showToolTip('Description', exampleDesc.innerHTML, event)
-	}
+    }
 
 
     </script>
-        <script language="javascript">window.onLoad=prettyPrint();noNavBar()</script>
+        <script language="javascript">window.onload=init;</script>
+        <!-- the tabber.js file must be loaded after the onload function has been set, in order to run the
+             tabber code, then the init code -->
+        <script type="text/javascript" src="./css/tabber.js"></script> 
+        <link href="./css/tabber.css" type="text/css" rel="stylesheet" media="screen"></link> 
     </head>
-    <body onload="init()">
+    <body>
       <div id="toolTip"></div>
       <a name="top"></a>
       <div id="leftColumn">
      
     </div>
       <div id="bodyColumn">
-        <h2>Return values</h2><a name="Return+values"></a><html xmlns="http://www.w3.org/1999/xhtml"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta></head><body><h3 id="Returnvalues">Return values</h3><p>Optional ReturnValues can be used with mock[Class](ReturnValues). <a href="http://mockito.googlecode.com/svn/branches/1.7/javadoc/org/mockito/ReturnValues.html">ReturnValues</a> defines the return values of unstubbed invocations.</p><p>This implementation can be helpful when working with legacy code. Unstubbed methods often return null. If your code uses the object returned by an unstubbed call you get a NullPointerException. This implementation of ReturnValues makes unstubbed methods return SmartNull instead of null. SmartNull gives nicer exception message than NPE because it points out the line where unstubbed method was called. </br>  You just click on the stack trace.</p><p>SmartNullReturnValues can be set on mocks with the smartMock method.</br>It first tries to return ordinary return values (see <a href="http://mockito.googlecode.com/svn/branches/1.7/javadoc/org/mockito/internal/returnvalues/MoreEmptyReturnValues.html">MoreEmptyReturnValues</a>) then it tries to return SmartNull. If the return type is final then plain null is returned.</p><p>For Example: <code class="prettyprint"></code></br><code class="prettyprint"></code></br><code class="prettyprint">  class s1 extends Specification with Mockito {</code></br><code class="prettyprint">    val got = mock[org.specs.mock.Hello].get(0)</code></br><code class="prettyprint">  } </code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('28605041',event)" class="success">The returned value should yield a NullPointerException</ex>: </p><p><code class="prettyprint">new s1().got.toString</code></br>&gt; <code class="prettyprint"></code></br><code class="prettyprint">import org.specs._</code></br><code class="prettyprint">import org.specs.mock.Mockito</code></br><code class="prettyprint">defined class s1</code></br><code class="prettyprint">java.lang.NullPointerException</code></br><code class="prettyprint">	at .&lt;init&gt;(&lt;console&gt;:10)</code></br><code class="prettyprint">	at .&lt;clinit&gt;(&lt;console&gt;)</code></br><code class="prettyprint">	at RequestResult$.&lt;init&gt;(&lt;console&gt;:4)</code></br><code class="prettyprint">	at RequestResult$.&lt;clinit&gt;(&lt;console&gt;)</code></br><code class="prettyprint">	at RequestResult$result(&lt;console&gt;)</code></br><code class="prettyprint">	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</code></br><code class="prettyprint">	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)</code></br><code class="prettyprint">	at sun.reflect.DelegatingMethodAccessorImpl....</code></p><p>If <code>smartMock</code> is used: <code class="prettyprint"></code></br><code class="prettyprint"></code></br><code class="prettyprint">  class s2 extends Specification with Mockito {</code></br><code class="prettyprint">    val got = smartMock[org.specs.mock.Hello].get(0)</code></br><code class="prettyprint">  } </code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('20365786',event)" class="success">Accessing the returned value will yield an empty string instead of <code>null</code></ex>: </p><p><code class="prettyprint">new s2().got</code></br>&gt; <code class="prettyprint">res1: String =</code></p></body></html><h3><img onclick="toggleImage(this); showHideTable('sus:20300487')" src="images/collapsed.gif"></img>Examples summary</h3><div style="display:none" id="sus:20300487">
+        <h2>Return values</h2><a name="Return+values"></a><html xmlns="http://www.w3.org/1999/xhtml"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta></head><body><h3 id="Returnvalues">Return values</h3><p>Optional ReturnValues can be used with mock[Class](ReturnValues). <a href="http://mockito.googlecode.com/svn/branches/1.7/javadoc/org/mockito/ReturnValues.html">ReturnValues</a> defines the return values of unstubbed invocations.</p><p>This implementation can be helpful when working with legacy code. Unstubbed methods often return null. If your code uses the object returned by an unstubbed call you get a NullPointerException. This implementation of ReturnValues makes unstubbed methods return SmartNull instead of null. SmartNull gives nicer exception message than NPE because it points out the line where unstubbed method was called. </br>  You just click on the stack trace.</p><p>SmartNullReturnValues can be set on mocks with the smartMock method.</br>It first tries to return ordinary return values (see <a href="http://mockito.googlecode.com/svn/branches/1.7/javadoc/org/mockito/internal/returnvalues/MoreEmptyReturnValues.html">MoreEmptyReturnValues</a>) then it tries to return SmartNull. If the return type is final then plain null is returned.</p><p>For Example: <code class="prettyprint"></code></br><code class="prettyprint"></code></br><code class="prettyprint">  class s1 extends Specification with Mockito {</code></br><code class="prettyprint">    val got = mock[org.specs.mock.Hello].get(0)</code></br><code class="prettyprint">  } </code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('1137596',event)" class="success">The returned value should yield a NullPointerException</ex>: </p><p><code class="prettyprint">new s1().got.toString</code></br>&gt; <code class="prettyprint"></code></br><code class="prettyprint">import org.specs._</code></br><code class="prettyprint">import org.specs.mock.Mockito</code></br><code class="prettyprint">defined class s1</code></br><code class="prettyprint">java.lang.NullPointerException</code></br><code class="prettyprint">	at .&lt;init&gt;(&lt;console&gt;:10)</code></br><code class="prettyprint">	at .&lt;clinit&gt;(&lt;console&gt;)</code></br><code class="prettyprint">	at RequestResult$.&lt;init&gt;(&lt;console&gt;:4)</code></br><code class="prettyprint">	at RequestResult$.&lt;clinit&gt;(&lt;console&gt;)</code></br><code class="prettyprint">	at RequestResult$result(&lt;console&gt;)</code></br><code class="prettyprint">	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</code></br><code class="prettyprint">	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)</code></br><code class="prettyprint">	at sun.reflect.DelegatingMethodAccessorImpl....</code></p><p>If <code>smartMock</code> is used: <code class="prettyprint"></code></br><code class="prettyprint"></code></br><code class="prettyprint">  class s2 extends Specification with Mockito {</code></br><code class="prettyprint">    val got = smartMock[org.specs.mock.Hello].get(0)</code></br><code class="prettyprint">  } </code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('16204919',event)" class="success">Accessing the returned value will yield an empty string instead of <code>null</code></ex>: </p><p><code class="prettyprint">new s2().got</code></br>&gt; <code class="prettyprint">res1: String =</code></p></body></html><h3><img onclick="toggleImage(this); showHideTable('sus:28315727')" src="images/collapsed.gif"></img>Examples summary</h3><div style="display:none" id="sus:28315727">
           <table class="bodyTable">
              <tr class="b">
-      <td id="rowdesc:28605041"><img src="images/icon_success_sml.gif" id="rowicon:28605041"></img> <t>The returned value should yield a NullPointerException</t></td>
+      <td id="rowdesc:1137596"><img src="images/icon_success_sml.gif" id="rowicon:1137596"></img> <t>The returned value should yield a NullPointerException</t></td>
     </tr><tr class="a">
-      <td id="rowdesc:20365786"><img src="images/icon_success_sml.gif" id="rowicon:20365786"></img> <t>Accessing the returned value will yield an empty string instead of <code>null</code></t></td>
+      <td id="rowdesc:16204919"><img src="images/icon_success_sml.gif" id="rowicon:16204919"></img> <t>Accessing the returned value will yield an empty string instead of <code>null</code></t></td>
     </tr>
           </table>
         </div>

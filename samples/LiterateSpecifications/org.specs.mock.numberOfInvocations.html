@@ -1,24 +1,18 @@
 <html>
     <head>
       <title>Number of invocations</title>
-	    <style type="text/css" media="all">
-	      @import url('./css/maven-base.css');
-	      @import url('./css/maven-theme.css');
-	      @import url('./css/site.css');
-	    </style>
+        <style type="text/css" media="all">
+          @import url('./css/maven-base.css');
+          @import url('./css/maven-theme.css');
+          @import url('./css/site.css');
+        </style>
         <link href="./css/prettify.css" rel="stylesheet" type="text/css"></link>
         <script type="text/javascript" src="./css/prettify.js"></script>
         <link href="./css/print.css" type="text/css" rel="stylesheet" media="print"></link>
-        <script type="text/javascript" src="./css/tabber.js"></script> 
-        <link href="./css/tabber.css" type="text/css" rel="stylesheet" media="screen"></link> 
         <link href="./css/tooltip.css" type="text/css" rel="stylesheet"></link>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
         <script type="text/javascript" src="./css/tooltip.js"></script>
-        <script language="javascript"> 
-    function init() {
-	   prettyPrint()
-       noNavBar()
-    }
+        <script language="javascript"> function init() { prettyPrint();noNavBar()}
     // found on : http://www.tek-tips.com/faqs.cfm?fid=6620
     String.prototype.endsWith = function(str) { return (this.match(str+'$') == str) }
 
@@ -32,66 +26,70 @@
       changeWidth('leftColumn','0px');
       document.getElementById('leftColumn').style.visibility = 'hidden'; 
       document.getElementById('leftColumn').style.display = 'none'; 
-      changeMarginLeft('bodyColumn', '10px')
+      changeMarginLeft('bodyColumn', '35px')
    }
    function toggleNavBar(image) {
       toggleImage(image)
       if (image.src.endsWith('images/expanded.gif')) {
-		changeWidth('leftColumn','20px');
-      	changeMarginLeft('bodyColumn', '35px')
-	  }
+        changeWidth('leftColumn','20px');
+        changeMarginLeft('bodyColumn', '35px')
+      }
     else {
-		changeWidth('leftColumn','250px');
-      	changeMarginLeft('bodyColumn', '277px')
-	  }
+        changeWidth('leftColumn','250px');
+        changeMarginLeft('bodyColumn', '277px')
+      }
    }
    function toggleImage(image) {
-	  if (image.src.endsWith('images/expanded.gif')) {
-	    image.src = 'images/collapsed.gif';
-	  }
+      if (image.src.endsWith('images/expanded.gif')) {
+        image.src = 'images/collapsed.gif';
+      }
     else {
         image.src = 'images/expanded.gif';
-	  }
+      }
    }
-	function showHideTable(tableId) {
-	  table = document.getElementById(tableId)
-	  table.style.display = (table.style.display == 'none')? 'block' : 'none';
-	}
-	function showExampleMessage(status, exId, event) {
+    function showHideTable(tableId) {
+      table = document.getElementById(tableId)
+      table.style.display = (table.style.display == 'none')? 'block' : 'none';
+    }
+    function showExampleMessage(status, exId, event) {
     exampleMessage = document.getElementById('rowmess:' + exId)
     exampleIcon = document.getElementById('rowicon:' + exId)
     showToolTipWithIcon(status, exampleIcon.src, exampleMessage.innerHTML, event)
   }
-	function showExampleDesc(exId, event) {
-		exampleDesc = document.getElementById('rowdesc:' + exId)
+    function showExampleDesc(exId, event) {
+        exampleDesc = document.getElementById('rowdesc:' + exId)
         showToolTip('Description', exampleDesc.innerHTML, event)
-	}
+    }
 
 
     </script>
-        <script language="javascript">window.onLoad=prettyPrint();noNavBar()</script>
+        <script language="javascript">window.onload=init;</script>
+        <!-- the tabber.js file must be loaded after the onload function has been set, in order to run the
+             tabber code, then the init code -->
+        <script type="text/javascript" src="./css/tabber.js"></script> 
+        <link href="./css/tabber.css" type="text/css" rel="stylesheet" media="screen"></link> 
     </head>
-    <body onload="init()">
+    <body>
       <div id="toolTip"></div>
       <a name="top"></a>
       <div id="leftColumn">
      
     </div>
       <div id="bodyColumn">
-        <h2>Number of invocations</h2><a name="Number+of+invocations"></a><html xmlns="http://www.w3.org/1999/xhtml"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta></head><body><h3 id="Numberofinvocations">Number of invocations</h3><p>The number of invocations can be checked with different methods on the <code>called</code> matcher: <code class="prettyprint"></code></br><code class="prettyprint"></code></br><code class="prettyprint">  class s4 extends Specification with Mockito {</code></br><code class="prettyprint">    val mockedList = mock[List[String]]</code></br><code class="prettyprint"></code></br><code class="prettyprint">    mockedList.add(&quot;one&quot;)</code></br><code class="prettyprint"></code></br><code class="prettyprint">    2.times { i =&gt; mockedList.add(&quot;two&quot;) } </code></br><code class="prettyprint">    3.times { i =&gt; mockedList.add(&quot;three&quot;) } </code></br><code class="prettyprint">  } </code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('4173881',event)" class="success"><code>was called.once</code> is the same as <code>was called</code></ex>:</p><p><code class="prettyprint">new s4 { mockedList.add(&quot;one&quot;) was called.once }.isOk</code></br>&gt; <code class="prettyprint">res0: Boolean = true</code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('12051076',event)" class="success"><code>was called.twice</code> checks if the method was called twice</ex>:</p><p><code class="prettyprint">new s4 { mockedList.add(&quot;two&quot;) was called.twice }.isOk</code></br>&gt; <code class="prettyprint">res1: Boolean = true</code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('10480786',event)" class="success">It is also possible to check that a method was called at least a number of times</ex>:</p><p><code class="prettyprint">new s4 { mockedList.add(&quot;two&quot;) was called.atLeastOnce }.isOk</code></br>&gt; <code class="prettyprint">res2: Boolean = true</code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('30995361',event)" class="success">If the method wasn't called the expected number of times, there must be a <code>FailureException</code></ex>:</p><p><code class="prettyprint">new s4 { mockedList.add(&quot;one&quot;) was called.twice }.failures</code></br>&gt; <code class="prettyprint">res3: List[org.specs.execute.FailureException] = List(org.specs.specification.FailureExceptionWithResult: The method was not called as expected: list.add(&quot;one&quot;); Wanted 2 times but was 1)</code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('21978583',event)" class="success"><code>wasnt called</code> checks that the method wasn't called at all (never in Mockito)</ex>:</p><p><code class="prettyprint">new s4 { mockedList.add(&quot;one&quot;) wasnt called }.failures</code></br>&gt; <code class="prettyprint">res4: List[org.specs.execute.FailureException] = List(org.specs.specification.FailureExceptionWithResult: The method was not called as expected: list.add(&quot;one&quot;); Never wanted but invoked!)</code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('925949',event)" class="success">It is also possible to check that there are no unexpected calls on a mock</ex>:</p><p><code class="prettyprint">  new s4 { </code></br><code class="prettyprint">    mockedList.add(&quot;one&quot;) was called</code></br><code class="prettyprint">    mockedList had noMoreCalls</code></br><code class="prettyprint">  }.failures.first</code></br>&gt; <code class="prettyprint">res5: org.specs.execute.FailureException = org.specs.specification.FailureExceptionWithResult: The mock was called: No interactions wanted</code></p></body></html><h3><img onclick="toggleImage(this); showHideTable('sus:6417802')" src="images/collapsed.gif"></img>Examples summary</h3><div style="display:none" id="sus:6417802">
+        <h2>Number of invocations</h2><a name="Number+of+invocations"></a><html xmlns="http://www.w3.org/1999/xhtml"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta></head><body><h3 id="Numberofinvocations">Number of invocations</h3><p>The number of invocations can be checked with different methods on the <code>called</code> matcher: <code class="prettyprint"></code></br><code class="prettyprint"></code></br><code class="prettyprint">  class s4 extends Specification with Mockito {</code></br><code class="prettyprint">    val mockedList = mock[List[String]]</code></br><code class="prettyprint"></code></br><code class="prettyprint">    mockedList.add(&quot;one&quot;)</code></br><code class="prettyprint"></code></br><code class="prettyprint">    2.times { i =&gt; mockedList.add(&quot;two&quot;) } </code></br><code class="prettyprint">    3.times { i =&gt; mockedList.add(&quot;three&quot;) } </code></br><code class="prettyprint">  } </code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('6777134',event)" class="success"><code>was called.once</code> is the same as <code>was called</code></ex>:</p><p><code class="prettyprint">new s4 { mockedList.add(&quot;one&quot;) was called.once }.isOk</code></br>&gt; <code class="prettyprint">res0: Boolean = true</code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('32729926',event)" class="success"><code>was called.twice</code> checks if the method was called twice</ex>:</p><p><code class="prettyprint">new s4 { mockedList.add(&quot;two&quot;) was called.twice }.isOk</code></br>&gt; <code class="prettyprint">res1: Boolean = true</code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('14729336',event)" class="success">It is also possible to check that a method was called at least a number of times</ex>:</p><p><code class="prettyprint">new s4 { mockedList.add(&quot;two&quot;) was called.atLeastOnce }.isOk</code></br>&gt; <code class="prettyprint">res2: Boolean = true</code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('4275643',event)" class="success">If the method wasn't called the expected number of times, there must be a <code>FailureException</code></ex>:</p><p><code class="prettyprint">new s4 { mockedList.add(&quot;one&quot;) was called.twice }.failures</code></br>&gt; <code class="prettyprint">res3: List[org.specs.execute.FailureException] = List(org.specs.specification.FailureExceptionWithResult: The method was not called as expected: list.add(&quot;one&quot;); Wanted 2 times but was 1)</code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('25425377',event)" class="success"><code>wasnt called</code> checks that the method wasn't called at all (never in Mockito)</ex>:</p><p><code class="prettyprint">new s4 { mockedList.add(&quot;one&quot;) wasnt called }.failures</code></br>&gt; <code class="prettyprint">res4: List[org.specs.execute.FailureException] = List(org.specs.specification.FailureExceptionWithResult: The method was not called as expected: list.add(&quot;one&quot;); Never wanted but invoked!)</code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('19136905',event)" class="success">It is also possible to check that there are no unexpected calls on a mock</ex>:</p><p><code class="prettyprint">  new s4 { </code></br><code class="prettyprint">    mockedList.add(&quot;one&quot;) was called</code></br><code class="prettyprint">    mockedList had noMoreCalls</code></br><code class="prettyprint">  }.failures.first</code></br>&gt; <code class="prettyprint">res5: org.specs.execute.FailureException = org.specs.specification.FailureExceptionWithResult: The mock was called: No interactions wanted</code></p></body></html><h3><img onclick="toggleImage(this); showHideTable('sus:16271506')" src="images/collapsed.gif"></img>Examples summary</h3><div style="display:none" id="sus:16271506">
           <table class="bodyTable">
              <tr class="b">
-      <td id="rowdesc:4173881"><img src="images/icon_success_sml.gif" id="rowicon:4173881"></img> <t><code>was called.once</code> is the same as <code>was called</code></t></td>
+      <td id="rowdesc:6777134"><img src="images/icon_success_sml.gif" id="rowicon:6777134"></img> <t><code>was called.once</code> is the same as <code>was called</code></t></td>
     </tr><tr class="a">
-      <td id="rowdesc:12051076"><img src="images/icon_success_sml.gif" id="rowicon:12051076"></img> <t><code>was called.twice</code> checks if the method was called twice</t></td>
+      <td id="rowdesc:32729926"><img src="images/icon_success_sml.gif" id="rowicon:32729926"></img> <t><code>was called.twice</code> checks if the method was called twice</t></td>
     </tr><tr class="b">
-      <td id="rowdesc:10480786"><img src="images/icon_success_sml.gif" id="rowicon:10480786"></img> <t>It is also possible to check that a method was called at least a number of times</t></td>
+      <td id="rowdesc:14729336"><img src="images/icon_success_sml.gif" id="rowicon:14729336"></img> <t>It is also possible to check that a method was called at least a number of times</t></td>
     </tr><tr class="a">
-      <td id="rowdesc:30995361"><img src="images/icon_success_sml.gif" id="rowicon:30995361"></img> <t>If the method wasn't called the expected number of times, there must be a <code>FailureException</code></t></td>
+      <td id="rowdesc:4275643"><img src="images/icon_success_sml.gif" id="rowicon:4275643"></img> <t>If the method wasn't called the expected number of times, there must be a <code>FailureException</code></t></td>
     </tr><tr class="b">
-      <td id="rowdesc:21978583"><img src="images/icon_success_sml.gif" id="rowicon:21978583"></img> <t><code>wasnt called</code> checks that the method wasn't called at all (never in Mockito)</t></td>
+      <td id="rowdesc:25425377"><img src="images/icon_success_sml.gif" id="rowicon:25425377"></img> <t><code>wasnt called</code> checks that the method wasn't called at all (never in Mockito)</t></td>
     </tr><tr class="a">
-      <td id="rowdesc:925949"><img src="images/icon_success_sml.gif" id="rowicon:925949"></img> <t>It is also possible to check that there are no unexpected calls on a mock</t></td>
+      <td id="rowdesc:19136905"><img src="images/icon_success_sml.gif" id="rowicon:19136905"></img> <t>It is also possible to check that there are no unexpected calls on a mock</t></td>
     </tr>
           </table>
         </div>
