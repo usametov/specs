@@ -369,6 +369,7 @@ This is a Person form, checking that the initials are set properly on a Person o
 
 == Forms layout ==
 
+===Predefined layouts===
 Some special methods can be used to help the layout of Forms:
 
  * *p(properties/forms)*: adds all the properties/forms on a new table row, with an empty row above as a separator
@@ -390,6 +391,38 @@ Some special methods can be used to help the layout of Forms:
     }
   }
 }}}
+
+=== Override an existing layout ===
+
+When working with an existing form you may wish to:
+
+ * remove some properties from the layout to simplify it. In this case you can use include/exclude to include or exclude some properties from the display:
+{{{
+  // the customer form class provides a default layout
+  new CustomerForm {
+    // exclude the age property
+    exclude(age)
+  }
+}}}
+
+ * reset the whole existing layout with `resetLayout` and provide a new one. 
+
+ * override the `layout(formRows: List[Seq[LabeledXhtml]])` method and provide a different layout:
+{{{
+  override def layoutRows(formRows: List[Seq[LabeledXhtml]]) = {
+    th1(field("Customer id", customer.getId))
+    trs(new Form {
+        new tabs {
+          new tab("Orders") {
+            trs(formRows)
+          }
+          new tab("Customer details") {
+            customerDetails.foreach((p: Pair[String, Boolean]) => tr(field(p._1, p._2)))
+          }
+       }
+    }.rows)
+  }
+}}} 
 
 = Special forms =
 
