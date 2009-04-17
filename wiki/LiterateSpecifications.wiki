@@ -17,7 +17,7 @@ Furthermore, *Forms* add a very convenient way to declare and display expected s
 Here is a short example of such a `LiterateSpecification`: 
 {{{
 
-class HelloWorldSpecification extends LiterateSpecification with Html {
+class HelloWorldSpecification extends HtmlSpecification {
  
   "The greeting application" is <textile>
 
@@ -42,7 +42,7 @@ Then, other languages, like <ex>French and German should be supported too</ex>
 
 The example above shows the following features:
 
- * the `HelloWorldSpecification` mixes-in the Html trait to report the `LiterateSpecification` with the Html runner
+ * the `HelloWorldSpecification` is an `HtmlSpecification` which is actually a `LiterateSpecification` mixing-in the `Html` trait to report the execution with an Html runner
 
  * the name of the first System under specification is "The greeting application" and is defined by an xml Element `<textile></textile>`
 
@@ -273,7 +273,7 @@ trait PersonBusinessEntities {
 
 Then let's create a `PersonForm` which can be instantiated from an actual Person object (retrieved from a database for example):
 {{{
-trait PersonForms extends LiterateSpecification with PersonBusinessEntities {
+trait PersonForms extends HtmlSpecification with PersonBusinessEntities {
 
   case class PersonForm(t: String, p: Person) extends Form(t) {
     def this(p: Person) = this("Customer", p)
