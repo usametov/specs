@@ -8,8 +8,12 @@ The following libraries are necessary to run specifications.
 
 *Please check carefully the version numbers!*
 
- * [http://scala-tools.org/repo-releases/org/specs/specs/1.4.3 specs-1.4.3.jar]
+ * [http://scala-tools.org/repo-releases/org/specs/specs/1.4.4 specs-1.4.4.jar]
  * [http://scala-tools.org/repo-releases/org/scala-lang/scala-library/2.7.3 scala-library-2.7.3.jar]
+ * [http://repo1.maven.org/maven2/junit/junit/4.5 junit-4.5.jar]
+
+The junit library also allows you to run the specifications as JUnit suites by mixing-in the `org.specs.runner.JUnit` trait. The junit library is a requirement for specs because the @RunWith annotations on the JUnit is unfortunately not inherited by the `Specification` class.
+
 
 If you use `ScalaCheck` you must add
 
@@ -29,10 +33,6 @@ And if you mock classes or traits with attributes you will need
 If you use mock objects with Mockito, add
 
  * [http://repo1.maven.org/maven2/org/mockito/mockito-all/1.7 mockito-all-1.7.jar] 
-
-To run the specifications as JUnit suites:
-
- * [http://repo1.maven.org/maven2/junit/junit/4.5 junit-4.5.jar]
 
 If you want to run the specifications as `ScalaTest` suites, use
 
