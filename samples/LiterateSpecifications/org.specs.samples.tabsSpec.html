@@ -1,6 +1,6 @@
 <html>
     <head>
-      <title>Stubbing with callbacks</title>
+      <title>Tabs sample</title>
         <style type="text/css" media="all">
           @import url('./css/maven-base.css');
           @import url('./css/maven-theme.css');
@@ -70,22 +70,14 @@
         <link href="./css/tabber.css" type="text/css" rel="stylesheet" media="screen"></link> 
     </head>
     <body>
-      <div id="breadcrumbs">&gt; <a href="org.specs.mock.mockitoSpec.html">Mockito Specification </a></div>
+      
       <div id="toolTip"></div>
       <a name="top"></a>
       <div id="leftColumn">
      
     </div>
       <div id="bodyColumn">
-        <h2>Stubbing with callbacks</h2><a name="Stubbing+with+callbacks"></a><html xmlns="http://www.w3.org/1999/xhtml"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta></head><body><h3 id="Stubbingwithcallbacks">Stubbing with callbacks</h3><p>Allows stubbing with generic <a href="http://mockito.googlecode.com/svn/branches/1.7/javadoc/org/mockito/stubbing/Answer.html">Answer</a> interface.</br>Yet another controversial feature which was not included in Mockito originally. </br>We recommend using simple stubbing with <code>returns</code> or <code>throws</code> only. Those two should be just enough to test/test-drive any clean and simple code.</p><p>Here is a specification where the stubbed return values depend on the method parameters: <code class="prettyprint"></code></br><code class="prettyprint"></code></br><code class="prettyprint">  object s extends Specification with Mockito {</code></br><code class="prettyprint">    val mockedList = mock[List[String]]</code></br><code class="prettyprint">    </code></br><code class="prettyprint">    // stubbing using built-in anyInt() argument matcher</code></br><code class="prettyprint">    mockedList.get(anyInt()) answers { i =&gt; &quot;The parameter is &quot; + i.toString } </code></br><code class="prettyprint">  }</code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('31972433',event)" class="success">The function passed to <code>returns</code> will be called with each parameter passed to the stubbed method</ex>: </p><p><code class="prettyprint">s.mockedList.get(0)</code></br>&gt; <code class="prettyprint">res0: String = The parameter is 0</code></p><p><ex onmouseout="hideToolTip();" onmouseover="showExampleDesc('10080577',event)" class="success">The second call returns a different value</ex>:</p><p><code class="prettyprint">s.mockedList.get(1)</code></br>&gt; <code class="prettyprint">res2: String = The parameter is 1</code></p></body></html><h3><img onclick="toggleImage(this); showHideTable('sus:7945781')" src="images/collapsed.gif"></img>Examples summary</h3><div style="display:none" id="sus:7945781">
-          <table class="bodyTable">
-             <tr class="b">
-      <td id="rowdesc:31972433"><img src="images/icon_success_sml.gif" id="rowicon:31972433"></img> <t>The function passed to <code>returns</code> will be called with each parameter passed to the stubbed method</t></td>
-    </tr><tr class="a">
-      <td id="rowdesc:10080577"><img src="images/icon_success_sml.gif" id="rowicon:10080577"></img> <t>The second call returns a different value</t></td>
-    </tr>
-          </table>
-        </div>
+        <h2>Tabs sample</h2><a name="A+form+with+tabs+specifies"></a><h3>A form with tabs specifies<a href="#top">   <img src="images/up.gif"></img></a></h3><html xmlns="http://www.w3.org/1999/xhtml"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta></head><body>  <table class="dataTable"><tr><th colspan="1">Club member</th></tr><tr><td valign="top" class="value" colspan="1"><div class="tabber"><div class="tabbertab" title="Contact details"><table class="dataTable"><tr><td>First name</td><td class="value" colspan="2">Eric</td></tr><tr><td>Last name</td><td class="value" colspan="2">Torreborre</td></tr></table></div><div class="tabbertab" title="Sports"><table class="dataTable"><tr><th>Sport</th><th colspan="2">Years of practice</th></tr><tr><td>Squash</td><td class="value" colspan="2">10</td></tr><tr><td>Tennis</td><td class="value" colspan="2">5</td></tr><tr><td>Windsurf</td><td class="value" colspan="2">2</td></tr></table></div></div></td></tr></table>  </body></html>
       </div>
     </body>
   </html>
