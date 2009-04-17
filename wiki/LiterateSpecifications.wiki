@@ -379,21 +379,29 @@ Some special methods can be used to help the layout of Forms:
  * *th3(title, status)*: adds a bold left-aligned header on a new row, colored with a  
  * *th3(List(title), status)*: adds a bold left-aligned header on a new row, colored with a specific status ("success" = green, "failure" = yellow, "error" = red, "skipped" = gray, "value" = white)
  
- * *tabs*. You can display 2 forms on 2 different tabs with:
+ * *tabs*. You can display 2 forms on 2 different tabs with the `tabs` and `tab` classes:
 {{{
-  // create a new tabs group
-  new tabs() {
-    // create a new tab
-    new tab("Tab 1") {
-       form1
-    }
-    new tab("Tab 2") {
-       form2
-    }
-  }
-}}}
+class tabsSpec extends HtmlSpecification("Tabs sample") with JUnit {
+ class ClubMember extends Form {
+   new tabs() {
+     new tab("Contact details") {
+       tr(field("First name", "Eric"))
+       tr(field("Last name", "Torreborre"))
+     }
+     new tab("Sports") {
+       th2("Sport", "Years of practice")
+       tr(field("Squash", 10))
+       tr(field("Tennis", 5))
+       tr(field("Windsurf", 2))
+     }
+   }
+ }
+ "A form with tabs" is <textile>
+   { new ClubMember().toHtml }  
+  </textile>
+}}}}
 
-See [http://specs.googlecode.com/svn/samples/LiterateSpecifications/org.specs.samples.tabsSpec.html here] for an example.
+See [http://specs.googlecode.com/svn/samples/LiterateSpecifications/org.specs.samples.tabsSpec.html here] for the corresponding Html report.
 
 === Override an existing layout ===
 
