@@ -19,7 +19,7 @@ class Person extends Form {
 
 This form declares 2 fields attached to the Person form (with the `field` method). They have a distinct label and an initial value. They are displayed on 2 separate rows with the tr method.
 
-The following html [http://specs.googlecode.com/svn/samples/LiterateSpecifications/org.specs.samples.fieldFormSpec.html html] is produced with this literate specification: 
+The following html [http://specs.googlecode.com/svn/samples/LiterateSpecifications/org.specs.samples.fieldsFormSpec.html html] is produced with this literate specification: 
 {{{
 class fieldsFormSpec extends LiterateSpecification with Html {
  class Person extends Form {
