@@ -174,4 +174,6 @@ For a complete example, please have a look at [http://code.google.com/p/specs/so
 
 = Forms =
 
-Forms are the preferred way in specs to create examples in a table format, so that they are readable by business users. See the [http://code.google.com/p/specs/wiki/Forms Forms] page for more information.
+Forms are the preferred way in specs to create examples in a table format, so that they are readable by business users. You can have a look at some examples [http://specs.googlecode.com/svn/samples/LiterateSpecifications here]. 
+
+See the [http://code.google.com/p/specs/wiki/Forms Forms] page for more information.
