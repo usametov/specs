@@ -122,6 +122,7 @@ usage java classpath package.mySpecification [-h|--help]
                                              [-c | --color]
 
 -h, --help                     print this message and doesn't execute the specification
+-config, --configuration        class name of an object extending the org.specs.util.Configuration trait
 -ns, --nostacktrace            remove the stacktraces from the reporting
 -nostats, --nostatistics       remove the statistics from the reporting
 -finalstats, --finalstatistics print the final statistics only
@@ -135,6 +136,29 @@ usage java classpath package.mySpecification [-h|--help]
 }}}
 
 Note that the specification is not executed in that case.
+
+===Override specs default behavior===
+(*from 1.5.0*)
+ 
+You can override specs behavior by providing a configuration (see below). This configuration file allows you to set default reporting options for:
+
+ * `ns, xonly, finalstats, c`
+
+But it also allows to control the behavior of specs for:
+
+ * Examples without expectations. The default is to throw a `SkippedException` but you can override it
+ * (_more to come later_)
+
+This how you declare a *specs* configuration:
+
+ * you can provide an object named `configuration`, extending the `org.specs.util.Configuration` trait, and overriding the methods of that trait (see the scaladoc)
+
+ * you can provide a class named `mypackage.configuration`, extending the `org.specs.util.Configuration` trait and pass this full name to the -config option
+
+ * you can provide a properties file named `configuration.properties`, having as keys the some of the method names of the Configuration trait and as values `true` or `false` (or actually anything starting with `y`/`Y` or `n`/`N`). 
+
+ * you can provide a properties file as above but with a specific path and specify its path to the `-config` option. 
+
 
 ===Find specifications in a directory path===
 
