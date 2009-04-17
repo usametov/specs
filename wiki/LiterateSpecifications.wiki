@@ -407,7 +407,7 @@ See [http://specs.googlecode.com/svn/samples/LiterateSpecifications/org.specs.sa
 
 When working with an existing form you may wish to:
 
- * remove some properties from the layout to simplify it. In this case you can use include/exclude to include or exclude some properties from the display:
+ * remove some properties from the layout to simplify it. In this case you can use the `include/exclude` methods to include only some properties or exclude some properties from the display:
 {{{
   // the customer form class provides a default layout
   new CustomerForm {
@@ -416,7 +416,7 @@ When working with an existing form you may wish to:
   }
 }}}
 
- * reset the whole existing layout with `resetLayout` and provide a new one. 
+ * reset the whole existing layout with `resetLayout()` and provide a new one. 
 
  * override the `layout(formRows: List[Seq[LabeledXhtml]])` method and provide a different layout:
 {{{
