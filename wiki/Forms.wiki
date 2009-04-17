@@ -1,5 +1,9 @@
 #summary Forms for HtmlSpecifications
 
+http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *Alpha version!*
+
+<wiki:toc/>
+
 = Forms =
 
 Forms are the preferred way in specs to create examples in a table format, so that they are readable by business users. You can have a look at some examples [http://specs.googlecode.com/svn/samples/LiterateSpecifications here].
@@ -19,7 +23,7 @@ class Person extends Form {
 
 This form declares 2 fields attached to the Person form (with the `field` method). They have a distinct label and an initial value. They are displayed on 2 separate rows with the tr method.
 
-The following html [http://specs.googlecode.com/svn/samples/LiterateSpecifications/org.specs.samples.fieldsFormSpec.html html] is produced with this literate specification: 
+The following [http://specs.googlecode.com/svn/samples/LiterateSpecifications/org.specs.samples.fieldsFormSpec.html html] is produced with this literate specification: 
 {{{
 class fieldsFormSpec extends LiterateSpecification with Html {
  class Person extends Form {
