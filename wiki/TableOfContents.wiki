@@ -9,6 +9,7 @@
  * [UsingMockito Mockito]
  * [UsingMocks Light Mocks]
  * [LiterateSpecifications Literate specifications]
+ * [Forms Forms for Literate specifications]
  * [AdvancedSpecifications Advanced Specifications]
 
  * [ChangeLog Change log]
