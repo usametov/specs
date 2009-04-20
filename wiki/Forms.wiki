@@ -202,7 +202,7 @@ This is a Person form, checking that the initials are set properly on a Person o
 == Forms layout ==
 
 ===Predefined layouts===
-Some special methods can be used to help the layout of Forms:
+Some special methods can be used to help the layout of Forms (see the scaladoc for the precise methods description):
 
  * *p(properties/forms)*: adds all the properties/forms on a new table row, with an empty row above as a separator
  * *th1(titles)*: adds a small box with a caption inside a row
