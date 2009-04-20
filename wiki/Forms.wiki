@@ -85,7 +85,10 @@ On any Field, Prop or Form you can set decorators for labels or values:
   myField.italicValue    // the value is italic
   myField.strikeLabel    // the label is strike
   myField.bold           // all is bold
+  myField.boldLabel.strikeValue    // the label is bold, the value is strike
 
+  // there are other shortcuts to set the style attributes on cells too
+  myField.successValue  // the value has a success style (green)
 }}}
 
 
