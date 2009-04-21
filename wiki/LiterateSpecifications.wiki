@@ -69,7 +69,7 @@ There are other available helper functions:
   or This some text { doSomething() <| }
 }}}
 
- * `consoleOutput(messages: Seq[String])`. This displays the messages with a "prompt", mimicking the Scala interpreter (see [http://code.google.com/p/specs/LiterateSpecifications#Scala_interpreter Scala interpreter]
+ * `consoleOutput(messages: Seq[String])`. This displays the messages with a "prompt", mimicking the Scala interpreter (see [http://code.google.com/p/specs/LiterateSpecifications#Scala_interpreter Scala interpreter])
 
  * `linkTo(description, otherSpecification)`. Links to sub-specifications can be included with the `linkTo` function. This will include the other specification in the current one (if not already present) and create a Html link to its results.
 
