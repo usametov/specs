@@ -322,25 +322,17 @@ You can note in this example that there is also an implicit conversion between a
 
 Those 2 forms are to be used when you want to declare a form where each row is a separate "Entity" (modeling a business object for example) and where the whole table declares a sorted sequence of expected entities. Upon execution, the missing or supplementary rows will be reported. Here is an example: 
 {{{
-  class CustomerLine extends EntityLineForm[Customer] {
+  case class CustomerLine(name: String, age: Int) extends EntityLineForm[Customer] {
 
     // the prop method accepts a function here, taking the proper attribute on the "Entity"
-    val name = prop("Name", (c: Customer) => c.getName)
-    val age = prop("b", (c: Customer) => c.getAge)
+    prop("Name", (_:Customer).getName)(name)
+    prop("b", (_:Customer).getAge)(age)
   }
-  class Customers(actualCustomers: Seq[Customer]) extends SeqForm[T](actualCustomers) {
-   // each call to call to expects create a new CustomerLine
-   // built with one element of the actualCustomer sequence + the expected values 
-   def expect(n: String, a: Int) = line { (customer: Option[T]) => 
-      new CustomerLine {
-        name(n), age(a) 
-      }.entityIs(customer)
-    } 
-  }
+  class Customers(actualCustomers: Seq[Customer]) extends SeqForm[T](actualCustomers)
 
   // example usage
   new Customers(listFromTheDatabase) {
-    expect("Eric", 36)
-    expect("Bob", 27) 
+    tr(CustomerLine("Eric", 36))
+    tr(CustomerLine("Bob", 27))
   }
 }}}
