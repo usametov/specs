@@ -326,7 +326,7 @@ Those 2 forms are to be used when you want to declare a form where each row is a
 
     // the prop method accepts a function here, taking the proper attribute on the "Entity"
     prop("Name", (_:Customer).getName)(name)
-    prop("b", (_:Customer).getAge)(age)
+    prop("Age", (_:Customer).getAge)(age)
   }
   class Customers(actualCustomers: Seq[Customer]) extends SeqForm[T](actualCustomers)
 
