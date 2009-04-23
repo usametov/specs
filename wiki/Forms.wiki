@@ -337,6 +337,6 @@ Those 2 forms are to be used when you want to declare a form where each row is a
   }
 }}}
 
-== `SetForm` and `EntityLine` form ==
+== `BagForm` and `EntityLine` form ==
 
-The `SetForm` is similar to a `SeqForm` but it doesn't expect a sequence of expected rows to match a sequence of actual entities. It tries instead to find the best match between the set of expected rows and the set of actual entities based on the number of failing properties for each row.
+The `BagForm` is similar to a `SeqForm` but it doesn't expect a sequence of expected rows to match a sequence of actual entities. It tries instead to find the best match between the set of expected rows and the set of actual entities based on the number of failing properties for each row.
