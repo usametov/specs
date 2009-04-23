@@ -337,7 +337,7 @@ You can use [http://code.google.com/p/scalacheck ScalaCheck] generators to gener
                             yield (prefixes(list), prefix)
 }}}
 
-Then, mixing the org.specs.ScalaCheck trait to your specification, you can check that the prefix property passes all generated data:
+Then, mixing the `org.specs.ScalaCheck` trait to your specification, you can check that the prefix property passes all generated data:
 {{{      
   // the generated data must pass the following property
   testData must pass { t: (List[List[Int]], Seq[Int]) => val (prefixes, prefix) = t
@@ -362,7 +362,7 @@ Then, mixing the org.specs.ScalaCheck trait to your specification, you can check
   prop must pass
 }}} 
 
-_Note_: the `property` function is deprecated from ScalaCheck 1.5. You should use Prop.forAll instead.
+_Note_: the `property` function is deprecated from `ScalaCheck` 1.5. You should use Prop.forAll instead.
 
  * You can display !ScalaCheck messages with `display` on the Console:
 
