@@ -55,7 +55,7 @@ Then it is possible to set the expected value of this property with its `apply` 
 
 === Property matcher ===
 
-The default matcher used to check if the actual value is ok according to the expected value is beEqual(_). However, you can change this matcher to another one. For example:
+The default matcher used to check if the actual value is ok according to the expected value is `beEqual(_)`. However, you can change this matcher to another one. For example:
 
 {{{
   val name = prop("Name", " Eric ").matchesWith(equalToIgnoringCase(_))
