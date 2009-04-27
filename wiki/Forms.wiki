@@ -53,6 +53,16 @@ Then it is possible to set the expected value of this property with its `apply` 
   name("Bob") // the enclosing Form object will check that actual value == expected value
 }}}
 
+=== Property matcher ===
+
+The default matcher used to check if the actual value is ok according to the expected value is beEqual(_). However, you can change this matcher to another one. For example:
+
+{{{
+  val name = prop("Name", " Eric ").matchesWith(equalToIgnoringCase(_))
+  name("Eric").execute.isOk // true
+}}}
+
+
 === Value formatters ===
 
 The default formatter for Double values is `new DecimalFormat("#.###############")`, however if you want to have a specific display for some of your values, you can declare a new value formatter on a property. For example, you may want to display Iterable properties (created with the `propIterable` method) with `\` as a separator:
