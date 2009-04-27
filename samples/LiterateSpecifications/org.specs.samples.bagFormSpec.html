@@ -1,0 +1,106 @@
+<html>
+    <head>
+      <title>Bag form</title>
+        <style type="text/css" media="all">
+          @import url('./css/maven-base.css');
+          @import url('./css/maven-theme.css');
+          @import url('./css/site.css');
+        </style>
+        <link href="./css/prettify.css" rel="stylesheet" type="text/css"></link>
+        <script type="text/javascript" src="./css/prettify.js"></script>
+        <link href="./css/print.css" type="text/css" rel="stylesheet" media="print"></link>
+        <link href="./css/tooltip.css" type="text/css" rel="stylesheet"></link>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <script type="text/javascript" src="./css/tooltip.js"></script>
+        <script language="javascript"> function init() { prettyPrint();noNavBar()}
+    // found on : http://www.tek-tips.com/faqs.cfm?fid=6620
+    String.prototype.endsWith = function(str) { return (this.match(str+'$') == str) }
+
+    function changeWidth(id,width) {
+      document.getElementById(id).style.width = width;
+    }
+    function changeMarginLeft(id, margin) {
+      document.getElementById(id).style.marginLeft = margin;
+    }
+    function noNavBar() {
+      changeWidth('leftColumn','0px');
+      document.getElementById('leftColumn').style.visibility = 'hidden'; 
+      document.getElementById('leftColumn').style.display = 'none'; 
+      changeMarginLeft('bodyColumn', '35px')
+   }
+   function toggleNavBar(image) {
+      toggleImage(image)
+      if (image.src.endsWith('images/expanded.gif')) {
+        changeWidth('leftColumn','20px');
+        changeMarginLeft('bodyColumn', '35px')
+      }
+    else {
+        changeWidth('leftColumn','250px');
+        changeMarginLeft('bodyColumn', '277px')
+      }
+   }
+   function toggleImage(image) {
+      if (image.src.endsWith('images/expanded.gif')) {
+        image.src = 'images/collapsed.gif';
+      }
+    else {
+        image.src = 'images/expanded.gif';
+      }
+   }
+    function showHideTable(tableId) {
+      table = document.getElementById(tableId)
+      table.style.display = (table.style.display == 'none')? 'block' : 'none';
+    }
+    function showExampleMessage(status, exId, event) {
+    exampleMessage = document.getElementById('rowmess:' + exId)
+    exampleIcon = document.getElementById('rowicon:' + exId)
+    showToolTipWithIcon(status, exampleIcon.src, exampleMessage.innerHTML, event)
+  }
+    function showExampleDesc(exId, event) {
+        exampleDesc = document.getElementById('rowdesc:' + exId)
+        showToolTip('Description', exampleDesc.innerHTML, event)
+    }
+
+
+    </script>
+        <script language="javascript">window.onload=init;</script>
+        <!-- the tabber.js file must be loaded after the onload function has been set, in order to run the
+             tabber code, then the init code -->
+        <script type="text/javascript" src="./css/tabber.js"></script> 
+        <link href="./css/tabber.css" type="text/css" rel="stylesheet" media="screen"></link> 
+    </head>
+    <body>
+      
+      <div id="toolTip"></div>
+      <a name="top"></a>
+      <div id="leftColumn">
+     
+    </div>
+      <div id="bodyColumn">
+        <h2>Bag form</h2><a name="A+Bag+Form+specifies"></a><h3>A Bag Form specifies<a href="#top">   <img src="images/up.gif"></img></a></h3><html xmlns="http://www.w3.org/1999/xhtml"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta></head><body><table class="dataTable">
+  <tr>
+    <th colspan="2">Customers</th>
+  </tr>
+  <tr>
+    <th>Customer line</th>
+    <th colspan="2">Customer line</th>
+  </tr>
+  <tr>
+    <td class="success">Eric</td>
+    <td class="success" colspan="2">36</td>
+  </tr>
+  <tr>
+    <td class="success">Bob</td>
+    <td class="success" colspan="2">27</td>
+  </tr>
+  <tr>
+    <th align="left" class="failure" colspan="2">There is 1 unmatched expected line</th>
+  </tr>
+  <tr>
+    <td class="info">Eric</td>
+    <td class="info" colspan="2">38</td>
+  </tr>
+</table>  </body></html>
+      </div>
+    </body>
+  </html>
