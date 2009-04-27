@@ -25,7 +25,8 @@ h3. Presentation
 
 This new application should say "hello" in different languages.
 
-For example,<ex>by default, saying hello by default should use English</ex> { greet must_== "hello"}
+For example,<ex>by default, saying hello by default should use English</ex> 
+{ greet must_== "hello" }
  
 Then, other languages, like <ex>French and German should be supported too</ex> 
 { eg {
