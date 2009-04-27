@@ -299,7 +299,7 @@ When working with an existing form you may wish to:
 
 In this example:
 
- * the `DataTable` is not directly executed (there is no `|>` sign on the right border of the table) but it is reported to the enclosing Specification with `report(this)`.
+ * the `DataTable` is not directly executed (there is no `|>` sign on the right border of the table) but it is reported to the enclosing Specification with `report`.
 
  * the function executed on each row of the `DataTable` is actually building the Form rows (with the `tr` method)
 
@@ -323,7 +323,7 @@ The `DataTableForm` example above could then be rewritten as:
   new TableForm {
     tr(PayLine("6/1/2007", -1732.34, 0.0))
     tr(PayLine("4/30/2008", -580332.88, 0.0))
-  }.report(this)
+  }.report
 }}}
 
 You can note in this example that there is also an implicit conversion between a Field and its value so you can write `pricePay(valueDate)` instead of `pricePay(valueDate.get)`
