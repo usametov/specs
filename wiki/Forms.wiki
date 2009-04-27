@@ -317,8 +317,8 @@ The `DataTableForm` example above could then be rewritten as:
 {{{
   class PayLine(vDate: String, p: Double, r: Double) extends LineForm {
     val valueDate = field("Value date", vDate)
-    val pay = prop(pricePay(valueDate))(p)
-    val rec = prop(priceRec(valueDate))(r)
+    val pay = prop("NPV_PAY_NOTIONAL", pricePay(valueDate))(p)
+    val rec = prop("NPV_REC_NOTIONAL", priceRec(valueDate))(r)
   }
   new TableForm {
     tr(PayLine("6/1/2007", -1732.34, 0.0))
