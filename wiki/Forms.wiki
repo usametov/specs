@@ -206,7 +206,7 @@ This is a Person form, checking that the initials are set properly on a Person o
                   a.number(37)
                   a.street("Nando-cho")}
     lastName("Torreborre")
-   }.report(this)
+   }.report
 }
 }}}
 
@@ -294,7 +294,7 @@ When working with an existing form you may wish to:
 
       tr(valueDate, prop(pricePay(valueDate))(pay), prop(priceRec(valueDate))(rec))
     }
-  }.report(this)
+  }.report
 }}}
 
 In this example:
