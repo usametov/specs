@@ -373,8 +373,7 @@ data must pass {
 }}} 
 
 
-===!ScalaCheck Parameters===
-
+===!ScalaCheck parameters===
 
  * You can set !ScalaCheck properties with `set` (or `display` to additionally see the result on the Console):
 
