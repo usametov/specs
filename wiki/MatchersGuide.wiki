@@ -364,18 +364,10 @@ Then, mixing the `org.specs.ScalaCheck` trait to your specification, you can che
 
 _Note_: the `property` function is deprecated from `ScalaCheck` 1.5. You should use Prop.forAll instead.
 
- * You can display !ScalaCheck messages with `display` on the Console:
-
-{{{
-data must pass {
-...
-}(display)
-}}} 
-
 
 ===!ScalaCheck parameters===
 
- * You can set !ScalaCheck properties with `set` (or `display` to additionally see the result on the Console):
+ * You can set !ScalaCheck properties with `set` (or `display` to additionally see the results on the Console):
 
 {{{
 data must pass {
