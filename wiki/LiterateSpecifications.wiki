@@ -17,9 +17,9 @@ Furthermore, *Forms* add a very convenient way to declare and display expected s
 Here is a short example of such a `LiterateSpecification`: 
 {{{
 
-class HelloWorldSpecification extends HtmlSpecification {
+class HelloWorldSpecification extends HtmlSpecification with Textile {
  
-  "The greeting application" is <textile>
+  "The greeting application" is <t>
 
 h3. Presentation
 
@@ -37,7 +37,7 @@ Then, other languages, like <ex>French and German should be supported too</ex>
 
 <ex>Japanese should be supported also</ex> { notImplemented }
 
- </textile>
+ </t>
 }
 }}} 
 
@@ -45,9 +45,9 @@ The example above shows the following features:
 
  * the `HelloWorldSpecification` is an `HtmlSpecification` which is actually a `LiterateSpecification` mixing-in the `Html` trait to report the execution with an Html runner
 
- * the name of the first System under specification is "The greeting application" and is defined by an xml Element `<textile></textile>`
+ * the name of the first System under specification is "The greeting application" and is defined by an xml Element `<t></t>`
 
- * a title is declared with the `h3.` markup tag, using the [http://en.wikipedia.org/wiki/Textile_(markup_language) Textile] markup language as specified by the name of the xml element. The other supported markup language is [http://en.wikipedia.org/wiki/Markdown Markdown].
+ * a title is declared with the `h3.` markup tag, using the [http://en.wikipedia.org/wiki/Textile_(markup_language) Textile] markup language as specified by the mixed-in trait `Textile`. The other supported markup language is [http://en.wikipedia.org/wiki/Markdown Markdown].
 
  * the first example description is enclosed in the `<ex></ex>` element.
 
