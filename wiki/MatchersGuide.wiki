@@ -372,7 +372,11 @@ data must pass {
 }(display)
 }}} 
 
- * You can set ScalaCheck properties with `set` (or `display` to additionally see the result on the Console):
+
+===ScalaCheck parameters===
+
+
+ * You can set !ScalaCheck properties with `set` (or `display` to additionally see the result on the Console):
 
 {{{
 data must pass {
@@ -388,6 +392,15 @@ where:
  * `minTestsOk` is the minimum number of tests which should be ok in order for the property to pass
 
  * the default is: `minTestsOk->100, maxDiscarded->500, minSize->0, maxSize->100`
+
+You can also set the properties and display !ScalaCheck messages with `display` instead of  `set`:
+
+{{{
+data must pass {
+...
+}(display(minSize -> 10, maxSize -> 20, maxDiscarded -> 30, minTestsOk -> 5))
+}}} 
+
 
 ===One liners===
 
