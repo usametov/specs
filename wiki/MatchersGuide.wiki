@@ -381,8 +381,11 @@ where:
  * `maxSize` is the maximum size for generated data (like lists)
  * `maxDiscarded` is the maximum number of tests which should be inconclusive in order for the property to pass
  * `minTestsOk` is the minimum number of tests which should be ok in order for the property to pass
+(*from 1.5.0*)
+ * `workers` is the number of working threads
+ * `wrkSize` is the number of tests per thread
 
- * the default is: `minTestsOk->100, maxDiscarded->500, minSize->0, maxSize->100`
+ * the default is: `minTestsOk->100, maxDiscarded->500, minSize->0, maxSize->100, workers->1, wrkSize->20`
 
 You can also set the properties and display !ScalaCheck messages with `display` instead of  `set`:
 
