@@ -352,3 +352,19 @@ Those 2 forms are to be used when you want to declare a form where each row is a
 The `BagForm` is similar to a `SeqForm` but it doesn't expect a sequence of expected rows to match a sequence of actual entities. It tries instead to find the best match between the set of expected rows and the set of actual entities based on the number of failing properties for each row. 
 
 You can see an example of it [http://specs.googlecode.com/svn/samples/LiterateSpecifications/org.specs.samples.bagFormSpec.html here]
+
+=== Missing actual rows ===
+
+By default, a BagForm will report missing actual rows and a failure if some actual rows can't be matched against expected raws.
+
+You can switch this behavior off with `isIncomplete`:
+{{{
+  // there are 2 actual persons to match but one only is ok
+  val form = new DataTableBagForm("Persons", actual) {
+    "Name" | "Age" |
+    "Bob"  ! 40    | { (name:String, age:Int) =>
+      tr(PersonLine(name, age))
+    }
+  }
+  form.isIncomplete.execute.isOk must be(true)
+}}}
