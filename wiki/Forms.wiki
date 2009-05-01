@@ -355,7 +355,7 @@ You can see an example of it [http://specs.googlecode.com/svn/samples/LiterateSp
 
 === Missing actual rows ===
 
-By default, a BagForm will report missing actual rows and a failure if some actual rows can't be matched against expected raws.
+By default, a `BagForm` will report missing actual rows and a failure if some actual rows can't be matched against expected raws.
 
 You can switch this behavior off with `isIncomplete`:
 {{{
