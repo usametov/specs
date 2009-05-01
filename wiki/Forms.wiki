@@ -150,7 +150,7 @@ In the 2 forms above, we declare:
 
  * an iterable property which will display its value a bit differently by separating all values with commas
 
- * a nested form, declared with the `form` method
+ * a nested form, declared with the `form` method. Nested forms can also be declared and added to the parent form at the same time with the `.formTr` method. This is especially useful with `DataTableForms`.
 
  * a layout for those properties and forms on 3 different rows with the `tr` method
 
@@ -199,13 +199,13 @@ This is a Person form, checking that the initials are set properly on a Person o
   val person = Person("Eric", "Torreborre", address, List("Jerome", "Olivier"))
 
    new PersonForm(person) {
-    firstName("Eric")       
-    initials("et")
-    friends("Jerome", "Olivier")
-    address.set { a =>
-                  a.number(37)
-                  a.street("Nando-cho")}
-    lastName("Torreborre")
+     firstName("Eric")       
+     initials("et")
+     friends("Jerome", "Olivier")
+     address.set { a =>
+                   a.number(37)
+                   a.street("Nando-cho")}
+     lastName("Torreborre")
    }.report
 }
 }}}
