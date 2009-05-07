@@ -14,7 +14,6 @@ There are different kind of matchers which are used to assert that some properti
 }}}
 
 === Be/Have matchers ===
-(*from 1.5.0*)
 
 Most of the matchers presented below are used with `myObject must matcher`. However some matchers are starting with the words 'be' or 'have'. Those matchers also have alternate forms allowing them to be used with 'be' or 'have' as separated words:
 
@@ -113,7 +112,6 @@ Simply use the `not` method on a matcher:
 In that case, the ok message of the first matcher is used as a ko message for the second matcher.
 
 === Create a Be/Have matcher ===
-(*from 1.5.0*)
 
 When you create a matcher like `beEven`, you may want it to be also usable with `be` as a separated words. In order to do so, you need to add an implicit conversion from `org.specs.specification.Result[T]` (which is the result value of the expression `a must be`) and add the expected matcher as a method:
 
@@ -381,7 +379,6 @@ where:
  * `maxSize` is the maximum size for generated data (like lists)
  * `maxDiscarded` is the maximum number of tests which should be inconclusive in order for the property to pass
  * `minTestsOk` is the minimum number of tests which should be ok in order for the property to pass
-(*from 1.5.0*)
  * `workers` is the number of working threads
  * `wrkSize` is the number of tests per thread
 
@@ -465,7 +462,6 @@ Of course, you can globally re-enable expectations counting with `expectProperti
 <a><b name="value" name2="value2"></b></a> must \("b", "name"->"value")
 }}}
 
-(*from 1.5.0*)
 {{{
 val actual = <a><b name="value" name2="value2"></b></a> 
 
