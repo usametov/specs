@@ -26,7 +26,7 @@ object helloWorld extends Specification {
      "hello world".size must_== 11
   }
   "'hello world' matches 'h.* w.*'" in {
-     "hello world" must beMatching("h.* w.*")
+     "hello world" must be matching("h.* w.*")
   }
 }
 }}}
@@ -51,7 +51,7 @@ object helloWorld extends Specification {
       "hello world".size must_== 11
     }
     "match 'h.* w.*'" in {
-      "hello world" must beMatching("h.* w.*")
+      "hello world" must be matching("h.* w.*")
     }
   }
   "Good bye cruel world" should {...}
