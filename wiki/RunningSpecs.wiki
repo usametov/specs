@@ -38,10 +38,14 @@ If you want to run the specifications as `ScalaTest` suites, use
 
  * [http://scala-tools.org/repo-releases/org/scalatest/scalatest/0.9.5 scalatest-0.9.5.jar]
 
-And finally if you want to use Textile markup in Literate Specifications, you need to add
+If you want to use Textile markup in Literate Specifications, you need to add
 
  * [http://scala-tools.org/repo-releases/org/eclipse/mylyn/wikitext/wikitext.core/0.9.4.I20090220-1600-e3x wikitext.core-0.9.4.I20090220-1600-e3x.jar]
  * [http://scala-tools.org/repo-releases/org/eclipse/mylyn/wikitext/wikitext.textile/0.9.4.I20090220-1600-e3x wikitext.textile-0.9.4.I20090220-1600-e3x.jar] 
+
+Or alternately, if you prefer Markdown:
+
+ * [http://scala-tools.org/repo-releases/org/markdownj/markdownj/0.3.0-1.0.2b4/markdownj-0.3.0-1.0.2b4.jar markdownj-0.3.0-1.0.2b4.jar]
 
 =Run your specification in the Console=
 
@@ -93,7 +97,6 @@ If a Specification is declared as an `object` you can run it directly on the com
 If the class can't be instantiated a stacktrace will be printed.
 
 ===Run several Specification classes===
-(*from 1.5.0*)
 
 You can also run many specifications at once with the -k flag (or --classes):
 {{{
@@ -138,7 +141,6 @@ usage java classpath package.mySpecification [-h|--help]
 Note that the specification is not executed in that case.
 
 ===Override specs default behavior===
-(*from 1.5.0*)
  
 You can override specs behavior by providing a configuration (see below). This configuration file allows you to set default reporting options for:
 
