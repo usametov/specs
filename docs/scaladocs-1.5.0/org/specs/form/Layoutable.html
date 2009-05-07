@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait Layoutable in org.specs.form</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.3.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/form$package.html" target="_self">org.specs.form</a>
+        <br></br>
+        <span class="entity">trait  Layoutable</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/form/Layoutable"><code>org/specs/form/Layoutable.scala</code></a>]
+      </div><hr></hr>
+      <a name="Layoutable"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>Layoutable</em>
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/form/ToXhtml.html" target="_self">ToXhtml</a><code> with </code><a href="../../../org/specs/form/LayoutFormats.html" target="_self">LayoutFormats</a></dd>
+    </dl>
+      <dl><dd>This trait allows to display ToXhtml elements in rows or tabs.
+ 
+ It is itself a ToXhtml element which will return itself as a set of rows
+ 
+ The main method is tr which declares values which must be displayed on the same row.
+ 
+ tr(a1, a2) // tr for "table row"
+ tr(a3)
+ 
+ Several display functions are also available:
+ 
+ tr(empty)                // displays a small empty line
+ p(values)                // "paragraph": displays an empty line and the values on the next row
+ th1("header")            // display the title in a small box on a new row
+ th2("header")            // display the title in a <th> on a new row
+ th3("header")            // display the title in a <th> on a new row, aligned left
+ th3("header", Status.Success) // display the title in a <th> on a new row, aligned left, with a special class attribute
+ 
+ Tabs can also be created with the tabs() and tab() case classes:
+ 
+ new tabs() {
+   new tab() {
+     tr(v1, v2)
+   }
+ }</dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/form/FormEnabled.html" target="_self">FormEnabled</a>, <a href="../../../org/specs/form/Tabs.tabs.html" target="_self">Tabs.tabs</a>, <a href="../../../org/specs/form/Tabs.tabs.tab.html" target="_self">Tabs.tabs.tab</a></dd>
+      </dl><hr></hr>
+      
+
+<table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/form/LayoutFormats.html" target="_self">LayoutFormats</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/form/LayoutFormats.html#empty" target="_self">empty</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/form/ToXhtml.html" target="_self">ToXhtml</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/form/ToXhtml.html#valignment" target="_self">valignment</a>, <a href="../../../org/specs/form/ToXhtml.html#statusCode" target="_self">statusCode</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/form/DecoratedXhtml.html" target="_self">DecoratedXhtml</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/form/DecoratedXhtml.html#labelsDecorators" target="_self">labelsDecorators</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#valuesDecorators" target="_self">valuesDecorators</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#valuesCellsDecorators" target="_self">valuesCellsDecorators</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#labelsCellsDecorators" target="_self">labelsCellsDecorators</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/form/Layout.html" target="_self">Layout</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/form/Layout.html#rowValues" target="_self">rowValues</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/form/LayoutFormats.html" target="_self">LayoutFormats</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/form/LayoutFormats.html#p%28org.specs.form.LabeledXhtml*%29" target="_self">p</a>, <a href="../../../org/specs/form/LayoutFormats.html#th1%28String*%29" target="_self">th1</a>, <a href="../../../org/specs/form/LayoutFormats.html#th1%28org.specs.form.LabeledXhtml%29" target="_self">th1</a>, <a href="../../../org/specs/form/LayoutFormats.html#th2%28String*%29" target="_self">th2</a>, <a href="../../../org/specs/form/LayoutFormats.html#th2%28List%5Borg.specs.form.LabeledXhtml%5D%29" target="_self">th2</a>, <a href="../../../org/specs/form/LayoutFormats.html#th3%28String*%29" target="_self">th3</a>, <a href="../../../org/specs/form/LayoutFormats.html#th3%28List%5Borg.specs.form.LabeledXhtml%5D%29" target="_self">th3</a>, <a href="../../../org/specs/form/LayoutFormats.html#th3%28String%2Corg.specs.execute.Status.Value%29" target="_self">th3</a>, <a href="../../../org/specs/form/LayoutFormats.html#th3Success%28String%29" target="_self">th3Success</a>, <a href="../../../org/specs/form/LayoutFormats.html#th3Failure%28String%29" target="_self">th3Failure</a>, <a href="../../../org/specs/form/LayoutFormats.html#th3Error%28String%29" target="_self">th3Error</a>, <a href="../../../org/specs/form/LayoutFormats.html#th3Skipped%28String%29" target="_self">th3Skipped</a>, <a href="../../../org/specs/form/LayoutFormats.html#th3Info%28String%29" target="_self">th3Info</a>, <a href="../../../org/specs/form/LayoutFormats.html#th3Success%28List%5BString%5D%29" target="_self">th3Success</a>, <a href="../../../org/specs/form/LayoutFormats.html#th3Failure%28List%5BString%5D%29" target="_self">th3Failure</a>, <a href="../../../org/specs/form/LayoutFormats.html#th3Error%28List%5BString%5D%29" target="_self">th3Error</a>, <a href="../../../org/specs/form/LayoutFormats.html#th3Skipped%28List%5BString%5D%29" target="_self">th3Skipped</a>, <a href="../../../org/specs/form/LayoutFormats.html#th3Info%28List%5BString%5D%29" target="_self">th3Info</a>, <a href="../../../org/specs/form/LayoutFormats.html#th3%28List%5BString%5D%2Corg.specs.execute.Status.Value%29" target="_self">th3</a>, <a href="../../../org/specs/form/LayoutFormats.html#embedInNewRow%28scala.xml.NodeSeq%29" target="_self">embedInNewRow</a>, <a href="../../../org/specs/form/LayoutFormats.html#inNewRow%28scala.xml.NodeSeq%29" target="_self">inNewRow</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/form/ToXhtml.html" target="_self">ToXhtml</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/form/ToXhtml.html#valign%28String%29" target="_self">valign</a>, <a href="../../../org/specs/form/ToXhtml.html#statusClass%28String%29" target="_self">statusClass</a>, <a href="../../../org/specs/form/ToXhtml.html#toXhtml" target="_self">toXhtml</a>, <a href="../../../org/specs/form/ToXhtml.html#toEmbeddedXhtml" target="_self">toEmbeddedXhtml</a>, <a href="../../../org/specs/form/ToXhtml.html#toHtml" target="_self">toHtml</a>, <a href="../../../org/specs/form/ToXhtml.html#copy%28org.specs.form.ToXhtml%29" target="_self">copy</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/form/DecoratedXhtml.html" target="_self">DecoratedXhtml</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/form/DecoratedXhtml.html#decorateLabelsWith%28%28scala.xml.Node%29%3D%3Escala.xml.Node%29" target="_self">decorateLabelsWith</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateLabelWith%28%28scala.xml.Node%29%3D%3Escala.xml.Node%29" target="_self">decorateLabelWith</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateValuesWith%28%28scala.xml.Node%29%3D%3Escala.xml.Node%29" target="_self">decorateValuesWith</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateValueWith%28%28scala.xml.Node%29%3D%3Escala.xml.Node%29" target="_self">decorateValueWith</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateValuesCellsWith%28%28scala.xml.Node%29%3D%3Escala.xml.Node%29" target="_self">decorateValuesCellsWith</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateValueCellWith%28%28scala.xml.Node%29%3D%3Escala.xml.Node%29" target="_self">decorateValueCellWith</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateLabelsCellsWith%28%28scala.xml.Node%29%3D%3Escala.xml.Node%29" target="_self">decorateLabelsCellsWith</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateLabelCellWith%28%28scala.xml.Node%29%3D%3Escala.xml.Node%29" target="_self">decorateLabelCellWith</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateLabel%28String%29" target="_self">decorateLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateValue%28String%29" target="_self">decorateValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateLabelCell%28scala.xml.Node%29" target="_self">decorateLabelCell</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateValueCell%28scala.xml.Node%29" target="_self">decorateValueCell</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#valueCellAttribute%28String%2CString%29" target="_self">valueCellAttribute</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#labelCellAttribute%28String%2CString%29" target="_self">labelCellAttribute</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#valueBgcolor%28String%29" target="_self">valueBgcolor</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#labelBgcolor%28String%29" target="_self">labelBgcolor</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#successValues" target="_self">successValues</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#successValue" target="_self">successValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#successLabels" target="_self">successLabels</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#successLabel" target="_self">successLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#failureValues" target="_self">failureValues</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#failureValue" target="_self">failureValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#failureLabels" target="_self">failureLabels</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#failureLabel" target="_self">failureLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#errorValues" target="_self">errorValues</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#errorValue" target="_self">errorValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#errorLabels" target="_self">errorLabels</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#errorLabel" target="_self">errorLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#skippedValues" target="_self">skippedValues</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#skippedValue" target="_self">skippedValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#skippedLabels" target="_self">skippedLabels</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#skippedLabel" target="_self">skippedLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#infoValues" target="_self">infoValues</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#infoValue" target="_self">infoValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#infoLabels" target="_self">infoLabels</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#infoLabel" target="_self">infoLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#preValues" target="_self">preValues</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#preValue" target="_self">preValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#preLabels" target="_self">preLabels</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#preLabel" target="_self">preLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#pre" target="_self">pre</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#italicValues" target="_self">italicValues</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#italicValue" target="_self">italicValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#italicLabels" target="_self">italicLabels</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#italicLabel" target="_self">italicLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#italic" target="_self">italic</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#boldValues" target="_self">boldValues</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#boldValue" target="_self">boldValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#boldLabels" target="_self">boldLabels</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#boldLabel" target="_self">boldLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#bold" target="_self">bold</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#strikeValues" target="_self">strikeValues</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#strikeValue" target="_self">strikeValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#strikeLabels" target="_self">strikeLabels</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#strikeLabel" target="_self">strikeLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#strike" target="_self">strike</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#copy%28org.specs.form.DecoratedXhtml%29" target="_self">copy</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/form/Layout.html" target="_self">Layout</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/form/Layout.html#tr%28org.specs.form.LabeledXhtml*%29" target="_self">tr</a>, <a href="../../../org/specs/form/Layout.html#appendValues%28org.specs.form.LabeledXhtml*%29" target="_self">appendValues</a>, <a href="../../../org/specs/form/Layout.html#trs%28List%5BSeq%5Borg.specs.form.LabeledXhtml%5D%5D%29" target="_self">trs</a>, <a href="../../../org/specs/form/Layout.html#appendRows%28List%5BSeq%5Borg.specs.form.LabeledXhtml%5D%5D%29" target="_self">appendRows</a>, <a href="../../../org/specs/form/Layout.html#rows" target="_self">rows</a>, <a href="../../../org/specs/form/Layout.html#rowsNb" target="_self">rowsNb</a>, <a href="../../../org/specs/form/Layout.html#xhtml" target="_self">xhtml</a>, <a href="../../../org/specs/form/Layout.html#toRow%28org.specs.form.LabeledXhtml*%29" target="_self">toRow</a>, <a href="../../../org/specs/form/Layout.html#resetLayout%28%29" target="_self">resetLayout</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/util/IncludeExclude.html" target="_self">IncludeExclude</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/util/IncludeExclude.html#exclude%28T*%29" target="_self">exclude</a>, <a href="../../../org/specs/util/IncludeExclude.html#include%28T*%29" target="_self">include</a>, <a href="../../../org/specs/util/IncludeExclude.html#reset%28%29" target="_self">reset</a>, <a href="../../../org/specs/util/IncludeExclude.html#filter%28Seq%5BT%5D%29" target="_self">filter</a>, <a href="../../../org/specs/util/IncludeExclude.html#includeCheck%28List%5BT%5D%2CT%29" target="_self">includeCheck</a>, <a href="../../../org/specs/util/IncludeExclude.html#excludeCheck%28List%5BT%5D%2CT%29" target="_self">excludeCheck</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+
+
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2009. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

@@ -1,0 +1,532 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>class Field in org.specs.form</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.3.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/form$package.html" target="_self">org.specs.form</a>
+        <br></br>
+        <span class="entity">class  Field</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/form/Field"><code>org/specs/form/Field.scala</code></a>]
+      </div><hr></hr>
+      <a name="Field"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>class</code>
+        <em>Field</em>[<em>T</em>](<code>val </code><em>label</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>value</em> : <a href="../../../org/specs/util/Property.html" target="_self">Property</a>[<a href="../../../org/specs/form/Field.html#T" target="_self">T</a>])
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/form/LabeledXhtml.html" target="_self">LabeledXhtml</a><code> with </code><a href="../../../org/specs/form/ValueFormatter.html" target="_self">ValueFormatter</a>[<a href="../../../org/specs/form/Field.html#T" target="_self">T</a>]<code> with </code><a href="../../../org/specs/form/Copyable.html" target="_self">Copyable</a>[<a href="../../../org/specs/form/Field.html" target="_self">Field</a>[<a href="../../../org/specs/form/Field.html#T" target="_self">T</a>]]<code> with </code><a href="../../../org/specs/execute/DefaultExecutable.html" target="_self">DefaultExecutable</a></dd>
+    </dl>
+      <dl><dd>A Field is a property which is used only to display input values or output values.
+ The apply method can be used to retrieve the Fields value:<code>
+   val f = Field(label, 1)
+   f() must_== 1
+ </code>
+ 
+ The value is stored in a Property object so it will not be evaluated until explicitly queried.</dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/form/LineField.html" target="_self">LineField</a></dd>
+      </dl><hr></hr>
+      
+
+<table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/execute/DefaultExecutable.html" target="_self">DefaultExecutable</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/execute/DefaultExecutable.html#executionStarted" target="_self">executionStarted</a>, <a href="../../../org/specs/execute/DefaultExecutable.html#executed" target="_self">executed</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/form/ToXhtml.html" target="_self">ToXhtml</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/form/ToXhtml.html#valignment" target="_self">valignment</a>, <a href="../../../org/specs/form/ToXhtml.html#statusCode" target="_self">statusCode</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/form/DecoratedXhtml.html" target="_self">DecoratedXhtml</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/form/DecoratedXhtml.html#labelsDecorators" target="_self">labelsDecorators</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#valuesDecorators" target="_self">valuesDecorators</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#valuesCellsDecorators" target="_self">valuesCellsDecorators</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#labelsCellsDecorators" target="_self">labelsCellsDecorators</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Field.html#apply%28%29" target="_self">apply</a></em>
+         : <a href="../../../org/specs/form/Field.html#T" target="_self">T</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Field.html#apply%28%3D%3ET%29" target="_self">apply</a></em>
+        (<em>v</em> : =&gt; <a href="../../../org/specs/form/Field.html#T" target="_self">T</a>) : <a href="../../../org/specs/form/Field.html" target="_self">Field</a>[<a href="../../../org/specs/form/Field.html#T" target="_self">T</a>]
+        
+        <div>set a new value on the field.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Field.html#copy" target="_self">copy</a></em>
+         : <a href="../../../org/specs/form/Field.html" target="_self">Field</a>[<a href="../../../org/specs/form/Field.html#T" target="_self">T</a>]
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Field.html#copy%28org.specs.form.Field%5BT%5D%29" target="_self">copy</a></em>
+        (<em>f</em> : <a href="../../../org/specs/form/Field.html" target="_self">Field</a>[<a href="../../../org/specs/form/Field.html#T" target="_self">T</a>]) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Field.html#equals%28Any%29" target="_self">equals</a></em>
+        (<em>a</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div>This method is used to compare the receiver object (<code>this</code>)
+    with the argument object (<code>arg0</code>) for equivalence.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Field.html#executeThis" target="_self">executeThis</a></em>
+         : <a href="../../../org/specs/form/Field.html" target="_self">Field</a>[<a href="../../../org/specs/form/Field.html#T" target="_self">T</a>]
+        
+        <div>executing a field does nothing</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Field.html#get" target="_self">get</a></em>
+         : <a href="../../../org/specs/form/Field.html#T" target="_self">T</a>
+        
+        <div>alias for apply()</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Field.html#hashCode%28%29" target="_self">hashCode</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+        
+        <div>Returns a hash code value for the object.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Field.html#toEmbeddedXhtml" target="_self">toEmbeddedXhtml</a></em>
+         : <a href="" target="contentFrame" class="scala/xml/NodeSeq">scala.xml.NodeSeq</a>
+        
+        <div>don't add a supplementary <td> when embedding the xhtml</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Field.html#toString%28%29" target="_self">toString</a></em>
+         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Field.html#toStringField" target="_self">toStringField</a></em>
+         : <a href="../../../org/specs/form/Field.html" target="_self">Field</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+        
+        <div>transforms this typed Field as a Field containing the toString value of the Fields value</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Field.html#toXhtml" target="_self">toXhtml</a></em>
+         : <a href="" target="contentFrame" class="scala/xml/NodeSeq">scala.xml.NodeSeq</a>
+        
+        <div>return the value <td> cell with a td cell for the label if it is not empty</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>protected def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Field.html#valueCell" target="_self">valueCell</a></em>
+         : <a href="" target="contentFrame" class="scala/xml/Elem">scala.xml.Elem</a>
+        
+        <div>return the value in a <td> cell, formated and decorated</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/execute/DefaultExecutable.html" target="_self">DefaultExecutable</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/execute/DefaultExecutable.html#reset%28%29" target="_self">reset</a>, <a href="../../../org/specs/execute/DefaultExecutable.html#execute" target="_self">execute</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/execute/Commentable.html" target="_self">Commentable</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/execute/Commentable.html#comment%28%29" target="_self">comment</a>, <a href="../../../org/specs/execute/Commentable.html#uncomment%28%29" target="_self">uncomment</a>, <a href="../../../org/specs/execute/Commentable.html#isCommented" target="_self">isCommented</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/execute/DefaultResults.html" target="_self">DefaultResults</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/execute/DefaultResults.html#addFailure%28org.specs.execute.FailureException%29" target="_self">addFailure</a>, <a href="../../../org/specs/execute/DefaultResults.html#addError%28Throwable%29" target="_self">addError</a>, <a href="../../../org/specs/execute/DefaultResults.html#addSkipped%28org.specs.execute.SkippedException%29" target="_self">addSkipped</a>, <a href="../../../org/specs/execute/DefaultResults.html#failures" target="_self">failures</a>, <a href="../../../org/specs/execute/DefaultResults.html#errors" target="_self">errors</a>, <a href="../../../org/specs/execute/DefaultResults.html#skipped" target="_self">skipped</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/execute/HasResults.html" target="_self">HasResults</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/execute/HasResults.html#statusClass" target="_self">statusClass</a>, <a href="../../../org/specs/execute/HasResults.html#statusAsText" target="_self">statusAsText</a>, <a href="../../../org/specs/execute/HasResults.html#hasFailureOrErrors" target="_self">hasFailureOrErrors</a>, <a href="../../../org/specs/execute/HasResults.html#failureAndErrors" target="_self">failureAndErrors</a>, <a href="../../../org/specs/execute/HasResults.html#issues" target="_self">issues</a>, <a href="../../../org/specs/execute/HasResults.html#issueMessages" target="_self">issueMessages</a>, <a href="../../../org/specs/execute/HasResults.html#hasIssues" target="_self">hasIssues</a>, <a href="../../../org/specs/execute/HasResults.html#isOk" target="_self">isOk</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/form/ValueFormatter.html" target="_self">ValueFormatter</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/form/ValueFormatter.html#format%28Option%5BT%5D%29" target="_self">format</a>, <a href="../../../org/specs/form/ValueFormatter.html#format%28T%29" target="_self">format</a>, <a href="../../../org/specs/form/ValueFormatter.html#formatWith%28%28Option%5BT%5D%29%3D%3EString%29" target="_self">formatWith</a>, <a href="../../../org/specs/form/ValueFormatter.html#formatterIs%28%28T%29%3D%3EString%29" target="_self">formatterIs</a>, <a href="../../../org/specs/form/ValueFormatter.html#copy%28org.specs.form.ValueFormatter%5BT%5D%29" target="_self">copy</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/form/GenericFormatter.html" target="_self">GenericFormatter</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/form/GenericFormatter.html#genericFormatterIs%28%28String%29%3D%3EString%29" target="_self">genericFormatterIs</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/form/LabeledXhtml.html" target="_self">LabeledXhtml</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/form/LabeledXhtml.html#copy%28org.specs.form.LabeledXhtml%29" target="_self">copy</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/form/ToXhtml.html" target="_self">ToXhtml</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/form/ToXhtml.html#valign%28String%29" target="_self">valign</a>, <a href="../../../org/specs/form/ToXhtml.html#statusClass%28String%29" target="_self">statusClass</a>, <a href="../../../org/specs/form/ToXhtml.html#toHtml" target="_self">toHtml</a>, <a href="../../../org/specs/form/ToXhtml.html#copy%28org.specs.form.ToXhtml%29" target="_self">copy</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/form/DecoratedXhtml.html" target="_self">DecoratedXhtml</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/form/DecoratedXhtml.html#decorateLabelsWith%28%28scala.xml.Node%29%3D%3Escala.xml.Node%29" target="_self">decorateLabelsWith</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateLabelWith%28%28scala.xml.Node%29%3D%3Escala.xml.Node%29" target="_self">decorateLabelWith</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateValuesWith%28%28scala.xml.Node%29%3D%3Escala.xml.Node%29" target="_self">decorateValuesWith</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateValueWith%28%28scala.xml.Node%29%3D%3Escala.xml.Node%29" target="_self">decorateValueWith</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateValuesCellsWith%28%28scala.xml.Node%29%3D%3Escala.xml.Node%29" target="_self">decorateValuesCellsWith</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateValueCellWith%28%28scala.xml.Node%29%3D%3Escala.xml.Node%29" target="_self">decorateValueCellWith</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateLabelsCellsWith%28%28scala.xml.Node%29%3D%3Escala.xml.Node%29" target="_self">decorateLabelsCellsWith</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateLabelCellWith%28%28scala.xml.Node%29%3D%3Escala.xml.Node%29" target="_self">decorateLabelCellWith</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateLabel%28String%29" target="_self">decorateLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateValue%28String%29" target="_self">decorateValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateLabelCell%28scala.xml.Node%29" target="_self">decorateLabelCell</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#decorateValueCell%28scala.xml.Node%29" target="_self">decorateValueCell</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#valueCellAttribute%28String%2CString%29" target="_self">valueCellAttribute</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#labelCellAttribute%28String%2CString%29" target="_self">labelCellAttribute</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#valueBgcolor%28String%29" target="_self">valueBgcolor</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#labelBgcolor%28String%29" target="_self">labelBgcolor</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#successValues" target="_self">successValues</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#successValue" target="_self">successValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#successLabels" target="_self">successLabels</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#successLabel" target="_self">successLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#failureValues" target="_self">failureValues</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#failureValue" target="_self">failureValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#failureLabels" target="_self">failureLabels</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#failureLabel" target="_self">failureLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#errorValues" target="_self">errorValues</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#errorValue" target="_self">errorValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#errorLabels" target="_self">errorLabels</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#errorLabel" target="_self">errorLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#skippedValues" target="_self">skippedValues</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#skippedValue" target="_self">skippedValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#skippedLabels" target="_self">skippedLabels</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#skippedLabel" target="_self">skippedLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#infoValues" target="_self">infoValues</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#infoValue" target="_self">infoValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#infoLabels" target="_self">infoLabels</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#infoLabel" target="_self">infoLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#preValues" target="_self">preValues</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#preValue" target="_self">preValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#preLabels" target="_self">preLabels</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#preLabel" target="_self">preLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#pre" target="_self">pre</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#italicValues" target="_self">italicValues</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#italicValue" target="_self">italicValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#italicLabels" target="_self">italicLabels</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#italicLabel" target="_self">italicLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#italic" target="_self">italic</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#boldValues" target="_self">boldValues</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#boldValue" target="_self">boldValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#boldLabels" target="_self">boldLabels</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#boldLabel" target="_self">boldLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#bold" target="_self">bold</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#strikeValues" target="_self">strikeValues</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#strikeValue" target="_self">strikeValue</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#strikeLabels" target="_self">strikeLabels</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#strikeLabel" target="_self">strikeLabel</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#strike" target="_self">strike</a>, <a href="../../../org/specs/form/DecoratedXhtml.html#copy%28org.specs.form.DecoratedXhtml%29" target="_self">copy</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="copy"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>copy</em> : <a href="../../../org/specs/form/Field.html" target="_self">Field</a>[<a href="../../../org/specs/form/Field.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>a copy of this Field with the same value</dd></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/form/Copyable.html" target="_self">Copyable</a>.<a href="../../../org/specs/form/Copyable.html#copy" target="_self">copy</a>
+        </dd>
+      </dl><hr></hr>
+<a name="copy%28org.specs.form.Field%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>copy</em>(<em>f</em> : <a href="../../../org/specs/form/Field.html" target="_self">Field</a>[<a href="../../../org/specs/form/Field.html#T" target="_self">T</a>]) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="executeThis"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>executeThis</em> : <a href="../../../org/specs/form/Field.html" target="_self">Field</a>[<a href="../../../org/specs/form/Field.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>executing a field does nothing</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/execute/DefaultExecutable.html" target="_self">DefaultExecutable</a>.<a href="../../../org/specs/execute/DefaultExecutable.html#executeThis" target="_self">executeThis</a>
+        </dd>
+      </dl><hr></hr>
+<a name="apply%28%3D%3ET%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>apply</em>(<em>v</em> : =&gt; <a href="../../../org/specs/form/Field.html#T" target="_self">T</a>) : <a href="../../../org/specs/form/Field.html" target="_self">Field</a>[<a href="../../../org/specs/form/Field.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>set a new value on the field.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="apply%28%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>apply</em> : <a href="../../../org/specs/form/Field.html#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the field value</dd></dl>
+    <hr></hr>
+<a name="get"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>get</em> : <a href="../../../org/specs/form/Field.html#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>alias for apply()</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="toString%28%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>toString</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>"label: value"</dd></dl>
+    <hr></hr>
+<a name="valueCell"></a><dl>
+      <dt>
+        
+        <code>protected</code>
+        <code>def</code>
+        <em>valueCell</em> : <a href="" target="contentFrame" class="scala/xml/Elem">scala.xml.Elem</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>return the value in a <td> cell, formated and decorated</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="toXhtml"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>toXhtml</em> : <a href="" target="contentFrame" class="scala/xml/NodeSeq">scala.xml.NodeSeq</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>return the value <td> cell with a td cell for the label if it is not empty</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="toEmbeddedXhtml"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>toEmbeddedXhtml</em> : <a href="" target="contentFrame" class="scala/xml/NodeSeq">scala.xml.NodeSeq</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>don't add a supplementary <td> when embedding the xhtml</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="toStringField"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>toStringField</em> : <a href="../../../org/specs/form/Field.html" target="_self">Field</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>transforms this typed Field as a Field containing the toString value of the Fields value</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="equals%28Any%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>equals</em>(<em>a</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>This method is used to compare the receiver object (<code>this</code>)
+    with the argument object (<code>arg0</code>) for equivalence.  
+    
+    <p>
+    The default implementations of this method is an <a
+    href="http://en.wikipedia.org/wiki/Equivalence_relation">equivalence
+    relation</a>:
+      <ul>
+      <li>It is reflexive: for any instance <code>x</code> of type <code>Any</code>, 
+      <code>x.equals(x)</code> should return <code>true</code>.</li>
+      <li>It is symmetric: for any instances <code>x</code> and <code>y</code> of type 
+      <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and only 
+      if <code>y.equals(x)</code> returns <code>true</code>.</li>
+      <li>It is transitive: for any instances 
+      <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code>
+      if <code>x.equals(y)</code> returns <code>true</code> and 
+      <code>y.equals(z)</code> returns 
+      <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</li>
+    </ul>
+    </p>
+    <p>
+    If you override this method, you should verify that
+    your implementation remains an equivalence relation.
+    Additionally, when overriding this method it is often necessary to
+    override <code>hashCode</code> to ensure that objects that are
+    "equal" (<code>o1.equals(o2)</code> returns <code>true</code>)
+    hash to the same <a href="Int.html"><code>Int</code></a>
+    (<code>o1.hashCode.equals(o2.hashCode)</code>).</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>arg0 - </code>the object to compare against this object for equality.</dd><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.    </p></dd></dl>
+    <hr></hr>
+<a name="hashCode%28%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>hashCode</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns a hash code value for the object.  
+    <p>
+    The default hashing algorithm is platform dependent.  
+    Note that it is allowed for two objects to have identical hash
+    codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet not be
+    equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A
+    degenerate implementation could always return <code>0</code>.
+    However, it is required that if two objects are equal
+    (<code>o1.equals(o2)</code> returns <code>true</code>) that they
+    have identical hash codes
+    (<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when
+    overriding this method, be sure to verify that the behavior is
+    consistent with the <code>equals</code> method.
+    </p>
+    <p></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the hash code value for the object.      </p></dd></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2009. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

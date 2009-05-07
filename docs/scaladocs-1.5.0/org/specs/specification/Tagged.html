@@ -1,0 +1,574 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait Tagged in org.specs.specification</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.3.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/specification$package.html" target="_self">org.specs.specification</a>
+        <br></br>
+        <span class="entity">trait  Tagged</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/specification/Tagged"><code>org/specs/specification/Tagged.scala</code></a>]
+      </div><hr></hr>
+      <a name="Tagged"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>Tagged</em>
+      </dt>
+      <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
+    </dl>
+      <dl><dd>The Tagged trait allows to add tags to a Specification or a System under test.<p/>
+ The tags will be propagated to the specification or the sus components using the tagWith method. With this rule, 
+ a Tagged component should always have its parent tags (and possibly more).<p/>
+ 
+ Tags can be used when executing a Specification to restrict the executed examples. In that case, the examples are marked as skipped:<pre>
+ object mySpec extends Specification
+ mySpec.accept("unit").reject("functional") // this means that only the examples tagged as "unit" and not "functional" will be executed. 
+ </pre>
+ 
+ Any Tagged object can be tagged using the "tag" method, accepting any number of strings:<pre>
+ "this example is tagged" in {
+   // expect something
+ } tag("unit", "sample")
+ </pre></dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>, <a href="../../../org/specs/specification/Example.html" target="_self">Example</a>, <a href="../../../org/specs/specification/Sus.html" target="_self">Sus</a></dd>
+      </dl><hr></hr>
+      
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Value Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#accepted" target="_self">accepted</a></em>
+         : <a href="" target="contentFrame" class="scala/collection/mutable/Queue">scala.collection.mutable.Queue</a>[<a href="../../../org/specs/specification/Tag.html" target="_self">Tag</a>]
+        
+        <div>list of tags which are accepted for this element</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#rejected" target="_self">rejected</a></em>
+         : <a href="" target="contentFrame" class="scala/collection/mutable/Queue">scala.collection.mutable.Queue</a>[<a href="../../../org/specs/specification/Tag.html" target="_self">Tag</a>]
+        
+        <div>list of tags which are rejected for this element</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#tags" target="_self">tags</a></em>
+         : <a href="" target="contentFrame" class="scala/collection/mutable/Queue">scala.collection.mutable.Queue</a>[<a href="../../../org/specs/specification/Tag.html" target="_self">Tag</a>]
+        
+        <div>list of all tags</div>
+      </td>
+    </tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#accept%28org.specs.specification.Tag*%29" target="_self">accept</a></em>
+        (<em>t</em> : <a href="../../../org/specs/specification/Tag.html" target="_self">Tag</a>*) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+        
+        <div>Declare that this element should be accepted only if it has one of the accepted tags.
+    This method declares the same thing for the components of this element.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#acceptAnyTag" target="_self">acceptAnyTag</a></em>
+         : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+        
+        <div>reset accepted and rejected to an empty queue</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#acceptTag%28String*%29" target="_self">acceptTag</a></em>
+        (<em>s</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>*) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+        
+        <div>alias for the acceptTag method</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#acceptTags%28String*%29" target="_self">acceptTags</a></em>
+        (<em>s</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>*) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+        
+        <div>alias for the accept method with strings</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#addTag%28String%29" target="_self">addTag</a></em>
+        (<em>t</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+        
+        <div>Add one tag to this element</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#addTags%28String*%29" target="_self">addTags</a></em>
+        (<em>t</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>*) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+        
+        <div>Add one or several tags to this element</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#clearTags" target="_self">clearTags</a></em>
+         : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+        
+        <div>Clear all tags, accepted and rejected</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#isAccepted" target="_self">isAccepted</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div>Return true if this Tagged element:<ul>
+   <li>doesn't have any tags and no tags are marked as accepted
+   <li>or doesn't have any accepted tags
+   <li>or has at least one of the accepted tags and doesn't have any of the rejected tags
+   </ul></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#makeTagged%28String*%29" target="_self">makeTagged</a></em>
+        (<em>s</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>*) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+        
+        <div>create another tagged with this new tags</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#reject%28org.specs.specification.Tag*%29" target="_self">reject</a></em>
+        (<em>t</em> : <a href="../../../org/specs/specification/Tag.html" target="_self">Tag</a>*) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+        
+        <div>Declare that this element should be rejected if it has one of the rejected tags.
+    This method declares the same thing for the components of this element.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#rejectTag%28String*%29" target="_self">rejectTag</a></em>
+        (<em>s</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>*) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+        
+        <div>alias for the reject method with strings</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#rejectTags%28String*%29" target="_self">rejectTags</a></em>
+        (<em>s</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>*) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+        
+        <div>alias for the reject method with several strings</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#stringToTag%28String%29" target="_self">stringToTag</a></em>
+        (<em>s</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/specification/Tag.html" target="_self">Tag</a>
+        
+        <div>transforms a string to a Tag object</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#tag%28String*%29" target="_self">tag</a></em>
+        (<em>t</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>*) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+        
+        <div>Add one or several tags to this element</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#tagSpec" target="_self">tagSpec</a></em>
+         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#tagWith%28org.specs.specification.Tagged%29" target="_self">tagWith</a></em>
+        (<em>other</em> : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+        
+        <div>add the tags specification from another tagged element. This is used when propagating the tags from a specification to a sus for example</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Tagged.html#taggedComponents" target="_self">taggedComponents</a></em>
+         : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>]
+        
+        <div>this method should be overriden if the Tagged element has Tagged components which should be tagged when this element is tagged</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Value Details</td></tr>
+        </table><div><a name="tags"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>val</code>
+        <em>tags</em> : <a href="" target="contentFrame" class="scala/collection/mutable/Queue">scala.collection.mutable.Queue</a>[<a href="../../../org/specs/specification/Tag.html" target="_self">Tag</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>list of all tags</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="accepted"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>val</code>
+        <em>accepted</em> : <a href="" target="contentFrame" class="scala/collection/mutable/Queue">scala.collection.mutable.Queue</a>[<a href="../../../org/specs/specification/Tag.html" target="_self">Tag</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>list of tags which are accepted for this element</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="rejected"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>val</code>
+        <em>rejected</em> : <a href="" target="contentFrame" class="scala/collection/mutable/Queue">scala.collection.mutable.Queue</a>[<a href="../../../org/specs/specification/Tag.html" target="_self">Tag</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>list of tags which are rejected for this element</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="stringToTag%28String%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>stringToTag</em>(<em>s</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/specification/Tag.html" target="_self">Tag</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>transforms a string to a Tag object</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="tag%28String*%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>tag</em>(<em>t</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>*) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Add one or several tags to this element</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="clearTags"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>clearTags</em> : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Clear all tags, accepted and rejected</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="addTag%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>addTag</em>(<em>t</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Add one tag to this element</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="addTags%28String*%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>addTags</em>(<em>t</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>*) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Add one or several tags to this element</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="accept%28org.specs.specification.Tag*%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>accept</em>(<em>t</em> : <a href="../../../org/specs/specification/Tag.html" target="_self">Tag</a>*) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Declare that this element should be accepted only if it has one of the accepted tags.
+    This method declares the same thing for the components of this element.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="acceptTag%28String*%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>acceptTag</em>(<em>s</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>*) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>alias for the acceptTag method</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="acceptTags%28String*%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>acceptTags</em>(<em>s</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>*) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>alias for the accept method with strings</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="acceptAnyTag"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>acceptAnyTag</em> : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>reset accepted and rejected to an empty queue</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="reject%28org.specs.specification.Tag*%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>reject</em>(<em>t</em> : <a href="../../../org/specs/specification/Tag.html" target="_self">Tag</a>*) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Declare that this element should be rejected if it has one of the rejected tags.
+    This method declares the same thing for the components of this element.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="rejectTag%28String*%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>rejectTag</em>(<em>s</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>*) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>alias for the reject method with strings</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="rejectTags%28String*%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>rejectTags</em>(<em>s</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>*) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>alias for the reject method with several strings</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="isAccepted"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>isAccepted</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Return true if this Tagged element:<ul>
+   <li>doesn't have any tags and no tags are marked as accepted
+   <li>or doesn't have any accepted tags
+   <li>or has at least one of the accepted tags and doesn't have any of the rejected tags
+   </ul></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>true if the element can be accepted, considering the tags it owns and the accepted/rejected tags</dd></dl>
+    <hr></hr>
+<a name="tagSpec"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>tagSpec</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>a description of the Tagged element showing the owned tags, the accepted and rejected tags</dd></dl>
+    <hr></hr>
+<a name="tagWith%28org.specs.specification.Tagged%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>tagWith</em>(<em>other</em> : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>add the tags specification from another tagged element. This is used when propagating the tags from a specification to a sus for example</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="taggedComponents"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>taggedComponents</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>this method should be overriden if the Tagged element has Tagged components which should be tagged when this element is tagged</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="makeTagged%28String*%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>makeTagged</em>(<em>s</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>*) : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>create another tagged with this new tags</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2009. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

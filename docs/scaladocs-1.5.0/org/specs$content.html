@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>All classes and objects in org.specs</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.3.final)" name="generator"></meta><link href="../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../script.js"></script>
+        </head>
+        <body onload="init()"><div class="page-title"><div>specs 1.5.0 API</div></div><p><div>This document is the API specification for specs 1.5.0 API</div></p><table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Class Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/BeforeAfter.html" target="_self">BeforeAfter</a></em>
+        <code> extends </code><a href="../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>
+        
+        <div>This traits adds before / after capabilities to specifications, so that a context can be defined for
+ each system under test being specified.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/Context.html" target="_self">Context</a></em>
+        <code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/Contexts.html" target="_self">Contexts</a></em>
+        <code> extends </code><a href="../org/specs/BeforeAfter.html" target="_self">BeforeAfter</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/Expectations.html" target="_self">Expectations</a></em>
+        <code> extends </code><a href="../org/specs/matcher/Matchers.html" target="_self">Matchers</a><code> with </code><a href="../org/specs/specification/OrResults.html" target="_self">OrResults</a><code> with </code><a href="../org/specs/specification/ExpectableFactory.html" target="_self">ExpectableFactory</a><code> with </code><a href="../org/specs/specification/DetailedFailures.html" target="_self">DetailedFailures</a>
+        
+        <div>This trait can be used to access Matchers functionalities outside a Specification.
+ For example like this:<code>
+
+  trait Functions extends Expectations {
+    def bar(name: String) = name.length < 4 mustBe true
+  }
+  object Foo extends Specification with Functions {
+    bar("Foo")
+    bar("FooFoo")
+  }
+ </code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/FailOrSkip.html" target="_self">FailOrSkip</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait gives some flexibility when mixing in the ScalaTest trait because it uses the same method names</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/HtmlSpecification.html" target="_self">HtmlSpecification</a></em>
+        <code> extends </code><a href="../org/specs/literate/LiterateSpecification.html" target="_self">LiterateSpecification</a><code> with </code><a href="../org/specs/runner/Html.html" target="_self">Html</a><code> with </code><a href="../org/specs/literate/Textile.html" target="_self">Textile</a><code> with </code><a href="../org/specs/runner/JUnit.html" target="_self">JUnit</a>
+        
+        <div>LiterateSpecification with Html reporting</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/ListsToTuples.html" target="_self">ListsToTuples</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/NumberOfTimes.html" target="_self">NumberOfTimes</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/Products.html" target="_self">Products</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>The Products trait allows the following declarations:<ul>
+   <li>val list0 = ()
+   <li>val list1 = ("a")
+   <li>val list2 = ("a", "b")</ul>
+  Produced with the following ruby code:<pre>
+   (1..19).each do |i|
+     puts "implicit def productToList#{i}[T](t: Product#{i}[#{(1..i).map{|x|"T"}.join(", ")}]) = List(#{(1..i).map {|j| "t._" + j.to_s}.join(", ")})"
+    end
+   </pre></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/ScalaCheck.html" target="_self">ScalaCheck</a></em>
+        <code> extends </code><a href="../org/specs/matcher/ScalaCheckMatchers.html" target="_self">ScalaCheckMatchers</a><code> with </code><a href="../org/specs/ScalaCheckVerifications.html" target="_self">ScalaCheckVerifications</a>
+        
+        <div>This trait can be mixed with a specification to allow the use of ScalaCheck in a specification</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/ScalaCheckVerifications.html" target="_self">ScalaCheckVerifications</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait defines the "verify" operator which can be used to specify properties to check as examples.
+ Instead of writing:<pre><code>
+ "startsWith verifies (a + b).startsWith(a)" in {
+    property((a: String, b: String) => (a + b).startsWith(a)) must pass
+ }
+ it is possible to write directly:
+   
+ "startsWith" verifies ((a: String, b: String) => (a + b).startsWith(a))
+ 
+ </code>
+ </pre>
+ 
+ This will create an example named "startsWith" and check the corresponding property.
+ 
+ ScalaCheck parameters can be used with the "display" and set methods. For example:<pre><code>
+ 
+ // will display the results and stop testing when 150 are passing.
+ "startsWith" verifies ((a: String, b: String) => (a + b).startsWith(a)).display(minTestsOk->150) 
+ </code>
+ </pre></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/Specification.html" target="_self">Specification</a></em>
+        <code> extends </code><a href="../org/specs/Expectations.html" target="_self">Expectations</a><code> with </code><a href="../org/specs/FailOrSkip.html" target="_self">FailOrSkip</a><code> with </code><a href="../org/specs/runner/Console.html" target="_self">Console</a><code> with </code><a href="../org/specs/runner/SpecsFilter.html" target="_self">SpecsFilter</a><code> with </code><a href="../org/specs/Contexts.html" target="_self">Contexts</a>
+        
+        <div>This class is the main class for declaring a new specification<br>
+ In the context of a specification, you can:<ul>
+ <li>declare nested specifications
+ <li>define systems under test
+ <li>specify examples and expectations</ul>
+ Usage: <code>object mySpec extends Specification</code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/SpecsMatchers.html" target="_self">SpecsMatchers</a></em>
+        <code> extends </code><a href="../org/specs/Expectations.html" target="_self">Expectations</a><code> with </code><a href="../org/specs/specification/DefaultExampleExpectationsListener.html" target="_self">DefaultExampleExpectationsListener</a>
+        
+        <div>This trait can be reused in any test based framework to access Matchers functionalities</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/Sugar.html" target="_self">Sugar</a></em>
+        <code> extends </code><a href="../org/specs/Products.html" target="_self">Products</a><code> with </code><a href="../org/specs/io/ConsoleOutput.html" target="_self">ConsoleOutput</a><code> with </code><a href="../org/specs/NumberOfTimes.html" target="_self">NumberOfTimes</a>
+        
+        <div>Synctactic sugar for specifications. Since it makes heavy uses of implicit definitions,<br>
+ The name reminds that it must be used with caution</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/SystemContext.html" target="_self">SystemContext</a></em>
+        [<em>S</em>]<code> extends </code><a href="../org/specs/Context.html" target="_self">Context</a><code> with </code><a href="" target="contentFrame" class="java/lang/Cloneable">java.lang.Cloneable</a>
+        
+        <div>Case class holding before and after functions to be set on a system under test.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/SystemContexts.html" target="_self">SystemContexts</a></em>
+        <code> extends </code><a href="../org/specs/Contexts.html" target="_self">Contexts</a>
+        
+        
+      </td>
+    </tr>        
+        </table>
+<table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Object Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/Context$object.html" target="_self">Context</a></em>
+        <code> extends </code>() =&gt; <a href="../org/specs/Context.html" target="_self">Context</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/ExtendedThrowable$object.html" target="_self">ExtendedThrowable</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This object allows to add some utility methods to </code>Throwable</code> objects.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/Products$object.html" target="_self">Products</a></em>
+        <code> extends </code><a href="../org/specs/Products.html" target="_self">Products</a>
+        
+        <div>The Products object allows the following declarations:<ul>
+   <li>val list0 = ()
+   <li>val list1 = ("a")
+   <li>val list2 = ("a", "b")</ul></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/SpecUtils$object.html" target="_self">SpecUtils</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>utility object to indent a string with 2 spaces</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/Sugar$object.html" target="_self">Sugar</a></em>
+        <code> extends </code><a href="../org/specs/Sugar.html" target="_self">Sugar</a>
+        
+        <div>Synctactic sugar for specifications. Since it makes heavy uses of implicit definitions,<br>
+ The name reminds that it must be used with caution</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../org/specs/SystemContext$object.html" target="_self">SystemContext</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>        
+        </table></body>
+      </html>

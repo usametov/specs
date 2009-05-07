@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait JUnitSuite in org.specs.runner</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.3.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/runner$package.html" target="_self">org.specs.runner</a>
+        <br></br>
+        <span class="entity">trait  JUnitSuite</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/runner/JUnitSuite"><code>org/specs/runner/JUnitSuite.scala</code></a>]
+      </div><hr></hr>
+      <a name="JUnitSuite"></a><dl>
+      <dt>
+        @<a href="" target="contentFrame" class="org/junit/runner/RunWith">org.junit.runner.RunWith</a>(classOf[org.specs.runner.JUnitSuiteRunner])<br></br>
+        <code></code>
+        <code>trait</code>
+        <em>JUnitSuite</em>
+      </dt>
+      <dd><code> extends </code><a href="" target="contentFrame" class="junit/framework/Test">junit.framework.Test</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
+    </dl>
+      <dl><dd>The strategy for running Specifications with JUnit is as follow:<p>
+
+ -the specifications are used to create JUnit3 TestSuite and TestCase objects
+ -however, since TestSuite is not an interface, a JUnitSuite trait is used to represent it (and the JUnitSuite uses a TestSuite internally to hold the tests)
+   -a specification is represented as a JUnitSuite
+   -a system under test (sus) is represented as an ExamplesTestSuite <: JUnitSuite
+   -an example is represented as an ExampleTestCase <: TestCase
+
+ Then, the JUnitSuite which implements the junit.framework.Test interface can be run using
+ a custom JUnit4 annotation: JUnitSuiteRunner
+
+ This JUnitSuite trait encapsulates a JUnit3 TestSuite to allow it being seen as a trait and not a class
+ The suite is initialized once whenever some information is required, like getName, or countTestCases</dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/runner/JUnit.html" target="_self">JUnit</a>, <a href="../../../org/specs/runner/ExamplesTestSuite.html" target="_self">ExamplesTestSuite</a></dd>
+      </dl><hr></hr>
+      
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Value Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/JUnitSuite.html#testSuite" target="_self">testSuite</a></em>
+         : <a href="" target="contentFrame" class="junit/framework/TestSuite">junit.framework.TestSuite</a>
+        
+        <div>embedded JUnit3 TestSuite object</div>
+      </td>
+    </tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/JUnitSuite.html#addTest%28junit.framework.Test%29" target="_self">addTest</a></em>
+        (<em>t</em> : <a href="" target="contentFrame" class="junit/framework/Test">junit.framework.Test</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>add a new test to the embedded suite</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/JUnitSuite.html#countTestCases%28%29" target="_self">countTestCases</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/JUnitSuite.html#getName" target="_self">getName</a></em>
+         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/JUnitSuite.html#init" target="_self">init</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>the init method is called before any "getter" method is called. Then it initializes the object if it hasn't been done before</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/JUnitSuite.html#initialize" target="_self">initialize</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>the initialize method should be provided to build the testSuite object by adding nested suites and test cases</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/JUnitSuite.html#run%28junit.framework.TestResult%29" target="_self">run</a></em>
+        (<em>result</em> : <a href="" target="contentFrame" class="junit/framework/TestResult">junit.framework.TestResult</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>run the embedded suite</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/JUnitSuite.html#setName%28java.lang.String%29" target="_self">setName</a></em>
+        (<em>n</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>set the name of the embedded suite</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/JUnitSuite.html#suites" target="_self">suites</a></em>
+         : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="junit/framework/Test">junit.framework.Test</a>]
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/JUnitSuite.html#testCases" target="_self">testCases</a></em>
+         : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="junit/framework/Test">junit.framework.Test</a>]
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/JUnitSuite.html#tests" target="_self">tests</a></em>
+         : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="junit/framework/Test">junit.framework.Test</a>]
+        
+        <div></div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Value Details</td></tr>
+        </table><div><a name="testSuite"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>val</code>
+        <em>testSuite</em> : <a href="" target="contentFrame" class="junit/framework/TestSuite">junit.framework.TestSuite</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>embedded JUnit3 TestSuite object</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="init"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>init</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>the init method is called before any "getter" method is called. Then it initializes the object if it hasn't been done before</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="initialize"></a><dl>
+      <dt>
+        
+        <code>abstract</code>
+        <code>def</code>
+        <em>initialize</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>the initialize method should be provided to build the testSuite object by adding nested suites and test cases</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="run%28junit.framework.TestResult%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>run</em>(<em>result</em> : <a href="" target="contentFrame" class="junit/framework/TestResult">junit.framework.TestResult</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>run the embedded suite</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="" target="contentFrame" class="junit/framework/Test">junit.framework.Test</a>.<a href="#run" target="contentFrame" class="junit/framework/Test">junit.framework.Test.run</a>
+        </dd>
+      </dl><hr></hr>
+<a name="getName"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>getName</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the name of the embedded suite</dd></dl>
+    <hr></hr>
+<a name="setName%28java.lang.String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>setName</em>(<em>n</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>set the name of the embedded suite</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="addTest%28junit.framework.Test%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>addTest</em>(<em>t</em> : <a href="" target="contentFrame" class="junit/framework/Test">junit.framework.Test</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>add a new test to the embedded suite</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="tests"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>tests</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="junit/framework/Test">junit.framework.Test</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the tests of the embedded suite (suites and test cases)</dd></dl>
+    <hr></hr>
+<a name="countTestCases%28%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>countTestCases</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the number of tests of the embedded suite (suites and test cases)</dd></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="" target="contentFrame" class="junit/framework/Test">junit.framework.Test</a>.<a href="#countTestCases" target="contentFrame" class="junit/framework/Test">junit.framework.Test.countTestCases</a>
+        </dd>
+      </dl><hr></hr>
+<a name="testCases"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>testCases</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="junit/framework/Test">junit.framework.Test</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the test cases of the embedded suite</dd></dl>
+    <hr></hr>
+<a name="suites"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>suites</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="junit/framework/Test">junit.framework.Test</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the test suites of the embedded suite</dd></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2009. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>object ExtendedIterable in org.specs.collection</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.3.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/collection$package.html" target="_self">org.specs.collection</a>
+        <br></br>
+        <span class="entity">object  ExtendedIterable</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/collection/ExtendedIterable"><code>org/specs/collection/ExtendedIterable.scala</code></a>]
+      </div><hr></hr>
+      <a name="ExtendedIterable"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>object</code>
+        <em>ExtendedIterable</em>
+      </dt>
+      <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
+    </dl>
+      <dl><dd>The ExtendedIterable object offers utility methods applicable to iterables like:<ul>
+ <li><code>toStream</code>
+ <li><code>toDeepString</code>: calls toString recursively on the iterable elements
+ <li><code>sameElementsAs</code>: compares 2 iterables recursively
+ </ul></dd></dl>
+      <dl></dl>
+    
+      
+
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/collection/ExtendedIterable$object.html#combine%28Iterable%5BA%5D%2CIterable%5BB%5D%29" target="_self">combine</a></em>
+        [<em>A</em>, <em>B</em>](<em>firstSet</em> : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../../org/specs/collection/ExtendedIterable$object.html#combine%28Iterable%5BA%5D%2CIterable%5BB%5D%29#A" target="_self">A</a>], <em>secondSet</em> : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../../org/specs/collection/ExtendedIterable$object.html#combine%28Iterable%5BA%5D%2CIterable%5BB%5D%29#B" target="_self">B</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="scala/List">scala.List</a>[(<a href="../../../org/specs/collection/ExtendedIterable$object.html#combine%28Iterable%5BA%5D%2CIterable%5BB%5D%29#A" target="_self">A</a>, <a href="../../../org/specs/collection/ExtendedIterable$object.html#combine%28Iterable%5BA%5D%2CIterable%5BB%5D%29#B" target="_self">B</a>)]]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/collection/ExtendedIterable$object.html#iterableToExtended%28Iterable%5BA%5D%29" target="_self">iterableToExtended</a></em>
+        [<em>A</em>](<em>xs</em> : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../../org/specs/collection/ExtendedIterable$object.html#iterableToExtended%28Iterable%5BA%5D%29#A" target="_self">A</a>]) : <a href="../../../org/specs/collection/ExtendedIterable$object.ExtendedIterable.html" target="_self">ExtendedIterable</a>[<a href="../../../org/specs/collection/ExtendedIterable$object.html#iterableToExtended%28Iterable%5BA%5D%29#A" target="_self">A</a>]
+        
+        <div>implicit definition to transform an iterable to an ExtendedIterable</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Class Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/collection/ExtendedIterable$object.ExtendedIterable.html" target="_self">ExtendedIterable</a></em>
+        [<em>A</em>](<em>xs</em> : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../../org/specs/collection/ExtendedIterable$object.ExtendedIterable.html#A" target="_self">A</a>])<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>See the description of the ExtendedIterable object</div>
+      </td>
+    </tr>
+      </table>
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="iterableToExtended%28Iterable%5BA%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>iterableToExtended</em>[<em>A</em>](<em>xs</em> : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../../org/specs/collection/ExtendedIterable$object.html#iterableToExtended%28Iterable%5BA%5D%29#A" target="_self">A</a>]) : <a href="../../../org/specs/collection/ExtendedIterable$object.ExtendedIterable.html" target="_self">ExtendedIterable</a>[<a href="../../../org/specs/collection/ExtendedIterable$object.html#iterableToExtended%28Iterable%5BA%5D%29#A" target="_self">A</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>implicit definition to transform an iterable to an ExtendedIterable</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="combine%28Iterable%5BA%5D%2CIterable%5BB%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>combine</em>[<em>A</em>, <em>B</em>](<em>firstSet</em> : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../../org/specs/collection/ExtendedIterable$object.html#combine%28Iterable%5BA%5D%2CIterable%5BB%5D%29#A" target="_self">A</a>], <em>secondSet</em> : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../../org/specs/collection/ExtendedIterable$object.html#combine%28Iterable%5BA%5D%2CIterable%5BB%5D%29#B" target="_self">B</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="scala/List">scala.List</a>[(<a href="../../../org/specs/collection/ExtendedIterable$object.html#combine%28Iterable%5BA%5D%2CIterable%5BB%5D%29#A" target="_self">A</a>, <a href="../../../org/specs/collection/ExtendedIterable$object.html#combine%28Iterable%5BA%5D%2CIterable%5BB%5D%29#B" target="_self">B</a>)]]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2009. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

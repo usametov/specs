@@ -1,0 +1,730 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>All classes and objects in org.specs.mock</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.3.final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
+        </head>
+        <body onload="init()"><div class="page-title"><div>specs 1.5.0 API</div></div><p><div>This document is the API specification for specs 1.5.0 API</div></p><table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Class Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code>sealed abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/CallConstraint.html" target="_self">CallConstraint</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This class is used to specify constraints on a sequence of expected calls.<br>
+ It must defines a </code>verifies</code> method which says if the constraint is verified 
+ for a number <code>n</code> of consumed calls.<br>
+ It must also define a <code>stop</code> method to specify if a <code>SpecifiedCall</code> can stop consuming 
+ received calls.<br>
+ The <code>expectation</code> method returns a string describing what is expected by this constraint
+ for example: "at least 3 of:". That string is used to form meaningful error messages</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/CalledInOrderMatchers.html" target="_self">CalledInOrderMatchers</a></em>
+        <code> extends </code><a href="../../org/specs/specification/ExpectableFactory.html" target="_self">ExpectableFactory</a><code> with </code><a href="../../org/specs/NumberOfTimes.html" target="_self">NumberOfTimes</a>
+        
+        <div>This trait provides an additional matcher to check if some methods methods have been called in the right order on mocks:<code>
+    theMethod(m1.get(0)).on(m1).atLeastOnce then
+    theMethod(m2.get(0)).on(m2)             were called.inOrder
+ 
+    // the implicit definition can also be removed but additional parenthesis are needed
+ 
+    (m1.get(0) on m1).atLeastOnce then
+    (m2.get(0) on m2)             were called.inOrder
+ 
+ </code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/CalledMatchers.html" target="_self">CalledMatchers</a></em>
+        <code> extends </code><a href="../../org/specs/mock/CalledInOrderMatchers.html" target="_self">CalledInOrderMatchers</a>
+        
+        <div>This trait provides methods to declare expectations on mock calls:<code>
+ 
+ mockedList.get(0) was called
+ mockedList.get(0) wasnt called
+ mockedList.get(0) was notCalled
+ 
+ </code>
+ 
+ where called is a Matcher which accepts supplementary methods to change the Mockito verification method:<code>
+ 
+ mockedList.get(0) was called.once // similar to was called
+ mockedList.get(0) was called.twice
+ mockedList.get(0) was called(3.times)
+ mockedList.get(0) was called.atLeastOnce // or called.atLeast(oncee)
+ mockedList.get(0) was called.atLeastTwice
+ mockedList.get(0) was called.atLeast(3.times)
+ mockedList.get(0) was called.atMostOnce
+ mockedList.get(0) was called.atMostTwice
+ mockedList.get(0) was called.atMost(3.times)
+ mockedList.get(0) was called.exclusively // equivalent to called(0.timess)
+ 
+ </code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/ClassMocker.html" target="_self">ClassMocker</a></em>
+        <code> extends </code><a href="../../org/specs/mock/Imposterizer.html" target="_self">Imposterizer</a>
+        
+        <div>This trait allows to mock classes instead of interfaces only. This will require the cglib and objenesis libraries on the path.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/CountingNamingScheme.html" target="_self">CountingNamingScheme</a></em>
+        <code> extends </code><a href="" target="contentFrame" class="org/jmock/api/MockObjectNamingScheme">org.jmock.api.MockObjectNamingScheme</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Naming scheme adding a number to each anonymous mock</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>sealed case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/Exclusivity.html" target="_self">Exclusivity</a></em>
+        (<code>val </code><em>isExclusive</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>)<code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/ExpectedCall.html" target="_self">ExpectedCall</a></em>
+        (<code>val </code><em>method</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="../../org/specs/mock/SpecifiedCall.html" target="_self">SpecifiedCall</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>Specifies that a method is expected to be called. By construction, the method name will include the line number
+ in the original source file. The precondition is that 2 different expected methods should have 2 different
+ names (so even in cases where a method is overloaded)</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/HamcrestMatcherAdapter.html" target="_self">HamcrestMatcherAdapter</a></em>
+        [<em>T</em>](<code>val </code><em>m</em> : <a href="../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../org/specs/mock/HamcrestMatcherAdapter.html#T" target="_self">T</a>])<code> extends </code><a href="" target="contentFrame" class="org/hamcrest/TypeSafeMatcher">org.hamcrest.TypeSafeMatcher</a>[<a href="../../org/specs/mock/HamcrestMatcherAdapter.html#T" target="_self">T</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>Adapter class to use specs matchers as Hamcrest matchers</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/HamcrestMatchers.html" target="_self">HamcrestMatchers</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait provide methods to build Hamcrest matchers. It actually contains only 2 methods since all Hamcrest matchers can
+ be created by static methods in the Hamcrest library classes</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/HasInOrderVerificationMode.html" target="_self">HasInOrderVerificationMode</a></em>
+        <code> extends </code><a href="../../org/specs/Sugar.html" target="_self">Sugar</a>
+        
+        <div>This trait provides functions to set the verification mode for InOrder verifications.
+ This means that it only supports AtLeast and Times verification modes.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/HasVerificationMode.html" target="_self">HasVerificationMode</a></em>
+        <code> extends </code><a href="../../org/specs/mock/HasInOrderVerificationMode.html" target="_self">HasInOrderVerificationMode</a>
+        
+        <div>This trait provides functions to set the verification mode</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/Imposterizer.html" target="_self">Imposterizer</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Abstract trait for creating a mocking context. By default, only allows to mock interfaces</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/InteractionMatchers.html" target="_self">InteractionMatchers</a></em>
+        <code> extends </code><a href="../../org/specs/specification/ExpectableFactory.html" target="_self">ExpectableFactory</a>
+        
+        <div>This trait provides an additional matcher to check if no more methods have been called on a mock:<code>
+   mock had noMoreCalls
+ </code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/JMockActions.html" target="_self">JMockActions</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait provide methods to build jMock actions</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/JMocker.html" target="_self">JMocker</a></em>
+        <code> extends </code><a href="../../org/specs/mock/JMockerExampleLifeCycle.html" target="_self">JMockerExampleLifeCycle</a><code> with </code><a href="../../org/specs/mock/HamcrestMatchers.html" target="_self">HamcrestMatchers</a><code> with </code><a href="../../org/specs/mock/JMockActions.html" target="_self">JMockActions</a><code> with </code><a href="../../org/specs/specification/ExpectationsListener.html" target="_self">ExpectationsListener</a>
+        
+        <div>The JMocker trait is used to give access to the mocking functionalities of the JMock library</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/JMockerContext.html" target="_self">JMockerContext</a></em>
+        <code> extends </code><a href="../../org/specs/mock/Imposterizer.html" target="_self">Imposterizer</a>
+        
+        <div>This trait contains the jMock Mockery object and current expectations</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/JMockerExampleLifeCycle.html" target="_self">JMockerExampleLifeCycle</a></em>
+        <code> extends </code><a href="../../org/specs/specification/ExampleLifeCycle.html" target="_self">ExampleLifeCycle</a><code> with </code><a href="../../org/specs/mock/JMockerContext.html" target="_self">JMockerContext</a>
+        
+        <div>This trait defines when a jMock context will be created and expectations checked.
+ The context and expectations are always created at the beginning of an Example, then checked just after the test has been executed. Executing a test can also trigger an ExpectationError (from the jMock library). This error will be transformed into a FailureException</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/Mocker.html" target="_self">Mocker</a></em>
+        <code> extends </code><a href="../../org/specs/mock/ProtocolTypes.html" target="_self">ProtocolTypes</a><code> with </code><a href="../../org/specs/specification/ExampleLifeCycle.html" target="_self">ExampleLifeCycle</a><code> with </code><a href="../../org/specs/matcher/MockMatchers.html" target="_self">MockMatchers</a><code> with </code><a href="../../org/specs/specification/ExpectationsListener.html" target="_self">ExpectationsListener</a>
+        
+        <div>This trait allows to define mocked method and to specify how they can be called
+ It is used in 3 steps:<ul> 
+ <li>first create a mock object which will override the methods that you want to mock
+  <pre>val mock = new MyClass {
+    override def method { record }
+  }</pre>   
+ <li>implement the mocked methods with the <code>Mocker.record</code> method
+ <li>declare expectations in your specification: <code>expect { mock.method }</code>
+ <li>every expectation will be automatically checked at the end of the example (see the implementation of the
+  <code>ExampleLifeCycle</code> trait)</ul></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/Mockito.html" target="_self">Mockito</a></em>
+        <code> extends </code><a href="../../org/specs/mock/MockitoLifeCycle.html" target="_self">MockitoLifeCycle</a><code> with </code><a href="../../org/specs/mock/CalledMatchers.html" target="_self">CalledMatchers</a><code> with </code><a href="../../org/specs/mock/InteractionMatchers.html" target="_self">InteractionMatchers</a><code> with </code><a href="../../org/specs/mock/MockitoStubs.html" target="_self">MockitoStubs</a>
+        
+        <div>The Mockito trait can be mixed with Specifications to provide mocking capabilities using the Mockito library.
+ 
+ It provides some syntactic sugar on top of the Mockito methods and is integrated with specs expectations:<code>
+ 
+ object spec extends Specification with Mockito {
+   
+   val m = mock[java.util.List[String]] // a concrete class would be mocked with: mock(new java.util.LinkedList[String])
+   
+   // stub a method call with a return value
+   m.get(0) returns "one"
+ 
+   // call the method
+   m.get(0)
+ 
+   // verify that the call happened, this is an expectation which will throw a FailureException if that is not the case
+   m.get(0) was called
+   m.get(1) wasnt called // we can also check that other calls did not occur
+ }
+ </code>
+ 
+ See the method descriptions for more usage examples.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/MockitoLifeCycle.html" target="_self">MockitoLifeCycle</a></em>
+        <code> extends </code><a href="../../org/specs/specification/ExampleLifeCycle.html" target="_self">ExampleLifeCycle</a>
+        
+        <div>This trait allows the initialization of mocks when defined with an annotation:
+ @Mock val l: List[String] = null
+ 
+ The beforeTest method is overriden instead of the beforeExample method. This doesn't make a big difference but it helps the compiler
+ in the Eclipse plugin not to crash too often.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/MockitoStubs.html" target="_self">MockitoStubs</a></em>
+        <code> extends </code><a href="../../org/specs/mock/MocksCreation.html" target="_self">MocksCreation</a>
+        
+        <div>This trait provides functionalities to declare stub values on method calls.
+ 
+ Usage:<code>
+ 
+ mockedList.get(0) returns "one"
+ mockedList.get(0) returns ("one", "two")
+ mockedList.get(0) throws new Exception("unexpected")
+ mockedList.get(0) answers ( i => "value " + i.toString )
+ 
+ </code>
+ 
+ It is also possible to chain stubs like this: <code>
+ 
+ mockedList.get(0) returns "one" thenReturns "two"
+ mockedList.get(0) returns "one" thenThrows new Exception("unexpected now")
+ </code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/MocksCreation.html" target="_self">MocksCreation</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/Protocol.html" target="_self">Protocol</a></em>
+        <code> extends </code><a href="../../org/specs/mock/ProtocolTypes.html" target="_self">ProtocolTypes</a>
+        
+        <div>The <code>Protocol</code> class stores the expectations of mocks, alongside with the actual received calls
+ It can be exclusive or not: i.e. return an error in case of unexpected calls or not<br>
+ A <code>protocol</code> has 3 functions:<ul>
+ <li>be defined by nested protocol definitions and expected calls
+ <li>store received calls
+ <li>return failures if there are unmatched calls</ul></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/ProtocolDef.html" target="_self">ProtocolDef</a></em>
+        (<code>val </code><em>protocolType</em> : <a href="../../org/specs/mock/ProtocolType.html" target="_self">ProtocolType</a>, <code>val </code><em>expectedCalls</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../org/specs/mock/SpecifiedCall.html" target="_self">SpecifiedCall</a>])<code> extends </code><a href="../../org/specs/mock/SpecifiedCall.html" target="_self">SpecifiedCall</a><code> with </code><a href="../../org/specs/mock/ProtocolTypes.html" target="_self">ProtocolTypes</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>Specifies that a set of methods or other protocol definitions are expected to be called
+ according to a protocol type</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/ProtocolType.html" target="_self">ProtocolType</a></em>
+        (<em>repetition</em> : <a href="../../org/specs/mock/CallConstraint.html" target="_self">CallConstraint</a>)<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>The <code>ProtocolType</class> specifies if a sequence of <code>ReceivedCall</code> can match
+ a sequence of <code>SpecifiedCall</code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/ProtocolTypes.html" target="_self">ProtocolTypes</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait adds some frequent protocol types and some
+ syntactic sugar to be able to specify such protocol types<ul>
+ <li><code>anyOf = inAnyOrder(exactlyN(0))</code>
+ <li><code>oneOf = inAnyOrder(exactlyN(1))</code>
+ <li><code>2.of = inAnyOrder(exactlyN(2))</code>
+ <li><code>3.atLeastOf = inAnyOrder(exactlyN(3))</code>
+ <li><code>3.inSequenceAtMostOf = inAnyOrder(exactlyN(3))</code></ul></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/ReceivedCall.html" target="_self">ReceivedCall</a></em>
+        (<code>val </code><em>method</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>Specifies that a method has been received.<br> 
+ By construction, the method name will include the line number in the original source file.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/SpecifiedCall.html" target="_self">SpecifiedCall</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Specifies which kind of received calls can be expected</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/atLeastN.html" target="_self">atLeastN</a></em>
+        (<code>val </code><em>n</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>)<code> extends </code><a href="../../org/specs/mock/CallConstraint.html" target="_self">CallConstraint</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>This class expects at least n received calls matching a specified call</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/atLeastNOf.html" target="_self">atLeastNOf</a></em>
+        (<code>val </code><em>n</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>)<code> extends </code><a href="../../org/specs/mock/inAnyOrder.html" target="_self">inAnyOrder</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/atMostN.html" target="_self">atMostN</a></em>
+        (<code>val </code><em>n</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>)<code> extends </code><a href="../../org/specs/mock/CallConstraint.html" target="_self">CallConstraint</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>This class expects at most n received calls matching a specified call</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/atMostNOf.html" target="_self">atMostNOf</a></em>
+        (<code>val </code><em>n</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>)<code> extends </code><a href="../../org/specs/mock/inAnyOrder.html" target="_self">inAnyOrder</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/exactlyN.html" target="_self">exactlyN</a></em>
+        (<code>val </code><em>n</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>)<code> extends </code><a href="../../org/specs/mock/CallConstraint.html" target="_self">CallConstraint</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>This class expects exactly n received calls matching a specified call</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/exactlyNOf.html" target="_self">exactlyNOf</a></em>
+        (<code>val </code><em>n</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>)<code> extends </code><a href="../../org/specs/mock/inAnyOrder.html" target="_self">inAnyOrder</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/inAnyOrder.html" target="_self">inAnyOrder</a></em>
+        (<code>val </code><em>repetition</em> : <a href="../../org/specs/mock/CallConstraint.html" target="_self">CallConstraint</a>)<code> extends </code><a href="../../org/specs/mock/ProtocolType.html" target="_self">ProtocolType</a>
+        
+        <div>The <code>inAnyOrder</code> protocol type will try to consume expected calls
+ in any order. It will not consume unexpected calls.<br>
+ It accepts a <code>repetition</code> parameter specifying how many expected calls are supposed to happen:<ul>
+ <li>exactlyN(2): exactly 2 times
+ <li>atLeast(2): at least 2 times
+ <li>atMost(2): at most 2 times</ul></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/inSequence.html" target="_self">inSequence</a></em>
+        (<em>repetition</em> : <a href="../../org/specs/mock/CallConstraint.html" target="_self">CallConstraint</a>)<code> extends </code><a href="../../org/specs/mock/ProtocolType.html" target="_self">ProtocolType</a>
+        
+        <div>The <code>inSequence</code> protocol type will try to consume expected calls
+ in sequence. It will not consume unexpected calls.<br>
+ It accepts a <code>repetition</code> parameter specifying how many expected calls are supposed to happen:<ul>
+ <li>exactlyN(2): exactly 2 times
+ <li>atLeast(2): at least 2 times
+ <li>atMost(2): at most 2 times</ul></div>
+      </td>
+    </tr>        
+        </table>
+<table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Object Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/Exclusivity$object.html" target="_self">Exclusivity</a></em>
+        <code> extends </code>(<a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>) =&gt; <a href="../../org/specs/mock/Exclusivity.html" target="_self">Exclusivity</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/ExpectedCall$object.html" target="_self">ExpectedCall</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) =&gt; <a href="../../org/specs/mock/ExpectedCall.html" target="_self">ExpectedCall</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/HamcrestMatcherAdapter$object.html" target="_self">HamcrestMatcherAdapter</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/JMocker$object.html" target="_self">JMocker</a></em>
+        <code> extends </code><a href="../../org/specs/mock/JMocker.html" target="_self">JMocker</a>
+        
+        <div>This object can be used to import and rename some functions in case of a conflict with some other trait.
+ For example the trait Suite in ScalaTest uses an expect method too</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/ProtocolDef$object.html" target="_self">ProtocolDef</a></em>
+        <code> extends </code>(<a href="../../org/specs/mock/ProtocolType.html" target="_self">ProtocolType</a>, <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../org/specs/mock/SpecifiedCall.html" target="_self">SpecifiedCall</a>]) =&gt; <a href="../../org/specs/mock/ProtocolDef.html" target="_self">ProtocolDef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/ReceivedCall$object.html" target="_self">ReceivedCall</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) =&gt; <a href="../../org/specs/mock/ReceivedCall.html" target="_self">ReceivedCall</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/atLeastN$object.html" target="_self">atLeastN</a></em>
+        <code> extends </code>(<a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) =&gt; <a href="../../org/specs/mock/atLeastN.html" target="_self">atLeastN</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/atLeastNOf$object.html" target="_self">atLeastNOf</a></em>
+        <code> extends </code>(<a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) =&gt; <a href="../../org/specs/mock/atLeastNOf.html" target="_self">atLeastNOf</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/atMostN$object.html" target="_self">atMostN</a></em>
+        <code> extends </code>(<a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) =&gt; <a href="../../org/specs/mock/atMostN.html" target="_self">atMostN</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/atMostNOf$object.html" target="_self">atMostNOf</a></em>
+        <code> extends </code>(<a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) =&gt; <a href="../../org/specs/mock/atMostNOf.html" target="_self">atMostNOf</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/exactlyN$object.html" target="_self">exactlyN</a></em>
+        <code> extends </code>(<a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) =&gt; <a href="../../org/specs/mock/exactlyN.html" target="_self">exactlyN</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/exactlyNOf$object.html" target="_self">exactlyNOf</a></em>
+        <code> extends </code>(<a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) =&gt; <a href="../../org/specs/mock/exactlyNOf.html" target="_self">exactlyNOf</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/exclusively$object.html" target="_self">exclusively</a></em>
+        <code> extends </code><a href="../../org/specs/mock/Exclusivity.html" target="_self">Exclusivity</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/inAnyOrder$object.html" target="_self">inAnyOrder</a></em>
+        <code> extends </code><a href="../../org/specs/mock/inAnyOrder.html" target="_self">inAnyOrder</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>Copyright (c) 2007-2009 Eric Torreborre <etorreborre@yahoo.com>
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+ the Software. Neither the name of specs nor the names of its contributors may be used to endorse or promote
+ products derived from this software without specific prior written permission.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+ TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS INTHE SOFTWARE.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/inSequence$object.html" target="_self">inSequence</a></em>
+        <code> extends </code><a href="../../org/specs/mock/inSequence.html" target="_self">inSequence</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>Copyright (c) 2007-2009 Eric Torreborre <etorreborre@yahoo.com>
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+ the Software. Neither the name of specs nor the names of its contributors may be used to endorse or promote
+ products derived from this software without specific prior written permission.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+ TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS INTHE SOFTWARE.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/mock/nonExclusively$object.html" target="_self">nonExclusively</a></em>
+        <code> extends </code><a href="../../org/specs/mock/Exclusivity.html" target="_self">Exclusivity</a>
+        
+        
+      </td>
+    </tr>        
+        </table></body>
+      </html>

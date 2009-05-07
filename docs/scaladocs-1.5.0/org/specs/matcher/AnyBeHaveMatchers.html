@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait AnyBeHaveMatchers in org.specs.matcher</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.3.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/matcher$package.html" target="_self">org.specs.matcher</a>
+        <br></br>
+        <span class="entity">trait  AnyBeHaveMatchers</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/matcher/AnyBeHaveMatchers"><code>org/specs/matcher/AnyBeHaveMatchers.scala</code></a>]
+      </div><hr></hr>
+      <a name="AnyBeHaveMatchers"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>AnyBeHaveMatchers</em>
+      </dt>
+      <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
+    </dl><dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/matcher/AnyMatchers.html" target="_self">AnyMatchers</a></dd>
+      </dl><hr></hr>
+      
+
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#asNullAs%28%3D%3ET%29" target="_self">asNullAs</a></em>
+        [<em>T</em>](<em>a</em> : =&gt; <a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#asNullAs%28%3D%3ET%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#asNullAs%28%3D%3ET%29#T" target="_self">T</a>]
+        
+        <div>Alias for beAsNullAs</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#be" target="_self">be</a></em>
+        [<em>T</em>] : <a href="../../../org/specs/matcher/BeVerbMatcher.html" target="_self">BeVerbMatcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#be#T" target="_self">T</a>]
+        
+        <div>dummy matcher to allow be + matcher syntax</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#empty" target="_self">empty</a></em>
+        [<em>S</em> &lt;: <a href="../../../org/specs/matcher/AnyBaseMatchers.$amplt$u003Brefinement$ampgt$u003B.html" target="_self">&lt;refinement&gt;</a>] : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#empty#S" target="_self">S</a>]
+        
+        <div>Alias of beEmpty</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#equalTo%28T%29" target="_self">equalTo</a></em>
+        [<em>T</em>](<em>o</em> : <a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#equalTo%28T%29#T" target="_self">T</a>)(<code>implicit </code><em>d</em> : <a href="../../../org/specs/specification/Detailed.html" target="_self">Detailed</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>]
+        
+        <div>Alias of is_==</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#have" target="_self">have</a></em>
+        [<em>T</em>] : <a href="../../../org/specs/matcher/HaveVerbMatcher.html" target="_self">HaveVerbMatcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#have#T" target="_self">T</a>]
+        
+        <div>dummy matcher to allow have + matcher syntax</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#in%28%3D%3EIterable%5BT%5D%29" target="_self">in</a></em>
+        [<em>T</em>](<em>iterable</em> : =&gt; <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#in%28%3D%3EIterable%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#in%28%3D%3EIterable%5BT%5D%29#T" target="_self">T</a>]
+        
+        <div>Alias for beIn</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#not" target="_self">not</a></em>
+        [<em>T</em>] : <a href="../../../org/specs/matcher/NotMatcher.html" target="_self">NotMatcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#not#T" target="_self">T</a>]
+        
+        <div>dummy matcher to allow not + be + matcher syntax</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#oneOf%28T*%29" target="_self">oneOf</a></em>
+        [<em>T</em>](<em>t</em> : <a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#oneOf%28T*%29#T" target="_self">T</a>*) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#oneOf%28T*%29#T" target="_self">T</a>]
+        
+        <div>Matches beOneOf</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#the" target="_self">the</a></em>
+        [<em>T</em>] : <a href="../../../org/specs/matcher/ArticleMatcher.html" target="_self">ArticleMatcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#the#T" target="_self">T</a>]
+        
+        <div>dummy matcher to allow have + the matcher syntax</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#toAnyEmptyResultMatcher%28org.specs.specification.Result%5BS%5D%29" target="_self">toAnyEmptyResultMatcher</a></em>
+        [<em>S</em> &lt;: <a href="../../../org/specs/matcher/AnyBaseMatchers.$amplt$u003Brefinement$ampgt$u003B.html" target="_self">&lt;refinement&gt;</a>](<em>result</em> : <a href="../../../org/specs/specification/Result.html" target="_self">Result</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#toAnyEmptyResultMatcher%28org.specs.specification.Result%5BS%5D%29#S" target="_self">S</a>]) : <a href="../../../org/specs/matcher/AnyBeHaveMatchers.AnyEmptyResultMatcher.html" target="_self">AnyEmptyResultMatcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#toAnyEmptyResultMatcher%28org.specs.specification.Result%5BS%5D%29#S" target="_self">S</a>]
+        
+        <div>implicit definition to add 'empty' matchers</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#toAnyResultMatcher%28org.specs.specification.Result%5BT%5D%29" target="_self">toAnyResultMatcher</a></em>
+        [<em>T</em>](<em>result</em> : <a href="../../../org/specs/specification/Result.html" target="_self">Result</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#toAnyResultMatcher%28org.specs.specification.Result%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/matcher/AnyBeHaveMatchers.AnyResultMatcher.html" target="_self">AnyResultMatcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#toAnyResultMatcher%28org.specs.specification.Result%5BT%5D%29#T" target="_self">T</a>]
+        
+        <div>implicit definition to add 'be' matchers</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Class Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/AnyBeHaveMatchers.AnyEmptyResultMatcher.html" target="_self">AnyEmptyResultMatcher</a></em>
+        [<em>S</em> &lt;: <a href="../../../org/specs/matcher/AnyBaseMatchers.$amplt$u003Brefinement$ampgt$u003B.html" target="_self">&lt;refinement&gt;</a>](<em>result</em> : <a href="../../../org/specs/specification/Result.html" target="_self">Result</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.AnyEmptyResultMatcher.html#S" target="_self">S</a>])<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>functions which can be used with 'empty' matchers</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/AnyBeHaveMatchers.AnyResultMatcher.html" target="_self">AnyResultMatcher</a></em>
+        [<em>T</em>](<em>result</em> : <a href="../../../org/specs/specification/Result.html" target="_self">Result</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.AnyResultMatcher.html#T" target="_self">T</a>])<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>functions which can be used with 'be' matchers</div>
+      </td>
+    </tr>
+      </table>
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="be"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>be</em>[<em>T</em>] : <a href="../../../org/specs/matcher/BeVerbMatcher.html" target="_self">BeVerbMatcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#be#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>dummy matcher to allow be + matcher syntax</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="not"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>not</em>[<em>T</em>] : <a href="../../../org/specs/matcher/NotMatcher.html" target="_self">NotMatcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#not#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>dummy matcher to allow not + be + matcher syntax</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="have"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>have</em>[<em>T</em>] : <a href="../../../org/specs/matcher/HaveVerbMatcher.html" target="_self">HaveVerbMatcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#have#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>dummy matcher to allow have + matcher syntax</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="the"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>the</em>[<em>T</em>] : <a href="../../../org/specs/matcher/ArticleMatcher.html" target="_self">ArticleMatcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#the#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>dummy matcher to allow have + the matcher syntax</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="toAnyResultMatcher%28org.specs.specification.Result%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>toAnyResultMatcher</em>[<em>T</em>](<em>result</em> : <a href="../../../org/specs/specification/Result.html" target="_self">Result</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#toAnyResultMatcher%28org.specs.specification.Result%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/matcher/AnyBeHaveMatchers.AnyResultMatcher.html" target="_self">AnyResultMatcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#toAnyResultMatcher%28org.specs.specification.Result%5BT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>implicit definition to add 'be' matchers</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="toAnyEmptyResultMatcher%28org.specs.specification.Result%5BS%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>toAnyEmptyResultMatcher</em>[<em>S</em> &lt;: <a href="../../../org/specs/matcher/AnyBaseMatchers.$amplt$u003Brefinement$ampgt$u003B.html" target="_self">&lt;refinement&gt;</a>](<em>result</em> : <a href="../../../org/specs/specification/Result.html" target="_self">Result</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#toAnyEmptyResultMatcher%28org.specs.specification.Result%5BS%5D%29#S" target="_self">S</a>]) : <a href="../../../org/specs/matcher/AnyBeHaveMatchers.AnyEmptyResultMatcher.html" target="_self">AnyEmptyResultMatcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#toAnyEmptyResultMatcher%28org.specs.specification.Result%5BS%5D%29#S" target="_self">S</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>implicit definition to add 'empty' matchers</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="equalTo%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>equalTo</em>[<em>T</em>](<em>o</em> : <a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#equalTo%28T%29#T" target="_self">T</a>)(<code>implicit </code><em>d</em> : <a href="../../../org/specs/specification/Detailed.html" target="_self">Detailed</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Alias of is_==</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="asNullAs%28%3D%3ET%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>asNullAs</em>[<em>T</em>](<em>a</em> : =&gt; <a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#asNullAs%28%3D%3ET%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#asNullAs%28%3D%3ET%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Alias for beAsNullAs</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="in%28%3D%3EIterable%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>in</em>[<em>T</em>](<em>iterable</em> : =&gt; <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#in%28%3D%3EIterable%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#in%28%3D%3EIterable%5BT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Alias for beIn</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="oneOf%28T*%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>oneOf</em>[<em>T</em>](<em>t</em> : <a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#oneOf%28T*%29#T" target="_self">T</a>*) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#oneOf%28T*%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches beOneOf</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="empty"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>empty</em>[<em>S</em> &lt;: <a href="../../../org/specs/matcher/AnyBaseMatchers.$amplt$u003Brefinement$ampgt$u003B.html" target="_self">&lt;refinement&gt;</a>] : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/AnyBeHaveMatchers.html#empty#S" target="_self">S</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Alias of beEmpty</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2009. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

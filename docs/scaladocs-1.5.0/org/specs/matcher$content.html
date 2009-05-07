@@ -1,0 +1,770 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>All classes and objects in org.specs.matcher</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.3.final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
+        </head>
+        <body onload="init()"><div class="page-title"><div>specs 1.5.0 API</div></div><p><div>This document is the API specification for specs 1.5.0 API</div></p><table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Class Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/AbstractMatcher.html" target="_self">AbstractMatcher</a></em>
+        [-<em>T</em>]<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/AnyBaseMatchers.html" target="_self">AnyBaseMatchers</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>The <code>AnyBaseMatchers</code> trait provides matchers which are applicable to any scala reference or value</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/AnyBeHaveMatchers.html" target="_self">AnyBeHaveMatchers</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/AnyMatchers.html" target="_self">AnyMatchers</a></em>
+        <code> extends </code><a href="../../org/specs/matcher/AnyBaseMatchers.html" target="_self">AnyBaseMatchers</a><code> with </code><a href="../../org/specs/matcher/AnyBeHaveMatchers.html" target="_self">AnyBeHaveMatchers</a>
+        
+        <div>The <code>AnyMatchers</code> trait provides matchers which are applicable to any scala reference or value
+ and can be used with a be/have + matcher syntax</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/ArticleMatcher.html" target="_self">ArticleMatcher</a></em>
+        [<em>T</em>]<code> extends </code><a href="../../org/specs/matcher/OkWordMatcher.html" target="_self">OkWordMatcher</a>[<a href="../../org/specs/matcher/ArticleMatcher.html#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/BaseMatchers.html" target="_self">BaseMatchers</a></em>
+        <code> extends </code><a href="../../org/specs/matcher/AnyBaseMatchers.html" target="_self">AnyBaseMatchers</a><code> with </code><a href="../../org/specs/matcher/LogicalMatchers.html" target="_self">LogicalMatchers</a><code> with </code><a href="../../org/specs/matcher/StringBaseMatchers.html" target="_self">StringBaseMatchers</a><code> with </code><a href="../../org/specs/matcher/IterableBaseMatchers.html" target="_self">IterableBaseMatchers</a><code> with </code><a href="../../org/specs/matcher/MapBaseMatchers.html" target="_self">MapBaseMatchers</a><code> with </code><a href="../../org/specs/matcher/NumericBaseMatchers.html" target="_self">NumericBaseMatchers</a><code> with </code><a href="../../org/specs/matcher/PatternBaseMatchers.html" target="_self">PatternBaseMatchers</a><code> with </code><a href="../../org/specs/matcher/XmlBaseMatchers.html" target="_self">XmlBaseMatchers</a><code> with </code><a href="../../org/specs/matcher/FileBaseMatchers.html" target="_self">FileBaseMatchers</a><code> with </code><a href="../../org/specs/matcher/MatcherResult.html" target="_self">MatcherResult</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/BeCloseTo.html" target="_self">BeCloseTo</a></em>
+        [<em>S</em>](<em>n</em> : <a href="../../org/specs/matcher/BeCloseTo.html#S" target="_self">S</a>, <em>delta</em> : <a href="../../org/specs/matcher/BeCloseTo.html#S" target="_self">S</a>, <code>implicit </code><em>view$25</em> : (<a href="../../org/specs/matcher/BeCloseTo.html#S" target="_self">S</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>)<code> extends </code><a href="../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../org/specs/matcher/BeCloseTo.html#S" target="_self">S</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/BeEqualTo.html" target="_self">BeEqualTo</a></em>
+        [<em>T</em>](<em>a</em> : =&gt; <a href="../../org/specs/matcher/BeEqualTo.html#T" target="_self">T</a>)<code> extends </code><a href="../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../org/specs/matcher/BeEqualTo.html#T" target="_self">T</a>]
+        
+        <div>Reusable equalTo matcher</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/BeEqualToIgnoringCase.html" target="_self">BeEqualToIgnoringCase</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../org/specs/matcher/BeEqualToIgnoringCase.html#T" target="_self">T</a>)<code> extends </code><a href="../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../org/specs/matcher/BeEqualToIgnoringCase.html#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/BeLessThan.html" target="_self">BeLessThan</a></em>
+        [<em>S</em>](<em>n</em> : <a href="../../org/specs/matcher/BeLessThan.html#S" target="_self">S</a>, <code>implicit </code><em>view$24</em> : (<a href="../../org/specs/matcher/BeLessThan.html#S" target="_self">S</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>)<code> extends </code><a href="../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../org/specs/matcher/BeLessThan.html#S" target="_self">S</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/BeLessThanOrEqualTo.html" target="_self">BeLessThanOrEqualTo</a></em>
+        [<em>S</em>](<em>n</em> : <a href="../../org/specs/matcher/BeLessThanOrEqualTo.html#S" target="_self">S</a>, <code>implicit </code><em>view$23</em> : (<a href="../../org/specs/matcher/BeLessThanOrEqualTo.html#S" target="_self">S</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>)<code> extends </code><a href="../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../org/specs/matcher/BeLessThanOrEqualTo.html#S" target="_self">S</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/BeVerbMatcher.html" target="_self">BeVerbMatcher</a></em>
+        [<em>T</em>]<code> extends </code><a href="../../org/specs/matcher/OkWordMatcher.html" target="_self">OkWordMatcher</a>[<a href="../../org/specs/matcher/BeVerbMatcher.html#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/EqualIgnoringSpaceMatcher.html" target="_self">EqualIgnoringSpaceMatcher</a></em>
+        (<em>node</em> : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>])<code> extends </code><a href="../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>]]
+        
+        <div>Matcher for equalIgnoreSpace comparison, ignoring the nodes order</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/EqualIgnoringSpaceMatcherOrdered.html" target="_self">EqualIgnoringSpaceMatcherOrdered</a></em>
+        (<em>node</em> : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>])<code> extends </code><a href="../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>]]
+        
+        <div>Matcher for equalIgnoreSpace comparison, considering the node order</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/FileBaseMatchers.html" target="_self">FileBaseMatchers</a></em>
+        <code> extends </code><a href="../../org/specs/matcher/PathMatchers.html" target="_self">PathMatchers</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/FileBeHaveMatchers.html" target="_self">FileBeHaveMatchers</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/FileMatchers.html" target="_self">FileMatchers</a></em>
+        <code> extends </code><a href="../../org/specs/matcher/FileBaseMatchers.html" target="_self">FileBaseMatchers</a><code> with </code><a href="../../org/specs/matcher/FileBeHaveMatchers.html" target="_self">FileBeHaveMatchers</a>
+        
+        <div>The <code>FileMatchers</code> trait provides matchers which are applicable to files</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/HaveTheSameElementsAs.html" target="_self">HaveTheSameElementsAs</a></em>
+        [<em>T</em>](<em>l</em> : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../org/specs/matcher/HaveTheSameElementsAs.html#T" target="_self">T</a>])<code> extends </code><a href="../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../org/specs/matcher/HaveTheSameElementsAs.html#T" target="_self">T</a>]]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/HaveVerbMatcher.html" target="_self">HaveVerbMatcher</a></em>
+        [<em>T</em>]<code> extends </code><a href="../../org/specs/matcher/OkWordMatcher.html" target="_self">OkWordMatcher</a>[<a href="../../org/specs/matcher/HaveVerbMatcher.html#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/IterableBaseMatchers.html" target="_self">IterableBaseMatchers</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/IterableBeHaveMatchers.html" target="_self">IterableBeHaveMatchers</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/IterableMatchers.html" target="_self">IterableMatchers</a></em>
+        <code> extends </code><a href="../../org/specs/matcher/IterableBaseMatchers.html" target="_self">IterableBaseMatchers</a><code> with </code><a href="../../org/specs/matcher/IterableBeHaveMatchers.html" target="_self">IterableBeHaveMatchers</a>
+        
+        <div>The <code>IterableMatchers</code> trait provides matchers which are applicable to Iterable objects</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/LogicalMatchers.html" target="_self">LogicalMatchers</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait provides functions which can be use on matchers: not, verifyAll, verifyAny</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/MapBaseMatchers.html" target="_self">MapBaseMatchers</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/MapBeHaveMatchers.html" target="_self">MapBeHaveMatchers</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/MapMatchers.html" target="_self">MapMatchers</a></em>
+        <code> extends </code><a href="../../org/specs/matcher/MapBaseMatchers.html" target="_self">MapBaseMatchers</a><code> with </code><a href="../../org/specs/matcher/MapBeHaveMatchers.html" target="_self">MapBeHaveMatchers</a>
+        
+        <div>The <code>MapMatchers</code> trait provides matchers which are applicable to Map objects<br>
+ It currently accepts any Iterable[(K, V)] whereas it should only accept Map[K, V]. 
+ This is because the implicit defs in the <code>BaseSpecification</code> trait
+ are picking up iterables in general</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/Matcher.html" target="_self">Matcher</a></em>
+        [-<em>T</em>]<code> extends </code><a href="../../org/specs/matcher/AbstractMatcher.html" target="_self">AbstractMatcher</a>[<a href="../../org/specs/matcher/Matcher.html#T" target="_self">T</a>]<code> with </code><a href="../../org/specs/matcher/MatcherResult.html" target="_self">MatcherResult</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/MatcherResult.html" target="_self">MatcherResult</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Result of <code>Matcher.apply</code>. Provides a method named 'success' to get the result
+ of a match, as well as 'okMessage' and 'koMessage' to get the status messages.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/Matchers.html" target="_self">Matchers</a></em>
+        <code> extends </code><a href="../../org/specs/matcher/AnyMatchers.html" target="_self">AnyMatchers</a><code> with </code><a href="../../org/specs/matcher/LogicalMatchers.html" target="_self">LogicalMatchers</a><code> with </code><a href="../../org/specs/matcher/StringMatchers.html" target="_self">StringMatchers</a><code> with </code><a href="../../org/specs/matcher/IterableMatchers.html" target="_self">IterableMatchers</a><code> with </code><a href="../../org/specs/matcher/MapMatchers.html" target="_self">MapMatchers</a><code> with </code><a href="../../org/specs/matcher/NumericMatchers.html" target="_self">NumericMatchers</a><code> with </code><a href="../../org/specs/matcher/PatternMatchers.html" target="_self">PatternMatchers</a><code> with </code><a href="../../org/specs/matcher/XmlMatchers.html" target="_self">XmlMatchers</a><code> with </code><a href="../../org/specs/matcher/FileMatchers.html" target="_self">FileMatchers</a><code> with </code><a href="../../org/specs/matcher/MatcherResult.html" target="_self">MatcherResult</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/MockMatchers.html" target="_self">MockMatchers</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Matcher for mock objects.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/NotMatcher.html" target="_self">NotMatcher</a></em>
+        [<em>T</em>]<code> extends </code><a href="../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../org/specs/matcher/NotMatcher.html#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/NumericBaseMatchers.html" target="_self">NumericBaseMatchers</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/NumericBeHaveMatchers.html" target="_self">NumericBeHaveMatchers</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/NumericMatchers.html" target="_self">NumericMatchers</a></em>
+        <code> extends </code><a href="../../org/specs/matcher/NumericBaseMatchers.html" target="_self">NumericBaseMatchers</a><code> with </code><a href="../../org/specs/matcher/NumericBeHaveMatchers.html" target="_self">NumericBeHaveMatchers</a>
+        
+        <div>The <code>NumericMatchers</code> trait provides matchers which allow numerical comparisons</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/OkWordMatcher.html" target="_self">OkWordMatcher</a></em>
+        [<em>T</em>]<code> extends </code><a href="../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../org/specs/matcher/OkWordMatcher.html#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/Parameters.html" target="_self">Parameters</a></em>
+        (<code>val </code><em>params</em> : <a href="" target="contentFrame" class="scala/collection/immutable/Map">scala.collection.immutable.Map</a>[<a href="" target="contentFrame" class="scala/Symbol">scala.Symbol</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>])<code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>This class is the base class for the display and set case classes.<br>
+ It contains a Map of generation parameters and indicates if the generation
+ must be verbose.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/PathBaseMatchers.html" target="_self">PathBaseMatchers</a></em>
+        <code> extends </code><a href="../../org/specs/io/FileSystem.html" target="_self">FileSystem</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/PathBeHaveMatchers.html" target="_self">PathBeHaveMatchers</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/PathFunction.html" target="_self">PathFunction</a></em>
+        (<code>val </code><em>node</em> : <a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>, <code>val </code><em>attributes</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>], <code>val </code><em>attributeValues</em> : <a href="" target="contentFrame" class="scala/collection/immutable/Map">scala.collection.immutable.Map</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>], <code>val </code><em>function</em> : <a href="" target="contentFrame" class="scala/Function2">scala.Function2</a>)<code> extends </code>(<a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>]) =&gt; <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>]<code> with </code><a href="../../org/specs/matcher/XPathFunctions.html" target="_self">XPathFunctions</a>
+        
+        <div>The PathFunction object encapsulate a search for a node and/or attributes or attributeValues with an XPath function
+ If <code>node</code> has some children, then they are searched using equality</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/PathMatchers.html" target="_self">PathMatchers</a></em>
+        <code> extends </code><a href="../../org/specs/matcher/PathBaseMatchers.html" target="_self">PathBaseMatchers</a><code> with </code><a href="../../org/specs/matcher/PathBeHaveMatchers.html" target="_self">PathBeHaveMatchers</a>
+        
+        <div>The <code>PathMatchers</code> trait provides matchers which are applicable to strings representing paths</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/PatternBaseMatchers.html" target="_self">PatternBaseMatchers</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/PatternBeHaveMatchers.html" target="_self">PatternBeHaveMatchers</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/PatternMatchers.html" target="_self">PatternMatchers</a></em>
+        <code> extends </code><a href="../../org/specs/matcher/PatternBaseMatchers.html" target="_self">PatternBaseMatchers</a><code> with </code><a href="../../org/specs/matcher/PatternBeHaveMatchers.html" target="_self">PatternBeHaveMatchers</a>
+        
+        <div>The <code>PatternMatchers</code> trait provides matchers which allow to use pattern matching
+ to match expressions.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/ScalaCheckFunctions.html" target="_self">ScalaCheckFunctions</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait is used to facilitate testing by mocking ScalaCheck functionalities</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/ScalaCheckMatchers.html" target="_self">ScalaCheckMatchers</a></em>
+        <code> extends </code><a href="../../org/specs/io/ConsoleOutput.html" target="_self">ConsoleOutput</a><code> with </code><a href="../../org/specs/matcher/ScalaCheckFunctions.html" target="_self">ScalaCheckFunctions</a><code> with </code><a href="../../org/specs/matcher/ScalaCheckParameters.html" target="_self">ScalaCheckParameters</a><code> with </code><a href="../../org/specs/specification/SuccessValues.html" target="_self">SuccessValues</a><code> with </code><a href="../../org/specs/specification/ExpectationsListener.html" target="_self">ExpectationsListener</a>
+        
+        <div>The <code>ScalaCheckMatchers</code> trait provides matchers which allow to
+ assess properties multiple times with generated data.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/ScalaCheckParameters.html" target="_self">ScalaCheckParameters</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait provides generation parameters to use with the <code>ScalaCheckMatchers</code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/StringBaseMatchers.html" target="_self">StringBaseMatchers</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/StringBeHaveMatchers.html" target="_self">StringBeHaveMatchers</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/StringEmptyMatcher.html" target="_self">StringEmptyMatcher</a></em>
+        <code> extends </code><a href="../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/StringMatchers.html" target="_self">StringMatchers</a></em>
+        <code> extends </code><a href="../../org/specs/matcher/StringBaseMatchers.html" target="_self">StringBaseMatchers</a><code> with </code><a href="../../org/specs/matcher/StringBeHaveMatchers.html" target="_self">StringBeHaveMatchers</a>
+        
+        <div>The <code>StringMatchers</code> trait provides matchers which are applicable to String objects</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/XPathFunctions.html" target="_self">XPathFunctions</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/XmlBaseMatchers.html" target="_self">XmlBaseMatchers</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/XmlBeHaveMatchers.html" target="_self">XmlBeHaveMatchers</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/XmlMatcher.html" target="_self">XmlMatcher</a></em>
+        (<code>val </code><em>functions</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../org/specs/matcher/PathFunction.html" target="_self">PathFunction</a>])<code> extends </code><a href="../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>]]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>The XmlMatcher class matches an xml Node, or a list of Nodes against a list of search functions, which can either search for:<ul>
+ <li/>a given direct child, with its label and/or attributes and/or attributes names and values
+ <li/>a given child, direct or not (maybe deeply nested), with its label and/or attributes and/or attributes names and values
+ </ul>
+ 
+ XmlMatchers can be "chained" by using the \ or the \\ methods. In that case, the resulting matcher has a new
+ search function which tries to match the result of the preceding function. For example<pre>
+ <a><b><c><d></d></c></b></a> must \\("c").\("d")</pre> will be ok.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/XmlMatchers.html" target="_self">XmlMatchers</a></em>
+        <code> extends </code><a href="../../org/specs/matcher/XmlBaseMatchers.html" target="_self">XmlBaseMatchers</a><code> with </code><a href="../../org/specs/matcher/XmlBeHaveMatchers.html" target="_self">XmlBeHaveMatchers</a>
+        
+        <div>The <code>XmlMatchers</code> trait provides matchers which are applicable to xml nodes</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/xUnit.html" target="_self">xUnit</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait provides methods to help the transition for xUnit users</div>
+      </td>
+    </tr>        
+        </table>
+<table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Object Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/AnyMatchers$object.html" target="_self">AnyMatchers</a></em>
+        <code> extends </code><a href="../../org/specs/matcher/AnyMatchers.html" target="_self">AnyMatchers</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>The <code>AnyMatchers</code> object allows the import of matchers from the AnyMatchers trait.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/MatcherUtils$object.html" target="_self">MatcherUtils</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This object provides utility functions for matchers</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/Matchers$object.html" target="_self">Matchers</a></em>
+        <code> extends </code><a href="../../org/specs/matcher/Matchers.html" target="_self">Matchers</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/NumericMatchersUtil$object.html" target="_self">NumericMatchersUtil</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/Parameters$object.html" target="_self">Parameters</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="scala/collection/immutable/Map">scala.collection.immutable.Map</a>[<a href="" target="contentFrame" class="scala/Symbol">scala.Symbol</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>]) =&gt; <a href="../../org/specs/matcher/Parameters.html" target="_self">Parameters</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/PatternMatchers$object.html" target="_self">PatternMatchers</a></em>
+        <code> extends </code><a href="../../org/specs/matcher/PatternMatchers.html" target="_self">PatternMatchers</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Companion object for PatternMatchers.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/StringToElem$object.html" target="_self">StringToElem</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Copyright (c) 2007-2009 Eric Torreborre <etorreborre@yahoo.com>
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+ the Software. Neither the name of specs nor the names of its contributors may be used to endorse or promote
+ products derived from this software without specific prior written permission.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+ TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS INTHE SOFTWARE.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/XmlBaseMatchers$object.html" target="_self">XmlBaseMatchers</a></em>
+        <code> extends </code><a href="../../org/specs/matcher/XmlBaseMatchers.html" target="_self">XmlBaseMatchers</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/XmlMatcher$object.html" target="_self">XmlMatcher</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../org/specs/matcher/PathFunction.html" target="_self">PathFunction</a>]) =&gt; <a href="../../org/specs/matcher/XmlMatcher.html" target="_self">XmlMatcher</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/matcher/xpath$object.html" target="_self">xpath</a></em>
+        <code> extends </code><a href="../../org/specs/matcher/XPathFunctions.html" target="_self">XPathFunctions</a>
+        
+        <div>This object provides XPath functions in order to use them as parameters</div>
+      </td>
+    </tr>        
+        </table></body>
+      </html>

@@ -1,0 +1,691 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait StringBaseMatchers in org.specs.matcher</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.3.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/matcher$package.html" target="_self">org.specs.matcher</a>
+        <br></br>
+        <span class="entity">trait  StringBaseMatchers</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/matcher/StringBaseMatchers"><code>org/specs/matcher/StringBaseMatchers.scala</code></a>]
+      </div><hr></hr>
+      <a name="StringBaseMatchers"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>StringBaseMatchers</em>
+      </dt>
+      <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
+    </dl><dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/matcher/BaseMatchers.html" target="_self">BaseMatchers</a>, <a href="../../../org/specs/matcher/StringMatchers.html" target="_self">StringMatchers</a></dd>
+      </dl><hr></hr>
+      
+
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#%21%3D%2F%28String%29" target="_self">!=/</a></em>
+        (<em>s</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#%3D%3D%2F%28String%29" target="_self">==/</a></em>
+        (<em>s</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/matcher/BeEqualToIgnoringCase.html" target="_self">BeEqualToIgnoringCase</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#beEqualToIgnoringCase%28T%29" target="_self">beEqualToIgnoringCase</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#beEqualToIgnoringCase%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/BeEqualToIgnoringCase.html" target="_self">BeEqualToIgnoringCase</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#beEqualToIgnoringCase%28T%29#T" target="_self">T</a>]
+        
+        <div>Matches if (a.equalsIgnoreCase(b))</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#beEqualToIgnoringSpace%28T%29" target="_self">beEqualToIgnoringSpace</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#beEqualToIgnoringSpace%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#beEqualToIgnoringSpace%28T%29#T" target="_self">T</a>]
+        
+        <div>Matches if (a.trim == b.trim)</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#beMatching%28T%29" target="_self">beMatching</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#beMatching%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#beMatching%28T%29#T" target="_self">T</a>]
+        
+        <div>Matches if b matches the regular expression a</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#be_%21%3D%2F%28T%29" target="_self">be_!=/</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#be_%21%3D%2F%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#be_%21%3D%2F%28T%29#T" target="_self">T</a>]
+        
+        <div>Matches if (a.notEqualIgnoreCase(b))</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#be_%3D%3D%2F%28T%29" target="_self">be_==/</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#be_%3D%3D%2F%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/BeEqualToIgnoringCase.html" target="_self">BeEqualToIgnoringCase</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#be_%3D%3D%2F%28T%29#T" target="_self">T</a>]
+        
+        <div>Matches if (a.equalsIgnoreCase(b))</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#endWith%28T%29" target="_self">endWith</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#endWith%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#endWith%28T%29#T" target="_self">T</a>]
+        
+        <div>Matches if b.endsWith(a)</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoreCase%28T%29" target="_self">equalIgnoreCase</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoreCase%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/BeEqualToIgnoringCase.html" target="_self">BeEqualToIgnoringCase</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoreCase%28T%29#T" target="_self">T</a>]
+        
+        <div>Matches if (a.equalsIgnoreCase(b))</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoreSpace%28T%29" target="_self">equalIgnoreSpace</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoreSpace%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoreSpace%28T%29#T" target="_self">T</a>]
+        
+        <div>Matches if (a.trim == b.trim)</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoringCaseTo%28T%29" target="_self">equalIgnoringCaseTo</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoringCaseTo%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/BeEqualToIgnoringCase.html" target="_self">BeEqualToIgnoringCase</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoringCaseTo%28T%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoringSpaceTo%28T%29" target="_self">equalIgnoringSpaceTo</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoringSpaceTo%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoringSpaceTo%28T%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#equalToIgnoringCase%28T%29" target="_self">equalToIgnoringCase</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#equalToIgnoringCase%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/BeEqualToIgnoringCase.html" target="_self">BeEqualToIgnoringCase</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#equalToIgnoringCase%28T%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#equalToIgnoringSpace%28T%29" target="_self">equalToIgnoringSpace</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#equalToIgnoringSpace%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#equalToIgnoringSpace%28T%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#find%28T%29" target="_self">find</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#find%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/StringBaseMatchers.FindMatcher.html" target="_self">FindMatcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#find%28T%29#T" target="_self">T</a>]
+        
+        <div>Matches if the regexp a is found inside b</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#haveLength%28Int%29" target="_self">haveLength</a></em>
+        (<em>n</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+        
+        <div>Matches if the length is n</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#include%28String%29" target="_self">include</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#include%28String%29#T" target="_self">T</a>]
+        
+        <div>Matches if (b.indexOf(a) >= 0)</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#notBeEqualToIgnoringCase%28T%29" target="_self">notBeEqualToIgnoringCase</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#notBeEqualToIgnoringCase%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#notBeEqualToIgnoringCase%28T%29#T" target="_self">T</a>]
+        
+        <div>Matches if !(a.equalsIgnoreCase(b))</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#notBeEqualToIgnoringSpace%28T%29" target="_self">notBeEqualToIgnoringSpace</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#notBeEqualToIgnoringSpace%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#notBeEqualToIgnoringSpace%28T%29#T" target="_self">T</a>]
+        
+        <div>Matches if !(a.equalsIgnoreSpace(b))</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#notBeMatching%28String%29" target="_self">notBeMatching</a></em>
+        (<em>a</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+        
+        <div>Matches if b doesn't match the regular expression a</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#notEndWith%28String%29" target="_self">notEndWith</a></em>
+        (<em>a</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+        
+        <div>Matches if !b.endsWith(a)</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#notEqualIgnoreCase%28T%29" target="_self">notEqualIgnoreCase</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#notEqualIgnoreCase%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#notEqualIgnoreCase%28T%29#T" target="_self">T</a>]
+        
+        <div>Matches if !(a.equalsIgnoreCase(b))</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#notEqualIgnoreSpace%28T%29" target="_self">notEqualIgnoreSpace</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#notEqualIgnoreSpace%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#notEqualIgnoreSpace%28T%29#T" target="_self">T</a>]
+        
+        <div>Matches if !(a.equalsIgnoreSpace(b))</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#notInclude%28T%29" target="_self">notInclude</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#notInclude%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#notInclude%28T%29#T" target="_self">T</a>]
+        
+        <div>Matches if !(b.indexOf(a) >= 0)</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#notStartWith%28String%29" target="_self">notStartWith</a></em>
+        (<em>a</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+        
+        <div>Matches if !b.startsWith(a)</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.html#startWith%28T%29" target="_self">startWith</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#startWith%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#startWith%28T%29#T" target="_self">T</a>]
+        
+        <div>Matches if b.startsWith(a)</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Class Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.FindMatcher.html" target="_self">FindMatcher</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.FindMatcher.html#T" target="_self">T</a>)<code> extends </code><a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.FindMatcher.html#T" target="_self">T</a>]
+        
+        <div>Matcher to find if the regexp a is found inside b. 
+   This matcher can be specialized to a FindMatcherWithGroups which will also check the found groups</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/StringBaseMatchers.FindMatcherWithGroups.html" target="_self">FindMatcherWithGroups</a></em>
+        [<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.FindMatcherWithGroups.html#T" target="_self">T</a>, <em>groups</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>*)<code> extends </code><a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.FindMatcherWithGroups.html#T" target="_self">T</a>]
+        
+        <div>Matcher to find if the regexp a is found inside b. 
+   This matcher checks if the found groups are really the ones expected</div>
+      </td>
+    </tr>
+      </table>
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="beEqualToIgnoringCase%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>beEqualToIgnoringCase</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#beEqualToIgnoringCase%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/BeEqualToIgnoringCase.html" target="_self">BeEqualToIgnoringCase</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#beEqualToIgnoringCase%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if (a.equalsIgnoreCase(b))</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="be_%3D%3D%2F%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>be_==/</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#be_%3D%3D%2F%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/BeEqualToIgnoringCase.html" target="_self">BeEqualToIgnoringCase</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#be_%3D%3D%2F%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if (a.equalsIgnoreCase(b))</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="equalIgnoreCase%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>equalIgnoreCase</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoreCase%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/BeEqualToIgnoringCase.html" target="_self">BeEqualToIgnoringCase</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoreCase%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if (a.equalsIgnoreCase(b))</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Deprecated</b></dt><dd>use equalToIgnoringCase instead</dd></dl>
+    <hr></hr>
+<a name="be_%21%3D%2F%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>be_!=/</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#be_%21%3D%2F%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#be_%21%3D%2F%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if (a.notEqualIgnoreCase(b))</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="notEqualIgnoreCase%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>notEqualIgnoreCase</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#notEqualIgnoreCase%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#notEqualIgnoreCase%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if !(a.equalsIgnoreCase(b))</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Deprecated</b></dt><dd>use notBeEqualToIgnoringCase instead</dd></dl>
+    <hr></hr>
+<a name="notBeEqualToIgnoringCase%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>notBeEqualToIgnoringCase</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#notBeEqualToIgnoringCase%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#notBeEqualToIgnoringCase%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if !(a.equalsIgnoreCase(b))</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="beEqualToIgnoringSpace%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>beEqualToIgnoringSpace</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#beEqualToIgnoringSpace%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#beEqualToIgnoringSpace%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if (a.trim == b.trim)</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="equalIgnoreSpace%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>equalIgnoreSpace</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoreSpace%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoreSpace%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if (a.trim == b.trim)</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Deprecated</b></dt><dd>use beEqualToIgnoringSpace instead</dd></dl>
+    <hr></hr>
+<a name="notEqualIgnoreSpace%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>notEqualIgnoreSpace</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#notEqualIgnoreSpace%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#notEqualIgnoreSpace%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if !(a.equalsIgnoreSpace(b))</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Deprecated</b></dt><dd>use notBeEqualToIgnoringSpace instead</dd></dl>
+    <hr></hr>
+<a name="notBeEqualToIgnoringSpace%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>notBeEqualToIgnoringSpace</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#notBeEqualToIgnoringSpace%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#notBeEqualToIgnoringSpace%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if !(a.equalsIgnoreSpace(b))</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="include%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>include</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#include%28String%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if (b.indexOf(a) >= 0)</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="notInclude%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>notInclude</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#notInclude%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#notInclude%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if !(b.indexOf(a) >= 0)</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="beMatching%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>beMatching</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#beMatching%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#beMatching%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if b matches the regular expression a</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="notBeMatching%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>notBeMatching</em>(<em>a</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if b doesn't match the regular expression a</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="startWith%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>startWith</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#startWith%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#startWith%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if b.startsWith(a)</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="notStartWith%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>notStartWith</em>(<em>a</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if !b.startsWith(a)</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="endWith%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>endWith</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#endWith%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#endWith%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if b.endsWith(a)</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="notEndWith%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>notEndWith</em>(<em>a</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if !b.endsWith(a)</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="find%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>find</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#find%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/StringBaseMatchers.FindMatcher.html" target="_self">FindMatcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#find%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if the regexp a is found inside b</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="haveLength%28Int%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>haveLength</em>(<em>n</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Matches if the length is n</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="%3D%3D%2F%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>==/</em>(<em>s</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/matcher/BeEqualToIgnoringCase.html" target="_self">BeEqualToIgnoringCase</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="%21%3D%2F%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>!=/</em>(<em>s</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="equalToIgnoringCase%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>equalToIgnoringCase</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#equalToIgnoringCase%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/BeEqualToIgnoringCase.html" target="_self">BeEqualToIgnoringCase</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#equalToIgnoringCase%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="equalToIgnoringSpace%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>equalToIgnoringSpace</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#equalToIgnoringSpace%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#equalToIgnoringSpace%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="equalIgnoringCaseTo%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>equalIgnoringCaseTo</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoringCaseTo%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/BeEqualToIgnoringCase.html" target="_self">BeEqualToIgnoringCase</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoringCaseTo%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="equalIgnoringSpaceTo%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>equalIgnoringSpaceTo</em>[<em>T</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>a</em> : <a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoringSpaceTo%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/StringBaseMatchers.html#equalIgnoringSpaceTo%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2009. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

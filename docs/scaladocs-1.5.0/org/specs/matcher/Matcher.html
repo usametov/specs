@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>class Matcher in org.specs.matcher</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.3.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/matcher$package.html" target="_self">org.specs.matcher</a>
+        <br></br>
+        <span class="entity">class  Matcher</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/matcher/Matcher"><code>org/specs/matcher/Matcher.scala</code></a>]
+      </div><hr></hr>
+      <a name="Matcher"></a><dl>
+      <dt>
+        
+        <code>abstract</code>
+        <code>class</code>
+        <em>Matcher</em>[-<em>T</em>]
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/matcher/AbstractMatcher.html" target="_self">AbstractMatcher</a>[<a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>]<code> with </code><a href="../../../org/specs/matcher/MatcherResult.html" target="_self">MatcherResult</a></dd>
+    </dl>
+      <dl><dd><p>This class is the base class for checking if a given value, of type T, is matching an expected value</p>
+ <p>The <code>matcher</code> parameter is a function which takes a value and return a Boolean saying if the match is ok and
+ 2 messages: 1 if the match is ok, and another one if the match is ko. Those messages should usually specify which was the 
+ expected value and which was the actual one</p>
+ <p> It is also possible to use the boolean logical operator on matchers: and, or, not, xor to combine matchers together. 
+ This is the essential reason why the ok message is included in the <code>matcher</code> function. For instance, when the 
+ <code>not</code> operator is used, the ok message is used as a ko message</p></dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/matcher/AnyBaseMatchers.ExceptionClassMatcher.html" target="_self">AnyBaseMatchers.ExceptionClassMatcher</a>, <a href="../../../org/specs/matcher/AnyBaseMatchers.ExceptionMatcher.html" target="_self">AnyBaseMatchers.ExceptionMatcher</a>, <a href="../../../org/specs/matcher/AnyBaseMatchers.SeqMatcher.html" target="_self">AnyBaseMatchers.SeqMatcher</a>, <a href="../../../org/specs/matcher/AnyBaseMatchers.SetMatcher.html" target="_self">AnyBaseMatchers.SetMatcher</a>, <a href="../../../org/specs/matcher/BeEqualTo.html" target="_self">BeEqualTo</a>, <a href="../../../org/specs/matcher/HaveTheSameElementsAs.html" target="_self">HaveTheSameElementsAs</a>, <a href="../../../org/specs/matcher/OkWordMatcher.html" target="_self">OkWordMatcher</a>, <a href="../../../org/specs/matcher/NotMatcher.html" target="_self">NotMatcher</a>, <a href="../../../org/specs/matcher/BeLessThanOrEqualTo.html" target="_self">BeLessThanOrEqualTo</a>, <a href="../../../org/specs/matcher/BeLessThan.html" target="_self">BeLessThan</a>, <a href="../../../org/specs/matcher/BeCloseTo.html" target="_self">BeCloseTo</a>, <a href="../../../org/specs/matcher/PatternBaseMatchers.CaseMatcher.html" target="_self">PatternBaseMatchers.CaseMatcher</a>, <a href="../../../org/specs/matcher/StringBaseMatchers.FindMatcher.html" target="_self">StringBaseMatchers.FindMatcher</a>, <a href="../../../org/specs/matcher/StringBaseMatchers.FindMatcherWithGroups.html" target="_self">StringBaseMatchers.FindMatcherWithGroups</a>, <a href="../../../org/specs/matcher/StringEmptyMatcher.html" target="_self">StringEmptyMatcher</a>, <a href="../../../org/specs/matcher/BeEqualToIgnoringCase.html" target="_self">BeEqualToIgnoringCase</a>, <a href="../../../org/specs/matcher/EqualIgnoringSpaceMatcher.html" target="_self">EqualIgnoringSpaceMatcher</a>, <a href="../../../org/specs/matcher/EqualIgnoringSpaceMatcherOrdered.html" target="_self">EqualIgnoringSpaceMatcherOrdered</a>, <a href="../../../org/specs/matcher/XmlMatcher.html" target="_self">XmlMatcher</a>, <a href="../../../org/specs/mock/CalledMatchers.CalledMatcher.html" target="_self">CalledMatchers.CalledMatcher</a>, <a href="../../../org/specs/mock/CalledInOrderMatchers.CalledInOrderMatcher.html" target="_self">CalledInOrderMatchers.CalledInOrderMatcher</a>, <a href="../../../org/specs/mock/InteractionMatchers.InteractionMatcher.html" target="_self">InteractionMatchers.InteractionMatcher</a></dd>
+      </dl><hr></hr>
+      
+
+<table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/matcher/AbstractMatcher.html" target="_self">AbstractMatcher</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/matcher/AbstractMatcher.html#desc" target="_self">desc</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/Matcher.html#%5E%5E%28%28A%29%3D%3ET%29" target="_self">^^</a></em>
+        [<em>A</em>](<em>f</em> : (<a href="../../../org/specs/matcher/Matcher.html#%5E%5E%28%28A%29%3D%3ET%29#A" target="_self">A</a>) =&gt; <a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#%5E%5E%28%28A%29%3D%3ET%29#A" target="_self">A</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/Matcher.html#and%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29" target="_self">and</a></em>
+        [<em>U</em> &lt;: <a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>](<em>m</em> : =&gt; <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#and%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29#U" target="_self">U</a>]) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#and%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29#U" target="_self">U</a>]
+        
+        <div>The <code>and</code> operator allow to combine to matchers through a logical and.
+    <code>m1 and m2</code> can successfully match a value <code>a</code> only if m1 succeeds 
+    and m2 succeeds also</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/Matcher.html#composeWithFunction%28%28A%29%3D%3ET%29" target="_self">composeWithFunction</a></em>
+        [<em>A</em>](<em>f</em> : (<a href="../../../org/specs/matcher/Matcher.html#composeWithFunction%28%28A%29%3D%3ET%29#A" target="_self">A</a>) =&gt; <a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#composeWithFunction%28%28A%29%3D%3ET%29#A" target="_self">A</a>]
+        
+        <div>The <code>^^</code> operator returns a matcher which will apply a function before doing the match</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/Matcher.html#lazily" target="_self">lazily</a></em>
+         : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[() =&gt; <a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>]
+        
+        <div>The <code>lazily</code> operator returns a matcher which will match a function returning the expected value</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/Matcher.html#not" target="_self">not</a></em>
+         : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>]
+        
+        <div>The <code>not</code> operator allow to combine to matchers through a logical not.
+    <code>m1.not</code> returns a matcher failing if m1 succeeds, and succeeding if m1 fails</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/Matcher.html#or%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29" target="_self">or</a></em>
+        [<em>U</em> &lt;: <a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>](<em>m</em> : =&gt; <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#or%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29#U" target="_self">U</a>]) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#or%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29#U" target="_self">U</a>]
+        
+        <div>The <code>or</code> operator allow to combine to matchers through a logical or.
+    <code>m1 or m2</code> can successfully match a value <code>a</code> if m1 succeeds 
+    or m2 succeeds. <code>m2</code> is not evaluated if m1 succeeds</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/Matcher.html#orSkip" target="_self">orSkip</a></em>
+         : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>]
+        
+        <div>Alias for orSkipExample</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/Matcher.html#orSkipExample" target="_self">orSkipExample</a></em>
+         : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>]
+        
+        <div>The <code>orSkipExample</code> operator throws a SkippedException if the matcher fails</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/Matcher.html#unless%28%3D%3EBoolean%29" target="_self">unless</a></em>
+        (<em>condition</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>]
+        
+        <div>The <code>unless</code> operator returns a matcher which will be ok only if a condition is false</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/Matcher.html#when%28%3D%3EBoolean%29" target="_self">when</a></em>
+        (<em>condition</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>]
+        
+        <div>The <code>when</code> operator returns a matcher which will be ok only if a condition is true</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/Matcher.html#xor%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29" target="_self">xor</a></em>
+        [<em>U</em> &lt;: <a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>](<em>m</em> : =&gt; <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#xor%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29#U" target="_self">U</a>]) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#xor%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29#U" target="_self">U</a>]
+        
+        <div>The <code>xor</code> operator allow to combine to matchers through a logical xor.
+    <code>m1 xor m2</code> can successfully match a value <code>a</code> if m1 succeeds 
+    and m2 fails, or if m1 fails and m2 succeeds</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/matcher/MatcherResult.html" target="_self">MatcherResult</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/matcher/MatcherResult.html#toMatcherResult%28%28Boolean%2CString%2CString%29%29" target="_self">toMatcherResult</a>, <a href="../../../org/specs/matcher/MatcherResult.html#toTuple%28MatcherResult.this.MatcherResult%29" target="_self">toTuple</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/matcher/AbstractMatcher.html" target="_self">AbstractMatcher</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/matcher/AbstractMatcher.html#apply%28%3D%3ET%29" target="_self">apply</a> (abstract), <a href="../../../org/specs/matcher/AbstractMatcher.html#description" target="_self">description</a>, <a href="../../../org/specs/matcher/AbstractMatcher.html#setDescription%28Option%5BString%5D%29" target="_self">setDescription</a>, <a href="../../../org/specs/matcher/AbstractMatcher.html#d%28Any%29" target="_self">d</a>, <a href="../../../org/specs/matcher/AbstractMatcher.html#dUnquoted%28Any%29" target="_self">dUnquoted</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="and%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>and</em>[<em>U</em> &lt;: <a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>](<em>m</em> : =&gt; <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#and%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29#U" target="_self">U</a>]) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#and%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29#U" target="_self">U</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>The <code>and</code> operator allow to combine to matchers through a logical and.
+    <code>m1 and m2</code> can successfully match a value <code>a</code> only if m1 succeeds 
+    and m2 succeeds also</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="or%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>or</em>[<em>U</em> &lt;: <a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>](<em>m</em> : =&gt; <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#or%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29#U" target="_self">U</a>]) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#or%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29#U" target="_self">U</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>The <code>or</code> operator allow to combine to matchers through a logical or.
+    <code>m1 or m2</code> can successfully match a value <code>a</code> if m1 succeeds 
+    or m2 succeeds. <code>m2</code> is not evaluated if m1 succeeds</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="xor%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>xor</em>[<em>U</em> &lt;: <a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>](<em>m</em> : =&gt; <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#xor%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29#U" target="_self">U</a>]) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#xor%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29#U" target="_self">U</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>The <code>xor</code> operator allow to combine to matchers through a logical xor.
+    <code>m1 xor m2</code> can successfully match a value <code>a</code> if m1 succeeds 
+    and m2 fails, or if m1 fails and m2 succeeds</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="not"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>not</em> : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>The <code>not</code> operator allow to combine to matchers through a logical not.
+    <code>m1.not</code> returns a matcher failing if m1 succeeds, and succeeding if m1 fails</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="when%28%3D%3EBoolean%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>when</em>(<em>condition</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>The <code>when</code> operator returns a matcher which will be ok only if a condition is true</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="unless%28%3D%3EBoolean%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>unless</em>(<em>condition</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>The <code>unless</code> operator returns a matcher which will be ok only if a condition is false</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="lazily"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>lazily</em> : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[() =&gt; <a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>The <code>lazily</code> operator returns a matcher which will match a function returning the expected value</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="composeWithFunction%28%28A%29%3D%3ET%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>composeWithFunction</em>[<em>A</em>](<em>f</em> : (<a href="../../../org/specs/matcher/Matcher.html#composeWithFunction%28%28A%29%3D%3ET%29#A" target="_self">A</a>) =&gt; <a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#composeWithFunction%28%28A%29%3D%3ET%29#A" target="_self">A</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>The <code>^^</code> operator returns a matcher which will apply a function before doing the match</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="%5E%5E%28%28A%29%3D%3ET%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>^^</em>[<em>A</em>](<em>f</em> : (<a href="../../../org/specs/matcher/Matcher.html#%5E%5E%28%28A%29%3D%3ET%29#A" target="_self">A</a>) =&gt; <a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>) : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#%5E%5E%28%28A%29%3D%3ET%29#A" target="_self">A</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="orSkipExample"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>orSkipExample</em> : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>The <code>orSkipExample</code> operator throws a SkippedException if the matcher fails</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="orSkip"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>orSkip</em> : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/matcher/Matcher.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Alias for orSkipExample</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2009. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

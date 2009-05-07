@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait ScalaCheckVerifications in org.specs</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.3.final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../org/specs$package.html" target="_self">org.specs</a>
+        <br></br>
+        <span class="entity">trait  ScalaCheckVerifications</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/ScalaCheckVerifications"><code>org/specs/ScalaCheckVerifications.scala</code></a>]
+      </div><hr></hr>
+      <a name="ScalaCheckVerifications"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>ScalaCheckVerifications</em>
+      </dt>
+      <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
+    </dl>
+      <dl><dd>This trait defines the "verify" operator which can be used to specify properties to check as examples.
+ Instead of writing:<pre><code>
+ "startsWith verifies (a + b).startsWith(a)" in {
+    property((a: String, b: String) => (a + b).startsWith(a)) must pass
+ }
+ it is possible to write directly:
+   
+ "startsWith" verifies ((a: String, b: String) => (a + b).startsWith(a))
+ 
+ </code>
+ </pre>
+ 
+ This will create an example named "startsWith" and check the corresponding property.
+ 
+ ScalaCheck parameters can be used with the "display" and set methods. For example:<pre><code>
+ 
+ // will display the results and stop testing when 150 are passing.
+ "startsWith" verifies ((a: String, b: String) => (a + b).startsWith(a)).display(minTestsOk->150) 
+ </code>
+ </pre></dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../org/specs/ScalaCheck.html" target="_self">ScalaCheck</a></dd>
+      </dl><hr></hr>
+      
+
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/ScalaCheckVerifications.html#anyToAnyWithParameters%28T%29" target="_self">anyToAnyWithParameters</a></em>
+        [<em>T</em>](<em>f</em> : <a href="../../org/specs/ScalaCheckVerifications.html#anyToAnyWithParameters%28T%29#T" target="_self">T</a>) : <a href="../../org/specs/ScalaCheckVerifications.AnyWithParameters.html" target="_self">AnyWithParameters</a>[<a href="../../org/specs/ScalaCheckVerifications.html#anyToAnyWithParameters%28T%29#T" target="_self">T</a>]
+        
+        <div>Transforms a function to an object supporting ScalaCheck parameters.
+   Any object can use this implicit definition. A stricter definition would
+   declare one implicit conversion per function arity from 1 to 6</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/ScalaCheckVerifications.html#toVerifies%28String%29" target="_self">toVerifies</a></em>
+        (<em>e</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../org/specs/ScalaCheckVerifications.VerifiableExpectation.html" target="_self">VerifiableExpectation</a>
+        
+        <div>This implicit uses a string describing a function to check with ScalaCheck with the 
+   "verifies" function.</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Class Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/ScalaCheckVerifications.AnyWithParameters.html" target="_self">AnyWithParameters</a></em>
+        [<em>T</em>](<code>val </code><em>function</em> : <a href="../../org/specs/ScalaCheckVerifications.AnyWithParameters.html#T" target="_self">T</a>)<code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>Case class supporting the display and set functions to set-up ScalaCheck parameters
+   and pass them to the verifies functions below.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/ScalaCheckVerifications.VerifiableExpectation.html" target="_self">VerifiableExpectation</a></em>
+        (<code>val </code><em>e</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>Class supporting the verification of a function with ScalaCheck, up to 6 parameters.</div>
+      </td>
+    </tr>
+      </table>
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="anyToAnyWithParameters%28T%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>anyToAnyWithParameters</em>[<em>T</em>](<em>f</em> : <a href="../../org/specs/ScalaCheckVerifications.html#anyToAnyWithParameters%28T%29#T" target="_self">T</a>) : <a href="../../org/specs/ScalaCheckVerifications.AnyWithParameters.html" target="_self">AnyWithParameters</a>[<a href="../../org/specs/ScalaCheckVerifications.html#anyToAnyWithParameters%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Transforms a function to an object supporting ScalaCheck parameters.
+   Any object can use this implicit definition. A stricter definition would
+   declare one implicit conversion per function arity from 1 to 6</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="toVerifies%28String%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>toVerifies</em>(<em>e</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../org/specs/ScalaCheckVerifications.VerifiableExpectation.html" target="_self">VerifiableExpectation</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>This implicit uses a string describing a function to check with ScalaCheck with the 
+   "verifies" function.</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2009. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

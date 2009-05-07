@@ -1,0 +1,1545 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait JMocker in org.specs.mock</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.3.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/mock$package.html" target="_self">org.specs.mock</a>
+        <br></br>
+        <span class="entity">trait  JMocker</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/mock/JMocker"><code>org/specs/mock/JMocker.scala</code></a>]
+      </div><hr></hr>
+      <a name="JMocker"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>JMocker</em>
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/mock/JMockerExampleLifeCycle.html" target="_self">JMockerExampleLifeCycle</a><code> with </code><a href="../../../org/specs/mock/HamcrestMatchers.html" target="_self">HamcrestMatchers</a><code> with </code><a href="../../../org/specs/mock/JMockActions.html" target="_self">JMockActions</a><code> with </code><a href="../../../org/specs/specification/ExpectationsListener.html" target="_self">ExpectationsListener</a></dd>
+    </dl>
+      <dl><dd>The JMocker trait is used to give access to the mocking functionalities of the JMock library</dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/mock/JMocker$object.html" target="_self">JMocker</a></dd>
+      </dl><hr></hr>
+      
+
+<table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/mock/JMockerContext.html" target="_self">JMockerContext</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/mock/JMockerContext.html#context" target="_self">context</a>, <a href="../../../org/specs/mock/JMockerContext.html#expectations" target="_self">expectations</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/specification/ExampleLifeCycle.html" target="_self">ExampleLifeCycle</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExampleLifeCycle.html#sequential" target="_self">sequential</a>, <a href="../../../org/specs/specification/ExampleLifeCycle.html#example" target="_self">example</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#RangeToCallConstraint%28Range%29" target="_self">RangeToCallConstraint</a></em>
+        (<em>r</em> : <a href="" target="contentFrame" class="scala/Range">scala.Range</a>) : <a href="../../../org/specs/mock/JMocker.RangeCallConstraint.html" target="_self">RangeCallConstraint</a>
+        
+        <div>Adds call constraint method to a range, to express the between constraint</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#a%28scala.reflect.Manifest%5BT%5D%29" target="_self">a</a></em>
+        [<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#a%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#a%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+        
+        <div>shortcut for expectations.`with`(new IsInstanceOf[T])</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#a" target="_self">a</a></em>
+        [<em>T</em>] : <a href="../../../org/specs/mock/JMocker.html#a#T" target="_self">T</a>
+        
+        <div>always match the parameter</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#aNonNull%28scala.reflect.Manifest%5BT%5D%29" target="_self">aNonNull</a></em>
+        [<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#aNonNull%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#aNonNull%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+        
+        <div>shortcut for expectations.`with`(new IsNot(IsNull[T]))</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#aNull%28scala.reflect.Manifest%5BT%5D%29" target="_self">aNull</a></em>
+        [<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#aNull%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#aNull%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+        
+        <div>shortcut for expectations.`with`(new IsNull[T])</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#after%28%3D%3EAny%29" target="_self">after</a></em>
+        (<em>v</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="../../../org/specs/mock/JMocker.InSequenceThen.html" target="_self">InSequenceThen</a>
+        
+        <div>this class allows an expectation to declare that another expectation should follow</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#afterCall%28Any%29" target="_self">afterCall</a></em>
+        (<em>v</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="../../../org/specs/mock/JMocker.StateConstraint.html" target="_self">StateConstraint</a>
+        
+        <div>allows any block of expectations to be followed by state actions and expectations</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#allowing%28T%29" target="_self">allowing</a></em>
+        [<em>T</em>](<em>mockObject</em> : <a href="../../../org/specs/mock/JMocker.html#allowing%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/JMocker.html#allowing%28T%29#T" target="_self">T</a>
+        
+        <div>allowing any calls to the mock</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#allowing%28org.hamcrest.Matcher%5BT%5D%29" target="_self">allowing</a></em>
+        [<em>T</em>](<em>mockObjectMatcher</em> : <a href="" target="contentFrame" class="org/hamcrest/Matcher">org.hamcrest.Matcher</a>[<a href="../../../org/specs/mock/JMocker.html#allowing%28org.hamcrest.Matcher%5BT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="org/jmock/syntax/MethodClause">org.jmock.syntax.MethodClause</a>
+        
+        <div>allowing any calls to mocks</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#allowingMatch%28T%2CString%29" target="_self">allowingMatch</a></em>
+        [<em>T</em>](<em>mock</em> : <a href="../../../org/specs/mock/JMocker.html#allowingMatch%28T%2CString%29#T" target="_self">T</a>, <em>methodName</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="org/jmock/syntax/ParametersClause">org.jmock.syntax.ParametersClause</a>
+        
+        <div>allowing any calls to a mock with method names like the passed parameter, returning default values</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#allowingMatch%28String%29" target="_self">allowingMatch</a></em>
+        (<em>methodName</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="org/jmock/syntax/ParametersClause">org.jmock.syntax.ParametersClause</a>
+        
+        <div>allowing any calls to any mock with method names like the passed parameter, returning default values</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#an%28scala.reflect.Manifest%5BT%5D%29" target="_self">an</a></em>
+        [<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#an%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#an%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+        
+        <div>shortcut for expectations.`with`(new IsInstanceOf[T])</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#an" target="_self">an</a></em>
+        [<em>T</em>] : <a href="../../../org/specs/mock/JMocker.html#an#T" target="_self">T</a>
+        
+        <div>always match the parameter</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#any%28scala.reflect.Manifest%5BT%5D%29" target="_self">any</a></em>
+        [<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#any%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#any%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+        
+        <div>shortcut for expectations.`with`(new IsAnything[T])</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#anyBoolean" target="_self">anyBoolean</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div>shortcut for expectations.`with`(new IsAnything[Boolean])</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#anyByte" target="_self">anyByte</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Byte.html" target="_self">Byte</a>
+        
+        <div>shortcut for expectations.`with`(new IsAnything[Byte])</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#anyChar" target="_self">anyChar</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Char.html" target="_self">Char</a>
+        
+        <div>shortcut for expectations.`with`(new IsAnything[Char])</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#anyDouble" target="_self">anyDouble</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
+        
+        <div>shortcut for expectations.`with`(new IsAnything[Double])</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#anyFloat" target="_self">anyFloat</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Float.html" target="_self">Float</a>
+        
+        <div>shortcut for expectations.`with`(new IsAnything[Float])</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#anyInt" target="_self">anyInt</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+        
+        <div>shortcut for expectations.`with`(new IsAnything[Int])</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#anyLong" target="_self">anyLong</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Long.html" target="_self">Long</a>
+        
+        <div>shortcut for expectations.`with`(new IsAnything[Long])</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#anyShort" target="_self">anyShort</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Short.html" target="_self">Short</a>
+        
+        <div>shortcut for expectations.`with`(new IsAnything[Short])</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#anyString" target="_self">anyString</a></em>
+         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div>shortcut for expectations.`with`(new IsAnything[String])</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#as%28%28T%29%3D%3EAny*%29" target="_self">as</a></em>
+        [<em>T</em>](<em>expects</em> : (<a href="../../../org/specs/mock/JMocker.html#as%28%28T%29%3D%3EAny*%29#T" target="_self">T</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>*)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#as%28%28T%29%3D%3EAny*%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[(<a href="../../../org/specs/mock/JMocker.html#as%28%28T%29%3D%3EAny*%29#T" target="_self">T</a>, (<a href="../../../org/specs/mock/JMocker.html#as%28%28T%29%3D%3EAny*%29#T" target="_self">T</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)]
+        
+        <div>mocks a class several times and add expectations for each mock. Usage <code>willReturn(as[MyInterface]),
+     {m1: MyInterface => one(m1).method },
+     {m2: MyInterface => one(m2).method },
+   )<code>
+   However, it is shorter to use <code>willReturnIterable:
+   one(workspace).projects willReturnIterable(as[Project], 
+           {p: Project => one(p).name willReturn "p1" },
+           {p: Project => one(p).name willReturn "p2" })<code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#as%28%28T%29%3D%3EAny%29" target="_self">as</a></em>
+        [<em>T</em>](<em>expects</em> : (<a href="../../../org/specs/mock/JMocker.html#as%28%28T%29%3D%3EAny%29#T" target="_self">T</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#as%28%28T%29%3D%3EAny%29#T" target="_self">T</a>]) : (<a href="../../../org/specs/mock/JMocker.html#as%28%28T%29%3D%3EAny%29#T" target="_self">T</a>, (<a href="../../../org/specs/mock/JMocker.html#as%28%28T%29%3D%3EAny%29#T" target="_self">T</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)
+        
+        <div>mocks a class and add expectations. Usage <code>willReturn(as[MyInterface]{m: MyInterface => one(m).method })<code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#as%28String%29" target="_self">as</a></em>
+        [<em>T</em>](<em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)(<em>expects</em> : (<a href="../../../org/specs/mock/JMocker.html#as%28String%29#T" target="_self">T</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#as%28String%29#T" target="_self">T</a>]) : (<a href="../../../org/specs/mock/JMocker.html#as%28String%29#T" target="_self">T</a>, (<a href="../../../org/specs/mock/JMocker.html#as%28String%29#T" target="_self">T</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)
+        
+        <div>mocks a class and add expectations, specifying the mock with a name</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#atLeast%28Int%29" target="_self">atLeast</a></em>
+        (<em>count</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="" target="contentFrame" class="org/jmock/syntax/ReceiverClause">org.jmock.syntax.ReceiverClause</a>
+        
+        <div>expecting atLeast count calls to the mock</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#atMost%28Int%29" target="_self">atMost</a></em>
+        (<em>count</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="" target="contentFrame" class="org/jmock/syntax/ReceiverClause">org.jmock.syntax.ReceiverClause</a>
+        
+        <div>expecting at Most calls to the mock</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#between%28Int%2CInt%29" target="_self">between</a></em>
+        (<em>minCount</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>, <em>maxCount</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="" target="contentFrame" class="org/jmock/syntax/ReceiverClause">org.jmock.syntax.ReceiverClause</a>
+        
+        <div>expecting between minCount and maxCount (inclusive) calls to the mock</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#capturingParam" target="_self">capturingParam</a></em>
+        [<em>T</em>] : <a href="../../../org/specs/mock/JMocker.CapturingParam.html" target="_self">CapturingParam</a>[<a href="../../../org/specs/mock/JMocker.html#capturingParam#T" target="_self">T</a>]
+        
+        <div>factory method to create a new capturing parameter</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#classToMock%28Class%5BT%5D%29" target="_self">classToMock</a></em>
+        [<em>T</em>](<em>c</em> : <a href="" target="contentFrame" class="java/lang/Class">java.lang.Class</a>[<a href="../../../org/specs/mock/JMocker.html#classToMock%28Class%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.ClassToMock.html" target="_self">ClassToMock</a>[<a href="../../../org/specs/mock/JMocker.html#classToMock%28Class%5BT%5D%29#T" target="_self">T</a>]
+        
+        <div>Extends Class objects with the one-liner <code>expects</code>
+   Usage:<code>  
+     classOf[List[Int]].expect { one(_).size } { l =>
+       l.size
+     }
+  </code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#equal%28T%29" target="_self">equal</a></em>
+        [<em>T</em>](<em>value</em> : <a href="../../../org/specs/mock/JMocker.html#equal%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/JMocker.html#equal%28T%29#T" target="_self">T</a>
+        
+        <div>shortcut for expectations.`with`(new IsEqual[T](value))</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#exactly%28Int%29" target="_self">exactly</a></em>
+        (<em>count</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="" target="contentFrame" class="org/jmock/syntax/ReceiverClause">org.jmock.syntax.ReceiverClause</a>
+        
+        <div>expecting exactly count calls to the mock</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#expect%28%3D%3EAny%29" target="_self">expect</a></em>
+        (<em>block</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        
+        <div>the code block being evaluated should contain some expectations being added to the expectations variable
+   Then the expectations are "freezed" by calling the checking method on context and the actual system behaviour can
+   be exercised</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#expect%28%28T%29%3D%3EAny%29" target="_self">expect</a></em>
+        [<em>T</em>](<em>f</em> : (<a href="../../../org/specs/mock/JMocker.html#expect%28%28T%29%3D%3EAny%29#T" target="_self">T</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#expect%28%28T%29%3D%3EAny%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.ExpectBlock.html" target="_self">ExpectBlock</a>[<a href="../../../org/specs/mock/JMocker.html#expect%28%28T%29%3D%3EAny%29#T" target="_self">T</a>]
+        
+        <div>One liner function for expectations.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#ignoring%28T%29" target="_self">ignoring</a></em>
+        [<em>T</em>](<em>mockObject</em> : <a href="../../../org/specs/mock/JMocker.html#ignoring%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/JMocker.html#ignoring%28T%29#T" target="_self">T</a>
+        
+        <div>ignoring any calls to the mock, returning default values</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#ignoring%28org.hamcrest.Matcher%5BT%5D%29" target="_self">ignoring</a></em>
+        [<em>T</em>](<em>mockObjectMatcher</em> : <a href="" target="contentFrame" class="org/hamcrest/Matcher">org.hamcrest.Matcher</a>[<a href="../../../org/specs/mock/JMocker.html#ignoring%28org.hamcrest.Matcher%5BT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="org/jmock/syntax/MethodClause">org.jmock.syntax.MethodClause</a>
+        
+        <div>ignoring any calls to the mock, returning default values</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#ignoringMatch%28String%29" target="_self">ignoringMatch</a></em>
+        (<em>methodName</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="org/jmock/syntax/ParametersClause">org.jmock.syntax.ParametersClause</a>
+        
+        <div>ignoring any calls to the mock with method names like the passed parameter, returning default values</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#ignoringMatch%28T%2CString%29" target="_self">ignoringMatch</a></em>
+        [<em>T</em>](<em>mock</em> : <a href="../../../org/specs/mock/JMocker.html#ignoringMatch%28T%2CString%29#T" target="_self">T</a>, <em>methodName</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="org/jmock/syntax/ParametersClause">org.jmock.syntax.ParametersClause</a>
+        
+        <div>ignoring any calls to a mock with method names like the passed parameter, returning default values</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#inSequence%28org.jmock.Sequence%29" target="_self">inSequence</a></em>
+        (<em>sequence</em> : <a href="" target="contentFrame" class="org/jmock/Sequence">org.jmock.Sequence</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>adds a constraint to the expectations to declare that an expected call must happen in sequence</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#intToCallConstraint%28Int%29" target="_self">intToCallConstraint</a></em>
+        (<em>i</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="../../../org/specs/mock/JMocker.IntCallConstraint.html" target="_self">IntCallConstraint</a>
+        
+        <div>Adds call constraint method to integers to express the exactly, atLeast, atMost</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#mock%28scala.reflect.Manifest%5BT%5D%29" target="_self">mock</a></em>
+        [<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#mock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#mock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+        
+        <div>the mock method is used to create a mock object
+   Usage:<pre>val mocked = mock[InterfaceToMock]</pre><br/>
+   Classes can be mocked too, but the ClassImposterizer trait has to be added to the extensions</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#mockAs%28String%29" target="_self">mockAs</a></em>
+        [<em>T</em>](<em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#mockAs%28String%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#mockAs%28String%29#T" target="_self">T</a>
+        
+        <div>mocks a class and give the resulting mock a name. jMock expects mocks of the same class to have different names</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#never%28T%29" target="_self">never</a></em>
+        [<em>T</em>](<em>mockObject</em> : <a href="../../../org/specs/mock/JMocker.html#never%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/JMocker.html#never%28T%29#T" target="_self">T</a>
+        
+        <div>forbidding any calls to the mock</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#one%28T%29" target="_self">one</a></em>
+        [<em>T</em>](<em>m</em> : <a href="../../../org/specs/mock/JMocker.html#one%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/JMocker.html#one%28T%29#T" target="_self">T</a>
+        
+        <div>expecting exactly one call to the mock</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#same%28T%29" target="_self">same</a></em>
+        [<em>T</em>](<em>value</em> : <a href="../../../org/specs/mock/JMocker.html#same%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/JMocker.html#same%28T%29#T" target="_self">T</a>
+        
+        <div>shortcut for expectations.`with`(new IsSame[T](value))</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#state%28String%29" target="_self">state</a></em>
+        (<em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="org/jmock/States">org.jmock.States</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#then%28org.jmock.internal.State%29" target="_self">then</a></em>
+        (<em>state</em> : <a href="" target="contentFrame" class="org/jmock/internal/State">org.jmock.internal.State</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>specifies that after a call, a State object will be in a specific state</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#toAction%28T%29" target="_self">toAction</a></em>
+        [<em>T</em>](<em>v</em> : <a href="../../../org/specs/mock/JMocker.html#toAction%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/JMocker.JMockAction.html" target="_self">JMockAction</a>[<a href="../../../org/specs/mock/JMocker.html#toAction%28T%29#T" target="_self">T</a>]
+        
+        <div>allow the return value of the method to be more precisely specified with a JMock action, like a returnValue action</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#when%28org.jmock.internal.StatePredicate%29" target="_self">when</a></em>
+        (<em>predicate</em> : <a href="" target="contentFrame" class="org/jmock/internal/StatePredicate">org.jmock.internal.StatePredicate</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>specifies that a call can only occur following the specific condition on a state</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#will%28org.specs.matcher.Matcher%5BT%5D%29" target="_self">will</a></em>
+        [<em>T</em>](<em>m</em> : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/mock/JMocker.html#will%28org.specs.matcher.Matcher%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#will%28org.specs.matcher.Matcher%5BT%5D%29#T" target="_self">T</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#will%28org.jmock.api.Action%29" target="_self">will</a></em>
+        (<em>action</em> : <a href="" target="contentFrame" class="org/jmock/api/Action">org.jmock.api.Action</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>set up a jMock action to be executed</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#will%28org.hamcrest.Matcher%5BT%5D%29" target="_self">will</a></em>
+        [<em>T</em>](<em>m</em> : <a href="" target="contentFrame" class="org/hamcrest/Matcher">org.hamcrest.Matcher</a>[<a href="../../../org/specs/mock/JMocker.html#will%28org.hamcrest.Matcher%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#will%28org.hamcrest.Matcher%5BT%5D%29#T" target="_self">T</a>
+        
+        <div>this method is used to avoid the use of the reserved Scala keyword 'with'. This is also consistent with the way to specify returned values</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.html#with%28org.hamcrest.Matcher%5BT%5D%29" target="_self">with</a></em>
+        [<em>T</em>](<em>matcher</em> : <a href="" target="contentFrame" class="org/hamcrest/Matcher">org.hamcrest.Matcher</a>[<a href="../../../org/specs/mock/JMocker.html#with%28org.hamcrest.Matcher%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#with%28org.hamcrest.Matcher%5BT%5D%29#T" target="_self">T</a>
+        
+        <div>constraining the latest call expectation with a Hamcrest matcher</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/ExpectationsListener.html" target="_self">ExpectationsListener</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExpectationsListener.html#addExpectation" target="_self">addExpectation</a> (abstract), <a href="../../../org/specs/specification/ExpectationsListener.html#anyToExpectationCounter%28%3D%3ET%29" target="_self">anyToExpectationCounter</a>, <a href="../../../org/specs/specification/ExpectationsListener.html#isExpectation%28%3D%3ET%29" target="_self">isExpectation</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/mock/JMockActions.html" target="_self">JMockActions</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/mock/JMockActions.html#returnValue%28T%29" target="_self">returnValue</a>, <a href="../../../org/specs/mock/JMockActions.html#throwEx%28T%29" target="_self">throwEx</a>, <a href="../../../org/specs/mock/JMockActions.html#doAll%28org.jmock.api.Action*%29" target="_self">doAll</a>, <a href="../../../org/specs/mock/JMockActions.html#onConsecutiveCalls%28org.jmock.api.Action*%29" target="_self">onConsecutiveCalls</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/mock/HamcrestMatchers.html" target="_self">HamcrestMatchers</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/mock/HamcrestMatchers.html#anything" target="_self">anything</a>, <a href="../../../org/specs/mock/HamcrestMatchers.html#withName%28String%29" target="_self">withName</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/mock/JMockerExampleLifeCycle.html" target="_self">JMockerExampleLifeCycle</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/mock/JMockerExampleLifeCycle.html#beforeExample%28org.specs.specification.Example%29" target="_self">beforeExample</a>, <a href="../../../org/specs/mock/JMockerExampleLifeCycle.html#executeTest%28org.specs.specification.Example%2C%3D%3EAny%29" target="_self">executeTest</a>, <a href="../../../org/specs/mock/JMockerExampleLifeCycle.html#afterTest%28org.specs.specification.Example%29" target="_self">afterTest</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/mock/JMockerContext.html" target="_self">JMockerContext</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/mock/JMockerContext.html#restart" target="_self">restart</a>, <a href="../../../org/specs/mock/JMockerContext.html#checkContext" target="_self">checkContext</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/mock/Imposterizer.html" target="_self">Imposterizer</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/mock/Imposterizer.html#createMockery" target="_self">createMockery</a>, <a href="../../../org/specs/mock/Imposterizer.html#newMockery" target="_self">newMockery</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/ExampleLifeCycle.html" target="_self">ExampleLifeCycle</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExampleLifeCycle.html#isSequential" target="_self">isSequential</a>, <a href="../../../org/specs/specification/ExampleLifeCycle.html#setSequential%28%29" target="_self">setSequential</a>, <a href="../../../org/specs/specification/ExampleLifeCycle.html#until" target="_self">until</a>, <a href="../../../org/specs/specification/ExampleLifeCycle.html#beforeTest%28org.specs.specification.Example%29" target="_self">beforeTest</a>, <a href="../../../org/specs/specification/ExampleLifeCycle.html#afterExample%28org.specs.specification.Example%29" target="_self">afterExample</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Class Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.CapturingParam.html" target="_self">CapturingParam</a></em>
+        [<em>T</em>]<code> extends </code><a href="" target="contentFrame" class="org/hamcrest/TypeSafeMatcher">org.hamcrest.TypeSafeMatcher</a>[<a href="../../../org/specs/mock/JMocker.CapturingParam.html#T" target="_self">T</a>]<code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Capturing Parameters allow to capture the value of a parameter passed to a mock method.<p/>
+   The most frequent usage for this is to be able to return the parameter as the return value of the method.<p/>
+   Usage:<pre>
+   val s = capturingParam[String]
+   classOf[ToMock].expects(one(_).method(s.capture) willReturn s)
+   </pre>
+   It is also possible to use the <code>map</code> function to return a value of a different type:<pre> 
+   willReturn s.map(_.size)
+   </pre>
+   And the capturing parameter can still be checked for its validity using <code>must(specs matcher)</code>:<pre>
+   classOf[ToMock].expects(one(_).method(s.must(beMatching("h.*")).capture) willReturn s)
+   </pre></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.ClassToMock.html" target="_self">ClassToMock</a></em>
+        [<em>T</em>](<code>val </code><em>c</em> : <a href="" target="contentFrame" class="java/lang/Class">java.lang.Class</a>[<a href="../../../org/specs/mock/JMocker.ClassToMock.html#T" target="_self">T</a>])<code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>Extends Class objects with the one-liner <code>expects</code>
+   Usage:<code>  
+     classOf[List[Int]].expect { one(_).size } { l =>
+       l.size
+     }
+  </code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.ExpectBlock.html" target="_self">ExpectBlock</a></em>
+        [<em>T</em>](<code>val </code><em>mocked</em> : <a href="../../../org/specs/mock/JMocker.ExpectBlock.html#T" target="_self">T</a>, <code>val </code><em>f</em> : (<a href="../../../org/specs/mock/JMocker.ExpectBlock.html#T" target="_self">T</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)<code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.InSequenceThen.html" target="_self">InSequenceThen</a></em>
+        (<em>firstExpectation</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>this class allows an expectation to declare that another expectation should follow</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.IntCallConstraint.html" target="_self">IntCallConstraint</a></em>
+        (<em>i</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>)<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.JMockAction.html" target="_self">JMockAction</a></em>
+        [<em>T</em>](<em>v</em> : <a href="../../../org/specs/mock/JMocker.JMockAction.html#T" target="_self">T</a>)<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This class allows a block of code to be followed by some actions like returning a value or throwing an exception
+   When we wish to return a mock and define expectations at the same time:
+   <code>willReturn[MyInterface] { m1: MyInterface =>
+      one(m1).method }
+   <code>
+   It is necessary to first create the mock, set it as a returned object through a ReturnValueAction
+   then to trigger the block containing the expectations for that mock</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.RangeCallConstraint.html" target="_self">RangeCallConstraint</a></em>
+        (<em>r</em> : <a href="" target="contentFrame" class="scala/Range">scala.Range</a>)<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/JMocker.StateConstraint.html" target="_self">StateConstraint</a></em>
+        (<em>expectation</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>this class allows any block of expectations to be followed by state actions and expectations</div>
+      </td>
+    </tr>
+      </table>
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="mock%28scala.reflect.Manifest%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>mock</em>[<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#mock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#mock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>the mock method is used to create a mock object
+   Usage:<pre>val mocked = mock[InterfaceToMock]</pre><br/>
+   Classes can be mocked too, but the ClassImposterizer trait has to be added to the extensions</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>s the mocked object</dd></dl>
+    <hr></hr>
+<a name="mockAs%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>mockAs</em>[<em>T</em>](<em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#mockAs%28String%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#mockAs%28String%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>mocks a class and give the resulting mock a name. jMock expects mocks of the same class to have different names</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>s the mocked object</dd></dl>
+    <hr></hr>
+<a name="as%28%28T%29%3D%3EAny%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>as</em>[<em>T</em>](<em>expects</em> : (<a href="../../../org/specs/mock/JMocker.html#as%28%28T%29%3D%3EAny%29#T" target="_self">T</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#as%28%28T%29%3D%3EAny%29#T" target="_self">T</a>]) : (<a href="../../../org/specs/mock/JMocker.html#as%28%28T%29%3D%3EAny%29#T" target="_self">T</a>, (<a href="../../../org/specs/mock/JMocker.html#as%28%28T%29%3D%3EAny%29#T" target="_self">T</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>mocks a class and add expectations. Usage <code>willReturn(as[MyInterface]{m: MyInterface => one(m).method })<code></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>s the mocked object and the evaluation of the block of expectations</dd></dl>
+    <hr></hr>
+<a name="as%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>as</em>[<em>T</em>](<em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)(<em>expects</em> : (<a href="../../../org/specs/mock/JMocker.html#as%28String%29#T" target="_self">T</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#as%28String%29#T" target="_self">T</a>]) : (<a href="../../../org/specs/mock/JMocker.html#as%28String%29#T" target="_self">T</a>, (<a href="../../../org/specs/mock/JMocker.html#as%28String%29#T" target="_self">T</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>mocks a class and add expectations, specifying the mock with a name</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>s the mocked object and the evaluation of the block of expectations</dd></dl>
+    <hr></hr>
+<a name="as%28%28T%29%3D%3EAny*%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>as</em>[<em>T</em>](<em>expects</em> : (<a href="../../../org/specs/mock/JMocker.html#as%28%28T%29%3D%3EAny*%29#T" target="_self">T</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>*)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#as%28%28T%29%3D%3EAny*%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[(<a href="../../../org/specs/mock/JMocker.html#as%28%28T%29%3D%3EAny*%29#T" target="_self">T</a>, (<a href="../../../org/specs/mock/JMocker.html#as%28%28T%29%3D%3EAny*%29#T" target="_self">T</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>mocks a class several times and add expectations for each mock. Usage <code>willReturn(as[MyInterface]),
+     {m1: MyInterface => one(m1).method },
+     {m2: MyInterface => one(m2).method },
+   )<code>
+   However, it is shorter to use <code>willReturnIterable:
+   one(workspace).projects willReturnIterable(as[Project], 
+           {p: Project => one(p).name willReturn "p1" },
+           {p: Project => one(p).name willReturn "p2" })<code></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>s the mocked object and the evaluation of the block of expectations</dd></dl>
+    <hr></hr>
+<a name="expect%28%3D%3EAny%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>expect</em>(<em>block</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>the code block being evaluated should contain some expectations being added to the expectations variable
+   Then the expectations are "freezed" by calling the checking method on context and the actual system behaviour can
+   be exercised</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="intToCallConstraint%28Int%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>intToCallConstraint</em>(<em>i</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="../../../org/specs/mock/JMocker.IntCallConstraint.html" target="_self">IntCallConstraint</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Adds call constraint method to integers to express the exactly, atLeast, atMost</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="RangeToCallConstraint%28Range%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>RangeToCallConstraint</em>(<em>r</em> : <a href="" target="contentFrame" class="scala/Range">scala.Range</a>) : <a href="../../../org/specs/mock/JMocker.RangeCallConstraint.html" target="_self">RangeCallConstraint</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Adds call constraint method to a range, to express the between constraint</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="one%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>one</em>[<em>T</em>](<em>m</em> : <a href="../../../org/specs/mock/JMocker.html#one%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/JMocker.html#one%28T%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>expecting exactly one call to the mock</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="exactly%28Int%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>exactly</em>(<em>count</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="" target="contentFrame" class="org/jmock/syntax/ReceiverClause">org.jmock.syntax.ReceiverClause</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>expecting exactly count calls to the mock</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="atLeast%28Int%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>atLeast</em>(<em>count</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="" target="contentFrame" class="org/jmock/syntax/ReceiverClause">org.jmock.syntax.ReceiverClause</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>expecting atLeast count calls to the mock</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="between%28Int%2CInt%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>between</em>(<em>minCount</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>, <em>maxCount</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="" target="contentFrame" class="org/jmock/syntax/ReceiverClause">org.jmock.syntax.ReceiverClause</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>expecting between minCount and maxCount (inclusive) calls to the mock</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="atMost%28Int%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>atMost</em>(<em>count</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="" target="contentFrame" class="org/jmock/syntax/ReceiverClause">org.jmock.syntax.ReceiverClause</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>expecting at Most calls to the mock</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="allowing%28org.hamcrest.Matcher%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>allowing</em>[<em>T</em>](<em>mockObjectMatcher</em> : <a href="" target="contentFrame" class="org/hamcrest/Matcher">org.hamcrest.Matcher</a>[<a href="../../../org/specs/mock/JMocker.html#allowing%28org.hamcrest.Matcher%5BT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="org/jmock/syntax/MethodClause">org.jmock.syntax.MethodClause</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>allowing any calls to mocks</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="allowingMatch%28T%2CString%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>allowingMatch</em>[<em>T</em>](<em>mock</em> : <a href="../../../org/specs/mock/JMocker.html#allowingMatch%28T%2CString%29#T" target="_self">T</a>, <em>methodName</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="org/jmock/syntax/ParametersClause">org.jmock.syntax.ParametersClause</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>allowing any calls to a mock with method names like the passed parameter, returning default values</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="allowingMatch%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>allowingMatch</em>(<em>methodName</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="org/jmock/syntax/ParametersClause">org.jmock.syntax.ParametersClause</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>allowing any calls to any mock with method names like the passed parameter, returning default values</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="allowing%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>allowing</em>[<em>T</em>](<em>mockObject</em> : <a href="../../../org/specs/mock/JMocker.html#allowing%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/JMocker.html#allowing%28T%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>allowing any calls to the mock</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="ignoring%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>ignoring</em>[<em>T</em>](<em>mockObject</em> : <a href="../../../org/specs/mock/JMocker.html#ignoring%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/JMocker.html#ignoring%28T%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>ignoring any calls to the mock, returning default values</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="ignoring%28org.hamcrest.Matcher%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>ignoring</em>[<em>T</em>](<em>mockObjectMatcher</em> : <a href="" target="contentFrame" class="org/hamcrest/Matcher">org.hamcrest.Matcher</a>[<a href="../../../org/specs/mock/JMocker.html#ignoring%28org.hamcrest.Matcher%5BT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="org/jmock/syntax/MethodClause">org.jmock.syntax.MethodClause</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>ignoring any calls to the mock, returning default values</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="ignoringMatch%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>ignoringMatch</em>(<em>methodName</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="org/jmock/syntax/ParametersClause">org.jmock.syntax.ParametersClause</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>ignoring any calls to the mock with method names like the passed parameter, returning default values</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="ignoringMatch%28T%2CString%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>ignoringMatch</em>[<em>T</em>](<em>mock</em> : <a href="../../../org/specs/mock/JMocker.html#ignoringMatch%28T%2CString%29#T" target="_self">T</a>, <em>methodName</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="org/jmock/syntax/ParametersClause">org.jmock.syntax.ParametersClause</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>ignoring any calls to a mock with method names like the passed parameter, returning default values</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="never%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>never</em>[<em>T</em>](<em>mockObject</em> : <a href="../../../org/specs/mock/JMocker.html#never%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/JMocker.html#never%28T%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>forbidding any calls to the mock</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="with%28org.hamcrest.Matcher%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>with</em>[<em>T</em>](<em>matcher</em> : <a href="" target="contentFrame" class="org/hamcrest/Matcher">org.hamcrest.Matcher</a>[<a href="../../../org/specs/mock/JMocker.html#with%28org.hamcrest.Matcher%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#with%28org.hamcrest.Matcher%5BT%5D%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>constraining the latest call expectation with a Hamcrest matcher</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="anyInt"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>anyInt</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>shortcut for expectations.`with`(new IsAnything[Int])</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="anyLong"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>anyLong</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Long.html" target="_self">Long</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>shortcut for expectations.`with`(new IsAnything[Long])</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="anyShort"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>anyShort</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Short.html" target="_self">Short</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>shortcut for expectations.`with`(new IsAnything[Short])</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="anyBoolean"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>anyBoolean</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>shortcut for expectations.`with`(new IsAnything[Boolean])</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="anyFloat"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>anyFloat</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Float.html" target="_self">Float</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>shortcut for expectations.`with`(new IsAnything[Float])</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="anyDouble"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>anyDouble</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>shortcut for expectations.`with`(new IsAnything[Double])</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="anyChar"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>anyChar</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Char.html" target="_self">Char</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>shortcut for expectations.`with`(new IsAnything[Char])</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="anyByte"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>anyByte</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Byte.html" target="_self">Byte</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>shortcut for expectations.`with`(new IsAnything[Byte])</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="anyString"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>anyString</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>shortcut for expectations.`with`(new IsAnything[String])</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="any%28scala.reflect.Manifest%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>any</em>[<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#any%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#any%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>shortcut for expectations.`with`(new IsAnything[T])</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="a%28scala.reflect.Manifest%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>a</em>[<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#a%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#a%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>shortcut for expectations.`with`(new IsInstanceOf[T])</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="an%28scala.reflect.Manifest%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>an</em>[<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#an%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#an%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>shortcut for expectations.`with`(new IsInstanceOf[T])</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="a"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>a</em>[<em>T</em>] : <a href="../../../org/specs/mock/JMocker.html#a#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>always match the parameter</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="an"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>an</em>[<em>T</em>] : <a href="../../../org/specs/mock/JMocker.html#an#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>always match the parameter</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="aNull%28scala.reflect.Manifest%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>aNull</em>[<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#aNull%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#aNull%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>shortcut for expectations.`with`(new IsNull[T])</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="aNonNull%28scala.reflect.Manifest%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>aNonNull</em>[<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#aNonNull%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#aNonNull%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>shortcut for expectations.`with`(new IsNot(IsNull[T]))</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="equal%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>equal</em>[<em>T</em>](<em>value</em> : <a href="../../../org/specs/mock/JMocker.html#equal%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/JMocker.html#equal%28T%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>shortcut for expectations.`with`(new IsEqual[T](value))</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="same%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>same</em>[<em>T</em>](<em>value</em> : <a href="../../../org/specs/mock/JMocker.html#same%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/JMocker.html#same%28T%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>shortcut for expectations.`with`(new IsSame[T](value))</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="will%28org.specs.matcher.Matcher%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>will</em>[<em>T</em>](<em>m</em> : <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/mock/JMocker.html#will%28org.specs.matcher.Matcher%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#will%28org.specs.matcher.Matcher%5BT%5D%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>s a specs matcher adapted into Hamcrest matcher</dd></dl>
+    <hr></hr>
+<a name="will%28org.hamcrest.Matcher%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>will</em>[<em>T</em>](<em>m</em> : <a href="" target="contentFrame" class="org/hamcrest/Matcher">org.hamcrest.Matcher</a>[<a href="../../../org/specs/mock/JMocker.html#will%28org.hamcrest.Matcher%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.html#will%28org.hamcrest.Matcher%5BT%5D%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>this method is used to avoid the use of the reserved Scala keyword 'with'. This is also consistent with the way to specify returned values</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="toAction%28T%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>toAction</em>[<em>T</em>](<em>v</em> : <a href="../../../org/specs/mock/JMocker.html#toAction%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/JMocker.JMockAction.html" target="_self">JMockAction</a>[<a href="../../../org/specs/mock/JMocker.html#toAction%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>allow the return value of the method to be more precisely specified with a JMock action, like a returnValue action</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="capturingParam"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>capturingParam</em>[<em>T</em>] : <a href="../../../org/specs/mock/JMocker.CapturingParam.html" target="_self">CapturingParam</a>[<a href="../../../org/specs/mock/JMocker.html#capturingParam#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>factory method to create a new capturing parameter</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="will%28org.jmock.api.Action%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>will</em>(<em>action</em> : <a href="" target="contentFrame" class="org/jmock/api/Action">org.jmock.api.Action</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>set up a jMock action to be executed</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="state%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>state</em>(<em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="org/jmock/States">org.jmock.States</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>s a state with name <code>name<code>, creating a new one if necessary</dd></dl>
+    <hr></hr>
+<a name="when%28org.jmock.internal.StatePredicate%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>when</em>(<em>predicate</em> : <a href="" target="contentFrame" class="org/jmock/internal/StatePredicate">org.jmock.internal.StatePredicate</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>specifies that a call can only occur following the specific condition on a state</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="then%28org.jmock.internal.State%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>then</em>(<em>state</em> : <a href="" target="contentFrame" class="org/jmock/internal/State">org.jmock.internal.State</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>specifies that after a call, a State object will be in a specific state</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="afterCall%28Any%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>afterCall</em>(<em>v</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="../../../org/specs/mock/JMocker.StateConstraint.html" target="_self">StateConstraint</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>allows any block of expectations to be followed by state actions and expectations</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="inSequence%28org.jmock.Sequence%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>inSequence</em>(<em>sequence</em> : <a href="" target="contentFrame" class="org/jmock/Sequence">org.jmock.Sequence</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>adds a constraint to the expectations to declare that an expected call must happen in sequence</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="after%28%3D%3EAny%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>after</em>(<em>v</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="../../../org/specs/mock/JMocker.InSequenceThen.html" target="_self">InSequenceThen</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>this class allows an expectation to declare that another expectation should follow</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="expect%28%28T%29%3D%3EAny%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>expect</em>[<em>T</em>](<em>f</em> : (<a href="../../../org/specs/mock/JMocker.html#expect%28%28T%29%3D%3EAny%29#T" target="_self">T</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/JMocker.html#expect%28%28T%29%3D%3EAny%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.ExpectBlock.html" target="_self">ExpectBlock</a>[<a href="../../../org/specs/mock/JMocker.html#expect%28%28T%29%3D%3EAny%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>One liner function for expectations.<p>
+   Usage:<code>  
+     expect[List[Int]] { one(_).size } { l =>
+       l.size
+     }
+  </code></dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="classToMock%28Class%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>classToMock</em>[<em>T</em>](<em>c</em> : <a href="" target="contentFrame" class="java/lang/Class">java.lang.Class</a>[<a href="../../../org/specs/mock/JMocker.html#classToMock%28Class%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/JMocker.ClassToMock.html" target="_self">ClassToMock</a>[<a href="../../../org/specs/mock/JMocker.html#classToMock%28Class%5BT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Extends Class objects with the one-liner <code>expects</code>
+   Usage:<code>  
+     classOf[List[Int]].expect { one(_).size } { l =>
+       l.size
+     }
+  </code></dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2009. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

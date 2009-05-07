@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait CalledMatchers in org.specs.mock</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.3.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/mock$package.html" target="_self">org.specs.mock</a>
+        <br></br>
+        <span class="entity">trait  CalledMatchers</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/mock/CalledMatchers"><code>org/specs/mock/CalledMatchers.scala</code></a>]
+      </div><hr></hr>
+      <a name="CalledMatchers"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>CalledMatchers</em>
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/mock/CalledInOrderMatchers.html" target="_self">CalledInOrderMatchers</a></dd>
+    </dl>
+      <dl><dd>This trait provides methods to declare expectations on mock calls:<code>
+ 
+ mockedList.get(0) was called
+ mockedList.get(0) wasnt called
+ mockedList.get(0) was notCalled
+ 
+ </code>
+ 
+ where called is a Matcher which accepts supplementary methods to change the Mockito verification method:<code>
+ 
+ mockedList.get(0) was called.once // similar to was called
+ mockedList.get(0) was called.twice
+ mockedList.get(0) was called(3.times)
+ mockedList.get(0) was called.atLeastOnce // or called.atLeast(oncee)
+ mockedList.get(0) was called.atLeastTwice
+ mockedList.get(0) was called.atLeast(3.times)
+ mockedList.get(0) was called.atMostOnce
+ mockedList.get(0) was called.atMostTwice
+ mockedList.get(0) was called.atMost(3.times)
+ mockedList.get(0) was called.exclusively // equivalent to called(0.timess)
+ 
+ </code></dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/mock/Mockito.html" target="_self">Mockito</a></dd>
+      </dl><hr></hr>
+      
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Value Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>protected abstract val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/CalledMatchers.html#mocker" target="_self">mocker</a></em>
+         : <a href="../../../org/mockito/MockitoMocker.html" target="_self">MockitoMocker</a>
+        
+        <div>delegate to Mockito.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/CalledMatchers.html#once" target="_self">once</a></em>
+         : <a href="../../../org/specs/NumberOfTimes.RangeInt.html" target="_self">RangeInt</a>
+        
+        <div>this value can be used in mock.method was called.atLeast(once).</div>
+      </td>
+    </tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/CalledMatchers.html#called%28CalledMatchers.this.RangeInt%29" target="_self">called</a></em>
+        (<em>r</em> : <a href="../../../org/specs/NumberOfTimes.RangeInt.html" target="_self">RangeInt</a>) : <a href="../../../org/specs/mock/CalledMatchers.CalledMatcher.html" target="_self">CalledMatcher</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/CalledMatchers.html#called" target="_self">called</a></em>
+         : <a href="../../../org/specs/mock/CalledMatchers.CalledMatcher.html" target="_self">CalledMatcher</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/CalledMatchers.html#calledInOrder" target="_self">calledInOrder</a></em>
+         : <a href="../../../org/specs/mock/CalledInOrderMatchers.CalledInOrderMatcher.html" target="_self">CalledInOrderMatcher</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/CalledMatchers.html#notCalled" target="_self">notCalled</a></em>
+         : <a href="../../../org/specs/mock/CalledMatchers.CalledMatcher.html" target="_self">CalledMatcher</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/CalledMatchers.html#theMethod%28%3D%3EAny%29" target="_self">theMethod</a></em>
+        (<em>c</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="../../../org/specs/mock/CalledMatchers.CalledMock.html" target="_self">CalledMock</a>
+        
+        <div>create a CalledMock object for a method call.</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/NumberOfTimes.html" target="_self">NumberOfTimes</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/NumberOfTimes.html#integerToRange%28Int%29" target="_self">integerToRange</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/ExpectableFactory.html" target="_self">ExpectableFactory</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExpectableFactory.html#theValue%28%3D%3EA%29" target="_self">theValue</a>, <a href="../../../org/specs/specification/ExpectableFactory.html#theString%28%3D%3EString%29" target="_self">theString</a>, <a href="../../../org/specs/specification/ExpectableFactory.html#theBlock%28%3D%3ENothing%29" target="_self">theBlock</a>, <a href="../../../org/specs/specification/ExpectableFactory.html#theStrings%28%3D%3EIterable%5BString%5D%29" target="_self">theStrings</a>, <a href="../../../org/specs/specification/ExpectableFactory.html#theIterable%28%3D%3EIterable%5BI%5D%29" target="_self">theIterable</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/SuccessValues.html" target="_self">SuccessValues</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/SuccessValues.html#successValueToBoolean%28org.specs.specification.SuccessValue%29" target="_self">successValueToBoolean</a>, <a href="../../../org/specs/specification/SuccessValues.html#successValueToString%28org.specs.specification.SuccessValue%29" target="_self">successValueToString</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/ExampleExpectationsListener.html" target="_self">ExampleExpectationsListener</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExampleExpectationsListener.html#forExample" target="_self">forExample</a> (abstract), <a href="../../../org/specs/specification/ExampleExpectationsListener.html#lastExample" target="_self">lastExample</a> (abstract), <a href="../../../org/specs/specification/ExampleExpectationsListener.html#addExpectation" target="_self">addExpectation</a>, <a href="../../../org/specs/specification/ExampleExpectationsListener.html#addExpectation%28Option%5Borg.specs.specification.Expectable%5BT%5D%5D%29" target="_self">addExpectation</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/ExpectationsListener.html" target="_self">ExpectationsListener</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExpectationsListener.html#anyToExpectationCounter%28%3D%3ET%29" target="_self">anyToExpectationCounter</a>, <a href="../../../org/specs/specification/ExpectationsListener.html#isExpectation%28%3D%3ET%29" target="_self">isExpectation</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Class Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/CalledMatchers.CalledMatcher.html" target="_self">CalledMatcher</a></em>
+        <code> extends </code><a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>]<code> with </code><a href="../../../org/specs/mock/HasVerificationMode.html" target="_self">HasVerificationMode</a>
+        
+        <div>Matcher accepting a call and checking if the method was called according to the verification mode: once, times(2), atLeast(once,...)</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/CalledMatchers.CalledMock.html" target="_self">CalledMock</a></em>
+        (<em>c</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>provides methods creating calls expectations.</div>
+      </td>
+    </tr>
+      </table>
+
+      
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Value Details</td></tr>
+        </table><div><a name="mocker"></a><dl>
+      <dt>
+        
+        <code>protected abstract</code>
+        <code>val</code>
+        <em>mocker</em> : <a href="../../../org/mockito/MockitoMocker.html" target="_self">MockitoMocker</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>delegate to Mockito.</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/mock/CalledInOrderMatchers.html" target="_self">CalledInOrderMatchers</a>.<a href="../../../org/specs/mock/CalledInOrderMatchers.html#mocker" target="_self">mocker</a>
+        </dd>
+      </dl><hr></hr>
+<a name="once"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>val</code>
+        <em>once</em> : <a href="../../../org/specs/NumberOfTimes.RangeInt.html" target="_self">RangeInt</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>this value can be used in mock.method was called.atLeast(once).</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="theMethod%28%3D%3EAny%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>theMethod</em>(<em>c</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="../../../org/specs/mock/CalledMatchers.CalledMock.html" target="_self">CalledMock</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>create a CalledMock object for a method call.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="called"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>called</em> : <a href="../../../org/specs/mock/CalledMatchers.CalledMatcher.html" target="_self">CalledMatcher</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>a new CalledMatcher.</dd></dl>
+    <hr></hr>
+<a name="called%28CalledMatchers.this.RangeInt%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>called</em>(<em>r</em> : <a href="../../../org/specs/NumberOfTimes.RangeInt.html" target="_self">RangeInt</a>) : <a href="../../../org/specs/mock/CalledMatchers.CalledMatcher.html" target="_self">CalledMatcher</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>a new CalledMatcher().times(range.n)</dd></dl>
+    <hr></hr>
+<a name="notCalled"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>notCalled</em> : <a href="../../../org/specs/mock/CalledMatchers.CalledMatcher.html" target="_self">CalledMatcher</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>a CalledMatcher with times(0).</dd></dl>
+    <hr></hr>
+<a name="calledInOrder"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>calledInOrder</em> : <a href="../../../org/specs/mock/CalledInOrderMatchers.CalledInOrderMatcher.html" target="_self">CalledInOrderMatcher</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>a new CalledInOrder</dd></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2009. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

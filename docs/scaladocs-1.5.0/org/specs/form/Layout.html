@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait Layout in org.specs.form</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.3.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/form$package.html" target="_self">org.specs.form</a>
+        <br></br>
+        <span class="entity">trait  Layout</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/form/Layout"><code>org/specs/form/Layout.scala</code></a>]
+      </div><hr></hr>
+      <a name="Layout"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>Layout</em>
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/util/IncludeExclude.html" target="_self">IncludeExclude</a>[<a href="../../../org/specs/form/LabeledXhtml.html" target="_self">LabeledXhtml</a>]</dd>
+    </dl>
+      <dl><dd>The Layout trait allows to put ToXhtml values on rows</dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/form/Layoutable.html" target="_self">Layoutable</a>, <a href="../../../org/specs/form/LayoutFormats.html" target="_self">LayoutFormats</a>, <a href="../../../org/specs/form/Tabs.html" target="_self">Tabs</a></dd>
+      </dl><hr></hr>
+      
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Value Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>protected var</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Layout.html#rowValues" target="_self">rowValues</a></em>
+         : <a href="" target="contentFrame" class="scala/collection/mutable/ListBuffer">scala.collection.mutable.ListBuffer</a>[<a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../../org/specs/form/LabeledXhtml.html" target="_self">LabeledXhtml</a>]]
+        
+        <div>store row values</div>
+      </td>
+    </tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>protected def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Layout.html#appendRows%28List%5BSeq%5Borg.specs.form.LabeledXhtml%5D%5D%29" target="_self">appendRows</a></em>
+        (<em>rows</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../../org/specs/form/LabeledXhtml.html" target="_self">LabeledXhtml</a>]]) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>protected def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Layout.html#appendValues%28org.specs.form.LabeledXhtml*%29" target="_self">appendValues</a></em>
+        (<em>values</em> : <a href="../../../org/specs/form/LabeledXhtml.html" target="_self">LabeledXhtml</a>*) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Layout.html#resetLayout%28%29" target="_self">resetLayout</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>remove all previously declared layout</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Layout.html#rows" target="_self">rows</a></em>
+         : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../../org/specs/form/LabeledXhtml.html" target="_self">LabeledXhtml</a>]]
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Layout.html#rowsNb" target="_self">rowsNb</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>protected def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Layout.html#toRow%28org.specs.form.LabeledXhtml*%29" target="_self">toRow</a></em>
+        (<em>values</em> : <a href="../../../org/specs/form/LabeledXhtml.html" target="_self">LabeledXhtml</a>*) : <a href="" target="contentFrame" class="scala/xml/Elem">scala.xml.Elem</a>
+        
+        <div>create a row with the "embedded" Xhtml values, filtered according to the IncludeExclude trait.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Layout.html#tr%28org.specs.form.LabeledXhtml*%29" target="_self">tr</a></em>
+        (<em>values</em> : <a href="../../../org/specs/form/LabeledXhtml.html" target="_self">LabeledXhtml</a>*) : <a href="../../../org/specs/form/Layout.html" target="_self">Layout</a>
+        
+        <div>adding values on a row</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Layout.html#trs%28List%5BSeq%5Borg.specs.form.LabeledXhtml%5D%5D%29" target="_self">trs</a></em>
+        (<em>rows</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../../org/specs/form/LabeledXhtml.html" target="_self">LabeledXhtml</a>]]) : <a href="../../../org/specs/form/Layout.html" target="_self">Layout</a>
+        
+        <div>adding several rows coming from another form</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/Layout.html#xhtml" target="_self">xhtml</a></em>
+         : <a href="" target="contentFrame" class="scala/xml/NodeSeq">scala.xml.NodeSeq</a>
+        
+        <div>concatenate all rows as Xhtml</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/util/IncludeExclude.html" target="_self">IncludeExclude</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/util/IncludeExclude.html#exclude%28T*%29" target="_self">exclude</a>, <a href="../../../org/specs/util/IncludeExclude.html#include%28T*%29" target="_self">include</a>, <a href="../../../org/specs/util/IncludeExclude.html#reset%28%29" target="_self">reset</a>, <a href="../../../org/specs/util/IncludeExclude.html#filter%28Seq%5BT%5D%29" target="_self">filter</a>, <a href="../../../org/specs/util/IncludeExclude.html#includeCheck%28List%5BT%5D%2CT%29" target="_self">includeCheck</a>, <a href="../../../org/specs/util/IncludeExclude.html#excludeCheck%28List%5BT%5D%2CT%29" target="_self">excludeCheck</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Value Details</td></tr>
+        </table><div><a name="rowValues"></a><dl>
+      <dt>
+        
+        <code>protected</code>
+        <code>var</code>
+        <em>rowValues</em> : <a href="" target="contentFrame" class="scala/collection/mutable/ListBuffer">scala.collection.mutable.ListBuffer</a>[<a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../../org/specs/form/LabeledXhtml.html" target="_self">LabeledXhtml</a>]]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>store row values</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="tr%28org.specs.form.LabeledXhtml*%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>tr</em>(<em>values</em> : <a href="../../../org/specs/form/LabeledXhtml.html" target="_self">LabeledXhtml</a>*) : <a href="../../../org/specs/form/Layout.html" target="_self">Layout</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>adding values on a row</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="appendValues%28org.specs.form.LabeledXhtml*%29"></a><dl>
+      <dt>
+        
+        <code>protected</code>
+        <code>def</code>
+        <em>appendValues</em>(<em>values</em> : <a href="../../../org/specs/form/LabeledXhtml.html" target="_self">LabeledXhtml</a>*) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="trs%28List%5BSeq%5Borg.specs.form.LabeledXhtml%5D%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>trs</em>(<em>rows</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../../org/specs/form/LabeledXhtml.html" target="_self">LabeledXhtml</a>]]) : <a href="../../../org/specs/form/Layout.html" target="_self">Layout</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>adding several rows coming from another form</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="appendRows%28List%5BSeq%5Borg.specs.form.LabeledXhtml%5D%5D%29"></a><dl>
+      <dt>
+        
+        <code>protected</code>
+        <code>def</code>
+        <em>appendRows</em>(<em>rows</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../../org/specs/form/LabeledXhtml.html" target="_self">LabeledXhtml</a>]]) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="rows"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>rows</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../../org/specs/form/LabeledXhtml.html" target="_self">LabeledXhtml</a>]]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>all rows as a List</dd></dl>
+    <hr></hr>
+<a name="rowsNb"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>rowsNb</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the number of rows</dd></dl>
+    <hr></hr>
+<a name="xhtml"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>xhtml</em> : <a href="" target="contentFrame" class="scala/xml/NodeSeq">scala.xml.NodeSeq</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>concatenate all rows as Xhtml</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="toRow%28org.specs.form.LabeledXhtml*%29"></a><dl>
+      <dt>
+        
+        <code>protected</code>
+        <code>def</code>
+        <em>toRow</em>(<em>values</em> : <a href="../../../org/specs/form/LabeledXhtml.html" target="_self">LabeledXhtml</a>*) : <a href="" target="contentFrame" class="scala/xml/Elem">scala.xml.Elem</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>create a row with the "embedded" Xhtml values, filtered according to the IncludeExclude trait.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="resetLayout%28%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>resetLayout</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>remove all previously declared layout</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2009. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

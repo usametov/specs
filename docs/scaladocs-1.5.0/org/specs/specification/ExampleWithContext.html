@@ -1,0 +1,451 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>class ExampleWithContext in org.specs.specification</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.3.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/specification$package.html" target="_self">org.specs.specification</a>
+        <br></br>
+        <span class="entity">class  ExampleWithContext</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/specification/ExampleWithContext"><code>org/specs/specification/ExampleWithContext.scala</code></a>]
+      </div><hr></hr>
+      <a name="ExampleWithContext"></a><dl>
+      <dt>
+        
+        <code>case</code>
+        <code>class</code>
+        <em>ExampleWithContext</em>[<em>S</em>](<code>val </code><em>context</em> : <a href="../../../org/specs/SystemContext.html" target="_self">SystemContext</a>[<a href="../../../org/specs/specification/ExampleWithContext.html#S" target="_self">S</a>], <code>val </code><em>exampleDesc</em> : <a href="../../../org/specs/specification/ExampleDescription.html" target="_self">ExampleDescription</a>, <code>val </code><em>cyc</em> : <a href="../../../org/specs/specification/ExampleLifeCycle.html" target="_self">ExampleLifeCycle</a>)
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/specification/Example.html" target="_self">Example</a></dd>
+    </dl>
+      <dl><dd>The <code>Example</code> class specifies one example of a system behaviour<br>
+ It has:<ul>
+ <li>a description explaining what is being done
+ <li>an <code>ExampleLifeCycle</code> which defines behaviour before/after example and test</ul>
+ <p>
+ Usage: <code>"this is an example" in { // code containing expectations }</code> or<br>
+ <code>"this is an example" >> { // code containing expectations }</code><br>
+ ">>" can be used instead of "in" if that word makes no sense in the specification
+ <p>
+ An example can also contain subexamples which are executed will evaluating the <code>in</code> method.
+ <p>
+ When expectations have been evaluated inside an example they register their failures and errors for later reporting</dd></dl>
+      <dl></dl>
+    
+      
+
+<table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/specification/Example.html" target="_self">Example</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/Example.html#exampleDescription" target="_self">exampleDescription</a>, <a href="../../../org/specs/specification/Example.html#cycle" target="_self">cycle</a>, <a href="../../../org/specs/specification/Example.html#thisFailures" target="_self">thisFailures</a>, <a href="../../../org/specs/specification/Example.html#thisSkipped" target="_self">thisSkipped</a>, <a href="../../../org/specs/specification/Example.html#thisErrors" target="_self">thisErrors</a>, <a href="../../../org/specs/specification/Example.html#subExs" target="_self">subExs</a>, <a href="../../../org/specs/specification/Example.html#execution" target="_self">execution</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/Tagged.html#tags" target="_self">tags</a>, <a href="../../../org/specs/specification/Tagged.html#accepted" target="_self">accepted</a>, <a href="../../../org/specs/specification/Tagged.html#rejected" target="_self">rejected</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/ExampleWithContext.html#after" target="_self">after</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/ExampleWithContext.html#before" target="_self">before</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/ExampleWithContext.html#clone%28%29" target="_self">clone</a></em>
+         : <a href="../../../org/specs/specification/ExampleWithContext.html" target="_self">ExampleWithContext</a>[<a href="../../../org/specs/specification/ExampleWithContext.html#S" target="_self">S</a>]
+        
+        <div>clone method to create a new example from this one.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/ExampleWithContext.html#createExample%28String%2Corg.specs.specification.ExampleLifeCycle%29" target="_self">createExample</a></em>
+        (<em>desc</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>lifeCycle</em> : <a href="../../../org/specs/specification/ExampleLifeCycle.html" target="_self">ExampleLifeCycle</a>) : <a href="../../../org/specs/specification/ExampleWithContext.html" target="_self">ExampleWithContext</a>[<a href="../../../org/specs/specification/ExampleWithContext.html#S" target="_self">S</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/ExampleWithContext.html#equals%28Any%29" target="_self">equals</a></em>
+        (<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div>This method is used to compare the receiver object (<code>this</code>)
+    with the argument object (<code>arg0</code>) for equivalence.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/ExampleWithContext.html#execute%28%3D%3EAny%29" target="_self">execute</a></em>
+        (<em>t</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/ExampleWithContext.html#hashCode%28%29" target="_self">hashCode</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+        
+        <div>Returns a hash code value for the object.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/ExampleWithContext.html#productArity" target="_self">productArity</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/ExampleWithContext.html#productElement%28Int%29" target="_self">productElement</a></em>
+        (<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/ExampleWithContext.html#productPrefix" target="_self">productPrefix</a></em>
+         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/Example.html" target="_self">Example</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/Example.html#description" target="_self">description</a>, <a href="../../../org/specs/specification/Example.html#expectationsNb" target="_self">expectationsNb</a>, <a href="../../../org/specs/specification/Example.html#addExpectation" target="_self">addExpectation</a>, <a href="../../../org/specs/specification/Example.html#addExample%28org.specs.specification.Example%29" target="_self">addExample</a>, <a href="../../../org/specs/specification/Example.html#subExamples" target="_self">subExamples</a>, <a href="../../../org/specs/specification/Example.html#%3E%3E%28%3D%3ET%29" target="_self">&gt;&gt;</a>, <a href="../../../org/specs/specification/Example.html#doTest%28%3D%3ET%29" target="_self">doTest</a>, <a href="../../../org/specs/specification/Example.html#in%28%3D%3EAny%29" target="_self">in</a>, <a href="../../../org/specs/specification/Example.html#execute" target="_self">execute</a>, <a href="../../../org/specs/specification/Example.html#skipIfNoExpectations%28%29" target="_self">skipIfNoExpectations</a>, <a href="../../../org/specs/specification/Example.html#addError%28Throwable%29" target="_self">addError</a>, <a href="../../../org/specs/specification/Example.html#addFailure%28org.specs.execute.FailureException%29" target="_self">addFailure</a>, <a href="../../../org/specs/specification/Example.html#addSkipped%28org.specs.execute.SkippedException%29" target="_self">addSkipped</a>, <a href="../../../org/specs/specification/Example.html#failures" target="_self">failures</a>, <a href="../../../org/specs/specification/Example.html#ownFailures" target="_self">ownFailures</a>, <a href="../../../org/specs/specification/Example.html#skipped" target="_self">skipped</a>, <a href="../../../org/specs/specification/Example.html#ownSkipped" target="_self">ownSkipped</a>, <a href="../../../org/specs/specification/Example.html#errors" target="_self">errors</a>, <a href="../../../org/specs/specification/Example.html#ownErrors" target="_self">ownErrors</a>, <a href="../../../org/specs/specification/Example.html#pretty%28String%29" target="_self">pretty</a>, <a href="../../../org/specs/specification/Example.html#toString%28%29" target="_self">toString</a>, <a href="../../../org/specs/specification/Example.html#resetForExecution" target="_self">resetForExecution</a>, <a href="../../../org/specs/specification/Example.html#copyExecutionTo%28E%29" target="_self">copyExecutionTo</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/execute/HasResults.html" target="_self">HasResults</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/execute/HasResults.html#statusClass" target="_self">statusClass</a>, <a href="../../../org/specs/execute/HasResults.html#statusAsText" target="_self">statusAsText</a>, <a href="../../../org/specs/execute/HasResults.html#hasFailureOrErrors" target="_self">hasFailureOrErrors</a>, <a href="../../../org/specs/execute/HasResults.html#failureAndErrors" target="_self">failureAndErrors</a>, <a href="../../../org/specs/execute/HasResults.html#issues" target="_self">issues</a>, <a href="../../../org/specs/execute/HasResults.html#issueMessages" target="_self">issueMessages</a>, <a href="../../../org/specs/execute/HasResults.html#hasIssues" target="_self">hasIssues</a>, <a href="../../../org/specs/execute/HasResults.html#isOk" target="_self">isOk</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/Tagged.html#stringToTag%28String%29" target="_self">stringToTag</a>, <a href="../../../org/specs/specification/Tagged.html#tag%28String*%29" target="_self">tag</a>, <a href="../../../org/specs/specification/Tagged.html#clearTags" target="_self">clearTags</a>, <a href="../../../org/specs/specification/Tagged.html#addTag%28String%29" target="_self">addTag</a>, <a href="../../../org/specs/specification/Tagged.html#addTags%28String*%29" target="_self">addTags</a>, <a href="../../../org/specs/specification/Tagged.html#accept%28org.specs.specification.Tag*%29" target="_self">accept</a>, <a href="../../../org/specs/specification/Tagged.html#acceptTag%28String*%29" target="_self">acceptTag</a>, <a href="../../../org/specs/specification/Tagged.html#acceptTags%28String*%29" target="_self">acceptTags</a>, <a href="../../../org/specs/specification/Tagged.html#acceptAnyTag" target="_self">acceptAnyTag</a>, <a href="../../../org/specs/specification/Tagged.html#reject%28org.specs.specification.Tag*%29" target="_self">reject</a>, <a href="../../../org/specs/specification/Tagged.html#rejectTag%28String*%29" target="_self">rejectTag</a>, <a href="../../../org/specs/specification/Tagged.html#rejectTags%28String*%29" target="_self">rejectTags</a>, <a href="../../../org/specs/specification/Tagged.html#isAccepted" target="_self">isAccepted</a>, <a href="../../../org/specs/specification/Tagged.html#tagSpec" target="_self">tagSpec</a>, <a href="../../../org/specs/specification/Tagged.html#tagWith%28org.specs.specification.Tagged%29" target="_self">tagWith</a>, <a href="../../../org/specs/specification/Tagged.html#taggedComponents" target="_self">taggedComponents</a>, <a href="../../../org/specs/specification/Tagged.html#makeTagged%28String*%29" target="_self">makeTagged</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="createExample%28String%2Corg.specs.specification.ExampleLifeCycle%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>createExample</em>(<em>desc</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>lifeCycle</em> : <a href="../../../org/specs/specification/ExampleLifeCycle.html" target="_self">ExampleLifeCycle</a>) : <a href="../../../org/specs/specification/ExampleWithContext.html" target="_self">ExampleWithContext</a>[<a href="../../../org/specs/specification/ExampleWithContext.html#S" target="_self">S</a>]
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/specification/Example.html" target="_self">Example</a>.<a href="../../../org/specs/specification/Example.html#createExample%28String%2Corg.specs.specification.ExampleLifeCycle%29" target="_self">createExample</a>
+        </dd>
+      </dl><hr></hr>
+<a name="before"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>before</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/specification/Example.html" target="_self">Example</a>.<a href="../../../org/specs/specification/Example.html#before" target="_self">before</a>
+        </dd>
+      </dl><hr></hr>
+<a name="after"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>after</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/specification/Example.html" target="_self">Example</a>.<a href="../../../org/specs/specification/Example.html#after" target="_self">after</a>
+        </dd>
+      </dl><hr></hr>
+<a name="execute%28%3D%3EAny%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>execute</em>(<em>t</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/specification/Example.html" target="_self">Example</a>.<a href="../../../org/specs/specification/Example.html#execute%28%3D%3EAny%29" target="_self">execute</a>
+        </dd>
+      </dl><hr></hr>
+<a name="clone%28%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>clone</em> : <a href="../../../org/specs/specification/ExampleWithContext.html" target="_self">ExampleWithContext</a>[<a href="../../../org/specs/specification/ExampleWithContext.html#S" target="_self">S</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>clone method to create a new example from this one.</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/specification/Example.html" target="_self">Example</a>.<a href="../../../org/specs/specification/Example.html#clone%28%29" target="_self">clone</a>
+        </dd>
+      </dl><hr></hr>
+<a name="hashCode%28%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>hashCode</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns a hash code value for the object.  
+    <p>
+    The default hashing algorithm is platform dependent.  
+    Note that it is allowed for two objects to have identical hash
+    codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet not be
+    equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A
+    degenerate implementation could always return <code>0</code>.
+    However, it is required that if two objects are equal
+    (<code>o1.equals(o2)</code> returns <code>true</code>) that they
+    have identical hash codes
+    (<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when
+    overriding this method, be sure to verify that the behavior is
+    consistent with the <code>equals</code> method.
+    </p>
+    <p></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the hash code value for the object.      </p></dd></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/specification/Example.html" target="_self">Example</a>.<a href="../../../org/specs/specification/Example.html#hashCode%28%29" target="_self">hashCode</a>
+        </dd>
+      </dl><hr></hr>
+<a name="equals%28Any%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>equals</em>(<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>This method is used to compare the receiver object (<code>this</code>)
+    with the argument object (<code>arg0</code>) for equivalence.  
+    
+    <p>
+    The default implementations of this method is an <a
+    href="http://en.wikipedia.org/wiki/Equivalence_relation">equivalence
+    relation</a>:
+      <ul>
+      <li>It is reflexive: for any instance <code>x</code> of type <code>Any</code>, 
+      <code>x.equals(x)</code> should return <code>true</code>.</li>
+      <li>It is symmetric: for any instances <code>x</code> and <code>y</code> of type 
+      <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and only 
+      if <code>y.equals(x)</code> returns <code>true</code>.</li>
+      <li>It is transitive: for any instances 
+      <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code>
+      if <code>x.equals(y)</code> returns <code>true</code> and 
+      <code>y.equals(z)</code> returns 
+      <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</li>
+    </ul>
+    </p>
+    <p>
+    If you override this method, you should verify that
+    your implementation remains an equivalence relation.
+    Additionally, when overriding this method it is often necessary to
+    override <code>hashCode</code> to ensure that objects that are
+    "equal" (<code>o1.equals(o2)</code> returns <code>true</code>)
+    hash to the same <a href="Int.html"><code>Int</code></a>
+    (<code>o1.hashCode.equals(o2.hashCode)</code>).</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>arg0 - </code>the object to compare against this object for equality.</dd><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.    </p></dd></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/specification/Example.html" target="_self">Example</a>.<a href="../../../org/specs/specification/Example.html#equals%28Any%29" target="_self">equals</a>
+        </dd>
+      </dl><hr></hr>
+<a name="productPrefix"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>productPrefix</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/specification/Example.html" target="_self">Example</a>.<a href="../../../org/specs/specification/Example.html#productPrefix" target="_self">productPrefix</a>
+        </dd>
+      </dl><hr></hr>
+<a name="productArity"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>productArity</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/specification/Example.html" target="_self">Example</a>.<a href="../../../org/specs/specification/Example.html#productArity" target="_self">productArity</a>
+        </dd>
+      </dl><hr></hr>
+<a name="productElement%28Int%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>productElement</em>(<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/specification/Example.html" target="_self">Example</a>.<a href="../../../org/specs/specification/Example.html#productElement%28Int%29" target="_self">productElement</a>
+        </dd>
+      </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2009. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

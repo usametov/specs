@@ -1,0 +1,1011 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>All classes and objects in org.specs.util</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.3.final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
+        </head>
+        <body onload="init()"><div class="page-title"><div>specs 1.5.0 API</div></div><p><div>This document is the API specification for specs 1.5.0 API</div></p><table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Class Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/AbstractDataRow.html" target="_self">AbstractDataRow</a></em>
+        <code> extends </code><a href="../../org/specs/execute/DefaultResults.html" target="_self">DefaultResults</a>
+        
+        <div>Abstract representation of a row without the column types.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/AllProperties.html" target="_self">AllProperties</a></em>
+        <code> extends </code><a href="../../org/specs/util/StringProperties.html" target="_self">StringProperties</a><code> with </code><a href="../../org/specs/util/IntProperties.html" target="_self">IntProperties</a><code> with </code><a href="../../org/specs/util/DoubleProperties.html" target="_self">DoubleProperties</a><code> with </code><a href="../../org/specs/util/BooleanProperties.html" target="_self">BooleanProperties</a><code> with </code><a href="../../org/specs/util/XmlProperties.html" target="_self">XmlProperties</a><code> with </code><a href="../../org/specs/util/CurrentProperty.html" target="_self">CurrentProperty</a>
+        
+        <div>This trait adds all properties.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/BooleanProperties.html" target="_self">BooleanProperties</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait provides Boolean properterties with alphabetical names.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/Classes.html" target="_self">Classes</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait provides utility functions for classes.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/Configuration.html" target="_self">Configuration</a></em>
+        <code> extends </code><a href="../../org/specs/util/ConfigurationFactory.html" target="_self">ConfigurationFactory</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/ConfigurationFactory.html" target="_self">ConfigurationFactory</a></em>
+        <code> extends </code><a href="../../org/specs/io/FileSystem.html" target="_self">FileSystem</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/CurrentProperty.html" target="_self">CurrentProperty</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait sets one String property for a current value.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a></em>
+        [+<em>T0</em>, +<em>T1</em>, +<em>T2</em>, +<em>T3</em>, +<em>T4</em>, +<em>T5</em>, +<em>T6</em>, +<em>T7</em>, +<em>T8</em>, +<em>T9</em>, +<em>T10</em>, +<em>T11</em>, +<em>T12</em>, +<em>T13</em>, +<em>T14</em>, +<em>T15</em>, +<em>T16</em>, +<em>T17</em>, +<em>T18</em>, +<em>T19</em>](<code>val </code><em>values</em> : (<a href="../../org/specs/util/DataRow.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataRow.html#T2" target="_self">T2</a>, <a href="../../org/specs/util/DataRow.html#T3" target="_self">T3</a>, <a href="../../org/specs/util/DataRow.html#T4" target="_self">T4</a>, <a href="../../org/specs/util/DataRow.html#T5" target="_self">T5</a>, <a href="../../org/specs/util/DataRow.html#T6" target="_self">T6</a>, <a href="../../org/specs/util/DataRow.html#T7" target="_self">T7</a>, <a href="../../org/specs/util/DataRow.html#T8" target="_self">T8</a>, <a href="../../org/specs/util/DataRow.html#T9" target="_self">T9</a>, <a href="../../org/specs/util/DataRow.html#T10" target="_self">T10</a>, <a href="../../org/specs/util/DataRow.html#T11" target="_self">T11</a>, <a href="../../org/specs/util/DataRow.html#T12" target="_self">T12</a>, <a href="../../org/specs/util/DataRow.html#T13" target="_self">T13</a>, <a href="../../org/specs/util/DataRow.html#T14" target="_self">T14</a>, <a href="../../org/specs/util/DataRow.html#T15" target="_self">T15</a>, <a href="../../org/specs/util/DataRow.html#T16" target="_self">T16</a>, <a href="../../org/specs/util/DataRow.html#T17" target="_self">T17</a>, <a href="../../org/specs/util/DataRow.html#T18" target="_self">T18</a>, <a href="../../org/specs/util/DataRow.html#T19" target="_self">T19</a>))<code> extends </code><a href="../../org/specs/util/AbstractDataRow.html" target="_self">AbstractDataRow</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow1.html" target="_self">DataRow1</a></em>
+        [<em>T0</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow1.html#T0" target="_self">T0</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow1.html#T0" target="_self">T0</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow10.html" target="_self">DataRow10</a></em>
+        [<em>T0</em>, <em>T1</em>, <em>T2</em>, <em>T3</em>, <em>T4</em>, <em>T5</em>, <em>T6</em>, <em>T7</em>, <em>T8</em>, <em>T9</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow10.html#T0" target="_self">T0</a>, <code>val </code><em>v1</em> : <a href="../../org/specs/util/DataRow10.html#T1" target="_self">T1</a>, <code>val </code><em>v2</em> : <a href="../../org/specs/util/DataRow10.html#T2" target="_self">T2</a>, <code>val </code><em>v3</em> : <a href="../../org/specs/util/DataRow10.html#T3" target="_self">T3</a>, <code>val </code><em>v4</em> : <a href="../../org/specs/util/DataRow10.html#T4" target="_self">T4</a>, <code>val </code><em>v5</em> : <a href="../../org/specs/util/DataRow10.html#T5" target="_self">T5</a>, <code>val </code><em>v6</em> : <a href="../../org/specs/util/DataRow10.html#T6" target="_self">T6</a>, <code>val </code><em>v7</em> : <a href="../../org/specs/util/DataRow10.html#T7" target="_self">T7</a>, <code>val </code><em>v8</em> : <a href="../../org/specs/util/DataRow10.html#T8" target="_self">T8</a>, <code>val </code><em>v9</em> : <a href="../../org/specs/util/DataRow10.html#T9" target="_self">T9</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow10.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow10.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataRow10.html#T2" target="_self">T2</a>, <a href="../../org/specs/util/DataRow10.html#T3" target="_self">T3</a>, <a href="../../org/specs/util/DataRow10.html#T4" target="_self">T4</a>, <a href="../../org/specs/util/DataRow10.html#T5" target="_self">T5</a>, <a href="../../org/specs/util/DataRow10.html#T6" target="_self">T6</a>, <a href="../../org/specs/util/DataRow10.html#T7" target="_self">T7</a>, <a href="../../org/specs/util/DataRow10.html#T8" target="_self">T8</a>, <a href="../../org/specs/util/DataRow10.html#T9" target="_self">T9</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow11.html" target="_self">DataRow11</a></em>
+        [<em>T0</em>, <em>T1</em>, <em>T2</em>, <em>T3</em>, <em>T4</em>, <em>T5</em>, <em>T6</em>, <em>T7</em>, <em>T8</em>, <em>T9</em>, <em>T10</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow11.html#T0" target="_self">T0</a>, <code>val </code><em>v1</em> : <a href="../../org/specs/util/DataRow11.html#T1" target="_self">T1</a>, <code>val </code><em>v2</em> : <a href="../../org/specs/util/DataRow11.html#T2" target="_self">T2</a>, <code>val </code><em>v3</em> : <a href="../../org/specs/util/DataRow11.html#T3" target="_self">T3</a>, <code>val </code><em>v4</em> : <a href="../../org/specs/util/DataRow11.html#T4" target="_self">T4</a>, <code>val </code><em>v5</em> : <a href="../../org/specs/util/DataRow11.html#T5" target="_self">T5</a>, <code>val </code><em>v6</em> : <a href="../../org/specs/util/DataRow11.html#T6" target="_self">T6</a>, <code>val </code><em>v7</em> : <a href="../../org/specs/util/DataRow11.html#T7" target="_self">T7</a>, <code>val </code><em>v8</em> : <a href="../../org/specs/util/DataRow11.html#T8" target="_self">T8</a>, <code>val </code><em>v9</em> : <a href="../../org/specs/util/DataRow11.html#T9" target="_self">T9</a>, <code>val </code><em>v10</em> : <a href="../../org/specs/util/DataRow11.html#T10" target="_self">T10</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow11.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow11.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataRow11.html#T2" target="_self">T2</a>, <a href="../../org/specs/util/DataRow11.html#T3" target="_self">T3</a>, <a href="../../org/specs/util/DataRow11.html#T4" target="_self">T4</a>, <a href="../../org/specs/util/DataRow11.html#T5" target="_self">T5</a>, <a href="../../org/specs/util/DataRow11.html#T6" target="_self">T6</a>, <a href="../../org/specs/util/DataRow11.html#T7" target="_self">T7</a>, <a href="../../org/specs/util/DataRow11.html#T8" target="_self">T8</a>, <a href="../../org/specs/util/DataRow11.html#T9" target="_self">T9</a>, <a href="../../org/specs/util/DataRow11.html#T10" target="_self">T10</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow12.html" target="_self">DataRow12</a></em>
+        [<em>T0</em>, <em>T1</em>, <em>T2</em>, <em>T3</em>, <em>T4</em>, <em>T5</em>, <em>T6</em>, <em>T7</em>, <em>T8</em>, <em>T9</em>, <em>T10</em>, <em>T11</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow12.html#T0" target="_self">T0</a>, <code>val </code><em>v1</em> : <a href="../../org/specs/util/DataRow12.html#T1" target="_self">T1</a>, <code>val </code><em>v2</em> : <a href="../../org/specs/util/DataRow12.html#T2" target="_self">T2</a>, <code>val </code><em>v3</em> : <a href="../../org/specs/util/DataRow12.html#T3" target="_self">T3</a>, <code>val </code><em>v4</em> : <a href="../../org/specs/util/DataRow12.html#T4" target="_self">T4</a>, <code>val </code><em>v5</em> : <a href="../../org/specs/util/DataRow12.html#T5" target="_self">T5</a>, <code>val </code><em>v6</em> : <a href="../../org/specs/util/DataRow12.html#T6" target="_self">T6</a>, <code>val </code><em>v7</em> : <a href="../../org/specs/util/DataRow12.html#T7" target="_self">T7</a>, <code>val </code><em>v8</em> : <a href="../../org/specs/util/DataRow12.html#T8" target="_self">T8</a>, <code>val </code><em>v9</em> : <a href="../../org/specs/util/DataRow12.html#T9" target="_self">T9</a>, <code>val </code><em>v10</em> : <a href="../../org/specs/util/DataRow12.html#T10" target="_self">T10</a>, <code>val </code><em>v11</em> : <a href="../../org/specs/util/DataRow12.html#T11" target="_self">T11</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow12.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow12.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataRow12.html#T2" target="_self">T2</a>, <a href="../../org/specs/util/DataRow12.html#T3" target="_self">T3</a>, <a href="../../org/specs/util/DataRow12.html#T4" target="_self">T4</a>, <a href="../../org/specs/util/DataRow12.html#T5" target="_self">T5</a>, <a href="../../org/specs/util/DataRow12.html#T6" target="_self">T6</a>, <a href="../../org/specs/util/DataRow12.html#T7" target="_self">T7</a>, <a href="../../org/specs/util/DataRow12.html#T8" target="_self">T8</a>, <a href="../../org/specs/util/DataRow12.html#T9" target="_self">T9</a>, <a href="../../org/specs/util/DataRow12.html#T10" target="_self">T10</a>, <a href="../../org/specs/util/DataRow12.html#T11" target="_self">T11</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow13.html" target="_self">DataRow13</a></em>
+        [<em>T0</em>, <em>T1</em>, <em>T2</em>, <em>T3</em>, <em>T4</em>, <em>T5</em>, <em>T6</em>, <em>T7</em>, <em>T8</em>, <em>T9</em>, <em>T10</em>, <em>T11</em>, <em>T12</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow13.html#T0" target="_self">T0</a>, <code>val </code><em>v1</em> : <a href="../../org/specs/util/DataRow13.html#T1" target="_self">T1</a>, <code>val </code><em>v2</em> : <a href="../../org/specs/util/DataRow13.html#T2" target="_self">T2</a>, <code>val </code><em>v3</em> : <a href="../../org/specs/util/DataRow13.html#T3" target="_self">T3</a>, <code>val </code><em>v4</em> : <a href="../../org/specs/util/DataRow13.html#T4" target="_self">T4</a>, <code>val </code><em>v5</em> : <a href="../../org/specs/util/DataRow13.html#T5" target="_self">T5</a>, <code>val </code><em>v6</em> : <a href="../../org/specs/util/DataRow13.html#T6" target="_self">T6</a>, <code>val </code><em>v7</em> : <a href="../../org/specs/util/DataRow13.html#T7" target="_self">T7</a>, <code>val </code><em>v8</em> : <a href="../../org/specs/util/DataRow13.html#T8" target="_self">T8</a>, <code>val </code><em>v9</em> : <a href="../../org/specs/util/DataRow13.html#T9" target="_self">T9</a>, <code>val </code><em>v10</em> : <a href="../../org/specs/util/DataRow13.html#T10" target="_self">T10</a>, <code>val </code><em>v11</em> : <a href="../../org/specs/util/DataRow13.html#T11" target="_self">T11</a>, <code>val </code><em>v12</em> : <a href="../../org/specs/util/DataRow13.html#T12" target="_self">T12</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow13.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow13.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataRow13.html#T2" target="_self">T2</a>, <a href="../../org/specs/util/DataRow13.html#T3" target="_self">T3</a>, <a href="../../org/specs/util/DataRow13.html#T4" target="_self">T4</a>, <a href="../../org/specs/util/DataRow13.html#T5" target="_self">T5</a>, <a href="../../org/specs/util/DataRow13.html#T6" target="_self">T6</a>, <a href="../../org/specs/util/DataRow13.html#T7" target="_self">T7</a>, <a href="../../org/specs/util/DataRow13.html#T8" target="_self">T8</a>, <a href="../../org/specs/util/DataRow13.html#T9" target="_self">T9</a>, <a href="../../org/specs/util/DataRow13.html#T10" target="_self">T10</a>, <a href="../../org/specs/util/DataRow13.html#T11" target="_self">T11</a>, <a href="../../org/specs/util/DataRow13.html#T12" target="_self">T12</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow14.html" target="_self">DataRow14</a></em>
+        [<em>T0</em>, <em>T1</em>, <em>T2</em>, <em>T3</em>, <em>T4</em>, <em>T5</em>, <em>T6</em>, <em>T7</em>, <em>T8</em>, <em>T9</em>, <em>T10</em>, <em>T11</em>, <em>T12</em>, <em>T13</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow14.html#T0" target="_self">T0</a>, <code>val </code><em>v1</em> : <a href="../../org/specs/util/DataRow14.html#T1" target="_self">T1</a>, <code>val </code><em>v2</em> : <a href="../../org/specs/util/DataRow14.html#T2" target="_self">T2</a>, <code>val </code><em>v3</em> : <a href="../../org/specs/util/DataRow14.html#T3" target="_self">T3</a>, <code>val </code><em>v4</em> : <a href="../../org/specs/util/DataRow14.html#T4" target="_self">T4</a>, <code>val </code><em>v5</em> : <a href="../../org/specs/util/DataRow14.html#T5" target="_self">T5</a>, <code>val </code><em>v6</em> : <a href="../../org/specs/util/DataRow14.html#T6" target="_self">T6</a>, <code>val </code><em>v7</em> : <a href="../../org/specs/util/DataRow14.html#T7" target="_self">T7</a>, <code>val </code><em>v8</em> : <a href="../../org/specs/util/DataRow14.html#T8" target="_self">T8</a>, <code>val </code><em>v9</em> : <a href="../../org/specs/util/DataRow14.html#T9" target="_self">T9</a>, <code>val </code><em>v10</em> : <a href="../../org/specs/util/DataRow14.html#T10" target="_self">T10</a>, <code>val </code><em>v11</em> : <a href="../../org/specs/util/DataRow14.html#T11" target="_self">T11</a>, <code>val </code><em>v12</em> : <a href="../../org/specs/util/DataRow14.html#T12" target="_self">T12</a>, <code>val </code><em>v13</em> : <a href="../../org/specs/util/DataRow14.html#T13" target="_self">T13</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow14.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow14.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataRow14.html#T2" target="_self">T2</a>, <a href="../../org/specs/util/DataRow14.html#T3" target="_self">T3</a>, <a href="../../org/specs/util/DataRow14.html#T4" target="_self">T4</a>, <a href="../../org/specs/util/DataRow14.html#T5" target="_self">T5</a>, <a href="../../org/specs/util/DataRow14.html#T6" target="_self">T6</a>, <a href="../../org/specs/util/DataRow14.html#T7" target="_self">T7</a>, <a href="../../org/specs/util/DataRow14.html#T8" target="_self">T8</a>, <a href="../../org/specs/util/DataRow14.html#T9" target="_self">T9</a>, <a href="../../org/specs/util/DataRow14.html#T10" target="_self">T10</a>, <a href="../../org/specs/util/DataRow14.html#T11" target="_self">T11</a>, <a href="../../org/specs/util/DataRow14.html#T12" target="_self">T12</a>, <a href="../../org/specs/util/DataRow14.html#T13" target="_self">T13</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow15.html" target="_self">DataRow15</a></em>
+        [<em>T0</em>, <em>T1</em>, <em>T2</em>, <em>T3</em>, <em>T4</em>, <em>T5</em>, <em>T6</em>, <em>T7</em>, <em>T8</em>, <em>T9</em>, <em>T10</em>, <em>T11</em>, <em>T12</em>, <em>T13</em>, <em>T14</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow15.html#T0" target="_self">T0</a>, <code>val </code><em>v1</em> : <a href="../../org/specs/util/DataRow15.html#T1" target="_self">T1</a>, <code>val </code><em>v2</em> : <a href="../../org/specs/util/DataRow15.html#T2" target="_self">T2</a>, <code>val </code><em>v3</em> : <a href="../../org/specs/util/DataRow15.html#T3" target="_self">T3</a>, <code>val </code><em>v4</em> : <a href="../../org/specs/util/DataRow15.html#T4" target="_self">T4</a>, <code>val </code><em>v5</em> : <a href="../../org/specs/util/DataRow15.html#T5" target="_self">T5</a>, <code>val </code><em>v6</em> : <a href="../../org/specs/util/DataRow15.html#T6" target="_self">T6</a>, <code>val </code><em>v7</em> : <a href="../../org/specs/util/DataRow15.html#T7" target="_self">T7</a>, <code>val </code><em>v8</em> : <a href="../../org/specs/util/DataRow15.html#T8" target="_self">T8</a>, <code>val </code><em>v9</em> : <a href="../../org/specs/util/DataRow15.html#T9" target="_self">T9</a>, <code>val </code><em>v10</em> : <a href="../../org/specs/util/DataRow15.html#T10" target="_self">T10</a>, <code>val </code><em>v11</em> : <a href="../../org/specs/util/DataRow15.html#T11" target="_self">T11</a>, <code>val </code><em>v12</em> : <a href="../../org/specs/util/DataRow15.html#T12" target="_self">T12</a>, <code>val </code><em>v13</em> : <a href="../../org/specs/util/DataRow15.html#T13" target="_self">T13</a>, <code>val </code><em>v14</em> : <a href="../../org/specs/util/DataRow15.html#T14" target="_self">T14</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow15.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow15.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataRow15.html#T2" target="_self">T2</a>, <a href="../../org/specs/util/DataRow15.html#T3" target="_self">T3</a>, <a href="../../org/specs/util/DataRow15.html#T4" target="_self">T4</a>, <a href="../../org/specs/util/DataRow15.html#T5" target="_self">T5</a>, <a href="../../org/specs/util/DataRow15.html#T6" target="_self">T6</a>, <a href="../../org/specs/util/DataRow15.html#T7" target="_self">T7</a>, <a href="../../org/specs/util/DataRow15.html#T8" target="_self">T8</a>, <a href="../../org/specs/util/DataRow15.html#T9" target="_self">T9</a>, <a href="../../org/specs/util/DataRow15.html#T10" target="_self">T10</a>, <a href="../../org/specs/util/DataRow15.html#T11" target="_self">T11</a>, <a href="../../org/specs/util/DataRow15.html#T12" target="_self">T12</a>, <a href="../../org/specs/util/DataRow15.html#T13" target="_self">T13</a>, <a href="../../org/specs/util/DataRow15.html#T14" target="_self">T14</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow16.html" target="_self">DataRow16</a></em>
+        [<em>T0</em>, <em>T1</em>, <em>T2</em>, <em>T3</em>, <em>T4</em>, <em>T5</em>, <em>T6</em>, <em>T7</em>, <em>T8</em>, <em>T9</em>, <em>T10</em>, <em>T11</em>, <em>T12</em>, <em>T13</em>, <em>T14</em>, <em>T15</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow16.html#T0" target="_self">T0</a>, <code>val </code><em>v1</em> : <a href="../../org/specs/util/DataRow16.html#T1" target="_self">T1</a>, <code>val </code><em>v2</em> : <a href="../../org/specs/util/DataRow16.html#T2" target="_self">T2</a>, <code>val </code><em>v3</em> : <a href="../../org/specs/util/DataRow16.html#T3" target="_self">T3</a>, <code>val </code><em>v4</em> : <a href="../../org/specs/util/DataRow16.html#T4" target="_self">T4</a>, <code>val </code><em>v5</em> : <a href="../../org/specs/util/DataRow16.html#T5" target="_self">T5</a>, <code>val </code><em>v6</em> : <a href="../../org/specs/util/DataRow16.html#T6" target="_self">T6</a>, <code>val </code><em>v7</em> : <a href="../../org/specs/util/DataRow16.html#T7" target="_self">T7</a>, <code>val </code><em>v8</em> : <a href="../../org/specs/util/DataRow16.html#T8" target="_self">T8</a>, <code>val </code><em>v9</em> : <a href="../../org/specs/util/DataRow16.html#T9" target="_self">T9</a>, <code>val </code><em>v10</em> : <a href="../../org/specs/util/DataRow16.html#T10" target="_self">T10</a>, <code>val </code><em>v11</em> : <a href="../../org/specs/util/DataRow16.html#T11" target="_self">T11</a>, <code>val </code><em>v12</em> : <a href="../../org/specs/util/DataRow16.html#T12" target="_self">T12</a>, <code>val </code><em>v13</em> : <a href="../../org/specs/util/DataRow16.html#T13" target="_self">T13</a>, <code>val </code><em>v14</em> : <a href="../../org/specs/util/DataRow16.html#T14" target="_self">T14</a>, <code>val </code><em>v15</em> : <a href="../../org/specs/util/DataRow16.html#T15" target="_self">T15</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow16.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow16.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataRow16.html#T2" target="_self">T2</a>, <a href="../../org/specs/util/DataRow16.html#T3" target="_self">T3</a>, <a href="../../org/specs/util/DataRow16.html#T4" target="_self">T4</a>, <a href="../../org/specs/util/DataRow16.html#T5" target="_self">T5</a>, <a href="../../org/specs/util/DataRow16.html#T6" target="_self">T6</a>, <a href="../../org/specs/util/DataRow16.html#T7" target="_self">T7</a>, <a href="../../org/specs/util/DataRow16.html#T8" target="_self">T8</a>, <a href="../../org/specs/util/DataRow16.html#T9" target="_self">T9</a>, <a href="../../org/specs/util/DataRow16.html#T10" target="_self">T10</a>, <a href="../../org/specs/util/DataRow16.html#T11" target="_self">T11</a>, <a href="../../org/specs/util/DataRow16.html#T12" target="_self">T12</a>, <a href="../../org/specs/util/DataRow16.html#T13" target="_self">T13</a>, <a href="../../org/specs/util/DataRow16.html#T14" target="_self">T14</a>, <a href="../../org/specs/util/DataRow16.html#T15" target="_self">T15</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow17.html" target="_self">DataRow17</a></em>
+        [<em>T0</em>, <em>T1</em>, <em>T2</em>, <em>T3</em>, <em>T4</em>, <em>T5</em>, <em>T6</em>, <em>T7</em>, <em>T8</em>, <em>T9</em>, <em>T10</em>, <em>T11</em>, <em>T12</em>, <em>T13</em>, <em>T14</em>, <em>T15</em>, <em>T16</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow17.html#T0" target="_self">T0</a>, <code>val </code><em>v1</em> : <a href="../../org/specs/util/DataRow17.html#T1" target="_self">T1</a>, <code>val </code><em>v2</em> : <a href="../../org/specs/util/DataRow17.html#T2" target="_self">T2</a>, <code>val </code><em>v3</em> : <a href="../../org/specs/util/DataRow17.html#T3" target="_self">T3</a>, <code>val </code><em>v4</em> : <a href="../../org/specs/util/DataRow17.html#T4" target="_self">T4</a>, <code>val </code><em>v5</em> : <a href="../../org/specs/util/DataRow17.html#T5" target="_self">T5</a>, <code>val </code><em>v6</em> : <a href="../../org/specs/util/DataRow17.html#T6" target="_self">T6</a>, <code>val </code><em>v7</em> : <a href="../../org/specs/util/DataRow17.html#T7" target="_self">T7</a>, <code>val </code><em>v8</em> : <a href="../../org/specs/util/DataRow17.html#T8" target="_self">T8</a>, <code>val </code><em>v9</em> : <a href="../../org/specs/util/DataRow17.html#T9" target="_self">T9</a>, <code>val </code><em>v10</em> : <a href="../../org/specs/util/DataRow17.html#T10" target="_self">T10</a>, <code>val </code><em>v11</em> : <a href="../../org/specs/util/DataRow17.html#T11" target="_self">T11</a>, <code>val </code><em>v12</em> : <a href="../../org/specs/util/DataRow17.html#T12" target="_self">T12</a>, <code>val </code><em>v13</em> : <a href="../../org/specs/util/DataRow17.html#T13" target="_self">T13</a>, <code>val </code><em>v14</em> : <a href="../../org/specs/util/DataRow17.html#T14" target="_self">T14</a>, <code>val </code><em>v15</em> : <a href="../../org/specs/util/DataRow17.html#T15" target="_self">T15</a>, <code>val </code><em>v16</em> : <a href="../../org/specs/util/DataRow17.html#T16" target="_self">T16</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow17.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow17.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataRow17.html#T2" target="_self">T2</a>, <a href="../../org/specs/util/DataRow17.html#T3" target="_self">T3</a>, <a href="../../org/specs/util/DataRow17.html#T4" target="_self">T4</a>, <a href="../../org/specs/util/DataRow17.html#T5" target="_self">T5</a>, <a href="../../org/specs/util/DataRow17.html#T6" target="_self">T6</a>, <a href="../../org/specs/util/DataRow17.html#T7" target="_self">T7</a>, <a href="../../org/specs/util/DataRow17.html#T8" target="_self">T8</a>, <a href="../../org/specs/util/DataRow17.html#T9" target="_self">T9</a>, <a href="../../org/specs/util/DataRow17.html#T10" target="_self">T10</a>, <a href="../../org/specs/util/DataRow17.html#T11" target="_self">T11</a>, <a href="../../org/specs/util/DataRow17.html#T12" target="_self">T12</a>, <a href="../../org/specs/util/DataRow17.html#T13" target="_self">T13</a>, <a href="../../org/specs/util/DataRow17.html#T14" target="_self">T14</a>, <a href="../../org/specs/util/DataRow17.html#T15" target="_self">T15</a>, <a href="../../org/specs/util/DataRow17.html#T16" target="_self">T16</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow18.html" target="_self">DataRow18</a></em>
+        [<em>T0</em>, <em>T1</em>, <em>T2</em>, <em>T3</em>, <em>T4</em>, <em>T5</em>, <em>T6</em>, <em>T7</em>, <em>T8</em>, <em>T9</em>, <em>T10</em>, <em>T11</em>, <em>T12</em>, <em>T13</em>, <em>T14</em>, <em>T15</em>, <em>T16</em>, <em>T17</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow18.html#T0" target="_self">T0</a>, <code>val </code><em>v1</em> : <a href="../../org/specs/util/DataRow18.html#T1" target="_self">T1</a>, <code>val </code><em>v2</em> : <a href="../../org/specs/util/DataRow18.html#T2" target="_self">T2</a>, <code>val </code><em>v3</em> : <a href="../../org/specs/util/DataRow18.html#T3" target="_self">T3</a>, <code>val </code><em>v4</em> : <a href="../../org/specs/util/DataRow18.html#T4" target="_self">T4</a>, <code>val </code><em>v5</em> : <a href="../../org/specs/util/DataRow18.html#T5" target="_self">T5</a>, <code>val </code><em>v6</em> : <a href="../../org/specs/util/DataRow18.html#T6" target="_self">T6</a>, <code>val </code><em>v7</em> : <a href="../../org/specs/util/DataRow18.html#T7" target="_self">T7</a>, <code>val </code><em>v8</em> : <a href="../../org/specs/util/DataRow18.html#T8" target="_self">T8</a>, <code>val </code><em>v9</em> : <a href="../../org/specs/util/DataRow18.html#T9" target="_self">T9</a>, <code>val </code><em>v10</em> : <a href="../../org/specs/util/DataRow18.html#T10" target="_self">T10</a>, <code>val </code><em>v11</em> : <a href="../../org/specs/util/DataRow18.html#T11" target="_self">T11</a>, <code>val </code><em>v12</em> : <a href="../../org/specs/util/DataRow18.html#T12" target="_self">T12</a>, <code>val </code><em>v13</em> : <a href="../../org/specs/util/DataRow18.html#T13" target="_self">T13</a>, <code>val </code><em>v14</em> : <a href="../../org/specs/util/DataRow18.html#T14" target="_self">T14</a>, <code>val </code><em>v15</em> : <a href="../../org/specs/util/DataRow18.html#T15" target="_self">T15</a>, <code>val </code><em>v16</em> : <a href="../../org/specs/util/DataRow18.html#T16" target="_self">T16</a>, <code>val </code><em>v17</em> : <a href="../../org/specs/util/DataRow18.html#T17" target="_self">T17</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow18.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow18.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataRow18.html#T2" target="_self">T2</a>, <a href="../../org/specs/util/DataRow18.html#T3" target="_self">T3</a>, <a href="../../org/specs/util/DataRow18.html#T4" target="_self">T4</a>, <a href="../../org/specs/util/DataRow18.html#T5" target="_self">T5</a>, <a href="../../org/specs/util/DataRow18.html#T6" target="_self">T6</a>, <a href="../../org/specs/util/DataRow18.html#T7" target="_self">T7</a>, <a href="../../org/specs/util/DataRow18.html#T8" target="_self">T8</a>, <a href="../../org/specs/util/DataRow18.html#T9" target="_self">T9</a>, <a href="../../org/specs/util/DataRow18.html#T10" target="_self">T10</a>, <a href="../../org/specs/util/DataRow18.html#T11" target="_self">T11</a>, <a href="../../org/specs/util/DataRow18.html#T12" target="_self">T12</a>, <a href="../../org/specs/util/DataRow18.html#T13" target="_self">T13</a>, <a href="../../org/specs/util/DataRow18.html#T14" target="_self">T14</a>, <a href="../../org/specs/util/DataRow18.html#T15" target="_self">T15</a>, <a href="../../org/specs/util/DataRow18.html#T16" target="_self">T16</a>, <a href="../../org/specs/util/DataRow18.html#T17" target="_self">T17</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow19.html" target="_self">DataRow19</a></em>
+        [<em>T0</em>, <em>T1</em>, <em>T2</em>, <em>T3</em>, <em>T4</em>, <em>T5</em>, <em>T6</em>, <em>T7</em>, <em>T8</em>, <em>T9</em>, <em>T10</em>, <em>T11</em>, <em>T12</em>, <em>T13</em>, <em>T14</em>, <em>T15</em>, <em>T16</em>, <em>T17</em>, <em>T18</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow19.html#T0" target="_self">T0</a>, <code>val </code><em>v1</em> : <a href="../../org/specs/util/DataRow19.html#T1" target="_self">T1</a>, <code>val </code><em>v2</em> : <a href="../../org/specs/util/DataRow19.html#T2" target="_self">T2</a>, <code>val </code><em>v3</em> : <a href="../../org/specs/util/DataRow19.html#T3" target="_self">T3</a>, <code>val </code><em>v4</em> : <a href="../../org/specs/util/DataRow19.html#T4" target="_self">T4</a>, <code>val </code><em>v5</em> : <a href="../../org/specs/util/DataRow19.html#T5" target="_self">T5</a>, <code>val </code><em>v6</em> : <a href="../../org/specs/util/DataRow19.html#T6" target="_self">T6</a>, <code>val </code><em>v7</em> : <a href="../../org/specs/util/DataRow19.html#T7" target="_self">T7</a>, <code>val </code><em>v8</em> : <a href="../../org/specs/util/DataRow19.html#T8" target="_self">T8</a>, <code>val </code><em>v9</em> : <a href="../../org/specs/util/DataRow19.html#T9" target="_self">T9</a>, <code>val </code><em>v10</em> : <a href="../../org/specs/util/DataRow19.html#T10" target="_self">T10</a>, <code>val </code><em>v11</em> : <a href="../../org/specs/util/DataRow19.html#T11" target="_self">T11</a>, <code>val </code><em>v12</em> : <a href="../../org/specs/util/DataRow19.html#T12" target="_self">T12</a>, <code>val </code><em>v13</em> : <a href="../../org/specs/util/DataRow19.html#T13" target="_self">T13</a>, <code>val </code><em>v14</em> : <a href="../../org/specs/util/DataRow19.html#T14" target="_self">T14</a>, <code>val </code><em>v15</em> : <a href="../../org/specs/util/DataRow19.html#T15" target="_self">T15</a>, <code>val </code><em>v16</em> : <a href="../../org/specs/util/DataRow19.html#T16" target="_self">T16</a>, <code>val </code><em>v17</em> : <a href="../../org/specs/util/DataRow19.html#T17" target="_self">T17</a>, <code>val </code><em>v18</em> : <a href="../../org/specs/util/DataRow19.html#T18" target="_self">T18</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow19.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow19.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataRow19.html#T2" target="_self">T2</a>, <a href="../../org/specs/util/DataRow19.html#T3" target="_self">T3</a>, <a href="../../org/specs/util/DataRow19.html#T4" target="_self">T4</a>, <a href="../../org/specs/util/DataRow19.html#T5" target="_self">T5</a>, <a href="../../org/specs/util/DataRow19.html#T6" target="_self">T6</a>, <a href="../../org/specs/util/DataRow19.html#T7" target="_self">T7</a>, <a href="../../org/specs/util/DataRow19.html#T8" target="_self">T8</a>, <a href="../../org/specs/util/DataRow19.html#T9" target="_self">T9</a>, <a href="../../org/specs/util/DataRow19.html#T10" target="_self">T10</a>, <a href="../../org/specs/util/DataRow19.html#T11" target="_self">T11</a>, <a href="../../org/specs/util/DataRow19.html#T12" target="_self">T12</a>, <a href="../../org/specs/util/DataRow19.html#T13" target="_self">T13</a>, <a href="../../org/specs/util/DataRow19.html#T14" target="_self">T14</a>, <a href="../../org/specs/util/DataRow19.html#T15" target="_self">T15</a>, <a href="../../org/specs/util/DataRow19.html#T16" target="_self">T16</a>, <a href="../../org/specs/util/DataRow19.html#T17" target="_self">T17</a>, <a href="../../org/specs/util/DataRow19.html#T18" target="_self">T18</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow2.html" target="_self">DataRow2</a></em>
+        [<em>T0</em>, <em>T1</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow2.html#T0" target="_self">T0</a>, <code>val </code><em>v1</em> : <a href="../../org/specs/util/DataRow2.html#T1" target="_self">T1</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow2.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow2.html#T1" target="_self">T1</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow20.html" target="_self">DataRow20</a></em>
+        [<em>T0</em>, <em>T1</em>, <em>T2</em>, <em>T3</em>, <em>T4</em>, <em>T5</em>, <em>T6</em>, <em>T7</em>, <em>T8</em>, <em>T9</em>, <em>T10</em>, <em>T11</em>, <em>T12</em>, <em>T13</em>, <em>T14</em>, <em>T15</em>, <em>T16</em>, <em>T17</em>, <em>T18</em>, <em>T19</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow20.html#T0" target="_self">T0</a>, <code>val </code><em>v1</em> : <a href="../../org/specs/util/DataRow20.html#T1" target="_self">T1</a>, <code>val </code><em>v2</em> : <a href="../../org/specs/util/DataRow20.html#T2" target="_self">T2</a>, <code>val </code><em>v3</em> : <a href="../../org/specs/util/DataRow20.html#T3" target="_self">T3</a>, <code>val </code><em>v4</em> : <a href="../../org/specs/util/DataRow20.html#T4" target="_self">T4</a>, <code>val </code><em>v5</em> : <a href="../../org/specs/util/DataRow20.html#T5" target="_self">T5</a>, <code>val </code><em>v6</em> : <a href="../../org/specs/util/DataRow20.html#T6" target="_self">T6</a>, <code>val </code><em>v7</em> : <a href="../../org/specs/util/DataRow20.html#T7" target="_self">T7</a>, <code>val </code><em>v8</em> : <a href="../../org/specs/util/DataRow20.html#T8" target="_self">T8</a>, <code>val </code><em>v9</em> : <a href="../../org/specs/util/DataRow20.html#T9" target="_self">T9</a>, <code>val </code><em>v10</em> : <a href="../../org/specs/util/DataRow20.html#T10" target="_self">T10</a>, <code>val </code><em>v11</em> : <a href="../../org/specs/util/DataRow20.html#T11" target="_self">T11</a>, <code>val </code><em>v12</em> : <a href="../../org/specs/util/DataRow20.html#T12" target="_self">T12</a>, <code>val </code><em>v13</em> : <a href="../../org/specs/util/DataRow20.html#T13" target="_self">T13</a>, <code>val </code><em>v14</em> : <a href="../../org/specs/util/DataRow20.html#T14" target="_self">T14</a>, <code>val </code><em>v15</em> : <a href="../../org/specs/util/DataRow20.html#T15" target="_self">T15</a>, <code>val </code><em>v16</em> : <a href="../../org/specs/util/DataRow20.html#T16" target="_self">T16</a>, <code>val </code><em>v17</em> : <a href="../../org/specs/util/DataRow20.html#T17" target="_self">T17</a>, <code>val </code><em>v18</em> : <a href="../../org/specs/util/DataRow20.html#T18" target="_self">T18</a>, <code>val </code><em>v19</em> : <a href="../../org/specs/util/DataRow20.html#T19" target="_self">T19</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow20.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow20.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataRow20.html#T2" target="_self">T2</a>, <a href="../../org/specs/util/DataRow20.html#T3" target="_self">T3</a>, <a href="../../org/specs/util/DataRow20.html#T4" target="_self">T4</a>, <a href="../../org/specs/util/DataRow20.html#T5" target="_self">T5</a>, <a href="../../org/specs/util/DataRow20.html#T6" target="_self">T6</a>, <a href="../../org/specs/util/DataRow20.html#T7" target="_self">T7</a>, <a href="../../org/specs/util/DataRow20.html#T8" target="_self">T8</a>, <a href="../../org/specs/util/DataRow20.html#T9" target="_self">T9</a>, <a href="../../org/specs/util/DataRow20.html#T10" target="_self">T10</a>, <a href="../../org/specs/util/DataRow20.html#T11" target="_self">T11</a>, <a href="../../org/specs/util/DataRow20.html#T12" target="_self">T12</a>, <a href="../../org/specs/util/DataRow20.html#T13" target="_self">T13</a>, <a href="../../org/specs/util/DataRow20.html#T14" target="_self">T14</a>, <a href="../../org/specs/util/DataRow20.html#T15" target="_self">T15</a>, <a href="../../org/specs/util/DataRow20.html#T16" target="_self">T16</a>, <a href="../../org/specs/util/DataRow20.html#T17" target="_self">T17</a>, <a href="../../org/specs/util/DataRow20.html#T18" target="_self">T18</a>, <a href="../../org/specs/util/DataRow20.html#T19" target="_self">T19</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow3.html" target="_self">DataRow3</a></em>
+        [<em>T0</em>, <em>T1</em>, <em>T2</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow3.html#T0" target="_self">T0</a>, <code>val </code><em>v1</em> : <a href="../../org/specs/util/DataRow3.html#T1" target="_self">T1</a>, <code>val </code><em>v2</em> : <a href="../../org/specs/util/DataRow3.html#T2" target="_self">T2</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow3.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow3.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataRow3.html#T2" target="_self">T2</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow4.html" target="_self">DataRow4</a></em>
+        [<em>T0</em>, <em>T1</em>, <em>T2</em>, <em>T3</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow4.html#T0" target="_self">T0</a>, <code>val </code><em>v1</em> : <a href="../../org/specs/util/DataRow4.html#T1" target="_self">T1</a>, <code>val </code><em>v2</em> : <a href="../../org/specs/util/DataRow4.html#T2" target="_self">T2</a>, <code>val </code><em>v3</em> : <a href="../../org/specs/util/DataRow4.html#T3" target="_self">T3</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow4.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow4.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataRow4.html#T2" target="_self">T2</a>, <a href="../../org/specs/util/DataRow4.html#T3" target="_self">T3</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow5.html" target="_self">DataRow5</a></em>
+        [<em>T0</em>, <em>T1</em>, <em>T2</em>, <em>T3</em>, <em>T4</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow5.html#T0" target="_self">T0</a>, <code>val </code><em>v1</em> : <a href="../../org/specs/util/DataRow5.html#T1" target="_self">T1</a>, <code>val </code><em>v2</em> : <a href="../../org/specs/util/DataRow5.html#T2" target="_self">T2</a>, <code>val </code><em>v3</em> : <a href="../../org/specs/util/DataRow5.html#T3" target="_self">T3</a>, <code>val </code><em>v4</em> : <a href="../../org/specs/util/DataRow5.html#T4" target="_self">T4</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow5.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow5.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataRow5.html#T2" target="_self">T2</a>, <a href="../../org/specs/util/DataRow5.html#T3" target="_self">T3</a>, <a href="../../org/specs/util/DataRow5.html#T4" target="_self">T4</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow6.html" target="_self">DataRow6</a></em>
+        [<em>T0</em>, <em>T1</em>, <em>T2</em>, <em>T3</em>, <em>T4</em>, <em>T5</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow6.html#T0" target="_self">T0</a>, <code>val </code><em>v1</em> : <a href="../../org/specs/util/DataRow6.html#T1" target="_self">T1</a>, <code>val </code><em>v2</em> : <a href="../../org/specs/util/DataRow6.html#T2" target="_self">T2</a>, <code>val </code><em>v3</em> : <a href="../../org/specs/util/DataRow6.html#T3" target="_self">T3</a>, <code>val </code><em>v4</em> : <a href="../../org/specs/util/DataRow6.html#T4" target="_self">T4</a>, <code>val </code><em>v5</em> : <a href="../../org/specs/util/DataRow6.html#T5" target="_self">T5</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow6.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow6.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataRow6.html#T2" target="_self">T2</a>, <a href="../../org/specs/util/DataRow6.html#T3" target="_self">T3</a>, <a href="../../org/specs/util/DataRow6.html#T4" target="_self">T4</a>, <a href="../../org/specs/util/DataRow6.html#T5" target="_self">T5</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow7.html" target="_self">DataRow7</a></em>
+        [<em>T0</em>, <em>T1</em>, <em>T2</em>, <em>T3</em>, <em>T4</em>, <em>T5</em>, <em>T6</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow7.html#T0" target="_self">T0</a>, <code>val </code><em>v1</em> : <a href="../../org/specs/util/DataRow7.html#T1" target="_self">T1</a>, <code>val </code><em>v2</em> : <a href="../../org/specs/util/DataRow7.html#T2" target="_self">T2</a>, <code>val </code><em>v3</em> : <a href="../../org/specs/util/DataRow7.html#T3" target="_self">T3</a>, <code>val </code><em>v4</em> : <a href="../../org/specs/util/DataRow7.html#T4" target="_self">T4</a>, <code>val </code><em>v5</em> : <a href="../../org/specs/util/DataRow7.html#T5" target="_self">T5</a>, <code>val </code><em>v6</em> : <a href="../../org/specs/util/DataRow7.html#T6" target="_self">T6</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow7.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow7.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataRow7.html#T2" target="_self">T2</a>, <a href="../../org/specs/util/DataRow7.html#T3" target="_self">T3</a>, <a href="../../org/specs/util/DataRow7.html#T4" target="_self">T4</a>, <a href="../../org/specs/util/DataRow7.html#T5" target="_self">T5</a>, <a href="../../org/specs/util/DataRow7.html#T6" target="_self">T6</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow8.html" target="_self">DataRow8</a></em>
+        [<em>T0</em>, <em>T1</em>, <em>T2</em>, <em>T3</em>, <em>T4</em>, <em>T5</em>, <em>T6</em>, <em>T7</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow8.html#T0" target="_self">T0</a>, <code>val </code><em>v1</em> : <a href="../../org/specs/util/DataRow8.html#T1" target="_self">T1</a>, <code>val </code><em>v2</em> : <a href="../../org/specs/util/DataRow8.html#T2" target="_self">T2</a>, <code>val </code><em>v3</em> : <a href="../../org/specs/util/DataRow8.html#T3" target="_self">T3</a>, <code>val </code><em>v4</em> : <a href="../../org/specs/util/DataRow8.html#T4" target="_self">T4</a>, <code>val </code><em>v5</em> : <a href="../../org/specs/util/DataRow8.html#T5" target="_self">T5</a>, <code>val </code><em>v6</em> : <a href="../../org/specs/util/DataRow8.html#T6" target="_self">T6</a>, <code>val </code><em>v7</em> : <a href="../../org/specs/util/DataRow8.html#T7" target="_self">T7</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow8.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow8.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataRow8.html#T2" target="_self">T2</a>, <a href="../../org/specs/util/DataRow8.html#T3" target="_self">T3</a>, <a href="../../org/specs/util/DataRow8.html#T4" target="_self">T4</a>, <a href="../../org/specs/util/DataRow8.html#T5" target="_self">T5</a>, <a href="../../org/specs/util/DataRow8.html#T6" target="_self">T6</a>, <a href="../../org/specs/util/DataRow8.html#T7" target="_self">T7</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow9.html" target="_self">DataRow9</a></em>
+        [<em>T0</em>, <em>T1</em>, <em>T2</em>, <em>T3</em>, <em>T4</em>, <em>T5</em>, <em>T6</em>, <em>T7</em>, <em>T8</em>](<code>val </code><em>v0</em> : <a href="../../org/specs/util/DataRow9.html#T0" target="_self">T0</a>, <code>val </code><em>v1</em> : <a href="../../org/specs/util/DataRow9.html#T1" target="_self">T1</a>, <code>val </code><em>v2</em> : <a href="../../org/specs/util/DataRow9.html#T2" target="_self">T2</a>, <code>val </code><em>v3</em> : <a href="../../org/specs/util/DataRow9.html#T3" target="_self">T3</a>, <code>val </code><em>v4</em> : <a href="../../org/specs/util/DataRow9.html#T4" target="_self">T4</a>, <code>val </code><em>v5</em> : <a href="../../org/specs/util/DataRow9.html#T5" target="_self">T5</a>, <code>val </code><em>v6</em> : <a href="../../org/specs/util/DataRow9.html#T6" target="_self">T6</a>, <code>val </code><em>v7</em> : <a href="../../org/specs/util/DataRow9.html#T7" target="_self">T7</a>, <code>val </code><em>v8</em> : <a href="../../org/specs/util/DataRow9.html#T8" target="_self">T8</a>)<code> extends </code><a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataRow9.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataRow9.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataRow9.html#T2" target="_self">T2</a>, <a href="../../org/specs/util/DataRow9.html#T3" target="_self">T3</a>, <a href="../../org/specs/util/DataRow9.html#T4" target="_self">T4</a>, <a href="../../org/specs/util/DataRow9.html#T5" target="_self">T5</a>, <a href="../../org/specs/util/DataRow9.html#T6" target="_self">T6</a>, <a href="../../org/specs/util/DataRow9.html#T7" target="_self">T7</a>, <a href="../../org/specs/util/DataRow9.html#T8" target="_self">T8</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>, <a href="#None" target="contentFrame" class="scala">scala.None</a>]<code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataTable.html" target="_self">DataTable</a></em>
+        [<em>T0</em>, <em>T1</em>, <em>T2</em>, <em>T3</em>, <em>T4</em>, <em>T5</em>, <em>T6</em>, <em>T7</em>, <em>T8</em>, <em>T9</em>, <em>T10</em>, <em>T11</em>, <em>T12</em>, <em>T13</em>, <em>T14</em>, <em>T15</em>, <em>T16</em>, <em>T17</em>, <em>T18</em>, <em>T19</em>](<code>val </code><em>header</em> : <a href="../../org/specs/util/TableHeader.html" target="_self">TableHeader</a>, <code>val </code><em>rows</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../org/specs/util/DataRow.html" target="_self">DataRow</a>[<a href="../../org/specs/util/DataTable.html#T0" target="_self">T0</a>, <a href="../../org/specs/util/DataTable.html#T1" target="_self">T1</a>, <a href="../../org/specs/util/DataTable.html#T2" target="_self">T2</a>, <a href="../../org/specs/util/DataTable.html#T3" target="_self">T3</a>, <a href="../../org/specs/util/DataTable.html#T4" target="_self">T4</a>, <a href="../../org/specs/util/DataTable.html#T5" target="_self">T5</a>, <a href="../../org/specs/util/DataTable.html#T6" target="_self">T6</a>, <a href="../../org/specs/util/DataTable.html#T7" target="_self">T7</a>, <a href="../../org/specs/util/DataTable.html#T8" target="_self">T8</a>, <a href="../../org/specs/util/DataTable.html#T9" target="_self">T9</a>, <a href="../../org/specs/util/DataTable.html#T10" target="_self">T10</a>, <a href="../../org/specs/util/DataTable.html#T11" target="_self">T11</a>, <a href="../../org/specs/util/DataTable.html#T12" target="_self">T12</a>, <a href="../../org/specs/util/DataTable.html#T13" target="_self">T13</a>, <a href="../../org/specs/util/DataTable.html#T14" target="_self">T14</a>, <a href="../../org/specs/util/DataTable.html#T15" target="_self">T15</a>, <a href="../../org/specs/util/DataTable.html#T16" target="_self">T16</a>, <a href="../../org/specs/util/DataTable.html#T17" target="_self">T17</a>, <a href="../../org/specs/util/DataTable.html#T18" target="_self">T18</a>, <a href="../../org/specs/util/DataTable.html#T19" target="_self">T19</a>]], <code>val </code><em>shouldExecute</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>)<code> extends </code><a href="../../org/specs/util/ExecutableDataTable.html" target="_self">ExecutableDataTable</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>A DataTable contains: a header describing the columns, datarows containing values, a function to execute on each row
+ In the following example of a DataTable:<code>
+ val datatable = "a" | "b" | "c = a + b" |>
+                  1  !  2  !     3       |
+                  2  !  2  !     4       |
+                  3  !  2  !     5       | {
+                (a: Int, b: Int, c: Int) => c must_== calc.add(a, b)
+                 } </code>
+ The header defines 3 columns, there are 3 rows of type (Int, Int, Int) and a function taking its values in each row.
+ The '>' sign added to the header means that the function will be executed on each row when the table is defined. The result
+ of the execution will be available via a <code>results</code> function returning a string.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataTableFailureException.html" target="_self">DataTableFailureException</a></em>
+        (<code>val </code><em>table</em> : <a href="../../org/specs/util/ExecutableDataTable.html" target="_self">ExecutableDataTable</a>)<code> extends </code><a href="../../org/specs/execute/FailureException.html" target="_self">FailureException</a>
+        
+        <div>Extension of a FailureException to allow a better display of this kind of failure (used in HtmlRunner)</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataTables.html" target="_self">DataTables</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>The Datatables trait provides implicit methods to start table headers
+ and DataRows.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DefaultConfiguration.html" target="_self">DefaultConfiguration</a></em>
+        <code> extends </code><a href="../../org/specs/util/Configuration.html" target="_self">Configuration</a>
+        
+        <div>Copyright (c) 2007-2009 Eric Torreborre <etorreborre@yahoo.com>
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+ the Software. Neither the name of specs nor the names of its contributors may be used to endorse or promote
+ products derived from this software without specific prior written permission.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+ TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS INTHE SOFTWARE.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DefaultIncludeExclude.html" target="_self">DefaultIncludeExclude</a></em>
+        [<em>T</em>]<code> extends </code><a href="../../org/specs/util/IncludeExclude.html" target="_self">IncludeExclude</a>[<a href="../../org/specs/util/DefaultIncludeExclude.html#T" target="_self">T</a>]
+        
+        <div>Default class for the Include/Exclude behaviour</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DoubleProperties.html" target="_self">DoubleProperties</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait provides Double properterties with alphabetical names.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/EditDistance.html" target="_self">EditDistance</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>The EditDistance trait provides methods to compute and display the shortest distance between 2 strings.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/ExecutableDataTable.html" target="_self">ExecutableDataTable</a></em>
+        <code> extends </code><a href="../../org/specs/execute/HasResults.html" target="_self">HasResults</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/HmsTimer.html" target="_self">HmsTimer</a></em>
+        <code> extends </code><a href="../../org/specs/util/Timer.html" target="_self">Timer</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait provides Timer functionalities based on the Java Calendar milliseconds</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/IncludeExclude.html" target="_self">IncludeExclude</a></em>
+        [<em>T</em>]<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait adds the possibility to declare some elements as included or excluded.
+ 
+ A filter function is then able to return the list of filtered values for a given set of values
+ according to the values which should be included and the values which should be excluded.
+ 
+ The rule is:
+ 
+ - if there are no included values, the value must not be excluded to be one of the filtered values
+ - if there are included values, the values must both be in the included list and not be in the excluded list to 
+   be part of the filtered values</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/IntProperties.html" target="_self">IntProperties</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait provides Int properterties with alphabetical names.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/Matching.html" target="_self">Matching</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/Properties.html" target="_self">Properties</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/Property.html" target="_self">Property</a></em>
+        [<em>T</em>](<code>val </code><em>value</em> : () =&gt; <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../org/specs/util/Property.html#T" target="_self">T</a>])<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This class represent properties which can be updated and retrieved using customized getter and setter functions.
+ 
+ The held value is optional: it may not exist yet and it is lazy: it is evaluated only once on the first call to get</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/ScalaInterpreter.html" target="_self">ScalaInterpreter</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Copyright (c) 2007-2009 Eric Torreborre <etorreborre@yahoo.com>
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+ the Software. Neither the name of specs nor the names of its contributors may be used to endorse or promote
+ products derived from this software without specific prior written permission.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+ TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS INTHE SOFTWARE.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/SimpleTimer.html" target="_self">SimpleTimer</a></em>
+        <code> extends </code><a href="../../org/specs/util/HmsTimer.html" target="_self">HmsTimer</a>
+        
+        <div>Default class for the HmsTimer trait</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/StringProperties.html" target="_self">StringProperties</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait provides String properterties with alphabetical names.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/TableHeader.html" target="_self">TableHeader</a></em>
+        (<code>val </code><em>titles</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>], <code>val </code><em>isOk</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>)<code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>The TableHeader case class models the header of a data table which should be a list of strings.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/Timer.html" target="_self">Timer</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>The Timer trait acts as a simple stopwatch. It can be stopped to get the elapsed time as a formatted String.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/WaitFor.html" target="_self">WaitFor</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>The WaitFor trait can be used to add some Thread.sleep instructions to an executed specification.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/XmlProperties.html" target="_self">XmlProperties</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait provides Xml properterties with alphabetical names.</div>
+      </td>
+    </tr>        
+        </table>
+<table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Object Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/AllProperties$object.html" target="_self">AllProperties</a></em>
+        <code> extends </code><a href="../../org/specs/util/AllProperties.html" target="_self">AllProperties</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/Classes$object.html" target="_self">Classes</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This object provides simple functions to instantiate classes.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/Configuration$object.html" target="_self">Configuration</a></em>
+        <code> extends </code><a href="../../org/specs/util/Configuration.html" target="_self">Configuration</a>
+        
+        <div>Copyright (c) 2007-2009 Eric Torreborre <etorreborre@yahoo.com>
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+ the Software. Neither the name of specs nor the names of its contributors may be used to endorse or promote
+ products derived from this software without specific prior written permission.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+ TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS INTHE SOFTWARE.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow1$object.html" target="_self">DataRow1</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow10$object.html" target="_self">DataRow10</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow11$object.html" target="_self">DataRow11</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow12$object.html" target="_self">DataRow12</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow13$object.html" target="_self">DataRow13</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow14$object.html" target="_self">DataRow14</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow15$object.html" target="_self">DataRow15</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow16$object.html" target="_self">DataRow16</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow17$object.html" target="_self">DataRow17</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow18$object.html" target="_self">DataRow18</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow19$object.html" target="_self">DataRow19</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow2$object.html" target="_self">DataRow2</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow20$object.html" target="_self">DataRow20</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow3$object.html" target="_self">DataRow3</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow4$object.html" target="_self">DataRow4</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow5$object.html" target="_self">DataRow5</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow6$object.html" target="_self">DataRow6</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow7$object.html" target="_self">DataRow7</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow8$object.html" target="_self">DataRow8</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataRow9$object.html" target="_self">DataRow9</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataTable$object.html" target="_self">DataTable</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/DataTableFailureException$object.html" target="_self">DataTableFailureException</a></em>
+        <code> extends </code>(<a href="../../org/specs/util/ExecutableDataTable.html" target="_self">ExecutableDataTable</a>) =&gt; <a href="../../org/specs/util/DataTableFailureException.html" target="_self">DataTableFailureException</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/EditDistance$object.html" target="_self">EditDistance</a></em>
+        <code> extends </code><a href="../../org/specs/util/EditDistance.html" target="_self">EditDistance</a>
+        
+        <div>The EditDistance object provides methods to compute and display the shortest distance between 2 strings.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/ExtendedString$object.html" target="_self">ExtendedString</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>The ExtendedString object adds utility functions like 'uncapitalize' to Strings</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/Matching$object.html" target="_self">Matching</a></em>
+        <code> extends </code><a href="../../org/specs/util/Matching.html" target="_self">Matching</a>
+        
+        <div>Copyright (c) 2007-2009 Eric Torreborre <etorreborre@yahoo.com>
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+ the Software. Neither the name of specs nor the names of its contributors may be used to endorse or promote
+ products derived from this software without specific prior written permission.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+ TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS INTHE SOFTWARE.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/Plural$object.html" target="_self">Plural</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Copyright (c) 2007-2009 Eric Torreborre <etorreborre@yahoo.com>
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+ the Software. Neither the name of specs nor the names of its contributors may be used to endorse or promote
+ products derived from this software without specific prior written permission.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+ TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS INTHE SOFTWARE.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/Properties$object.html" target="_self">Properties</a></em>
+        <code> extends </code><a href="../../org/specs/util/Properties.html" target="_self">Properties</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/Property$object.html" target="_self">Property</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Companion object to create properties with possibly no initial value</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/ScalaInterpreter$object.html" target="_self">ScalaInterpreter</a></em>
+        <code> extends </code><a href="../../org/specs/util/ScalaInterpreter.html" target="_self">ScalaInterpreter</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/util/TableHeader$object.html" target="_self">TableHeader</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>], <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>) =&gt; <a href="../../org/specs/util/TableHeader.html" target="_self">TableHeader</a>
+        
+        
+      </td>
+    </tr>        
+        </table></body>
+      </html>

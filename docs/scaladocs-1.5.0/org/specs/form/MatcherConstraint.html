@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>class MatcherConstraint in org.specs.form</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.3.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/form$package.html" target="_self">org.specs.form</a>
+        <br></br>
+        <span class="entity">class  MatcherConstraint</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/form/MatcherConstraint"><code>org/specs/form/MatcherConstraint.scala</code></a>]
+      </div><hr></hr>
+      <a name="MatcherConstraint"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>class</code>
+        <em>MatcherConstraint</em>[<em>T</em>](<em>actual</em> : =&gt; <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../../org/specs/form/MatcherConstraint.html#T" target="_self">T</a>], <code>val </code><em>executor</em> : (<a href="../../../org/specs/form/MatcherConstraint.html#T" target="_self">T</a>, <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/form/MatcherConstraint.html#T" target="_self">T</a>]) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/form/Constraint.html" target="_self">Constraint</a>[<a href="../../../org/specs/form/MatcherConstraint.html#T" target="_self">T</a>]</dd>
+    </dl>
+      <dl><dd>A MatcherConstraint uses a matcher to evaluate an expected value.
+ 
+ By default the matcher is the BeEqualTo matcher, but it can be changed with the matchesWith method:
+ <code>
+ matcherConstraint.matchesWith(be_>=(_))
+ </code>
+ 
+ The executor function is usually an expression like: <code>(m: Matcher[T]) => actual must m</code>
+ which will actually trigger the constraint.</dd></dl>
+      <dl></dl>
+    
+      
+
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/MatcherConstraint.html#execute%28Option%5BT%5D%29" target="_self">execute</a></em>
+        (<em>expected</em> : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../../org/specs/form/MatcherConstraint.html#T" target="_self">T</a>]) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>execute the constraint by applying the matcher function to the expected value
+   and passing this to the executor function.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/form/MatcherConstraint.html#matchesWith%28%28T%29%3D%3Eorg.specs.matcher.Matcher%5BT%5D%29" target="_self">matchesWith</a></em>
+        (<em>m</em> : (<a href="../../../org/specs/form/MatcherConstraint.html#T" target="_self">T</a>) =&gt; <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/form/MatcherConstraint.html#T" target="_self">T</a>]) : <a href="../../../org/specs/form/MatcherConstraint.html" target="_self">MatcherConstraint</a>[<a href="../../../org/specs/form/MatcherConstraint.html#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/form/Constraint.html" target="_self">Constraint</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/form/Constraint.html#hashCode%28%29" target="_self">hashCode</a>, <a href="../../../org/specs/form/Constraint.html#toString%28%29" target="_self">toString</a>, <a href="../../../org/specs/form/Constraint.html#equals%28Any%29" target="_self">equals</a>, <a href="../../../org/specs/form/Constraint.html#productPrefix" target="_self">productPrefix</a>, <a href="../../../org/specs/form/Constraint.html#productArity" target="_self">productArity</a>, <a href="../../../org/specs/form/Constraint.html#productElement%28Int%29" target="_self">productElement</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="matchesWith%28%28T%29%3D%3Eorg.specs.matcher.Matcher%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>matchesWith</em>(<em>m</em> : (<a href="../../../org/specs/form/MatcherConstraint.html#T" target="_self">T</a>) =&gt; <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/form/MatcherConstraint.html#T" target="_self">T</a>]) : <a href="../../../org/specs/form/MatcherConstraint.html" target="_self">MatcherConstraint</a>[<a href="../../../org/specs/form/MatcherConstraint.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="execute%28Option%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>execute</em>(<em>expected</em> : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../../org/specs/form/MatcherConstraint.html#T" target="_self">T</a>]) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>execute the constraint by applying the matcher function to the expected value
+   and passing this to the executor function.</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/form/Constraint.html" target="_self">Constraint</a>.<a href="../../../org/specs/form/Constraint.html#execute%28Option%5BT%5D%29" target="_self">execute</a>
+        </dd>
+      </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2009. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

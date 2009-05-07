@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>class MockitoMocker in org.mockito</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.3.final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../org/mockito$package.html" target="_self">org.mockito</a>
+        <br></br>
+        <span class="entity">class  MockitoMocker</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/mockito/MockitoMocker"><code>org/mockito/MockitoMocker.scala</code></a>]
+      </div><hr></hr>
+      <a name="MockitoMocker"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>class</code>
+        <em>MockitoMocker</em>
+      </dt>
+      <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
+    </dl>
+      <dl><dd>This class is created to get an access to the MOCKING_PROGRESS Mockito package variable which is package protected.
+ Then it delegates all the methods to the Mockito static methods.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>See Also</b></dt><dd><a href="../../org/specs/mock/Mockito.html" target="_self">org.specs.mock.Mockito</a></dd></dl>
+    
+      
+
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/mockito/MockitoMocker.html#doAnswer%28org.mockito.stubbing.Answer%5BT%5D%29" target="_self">doAnswer</a></em>
+        [<em>T</em>](<em>a</em> : <a href="" target="contentFrame" class="org/mockito/stubbing/Answer">org.mockito.stubbing.Answer</a>[<a href="../../org/mockito/MockitoMocker.html#doAnswer%28org.mockito.stubbing.Answer%5BT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="org/mockito/internal/stubbing/Stubber">org.mockito.internal.stubbing.Stubber</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/mockito/MockitoMocker.html#doNothing" target="_self">doNothing</a></em>
+         : <a href="" target="contentFrame" class="org/mockito/internal/stubbing/Stubber">org.mockito.internal.stubbing.Stubber</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/mockito/MockitoMocker.html#doReturn%28T%29" target="_self">doReturn</a></em>
+        [<em>T</em>](<em>t</em> : <a href="../../org/mockito/MockitoMocker.html#doReturn%28T%29#T" target="_self">T</a>) : <a href="" target="contentFrame" class="org/mockito/internal/stubbing/Stubber">org.mockito.internal.stubbing.Stubber</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/mockito/MockitoMocker.html#doThrow%28E%29" target="_self">doThrow</a></em>
+        [<em>E</em> &lt;: <a href="" target="contentFrame" class="java/lang/Throwable">java.lang.Throwable</a>](<em>e</em> : <a href="../../org/mockito/MockitoMocker.html#doThrow%28E%29#E" target="_self">E</a>) : <a href="" target="contentFrame" class="org/mockito/internal/stubbing/Stubber">org.mockito.internal.stubbing.Stubber</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/mockito/MockitoMocker.html#mock%28scala.reflect.Manifest%5BT%5D%2Corg.mockito.ReturnValues%29" target="_self">mock</a></em>
+        [<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../org/mockito/MockitoMocker.html#mock%28scala.reflect.Manifest%5BT%5D%2Corg.mockito.ReturnValues%29#T" target="_self">T</a>], <code>implicit </code><em>v</em> : <a href="" target="contentFrame" class="org/mockito/ReturnValues">org.mockito.ReturnValues</a>) : <a href="../../org/mockito/MockitoMocker.html#mock%28scala.reflect.Manifest%5BT%5D%2Corg.mockito.ReturnValues%29#T" target="_self">T</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/mockito/MockitoMocker.html#mock%28scala.reflect.Manifest%5BT%5D%29" target="_self">mock</a></em>
+        [<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../org/mockito/MockitoMocker.html#mock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../org/mockito/MockitoMocker.html#mock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/mockito/MockitoMocker.html#mockingProgress" target="_self">mockingProgress</a></em>
+         : <a href="" target="contentFrame" class="org/mockito/internal/progress/MockingProgress">org.mockito.internal.progress.MockingProgress</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/mockito/MockitoMocker.html#smartMock%28scala.reflect.Manifest%5BT%5D%29" target="_self">smartMock</a></em>
+        [<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../org/mockito/MockitoMocker.html#smartMock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../org/mockito/MockitoMocker.html#smartMock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/mockito/MockitoMocker.html#spy%28T%29" target="_self">spy</a></em>
+        [<em>T</em>](<em>m</em> : <a href="../../org/mockito/MockitoMocker.html#spy%28T%29#T" target="_self">T</a>) : <a href="../../org/mockito/MockitoMocker.html#spy%28T%29#T" target="_self">T</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/mockito/MockitoMocker.html#times%28Int%29" target="_self">times</a></em>
+        (<em>i</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="" target="contentFrame" class="org/mockito/internal/verification/Times">org.mockito.internal.verification.Times</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/mockito/MockitoMocker.html#verify%28M%2Corg.mockito.internal.verification.api.VerificationMode%29" target="_self">verify</a></em>
+        [<em>M</em>](<em>m</em> : <a href="../../org/mockito/MockitoMocker.html#verify%28M%2Corg.mockito.internal.verification.api.VerificationMode%29#M" target="_self">M</a>, <em>v</em> : <a href="" target="contentFrame" class="org/mockito/internal/verification/api/VerificationMode">org.mockito.internal.verification.api.VerificationMode</a>) : <a href="../../org/mockito/MockitoMocker.html#verify%28M%2Corg.mockito.internal.verification.api.VerificationMode%29#M" target="_self">M</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/mockito/MockitoMocker.html#verifyNoMoreInteractions%28T*%29" target="_self">verifyNoMoreInteractions</a></em>
+        [<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<em>mocks</em> : <a href="../../org/mockito/MockitoMocker.html#verifyNoMoreInteractions%28T*%29#T" target="_self">T</a>*) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/mockito/MockitoMocker.html#when%28V%29" target="_self">when</a></em>
+        [<em>V</em>](<em>v</em> : <a href="../../org/mockito/MockitoMocker.html#when%28V%29#V" target="_self">V</a>) : <a href="" target="contentFrame" class="org/mockito/internal/progress/NewOngoingStubbing">org.mockito.internal.progress.NewOngoingStubbing</a>[<a href="../../org/mockito/MockitoMocker.html#when%28V%29#V" target="_self">V</a>]
+        
+        
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="mockingProgress"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>mockingProgress</em> : <a href="" target="contentFrame" class="org/mockito/internal/progress/MockingProgress">org.mockito.internal.progress.MockingProgress</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="mock%28scala.reflect.Manifest%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>mock</em>[<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../org/mockito/MockitoMocker.html#mock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../org/mockito/MockitoMocker.html#mock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="mock%28scala.reflect.Manifest%5BT%5D%2Corg.mockito.ReturnValues%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>mock</em>[<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../org/mockito/MockitoMocker.html#mock%28scala.reflect.Manifest%5BT%5D%2Corg.mockito.ReturnValues%29#T" target="_self">T</a>], <code>implicit </code><em>v</em> : <a href="" target="contentFrame" class="org/mockito/ReturnValues">org.mockito.ReturnValues</a>) : <a href="../../org/mockito/MockitoMocker.html#mock%28scala.reflect.Manifest%5BT%5D%2Corg.mockito.ReturnValues%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="smartMock%28scala.reflect.Manifest%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>smartMock</em>[<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../org/mockito/MockitoMocker.html#smartMock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../org/mockito/MockitoMocker.html#smartMock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="spy%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>spy</em>[<em>T</em>](<em>m</em> : <a href="../../org/mockito/MockitoMocker.html#spy%28T%29#T" target="_self">T</a>) : <a href="../../org/mockito/MockitoMocker.html#spy%28T%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="when%28V%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>when</em>[<em>V</em>](<em>v</em> : <a href="../../org/mockito/MockitoMocker.html#when%28V%29#V" target="_self">V</a>) : <a href="" target="contentFrame" class="org/mockito/internal/progress/NewOngoingStubbing">org.mockito.internal.progress.NewOngoingStubbing</a>[<a href="../../org/mockito/MockitoMocker.html#when%28V%29#V" target="_self">V</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="times%28Int%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>times</em>(<em>i</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="" target="contentFrame" class="org/mockito/internal/verification/Times">org.mockito.internal.verification.Times</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="verify%28M%2Corg.mockito.internal.verification.api.VerificationMode%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>verify</em>[<em>M</em>](<em>m</em> : <a href="../../org/mockito/MockitoMocker.html#verify%28M%2Corg.mockito.internal.verification.api.VerificationMode%29#M" target="_self">M</a>, <em>v</em> : <a href="" target="contentFrame" class="org/mockito/internal/verification/api/VerificationMode">org.mockito.internal.verification.api.VerificationMode</a>) : <a href="../../org/mockito/MockitoMocker.html#verify%28M%2Corg.mockito.internal.verification.api.VerificationMode%29#M" target="_self">M</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="doReturn%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>doReturn</em>[<em>T</em>](<em>t</em> : <a href="../../org/mockito/MockitoMocker.html#doReturn%28T%29#T" target="_self">T</a>) : <a href="" target="contentFrame" class="org/mockito/internal/stubbing/Stubber">org.mockito.internal.stubbing.Stubber</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="doAnswer%28org.mockito.stubbing.Answer%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>doAnswer</em>[<em>T</em>](<em>a</em> : <a href="" target="contentFrame" class="org/mockito/stubbing/Answer">org.mockito.stubbing.Answer</a>[<a href="../../org/mockito/MockitoMocker.html#doAnswer%28org.mockito.stubbing.Answer%5BT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="org/mockito/internal/stubbing/Stubber">org.mockito.internal.stubbing.Stubber</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="doThrow%28E%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>doThrow</em>[<em>E</em> &lt;: <a href="" target="contentFrame" class="java/lang/Throwable">java.lang.Throwable</a>](<em>e</em> : <a href="../../org/mockito/MockitoMocker.html#doThrow%28E%29#E" target="_self">E</a>) : <a href="" target="contentFrame" class="org/mockito/internal/stubbing/Stubber">org.mockito.internal.stubbing.Stubber</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="doNothing"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>doNothing</em> : <a href="" target="contentFrame" class="org/mockito/internal/stubbing/Stubber">org.mockito.internal.stubbing.Stubber</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="verifyNoMoreInteractions%28T*%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>verifyNoMoreInteractions</em>[<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<em>mocks</em> : <a href="../../org/mockito/MockitoMocker.html#verifyNoMoreInteractions%28T*%29#T" target="_self">T</a>*) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2009. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.5.0 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>
