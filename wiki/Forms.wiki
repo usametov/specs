@@ -6,7 +6,7 @@ http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.p
 
 = Forms =
 
-Forms are the preferred way in specs to create examples in a table format, so that they are readable by business users. You can have a look at some examples [http://specs.googlecode.com/svn/samples/LiterateSpecifications here].
+Forms are the preferred way in specs to create examples in a table format, so that they are readable by business users. You can have a look at some examples [http://specs.googlecode.com/svn/samples/LiterateSpecifications here]. You can also read the [http://etorreborre.blogspot.com/2009/04/fit-like-library-for-scala.html blog post] about it.
 
 == Fields ==
 
