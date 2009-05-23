@@ -157,7 +157,7 @@ This how you declare a *specs* configuration:
 
  * you can provide a class named `mypackage.configuration`, extending the `org.specs.util.Configuration` trait and pass this full name to the -config option
 
- * you can provide a properties file named `configuration.properties`, having as keys the some of the method names of the Configuration trait and as values `true` or `false` (or actually anything starting with `y`/`Y` or `n`/`N`). 
+ * you can provide a properties file named `configuration.properties`, having as keys some of the method names of the Configuration trait and as values `true` or `false` (or actually anything starting with `y`/`Y` or `n`/`N`). 
 
  * you can provide a properties file as above but with a specific path and specify its path to the `-config` option. 
 
