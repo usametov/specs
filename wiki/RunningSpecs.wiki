@@ -226,12 +226,21 @@ On the command line, you can run your suite by executing: `java -cp ... org.juni
 
 Note that subexamples of an example won't be reported as separate tests but their failure messages will be added to the parent example failure messages.
 
-The JUnit trait can be directly mixed in the Specification:
+==Alternate method of declaring a specification runnable with JUnit==
+
+Before version 1.5.1, you can directly mix in the JUnit trait to your Specification:
 {{{
   import org.specs.runner.JUnit
 
   class mySpec extends Specification with JUnit { ... }
 }}}
+
+Starting from version 1.5.1, this feature has been replaced with a direct inheritance of the SpecificationWithJUnit class:
+{{{
+  class mySpec extends SpecificationWithJUnit { ... }
+}}}
+
+This was necessary in order to remove a dependency between the Specification class and the junit libraries when JUnit is not required.
 
 =Run your specification with JUnit4 in Eclipse=
 
