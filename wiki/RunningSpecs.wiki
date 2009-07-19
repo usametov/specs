@@ -153,7 +153,21 @@ But it also allows to control the behavior of specs for:
 
 This how you declare a *specs* configuration:
 
- * you can provide an object named `configuration`, extending the `org.specs.util.Configuration` trait, and overriding the methods of that trait (see the scaladoc)
+ * you can provide an object named `configuration`, extending the `org.specs.util.Configuration` trait, and overriding the methods of that trait: {{{
+
+  /** this value controls if the errors stacktrace should be printed. */
+  def stacktrace = true
+  /** this value controls if ok examples should be printed. */
+  def failedAndErrorsOnly = false
+  /** this value controls if the statistics should be printed. */
+  def statistics = true
+  /** this value controls if the final statistics should be printed. */
+  def finalStatisticsOnly = false
+  /** this value controls if the ANSI color sequences should be used to colorize output */
+  def colorize = false
+  /** this value controls if examples without expectations should be marked as PENDING examples */
+  def examplesWithoutExpectationsMustBePending = true
+}}}
 
  * you can provide a class named `mypackage.configuration`, extending the `org.specs.util.Configuration` trait and pass this full name to the -config option
 
