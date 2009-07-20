@@ -153,7 +153,9 @@ But it also allows to control the behavior of specs for:
 
 This how you declare a *specs* configuration:
 
- * you can provide an object named `configuration`, extending the `org.specs.util.Configuration` trait, and overriding the methods of that trait: {{{
+ * you can provide an object named `configuration`, extending the `org.specs.util.Configuration` trait, and overriding the methods of that trait: 
+
+{{{
 
   /** this value controls if the errors stacktrace should be printed. */
   def stacktrace = true
