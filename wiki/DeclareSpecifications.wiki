@@ -14,8 +14,11 @@ object newSpecification extends Specification {
 A specification is composed of:
 
  * simple examples as in the [http://code.google.com/p/specs/wiki/QuickStart QuickStart example]
- * systems specifications containing examples. A system specification is used to describe the context or the usage for a list of examples.
+ * Systems Under Specification (SUS), containing examples. A SUS is used to group several examples sharing the same context.
+ * examples can themselves contain sub-examples in order to refine the behavior being specified
  * other specifications (see [http://code.google.com/p/specs/wiki/DeclareSpecifications#Compose_specifications Compose a specification])
+
+==Specification name==
 
 The name of the specification is the name of the specification object by default but you can use a more meaningful name like this:
 {{{
@@ -24,27 +27,15 @@ object newSpecification extends Specification("My new Specification") {
 }
 }}}
 
-=== "Boosted" Specification ===
+==Change the specification description==
 
-If you don't mind getting lots of implicit definitions you can use the following spex.Specification class: {
-package org.spex
-import org.specs.mock.Mockito
-import org.specs.Sugar
-import org.specs.SystemContexts
-import org.specs.runner._
-
-class Specification extends org.specs.Specification with Mockito with Sugar with SystemContexts with JUnit with ScalaTest with DataTables with ScalaCheck
+By default the description of a specification, which is displayed in case of a composed specification, is the class name of the specification object (without any `$`).
+If you want to set a more meaningful name, you need to override the description attribute:
+{{{
+object basicFunctionalitiesSpecification extends Specification {
+  override var description = "the system basic functionalities are"
 }
-
-With this only class, you will be able to:
-
- * use Mocks (with the Mockito library)
- * use [http://code.google.com/p/specs/wiki/AdvancedSpecifications#How_to_add_syntactic_sugar_to_your_specifications tuples as lists]
- * execute the specification as JUnit and `ScalaTest`
- * use [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_ScalaCheck_properties ScalaCheck]
- * use [http://code.google.com/p/specs/wiki/AdvancedSpecifications DataTables]
- * use [http://code.google.com/p/specs/wiki/DeclareSpecifications#System_contexts System contexts] to define the systems under specification
-
+}}}
 
 =Systems under specification=
 
@@ -98,9 +89,186 @@ If you don't want to use Scala's implicit defs for the String class, you can als
 declare("my system") should {...}
 }}}
 
+=Specify an example=
+
+You specify an example of what your system is supposed to do by adding a description inside a specified system followed by the method `in`:
+{{{
+"my System" should {
+  "be wonderful" in {...}
+  "be elegant" in {...}
+}
+}}}
+
+===Alias for the in keyword===
+If you don't like the `in` keyword, you can replace it with the meaningless operator ,,>>,,:
+{{{
+"my System" should {
+  "be wonderful" >> {...}
+}
+}}}
+
+===Sub examples===
+It also is possible to nest examples where it makes sense, to refine the behavior being specified. For instance:
+{{{
+"The Scala language" should {
+  "provide a && operator" >> {
+    "returning true for true && true" >> { true && true must beTrue } 
+    "returning false for true && false" >> { true && false must beFalse } 
+    "returning false for false && true" >> { true && false must beFalse } 
+    "returning false for false && false" >> { false && false must beFalse } 
+  }
+}
+}}}
+
+===Without implicit defs===
+You can also specify an example without using implicits defs:
+{{{
+declare("my System") should {
+  forExample("be wonderful") in {...}
+}
+}}}
+
+==Anonymous examples==
+
+Example descriptions are not even necessary to create a specification:
+{{{
+import org.specs.mock.JMocker
+
+object expectationsOnly extends Specification("Hello world") with JMocker {
+  "hello world".size must_==11
+  3 must_== { "abc".size }
+  classOf[java.io.OutputStream].expectsOne(_.flush) in { _.flush }
+}
+}}}
+
+The 3 assertions above will create new examples: example, example 2, example 3
+
+=Compose specifications=
+
+Big specifications can be cut in several sub-specifications:
+{{{
+object bigSpec extends Specification {
+  "this big specification".isSpecifiedBy(
+                  basicFunctionalitiesSpec,
+                  advancedFunctionalitiesSpec,
+                  extensionsSpec)
+}
+}}}
+
+Alternatively, when it makes sense, you can also use `areSpecifiedBy` instead of `isSpecifiedBy`.
+
+When executed, a composed specification will display its results with each sub-specification results being indented:
+{{{
+  this big specification isSpecifiedBy
+    the system basic functionalities are
+       the system should
+         + say hello
+         + say hello world
+    the system advanced functionalities are
+      ...
+}}}
+
+
+=Share examples=
+
+If you want to share examples between systems specifications, you can:
+
+ * define a method returning examples:
+{{{
+def sharedFunctionalities = {
+  "provide functionality 1" in {...}   
+  "provide functionality 2" in {...}   
+}
+}}}
+
+ * use this method inside another example:
+{{{
+"my system" should {
+  "provide common functionalities" in { sharedFunctionalities }
+}
+}}}
+
+You can also reuse all the examples of another system under specification with the `behave like` declaration:
+{{{
+"A full stack" ->-(fullStack) should { 
+  // you can reference the other system under spec by name
+  behave like "A non-empty stack below full capacity" 
+
+  // or directly if you saved it in a val
+  behave like nonEmptyStackBelowCapacity 
+  ...
+}
+}}}
+
+=Execution model (from 1.6.0)=
+
+The execution model of Specifications is as follows:
+
+ # when instantiating a Specification object, the SUS are first created with their description, but the examples they hold are not yet evaluated
+
+ # once a SUS is queried for its examples, the examples are created but not executed
+
+ # when an example is queried for its possible failures, it is executed
+
+By default an example is executed in "isolation" from the other examples. Each variable declared inside a SUS, which may have been changed by another example is set to its initial value:
+{{{
+object spec extends Specification {
+  "this system" should {
+    var x = 0
+    "execute the first example" in {
+      x = 1
+      x must_== 1 // success
+    }
+    "execute the second example in isolation" in {
+      x must_== 0 // success
+    }
+  }
+}
+}}}
+
+This simplifies the set-up of examples because [http://en.wikipedia.org/wiki/Test_fixture fixtures] can be created without having to use [http://code.google.com/p/specs/DeclareSpecifications#Call_a_function_before_or_after_each_example before/after] declarations to clean-up the mutated variables/objects or a special fixture-passing mechanism to re-initialize fixture state.
+
+==What if I want to share state?==
+
+It is still possible to locally declare that you want to share the variables state by using `shareVariables()`:
+
+{{{
+object spec extends Specification {
+  "this system" should {
+    shareVariables()
+    var x = 0
+    "execute the first example" in {
+      x = 1
+      x must_== 1 // success
+    }
+    "execute the second example reusing x value" in {
+      x must_== 1 // success
+    }
+  }
+}
+}}}
+
+===Sequential execution===
+
+By default, the execution mode of examples of a Specification is "on demand". The examples are only executed when a Runner requests the number of failures or errors. 
+
+However, if you need to execute samples as soon as they are declared(as in a [http://code.google.com/p/specs/wiki/LiterateSpecifications literate specification]), you can use the method `setSequential`:
+
+{{{
+object mySpec extends Specification {
+  "The first functionality" should { 
+    setSequential() // ensures that each example is executed as soon as defined
+
+    "have example 1 execute first" in {...}
+    // example 2 uses the results of example 1
+    "have example 2 execute in second" in {...}
+  }
+}
+}}}
+
 ==Call a function before or after each example==
 
-This is called setup and teardown in the JUnit world. Although this is contreversial (see [http://jamesnewkirk.typepad.com/posts/2007/09/why-you-should-.html here] for example), you can do it with *specs*, by using `doBefore` and `doAfter`:
+Given the "isolated" execution model in specs, you usually don't need before/after functions to set or reset state before and after each example. However, when mutating external resources (database, files) or static objects you may needto use `doBefore` and `doAfter` functions to reset your system state:
 {{{
 "my system" should { doBefore { resetTheSystem() /** user-defined reset function */ }
   "mess up the system" in {...}
@@ -113,11 +281,10 @@ _Note_: you can also use syntactic sugar and write:
 "my system" should { resetTheSystem.before // equivalent as the example before, using an implicit definition.
 ...
 }}}
-_Note_: `Contexts` (see below) can also be used to specify before/after actions
 
 ==Call a function before or after each system or specification==
 
-In addition to the capacity to setup/teardown each example, it is also possible to do a system-wide setup/teardown with the following functions:
+In addition to the capacity to call methods before and after each example, it is also possible to call functions before and after the whole system with `doFirst` and `doLast`:
 
 {{{
 "my system" should { 
@@ -153,11 +320,9 @@ object mySpec extends Specification {
 
 _Note_: doBefore/doAfter or doFirst/doLast declarations can be placed anywhere inside a system, similarly doBeforeSpec and doAfterSpec can be placed anywhere in the spec declaration.
 
-=Contexts=
-
 = Shared contexts =
 
-You may want sometimes to identify more precisely the `Context` of a system under specification, either to give it a meaningful name or to reuse it across specifications. To do this, you need to create `Context` objects:
+You may want sometimes to share the set-up of systems and give it a meaningful name. To do this, you need to create `Context` objects:
 {{{
 object StackSpecification extends Specification {
   val empty = beforeContext(stack.clear)
@@ -173,8 +338,6 @@ The `beforeContext`, `afterContext`, `context` methods are factory methods to cr
 def context(b: =>Any, a: =>Any) = new Context { before(b); after(a) }
 }}}
 
-`Context` objects are passed to system under specification to specify the before/after actions. Note that those objects refer to local mutable variables so this means that, like the traditional before/after methods you have the same danger of messing up your context from example to example (for a better alternative around this see [http://code.google.com/p/specs/DeclareSpecifications#System_Contexts System Contexts])
-
 Once you've defined a context, you can reuse it with the "threading" operator `->-`: 
 {{{
   // I'm "threading" the context within each example of the system under specification
@@ -186,7 +349,7 @@ Once you've defined a context, you can reuse it with the "threading" operator `-
   }
 }}}
 
-Global context setup and teardown can also be created with the following methods:
+More global context setup and teardown contexts can also be created with the following methods:
 {{{
   val stackContext  = globalContext(createStack, deleteStack)
   val stackContext2 = new Context { first(createStack) }
@@ -198,6 +361,7 @@ Global context setup and teardown can also be created with the following methods
 If you want to repeat the same examples with different data until a condition is true, you can use the `until` method:
 {{{
   "This system" should {
+    shareVariables()
     var counter = 1
     doAfter(counter += 1)
     until(counter == 3)
@@ -215,208 +379,21 @@ This method is also available on `Context` objects, so you can write:
   }
 }}}
 
-== System contexts ==
+=== "Boosted" Specification ===
 
-When we want to execute examples in parallel or make sure that each example is not using variables which have possibly been modified by another example, we can use `SystemContext`. A `SystemContext` is an object which is passed to each example as a set of data to operate on.
+If you don't mind getting lots of implicit definitions you can use the following spex.Specification class: {
+package org.spex
+import org.specs.mock.Mockito
+import org.specs.Sugar
+import org.specs.runner._
 
-=== Internal system contexts ===
-
-The first way to define a system context is simply to create a `SystemContext` object and either pass it explicitly with `withA` (or `withAn`) to the example, or declare it as an implicit val and use `into` (instead of `in`):
-{{{ 
-
-// the specification must extend SystemContexts to have the possibility to use System contexts
-object stackSpec extends Specification with SystemContexts {
-  "A non-empty stack below full capacity" should {
-
-    // This creates a new SystemContext[SampleStack] object
-    implicit val nonEmptyStack = systemContext { new SampleStack(10, 5) }
-
-    "not be empty".withA(nonEmptyStack) { stack =>
-      stack verifies { !_.isEmpty }
-    }
-    // here the context is passed implicitly
-    "return the top item when sent #top" into { (s: SampleStack) =>
-      s.top mustBe s.lastItemAdded
-    }
-  }
-}}}
-
-This type of `SystemContext` usage is said to be "internal" because the context is declared inside the System under specification.
-
-=== External system context ===
-
-The second way of using a System context is to create a `SystemContext` object and use it to define the system under specification:
-{{{
-  // create a SystemContext class
-  case class StackContext(capacity: Int, itemsNb: Int) extends SystemContext[SampleStack] {
-    // it is mandatory to define this method. It will be called before each example
-    // and the new system will be passed to the example
-    def newSystem = SampleStack(capacity, itemsNb)
-  }
-  val nonEmpty = StackContext(10, 1)
-
-
-  "A non-empty stack below full capacity" definedAs(nonEmpty) should {
-
-    // warning!!! Unfortunately, the function passed to in is not typechecked against the
-    // type of the context passed to the system under specification
-    "not be empty" in { stack: SampleStack =>
-      stack verifies { !_.isEmpty }
-    }
-    "return the top item when sent #top" in { stack: SampleStack =>
-      stack.top mustBe stack.lastItemAdded
-    }
-    "not remove the top item when sent #top" in { stack: SampleStack =>
-      stack.top mustBe stack.lastItemAdded
-      stack.top mustBe stack.lastItemAdded
-    }
-  }
-}}}
-
-This type of `SystemContext` usage is said to be "external" because the context is declared outside the System under specification.
-
-==Contexts comparison==
-
-There are unfortunately both advantages and disadvantages to each approach for creating the context of a system:
-
-|| *Contexts* || *Shared* || *Internal* || *External* ||
-|| Pro || easy to create || the function passed to the example is typechecked || the context is visible from the system definition line ||
-|| Cons || uses shared variables || the `in` operator is not available (`into` or `withA`) || the function passed to each example is not typechecked ||
-
-=Specify an example=
-
-You specify an example of what your system is supposed to do by adding a description inside a specified system followed by the method `in`:
-{{{
-"my System" should {
-  "be wonderful" in {...}
-  "be elegant" in {...}
+class Specification extends org.specs.Specification with Mockito with Sugar with JUnit with ScalaTest with DataTables with ScalaCheck
 }
-}}}
 
-===Alias for the in keyword===
-If you don't like the `in` keyword, you can replace it with the meaningless operator ,,>>,,:
-{{{
-"my System" should {
-  "be wonderful" >> {...}
-}
-}}}
+With this only class, you will be able to:
 
-===Sub examples===
-It also is possible to nest examples where it makes sense. For instance:
-{{{
-"The Scala language" should {
-  "provide a && operator" >> {
-    "returning true for true && true" >> { true && true must beTrue } 
-    "returning false for true && false" >> { true && false must beFalse } 
-    "returning false for false && true" >> { true && false must beFalse } 
-    "returning false for false && false" >> { false && false must beFalse } 
-  }
-}
-}}}
-
-===Without implicit defs===
-You can also specify an example without using implicits defs:
-{{{
-declare("my System") should {
-  forExample("be wonderful") in {...}
-}
-}}}
-
-==Anonymous examples==
-
-Example descriptions are not even necessary to create a specification:
-{{{
-import org.specs.mock.JMocker
-
-object expectationsOnly extends Specification("Hello world") with JMocker {
-  "hello world".size mustEqual 11
-  3 must_== { "abc".size }
-  classOf[java.io.OutputStream].expectsOne(_.flush) in { _.flush }
-}
-}}}
-
-The 3 assertions above will create new examples: example, example 2, example 3
-
-=Compose specifications=
-
-Big specifications can be cut in several sub-specifications:
-{{{
-object bigSpec extends Specification {
-  "this big specification".isSpecifiedBy(
-                  basicFunctionalitiesSpec,
-                  advancedFunctionalitiesSpec,
-                  extensionsSpec)
-}
-}}}
-
-Alternately, when it makes sense, you can also use `areSpecifiedBy` instead of `isSpecifiedBy`.
-
-When executed, a composed specification will display its results with each sub-specification results being indented:
-{{{
-  this big specification isSpecifiedBy
-    the system basic functionalities are
-       the system should
-         + say hello
-         + say hello world
-    the system advanced functionalities are
-      ...
-}}}
-
-===Change the specification description===
-
-By default the description of a specification, which is displayed in case of a composed specification, is the class name of the specification object (without any `$`).
-If you want to set a more meaningful name, you need to override the description attribute:
-{{{
-object basicFunctionalitiesSpecification extends Specification {
-  override var description = "the system basic functionalities are"
-}
-}}}
-
-=Share examples=
-
-If you want to share examples between systems specifications, you can:
-
- * define a method returning examples:
-{{{
-def sharedFunctionalities = {
-  "provide functionality 1" in {...}   
-  "provide functionality 2" in {...}   
-}
-}}}
-
- * use this method inside another example:
-{{{
-"my system" should {
-  "provide common functionalities" in { sharedFunctionalities }
-}
-}}}
-
-You can also reuse all the examples of another system under specification with the `behave like` declaration:
-{{{
-"A full stack" ->-(full) should { 
-  // you can reference the other system under spec by name
-  behave like "A non-empty stack below full capacity" 
-
-  // or directly if you saved it in a val
-  behave like nonEmptyStackBelowCapacity 
-  ...
-}
-}}}
-
-=Sequential execution=
-
-By default, the execution mode of examples of a Specification is "on demand". The examples are only executed when a Runner requests the number of failures or errors. This enables a runner to do a concurrent execution of examples. 
-
-However, if you need to execute samples sequentially (as in a [http://code.google.com/p/specs/wiki/LiterateSpecifications literate specification]), you can use the method `setSequential`:
-
-{{{
-object mySpec extends Specification {
-  "The first functionality" should { 
-    setSequential() // ensures that each example is executed as soon as defined
-
-    "have example 1 execute first" in {...}
-    // example 2 uses the results of example 1
-    "have example 2 execute in second" in {...}
-  }
-}
-}}}
+ * use Mocks (with the Mockito library)
+ * use [http://code.google.com/p/specs/wiki/AdvancedSpecifications#How_to_add_syntactic_sugar_to_your_specifications tuples as lists]
+ * execute the specification as JUnit and `ScalaTest`
+ * use [http://code.google.com/p/specs/wiki/MatchersGuide#Matchers_applicable_to_ScalaCheck_properties ScalaCheck]
+ * use [http://code.google.com/p/specs/wiki/AdvancedSpecifications DataTables]
