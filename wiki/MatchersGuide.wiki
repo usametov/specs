@@ -230,28 +230,47 @@ Or we can use pattern matching for more specific checks:
  * `a must endWith(b)` is ok if `a endsWith b`
  * `a must notEndWith(b)` is ok if `!(a endsWith b)`
 
+==Smart differences (*from 1.6.0*)==
+
+The default failure message for string comparisons is using "smart differences", that is, if the two strings to compare are short (less than 30 characters) the strings are shown as they are. If the strings are longer, the "detailed diffs" message described below is enabled with 30 as a triggering size for shortening and 20 as the shortening size.
+
 ===Detailed differences===
 
-You can also get more detailed failure messages for String comparisons with the `detailedDiffs` method:
+You can get more detailed failure messages for String comparisons with the `detailedDiffs` method:
 {{{
   object SpecificationWithDetailedFailures extends Specification {
     detailedDiffs() // enable detailed differences
-    "abc" must_== "ab"    // 'ab(c)' is not equal to 'ab'
-    "abcd" must_== "abd"  // 'ab(c)d' is not equal to 'abd'
-    "acd" must_== "abd"   // 'a(c)d' is not equal to 'abd'
+    "abc" must_== "ab"    // 'ab[c]' is not equal to 'ab'
+    "abcd" must_== "abd"  // 'ab[c]d' is not equal to 'abd'
+    "acd" must_== "abd"   // 'a[c]d' is not equal to 'abd'
 
-    // 'the kitt(en) is pret(ty)' is not equal to 'the (s)kitt(y) is pret(en)'
+    // 'the kitt[en] is pret[ty]' is not equal to 'the [s]kitt[y] is pret[en]'
     "the kitten is pretty" must_== "the skitty is preten"   
   }
 }}}
 
-Note that you can change the pair of separators used to highlight the differences with:
+Note that the pair of separators used to highlight the differences can be changed with:
 {{{
-  detailedDiffs("[]")
+  detailedDiffs("()")
   // or detailedDiffs("<<>>") to separate with << and >>
 }}}
 
-Detailed differences are also applicable to the `containAll` matcher.
+You can also specify that the detailed diffs should only be triggered when the strings are more than 10 characters long:
+
+{{{
+  detailedDiffs("()", 10)
+}}}
+
+And finally, it is possible to declare that the strings should be shortened between the differences in order to be able to spot them more rapidly:
+
+{{{
+  detailedDiffs("()", 10, 5) // 5 is the shorten size
+
+  '...aaaaa[bb]aa...aa[cc]aaaaa...' is not equal to '...aaaaa[xx]aa...aa[yy]aaaaa...'
+  "aaaaaaabbaaaaaaaaaaaccaaaaaaaa" must_== "aaaaaaaxxaaaaaaaaaaayyaaaaaaaa"   
+
+}}}
+
 
 =Matchers applicable to Iterables=
  
