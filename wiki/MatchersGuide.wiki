@@ -234,7 +234,7 @@ Or we can use pattern matching for more specific checks:
 
 The default failure message for string comparisons is using "smart differences", that is, if the two strings to compare are short (less than 30 characters) the strings are shown as they are. If the strings are longer, the "detailed diffs" message described below is enabled with 30 as a triggering size for shortening and 20 as the shortening size.
 
-===Detailed differences===
+==Detailed differences==
 
 You can get more detailed failure messages for String comparisons with the `detailedDiffs` method:
 {{{
