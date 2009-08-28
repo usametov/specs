@@ -5,6 +5,7 @@
  * [DeclareSpecifications Declare specifications]
  * [RunningSpecs Execute specifications]
  * [MatchersGuide Matchers guide]
+ * [UsingEasyMock EasyMock]
  * [UsingJMock JMock]
  * [UsingMockito Mockito]
  * [UsingMocks Light Mocks]
