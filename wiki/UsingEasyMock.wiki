@@ -14,7 +14,7 @@ _WORK IN PROGRESS!!!_
 
 = Usage =
 
-In order to use !EasyMock mocks in your specification, you need to mix in the !EasyMock trait.
+In order to use !EasyMock mocks in your specification, you need to mix in the !EasyMock trait. Here is an example of !EasyMock usage:
 {{{
   import org.specs.Specification
   import org.specs.mock.EasyMock
@@ -22,32 +22,68 @@ In order to use !EasyMock mocks in your specification, you need to mix in the !E
 
   object spec extends Specification with EasyMock {
     
-    val m = mock[java.util.List[String]] // a concrete class would be mocked with: mock(new java.util.LinkedList[String])
-    
-    // stub a method call with a return value
-    m.get(0) returns "one"
+    class ToMock {
+      def voidMethod = ()
   
-    // call the method
-    m.get(0)
-  
-    // verify that the call happened, this is an expectation which will throw a FailureException if that is not the case
-    m.get(0) was called
-    
-    // we can also check that another call did not occur
-    m.get(1) wasnt called // or m.get(1) was notCalled
-                          
-  }
+      @throws(classOf[Exception])
+      def size = 1
+      def get(i: Int) = i
+    }
 
+    val m = mock[ToMock] // this creates a "strict" mock
+    
+    "This is the canonical way of using EasyMock" in {
+        m.voidMethod    // declare expected mock calls
+        replay(m)       // the mock needs to be replayed
+        m.voidMethod    // use the mock
+        verify(m)       // verify expectations
+    }
 }}}
 
-= Stubbing =
+= Mocks creation =
 
-Stubbing values is as simple as calling a method on the mock and declaring what should be returned or thrown: 
+!EasyMock provides different methods to create mocks:
+
+ * `createMock`. This method is available as `mock` in specs. Note that the class extension of !EasyMock is used to create mocks so you need the corresponding jar in your classpath.
+
+ * `createNiceMock`. This method is available as `niceMock` in specs.
+
+ * `createStrictMock`. This method is available as `strictMock` in specs.
+
+= Mock methods =
+
+There are many methods directly applicable to mocks instead of calling the corresponding `EasyMock.(...)` method:
+
+ * `mock.toNice`
+ * `mock.toDefault`
+ * `mock.toStrict`
+ * `mock.reset`
+ * `mock.replay`
+ * `mock.verify`
+ * `mock.checkOrder`
+ * `mock.dontCheckOrder`
+ * `mock.checkIsUsedInOneThread`
+ * `mock.dontCheckIsUsedInOneThread`
+ * `mock.makeThreadSafe`
+ * `mock.dontMakeThreadSafe`
+
+
+
+
+ * `
+
+= Block replay =
+
+It is possible to replay all mocks: 
 {{{
-  m.get(1) returns "one"
-  m.get(2) throws new Exception("forbidden")
-
+   expect { 
+     m1.method1
+     m2.method2
+   } // m1 and m2 are automatically replayed. This is equivalent to replay(m1, m2)
 }}}
+
+= Returned values =
+
 
 You can specify different consecutive returned values by appending `thenReturns` or `thenThrows`:
 {{{
