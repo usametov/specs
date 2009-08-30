@@ -27,7 +27,7 @@ In order to use !EasyMock mocks in your specification, you need to mix in the !E
   
       @throws(classOf[Exception])
       def size = 1
-      def get(i: Int) = i
+      def get(i: Int) = i.toString
     }
 
     val m = mock[ToMock] // this creates a "strict" mock
@@ -79,13 +79,38 @@ It is possible to replay all mocks:
 
 = Returned values =
 
-Returned values are specified using `return`:
+Returned values are specified using `returns`:
 {{{
   m.get(1) returns "one" 
 }}}
+
+!EasyMock makes a strong difference between mocks and stubs, stub calls not being checked by `verify`. If you just want method calls to be stubbed you can use `stubReturn`:
+
+{{{
+  m.get(1) stubReturns "one" 
+}}}
+
+
+= Thrown exceptions=
+
+Thrown exceptions are specified using `throws`:
+{{{
+  m.size throws new Exception("bad call") 
+}}}
+
+= Consecutive calls =
 
 You can specify different consecutive returned values by appending `thenReturns` or `thenThrows`:
 {{{
   m.get(1) returns "one" thenReturns "two"
   m.get(2) throws new Exception("forbidden") thenReturns "999"
+}}}
+
+= Callbacks = 
+
+In some rare cases, it is necessary to have the return value depend on the parameters passed to the mocked method:
+{{{
+   val mockedList = mock[List[String]]
+   
+   mockedList.get(anyInt) answers { i => "The parameter is " + i.toString } 
 }}}
