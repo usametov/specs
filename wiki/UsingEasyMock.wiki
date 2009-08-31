@@ -6,7 +6,7 @@ _WORK IN PROGRESS!!!_
 
 = Introduction =
 
-[http://easymock.org !EasyMock] is a mocking library:
+[http://easymock.org EasyMock] is a mocking library:
 
 !EasyMock provides Mock Objects for interfaces (and objects through the class extension) by generating them on the fly using Java's proxy mechanism. Due to !EasyMock's unique style of recording expectations, most refactorings will not affect the Mock Objects. So !EasyMock is a perfect fit for Test-Driven Development.
 
@@ -114,3 +114,9 @@ In some rare cases, it is necessary to have the return value depend on the param
    
    mockedList.get(anyInt) answers { i => "The parameter is " + i.toString } 
 }}}
+
+In this case, the `answers` method can be used with either:
+
+ * a no parameter function if the mocked method takes no parameters
+ * a one parameter function, with a parameter of type Any, if the mocked method takes one parameter
+ * a one parameter function, with one parameter of type `Array[Any]` if the mocked method takes more than one parameter
