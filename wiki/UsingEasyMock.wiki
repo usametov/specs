@@ -77,6 +77,15 @@ It is possible to replay all mocks:
    } // m1 and m2 are automatically replayed. This is equivalent to replay(m1, m2)
 }}}
 
+= Verification =
+
+The `verify` method is used as you would do in !EasyMock: 
+{{{
+  verify(m1, m2, m3)
+}}}
+
+In that case, there is no "block verify" method available because this wouldn't save much from a call to verify with several arguments.
+
 = Returned values =
 
 Returned values are specified using `returns`:
@@ -120,3 +129,22 @@ In this case, the `answers` method can be used with either:
  * a no parameter function if the mocked method takes no parameters
  * a one parameter function, with a parameter of type Any, if the mocked method takes one parameter
  * a one parameter function, with one parameter of type `Array[Any]` if the mocked method takes more than one parameter
+
+=Delegates=
+
+Calls can also be delegated to another object implementing the same interface as the mocked object. Use the `delegatesTo` method to that purpose:
+{{{
+  m.get(1) delegatesTo new ToMock
+  replay(m)
+  m.get(1) must_== 1 
+}}}
+
+Note that `stubDelegates` is also available when you just need to delegate returned values with no mock verification.
+
+=Repeated calls=
+
+The syntax used to specify that repeated calls will occur on a mock object is the following:
+ 
+ * `atLeastOnce`: the mock is called at least once
+ * `times(i)`: the mock is called `i` times
+ * `anyTimes`: the mock will be called any number of times
