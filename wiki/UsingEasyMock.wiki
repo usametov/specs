@@ -1,6 +1,4 @@
-#summary Using EasfyMock mocks.
-
-_WORK IN PROGRESS!!!_
+#summary Using EasyMock mocks.
 
 <wiki:toc/>
 
