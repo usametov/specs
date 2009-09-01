@@ -9,6 +9,7 @@
  * [UsingJMock JMock]
  * [UsingMockito Mockito]
  * [UsingMocks Light Mocks]
+ * [ThreadsSpecification Threads Specifications]
  * [LiterateSpecifications Literate specifications]
  * [Forms Forms for Literate specifications]
  * [AdvancedSpecifications Advanced Specifications]
