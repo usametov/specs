@@ -200,7 +200,7 @@ You can also reuse all the examples of another system under specification with t
 }
 }}}
 
-=Execution model (from 1.6.0)=
+=Execution model=
 
 The execution model of Specifications is as follows:
 
