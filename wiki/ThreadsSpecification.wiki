@@ -1,5 +1,7 @@
 #summary Specifications for threads.
 
+http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *This is still work in progress, some intermittent bugs have been observed!*
+
 = Introduction =
 
 *specs* integrates the work from Josh Cough on specifying threads behaviour as described on [http://jackcoughonsoftware.blogspot.com/2009/07/testing-multi-threaded-scala-code.html his blog].
