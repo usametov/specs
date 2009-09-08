@@ -205,9 +205,7 @@ You can also reuse all the examples of another system under specification with t
 The execution model of Specifications is as follows:
 
  # when instantiating a Specification object, the SUS are first created with their description, but the examples they hold are not yet evaluated
-
  # once a SUS is queried for its examples, the examples are created but not executed
-
  # when an example is queried for its possible failures, it is executed
 
 By default an example is executed in "isolation" from the other examples. Each variable declared inside a SUS, which may have been changed by another example is set to its initial value:
