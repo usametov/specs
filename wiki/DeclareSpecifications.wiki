@@ -280,6 +280,36 @@ _Note_: you can also use syntactic sugar and write:
 ...
 }}}
 
+==Execute the Example expectations inside a specific context (*from 1.6.1*)==
+
+When running your examples you may need to specify that all expectations occur inside a specific context:
+{{{
+  val dynamicVar = new DynamicVariable[String]
+  "my example uses a dynamic variable" in {
+    myVar.doWith("this session") { 
+      // expectations here
+    }
+  }
+  "my other example uses the same dynamic variable" in {
+    myVar.doWith("this session") { 
+      // other expectations here
+    }
+  }
+}}}
+
+You can remove that boilerplate code by specifying an "around" action:
+{{{
+  val dynamicVar = new DynamicVariable[String]
+  doAround { (a: Any) => myVar.doWith("this session") { a } }
+
+  "my example uses a dynamic variable" in {
+    // these expectations will be executed "inside" the around method
+  }
+  "my other example uses the same dynamic variable" in {
+    // those too
+  }
+}}}
+
 ==Call a function before or after each system or specification==
 
 In addition to the capacity to call methods before and after each example, it is also possible to call functions before and after the whole system with `doFirst` and `doLast`:
