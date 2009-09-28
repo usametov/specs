@@ -300,7 +300,7 @@ When running your examples you may need to specify that all expectations occur i
 You can remove that boilerplate code by specifying an "around" action:
 {{{
   val dynamicVar = new DynamicVariable[String]
-  doAround { (a: Any) => myVar.doWith("this session") { a } }
+  doAroundExpectations { (a: Any) => myVar.doWith("this session") { a } }
 
   "my example uses a dynamic variable" in {
     // these expectations will be executed "inside" the around method
