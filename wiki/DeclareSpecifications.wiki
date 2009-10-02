@@ -395,7 +395,7 @@ The whole list of methods available on a Context object is:
  * last   (alias: afterSus      (*from 1.6.1*)): actions to execute after each sus
  * until: predicate which must be true otherwise the example execution is repeated  
 
-===Repeated examples===
+==Repeated examples==
 
 If you want to repeat the same examples with different data until a condition is true, you can use the `until` method:
 {{{
@@ -449,6 +449,27 @@ A `SpecContext` is a subclass of the `Context` class with the additional methods
 
  * beforeSpec: actions to execute before the specification
  * afterSpec:  actions to execute after the specification
+
+===Share a specification context===
+
+A specification context can be created and reused across different specifications with the `apply(spec: Specification)` method: 
+{{{
+  object DBContext extends Specification {
+    val setup = new SpecContext {
+      // clean the DB
+      beforeExample(deleteUsersTable)
+      // make sure that each example expectations run inside a database session
+      aroundExpectations(inDatabaseSession(_)) 
+    }
+  }
+  object RepositorySpecification extends Specification {
+    DBContext.setup(this) // use the DBContext specification context in this specification
+    "A Users repository" can {
+      ...
+    }
+  }
+
+}}}
 
 = "Boosted" Specification =
 
