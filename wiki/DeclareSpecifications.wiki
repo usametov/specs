@@ -395,6 +395,30 @@ The whole list of methods available on a Context object is:
  * last   (alias: afterSus      (*from 1.6.1*)): actions to execute after each sus
  * until: predicate which must be true otherwise the example execution is repeated  
 
+===Repeated examples===
+
+If you want to repeat the same examples with different data until a condition is true, you can use the `until` method:
+{{{
+  "This system" should {
+    shareVariables()
+    var counter = 1
+    doAfter(counter += 1)
+    until(counter == 3)
+
+    "pass the example with an int value" in { counter must be_>(0) }
+  }
+}}}
+
+This method is also available on `Context` objects, so you can write:
+{{{
+  val stack = new Stack(1) // stack size is 1
+  val stacks = afterContext(stack.size += 1).until(stack.size == 10)
+  "A non-empty stack" ->-(stacks) should { 
+  ...
+  }
+}}}
+
+
 ==Specification context (*from 1.6.1*)==
 
 Some contexts are applicable to all the systems of a given specification. In that case, instead of having to thread the context every time, you can define a `SpecContext` which will be automatically applied to all the systems of the Specification:
@@ -425,29 +449,6 @@ A `SpecContext` is a subclass of the `Context` class with the additional methods
 
  * beforeSpec: actions to execute before the specification
  * afterSpec:  actions to execute after the specification
-
-===Repeated examples===
-
-If you want to repeat the same examples with different data until a condition is true, you can use the `until` method:
-{{{
-  "This system" should {
-    shareVariables()
-    var counter = 1
-    doAfter(counter += 1)
-    until(counter == 3)
-
-    "pass the example with an int value" in { counter must be_>(0) }
-  }
-}}}
-
-This method is also available on `Context` objects, so you can write:
-{{{
-  val stack = new Stack(1) // stack size is 1
-  val stacks = afterContext(stack.size += 1).until(stack.size == 10)
-  "A non-empty stack" ->-(stacks) should { 
-  ...
-  }
-}}}
 
 === "Boosted" Specification ===
 
