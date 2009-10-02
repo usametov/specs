@@ -450,7 +450,7 @@ A `SpecContext` is a subclass of the `Context` class with the additional methods
  * beforeSpec: actions to execute before the specification
  * afterSpec:  actions to execute after the specification
 
-=== "Boosted" Specification ===
+== "Boosted" Specification ==
 
 If you don't mind getting lots of implicit definitions you can use the following spex.Specification class: {
 package org.spex
