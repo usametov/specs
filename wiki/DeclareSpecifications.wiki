@@ -300,7 +300,8 @@ When running your examples you may need to specify that all expectations occur i
 You can remove that boilerplate code by specifying an "around" action:
 {{{
   val dynamicVar = new DynamicVariable[String]
-  doAroundExpectations { (a: Any) => myVar.doWith("this session") { a } }
+  def withDynamicVar(a: =>Any) = myVar.doWith("this session") { a }
+  doAroundExpectations(withDynamicVar(_))
 
   "my example uses a dynamic variable" in {
     // these expectations will be executed "inside" the around method
@@ -309,6 +310,8 @@ You can remove that boilerplate code by specifying an "around" action:
     // those too
   }
 }}}
+
+Note that the function passed to the `doAroundExpectations` method must have a call-by-name parameter (`a: =>Any`).
 
 ==Call a function before or after each system or specification==
 
