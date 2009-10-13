@@ -375,9 +375,15 @@ Once you've defined a context, you can reuse it with the "threading" operator `-
   "A full stack" ->-(full) should { 
   ...
   }
-  "A empty stack" ->-(empty) should { 
+  "An empty stack" ->-(empty) should { 
   ...
   }
+}}}
+
+(*from 1.6.1*) _There are alias methods for the cryptic `->-` operator_ 
+{{{
+  "A full stack" as (full) should { ... }
+  "A stack" when (empty) should { ... }
 }}}
 
 More global context setup and teardown contexts can also be created with the following methods:
