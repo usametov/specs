@@ -246,6 +246,10 @@ class tabsSpec extends HtmlSpecification("Tabs sample") with JUnit {
 }
 }}}
 
+ * (*from 1.6.1*) tabs helper methods
+ ** `tabs(title, forms: Form*)` create tabs with an overall title and the title of each form on each tab.
+ ** `toTabs(title, forms: (String, Form)*)` create tabs with a specific title for each tab
+
 See [http://specs.googlecode.com/svn/samples/LiterateSpecifications/org.specs.samples.tabsSpec.html here] for the corresponding Html report.
 
 === Override an existing layout ===
