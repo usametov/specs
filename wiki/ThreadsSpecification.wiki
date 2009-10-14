@@ -1,6 +1,6 @@
 #summary Specifications for threads.
 
-http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *This is still work in progress, some intermittent bugs have been observed!*
+http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png (*from 1.6.1*) *This will be removed from specs 1.6.1. Please use the corresponding functionalities in ScalaTest instead*
 
 = Introduction =
 
