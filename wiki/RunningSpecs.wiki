@@ -139,6 +139,7 @@ usage java classpath package.mySpecification [-h|--help]
 -rej, --reject tags            reject the specified tags (comma-separated names)
 -sus, --system                 only the systems under specifications matching this regular expression will be executed
 -ex, --example                 only the examples matching this regular expression will be executed
+(*from 1.6.1*) -plan, --planOnly only display the sus and first level descriptions without executing the examples
 -c, --color                    report with colors
 
 }}}
@@ -545,3 +546,12 @@ From the command line, the tags can be accepted or rejected with the following o
  * `--reject` or `-rej` followed by a comma-separated list of tags
 
 For example: `scala mySpecification --accept tag1,tag2 --reject tag3`
+
+=(*from 1.6.1*) Specification plan=
+
+A Specification can be executed so as to display its systems and first-level examples descriptions without executing them.
+
+In order to activate this functionality, you need to: 
+
+ * pass the `-plan` option to the command-line arguments
+ * use the `-Dplan` system property when executing the specifications with JUnit
