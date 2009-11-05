@@ -395,10 +395,10 @@ More global context setup and teardown contexts can also be created with the fol
 
 The whole list of methods available on a Context object is:
 
- * before (alias: beforeExample (*from 1.6.1*)): actions to execute before each example
- * after  (alias: afterExample  (*from 1.6.1*)): actions to execute after each example
- * first  (alias: beforeSus     (*from 1.6.1*)): actions to execute before each sus
- * last   (alias: afterSus      (*from 1.6.1*)): actions to execute after each sus
+ * before (alias: beforeExample): actions to execute before each example
+ * after  (alias: afterExample ): actions to execute after each example
+ * first  (alias: beforeSus    ): actions to execute before each sus
+ * last   (alias: afterSus     ): actions to execute after each sus
  * until: predicate which must be true otherwise the example execution is repeated  
 
 ==Repeated examples==
