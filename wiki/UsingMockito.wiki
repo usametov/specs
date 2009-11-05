@@ -79,9 +79,7 @@ Hamcrest matchers can also be used, allowing to create your own Hamcrest matcher
 
 }}}
 
-*from 1.6.1*
-
-While Mockito matchers are pretty exhaustive, for convenience a `any[T]` matcher has been added:
+While Mockito matchers are pretty exhaustive, for convenience a `any[T]` matcher is available:
 {{{
    // the any matcher calls the org.mockito.Matchers.isA(classOf[T]) method
    mockedList.contains(any[String]) was called
