@@ -14,7 +14,7 @@ object newSpecification extends Specification {
 A specification is composed of:
 
  * simple examples as in the [http://code.google.com/p/specs/wiki/QuickStart QuickStart example]
- * Systems Under Specification (SUS), containing examples. A SUS is used to group several examples sharing the same context.
+ * Systems Under Specification (SUS), containing examples. A SUS is used to group several examples sharing the same context
  * examples can themselves contain sub-examples in order to refine the behavior being specified
  * other specifications (see [http://code.google.com/p/specs/wiki/DeclareSpecifications#Compose_specifications Compose a specification])
 
@@ -280,7 +280,7 @@ _Note_: you can also use syntactic sugar and write:
 ...
 }}}
 
-==Execute the Example expectations inside a specific context (*from 1.6.1*)==
+==Execute the Example expectations inside a specific context==
 
 When running your examples you may need to specify that all expectations occur inside a specific context:
 {{{
@@ -380,7 +380,7 @@ Once you've defined a context, you can reuse it with the "threading" operator `-
   }
 }}}
 
-(*from 1.6.1*) _There are alias methods for the cryptic `->-` operator_ 
+_There are alias methods for the cryptic `->-` operator_ 
 {{{
   "A full stack" definedAs full should { ... }
   "A stack" when empty should { ... }
