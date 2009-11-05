@@ -17,7 +17,7 @@ The junit library also allows you to run the specifications as JUnit suites by m
 
 If you use `ScalaCheck` you must add
 
- * [http://scala-tools.org/repo-releases/org/scalacheck/scalacheck/1.5 scalacheck-1.5.jar]
+ * [http://scala-tools.org/repo-releases/org/scalacheck/scalacheck/1.6 scalacheck-1.6.jar]
 
 If you use mock objects with jMock, add
 
@@ -41,16 +41,12 @@ If you use mock objects with EasyMock, add
 
 If you want to run the specifications as `ScalaTest` suites, use
 
- * [http://scala-tools.org/repo-releases/org/scalatest/scalatest/0.9.5 scalatest-0.9.5.jar]
+ * [http://scala-tools.org/repo-releases/org/scalatest/scalatest/1.0 scalatest-1.0.jar]
 
 If you want to use Textile markup in Literate Specifications, you need to add
 
  * [http://scala-tools.org/repo-releases/org/eclipse/mylyn/wikitext/wikitext.core/0.9.4.I20090220-1600-e3x wikitext.core-0.9.4.I20090220-1600-e3x.jar]
  * [http://scala-tools.org/repo-releases/org/eclipse/mylyn/wikitext/wikitext.textile/0.9.4.I20090220-1600-e3x wikitext.textile-0.9.4.I20090220-1600-e3x.jar] 
-
-Or alternately, if you prefer Markdown:
-
- * [http://scala-tools.org/repo-releases/org/markdownj/markdownj/0.3.0-1.0.2b4/markdownj-0.3.0-1.0.2b4.jar markdownj-0.3.0-1.0.2b4.jar]
 
 =Run your specification in the Console=
 
@@ -127,6 +123,7 @@ usage java classpath package.mySpecification [-h|--help]
                                              [[-acc | --accept] tag1,tag2,...] [[-rej | --reject] tag1,tag2,...]
                                              [-sus | --system]
                                              [-ex | --example]
+                                             [-plan | --planonly]
                                              [-c | --color]
 
 -h, --help                     print this message and doesn't execute the specification
@@ -139,7 +136,7 @@ usage java classpath package.mySpecification [-h|--help]
 -rej, --reject tags            reject the specified tags (comma-separated names)
 -sus, --system                 only the systems under specifications matching this regular expression will be executed
 -ex, --example                 only the examples matching this regular expression will be executed
-(*from 1.6.1*) -plan, --planOnly only display the sus and first level descriptions without executing the examples
+-plan, --planOnly              only display the sus and first level descriptions without executing the examples
 -c, --color                    report with colors
 
 }}}
@@ -322,9 +319,9 @@ You can use the following Ant build file as a starter to compile and execute you
   <property name="lib.dir" value="lib" />
   <property name="repository.home" value="c:/local_repository" />
   <property name="scala-compiler.jar"
-  value="${repository.home}/org/scala-lang/scala-compiler/2.7.3/scala-compiler-2.7.3.jar" />
+  value="${repository.home}/org/scala-lang/scala-compiler/2.7.7/scala-compiler-2.7.7.jar" />
   <property name="scala-library.jar"
-  value="${repository.home}/org/scala-lang/scala-library/2.7.3/scala-library-2.7.3.jar" />
+  value="${repository.home}/org/scala-lang/scala-library/2.7.7/scala-library-2.7.7.jar" />
   <!-- 2. Define Scala CLASSPATH. -->
   <path id="scala.classpath">
     <pathelement location="${scala-compiler.jar}" />
@@ -335,8 +332,8 @@ You can use the following Ant build file as a starter to compile and execute you
     <path refid="scala.classpath" />
     <pathelement location="${build.dir}" />
     <pathelement location="${repository.home}/junit/junit/4.4/junit-4.4.jar" />
-    <pathelement location="${repository.home}/org/specs/specs/1.4.3/specs-1.4.3.jar" />
-    <pathelement location="http://scala-tools.org/repo-snapshots/org/scalacheck/scalacheck/1.5/scalacheck-1.5.jar" />
+    <pathelement location="${repository.home}/org/scala-tools/testing/specs/1.6.1/specs-1.6.1.jar" />
+    <pathelement location="http://scala-tools.org/repo-snapshots/org/scala-tools/testing/scalacheck/1.6/scalacheck-1.6.jar" />
   </path>
   <!-- 4. Define scala compiler command. -->
   <taskdef resource="scala/tools/ant/antlib.xml">
@@ -547,7 +544,7 @@ From the command line, the tags can be accepted or rejected with the following o
 
 For example: `scala mySpecification --accept tag1,tag2 --reject tag3`
 
-=(*from 1.6.1*) Specification plan=
+=Specification plan=
 
 A Specification can be executed so as to display its systems and first-level examples descriptions without executing them.
 
@@ -555,3 +552,10 @@ In order to activate this functionality, you need to:
 
  * pass the `-plan` option to the command-line arguments
  * use the `-Dplan` system property when executing the specifications with JUnit
+
+Then sus and examples descriptions are displayed like this:
+{{{
+  - This system should
+    - do this
+    - do that
+}}}
