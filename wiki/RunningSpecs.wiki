@@ -60,23 +60,23 @@ object helloWorld extends Specification { ... }
 
 `java -cp ... org.hw.helloWorld`
 
-===Getting some help===
+==Getting some help==
 
 You can display a help message with all available options by passing the `-h` or `--help` options on the command line.
 
-===Removing stacktraces from the report===
+==Removing stacktraces from the report==
 
 If you have several exceptions being thrown and if stacktraces are obscuring the Console output you can turn them off by passing the `-ns` or `--nostacktrace` option.
 
-===Showing only failures and errors===
+==Showing only failures and errors==
 
 You can also choose to display only the failed and error examples by using either the -xonly or the --failedonly option ("x" like the symbol showing a failure or an error in the console).
 
-===Don't show statistics===
+==Don't show statistics==
 
 For big specifications, if you want to remove the display of statistics, you can use the -nostats or --nostatistics flag to prevent statistics to be displayed.
 
-===Filter systems and examples===
+==Filter systems and examples==
 
 The following flags can be used to run only some systems or some examples:
 
@@ -84,11 +84,11 @@ The following flags can be used to run only some systems or some examples:
 
 -ex or --example regexp runs only the examples which description matches the regular expression
 
-===Report with colors===
+==Report with colors==
 
 If your console supports it, you can display success, failures and skipped examples in color with the -c or --color flag.
 
-===Run a Specification class===
+==Run a Specification class==
 
 If a Specification is declared as an `object` you can run it directly on the command line. However, if you declare the Specification as a class (to make it a JUnit test for example), you will have to use the `run` class to execute the Specification on the command line:
 {{{
@@ -97,7 +97,7 @@ If a Specification is declared as an `object` you can run it directly on the com
 
 If the class can't be instantiated a stacktrace will be printed.
 
-===Run several Specification classes===
+==Run several Specification classes==
 
 You can also run many specifications at once with the -k flag (or --classes):
 {{{
@@ -111,7 +111,7 @@ And the package names can be factored with -p (or --packages):
 
 Additionally you can display instantiations issues with the -v flag.
 
-===Display the help===
+==Display the help==
 
 The help flag: -h or --help can be used to display the available flags and their description: 
 {{{
@@ -143,7 +143,7 @@ usage java classpath package.mySpecification [-h|--help]
 
 Note that the specification is not executed in that case.
 
-===Override specs default behavior===
+==Override specs default behavior==
  
 You can override specs behavior by providing a configuration (see below). This configuration file allows you to set default reporting options for:
 
@@ -181,7 +181,7 @@ This how you declare a *specs* configuration:
  * you can provide a properties file as above but with a specific path and specify its path to the `-config` option. 
 
 
-===Find specifications in a directory path===
+==Find specifications in a directory path==
 
 You can use the `SpecsFinder` class to find specifications in a given path:
 {{{
@@ -197,7 +197,7 @@ To be more specific, the name of the specification will be retrieved if the scal
 \\s*object\\s*(" + pattern + ")\\s*extends\\s*.*Spec.*\\s*\\{"
 }}}
 
-===Execute specifications in a directory path===
+==Execute specifications in a directory path==
 
 You simply use the `SpecsFileRunner`, with the parameters required for the `SpecsFinder`:
 {{{
@@ -208,7 +208,7 @@ object allSpecsRunner extends SpecsFileRunner("project/**/*.scala", "all.*")
  
 The `SpecsFileRunner` will find possible specification names with the `SpecsFinder` and will try to instantiate them, keeping them only if the resulting object is an instance of `Specification`.
 
-===How to redirect the results on a different output===
+==How to redirect the results on a different output==
 
 If you want to redirect the result of the execution to a file for example, you have to create a new trait extending the `Output` trait:
 {{{
