@@ -425,7 +425,7 @@ This method is also available on `Context` objects, so you can write:
 }}}
 
 
-==Specification context (*from 1.6.1*)==
+==Specification context==
 
 Some contexts are applicable to all the systems of a given specification. In that case, instead of having to thread the context every time, you can define a `SpecContext` which will be automatically applied to all the systems of the Specification:
 {{{
