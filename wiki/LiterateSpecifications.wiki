@@ -74,9 +74,9 @@ There are other available helper functions:
 
  * `linkTo(description, otherSpecification)`. Links to sub-specifications can be included with the `linkTo` function. This will include the other specification in the current one (if not already present) and create a Html link to its results.
 
- * (*from 1.6.1*) `linkTo(description, xml node)`. creates a specification on the fly for the `xml node` and link to it.
+ * `linkTo(description, xml node)`. creates a specification on the fly for the `xml node` and link to it.
 
- * (*from 1.6.1*) `myText.collapsible(title)` or `myText.collapsible(title, headerNumber)`. This creates a collapsible section with a title (and optionally with a different header style than the default `<h5/>`).
+ * `myText.collapsible(title)` or `myText.collapsible(title, headerNumber)`. This creates a collapsible section with a title (and optionally with a different header style than the default `<h5/>`).
 
 == Display code ==
 
