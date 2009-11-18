@@ -262,7 +262,7 @@ or
 
 Sometimes, you may want a mocked method to return the value of one of the passed parameter. You can do that using `CapturingParameters`:
 {{{
-val s = capturing[String]
+val s = capturingParam[String]
 classOf[ClassToMock].expects(one(_).method(s.capture) willReturn s) in {
   _.method("a") must_== "a" // the String parameter of the method will be captured and returned
 }
@@ -270,7 +270,7 @@ classOf[ClassToMock].expects(one(_).method(s.capture) willReturn s) in {
 
 Note that if the method has several parameters you need to indicate the index of the captured parameter during the capture:
 {{{
-val s = capturing[String]
+val s = capturingParam[String]
 classOf[ClassToMock].expects(one(_).method2(anyString, s.capture(1)) willReturn s) in {
   _.method2("a", "b") must_== "b" // "b" is returned as the second parameter (this is a 0 based index hence the 'capture(1)')
 }
@@ -278,7 +278,7 @@ classOf[ClassToMock].expects(one(_).method2(anyString, s.capture(1)) willReturn 
 
 It is also possible to apply matchers on capturing parameters, like this:
 {{{
-val s = capturing[String]
+val s = capturingParam[String]
 classOf[ClassToMock].expects {
   one(_).method(s.must(beMatching("h.*")).capture willReturn s
 } in {
@@ -288,7 +288,7 @@ classOf[ClassToMock].expects {
 
 And if necessary, you can transform the captured value using `map` to return a value of a different type:
 {{{
-val s = capturing[String]
+val s = capturingParam[String]
 classOf[ClassToMock].expects(one(_).method3(s.capture) willReturn s.map(_.size)) in {
   _.method3("a") must_== 1 
 }
