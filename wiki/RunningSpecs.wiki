@@ -270,6 +270,7 @@ In order to be able to select your JUnit4 classes, you need to add the output di
  # In the "Class Folder Selection" dialog, do "Create New Folder"
  # In the "New Folder" dialog, select "Advanced" and "Link to folder in the file system"
  # Select the output folder of your project
+ # In the "Order and Export" tab, make sure that the newly created alias is placed before the main/scala/test directory
  # Refresh your project (F5 on the project's folder)
 
 You should now be able to select the JUnit4 classes of your Scala project.
