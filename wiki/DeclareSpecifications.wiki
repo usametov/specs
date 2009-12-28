@@ -33,7 +33,7 @@ By default the description of a specification, which is displayed in case of a c
 If you want to set a more meaningful name, you need to override the description attribute:
 {{{
 object basicFunctionalitiesSpecification extends Specification {
-  override var description = "the system basic functionalities are"
+  var description = "the system basic functionalities are"
 }
 }}}
 
