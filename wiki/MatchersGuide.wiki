@@ -641,3 +641,19 @@ object jUnitTest extends Specification with xUnit {
  * `assertNull`        <=> `must beNull`
  * `assertNotNull`     <=> `must notBeNull`
  * `assertArrayEquals` <=> `must ((beEqual(_:T)).toSeq`
+
+=Use specs matchers alone=
+
+You can use the specs matchers in the context of a JUnit test, without having to extends from a `Specification`:
+
+{{{
+import org.specs._
+import org.junit.Test
+
+class MyTest extends SpecsMatchers { 
+  @Test 
+  def mytest = { 
+     10 must be_== (11) 
+  } 
+}
+}}}
