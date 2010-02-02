@@ -145,6 +145,22 @@ In some cases, you may want to specify that a matcher is only applicable dependi
  "abc" must beMatching(s).unless(s.isEmpty)
 }}}
 
+===(*from 1.6.2*) Eventual matches===
+
+Some actions done on the specified system may require some time to take effect, such as creating a file. In that case, it is handy to be able to retry a matcher automatically a number of times:
+{{{
+  val iterator = List(1, 2, 3).iterator // simulation of a value which may not be quite right on first attempts
+  iterator.next() must eventually(be(3)) // can be also written be(3).eventually
+}}}
+
+The number of retries and sleeping time between tries are of course configurable:
+{{{
+  val iterator = List(1, 2, 3).iterator
+  // @see the org.specs.util.Time class for Duration implicit conversions
+  // the default is 40 retries, 100.millis
+  iterator.next() must eventually(10, 1.second)(be(3)) 
+}}}
+
 =Matchers applicable to any object=
 
  * `a must be_==(b)` is ok if `a == b` (alias: `a must ==(b)`, `a must_== b` or `a mustEqual b`)
