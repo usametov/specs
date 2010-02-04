@@ -287,7 +287,7 @@ And finally, it is possible to declare that the strings should be shortened betw
 
 }}}
 
-(*from 1.6.2*) _Performances optimizations_
+_Performances optimizations_
 
 When doing a detailed difference on large strings (typically from a file), the memory and execution performances of the edit distance algorithm used to report differences can be pretty bad (see issue 110). This is why the detailed differences are only reported by comparing lines without linefeeds.
 
@@ -349,8 +349,6 @@ List(1, List(2, 3, List(4)), 5) must haveTheSameElementsAs(List(5, List(List(4),
 
  * `a must beSome[Type]` is ok if a is Some(t: Type)
  * `a must beSomething` is ok if a is Some(a: Any)
-
-(*from 1.6.2*)
  * `a must beSome(value)` is ok if a is Some(value)
 
  * an Option matcher can be extended with a `which` condition
