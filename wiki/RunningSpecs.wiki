@@ -8,9 +8,9 @@ The following libraries are necessary to run specifications.
 
 *Please check carefully the version numbers!*
 
- * [http://scala-tools.org/repo-releases/org/scala-tools/testing/specs/1.6.1 specs-1.6.1.jar]
+ * [http://scala-tools.org/repo-releases/org/scala-tools/testing/specs/1.6.2 specs-1.6.2.jar]
  * [http://scala-tools.org/repo-releases/org/scala-lang/scala-library/2.7.7 scala-library-2.7.7.jar]
- * [http://repo1.maven.org/maven2/junit/junit/4.5 junit-4.5.jar]
+ * [http://repo1.maven.org/maven2/junit/junit/4.7 junit-4.7.jar]
 
 The junit library also allows you to run the specifications as JUnit suites by mixing-in the `org.specs.runner.JUnit` trait. The junit library is a requirement for specs because the @RunWith annotations on the JUnit is unfortunately not inherited by the `Specification` class.
 
@@ -21,7 +21,7 @@ If you use `ScalaCheck` you must add
 
 If you use mock objects with jMock, add
 
- * [http://repo1.maven.org/maven2/org/jmock/jmock/2.4.0 jmock-2.4.0.jar] 
+ * [http://repo1.maven.org/maven2/org/jmock/jmock/2.5.1 jmock-2.5.1.jar] 
  * [http://repo1.maven.org/maven2/org/hamcrest/hamcrest-all/1.1 hamcrest-all-1.1.jar]
 
 And if you mock classes or traits with attributes you will need
@@ -343,7 +343,9 @@ You can use the following Ant build file as a starter to compile and execute you
   <!-- 5. Compiles sources by using "scalac" command. -->
   <target name="compile">
     <mkdir dir="${build.dir}" />
-    <scalac srcdir="${src.dir}" destdir="${build.dir}" classpathref="project.classpath" force="changed">
+    <scalac srcdir="${src.dir}" destdir="${build.dir}" claspecs._
+
+object helloWorld extece="changed">
       <include name="**/*.scala" />
     </scalac>
   </target>
