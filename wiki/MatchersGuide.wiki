@@ -145,7 +145,7 @@ In some cases, you may want to specify that a matcher is only applicable dependi
  "abc" must beMatching(s).unless(s.isEmpty)
 }}}
 
-===(*from 1.6.2*) Eventual matches===
+=== Eventual matches ===
 
 Some actions done on the specified system may require some time to take effect, such as creating a file. In that case, it is handy to be able to retry a matcher automatically a number of times:
 {{{
