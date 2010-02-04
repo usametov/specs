@@ -41,7 +41,7 @@ Total for specification "helloWorld":
 Finished in 0 second, 63 ms
 2 examples, 2 assertions, 0 failure, 0 error
 }}}
-  # now, you can more structure to your specification, by grouping your examples:
+  # now, you can add more structure to your specification, by grouping your examples:
 {{{
 import org.specs._
 
