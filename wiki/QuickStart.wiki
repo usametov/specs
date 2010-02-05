@@ -2,7 +2,7 @@
 #labels Featured
 (for more information, take a look at the [UserGuide User Guide])
 
-  # declare a Specification object
+  # declare a Specification class
 {{{
 import org.specs._
 
