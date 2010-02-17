@@ -291,6 +291,8 @@ _Performances optimizations_
 
 When doing a detailed difference on large strings (typically from a file), the memory and execution performances of the edit distance algorithm used to report differences can be pretty bad (see issue 110). This is why the detailed differences are only reported by comparing lines without linefeeds.
 
+In any case, it is possible to deactivate the detailed differences with a call to `noDetailedDiffs()`.
+
 =Matchers applicable to Iterables=
  
  * `a must contain(b)` is ok if `a.exists(_ == b)` (alias: `mustContain`)
