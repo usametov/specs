@@ -220,47 +220,49 @@ trait FileOutput extends Output {
 }
 }}}
 
-And then you "mix" it with the `ConsoleRunner`:
+And then you "mix" it to your specification:
 {{{
-object mySpecRunner extends ConsoleRunner(mySpec) with FileOutput
-object mySpec extends Specification { ... }
+object mySpec extends Specification with FileOutput { ... }
 }}}
 
-On the command line, you can then invoke: `java -cp ... mySpecRunner`
+On the command line, you can then invoke: `java -cp ... run mySpec`
 
 =Run your specification with JUnit4=
 
-To execute your specification with JUnit, you need to use the `JUnit4` class:
-{{{
-import org.specs.runner.JUnit4
+To execute your specification with JUnit, you can extend the `SpecificationWithJUnit` class:
 
-class mySpecTest extends JUnit4(mySpec)
-object mySpec extends Specification { ... }
+{{{
+class mySpecTest extends SpecificationWithJUnit { ... }
 }}}
 
-The name of the test class will be <package name>.mySpecTest
+*Note 1*: we need to declare the specification as a class and not as an object, otherwise Ant and Maven test tasks won't be able to instantiate the class properly. Moreover, following the convention of having 'Test' at the end of the name should be make it being picked up by default. See [http://code.google.com/p/specs/wiki/RunningSpecs#Run_your_specifications_with_JUnit4_and_Maven below] how to configure Maven to pick up another name convention.
 
-*Note*: we should declare the  JUnit runner as a class and not an object, otherwise Ant and Maven test tasks won't be able to instantiate the class properly. Moreover, following the convention of having 'Test' at the end of the name should be make it being picked up by default.
+*Note 2*: on the command line, you can still run your suite by executing: `java -cp ... run mySpecTest`
 
-On the command line, you can run your suite by executing: `java -cp ... org.junit.runner.JUnitCore mySpecTest`
-
-Note that subexamples of an example won't be reported as separate tests but their failure messages will be added to the parent example failure messages.
-
-==Alternate method of declaring a specification runnable with JUnit==
-
-Before version 1.5.1, you can directly mix in the JUnit trait to your Specification:
+*Note 2*: before version 1.5.1, you could directly mix in a JUnit trait to your Specification:
 {{{
   import org.specs.runner.JUnit
-
   class mySpec extends Specification with JUnit { ... }
 }}}
 
-Starting from version 1.5.1, this feature has been replaced with a direct inheritance of the SpecificationWithJUnit class:
+However, starting from version 1.5.1, this feature has been replaced with a direct inheritance of the SpecificationWithJUnit class:
 {{{
   class mySpec extends SpecificationWithJUnit { ... }
 }}}
 
 This was necessary in order to remove a dependency between the Specification class and the junit libraries when JUnit is not required.
+
+==Alternate method of declaring a specification runnable with JUnit==
+
+To execute your specification with JUnit, you can also use the `JUnit4` class:
+{{{
+ import org.specs.runner.JUnit4
+
+  class mySpecTest extends JUnit4(mySpec)
+  object mySpec extends Specification { ... }
+}}}
+
+The name of the test class will be <package name>.mySpecTest
 
 =Run your specification with JUnit4 in Eclipse=
 
