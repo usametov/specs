@@ -235,7 +235,7 @@ To execute your specification with JUnit, you can extend the `SpecificationWithJ
 class mySpecTest extends SpecificationWithJUnit { ... }
 }}}
 
-*Note 1*: we need to declare the specification as a class and not as an object, otherwise Ant and Maven test tasks won't be able to instantiate the class properly. Moreover, following the convention of having 'Test' at the end of the name should be make it being picked up by default. See [http://code.google.com/p/specs/wiki/RunningSpecs#Run_your_specifications_with_JUnit4_and_Maven below] how to configure Maven to pick up another name convention.
+*Note 1*: we need to declare the specification as a class and not as an object, otherwise Ant and Maven test tasks won't be able to instantiate the class properly. Moreover, following the convention of having 'Test' at the end of the name should be make it being picked up by default. See [http://code.google.com/p/specs/wiki/RunningSpecs#Run_your_specifications_with_JUnit4_and_Maven below] how to configure Maven to pick up another naming convention.
 
 *Note 2*: on the command line, you can still run your suite by executing: `java -cp ... run mySpecTest`
 
@@ -256,7 +256,7 @@ This was necessary in order to remove a dependency between the Specification cla
 
 To execute your specification with JUnit, you can also use the `JUnit4` class:
 {{{
- import org.specs.runner.JUnit4
+  import org.specs.runner.JUnit4
 
   class mySpecTest extends JUnit4(mySpec)
   object mySpec extends Specification { ... }
@@ -284,8 +284,7 @@ By default, you need to respect the surefire plugin naming convention:
 {{{
 // all JUnit4 tests must end with "Test"
 // it must be a class, not an object, otherwise the class name would be mySpecTest$
-class mySpecTest extends JUnit4(mySpec)
-object mySpec extends Spec
+class mySpecTest extends SpecificationWithJUnit
 }}}
 
 Then you run the usual `mvn test` to compile main code, test code and execute the tests.
@@ -346,9 +345,7 @@ You can use the following Ant build file as a starter to compile and execute you
   <!-- 5. Compiles sources by using "scalac" command. -->
   <target name="compile">
     <mkdir dir="${build.dir}" />
-    <scalac srcdir="${src.dir}" destdir="${build.dir}" claspecs._
-
-object helloWorld extece="changed">
+    <scalac srcdir="${src.dir}" destdir="${build.dir}">
       <include name="**/*.scala" />
     </scalac>
   </target>
