@@ -42,7 +42,8 @@ x|"wrong"      | "spec1"     | "./spec1.xml"         | Map(./bad/spec1.xml -> <.
 
 Please note the small `>` on the border of the table. This is what makes the table being actually executed in the specification. Think about it a the "play" command (it can be placed on any row).
 
-== (*next release*) DataTable contexts ==
+== !DataTable contexts ==
+(*next release*)
 
 When it is necessary to do some initialization on each row of a DataTable, a [`Context` http://code.google.com/p/specs/wiki/DeclareSpecifications#Shared_contexts] object can be used:
 
