@@ -42,6 +42,29 @@ x|"wrong"      | "spec1"     | "./spec1.xml"         | Map(./bad/spec1.xml -> <.
 
 Please note the small `>` on the border of the table. This is what makes the table being actually executed in the specification. Think about it a the "play" command (it can be placed on any row).
 
+== (*next release*) DataTable contexts ==
+
+When it is necessary to do some initialization on each row of a DataTable, a [`Context` http://code.google.com/p/specs/wiki/DeclareSpecifications#Shared_contexts] object can be used:
+
+{{{
+  var counter = 0
+  val context = beforeContext(counter = 0)
+
+    context|
+    "a"    | "b" | "sum" |>
+     1     !  2  !   3   |
+     2     !  2  !   4   | { (a, b, c) => 
+      counter must_== 0
+      counter = a + b + c
+    }
+}}}
+
+In the example above, the `beforeActions` of the context will be called before each row execution. In the case of a more general context, for each row:
+
+ * `beforeActions` are called
+ * then the function, with the row data is executed inside the `aroundExpectationActions`
+ * and finally the `afterActions` are called
+
 = How to add syntactic sugar to your specifications =
 
 When you import `org.specs.Sugar._` you get some syntactic sugar that you can add to enhance your specifications:
