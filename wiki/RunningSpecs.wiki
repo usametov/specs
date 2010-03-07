@@ -374,6 +374,13 @@ You can use the following Ant build file as a starter to compile and execute you
 }}}
 (the initial compile script comes from [http://scriptlandia.blogspot.com/2007/04/how-to-compile-and-run-scala-program.html this blog post])
 
+=Run your specifications with [http://code.google.com/p/simple-build-tool sbt] =
+
+Sbt is able to run any specification class or object inheriting from the Specification class. One thing you may want to specify in your sbt project though is the name of the class to execute:
+{{{
+  // this restrict the executed classes names to end with either "Spec" or "Unit"
+  override def includeTest(s: String) = { s.endsWith("Spec") || s.endsWith("Unit") }
+}}}
 
 =Run your specifications and get the results as an XML file =
 
