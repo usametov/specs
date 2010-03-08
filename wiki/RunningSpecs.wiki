@@ -382,6 +382,16 @@ You can use the following Ant build file as a starter to compile and execute you
   override def includeTest(s: String) = { s.endsWith("Spec") || s.endsWith("Unit") }
 }}}
 
+==Pass command line arguments==
+
+It is possible to pass command line arguments to some of the sbt commands like `test-only` and `test-quick`
+{{{
+
+// -ns: don't print the stacktrace
+// -acc tag1 accept examples tagged with tag1
+test-only mySpec -- -ns -acc tag1
+}}}
+
 =Run your specifications and get the results as an XML file =
 
 You can use the `XmlRunner` class to export the results of your specifications as an xml file:
