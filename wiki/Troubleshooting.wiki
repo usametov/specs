@@ -21,3 +21,19 @@ This would generate:
 }}}
 
   This is because there is a missing "in" after the example description, so everything inside the accolade is expected to be an Int used to access one character of "do something" (see issue 22)
+
+  * *Skipped example* This example would appear as "skipped" in the reports:
+{{{
+  "my example" in {
+    doSomething()     // appears as skipped
+  }
+}}}
+
+The example shows as 'skipped' because it is a warning that it is not specifying any expectations. We're taking the view here that expecting a piece of code _not to throw an exception_ is a sign that your example is incomplete as a specification of the intended behavior. However if that's really what you mean, you can declare that by using `isExpectation`:
+{{{
+  "my example" in {
+    doSomething().isExpectation     // appears as passed if no exception is thrown
+  }
+}}}
+
+If you don't like this default behavior you can override it by changing your specs configuration: http://code.google.com/p/specs/wiki/RunningSpecs#Override_specs_default_behavior
