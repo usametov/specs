@@ -16,8 +16,8 @@ This page lists tips on errors you may encounter while using *specs*.
 
 This would generate:
 {{{error: type mismatch;
-[WARNING]  found   : Boolean
-[WARNING]  required: Int
+   found   : org.specs.specification.Result[java.lang.String]
+   required: Int
 }}}
 
   This is because there is a missing "in" after the example description, so everything inside the accolade is expected to be an Int used to access one character of "do something" (see issue 22)
