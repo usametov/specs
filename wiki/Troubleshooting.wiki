@@ -3,6 +3,8 @@
 
 This page lists tips on errors you may encounter while using *specs*.
 
+  * *NoSuchMethodError*. You may have dependencies issues. Please check the version numbers of all the libraries you're using: [http://code.google.com/p/specs/wiki/RunningSpecs#Dependencies dependencies]
+
   * *Strange compilation error*. The following spec would raise a compilation error:
 {{{
 "My Thing" should {
