@@ -2,11 +2,11 @@
 
 <wiki:toc />
 
-= http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png Dependencies=
+= Dependencies=
 
 The following libraries are necessary to run specifications. 
 
-*Please check carefully the version numbers!*
+http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *Please check carefully the version numbers!*
 
  * [http://scala-tools.org/repo-releases/org/scala-tools/testing/specs/1.6.2 specs-1.6.2.jar]
  * [http://scala-tools.org/repo-releases/org/scala-lang/scala-library/2.7.7 scala-library-2.7.7.jar]
