@@ -12,7 +12,7 @@ This page lists tips on errors you may encounter while using *specs*.
      ...possibly long setup...
      something must ... other // matcher
   }
-}}}}
+}}}
 
 This would generate:
 {{{error: type mismatch;
