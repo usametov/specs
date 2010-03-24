@@ -2,7 +2,7 @@
 
 <wiki:toc />
 
-=Dependencies=
+= http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png Dependencies=
 
 The following libraries are necessary to run specifications. 
 
