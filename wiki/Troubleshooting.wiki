@@ -15,7 +15,9 @@ This page lists tips on errors you may encounter while using *specs*.
 }}}
 
 This would generate:
-{{{error: type mismatch;
+
+{{{
+   error: type mismatch;
    found   : org.specs.specification.Result[java.lang.String]
    required: Int
 }}}
