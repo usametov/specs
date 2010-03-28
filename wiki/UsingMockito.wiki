@@ -36,6 +36,24 @@ Here are some examples of this new syntax:
 
 }}}
 
+It is also possible to add all verifications inside a block, when several mocks are involved:
+{{{
+  got {
+    one(mockedList1).get(0)
+    two(mockedList2).get(1)
+  }
+}}}
+
+==Ordered calls==
+
+The syntax for ordered calls has also evolved to be:
+{{{
+  there was one(m1).get(0) then one(m1).get(1)
+
+  // when several mocks are involved, the expected order must be given
+  there was one(m2).get(0) then one(m1).get(2) orderedBy(m1, m2)
+}}}
+
 = Usage =
 
 In order to use Mockito mocks in your specification, you need to mix in the Mockito trait.
