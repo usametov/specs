@@ -57,7 +57,7 @@ The syntax for ordered calls has also evolved to be:
   there was one(m2).get(0) then one(m1).get(2) orderedBy (m1, m2)
 }}}
 
-= Usage =
+= Usage (Mockito 1.8.0) =
 
 In order to use Mockito mocks in your specification, you need to mix in the Mockito trait.
 {{{
