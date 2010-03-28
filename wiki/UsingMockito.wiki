@@ -8,55 +8,6 @@
 
 *specs* integrates Mockito expectations and add some syntactic sugar for an even easier experience of Mockito.
 
-=Mockito 1.8.4 upgrade =
-(*next release*)
-
-http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *API CHANGES*
-
-With the upgrade of Mockito to the version 1.8.4, the verification api in specs has to change because the way mocks are verified is slightly different.
-
-Here are some examples of this new syntax:
-{{{
- there was one(mockedList).get(0)          // one call only to get(0)
- there was no(mockedList).get(0)           // no calls to get(0)
- 
- // were can also be used
- there were two(mockedList).get(0)          // 2 calls exactly to get(0)
- there were three(mockedList).get(0)        // 3 calls exactly to get(0)
- there were 4.times(mockedList).get(0)      // 4 calls exactly to get(0)
- 
- there was atLeastOne(mockedList).get(0)   // at least one call to get(0)
- there was atLeastTwo(mockedList).get(0)   // at least two calls to get(0)
- there was atLeastThree(mockedList).get(0) // at least three calls to get(0)
- there was atLeast(4)(mockedList).get(0)   // at least four calls to get(0)
-
- there was atMostOne(mockedList).get(0)   // at most one call to get(0)
- there was atMostTwo(mockedList).get(0)   // at most two calls to get(0)
- there was atMostThree(mockedList).get(0) // at most three calls to get(0)
- there was atMost(4)(mockedList).get(0)   // at most four calls to get(0)
-
-}}}
-
-It is also possible to add all verifications inside a block, when several mocks are involved:
-{{{
-  got {
-    one(mockedList1).get(0)
-    two(mockedList2).get(1)
-  }
-}}}
-
-==Ordered calls==
-
-The syntax for ordered calls has also evolved to be:
-{{{
-  there was one(m1).get(0) then one(m1).get(1)
-
-  // when several mocks are involved, the expected order must be given
-  // whereas it is not necessary if the methods of one mock only are to
-  // be checked in order
-  there was one(m2).get(0) then one(m1).get(2) orderedBy (m1, m2)
-}}}
-
 = Usage (Mockito 1.8.0) =
 
 In order to use Mockito mocks in your specification, you need to mix in the Mockito trait.
@@ -258,4 +209,53 @@ However, working with spies can be tricky:
 As advised in the Mockito documentation, `doReturn` must be used in that case: 
 {{{
   doReturn("one").when(spiedList).get(0)
+}}}
+
+=Mockito 1.8.4 upgrade =
+(*next release*)
+
+http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *API CHANGES*
+
+With the upgrade of Mockito to the version 1.8.4, the verification api in specs has to change because the way mocks are verified is slightly different.
+
+Here are some examples of this new syntax:
+{{{
+ there was one(mockedList).get(0)          // one call only to get(0)
+ there was no(mockedList).get(0)           // no calls to get(0)
+ 
+ // were can also be used
+ there were two(mockedList).get(0)          // 2 calls exactly to get(0)
+ there were three(mockedList).get(0)        // 3 calls exactly to get(0)
+ there were 4.times(mockedList).get(0)      // 4 calls exactly to get(0)
+ 
+ there was atLeastOne(mockedList).get(0)   // at least one call to get(0)
+ there was atLeastTwo(mockedList).get(0)   // at least two calls to get(0)
+ there was atLeastThree(mockedList).get(0) // at least three calls to get(0)
+ there was atLeast(4)(mockedList).get(0)   // at least four calls to get(0)
+
+ there was atMostOne(mockedList).get(0)   // at most one call to get(0)
+ there was atMostTwo(mockedList).get(0)   // at most two calls to get(0)
+ there was atMostThree(mockedList).get(0) // at most three calls to get(0)
+ there was atMost(4)(mockedList).get(0)   // at most four calls to get(0)
+
+}}}
+
+It is also possible to add all verifications inside a block, when several mocks are involved:
+{{{
+  got {
+    one(mockedList1).get(0)
+    two(mockedList2).get(1)
+  }
+}}}
+
+==Ordered calls==
+
+The syntax for ordered calls has also evolved to be:
+{{{
+  there was one(m1).get(0) then one(m1).get(1)
+
+  // when several mocks are involved, the expected order must be given
+  // whereas it is not necessary if the methods of one mock only are to
+  // be checked in order
+  there was one(m2).get(0) then one(m1).get(2) orderedBy (m1, m2)
 }}}
