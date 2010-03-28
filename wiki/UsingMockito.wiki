@@ -13,16 +13,17 @@
 
 http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *API CHANGES*
 
-With the upgrade of Mockito to the latest 1.8.4 in the next release of specs, the verification api has to change because the way mocks are verified is slightly different.
+With the upgrade of Mockito to the version 1.8.4, the verification api in specs has to change because the way mocks are verified is slightly different.
 
 Here are some examples of this new syntax:
 {{{
  there was one(mockedList).get(0)          // one call only to get(0)
  there was no(mockedList).get(0)           // no calls to get(0)
  
- there was two(mockedList).get(0)          // 2 calls exactly to get(0)
- there was three(mockedList).get(0)        // 3 calls exactly to get(0)
- there was 4.times(mockedList).get(0)      // 4 calls exactly to get(0)
+ // were can also be used
+ there were two(mockedList).get(0)          // 2 calls exactly to get(0)
+ there were three(mockedList).get(0)        // 3 calls exactly to get(0)
+ there were 4.times(mockedList).get(0)      // 4 calls exactly to get(0)
  
  there was atLeastOne(mockedList).get(0)   // at least one call to get(0)
  there was atLeastTwo(mockedList).get(0)   // at least two calls to get(0)
@@ -51,7 +52,9 @@ The syntax for ordered calls has also evolved to be:
   there was one(m1).get(0) then one(m1).get(1)
 
   // when several mocks are involved, the expected order must be given
-  there was one(m2).get(0) then one(m1).get(2) orderedBy(m1, m2)
+  // whereas it is not necessary if the methods of one mock only are to
+  // be checked in order
+  there was one(m2).get(0) then one(m1).get(2) orderedBy (m1, m2)
 }}}
 
 = Usage =
