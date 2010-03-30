@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait IncludeExclude in org.specs.util</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/util$package.html" target="_self">org.specs.util</a>
+        <br></br>
+        <span class="entity">trait  IncludeExclude</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/util/IncludeExclude"><code>org/specs/util/IncludeExclude.scala</code></a>]
+      </div><hr></hr>
+      <a name="IncludeExclude"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>IncludeExclude</em>[<em>T</em>]
+      </dt>
+      <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
+    </dl>
+      <dl><dd>This trait adds the possibility to declare some elements as included or excluded.
+ 
+ A filter function is then able to return the list of filtered values for a given set of values
+ according to the values which should be included and the values which should be excluded.
+ 
+ The rule is:
+ 
+ - if there are no included values, the value must not be excluded to be one of the filtered values
+ - if there are included values, the values must both be in the included list and not be in the excluded list to 
+   be part of the filtered values</dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/form/Layout.html" target="_self">Layout</a>, <a href="../../../org/specs/util/DefaultIncludeExclude.html" target="_self">DefaultIncludeExclude</a></dd>
+      </dl><hr></hr>
+      
+
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/IncludeExclude.html#exclude%28T*%29" target="_self">exclude</a></em>
+        (<em>ex</em> : <a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>*) : <a href="../../../org/specs/util/IncludeExclude.html" target="_self">IncludeExclude</a>[<a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>protected def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/IncludeExclude.html#excludeCheck%28List%5BT%5D%2CT%29" target="_self">excludeCheck</a></em>
+        (<em>excludedValues</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>], <em>value</em> : <a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/IncludeExclude.html#filter%28Seq%5BT%5D%29" target="_self">filter</a></em>
+        (<em>values</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/IncludeExclude.html#include%28T*%29" target="_self">include</a></em>
+        (<em>in</em> : <a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>*) : <a href="../../../org/specs/util/IncludeExclude.html" target="_self">IncludeExclude</a>[<a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>protected def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/IncludeExclude.html#includeCheck%28List%5BT%5D%2CT%29" target="_self">includeCheck</a></em>
+        (<em>includedValues</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>], <em>value</em> : <a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/IncludeExclude.html#reset%28%29" target="_self">reset</a></em>
+         : <a href="../../../org/specs/util/IncludeExclude.html" target="_self">IncludeExclude</a>[<a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="exclude%28T*%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>exclude</em>(<em>ex</em> : <a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>*) : <a href="../../../org/specs/util/IncludeExclude.html" target="_self">IncludeExclude</a>[<a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="include%28T*%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>include</em>(<em>in</em> : <a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>*) : <a href="../../../org/specs/util/IncludeExclude.html" target="_self">IncludeExclude</a>[<a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="reset%28%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>reset</em> : <a href="../../../org/specs/util/IncludeExclude.html" target="_self">IncludeExclude</a>[<a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="filter%28Seq%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>filter</em>(<em>values</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="includeCheck%28List%5BT%5D%2CT%29"></a><dl>
+      <dt>
+        
+        <code>protected</code>
+        <code>def</code>
+        <em>includeCheck</em>(<em>includedValues</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>], <em>value</em> : <a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="excludeCheck%28List%5BT%5D%2CT%29"></a><dl>
+      <dt>
+        
+        <code>protected</code>
+        <code>def</code>
+        <em>excludeCheck</em>(<em>excludedValues</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>], <em>value</em> : <a href="../../../org/specs/util/IncludeExclude.html#T" target="_self">T</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

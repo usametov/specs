@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>class Protocol in org.specs.mock</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/mock$package.html" target="_self">org.specs.mock</a>
+        <br></br>
+        <span class="entity">class  Protocol</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/mock/Protocol"><code>org/specs/mock/Protocol.scala</code></a>]
+      </div><hr></hr>
+      <a name="Protocol"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>class</code>
+        <em>Protocol</em>
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/mock/ProtocolTypes.html" target="_self">ProtocolTypes</a></dd>
+    </dl>
+      <dl><dd>The <code>Protocol</code> class stores the expectations of mocks, alongside with the actual received calls
+ It can be exclusive or not: i.e. return an error in case of unexpected calls or not<br>
+ A <code>protocol</code> has 3 functions:<ul>
+ <li>be defined by nested protocol definitions and expected calls
+ <li>store received calls
+ <li>return failures if there are unmatched calls</ul></dd></dl>
+      <dl></dl>
+    
+      
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Value Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> var</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/Protocol.html#exclusive" target="_self">exclusive</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div>if true, will check unexpected calls too</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> var</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/Protocol.html#receivedCalls" target="_self">receivedCalls</a></em>
+         : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/mock/ReceivedCall.html" target="_self">ReceivedCall</a>]
+        
+        <div>actual calls received by mocks</div>
+      </td>
+    </tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/Protocol.html#clear" target="_self">clear</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>Removes any previous protocol definition and received calls</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/Protocol.html#definition" target="_self">definition</a></em>
+         : <a href="../../../org/specs/mock/ProtocolDef.html" target="_self">ProtocolDef</a>
+        
+        <div>definition of the protocol</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/Protocol.html#expect%28%3D%3EAny%29" target="_self">expect</a></em>
+        (<em>v</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="../../../org/specs/mock/ProtocolDef.html" target="_self">ProtocolDef</a>
+        
+        <div>takes a value <code>v</code>which will declare some mocks expectations<br>
+   By default the protocol type is <code>inAnyOrder</code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/Protocol.html#expect%28org.specs.mock.ProtocolType%29" target="_self">expect</a></em>
+        (<em>t</em> : <a href="../../../org/specs/mock/ProtocolType.html" target="_self">ProtocolType</a>)(<em>v</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="../../../org/specs/mock/ProtocolDef.html" target="_self">ProtocolDef</a>
+        
+        <div>takes a value <code>v</code>which will declare some mocks expectations<br>
+   The protocol type is specified by the parameter <code>t</code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/Protocol.html#expectCall%28String%29" target="_self">expectCall</a></em>
+        (<em>methodName</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>adds an expected method name to the current protocol definition</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/Protocol.html#failures" target="_self">failures</a></em>
+         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/Protocol.html#isSpecified" target="_self">isSpecified</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div>A <code>Protocol</code> is specified if there it contains one protocol definition</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/Protocol.html#receiveCall%28String%29" target="_self">receiveCall</a></em>
+        (<em>methodName</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>adds a received call to the list of received calls</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/mock/ProtocolTypes.html" target="_self">ProtocolTypes</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/mock/ProtocolTypes.html#oneOf" target="_self">oneOf</a>, <a href="../../../org/specs/mock/ProtocolTypes.html#twoOf" target="_self">twoOf</a>, <a href="../../../org/specs/mock/ProtocolTypes.html#threeOf" target="_self">threeOf</a>, <a href="../../../org/specs/mock/ProtocolTypes.html#anyOf" target="_self">anyOf</a>, <a href="../../../org/specs/mock/ProtocolTypes.html#atLeastOneOf" target="_self">atLeastOneOf</a>, <a href="../../../org/specs/mock/ProtocolTypes.html#atMostOneOf" target="_self">atMostOneOf</a>, <a href="../../../org/specs/mock/ProtocolTypes.html#intToProtocolTypeBuilder%28Int%29" target="_self">intToProtocolTypeBuilder</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Value Details</td></tr>
+        </table><div><a name="receivedCalls"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>var</code>
+        <em>receivedCalls</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/mock/ReceivedCall.html" target="_self">ReceivedCall</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>actual calls received by mocks</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="exclusive"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>var</code>
+        <em>exclusive</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>if true, will check unexpected calls too</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="definition"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>definition</em> : <a href="../../../org/specs/mock/ProtocolDef.html" target="_self">ProtocolDef</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>definition of the protocol</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="expect%28%3D%3EAny%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>expect</em>(<em>v</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="../../../org/specs/mock/ProtocolDef.html" target="_self">ProtocolDef</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>takes a value <code>v</code>which will declare some mocks expectations<br>
+   By default the protocol type is <code>inAnyOrder</code></dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="expect%28org.specs.mock.ProtocolType%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>expect</em>(<em>t</em> : <a href="../../../org/specs/mock/ProtocolType.html" target="_self">ProtocolType</a>)(<em>v</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="../../../org/specs/mock/ProtocolDef.html" target="_self">ProtocolDef</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>takes a value <code>v</code>which will declare some mocks expectations<br>
+   The protocol type is specified by the parameter <code>t</code></dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="expectCall%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>expectCall</em>(<em>methodName</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>adds an expected method name to the current protocol definition</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="receiveCall%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>receiveCall</em>(<em>methodName</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>adds a received call to the list of received calls</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="failures"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>failures</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>an error message if the protocol definition    has some expected calls which don't match the received calls</dd></dl>
+    <hr></hr>
+<a name="isSpecified"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>isSpecified</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>A <code>Protocol</code> is specified if there it contains one protocol definition</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="clear"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>clear</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Removes any previous protocol definition and received calls</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

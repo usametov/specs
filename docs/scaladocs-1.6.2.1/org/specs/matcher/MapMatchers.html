@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait MapMatchers in org.specs.matcher</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/matcher$package.html" target="_self">org.specs.matcher</a>
+        <br></br>
+        <span class="entity">trait  MapMatchers</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/matcher/MapMatchers"><code>org/specs/matcher/MapMatchers.scala</code></a>]
+      </div><hr></hr>
+      <a name="MapMatchers"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>MapMatchers</em>
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/matcher/MapBaseMatchers.html" target="_self">MapBaseMatchers</a><code> with </code><a href="../../../org/specs/matcher/MapBeHaveMatchers.html" target="_self">MapBeHaveMatchers</a></dd>
+    </dl>
+      <dl><dd>The <code>MapMatchers</code> trait provides matchers which are applicable to Map objects<br>
+ It currently accepts any Iterable[(K, V)] whereas it should only accept Map[K, V]. 
+ This is because the implicit defs in the <code>BaseSpecification</code> trait
+ are picking up iterables in general</dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/matcher/Matchers.html" target="_self">Matchers</a></dd>
+      </dl><hr></hr>
+      
+
+
+<table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/matcher/MapBeHaveMatchers.html" target="_self">MapBeHaveMatchers</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/matcher/MapBeHaveMatchers.html#toMapKeyResultMatcher%28org.specs.specification.Result%5BMap%5BS%2CT%5D%5D%29" target="_self">toMapKeyResultMatcher</a>, <a href="../../../org/specs/matcher/MapBeHaveMatchers.html#toMapValueResultMatcher%28org.specs.specification.Result%5BMap%5BS%2CT%5D%5D%29" target="_self">toMapValueResultMatcher</a>, <a href="../../../org/specs/matcher/MapBeHaveMatchers.html#toJavaMapResultMatcher%28org.specs.specification.Result%5Bjava.util.Map%5BS%2CU%5D%5D%29" target="_self">toJavaMapResultMatcher</a>, <a href="../../../org/specs/matcher/MapBeHaveMatchers.html#toMapResultMatcher%28org.specs.specification.Result%5BMap%5BS%2CT%5D%5D%29" target="_self">toMapResultMatcher</a>, <a href="../../../org/specs/matcher/MapBeHaveMatchers.html#toPartialFunctionMatcher%28org.specs.specification.Result%5BPartialFunction%5BS%2CT%5D%5D%29" target="_self">toPartialFunctionMatcher</a>, <a href="../../../org/specs/matcher/MapBeHaveMatchers.html#key%28S%29" target="_self">key</a>, <a href="../../../org/specs/matcher/MapBeHaveMatchers.html#value%28S%29" target="_self">value</a>, <a href="../../../org/specs/matcher/MapBeHaveMatchers.html#pair%28%28S%2CT%29%29" target="_self">pair</a>, <a href="../../../org/specs/matcher/MapBeHaveMatchers.html#pairs%28%28S%2CT%29*%29" target="_self">pairs</a>, <a href="../../../org/specs/matcher/MapBeHaveMatchers.html#definedBy%28%28S%2CT%29*%29" target="_self">definedBy</a>, <a href="../../../org/specs/matcher/MapBeHaveMatchers.html#definedAt%28T*%29" target="_self">definedAt</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/matcher/MapBaseMatchers.html" target="_self">MapBaseMatchers</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/matcher/MapBaseMatchers.html#haveKey%28S%29" target="_self">haveKey</a>, <a href="../../../org/specs/matcher/MapBaseMatchers.html#notHaveKey%28S%29" target="_self">notHaveKey</a>, <a href="../../../org/specs/matcher/MapBaseMatchers.html#haveValue%28S%29" target="_self">haveValue</a>, <a href="../../../org/specs/matcher/MapBaseMatchers.html#notHaveValue%28S%29" target="_self">notHaveValue</a>, <a href="../../../org/specs/matcher/MapBaseMatchers.html#havePair%28%28S%2CT%29%29" target="_self">havePair</a>, <a href="../../../org/specs/matcher/MapBaseMatchers.html#notHavePair%28%28S%2CT%29%29" target="_self">notHavePair</a>, <a href="../../../org/specs/matcher/MapBaseMatchers.html#havePairs%28%28S%2CT%29*%29" target="_self">havePairs</a>, <a href="../../../org/specs/matcher/MapBaseMatchers.html#notHavePairs%28%28S%2CT%29*%29" target="_self">notHavePairs</a>, <a href="../../../org/specs/matcher/MapBaseMatchers.html#beDefinedAt%28A*%29" target="_self">beDefinedAt</a>, <a href="../../../org/specs/matcher/MapBaseMatchers.html#beDefinedBy%28%28A%2CB%29*%29" target="_self">beDefinedBy</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+
+
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

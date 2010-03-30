@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>class Expectations in org.specs.mock.EasyMock</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/mock/EasyMock.html" target="_self">org.specs.mock.EasyMock</a>
+        <br></br>
+        <span class="entity">class  Expectations</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/mock/EasyMock"><code>org/specs/mock/EasyMock.scala</code></a>]
+      </div><hr></hr>
+      <a name="Expectations"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>class</code>
+        <em>Expectations</em>[<em>T</em>](<em>c</em> : =&gt; <a href="" target="contentFrame" class="org/easymock/IExpectationSetters">org.easymock.IExpectationSetters</a>[<a href="../../../org/specs/mock/EasyMock.Expectations.html#T" target="_self">T</a>])
+      </dt>
+      <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
+    </dl>
+      <dl><dd>This class provides a way to chain expectations on mocked calls with the same syntax as
+   the one introduced by specs</dd></dl>
+      <dl></dl>
+    
+      
+
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.Expectations.html#andDelegatesTo%28S%29" target="_self">andDelegatesTo</a></em>
+        [<em>S</em>](<em>other</em> : <a href="../../../org/specs/mock/EasyMock.Expectations.html#andDelegatesTo%28S%29#S" target="_self">S</a>) : <a href="" target="contentFrame" class="org/easymock/IExpectationSetters">org.easymock.IExpectationSetters</a>[<a href="../../../org/specs/mock/EasyMock.Expectations.html#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.Expectations.html#andReturns%28T%29" target="_self">andReturns</a></em>
+        (<em>t</em> : <a href="../../../org/specs/mock/EasyMock.Expectations.html#T" target="_self">T</a>) : <a href="" target="contentFrame" class="org/easymock/IExpectationSetters">org.easymock.IExpectationSetters</a>[<a href="../../../org/specs/mock/EasyMock.Expectations.html#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.Expectations.html#andStubDelegatesTo%28S%29" target="_self">andStubDelegatesTo</a></em>
+        [<em>S</em>](<em>other</em> : <a href="../../../org/specs/mock/EasyMock.Expectations.html#andStubDelegatesTo%28S%29#S" target="_self">S</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.Expectations.html#andStubReturns%28T%29" target="_self">andStubReturns</a></em>
+        (<em>t</em> : <a href="../../../org/specs/mock/EasyMock.Expectations.html#T" target="_self">T</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.Expectations.html#andThrows%28E%29" target="_self">andThrows</a></em>
+        [<em>E</em> &lt;: <a href="" target="contentFrame" class="java/lang/Throwable">java.lang.Throwable</a>](<em>e</em> : <a href="../../../org/specs/mock/EasyMock.Expectations.html#andThrows%28E%29#E" target="_self">E</a>) : <a href="" target="contentFrame" class="org/easymock/IExpectationSetters">org.easymock.IExpectationSetters</a>[<a href="../../../org/specs/mock/EasyMock.Expectations.html#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="andReturns%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>andReturns</em>(<em>t</em> : <a href="../../../org/specs/mock/EasyMock.Expectations.html#T" target="_self">T</a>) : <a href="" target="contentFrame" class="org/easymock/IExpectationSetters">org.easymock.IExpectationSetters</a>[<a href="../../../org/specs/mock/EasyMock.Expectations.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="andStubReturns%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>andStubReturns</em>(<em>t</em> : <a href="../../../org/specs/mock/EasyMock.Expectations.html#T" target="_self">T</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="andThrows%28E%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>andThrows</em>[<em>E</em> &lt;: <a href="" target="contentFrame" class="java/lang/Throwable">java.lang.Throwable</a>](<em>e</em> : <a href="../../../org/specs/mock/EasyMock.Expectations.html#andThrows%28E%29#E" target="_self">E</a>) : <a href="" target="contentFrame" class="org/easymock/IExpectationSetters">org.easymock.IExpectationSetters</a>[<a href="../../../org/specs/mock/EasyMock.Expectations.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="andDelegatesTo%28S%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>andDelegatesTo</em>[<em>S</em>](<em>other</em> : <a href="../../../org/specs/mock/EasyMock.Expectations.html#andDelegatesTo%28S%29#S" target="_self">S</a>) : <a href="" target="contentFrame" class="org/easymock/IExpectationSetters">org.easymock.IExpectationSetters</a>[<a href="../../../org/specs/mock/EasyMock.Expectations.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="andStubDelegatesTo%28S%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>andStubDelegatesTo</em>[<em>S</em>](<em>other</em> : <a href="../../../org/specs/mock/EasyMock.Expectations.html#andStubDelegatesTo%28S%29#S" target="_self">S</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

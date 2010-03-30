@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>class Expectable in org.specs.specification</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/specification$package.html" target="_self">org.specs.specification</a>
+        <br></br>
+        <span class="entity">class  Expectable</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/specification/Expectable"><code>org/specs/specification/Expectable.scala</code></a>]
+      </div><hr></hr>
+      <a name="Expectable"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>class</code>
+        <em>Expectable</em>[<em>T</em>](<em>value</em> : =&gt; <a href="../../../org/specs/specification/Expectable.html#T" target="_self">T</a>)
+      </dt>
+      <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
+    </dl>
+      <dl><dd>An expectable is an object supporting the execution of expectations through matchers.<pre>
+   thisExpectable must passMatcher
+ </pre>
+ It can be optionally related to an example when created for an anonymous example.
+ Otherwise it just fires a FailureException when failing:<pre>
+ object spec extends Specification {
+   // is automatically related to an anonymous example
+   // it will be executed only once the example is executed
+   // @see org.specs.specification.ExpectableFactory
+   // @see org.specs.specification.ExampleExpectationsListener
+   1 must_== 1
+
+   // in that case, no example is set but during the execution of the "in" part
+   // the failure exception will be caught by the example and stored
+   "this example fails" in { 1 must_== 0 }
+ }
+ object test extends SpecsMatchers {
+   // this expectable is not related to any example and executes right away throwing an exception if failing
+   1 must_== 1
+ }
+ </pre></dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/specification/Expectation.html" target="_self">Expectation</a>, <a href="../../../org/specs/specification/StringExpectable.html" target="_self">StringExpectable</a>, <a href="../../../org/specs/specification/IterableExpectable.html" target="_self">IterableExpectable</a>, <a href="../../../org/specs/specification/IterableStringExpectable.html" target="_self">IterableStringExpectable</a></dd>
+      </dl><hr></hr>
+      
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Value Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>protected var</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Expectable.html#description" target="_self">description</a></em>
+         : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+        
+        <div>stores a precise description of the thing being expected.
+   This description is meant to be passed to the matcher for better failure reporting.</div>
+      </td>
+    </tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>protected def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Expectable.html#addMatchMessage%28String%29" target="_self">addMatchMessage</a></em>
+        (<em>m</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/specification/Expectable.html" target="_self">Expectable</a>[<a href="../../../org/specs/specification/Expectable.html#T" target="_self">T</a>]
+        
+        <div>add a previous message in the case of or-ed matchers</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Expectable.html#setExample%28org.specs.specification.Examples%29" target="_self">setExample</a></em>
+        [<em>T</em>](<em>ex</em> : <a href="../../../org/specs/specification/Examples.html" target="_self">Examples</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>Set a specific example to hold the results of this matcher</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Expectable.html#setExpectationsListener%28org.specs.specification.ExampleExpectationsListener%29" target="_self">setExpectationsListener</a></em>
+        (<em>listener</em> : <a href="../../../org/specs/specification/ExampleExpectationsListener.html" target="_self">ExampleExpectationsListener</a>) : <a href="../../../org/specs/specification/Expectable.html" target="_self">Expectable</a>[<a href="../../../org/specs/specification/Expectable.html#T" target="_self">T</a>]
+        
+        <div>setter for the expectation listener.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Expectable.html#setFailureFactory%28org.specs.specification.FailureFactory%29" target="_self">setFailureFactory</a></em>
+        (<em>factory</em> : <a href="../../../org/specs/specification/FailureFactory.html" target="_self">FailureFactory</a>) : <a href="../../../org/specs/specification/Expectable.html" target="_self">Expectable</a>[<a href="../../../org/specs/specification/Expectable.html#T" target="_self">T</a>]
+        
+        <div>setter for the failure factory.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/Expectable.html#setSuccessValueToString%28%28org.specs.specification.SuccessValue%29%3D%3EString%29" target="_self">setSuccessValueToString</a></em>
+        (<em>f</em> : (<a href="../../../org/specs/specification/SuccessValue.html" target="_self">SuccessValue</a>) =&gt; <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>Set a new function to render success values</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Value Details</td></tr>
+        </table><div><a name="description"></a><dl>
+      <dt>
+        
+        <code>protected</code>
+        <code>var</code>
+        <em>description</em> : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>stores a precise description of the thing being expected.
+   This description is meant to be passed to the matcher for better failure reporting.</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="addMatchMessage%28String%29"></a><dl>
+      <dt>
+        
+        <code>protected</code>
+        <code>def</code>
+        <em>addMatchMessage</em>(<em>m</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/specification/Expectable.html" target="_self">Expectable</a>[<a href="../../../org/specs/specification/Expectable.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>add a previous message in the case of or-ed matchers</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="setExample%28org.specs.specification.Examples%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>setExample</em>[<em>T</em>](<em>ex</em> : <a href="../../../org/specs/specification/Examples.html" target="_self">Examples</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Set a specific example to hold the results of this matcher</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="setExpectationsListener%28org.specs.specification.ExampleExpectationsListener%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>setExpectationsListener</em>(<em>listener</em> : <a href="../../../org/specs/specification/ExampleExpectationsListener.html" target="_self">ExampleExpectationsListener</a>) : <a href="../../../org/specs/specification/Expectable.html" target="_self">Expectable</a>[<a href="../../../org/specs/specification/Expectable.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>setter for the expectation listener.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="setFailureFactory%28org.specs.specification.FailureFactory%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>setFailureFactory</em>(<em>factory</em> : <a href="../../../org/specs/specification/FailureFactory.html" target="_self">FailureFactory</a>) : <a href="../../../org/specs/specification/Expectable.html" target="_self">Expectable</a>[<a href="../../../org/specs/specification/Expectable.html#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>setter for the failure factory.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="setSuccessValueToString%28%28org.specs.specification.SuccessValue%29%3D%3EString%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>setSuccessValueToString</em>(<em>f</em> : (<a href="../../../org/specs/specification/SuccessValue.html" target="_self">SuccessValue</a>) =&gt; <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Set a new function to render success values</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

@@ -1,0 +1,765 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait FileSystem in org.specs.io</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/io$package.html" target="_self">org.specs.io</a>
+        <br></br>
+        <span class="entity">trait  FileSystem</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/io/FileSystem"><code>org/specs/io/FileSystem.scala</code></a>]
+      </div><hr></hr>
+      <a name="FileSystem"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>FileSystem</em>
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/io/FileReader.html" target="_self">FileReader</a><code> with </code><a href="../../../org/specs/io/FileWriter.html" target="_self">FileWriter</a></dd>
+    </dl>
+      <dl><dd>The FileSystem trait abstracts file system operations to allow easier mocking of file system related functionalities.
+ <p>
+ It mixes the <code>FileReader</code> and <code>FileWriter</code> traits to provide easy read/write operations.</dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/io/fs$object.html" target="_self">fs</a>, <a href="../../../org/specs/io/mock/MockFileSystem.html" target="_self">MockFileSystem</a>, <a href="../../../org/specs/matcher/PathBaseMatchers.html" target="_self">PathBaseMatchers</a>, <a href="../../../org/specs/runner/File.html" target="_self">File</a>, <a href="../../../org/specs/runner/SpecificationsFinder.html" target="_self">SpecificationsFinder</a>, <a href="../../../org/specs/util/ConfigurationFactory.html" target="_self">ConfigurationFactory</a></dd>
+      </dl><hr></hr>
+      
+
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#canRead%28String%29" target="_self">canRead</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#canWrite%28String%29" target="_self">canWrite</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#copy%28java.io.InputStream%2Cjava.io.OutputStream%29" target="_self">copy</a></em>
+        (<em>input</em> : <a href="" target="contentFrame" class="java/io/InputStream">java.io.InputStream</a>, <em>output</em> : <a href="" target="contentFrame" class="java/io/OutputStream">java.io.OutputStream</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>Copy an input stream to an output stream.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#copyDir%28String%2CString%29" target="_self">copyDir</a></em>
+        (<em>src</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>dest</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>copy the content of a directory to another.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#copyDir%28java.net.URL%2CString%2Corg.specs.specification.Tagged%29" target="_self">copyDir</a></em>
+        (<em>url</em> : <a href="" target="contentFrame" class="java/net/URL">java.net.URL</a>, <em>dest</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>tagged</em> : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>copy the content of a directory to another.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#copyDir%28String%2CString%2Corg.specs.specification.Tagged%29" target="_self">copyDir</a></em>
+        (<em>src</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>dest</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>tagged</em> : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>copy the content of a directory to another.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#copyDir%28java.net.URL%2CString%29" target="_self">copyDir</a></em>
+        (<em>url</em> : <a href="" target="contentFrame" class="java/net/URL">java.net.URL</a>, <em>dest</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>copy the content of a directory to another.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#copyFile%28String%2CString%29" target="_self">copyFile</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>dest</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>Copy the content of a directory to another.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#copySpecResourcesDir%28String%2CString%29" target="_self">copySpecResourcesDir</a></em>
+        (<em>src</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>outputDir</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>Copy specs resources found either in the specs jar or in the classpath directories to an output directory.
+   Current limitations!! This only works if the jar holding the resources contains the word "specs".</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#createDir%28String%29" target="_self">createDir</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div>creates a directory for a given path</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#exists%28String%29" target="_self">exists</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#filePaths%28String%29" target="_self">filePaths</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#getAbsolutePath%28String%29" target="_self">getAbsolutePath</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#getCanonicalPath%28String%29" target="_self">getCanonicalPath</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#getName%28String%29" target="_self">getName</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#getParent%28String%29" target="_self">getParent</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#getResourcesNamed%28String%29" target="_self">getResourcesNamed</a></em>
+        (<em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="java/net/URL">java.net.URL</a>]
+        
+        <div>Return urls of the resources containing the name "name" from this ClassLoader and the System classLoader.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#globToPattern%28String%29" target="_self">globToPattern</a></em>
+        (<em>glob</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#isAbsolute%28String%29" target="_self">isAbsolute</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#isDir%28String%29" target="_self">isDir</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#isDirectory%28String%29" target="_self">isDirectory</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#isFile%28String%29" target="_self">isFile</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#isHidden%28String%29" target="_self">isHidden</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#listFiles%28String%29" target="_self">listFiles</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#removeDir%28String%29" target="_self">removeDir</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div>deletes the directory and all directory contents at the specified path and return the parent path of that directory</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#unjar%28String%2CString%2CString%29" target="_self">unjar</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>dirPath</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>regexFilter</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>Unjar the jar (or zip file) specified by "path" to the "dest" directory.
+   Filters files which shouldn't be extracted with a regular expression.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.html#unjar%28String%2CString%29" target="_self">unjar</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>dest</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>Unjar the jar (or zip file) specified by "path" to the "dest" directory.</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/io/FileWriter.html" target="_self">FileWriter</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/io/FileWriter.html#write%28String%29" target="_self">write</a>, <a href="../../../org/specs/io/FileWriter.html#createFile%28String%29" target="_self">createFile</a>, <a href="../../../org/specs/io/FileWriter.html#mkdirs%28String%29" target="_self">mkdirs</a>, <a href="../../../org/specs/io/FileWriter.html#writeFile%28String%2C%3D%3EString%29" target="_self">writeFile</a>, <a href="../../../org/specs/io/FileWriter.html#getWriter%28String%29" target="_self">getWriter</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/io/FileReader.html" target="_self">FileReader</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/io/FileReader.html#readFile%28String%29" target="_self">readFile</a>, <a href="../../../org/specs/io/FileReader.html#inputStream%28String%29" target="_self">inputStream</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Object Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/io/FileSystem.logger$object.html" target="_self">logger</a></em>
+        <code> extends </code><a href="../../../org/specs/log/Log.html" target="_self">Log</a><code> with </code><a href="../../../org/specs/io/ConsoleOutput.html" target="_self">ConsoleOutput</a>
+        
+        
+      </td>
+    </tr>
+      </table>
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="filePaths%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>filePaths</em>(<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>path - </code>glob expression, for example: <code>./dir*.xml</code></dd><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the list of paths represented by the "glob" definition <code>path</path></dd></dl>
+    <hr></hr>
+<a name="globToPattern%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>globToPattern</em>(<em>glob</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the regular expression equivalent to a glob pattern (see the specs for examples)</dd></dl>
+    <hr></hr>
+<a name="isDir%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>isDir</em>(<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>true if the File represented by this path is a directory</dd></dl>
+    <hr></hr>
+<a name="createDir%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>createDir</em>(<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>creates a directory for a given path</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="removeDir%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>removeDir</em>(<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>deletes the directory and all directory contents at the specified path and return the parent path of that directory</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="exists%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>exists</em>(<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>true if the file exists</dd></dl>
+    <hr></hr>
+<a name="canRead%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>canRead</em>(<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>true if the file can be read</dd></dl>
+    <hr></hr>
+<a name="canWrite%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>canWrite</em>(<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>true if the file can be written</dd></dl>
+    <hr></hr>
+<a name="isAbsolute%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>isAbsolute</em>(<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>true if the file is absolute</dd></dl>
+    <hr></hr>
+<a name="isFile%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>isFile</em>(<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>true if the file is a file</dd></dl>
+    <hr></hr>
+<a name="isDirectory%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>isDirectory</em>(<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>true if the file is a directory</dd></dl>
+    <hr></hr>
+<a name="isHidden%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>isHidden</em>(<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>true if the file is hidden</dd></dl>
+    <hr></hr>
+<a name="getName%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>getName</em>(<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the file name</dd></dl>
+    <hr></hr>
+<a name="getAbsolutePath%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>getAbsolutePath</em>(<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the file absolute path</dd></dl>
+    <hr></hr>
+<a name="getCanonicalPath%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>getCanonicalPath</em>(<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the file canonical path</dd></dl>
+    <hr></hr>
+<a name="getParent%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>getParent</em>(<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the file parent path</dd></dl>
+    <hr></hr>
+<a name="listFiles%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>listFiles</em>(<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the files of that directory</dd></dl>
+    <hr></hr>
+<a name="copyDir%28java.net.URL%2CString%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>copyDir</em>(<em>url</em> : <a href="" target="contentFrame" class="java/net/URL">java.net.URL</a>, <em>dest</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>copy the content of a directory to another.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>url - </code>url of the directory to copy</dd><dd><code>dest - </code>destination directory path</dd></dl>
+    <hr></hr>
+<a name="copyDir%28java.net.URL%2CString%2Corg.specs.specification.Tagged%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>copyDir</em>(<em>url</em> : <a href="" target="contentFrame" class="java/net/URL">java.net.URL</a>, <em>dest</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>tagged</em> : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>copy the content of a directory to another.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>url - </code>url of the directory to copy</dd><dd><code>dest - </code>destination directory path</dd><dd><code>included - </code>names for included files</dd><dd><code>excluded - </code>names for excluded files</dd></dl>
+    <hr></hr>
+<a name="copyDir%28String%2CString%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>copyDir</em>(<em>src</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>dest</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>copy the content of a directory to another.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>path - </code>path of the directory to copy</dd><dd><code>dest - </code>destination directory path</dd></dl>
+    <hr></hr>
+<a name="copyDir%28String%2CString%2Corg.specs.specification.Tagged%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>copyDir</em>(<em>src</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>dest</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>tagged</em> : <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>copy the content of a directory to another.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>path - </code>path of the directory to copy</dd><dd><code>dest - </code>destination directory path</dd><dd><code>included - </code>names for included files</dd><dd><code>excluded - </code>names for excluded files</dd></dl>
+    <hr></hr>
+<a name="copyFile%28String%2CString%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>copyFile</em>(<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>dest</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Copy the content of a directory to another.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>path - </code>path of the file to copy</dd><dd><code>dest - </code>destination directory path</dd></dl>
+    <hr></hr>
+<a name="unjar%28String%2CString%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>unjar</em>(<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>dest</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Unjar the jar (or zip file) specified by "path" to the "dest" directory.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>path - </code>path of the jar file</dd><dd><code>dest - </code>destination directory path</dd></dl>
+    <hr></hr>
+<a name="unjar%28String%2CString%2CString%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>unjar</em>(<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>dirPath</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>regexFilter</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Unjar the jar (or zip file) specified by "path" to the "dest" directory.
+   Filters files which shouldn't be extracted with a regular expression.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>path - </code>path of the jar file</dd><dd><code>dest - </code>destination directory path</dd><dd><code>regexFilter - </code>regular expression filtering files which shouldn't be extracted</dd></dl>
+    <hr></hr>
+<a name="copy%28java.io.InputStream%2Cjava.io.OutputStream%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>copy</em>(<em>input</em> : <a href="" target="contentFrame" class="java/io/InputStream">java.io.InputStream</a>, <em>output</em> : <a href="" target="contentFrame" class="java/io/OutputStream">java.io.OutputStream</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Copy an input stream to an output stream.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>input - </code>input stream</dd><dd><code>output - </code>output stream</dd></dl>
+    <hr></hr>
+<a name="copySpecResourcesDir%28String%2CString%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>copySpecResourcesDir</em>(<em>src</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>outputDir</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Copy specs resources found either in the specs jar or in the classpath directories to an output directory.
+   Current limitations!! This only works if the jar holding the resources contains the word "specs".</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>src - </code>name of the resource directory to copy</dd><dd><code>outputDir - </code>output directory where to copy the files to</dd></dl>
+    <hr></hr>
+<a name="getResourcesNamed%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>getResourcesNamed</em>(<em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="" target="contentFrame" class="java/net/URL">java.net.URL</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Return urls of the resources containing the name "name" from this ClassLoader and the System classLoader.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>name - </code>name of the resource to find</dd><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>a list of URL</dd></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait ExampleLifeCycle in org.specs.specification</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/specification$package.html" target="_self">org.specs.specification</a>
+        <br></br>
+        <span class="entity">trait  ExampleLifeCycle</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/specification/ExampleLifeCycle"><code>org/specs/specification/ExampleLifeCycle.scala</code></a>]
+      </div><hr></hr>
+      <a name="ExampleLifeCycle"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>ExampleLifeCycle</em>
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/specification/LifeCycle.html" target="_self">LifeCycle</a><code> with </code><a href="../../../org/specs/specification/ExampleStructure.html" target="_self">ExampleStructure</a></dd>
+    </dl>
+      <dl><dd>Implementation of a LifeCycle backed up by an ExampleStructure which can
+ be added any subexample created during the Example execution.
+ 
+ It will also check that the executed example contains expectations,
+ otherwise will mark the example as "PENDING"</dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/specification/ExampleContext.html" target="_self">ExampleContext</a></dd>
+      </dl><hr></hr>
+      
+
+<table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/specification/ExampleStructure.html" target="_self">ExampleStructure</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExampleStructure.html#thisExpectationsNumber" target="_self">thisExpectationsNumber</a>, <a href="../../../org/specs/specification/ExampleStructure.html#exampleList" target="_self">exampleList</a>, <a href="../../../org/specs/specification/ExampleStructure.html#examplesFilter" target="_self">examplesFilter</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/execute/DefaultResults.html" target="_self">DefaultResults</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/execute/DefaultResults.html#thisFailures" target="_self">thisFailures</a>, <a href="../../../org/specs/execute/DefaultResults.html#thisErrors" target="_self">thisErrors</a>, <a href="../../../org/specs/execute/DefaultResults.html#thisSkipped" target="_self">thisSkipped</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/specification/SequentialExecution.html" target="_self">SequentialExecution</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/SequentialExecution.html#sequential" target="_self">sequential</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/ExampleLifeCycle.html#afterExpectations%28org.specs.specification.Examples%29" target="_self">afterExpectations</a></em>
+        (<em>ex</em> : <a href="../../../org/specs/specification/Examples.html" target="_self">Examples</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>executing the expectations of an example contained by this LifeCycle, 
+   skipping the example if it doesn't contain any expectations</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/ExampleLifeCycle.html#copyExecutionResults%28org.specs.specification.Examples%29" target="_self">copyExecutionResults</a></em>
+        (<em>other</em> : <a href="../../../org/specs/specification/Examples.html" target="_self">Examples</a>) : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>]
+        
+        <div>copy the execution results from another example.
+   This method is used when an example has been executed in isolation in another spec.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/ExampleLifeCycle.html#executeExample%28org.specs.specification.Examples%29" target="_self">executeExample</a></em>
+        (<em>ex</em> : <a href="../../../org/specs/specification/Examples.html" target="_self">Examples</a>) : <a href="../../../org/specs/specification/ExampleLifeCycle.html" target="_self">ExampleLifeCycle</a>
+        
+        <div>execute one sub example either right away if this is the first example
+   of this list of example, otherwise the execution is delegated to the parent lifecycle
+   for isolated execution</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/ExampleLifeCycle.html#executeThis" target="_self">executeThis</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>abstract method (defined in Example) executing the example itself</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/ExampleLifeCycle.html#resetForExecution" target="_self">resetForExecution</a></em>
+         : <a href="../../../org/specs/specification/ExampleLifeCycle.html" target="_self">ExampleLifeCycle</a>
+        
+        <div>reset in order to be able to run the example again. This is only used for testing</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>protected def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/ExampleLifeCycle.html#skipIfNoExpectations%28%29" target="_self">skipIfNoExpectations</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>@throw a skipped exception if there are no expectations in that example. This behaviour can be overriden by setting the
+   "examplesWithoutExpectationsMustBePending" property in the Configuration object</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/ExampleStructure.html" target="_self">ExampleStructure</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExampleStructure.html#createExample%28String%29" target="_self">createExample</a> (abstract), <a href="../../../org/specs/specification/ExampleStructure.html#allExamples" target="_self">allExamples</a> (abstract), <a href="../../../org/specs/specification/ExampleStructure.html#executeExamples%28%29" target="_self">executeExamples</a> (abstract), <a href="../../../org/specs/specification/ExampleStructure.html#taggedComponents" target="_self">taggedComponents</a>, <a href="../../../org/specs/specification/ExampleStructure.html#addExample%28org.specs.specification.Example%29" target="_self">addExample</a>, <a href="../../../org/specs/specification/ExampleStructure.html#ownExpectationsNb" target="_self">ownExpectationsNb</a>, <a href="../../../org/specs/specification/ExampleStructure.html#hasOwnFailureOrErrors" target="_self">hasOwnFailureOrErrors</a>, <a href="../../../org/specs/specification/ExampleStructure.html#ownFailures" target="_self">ownFailures</a>, <a href="../../../org/specs/specification/ExampleStructure.html#ownSkipped" target="_self">ownSkipped</a>, <a href="../../../org/specs/specification/ExampleStructure.html#ownErrors" target="_self">ownErrors</a>, <a href="../../../org/specs/specification/ExampleStructure.html#failures" target="_self">failures</a>, <a href="../../../org/specs/specification/ExampleStructure.html#skipped" target="_self">skipped</a>, <a href="../../../org/specs/specification/ExampleStructure.html#errors" target="_self">errors</a>, <a href="../../../org/specs/specification/ExampleStructure.html#isFullSuccess" target="_self">isFullSuccess</a>, <a href="../../../org/specs/specification/ExampleStructure.html#successes" target="_self">successes</a>, <a href="../../../org/specs/specification/ExampleStructure.html#expectationsNb" target="_self">expectationsNb</a>, <a href="../../../org/specs/specification/ExampleStructure.html#examples" target="_self">examples</a>, <a href="../../../org/specs/specification/ExampleStructure.html#copyFrom%28org.specs.specification.ExampleStructure%29" target="_self">copyFrom</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/execute/DefaultResults.html" target="_self">DefaultResults</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/execute/DefaultResults.html#reset%28%29" target="_self">reset</a>, <a href="../../../org/specs/execute/DefaultResults.html#addFailure%28org.specs.execute.FailureException%29" target="_self">addFailure</a>, <a href="../../../org/specs/execute/DefaultResults.html#addError%28Throwable%29" target="_self">addError</a>, <a href="../../../org/specs/execute/DefaultResults.html#addSkipped%28org.specs.execute.SkippedException%29" target="_self">addSkipped</a>, <a href="../../../org/specs/execute/DefaultResults.html#copyResults%28org.specs.execute.HasResults%29" target="_self">copyResults</a>, <a href="../../../org/specs/execute/DefaultResults.html#hardCopyResults%28org.specs.execute.DefaultResults%29" target="_self">hardCopyResults</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/execute/HasResults.html" target="_self">HasResults</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/execute/HasResults.html#statusClass" target="_self">statusClass</a>, <a href="../../../org/specs/execute/HasResults.html#statusAsText" target="_self">statusAsText</a>, <a href="../../../org/specs/execute/HasResults.html#hasFailureOrErrors" target="_self">hasFailureOrErrors</a>, <a href="../../../org/specs/execute/HasResults.html#failureAndErrors" target="_self">failureAndErrors</a>, <a href="../../../org/specs/execute/HasResults.html#issues" target="_self">issues</a>, <a href="../../../org/specs/execute/HasResults.html#issueMessages" target="_self">issueMessages</a>, <a href="../../../org/specs/execute/HasResults.html#hasIssues" target="_self">hasIssues</a>, <a href="../../../org/specs/execute/HasResults.html#isOk" target="_self">isOk</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/Tagged.html#stringToTag%28String%29" target="_self">stringToTag</a>, <a href="../../../org/specs/specification/Tagged.html#tagNames" target="_self">tagNames</a>, <a href="../../../org/specs/specification/Tagged.html#tag%28String*%29" target="_self">tag</a>, <a href="../../../org/specs/specification/Tagged.html#clearTags" target="_self">clearTags</a>, <a href="../../../org/specs/specification/Tagged.html#addTag%28String%29" target="_self">addTag</a>, <a href="../../../org/specs/specification/Tagged.html#addTags%28String*%29" target="_self">addTags</a>, <a href="../../../org/specs/specification/Tagged.html#accept%28org.specs.specification.Tag*%29" target="_self">accept</a>, <a href="../../../org/specs/specification/Tagged.html#acceptTag%28String*%29" target="_self">acceptTag</a>, <a href="../../../org/specs/specification/Tagged.html#acceptTags%28String*%29" target="_self">acceptTags</a>, <a href="../../../org/specs/specification/Tagged.html#acceptAnyTag" target="_self">acceptAnyTag</a>, <a href="../../../org/specs/specification/Tagged.html#reject%28org.specs.specification.Tag*%29" target="_self">reject</a>, <a href="../../../org/specs/specification/Tagged.html#rejectTag%28String*%29" target="_self">rejectTag</a>, <a href="../../../org/specs/specification/Tagged.html#rejectTags%28String*%29" target="_self">rejectTags</a>, <a href="../../../org/specs/specification/Tagged.html#isAccepted" target="_self">isAccepted</a>, <a href="../../../org/specs/specification/Tagged.html#tagSpec" target="_self">tagSpec</a>, <a href="../../../org/specs/specification/Tagged.html#tagWith%28org.specs.specification.Tagged%29" target="_self">tagWith</a>, <a href="../../../org/specs/specification/Tagged.html#makeTagged%28String*%29" target="_self">makeTagged</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/util/Tree.html" target="_self">Tree</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/util/Tree.html#pathFromRoot" target="_self">pathFromRoot</a>, <a href="../../../org/specs/util/Tree.html#addChild%28T%29" target="_self">addChild</a>, <a href="../../../org/specs/util/Tree.html#childNodes" target="_self">childNodes</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/LifeCycle.html" target="_self">LifeCycle</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/LifeCycle.html#until" target="_self">until</a>, <a href="../../../org/specs/specification/LifeCycle.html#beforeExample%28org.specs.specification.Examples%29" target="_self">beforeExample</a>, <a href="../../../org/specs/specification/LifeCycle.html#afterExample%28org.specs.specification.Examples%29" target="_self">afterExample</a>, <a href="../../../org/specs/specification/LifeCycle.html#beforeExpectations%28org.specs.specification.Examples%29" target="_self">beforeExpectations</a>, <a href="../../../org/specs/specification/LifeCycle.html#executeExpectations%28org.specs.specification.Examples%2C%3D%3EAny%29" target="_self">executeExpectations</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/SequentialExecution.html" target="_self">SequentialExecution</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/SequentialExecution.html#isSequential" target="_self">isSequential</a>, <a href="../../../org/specs/specification/SequentialExecution.html#setSequential%28%29" target="_self">setSequential</a>, <a href="../../../org/specs/specification/SequentialExecution.html#setNotSequential%28%29" target="_self">setNotSequential</a>, <a href="../../../org/specs/specification/SequentialExecution.html#setSequentialIs%28Boolean%29" target="_self">setSequentialIs</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="executeThis"></a><dl>
+      <dt>
+        
+        <code>abstract</code>
+        <code>def</code>
+        <em>executeThis</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>abstract method (defined in Example) executing the example itself</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="afterExpectations%28org.specs.specification.Examples%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>afterExpectations</em>(<em>ex</em> : <a href="../../../org/specs/specification/Examples.html" target="_self">Examples</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>executing the expectations of an example contained by this LifeCycle, 
+   skipping the example if it doesn't contain any expectations</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/specification/LifeCycle.html" target="_self">LifeCycle</a>.<a href="../../../org/specs/specification/LifeCycle.html#afterExpectations%28org.specs.specification.Examples%29" target="_self">afterExpectations</a>
+        </dd>
+      </dl><hr></hr>
+<a name="executeExample%28org.specs.specification.Examples%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>executeExample</em>(<em>ex</em> : <a href="../../../org/specs/specification/Examples.html" target="_self">Examples</a>) : <a href="../../../org/specs/specification/ExampleLifeCycle.html" target="_self">ExampleLifeCycle</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>execute one sub example either right away if this is the first example
+   of this list of example, otherwise the execution is delegated to the parent lifecycle
+   for isolated execution</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/specification/LifeCycle.html" target="_self">LifeCycle</a>.<a href="../../../org/specs/specification/LifeCycle.html#executeExample%28org.specs.specification.Examples%29" target="_self">executeExample</a>
+        </dd>
+      </dl><hr></hr>
+<a name="copyExecutionResults%28org.specs.specification.Examples%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>copyExecutionResults</em>(<em>other</em> : <a href="../../../org/specs/specification/Examples.html" target="_self">Examples</a>) : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>copy the execution results from another example.
+   This method is used when an example has been executed in isolation in another spec.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="skipIfNoExpectations%28%29"></a><dl>
+      <dt>
+        
+        <code>protected</code>
+        <code>def</code>
+        <em>skipIfNoExpectations</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>@throw a skipped exception if there are no expectations in that example. This behaviour can be overriden by setting the
+   "examplesWithoutExpectationsMustBePending" property in the Configuration object</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="resetForExecution"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>resetForExecution</em> : <a href="../../../org/specs/specification/ExampleLifeCycle.html" target="_self">ExampleLifeCycle</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>reset in order to be able to run the example again. This is only used for testing</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/specification/ExampleStructure.html" target="_self">ExampleStructure</a>.<a href="../../../org/specs/specification/ExampleStructure.html#resetForExecution" target="_self">resetForExecution</a>
+        </dd>
+      </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

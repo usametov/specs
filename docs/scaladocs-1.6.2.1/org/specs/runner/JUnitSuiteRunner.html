@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>class JUnitSuiteRunner in org.specs.runner</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/runner$package.html" target="_self">org.specs.runner</a>
+        <br></br>
+        <span class="entity">class  JUnitSuiteRunner</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/runner/JUnitSuiteRunner"><code>org/specs/runner/JUnitSuiteRunner.scala</code></a>]
+      </div><hr></hr>
+      <a name="JUnitSuiteRunner"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>class</code>
+        <em>JUnitSuiteRunner</em>(<em>klass</em> : <a href="" target="contentFrame" class="java/lang/Class">java.lang.Class</a>[<a href="" target="contentFrame" class="junit/framework/Test">junit.framework.Test</a>])
+      </dt>
+      <dd><code> extends </code><a href="" target="contentFrame" class="org/junit/runner/Runner">org.junit.runner.Runner</a><code> with </code><a href="" target="contentFrame" class="org/junit/runner/manipulation/Filterable">org.junit.runner.manipulation.Filterable</a><code> with </code><a href="" target="contentFrame" class="org/junit/runner/manipulation/Sortable">org.junit.runner.manipulation.Sortable</a><code> with </code><a href="../../../org/specs/runner/TestDescription.html" target="_self">TestDescription</a></dd>
+    </dl>
+      <dl><dd>The JUnitSuiteRunner provides a JUnit4 annotation to run <code>JUnitSuite</code> test suites created from specifications
+ <code>klass</code> is a JUnitSuite which implements the junit.framework.Test interface</dd></dl>
+      <dl></dl>
+    
+      
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Value Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> lazy val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/JUnitSuiteRunner.html#testSuite" target="_self">testSuite</a></em>
+         : <a href="" target="contentFrame" class="junit/framework/Test">junit.framework.Test</a>
+        
+        
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/runner/TestDescription.html" target="_self">TestDescription</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/runner/TestDescription.html#isExecutedFromMaven" target="_self">isExecutedFromMaven</a>, <a href="../../../org/specs/runner/TestDescription.html#isExecutedFromIntellij" target="_self">isExecutedFromIntellij</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/JUnitSuiteRunner.html#createAdaptingListener%28org.junit.runner.notification.RunNotifier%29" target="_self">createAdaptingListener</a></em>
+        (<em>notifier</em> : <a href="" target="contentFrame" class="org/junit/runner/notification/RunNotifier">org.junit.runner.notification.RunNotifier</a>) : <a href="../../../org/specs/runner/OldTestClassAdaptingListener.html" target="_self">OldTestClassAdaptingListener</a>
+        
+        <div>adapt a JUnit4 RunNotifier with a JUnit3 TestListener</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/JUnitSuiteRunner.html#filter%28org.junit.runner.manipulation.Filter%29" target="_self">filter</a></em>
+        (<em>filter</em> : <a href="" target="contentFrame" class="org/junit/runner/manipulation/Filter">org.junit.runner.manipulation.Filter</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>nothing to filter</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/JUnitSuiteRunner.html#getDescription%28%29" target="_self">getDescription</a></em>
+         : <a href="" target="contentFrame" class="org/junit/runner/Description">org.junit.runner.Description</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/JUnitSuiteRunner.html#run%28org.junit.runner.notification.RunNotifier%29" target="_self">run</a></em>
+        (<em>notifier</em> : <a href="" target="contentFrame" class="org/junit/runner/notification/RunNotifier">org.junit.runner.notification.RunNotifier</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>runs the test suite by passing a JUnit4 RunNotifier which is wrapped in a JUnit3 TestListener to be able to run JUnit3 tests</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/JUnitSuiteRunner.html#sort%28org.junit.runner.manipulation.Sorter%29" target="_self">sort</a></em>
+        (<em>sorter</em> : <a href="" target="contentFrame" class="org/junit/runner/manipulation/Sorter">org.junit.runner.manipulation.Sorter</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>nothing to sort</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/runner/TestDescription.html" target="_self">TestDescription</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/runner/TestDescription.html#asDescription%28junit.framework.Test%29" target="_self">asDescription</a>, <a href="../../../org/specs/runner/TestDescription.html#asDescription%28org.specs.runner.JUnitSuite%29" target="_self">asDescription</a>, <a href="../../../org/specs/runner/TestDescription.html#makeDescription%28junit.framework.Test%29" target="_self">makeDescription</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/util/Stacktraces.html" target="_self">Stacktraces</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/util/Stacktraces.html#isExecutedFrom%28String%29" target="_self">isExecutedFrom</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="" target="contentFrame" class="org/junit/runner/Runner">org.junit.runner.Runner</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="#testCount" target="contentFrame" class="org/junit/runner/Runner">org.junit.runner.Runner.testCount</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Value Details</td></tr>
+        </table><div><a name="testSuite"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>lazy val</code>
+        <em>testSuite</em> : <a href="" target="contentFrame" class="junit/framework/Test">junit.framework.Test</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr></div>
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="run%28org.junit.runner.notification.RunNotifier%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>run</em>(<em>notifier</em> : <a href="" target="contentFrame" class="org/junit/runner/notification/RunNotifier">org.junit.runner.notification.RunNotifier</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>runs the test suite by passing a JUnit4 RunNotifier which is wrapped in a JUnit3 TestListener to be able to run JUnit3 tests</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="" target="contentFrame" class="org/junit/runner/Runner">org.junit.runner.Runner</a>.<a href="#run" target="contentFrame" class="org/junit/runner/Runner">org.junit.runner.Runner.run</a>
+        </dd>
+      </dl><hr></hr>
+<a name="createAdaptingListener%28org.junit.runner.notification.RunNotifier%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>createAdaptingListener</em>(<em>notifier</em> : <a href="" target="contentFrame" class="org/junit/runner/notification/RunNotifier">org.junit.runner.notification.RunNotifier</a>) : <a href="../../../org/specs/runner/OldTestClassAdaptingListener.html" target="_self">OldTestClassAdaptingListener</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>adapt a JUnit4 RunNotifier with a JUnit3 TestListener</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="getDescription%28%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>getDescription</em> : <a href="" target="contentFrame" class="org/junit/runner/Description">org.junit.runner.Description</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the description of the suite with the nested suites and tests</dd></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="" target="contentFrame" class="org/junit/runner/Runner">org.junit.runner.Runner</a>.<a href="#getDescription" target="contentFrame" class="org/junit/runner/Runner">org.junit.runner.Runner.getDescription</a>
+        </dd>
+      </dl><hr></hr>
+<a name="filter%28org.junit.runner.manipulation.Filter%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>filter</em>(<em>filter</em> : <a href="" target="contentFrame" class="org/junit/runner/manipulation/Filter">org.junit.runner.manipulation.Filter</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>nothing to filter</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="" target="contentFrame" class="org/junit/runner/manipulation/Filterable">org.junit.runner.manipulation.Filterable</a>.<a href="#filter" target="contentFrame" class="org/junit/runner/manipulation/Filterable">org.junit.runner.manipulation.Filterable.filter</a>
+        </dd>
+      </dl><hr></hr>
+<a name="sort%28org.junit.runner.manipulation.Sorter%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>sort</em>(<em>sorter</em> : <a href="" target="contentFrame" class="org/junit/runner/manipulation/Sorter">org.junit.runner.manipulation.Sorter</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>nothing to sort</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="" target="contentFrame" class="org/junit/runner/manipulation/Sortable">org.junit.runner.manipulation.Sortable</a>.<a href="#sort" target="contentFrame" class="org/junit/runner/manipulation/Sortable">org.junit.runner.manipulation.Sortable.sort</a>
+        </dd>
+      </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

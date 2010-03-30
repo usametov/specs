@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait SpecsFilter in org.specs.runner</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/runner$package.html" target="_self">org.specs.runner</a>
+        <br></br>
+        <span class="entity">trait  SpecsFilter</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/runner/SpecsFilter"><code>org/specs/runner/SpecsFilter.scala</code></a>]
+      </div><hr></hr>
+      <a name="SpecsFilter"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>SpecsFilter</em>
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/runner/SpecsHolder.html" target="_self">SpecsHolder</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
+    </dl>
+      <dl><dd>Copyright (c) 2007-2010 Eric Torreborre <etorreborre@yahoo.com>
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+ the Software. Neither the name of specs nor the names of its contributors may be used to endorse or promote
+ products derived from this software without specific prior written permission.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+ TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS IN THE SOFTWARE.</dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/Specification.html" target="_self">Specification</a>, <a href="../../../org/specs/runner/Reporter.html" target="_self">Reporter</a>, <a href="../../../org/specs/runner/ScalaTest.html" target="_self">ScalaTest</a>, <a href="../../../org/specs/runner/SpecsFinder.html" target="_self">SpecsFinder</a></dd>
+      </dl><hr></hr>
+      
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Value Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> lazy val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/SpecsFilter.html#exampleFilter" target="_self">exampleFilter</a></em>
+         : <a href="" target="contentFrame" class="java/util/regex/Pattern">java.util.regex.Pattern</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> lazy val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/SpecsFilter.html#filteredSpecs" target="_self">filteredSpecs</a></em>
+         : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/Specification.html" target="_self">Specification</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> lazy val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/SpecsFilter.html#susFilter" target="_self">susFilter</a></em>
+         : <a href="" target="contentFrame" class="java/util/regex/Pattern">java.util.regex.Pattern</a>
+        
+        
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/runner/SpecsHolder.html" target="_self">SpecsHolder</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/runner/SpecsHolder.html#specs" target="_self">specs</a> (abstract)
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/SpecsFilter.html#exampleFilterPattern" target="_self">exampleFilterPattern</a></em>
+         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div>default regexp for filtering examples.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/SpecsFilter.html#examplePattern" target="_self">examplePattern</a></em>
+         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/SpecsFilter.html#filter%28Seq%5Borg.specs.Specification%5D%29" target="_self">filter</a></em>
+        (<em>specifications</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../../org/specs/Specification.html" target="_self">Specification</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/Specification.html" target="_self">Specification</a>]
+        
+        <div>filter a list of specifications.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/SpecsFilter.html#filter%28org.specs.specification.Sus%29" target="_self">filter</a></em>
+        (<em>sus</em> : <a href="../../../org/specs/specification/Sus.html" target="_self">Sus</a>) : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../../org/specs/specification/Sus.html" target="_self">Sus</a>]
+        
+        <div>filter a SUS.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/SpecsFilter.html#filter%28org.specs.Specification%29" target="_self">filter</a></em>
+        (<em>specification</em> : <a href="../../../org/specs/Specification.html" target="_self">Specification</a>) : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../../org/specs/Specification.html" target="_self">Specification</a>]
+        
+        <div>filter a specification.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/SpecsFilter.html#filterExample%28org.specs.specification.Example%29" target="_self">filterExample</a></em>
+        (<em>example</em> : <a href="../../../org/specs/specification/Example.html" target="_self">Example</a>) : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../../org/specs/specification/Example.html" target="_self">Example</a>]
+        
+        <div>filter one example.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/SpecsFilter.html#susFilterPattern" target="_self">susFilterPattern</a></em>
+         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div>default regexp for filtering sus.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/SpecsFilter.html#susPattern" target="_self">susPattern</a></em>
+         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div></div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Value Details</td></tr>
+        </table><div><a name="filteredSpecs"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>lazy val</code>
+        <em>filteredSpecs</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/Specification.html" target="_self">Specification</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="susFilter"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>lazy val</code>
+        <em>susFilter</em> : <a href="" target="contentFrame" class="java/util/regex/Pattern">java.util.regex.Pattern</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="exampleFilter"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>lazy val</code>
+        <em>exampleFilter</em> : <a href="" target="contentFrame" class="java/util/regex/Pattern">java.util.regex.Pattern</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr></div>
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="susFilterPattern"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>susFilterPattern</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>default regexp for filtering sus.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="exampleFilterPattern"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>exampleFilterPattern</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>default regexp for filtering examples.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="filter%28Seq%5Borg.specs.Specification%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>filter</em>(<em>specifications</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../../org/specs/Specification.html" target="_self">Specification</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/Specification.html" target="_self">Specification</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>filter a list of specifications.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="filter%28org.specs.Specification%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>filter</em>(<em>specification</em> : <a href="../../../org/specs/Specification.html" target="_self">Specification</a>) : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../../org/specs/Specification.html" target="_self">Specification</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>filter a specification.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>None if the resulting specification has no subspecifications</dd></dl>
+    <hr></hr>
+<a name="filter%28org.specs.specification.Sus%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>filter</em>(<em>sus</em> : <a href="../../../org/specs/specification/Sus.html" target="_self">Sus</a>) : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../../org/specs/specification/Sus.html" target="_self">Sus</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>filter a SUS.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>None if the sus doesn't match the description</dd></dl>
+    <hr></hr>
+<a name="filterExample%28org.specs.specification.Example%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>filterExample</em>(<em>example</em> : <a href="../../../org/specs/specification/Example.html" target="_self">Example</a>) : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../../org/specs/specification/Example.html" target="_self">Example</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>filter one example.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>None if the example does not match the expected regular expression</dd></dl>
+    <hr></hr>
+<a name="susPattern"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>susPattern</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>either the system property named "sus" or the class attribute</dd></dl>
+    <hr></hr>
+<a name="examplePattern"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>examplePattern</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>either the system property named "example" or the class attribute</dd></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

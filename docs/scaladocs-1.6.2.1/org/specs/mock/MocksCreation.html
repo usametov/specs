@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait MocksCreation in org.specs.mock</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/mock$package.html" target="_self">org.specs.mock</a>
+        <br></br>
+        <span class="entity">trait  MocksCreation</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/mock/MocksCreation"><code>org/specs/mock/MocksCreation.scala</code></a>]
+      </div><hr></hr>
+      <a name="MocksCreation"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>MocksCreation</em>
+      </dt>
+      <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
+    </dl><dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/mock/MockitoStubs.html" target="_self">MockitoStubs</a></dd>
+      </dl><hr></hr>
+      
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Value Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>protected val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/MocksCreation.html#mocker" target="_self">mocker</a></em>
+         : <a href="../../../org/mockito/MockitoMocker.html" target="_self">MockitoMocker</a>
+        
+        <div>delegate to Mockito static methods.</div>
+      </td>
+    </tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/MocksCreation.html#doAnswer%28%28Any%29%3D%3ET%29" target="_self">doAnswer</a></em>
+        [<em>T</em>](<em>f</em> : (<a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) =&gt; <a href="../../../org/specs/mock/MocksCreation.html#doAnswer%28%28Any%29%3D%3ET%29#T" target="_self">T</a>) : <a href="" target="contentFrame" class="org/mockito/stubbing/Stubber">org.mockito.stubbing.Stubber</a>
+        
+        <div>delegate to MockitoMocker doAnswer with a MockAnswer object using the function f.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/MocksCreation.html#doAnswer%28org.mockito.stubbing.Answer%5BT%5D%29" target="_self">doAnswer</a></em>
+        [<em>T</em>](<em>a</em> : <a href="" target="contentFrame" class="org/mockito/stubbing/Answer">org.mockito.stubbing.Answer</a>[<a href="../../../org/specs/mock/MocksCreation.html#doAnswer%28org.mockito.stubbing.Answer%5BT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="org/mockito/stubbing/Stubber">org.mockito.stubbing.Stubber</a>
+        
+        <div>delegate to MockitoMocker doAnswer.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/MocksCreation.html#doNothing" target="_self">doNothing</a></em>
+         : <a href="" target="contentFrame" class="org/mockito/stubbing/Stubber">org.mockito.stubbing.Stubber</a>
+        
+        <div>delegate to MockitoMocker doNothing.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/MocksCreation.html#doReturn%28T%29" target="_self">doReturn</a></em>
+        [<em>T</em>](<em>t</em> : <a href="../../../org/specs/mock/MocksCreation.html#doReturn%28T%29#T" target="_self">T</a>) : <a href="" target="contentFrame" class="org/mockito/stubbing/Stubber">org.mockito.stubbing.Stubber</a>
+        
+        <div>delegate to MockitoMocker doReturn.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/MocksCreation.html#doThrow%28E%29" target="_self">doThrow</a></em>
+        [<em>E</em> &lt;: <a href="" target="contentFrame" class="java/lang/Throwable">java.lang.Throwable</a>](<em>e</em> : <a href="../../../org/specs/mock/MocksCreation.html#doThrow%28E%29#E" target="_self">E</a>) : <a href="" target="contentFrame" class="org/mockito/stubbing/Stubber">org.mockito.stubbing.Stubber</a>
+        
+        <div>delegate to MockitoMocker doThrow.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/MocksCreation.html#mock%28scala.reflect.Manifest%5BT%5D%29" target="_self">mock</a></em>
+        [<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/MocksCreation.html#mock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/MocksCreation.html#mock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+        
+        <div>create a mock object: val m = mock[java.util.List[Stringg]]</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/MocksCreation.html#mockAs%28String%29" target="_self">mockAs</a></em>
+        [<em>T</em>](<em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/MocksCreation.html#mockAs%28String%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/MocksCreation.html#mockAs%28String%29#T" target="_self">T</a>
+        
+        <div>create a mock object with a name: val m = mockAs[java.util.List[String]]("name")</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/MocksCreation.html#mockToAs%28%3D%3ET%29" target="_self">mockToAs</a></em>
+        [<em>T</em>](<em>t</em> : =&gt; <a href="../../../org/specs/mock/MocksCreation.html#mockToAs%28%3D%3ET%29#T" target="_self">T</a>)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/MocksCreation.html#mockToAs%28%3D%3ET%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/MocksCreation.NamedMock.html" target="_self">NamedMock</a>[<a href="../../../org/specs/mock/MocksCreation.html#mockToAs%28%3D%3ET%29#T" target="_self">T</a>]
+        
+        <div>implicit allowing the following syntax for a named mock: val m = mock[java.util.List[String]],as("name")</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/MocksCreation.html#smartMock%28scala.reflect.Manifest%5BT%5D%29" target="_self">smartMock</a></em>
+        [<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/MocksCreation.html#smartMock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/MocksCreation.html#smartMock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+        
+        <div>create a mock object with smart return values: val m = smartMock[java.util.List[Stringg]]
+   
+   This is the equivalent of Mockito.mock(List.class, SMART_NULLVALUES) but testing shows that it is not working well with Scala.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/MocksCreation.html#spy%28T%29" target="_self">spy</a></em>
+        [<em>T</em>](<em>m</em> : <a href="../../../org/specs/mock/MocksCreation.html#spy%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/MocksCreation.html#spy%28T%29#T" target="_self">T</a>
+        
+        <div>create a spy on an object. 
+   
+   A spy is a real object but can still have some of its methods stubbed. However the syntax for stubbing a spy is a bit different than 
+   with a mock:<code>
+   
+   val s = spy(new LinkedList[String])
+   doReturn("one").when(s).get(0) // instead of s.get(0) returns "one" which would throw an exception
+   
+   </code></div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Class Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/MocksCreation.MockAnswer.html" target="_self">MockAnswer</a></em>
+        [<em>T</em>](<em>function</em> : (<a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) =&gt; <a href="../../../org/specs/mock/MocksCreation.MockAnswer.html#T" target="_self">T</a>)<code> extends </code><a href="" target="contentFrame" class="org/mockito/stubbing/Answer">org.mockito.stubbing.Answer</a>[<a href="../../../org/specs/mock/MocksCreation.MockAnswer.html#T" target="_self">T</a>]<code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This class is an implementation of the Answer interface allowing to pass functions as an answer.
+   
+   It does a bit of work for the client:
+   
+   // if the method has one parameter and the function also, the parameter is passed
+   mock.get(0) answers ( i => i.toString )
+   
+   // if the method has one parameter and the function has two, the mock is passed as the second argument
+   mock.get(0) answers { (i, mock) => i.toString + " for mock " + mock.toString } 
+   
+   Similarly a mocked method with no parameters can use a function with one parameter. In that case, the mock will be passed
+   mock.size answers { mock => mock.hashCode } 
+   
+   In any other cases, if f is a function of 1 parameter, the array of the method parameters will be passed and if the function has
+   2 parameters, the second one will be the mock.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/MocksCreation.NamedMock.html" target="_self">NamedMock</a></em>
+        [<em>T</em>](<em>t</em> : =&gt; <a href="../../../org/specs/mock/MocksCreation.NamedMock.html#T" target="_self">T</a>, <code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/MocksCreation.NamedMock.html#T" target="_self">T</a>])<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+      </table>
+
+      
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Value Details</td></tr>
+        </table><div><a name="mocker"></a><dl>
+      <dt>
+        
+        <code>protected</code>
+        <code>val</code>
+        <em>mocker</em> : <a href="../../../org/mockito/MockitoMocker.html" target="_self">MockitoMocker</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>delegate to Mockito static methods.</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="mock%28scala.reflect.Manifest%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>mock</em>[<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/MocksCreation.html#mock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/MocksCreation.html#mock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>create a mock object: val m = mock[java.util.List[Stringg]]</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="mockAs%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>mockAs</em>[<em>T</em>](<em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/MocksCreation.html#mockAs%28String%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/MocksCreation.html#mockAs%28String%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>create a mock object with a name: val m = mockAs[java.util.List[String]]("name")</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="mockToAs%28%3D%3ET%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>mockToAs</em>[<em>T</em>](<em>t</em> : =&gt; <a href="../../../org/specs/mock/MocksCreation.html#mockToAs%28%3D%3ET%29#T" target="_self">T</a>)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/MocksCreation.html#mockToAs%28%3D%3ET%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/MocksCreation.NamedMock.html" target="_self">NamedMock</a>[<a href="../../../org/specs/mock/MocksCreation.html#mockToAs%28%3D%3ET%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>implicit allowing the following syntax for a named mock: val m = mock[java.util.List[String]],as("name")</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="smartMock%28scala.reflect.Manifest%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>smartMock</em>[<em>T</em>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/MocksCreation.html#smartMock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/MocksCreation.html#smartMock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>create a mock object with smart return values: val m = smartMock[java.util.List[Stringg]]
+   
+   This is the equivalent of Mockito.mock(List.class, SMART_NULLVALUES) but testing shows that it is not working well with Scala.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="spy%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>spy</em>[<em>T</em>](<em>m</em> : <a href="../../../org/specs/mock/MocksCreation.html#spy%28T%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/MocksCreation.html#spy%28T%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>create a spy on an object. 
+   
+   A spy is a real object but can still have some of its methods stubbed. However the syntax for stubbing a spy is a bit different than 
+   with a mock:<code>
+   
+   val s = spy(new LinkedList[String])
+   doReturn("one").when(s).get(0) // instead of s.get(0) returns "one" which would throw an exception
+   
+   </code></dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="doReturn%28T%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>doReturn</em>[<em>T</em>](<em>t</em> : <a href="../../../org/specs/mock/MocksCreation.html#doReturn%28T%29#T" target="_self">T</a>) : <a href="" target="contentFrame" class="org/mockito/stubbing/Stubber">org.mockito.stubbing.Stubber</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>delegate to MockitoMocker doReturn.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="doAnswer%28%28Any%29%3D%3ET%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>doAnswer</em>[<em>T</em>](<em>f</em> : (<a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) =&gt; <a href="../../../org/specs/mock/MocksCreation.html#doAnswer%28%28Any%29%3D%3ET%29#T" target="_self">T</a>) : <a href="" target="contentFrame" class="org/mockito/stubbing/Stubber">org.mockito.stubbing.Stubber</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>delegate to MockitoMocker doAnswer with a MockAnswer object using the function f.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="doAnswer%28org.mockito.stubbing.Answer%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>doAnswer</em>[<em>T</em>](<em>a</em> : <a href="" target="contentFrame" class="org/mockito/stubbing/Answer">org.mockito.stubbing.Answer</a>[<a href="../../../org/specs/mock/MocksCreation.html#doAnswer%28org.mockito.stubbing.Answer%5BT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="org/mockito/stubbing/Stubber">org.mockito.stubbing.Stubber</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>delegate to MockitoMocker doAnswer.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="doThrow%28E%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>doThrow</em>[<em>E</em> &lt;: <a href="" target="contentFrame" class="java/lang/Throwable">java.lang.Throwable</a>](<em>e</em> : <a href="../../../org/specs/mock/MocksCreation.html#doThrow%28E%29#E" target="_self">E</a>) : <a href="" target="contentFrame" class="org/mockito/stubbing/Stubber">org.mockito.stubbing.Stubber</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>delegate to MockitoMocker doThrow.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="doNothing"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>doNothing</em> : <a href="" target="contentFrame" class="org/mockito/stubbing/Stubber">org.mockito.stubbing.Stubber</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>delegate to MockitoMocker doNothing.</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

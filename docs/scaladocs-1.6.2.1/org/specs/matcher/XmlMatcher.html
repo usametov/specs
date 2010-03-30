@@ -1,0 +1,492 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>class XmlMatcher in org.specs.matcher</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/matcher$package.html" target="_self">org.specs.matcher</a>
+        <br></br>
+        <span class="entity">class  XmlMatcher</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/matcher/XmlMatcher"><code>org/specs/matcher/XmlMatcher.scala</code></a>]
+      </div><hr></hr>
+      <a name="XmlMatcher"></a><dl>
+      <dt>
+        
+        <code>case</code>
+        <code>class</code>
+        <em>XmlMatcher</em>(<code>val </code><em>functions</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/matcher/PathFunction.html" target="_self">PathFunction</a>])
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>]]<code> with </code><a href="../../../org/specs/matcher/MatchExactly.html" target="_self">MatchExactly</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a></dd>
+    </dl>
+      <dl><dd>The XmlMatcher class matches an xml Node, or a list of Nodes against a list of search functions, which can either search for:<ul>
+ <li/>a given direct child, with its label and/or attributes and/or attributes names and values
+ <li/>a given child, direct or not (maybe deeply nested), with its label and/or attributes and/or attributes names and values
+ </ul>
+ 
+ XmlMatchers can be "chained" by using the \ or the \\ methods. In that case, the resulting matcher has a new
+ search function which tries to match the result of the preceding function. For example<pre>
+ <a><b><c><d></d></c></b></a> must \\("c").\("d")</pre> will be ok.</dd></dl>
+      <dl></dl>
+    
+      
+
+<table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/matcher/MatchExactly.html" target="_self">MatchExactly</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/matcher/MatchExactly.html#allAttributes" target="_self">allAttributes</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/matcher/AbstractMatcher.html" target="_self">AbstractMatcher</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/matcher/AbstractMatcher.html#desc" target="_self">desc</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/XmlMatcher.html#%5C%28scala.xml.Node%29" target="_self">\</a></em>
+        (<em>node</em> : <a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>) : <a href="../../../org/specs/matcher/XmlMatcher.html" target="_self">XmlMatcher</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/XmlMatcher.html#%5C%28String%29" target="_self">\</a></em>
+        (<em>label</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/matcher/XmlMatcher.html" target="_self">XmlMatcher</a>
+        
+        <div>alias for \ using the node label only</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/XmlMatcher.html#%5C%5C%28String%29" target="_self">\\</a></em>
+        (<em>label</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/matcher/XmlMatcher.html" target="_self">XmlMatcher</a>
+        
+        <div>alias for \\ using the node label only</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/XmlMatcher.html#%5C%5C%28scala.xml.Node%29" target="_self">\\</a></em>
+        (<em>node</em> : <a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>) : <a href="../../../org/specs/matcher/XmlMatcher.html" target="_self">XmlMatcher</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/XmlMatcher.html#apply%28%3D%3EIterable%5Bscala.xml.Node%5D%29" target="_self">apply</a></em>
+        (<em>n</em> : =&gt; <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>]) : (<a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>, <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)
+        
+        <div>checks that the <code>nodes</code> satisfy the <code>functions</code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/XmlMatcher.html#checkFunctions%28List%5Borg.specs.matcher.PathFunction%5D%2CIterable%5Bscala.xml.Node%5D%2CXmlMatcher.this.MatcherResult%29" target="_self">checkFunctions</a></em>
+        (<em>pathFunctions</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/matcher/PathFunction.html" target="_self">PathFunction</a>], <em>nodes</em> : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>], <em>result</em> : <a href="../../../org/specs/matcher/MatcherResult.MatcherResult.html" target="_self">MatcherResult</a>) : <a href="../../../org/specs/matcher/MatcherResult.MatcherResult.html" target="_self">MatcherResult</a>
+        
+        <div>checks that the <code>nodes</code> satisfy the <code>functions</code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/XmlMatcher.html#equals%28Any%29" target="_self">equals</a></em>
+        (<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div>This method is used to compare the receiver object (<code>this</code>)
+    with the argument object (<code>arg0</code>) for equivalence.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/XmlMatcher.html#exactly" target="_self">exactly</a></em>
+         : <a href="../../../org/specs/matcher/XmlMatcher.html" target="_self">XmlMatcher</a>
+        
+        <div>check that all attribute names and values are indeed present on the found node</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/XmlMatcher.html#hashCode%28%29" target="_self">hashCode</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+        
+        <div>Returns a hash code value for the object.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/XmlMatcher.html#productArity" target="_self">productArity</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/XmlMatcher.html#productElement%28Int%29" target="_self">productElement</a></em>
+        (<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/XmlMatcher.html#productPrefix" target="_self">productPrefix</a></em>
+         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/matcher/XmlMatcher.html#toString%28%29" target="_self">toString</a></em>
+         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div>Returns a string representation of the object.</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/matcher/Matcher.html#and%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29" target="_self">and</a>, <a href="../../../org/specs/matcher/Matcher.html#or%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29" target="_self">or</a>, <a href="../../../org/specs/matcher/Matcher.html#xor%28%3D%3Eorg.specs.matcher.Matcher%5BU%5D%29" target="_self">xor</a>, <a href="../../../org/specs/matcher/Matcher.html#not" target="_self">not</a>, <a href="../../../org/specs/matcher/Matcher.html#when%28%3D%3EBoolean%29" target="_self">when</a>, <a href="../../../org/specs/matcher/Matcher.html#unless%28%3D%3EBoolean%29" target="_self">unless</a>, <a href="../../../org/specs/matcher/Matcher.html#lazily" target="_self">lazily</a>, <a href="../../../org/specs/matcher/Matcher.html#composeWithFunction%28%28A%29%3D%3ET%29" target="_self">composeWithFunction</a>, <a href="../../../org/specs/matcher/Matcher.html#%5E%5E%28%28A%29%3D%3ET%29" target="_self">^^</a>, <a href="../../../org/specs/matcher/Matcher.html#orSkipExample" target="_self">orSkipExample</a>, <a href="../../../org/specs/matcher/Matcher.html#orSkip" target="_self">orSkip</a>, <a href="../../../org/specs/matcher/Matcher.html#eventually" target="_self">eventually</a>, <a href="../../../org/specs/matcher/Matcher.html#eventually%28Int%2Corg.specs.util.Duration%29" target="_self">eventually</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/matcher/MatcherResult.html" target="_self">MatcherResult</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/matcher/MatcherResult.html#toMatcherResult%28%28Boolean%2CString%2CString%29%29" target="_self">toMatcherResult</a>, <a href="../../../org/specs/matcher/MatcherResult.html#toTuple%28MatcherResult.this.MatcherResult%29" target="_self">toTuple</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/matcher/AbstractMatcher.html" target="_self">AbstractMatcher</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/matcher/AbstractMatcher.html#description" target="_self">description</a>, <a href="../../../org/specs/matcher/AbstractMatcher.html#setDescription%28Option%5BString%5D%29" target="_self">setDescription</a>, <a href="../../../org/specs/matcher/AbstractMatcher.html#d%28Any%29" target="_self">d</a>, <a href="../../../org/specs/matcher/AbstractMatcher.html#dUnquoted%28Any%29" target="_self">dUnquoted</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="exactly"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>exactly</em> : <a href="../../../org/specs/matcher/XmlMatcher.html" target="_self">XmlMatcher</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>check that all attribute names and values are indeed present on the found node</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/matcher/MatchExactly.html" target="_self">MatchExactly</a>.<a href="../../../org/specs/matcher/MatchExactly.html#exactly" target="_self">exactly</a>
+        </dd>
+      </dl><hr></hr>
+<a name="apply%28%3D%3EIterable%5Bscala.xml.Node%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>apply</em>(<em>n</em> : =&gt; <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>]) : (<a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>, <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>checks that the <code>nodes</code> satisfy the <code>functions</code></dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="checkFunctions%28List%5Borg.specs.matcher.PathFunction%5D%2CIterable%5Bscala.xml.Node%5D%2CXmlMatcher.this.MatcherResult%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>checkFunctions</em>(<em>pathFunctions</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/matcher/PathFunction.html" target="_self">PathFunction</a>], <em>nodes</em> : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>], <em>result</em> : <a href="../../../org/specs/matcher/MatcherResult.MatcherResult.html" target="_self">MatcherResult</a>) : <a href="../../../org/specs/matcher/MatcherResult.MatcherResult.html" target="_self">MatcherResult</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>checks that the <code>nodes</code> satisfy the <code>functions</code></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>s a MatcherResult (status, ok message, ko message)</dd></dl>
+    <hr></hr>
+<a name="%5C%28scala.xml.Node%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>\</em>(<em>node</em> : <a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>) : <a href="../../../org/specs/matcher/XmlMatcher.html" target="_self">XmlMatcher</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>s a new Matcher which will try to find <code>node</code> as a direct child after using   functions to find elements</dd></dl>
+    <hr></hr>
+<a name="%5C%5C%28scala.xml.Node%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>\\</em>(<em>node</em> : <a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>) : <a href="../../../org/specs/matcher/XmlMatcher.html" target="_self">XmlMatcher</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>s a new Matcher which will try to find <code>node</code> as a child (possibly deeply nested) after    using functions to find elements</dd></dl>
+    <hr></hr>
+<a name="%5C%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>\</em>(<em>label</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/matcher/XmlMatcher.html" target="_self">XmlMatcher</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>alias for \ using the node label only</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="%5C%5C%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>\\</em>(<em>label</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/matcher/XmlMatcher.html" target="_self">XmlMatcher</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>alias for \\ using the node label only</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="hashCode%28%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>hashCode</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns a hash code value for the object.  
+    <p>
+    The default hashing algorithm is platform dependent.  
+    Note that it is allowed for two objects to have identical hash
+    codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet not be
+    equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A
+    degenerate implementation could always return <code>0</code>.
+    However, it is required that if two objects are equal
+    (<code>o1.equals(o2)</code> returns <code>true</code>) that they
+    have identical hash codes
+    (<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when
+    overriding this method, be sure to verify that the behavior is
+    consistent with the <code>equals</code> method.
+    </p>
+    <p></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the hash code value for the object.      </p></dd></dl>
+    <hr></hr>
+<a name="toString%28%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>toString</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns a string representation of the object.  
+    <p>
+    The default representation is platform dependent.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>a string representation of the object.     </p></dd></dl>
+    <hr></hr>
+<a name="equals%28Any%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>equals</em>(<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>This method is used to compare the receiver object (<code>this</code>)
+    with the argument object (<code>arg0</code>) for equivalence.  
+    
+    <p>
+    The default implementations of this method is an <a
+    href="http://en.wikipedia.org/wiki/Equivalence_relation">equivalence
+    relation</a>:
+      <ul>
+      <li>It is reflexive: for any instance <code>x</code> of type <code>Any</code>, 
+      <code>x.equals(x)</code> should return <code>true</code>.</li>
+      <li>It is symmetric: for any instances <code>x</code> and <code>y</code> of type 
+      <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and only 
+      if <code>y.equals(x)</code> returns <code>true</code>.</li>
+      <li>It is transitive: for any instances 
+      <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code>
+      if <code>x.equals(y)</code> returns <code>true</code> and 
+      <code>y.equals(z)</code> returns 
+      <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</li>
+    </ul>
+    </p>
+    <p>
+    If you override this method, you should verify that
+    your implementation remains an equivalence relation.
+    Additionally, when overriding this method it is often necessary to
+    override <code>hashCode</code> to ensure that objects that are
+    "equal" (<code>o1.equals(o2)</code> returns <code>true</code>)
+    hash to the same <a href="Int.html"><code>Int</code></a>
+    (<code>o1.hashCode.equals(o2.hashCode)</code>).</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>arg0 - </code>the object to compare against this object for equality.</dd><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.    </p></dd></dl>
+    <hr></hr>
+<a name="productPrefix"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>productPrefix</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="" target="contentFrame" class="scala/Product">scala.Product</a>.<a href="#productPrefix" target="contentFrame" class="scala/Product">scala.Product.productPrefix</a>
+        </dd>
+      </dl><hr></hr>
+<a name="productArity"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>productArity</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="" target="contentFrame" class="scala/Product">scala.Product</a>.<a href="#productArity" target="contentFrame" class="scala/Product">scala.Product.productArity</a>
+        </dd>
+      </dl><hr></hr>
+<a name="productElement%28Int%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>productElement</em>(<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="" target="contentFrame" class="scala/Product">scala.Product</a>.<a href="#productElement" target="contentFrame" class="scala/Product">scala.Product.productElement</a>
+        </dd>
+      </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

@@ -1,0 +1,390 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait LiterateShortcuts in org.specs.literate</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/literate$package.html" target="_self">org.specs.literate</a>
+        <br></br>
+        <span class="entity">trait  LiterateShortcuts</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/literate/LiterateShortcuts"><code>org/specs/literate/LiterateShortcuts.scala</code></a>]
+      </div><hr></hr>
+      <a name="LiterateShortcuts"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>LiterateShortcuts</em>
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a><code> with </code><a href="../../../org/specs/specification/ExpectableFactory.html" target="_self">ExpectableFactory</a><code> with </code><a href="../../../org/specs/FailOrSkip.html" target="_self">FailOrSkip</a></dd>
+    </dl>
+      <dl><dd>This trait adds shortcut methods to define expectations, to silence expressions</dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/literate/LiterateSpecification.html" target="_self">LiterateSpecification</a></dd>
+      </dl><hr></hr>
+      
+
+<table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/BaseSpecification.html#name" target="_self">name</a>, <a href="../../../org/specs/specification/BaseSpecification.html#description" target="_self">description</a>, <a href="../../../org/specs/specification/BaseSpecification.html#subSpecifications" target="_self">subSpecifications</a>, <a href="../../../org/specs/specification/BaseSpecification.html#parentSpecification" target="_self">parentSpecification</a>, <a href="../../../org/specs/specification/BaseSpecification.html#beforeSpec" target="_self">beforeSpec</a>, <a href="../../../org/specs/specification/BaseSpecification.html#afterSpec" target="_self">afterSpec</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/specification/ExampleExpectationsListener.html" target="_self">ExampleExpectationsListener</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExampleExpectationsListener.html#expectationsListener" target="_self">expectationsListener</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/specification/SequentialExecution.html" target="_self">SequentialExecution</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/SequentialExecution.html#sequential" target="_self">sequential</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/literate/LiterateShortcuts.html#anyToShh%28Any%29" target="_self">anyToShh</a></em>
+        (<em>a</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="../../../org/specs/literate/LiterateShortcuts.Silenced.html" target="_self">Silenced</a>
+        
+        <div>This method is used to silence the result of a call in an action. For example: <pre>
+   The timer should be stopped {timer.stop.shh}
+   </pre>. This will not output the result of the stop method</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/literate/LiterateShortcuts.html#consoleOutput%28String%2CSeq%5BString%5D%29" target="_self">consoleOutput</a></em>
+        (<em>pad</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>messages</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div>return a String containing the output messages from the console with a given padding such as a newline for instance</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/literate/LiterateShortcuts.html#consoleOutput%28Seq%5BString%5D%29" target="_self">consoleOutput</a></em>
+        (<em>messages</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div>return a String containing the output messages from the console</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/literate/LiterateShortcuts.html#eg%28%28S%29%3D%3EAny%29" target="_self">eg</a></em>
+        [<em>S</em>](<em>function</em> : (<a href="../../../org/specs/literate/LiterateShortcuts.html#eg%28%28S%29%3D%3EAny%29#S" target="_self">S</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>Create an anonymous example with a function on a System,
+   giving it a number depending on the existing created examples</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/literate/LiterateShortcuts.html#eg%28%3D%3EAny%29" target="_self">eg</a></em>
+        (<em>test</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>embeddeds a test into a new example and silence the result</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/literate/LiterateShortcuts.html#notImplemented" target="_self">notImplemented</a></em>
+         : <a href="../../../org/specs/specification/Example.html" target="_self">Example</a>
+        
+        <div>create an anonymous example which will be skipped until it is implemented</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/literate/LiterateShortcuts.html#shh%28%3D%3EAny%29" target="_self">shh</a></em>
+        (<em>a</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>This silence function allows to silence calls with this style: shh { a call }</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/FailOrSkip.html" target="_self">FailOrSkip</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/FailOrSkip.html#fail%28String%29" target="_self">fail</a>, <a href="../../../org/specs/FailOrSkip.html#fail%28%29" target="_self">fail</a>, <a href="../../../org/specs/FailOrSkip.html#skip%28String%29" target="_self">skip</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/ExpectableFactory.html" target="_self">ExpectableFactory</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExpectableFactory.html#createFailure%28String%2Corg.specs.specification.Result%5BT%5D%29" target="_self">createFailure</a>, <a href="../../../org/specs/specification/ExpectableFactory.html#theValue%28%3D%3EA%29" target="_self">theValue</a>, <a href="../../../org/specs/specification/ExpectableFactory.html#theString%28%3D%3EString%29" target="_self">theString</a>, <a href="../../../org/specs/specification/ExpectableFactory.html#theBlock%28%3D%3ENothing%29" target="_self">theBlock</a>, <a href="../../../org/specs/specification/ExpectableFactory.html#theStrings%28%3D%3EIterable%5BString%5D%29" target="_self">theStrings</a>, <a href="../../../org/specs/specification/ExpectableFactory.html#theIterable%28%3D%3EIterable%5BI%5D%29" target="_self">theIterable</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/SuccessValues.html" target="_self">SuccessValues</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/SuccessValues.html#successValueToBoolean%28org.specs.specification.SuccessValue%29" target="_self">successValueToBoolean</a>, <a href="../../../org/specs/specification/SuccessValues.html#successValueToString%28org.specs.specification.SuccessValue%29" target="_self">successValueToString</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/BaseSpecification.html#setParent%28org.specs.specification.BaseSpecification%29" target="_self">setParent</a>, <a href="../../../org/specs/specification/BaseSpecification.html#parentSpecifications" target="_self">parentSpecifications</a>, <a href="../../../org/specs/specification/BaseSpecification.html#isSpecifiedBy%28org.specs.Specification*%29" target="_self">isSpecifiedBy</a>, <a href="../../../org/specs/specification/BaseSpecification.html#areSpecifiedBy%28org.specs.Specification*%29" target="_self">areSpecifiedBy</a>, <a href="../../../org/specs/specification/BaseSpecification.html#include%28org.specs.Specification*%29" target="_self">include</a>, <a href="../../../org/specs/specification/BaseSpecification.html#declare%28String%29" target="_self">declare</a>, <a href="../../../org/specs/specification/BaseSpecification.html#allSystems" target="_self">allSystems</a>, <a href="../../../org/specs/specification/BaseSpecification.html#allExamples" target="_self">allExamples</a>, <a href="../../../org/specs/specification/BaseSpecification.html#contains%28Any%29" target="_self">contains</a>, <a href="../../../org/specs/specification/BaseSpecification.html#getExample%28org.specs.util.TreePath%29" target="_self">getExample</a>, <a href="../../../org/specs/specification/BaseSpecification.html#specifyExample%28String%29" target="_self">specifyExample</a>, <a href="../../../org/specs/specification/BaseSpecification.html#forExample%28String%29" target="_self">forExample</a>, <a href="../../../org/specs/specification/BaseSpecification.html#forExample" target="_self">forExample</a>, <a href="../../../org/specs/specification/BaseSpecification.html#lastExample" target="_self">lastExample</a>, <a href="../../../org/specs/specification/BaseSpecification.html#exampleContainer" target="_self">exampleContainer</a>, <a href="../../../org/specs/specification/BaseSpecification.html#beforeExample%28org.specs.specification.Examples%29" target="_self">beforeExample</a>, <a href="../../../org/specs/specification/BaseSpecification.html#afterExample%28org.specs.specification.Examples%29" target="_self">afterExample</a>, <a href="../../../org/specs/specification/BaseSpecification.html#firstLevelExamplesNb" target="_self">firstLevelExamplesNb</a>, <a href="../../../org/specs/specification/BaseSpecification.html#failures" target="_self">failures</a>, <a href="../../../org/specs/specification/BaseSpecification.html#skipped" target="_self">skipped</a>, <a href="../../../org/specs/specification/BaseSpecification.html#errors" target="_self">errors</a>, <a href="../../../org/specs/specification/BaseSpecification.html#successes" target="_self">successes</a>, <a href="../../../org/specs/specification/BaseSpecification.html#examples" target="_self">examples</a>, <a href="../../../org/specs/specification/BaseSpecification.html#expectationsNb" target="_self">expectationsNb</a>, <a href="../../../org/specs/specification/BaseSpecification.html#isFailing" target="_self">isFailing</a>, <a href="../../../org/specs/specification/BaseSpecification.html#resetForExecution" target="_self">resetForExecution</a>, <a href="../../../org/specs/specification/BaseSpecification.html#taggedComponents" target="_self">taggedComponents</a>, <a href="../../../org/specs/specification/BaseSpecification.html#toString%28%29" target="_self">toString</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/SpecificationConfiguration.html" target="_self">SpecificationConfiguration</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/SpecificationConfiguration.html#shareVariables%28%29" target="_self">shareVariables</a>, <a href="../../../org/specs/specification/SpecificationConfiguration.html#dontShareVariables%28%29" target="_self">dontShareVariables</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/LinkedSpecification.html" target="_self">LinkedSpecification</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/LinkedSpecification.html#linkTo%28org.specs.Specification%29" target="_self">linkTo</a>, <a href="../../../org/specs/specification/LinkedSpecification.html#partitionLinkedSpecifications" target="_self">partitionLinkedSpecifications</a>, <a href="../../../org/specs/specification/LinkedSpecification.html#linkedSpecifications" target="_self">linkedSpecifications</a>, <a href="../../../org/specs/specification/LinkedSpecification.html#unlinkedSpecifications" target="_self">unlinkedSpecifications</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/execute/HasResults.html" target="_self">HasResults</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/execute/HasResults.html#statusClass" target="_self">statusClass</a>, <a href="../../../org/specs/execute/HasResults.html#statusAsText" target="_self">statusAsText</a>, <a href="../../../org/specs/execute/HasResults.html#hasFailureOrErrors" target="_self">hasFailureOrErrors</a>, <a href="../../../org/specs/execute/HasResults.html#failureAndErrors" target="_self">failureAndErrors</a>, <a href="../../../org/specs/execute/HasResults.html#issues" target="_self">issues</a>, <a href="../../../org/specs/execute/HasResults.html#issueMessages" target="_self">issueMessages</a>, <a href="../../../org/specs/execute/HasResults.html#hasIssues" target="_self">hasIssues</a>, <a href="../../../org/specs/execute/HasResults.html#isOk" target="_self">isOk</a>, <a href="../../../org/specs/execute/HasResults.html#copyResults%28org.specs.execute.HasResults%29" target="_self">copyResults</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/Tagged.html" target="_self">Tagged</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/Tagged.html#stringToTag%28String%29" target="_self">stringToTag</a>, <a href="../../../org/specs/specification/Tagged.html#tagNames" target="_self">tagNames</a>, <a href="../../../org/specs/specification/Tagged.html#tag%28String*%29" target="_self">tag</a>, <a href="../../../org/specs/specification/Tagged.html#clearTags" target="_self">clearTags</a>, <a href="../../../org/specs/specification/Tagged.html#addTag%28String%29" target="_self">addTag</a>, <a href="../../../org/specs/specification/Tagged.html#addTags%28String*%29" target="_self">addTags</a>, <a href="../../../org/specs/specification/Tagged.html#accept%28org.specs.specification.Tag*%29" target="_self">accept</a>, <a href="../../../org/specs/specification/Tagged.html#acceptTag%28String*%29" target="_self">acceptTag</a>, <a href="../../../org/specs/specification/Tagged.html#acceptTags%28String*%29" target="_self">acceptTags</a>, <a href="../../../org/specs/specification/Tagged.html#acceptAnyTag" target="_self">acceptAnyTag</a>, <a href="../../../org/specs/specification/Tagged.html#reject%28org.specs.specification.Tag*%29" target="_self">reject</a>, <a href="../../../org/specs/specification/Tagged.html#rejectTag%28String*%29" target="_self">rejectTag</a>, <a href="../../../org/specs/specification/Tagged.html#rejectTags%28String*%29" target="_self">rejectTags</a>, <a href="../../../org/specs/specification/Tagged.html#isAccepted" target="_self">isAccepted</a>, <a href="../../../org/specs/specification/Tagged.html#tagSpec" target="_self">tagSpec</a>, <a href="../../../org/specs/specification/Tagged.html#tagWith%28org.specs.specification.Tagged%29" target="_self">tagWith</a>, <a href="../../../org/specs/specification/Tagged.html#makeTagged%28String*%29" target="_self">makeTagged</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/ExampleExpectationsListener.html" target="_self">ExampleExpectationsListener</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExampleExpectationsListener.html#addExpectation" target="_self">addExpectation</a>, <a href="../../../org/specs/specification/ExampleExpectationsListener.html#addExpectation%28Option%5Borg.specs.specification.Expectable%5BT%5D%5D%29" target="_self">addExpectation</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/ExpectationsListener.html" target="_self">ExpectationsListener</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExpectationsListener.html#anyToExpectationCounter%28%3D%3ET%29" target="_self">anyToExpectationCounter</a>, <a href="../../../org/specs/specification/ExpectationsListener.html#isExpectation%28%3D%3ET%29" target="_self">isExpectation</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/SpecificationExecutor.html" target="_self">SpecificationExecutor</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/SpecificationExecutor.html#executeExample%28org.specs.specification.Examples%29" target="_self">executeExample</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/LifeCycle.html" target="_self">LifeCycle</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/LifeCycle.html#until" target="_self">until</a>, <a href="../../../org/specs/specification/LifeCycle.html#beforeExpectations%28org.specs.specification.Examples%29" target="_self">beforeExpectations</a>, <a href="../../../org/specs/specification/LifeCycle.html#afterExpectations%28org.specs.specification.Examples%29" target="_self">afterExpectations</a>, <a href="../../../org/specs/specification/LifeCycle.html#executeExpectations%28org.specs.specification.Examples%2C%3D%3EAny%29" target="_self">executeExpectations</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/SequentialExecution.html" target="_self">SequentialExecution</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/SequentialExecution.html#isSequential" target="_self">isSequential</a>, <a href="../../../org/specs/specification/SequentialExecution.html#setSequential%28%29" target="_self">setSequential</a>, <a href="../../../org/specs/specification/SequentialExecution.html#setNotSequential%28%29" target="_self">setNotSequential</a>, <a href="../../../org/specs/specification/SequentialExecution.html#setSequentialIs%28Boolean%29" target="_self">setSequentialIs</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/SpecificationSystems.html" target="_self">SpecificationSystems</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/SpecificationSystems.html#systems" target="_self">systems</a>, <a href="../../../org/specs/specification/SpecificationSystems.html#specifySus%28String%29" target="_self">specifySus</a>, <a href="../../../org/specs/specification/SpecificationSystems.html#specify%28String%29" target="_self">specify</a>, <a href="../../../org/specs/specification/SpecificationSystems.html#specify" target="_self">specify</a>, <a href="../../../org/specs/specification/SpecificationSystems.html#addToSusVerb%28String%29" target="_self">addToSusVerb</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/util/Tree.html" target="_self">Tree</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/util/Tree.html#pathFromRoot" target="_self">pathFromRoot</a>, <a href="../../../org/specs/util/Tree.html#addChild%28T%29" target="_self">addChild</a>, <a href="../../../org/specs/util/Tree.html#childNodes" target="_self">childNodes</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Class Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/literate/LiterateShortcuts.Silenced.html" target="_self">Silenced</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+      </table>
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="anyToShh%28Any%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>anyToShh</em>(<em>a</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="../../../org/specs/literate/LiterateShortcuts.Silenced.html" target="_self">Silenced</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>This method is used to silence the result of a call in an action. For example: <pre>
+   The timer should be stopped {timer.stop.shh}
+   </pre>. This will not output the result of the stop method</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="shh%28%3D%3EAny%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>shh</em>(<em>a</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>This silence function allows to silence calls with this style: shh { a call }</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="eg%28%28S%29%3D%3EAny%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>eg</em>[<em>S</em>](<em>function</em> : (<a href="../../../org/specs/literate/LiterateShortcuts.html#eg%28%28S%29%3D%3EAny%29#S" target="_self">S</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Create an anonymous example with a function on a System,
+   giving it a number depending on the existing created examples</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="eg%28%3D%3EAny%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>eg</em>(<em>test</em> : =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>embeddeds a test into a new example and silence the result</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="notImplemented"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>notImplemented</em> : <a href="../../../org/specs/specification/Example.html" target="_self">Example</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>create an anonymous example which will be skipped until it is implemented</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="consoleOutput%28String%2CSeq%5BString%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>consoleOutput</em>(<em>pad</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>messages</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>return a String containing the output messages from the console with a given padding such as a newline for instance</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="consoleOutput%28Seq%5BString%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>consoleOutput</em>(<em>messages</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>return a String containing the output messages from the console</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

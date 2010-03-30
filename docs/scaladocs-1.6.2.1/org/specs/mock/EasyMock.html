@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait EasyMock in org.specs.mock</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/mock$package.html" target="_self">org.specs.mock</a>
+        <br></br>
+        <span class="entity">trait  EasyMock</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/mock/EasyMock"><code>org/specs/mock/EasyMock.scala</code></a>]
+      </div><hr></hr>
+      <a name="EasyMock"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>EasyMock</em>
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/specification/ExpectationsListener.html" target="_self">ExpectationsListener</a><code> with </code><a href="../../../org/specs/mock/EasyMockLifeCycle.html" target="_self">EasyMockLifeCycle</a></dd>
+    </dl>
+      <dl><dd>This trait integrates EasyMock in specs so that mock exceptions are correctly 
+ reported as specs failures and adds some syntactic sugar to allow an easier syntax.</dd></dl>
+      <dl></dl>
+    
+      
+
+<table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/specification/SequentialExecution.html" target="_self">SequentialExecution</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/SequentialExecution.html#sequential" target="_self">sequential</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.html#expect%28%3D%3ET%29" target="_self">expect</a></em>
+        [<em>T</em>](<em>t</em> : =&gt; <a href="../../../org/specs/mock/EasyMock.html#expect%28%3D%3ET%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/EasyMock.html#expect%28%3D%3ET%29#T" target="_self">T</a>
+        
+        <div>expect some calls and replay all mocks which have been previously declared</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.html#mock%28scala.reflect.Manifest%5BT%5D%29" target="_self">mock</a></em>
+        [<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/EasyMock.html#mock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/EasyMock.html#mock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+        
+        <div>create a mock</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.html#mockAs%28String%29" target="_self">mockAs</a></em>
+        [<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/EasyMock.html#mockAs%28String%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/EasyMock.html#mockAs%28String%29#T" target="_self">T</a>
+        
+        <div>create a mock with a name</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.html#niceMock%28scala.reflect.Manifest%5BT%5D%29" target="_self">niceMock</a></em>
+        [<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/EasyMock.html#niceMock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/EasyMock.html#niceMock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+        
+        <div>create a nice mock</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.html#niceMockAs%28String%29" target="_self">niceMockAs</a></em>
+        [<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/EasyMock.html#niceMockAs%28String%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/EasyMock.html#niceMockAs%28String%29#T" target="_self">T</a>
+        
+        <div>create a nice mock with a name
+\   @return the mock object</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.html#replay%28T*%29" target="_self">replay</a></em>
+        [<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<em>m</em> : <a href="../../../org/specs/mock/EasyMock.html#replay%28T*%29#T" target="_self">T</a>*) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>replay one or several mocks</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.html#strictMock%28scala.reflect.Manifest%5BT%5D%29" target="_self">strictMock</a></em>
+        [<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/EasyMock.html#strictMock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/EasyMock.html#strictMock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+        
+        <div>create a strict mock</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.html#strictMockAs%28String%29" target="_self">strictMockAs</a></em>
+        [<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/EasyMock.html#strictMockAs%28String%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/EasyMock.html#strictMockAs%28String%29#T" target="_self">T</a>
+        
+        <div>create a strict mock with a name</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.html#theCall%28%3D%3ET%29" target="_self">theCall</a></em>
+        [<em>T</em>](<em>c</em> : =&gt; <a href="../../../org/specs/mock/EasyMock.html#theCall%28%3D%3ET%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/EasyMock.CalledObject.html" target="_self">CalledObject</a>[<a href="../../../org/specs/mock/EasyMock.html#theCall%28%3D%3ET%29#T" target="_self">T</a>]
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.html#theExpectations%28%3D%3Eorg.easymock.IExpectationSetters%5BT%5D%29" target="_self">theExpectations</a></em>
+        [<em>T</em>](<em>c</em> : =&gt; <a href="" target="contentFrame" class="org/easymock/IExpectationSetters">org.easymock.IExpectationSetters</a>[<a href="../../../org/specs/mock/EasyMock.html#theExpectations%28%3D%3Eorg.easymock.IExpectationSetters%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/EasyMock.Expectations.html" target="_self">Expectations</a>[<a href="../../../org/specs/mock/EasyMock.html#theExpectations%28%3D%3Eorg.easymock.IExpectationSetters%5BT%5D%29#T" target="_self">T</a>]
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.html#theMock%28%3D%3ET%29" target="_self">theMock</a></em>
+        [<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<em>c</em> : =&gt; <a href="../../../org/specs/mock/EasyMock.html#theMock%28%3D%3ET%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/EasyMock.MockedObject.html" target="_self">MockedObject</a>[<a href="../../../org/specs/mock/EasyMock.html#theMock%28%3D%3ET%29#T" target="_self">T</a>]
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.html#verify%28T*%29" target="_self">verify</a></em>
+        [<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<em>m</em> : <a href="../../../org/specs/mock/EasyMock.html#verify%28T*%29#T" target="_self">T</a>*) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>verify one or several mocks. Each verify is counted as an expectation</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/mock/EasyMockLifeCycle.html" target="_self">EasyMockLifeCycle</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/mock/EasyMockLifeCycle.html#executeExpectations%28org.specs.specification.Examples%2C%3D%3EAny%29" target="_self">executeExpectations</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/LifeCycle.html" target="_self">LifeCycle</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/LifeCycle.html#until" target="_self">until</a>, <a href="../../../org/specs/specification/LifeCycle.html#beforeExample%28org.specs.specification.Examples%29" target="_self">beforeExample</a>, <a href="../../../org/specs/specification/LifeCycle.html#afterExample%28org.specs.specification.Examples%29" target="_self">afterExample</a>, <a href="../../../org/specs/specification/LifeCycle.html#beforeExpectations%28org.specs.specification.Examples%29" target="_self">beforeExpectations</a>, <a href="../../../org/specs/specification/LifeCycle.html#afterExpectations%28org.specs.specification.Examples%29" target="_self">afterExpectations</a>, <a href="../../../org/specs/specification/LifeCycle.html#executeExample%28org.specs.specification.Examples%29" target="_self">executeExample</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/SequentialExecution.html" target="_self">SequentialExecution</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/SequentialExecution.html#isSequential" target="_self">isSequential</a>, <a href="../../../org/specs/specification/SequentialExecution.html#setSequential%28%29" target="_self">setSequential</a>, <a href="../../../org/specs/specification/SequentialExecution.html#setNotSequential%28%29" target="_self">setNotSequential</a>, <a href="../../../org/specs/specification/SequentialExecution.html#setSequentialIs%28Boolean%29" target="_self">setSequentialIs</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/ExpectationsListener.html" target="_self">ExpectationsListener</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExpectationsListener.html#addExpectation" target="_self">addExpectation</a> (abstract), <a href="../../../org/specs/specification/ExpectationsListener.html#anyToExpectationCounter%28%3D%3ET%29" target="_self">anyToExpectationCounter</a>, <a href="../../../org/specs/specification/ExpectationsListener.html#isExpectation%28%3D%3ET%29" target="_self">isExpectation</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Class Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.CalledObject.html" target="_self">CalledObject</a></em>
+        [<em>T</em>](<em>c</em> : =&gt; <a href="../../../org/specs/mock/EasyMock.CalledObject.html#T" target="_self">T</a>)<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This class provide mock methods like returns, answers,....
+   Internally it calls the corresponding methods on EasyMocker (andReturn, andAnswer,...)</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.Expectations.html" target="_self">Expectations</a></em>
+        [<em>T</em>](<em>c</em> : =&gt; <a href="" target="contentFrame" class="org/easymock/IExpectationSetters">org.easymock.IExpectationSetters</a>[<a href="../../../org/specs/mock/EasyMock.Expectations.html#T" target="_self">T</a>])<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This class provides a way to chain expectations on mocked calls with the same syntax as
+   the one introduced by specs</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/EasyMock.MockedObject.html" target="_self">MockedObject</a></em>
+        [<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<em>c</em> : =&gt; <a href="../../../org/specs/mock/EasyMock.MockedObject.html#T" target="_self">T</a>)<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This class provide mock methods like reset, replay, verify, toNice,....
+   Internally it calls the corresponding methods on EasyMocker</div>
+      </td>
+    </tr>
+      </table>
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="mockAs%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>mockAs</em>[<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/EasyMock.html#mockAs%28String%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/EasyMock.html#mockAs%28String%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>create a mock with a name</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the mock object</dd></dl>
+    <hr></hr>
+<a name="niceMockAs%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>niceMockAs</em>[<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/EasyMock.html#niceMockAs%28String%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/EasyMock.html#niceMockAs%28String%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>create a nice mock with a name
+\   @return the mock object</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="strictMockAs%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>strictMockAs</em>[<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)(<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/EasyMock.html#strictMockAs%28String%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/EasyMock.html#strictMockAs%28String%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>create a strict mock with a name</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the mock object</dd></dl>
+    <hr></hr>
+<a name="mock%28scala.reflect.Manifest%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>mock</em>[<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/EasyMock.html#mock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/EasyMock.html#mock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>create a mock</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the mock object</dd></dl>
+    <hr></hr>
+<a name="niceMock%28scala.reflect.Manifest%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>niceMock</em>[<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/EasyMock.html#niceMock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/EasyMock.html#niceMock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>create a nice mock</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the mock object</dd></dl>
+    <hr></hr>
+<a name="strictMock%28scala.reflect.Manifest%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>strictMock</em>[<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<code>implicit </code><em>m</em> : <a href="" target="contentFrame" class="scala/reflect/Manifest">scala.reflect.Manifest</a>[<a href="../../../org/specs/mock/EasyMock.html#strictMock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/EasyMock.html#strictMock%28scala.reflect.Manifest%5BT%5D%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>create a strict mock</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the mock object</dd></dl>
+    <hr></hr>
+<a name="expect%28%3D%3ET%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>expect</em>[<em>T</em>](<em>t</em> : =&gt; <a href="../../../org/specs/mock/EasyMock.html#expect%28%3D%3ET%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/EasyMock.html#expect%28%3D%3ET%29#T" target="_self">T</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>expect some calls and replay all mocks which have been previously declared</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="theMock%28%3D%3ET%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>theMock</em>[<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<em>c</em> : =&gt; <a href="../../../org/specs/mock/EasyMock.html#theMock%28%3D%3ET%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/EasyMock.MockedObject.html" target="_self">MockedObject</a>[<a href="../../../org/specs/mock/EasyMock.html#theMock%28%3D%3ET%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>an object supporting the convienience methods on mock objects</dd></dl>
+    <hr></hr>
+<a name="theCall%28%3D%3ET%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>theCall</em>[<em>T</em>](<em>c</em> : =&gt; <a href="../../../org/specs/mock/EasyMock.html#theCall%28%3D%3ET%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/EasyMock.CalledObject.html" target="_self">CalledObject</a>[<a href="../../../org/specs/mock/EasyMock.html#theCall%28%3D%3ET%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>an object supporting the convienience methods on calls.</dd></dl>
+    <hr></hr>
+<a name="theExpectations%28%3D%3Eorg.easymock.IExpectationSetters%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>theExpectations</em>[<em>T</em>](<em>c</em> : =&gt; <a href="" target="contentFrame" class="org/easymock/IExpectationSetters">org.easymock.IExpectationSetters</a>[<a href="../../../org/specs/mock/EasyMock.html#theExpectations%28%3D%3Eorg.easymock.IExpectationSetters%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../../org/specs/mock/EasyMock.Expectations.html" target="_self">Expectations</a>[<a href="../../../org/specs/mock/EasyMock.html#theExpectations%28%3D%3Eorg.easymock.IExpectationSetters%5BT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>an object supporting the chained expectations.</dd></dl>
+    <hr></hr>
+<a name="replay%28T*%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>replay</em>[<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<em>m</em> : <a href="../../../org/specs/mock/EasyMock.html#replay%28T*%29#T" target="_self">T</a>*) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>replay one or several mocks</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="verify%28T*%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>verify</em>[<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<em>m</em> : <a href="../../../org/specs/mock/EasyMock.html#verify%28T*%29#T" target="_self">T</a>*) : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>verify one or several mocks. Each verify is counted as an expectation</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait LiterateProperties in org.specs.literate</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/literate$package.html" target="_self">org.specs.literate</a>
+        <br></br>
+        <span class="entity">trait  LiterateProperties</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/literate/LiterateProperties"><code>org/specs/literate/LiterateProperties.scala</code></a>]
+      </div><hr></hr>
+      <a name="LiterateProperties"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>LiterateProperties</em>
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/util/Properties.html" target="_self">Properties</a><code> with </code><a href="../../../org/specs/specification/ExpectableFactory.html" target="_self">ExpectableFactory</a></dd>
+    </dl>
+      <dl><dd>This trait adds shortcut to declare properties in the specification text</dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/literate/LiterateSpecification.html" target="_self">LiterateSpecification</a></dd>
+      </dl><hr></hr>
+      
+
+<table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/specification/ExampleExpectationsListener.html" target="_self">ExampleExpectationsListener</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExampleExpectationsListener.html#expectationsListener" target="_self">expectationsListener</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/literate/LiterateProperties.html#displayField%28String%2C%3D%3ET%29" target="_self">displayField</a></em>
+        [<em>T</em>](<em>label</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>value</em> : =&gt; <a href="../../../org/specs/literate/LiterateProperties.html#displayField%28String%2C%3D%3ET%29#T" target="_self">T</a>) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/literate/LiterateProperties.html#displayProp%28String%2C%3D%3ET%29" target="_self">displayProp</a></em>
+        [<em>T</em>](<em>label</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>actual</em> : =&gt; <a href="../../../org/specs/literate/LiterateProperties.html#displayProp%28String%2C%3D%3ET%29#T" target="_self">T</a>)(<em>expected</em> : <a href="../../../org/specs/literate/LiterateProperties.html#displayProp%28String%2C%3D%3ET%29#T" target="_self">T</a>) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/literate/LiterateProperties.html#executor" target="_self">executor</a></em>
+        [<em>T</em>] : (<a href="../../../org/specs/literate/LiterateProperties.html#executor#T" target="_self">T</a>, <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/literate/LiterateProperties.html#executor#T" target="_self">T</a>]) =&gt; <a href="../../../org/specs/specification/Result.html" target="_self">Result</a>[<a href="../../../org/specs/literate/LiterateProperties.html#executor#T" target="_self">T</a>]
+        
+        <div>default execution function with a matcher</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/literate/LiterateProperties.html#field%28String%2C%3D%3ET%29" target="_self">field</a></em>
+        [<em>T</em>](<em>label</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>value</em> : =&gt; <a href="../../../org/specs/literate/LiterateProperties.html#field%28String%2C%3D%3ET%29#T" target="_self">T</a>) : <a href="../../../org/specs/form/Field.html" target="_self">Field</a>[<a href="../../../org/specs/literate/LiterateProperties.html#field%28String%2C%3D%3ET%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/literate/LiterateProperties.html#prop%28String%2C%3D%3ET%29" target="_self">prop</a></em>
+        [<em>T</em>](<em>label</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>actual</em> : =&gt; <a href="../../../org/specs/literate/LiterateProperties.html#prop%28String%2C%3D%3ET%29#T" target="_self">T</a>) : <a href="../../../org/specs/form/MatcherProp.html" target="_self">MatcherProp</a>[<a href="../../../org/specs/literate/LiterateProperties.html#prop%28String%2C%3D%3ET%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/ExpectableFactory.html" target="_self">ExpectableFactory</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExpectableFactory.html#createFailure%28String%2Corg.specs.specification.Result%5BT%5D%29" target="_self">createFailure</a>, <a href="../../../org/specs/specification/ExpectableFactory.html#theValue%28%3D%3EA%29" target="_self">theValue</a>, <a href="../../../org/specs/specification/ExpectableFactory.html#theString%28%3D%3EString%29" target="_self">theString</a>, <a href="../../../org/specs/specification/ExpectableFactory.html#theBlock%28%3D%3ENothing%29" target="_self">theBlock</a>, <a href="../../../org/specs/specification/ExpectableFactory.html#theStrings%28%3D%3EIterable%5BString%5D%29" target="_self">theStrings</a>, <a href="../../../org/specs/specification/ExpectableFactory.html#theIterable%28%3D%3EIterable%5BI%5D%29" target="_self">theIterable</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/SuccessValues.html" target="_self">SuccessValues</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/SuccessValues.html#successValueToBoolean%28org.specs.specification.SuccessValue%29" target="_self">successValueToBoolean</a>, <a href="../../../org/specs/specification/SuccessValues.html#successValueToString%28org.specs.specification.SuccessValue%29" target="_self">successValueToString</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/ExampleExpectationsListener.html" target="_self">ExampleExpectationsListener</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExampleExpectationsListener.html#forExample" target="_self">forExample</a> (abstract), <a href="../../../org/specs/specification/ExampleExpectationsListener.html#lastExample" target="_self">lastExample</a> (abstract), <a href="../../../org/specs/specification/ExampleExpectationsListener.html#addExpectation" target="_self">addExpectation</a>, <a href="../../../org/specs/specification/ExampleExpectationsListener.html#addExpectation%28Option%5Borg.specs.specification.Expectable%5BT%5D%5D%29" target="_self">addExpectation</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/ExpectationsListener.html" target="_self">ExpectationsListener</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExpectationsListener.html#anyToExpectationCounter%28%3D%3ET%29" target="_self">anyToExpectationCounter</a>, <a href="../../../org/specs/specification/ExpectationsListener.html#isExpectation%28%3D%3ET%29" target="_self">isExpectation</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/util/Properties.html" target="_self">Properties</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/util/Properties.html#anyToAs%28T%29" target="_self">anyToAs</a>, <a href="../../../org/specs/util/Properties.html#propertyToValue%28org.specs.util.Property%5BT%5D%29" target="_self">propertyToValue</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="field%28String%2C%3D%3ET%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>field</em>[<em>T</em>](<em>label</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>value</em> : =&gt; <a href="../../../org/specs/literate/LiterateProperties.html#field%28String%2C%3D%3ET%29#T" target="_self">T</a>) : <a href="../../../org/specs/form/Field.html" target="_self">Field</a>[<a href="../../../org/specs/literate/LiterateProperties.html#field%28String%2C%3D%3ET%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="displayField%28String%2C%3D%3ET%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>displayField</em>[<em>T</em>](<em>label</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>value</em> : =&gt; <a href="../../../org/specs/literate/LiterateProperties.html#displayField%28String%2C%3D%3ET%29#T" target="_self">T</a>) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="executor"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>executor</em>[<em>T</em>] : (<a href="../../../org/specs/literate/LiterateProperties.html#executor#T" target="_self">T</a>, <a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/literate/LiterateProperties.html#executor#T" target="_self">T</a>]) =&gt; <a href="../../../org/specs/specification/Result.html" target="_self">Result</a>[<a href="../../../org/specs/literate/LiterateProperties.html#executor#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>default execution function with a matcher</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="prop%28String%2C%3D%3ET%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>prop</em>[<em>T</em>](<em>label</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>actual</em> : =&gt; <a href="../../../org/specs/literate/LiterateProperties.html#prop%28String%2C%3D%3ET%29#T" target="_self">T</a>) : <a href="../../../org/specs/form/MatcherProp.html" target="_self">MatcherProp</a>[<a href="../../../org/specs/literate/LiterateProperties.html#prop%28String%2C%3D%3ET%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="displayProp%28String%2C%3D%3ET%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>displayProp</em>[<em>T</em>](<em>label</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>actual</em> : =&gt; <a href="../../../org/specs/literate/LiterateProperties.html#displayProp%28String%2C%3D%3ET%29#T" target="_self">T</a>)(<em>expected</em> : <a href="../../../org/specs/literate/LiterateProperties.html#displayProp%28String%2C%3D%3ET%29#T" target="_self">T</a>) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

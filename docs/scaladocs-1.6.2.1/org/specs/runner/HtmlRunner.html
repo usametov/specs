@@ -1,0 +1,357 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>class HtmlRunner in org.specs.runner</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/runner$package.html" target="_self">org.specs.runner</a>
+        <br></br>
+        <span class="entity">class  HtmlRunner</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/runner/HtmlRunner"><code>org/specs/runner/HtmlRunner.scala</code></a>]
+      </div><hr></hr>
+      <a name="HtmlRunner"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>class</code>
+        <em>HtmlRunner</em>(<code>val </code><em>specs</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../../org/specs/Specification.html" target="_self">Specification</a>], <em>outputDirPath</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>fName</em> : (<a href="../../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>) =&gt; <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/runner/FileReporter.html" target="_self">FileReporter</a><code> with </code><a href="../../../org/specs/runner/Html.html" target="_self">Html</a></dd>
+    </dl>
+      <dl><dd>Copyright (c) 2007-2010 Eric Torreborre <etorreborre@yahoo.com>
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+ the Software. Neither the name of specs nor the names of its contributors may be used to endorse or promote
+ products derived from this software without specific prior written permission.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+ TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS IN THE SOFTWARE.</dd></dl>
+      <dl></dl>
+    
+      <table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Additional Constructor Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/HtmlRunner.html#this%28org.specs.Specification*%29" target="_self">this</a></em>
+        (<em>specifications</em> : <a href="../../../org/specs/Specification.html" target="_self">Specification</a>*) : <a href="../../../org/specs/runner/HtmlRunner.html" target="_self">HtmlRunner</a>
+        
+        <div>Alternative constructor with a default value for the output directory.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/HtmlRunner.html#this%28org.specs.Specification%2CString%29" target="_self">this</a></em>
+        (<em>specification</em> : <a href="../../../org/specs/Specification.html" target="_self">Specification</a>, <em>outputDirPath</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/runner/HtmlRunner.html" target="_self">HtmlRunner</a>
+        
+        <div>Alternative constructor with one specification only.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/HtmlRunner.html#this%28org.specs.Specification%2CString%2C%28org.specs.specification.BaseSpecification%29%3D%3EString%29" target="_self">this</a></em>
+        (<em>spec</em> : <a href="../../../org/specs/Specification.html" target="_self">Specification</a>, <em>outputDirPath</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>fName</em> : (<a href="../../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>) =&gt; <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/runner/HtmlRunner.html" target="_self">HtmlRunner</a>
+        
+        <div>Alternative constructor with one specification only.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/HtmlRunner.html#this%28%29" target="_self">this</a></em>
+         : <a href="../../../org/specs/runner/HtmlRunner.html" target="_self">HtmlRunner</a>
+        
+        <div>Alternative constructor with no specific specifications and default values.
+   This runner can report specifications using the report method.
+   This capacity is used in conjunction with the Runner class:<pre>
+   object runner extends Runner(spec1 :: spec2, HtmlRunner() :: XmlRunner())
+   </pre></div>
+      </td>
+    </tr>
+      </table>
+
+<table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/runner/Console.html" target="_self">Console</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/runner/Console.html#timer" target="_self">timer</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/runner/SpecsFilter.html" target="_self">SpecsFilter</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/runner/SpecsFilter.html#filteredSpecs" target="_self">filteredSpecs</a>, <a href="../../../org/specs/runner/SpecsFilter.html#susFilter" target="_self">susFilter</a>, <a href="../../../org/specs/runner/SpecsFilter.html#exampleFilter" target="_self">exampleFilter</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/log/Log.html" target="_self">Log</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/log/Log.html#Debug" target="_self">Debug</a>, <a href="../../../org/specs/log/Log.html#Info" target="_self">Info</a>, <a href="../../../org/specs/log/Log.html#Warning" target="_self">Warning</a>, <a href="../../../org/specs/log/Log.html#Error" target="_self">Error</a>, <a href="../../../org/specs/log/Log.html#level" target="_self">level</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/HtmlRunner.html#fileName%28org.specs.specification.BaseSpecification%29" target="_self">fileName</a></em>
+        (<em>spec</em> : <a href="../../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div>definition of the file name of a specification.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/runner/HtmlRunner.html#outputDir" target="_self">outputDir</a></em>
+         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div>definition of the output directory of the report.</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/runner/Html.html" target="_self">Html</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/runner/Html.html#htmlDir" target="_self">htmlDir</a>, <a href="../../../org/specs/runner/Html.html#report%28Seq%5Borg.specs.Specification%5D%29" target="_self">report</a>, <a href="../../../org/specs/runner/Html.html#specOutput%28org.specs.Specification%29" target="_self">specOutput</a>, <a href="../../../org/specs/runner/Html.html#asHtml%28org.specs.Specification%29" target="_self">asHtml</a>, <a href="../../../org/specs/runner/Html.html#head%28org.specs.Specification%29" target="_self">head</a>, <a href="../../../org/specs/runner/Html.html#breadcrumbs%28org.specs.Specification%29" target="_self">breadcrumbs</a>, <a href="../../../org/specs/runner/Html.html#specificationLink%28org.specs.specification.BaseSpecification%29" target="_self">specificationLink</a>, <a href="../../../org/specs/runner/Html.html#summaryTable%28org.specs.Specification%29" target="_self">summaryTable</a>, <a href="../../../org/specs/runner/Html.html#summarySpec%28org.specs.Specification%29" target="_self">summarySpec</a>, <a href="../../../org/specs/runner/Html.html#summarySus%28org.specs.specification.Sus%2Corg.specs.Specification%29" target="_self">summarySus</a>, <a href="../../../org/specs/runner/Html.html#anchorRef%28String%29" target="_self">anchorRef</a>, <a href="../../../org/specs/runner/Html.html#anchorName%28String%29" target="_self">anchorName</a>, <a href="../../../org/specs/runner/Html.html#sanitize%28String%29" target="_self">sanitize</a>, <a href="../../../org/specs/runner/Html.html#shorten%28String%29" target="_self">shorten</a>, <a href="../../../org/specs/runner/Html.html#subspecsTables%28List%5Borg.specs.Specification%5D%2CBoolean%29" target="_self">subspecsTables</a>, <a href="../../../org/specs/runner/Html.html#specificationTable%28org.specs.Specification%2CBoolean%29" target="_self">specificationTable</a>, <a href="../../../org/specs/runner/Html.html#susTables%28org.specs.Specification%2CBoolean%29" target="_self">susTables</a>, <a href="../../../org/specs/runner/Html.html#susTable%28org.specs.specification.Sus%2Corg.specs.Specification%2CBoolean%29" target="_self">susTable</a>, <a href="../../../org/specs/runner/Html.html#susName%28org.specs.specification.Sus%2Corg.specs.Specification%29" target="_self">susName</a>, <a href="../../../org/specs/runner/Html.html#susHeader%28org.specs.specification.Sus%29" target="_self">susHeader</a>, <a href="../../../org/specs/runner/Html.html#examplesTable%28org.specs.specification.Sus%2CBoolean%29" target="_self">examplesTable</a>, <a href="../../../org/specs/runner/Html.html#upArrow" target="_self">upArrow</a>, <a href="../../../org/specs/runner/Html.html#exampleRows%28Iterable%5Borg.specs.specification.Example%5D%2C%3D%3EBoolean%2CBoolean%29" target="_self">exampleRows</a>, <a href="../../../org/specs/runner/Html.html#example%28org.specs.specification.Example%2CBoolean%2C%3D%3EBoolean%2CBoolean%29" target="_self">example</a>, <a href="../../../org/specs/runner/Html.html#exampleRow%28org.specs.specification.Example%2CBoolean%2C%3D%3EBoolean%2CBoolean%29" target="_self">exampleRow</a>, <a href="../../../org/specs/runner/Html.html#statusIcon%28org.specs.execute.HasResults%29" target="_self">statusIcon</a>, <a href="../../../org/specs/runner/Html.html#statusIcon%28org.specs.execute.HasResults%2CBoolean%29" target="_self">statusIcon</a>, <a href="../../../org/specs/runner/Html.html#image%28org.specs.execute.HasResults%2CBoolean%29" target="_self">image</a>, <a href="../../../org/specs/runner/Html.html#message%28org.specs.specification.Example%2C%3D%3EBoolean%29" target="_self">message</a>, <a href="../../../org/specs/runner/Html.html#message%28org.specs.specification.Example%2C%3D%3EBoolean%2CBoolean%29" target="_self">message</a>, <a href="../../../org/specs/runner/Html.html#failure%28org.specs.execute.FailureException%29" target="_self">failure</a>, <a href="../../../org/specs/runner/Html.html#stackTrace%28Throwable%29" target="_self">stackTrace</a>, <a href="../../../org/specs/runner/Html.html#exceptionText%28Throwable%29" target="_self">exceptionText</a>, <a href="../../../org/specs/runner/Html.html#initFunction%28org.specs.Specification%29" target="_self">initFunction</a>, <a href="../../../org/specs/runner/Html.html#nonTrivialSpec%28org.specs.Specification%29" target="_self">nonTrivialSpec</a>, <a href="../../../org/specs/runner/Html.html#javaScript%28org.specs.Specification%29" target="_self">javaScript</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/runner/File.html" target="_self">File</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/runner/File.html#filePath%28org.specs.specification.BaseSpecification%29" target="_self">filePath</a>, <a href="../../../org/specs/runner/File.html#normalize%28String%29" target="_self">normalize</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/runner/OutputReporter.html" target="_self">OutputReporter</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/runner/OutputReporter.html#failureColored%28String%29" target="_self">failureColored</a>, <a href="../../../org/specs/runner/OutputReporter.html#successColored%28String%29" target="_self">successColored</a>, <a href="../../../org/specs/runner/OutputReporter.html#skipColored%28String%29" target="_self">skipColored</a>, <a href="../../../org/specs/runner/OutputReporter.html#infoColored%28String%29" target="_self">infoColored</a>, <a href="../../../org/specs/runner/OutputReporter.html#report%28Seq%5Borg.specs.Specification%5D%2CString%29" target="_self">report</a>, <a href="../../../org/specs/runner/OutputReporter.html#reportSpec%28org.specs.Specification%2CString%29" target="_self">reportSpec</a>, <a href="../../../org/specs/runner/OutputReporter.html#toAddableTuple%28%28Int%2CInt%2CInt%2CInt%2CInt%29%29" target="_self">toAddableTuple</a>, <a href="../../../org/specs/runner/OutputReporter.html#stats%28org.specs.Specification%29" target="_self">stats</a>, <a href="../../../org/specs/runner/OutputReporter.html#stats%28org.specs.specification.Sus%29" target="_self">stats</a>, <a href="../../../org/specs/runner/OutputReporter.html#stats%28org.specs.specification.Example%29" target="_self">stats</a>, <a href="../../../org/specs/runner/OutputReporter.html#reportSystems%28Iterable%5Borg.specs.specification.Sus%5D%2CString%29" target="_self">reportSystems</a>, <a href="../../../org/specs/runner/OutputReporter.html#reportSus%28org.specs.specification.Sus%2CString%29" target="_self">reportSus</a>, <a href="../../../org/specs/runner/OutputReporter.html#printSus%28org.specs.specification.Sus%2CString%29" target="_self">printSus</a>, <a href="../../../org/specs/runner/OutputReporter.html#printStats%28org.specs.specification.Sus%2CString%29" target="_self">printStats</a>, <a href="../../../org/specs/runner/OutputReporter.html#printStats%28%28Int%2CInt%2CInt%2CInt%2CInt%29%2CString%29" target="_self">printStats</a>, <a href="../../../org/specs/runner/OutputReporter.html#reportExamples%28Iterable%5Borg.specs.specification.Example%5D%2CString%29" target="_self">reportExamples</a>, <a href="../../../org/specs/runner/OutputReporter.html#reportExample%28org.specs.specification.Examples%2CString%29" target="_self">reportExample</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/runner/Reporter.html" target="_self">Reporter</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/runner/Reporter.html#setConfiguration%28Option%5BString%5D%29" target="_self">setConfiguration</a>, <a href="../../../org/specs/runner/Reporter.html#setNoStacktrace%28%29" target="_self">setNoStacktrace</a>, <a href="../../../org/specs/runner/Reporter.html#setFailedAndErrorsOnly%28%29" target="_self">setFailedAndErrorsOnly</a>, <a href="../../../org/specs/runner/Reporter.html#setNoStatistics%28%29" target="_self">setNoStatistics</a>, <a href="../../../org/specs/runner/Reporter.html#setFinalStatisticsOnly%28%29" target="_self">setFinalStatisticsOnly</a>, <a href="../../../org/specs/runner/Reporter.html#setColorize%28%29" target="_self">setColorize</a>, <a href="../../../org/specs/runner/Reporter.html#setPlanOnly%28%29" target="_self">setPlanOnly</a>, <a href="../../../org/specs/runner/Reporter.html#resetOptions%28%29" target="_self">resetOptions</a>, <a href="../../../org/specs/runner/Reporter.html#setOptionsFromConfig%28%29" target="_self">setOptionsFromConfig</a>, <a href="../../../org/specs/runner/Reporter.html#runConfiguration" target="_self">runConfiguration</a>, <a href="../../../org/specs/runner/Reporter.html#args" target="_self">args</a>, <a href="../../../org/specs/runner/Reporter.html#args_%3D%28Array%5BString%5D%29" target="_self">args_=</a>, <a href="../../../org/specs/runner/Reporter.html#main%28Array%5BString%5D%29" target="_self">main</a>, <a href="../../../org/specs/runner/Reporter.html#displayHelp" target="_self">displayHelp</a>, <a href="../../../org/specs/runner/Reporter.html#displayUsage" target="_self">displayUsage</a>, <a href="../../../org/specs/runner/Reporter.html#displayOptions" target="_self">displayOptions</a>, <a href="../../../org/specs/runner/Reporter.html#displayOptionsDescription" target="_self">displayOptionsDescription</a>, <a href="../../../org/specs/runner/Reporter.html#susFilterPattern" target="_self">susFilterPattern</a>, <a href="../../../org/specs/runner/Reporter.html#exampleFilterPattern" target="_self">exampleFilterPattern</a>, <a href="../../../org/specs/runner/Reporter.html#reportSpecs" target="_self">reportSpecs</a>, <a href="../../../org/specs/runner/Reporter.html#argValue%28Array%5BString%5D%2CList%5BString%5D%29" target="_self">argValue</a>, <a href="../../../org/specs/runner/Reporter.html#%3A%3A%28org.specs.runner.Reporter%29" target="_self">::</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/runner/SpecsFilter.html" target="_self">SpecsFilter</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/runner/SpecsFilter.html#filter%28Seq%5Borg.specs.Specification%5D%29" target="_self">filter</a>, <a href="../../../org/specs/runner/SpecsFilter.html#filter%28org.specs.Specification%29" target="_self">filter</a>, <a href="../../../org/specs/runner/SpecsFilter.html#filter%28org.specs.specification.Sus%29" target="_self">filter</a>, <a href="../../../org/specs/runner/SpecsFilter.html#filterExample%28org.specs.specification.Example%29" target="_self">filterExample</a>, <a href="../../../org/specs/runner/SpecsFilter.html#susPattern" target="_self">susPattern</a>, <a href="../../../org/specs/runner/SpecsFilter.html#examplePattern" target="_self">examplePattern</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/log/Log.html" target="_self">Log</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/log/Log.html#debug%28%3D%3EString%29" target="_self">debug</a>, <a href="../../../org/specs/log/Log.html#info%28%3D%3EString%29" target="_self">info</a>, <a href="../../../org/specs/log/Log.html#warning%28%3D%3EString%29" target="_self">warning</a>, <a href="../../../org/specs/log/Log.html#error%28%3D%3EString%29" target="_self">error</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/io/ConsoleOutput.html" target="_self">ConsoleOutput</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/io/ConsoleOutput.html#println%28Any%29" target="_self">println</a>, <a href="../../../org/specs/io/ConsoleOutput.html#printf%28String%2CAny*%29" target="_self">printf</a>, <a href="../../../org/specs/io/ConsoleOutput.html#flush%28%29" target="_self">flush</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/io/Output.html" target="_self">Output</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/io/Output.html#printStackTrace%28Throwable%29" target="_self">printStackTrace</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/io/FileSystem.html" target="_self">FileSystem</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/io/FileSystem.html#filePaths%28String%29" target="_self">filePaths</a>, <a href="../../../org/specs/io/FileSystem.html#globToPattern%28String%29" target="_self">globToPattern</a>, <a href="../../../org/specs/io/FileSystem.html#isDir%28String%29" target="_self">isDir</a>, <a href="../../../org/specs/io/FileSystem.html#createDir%28String%29" target="_self">createDir</a>, <a href="../../../org/specs/io/FileSystem.html#removeDir%28String%29" target="_self">removeDir</a>, <a href="../../../org/specs/io/FileSystem.html#exists%28String%29" target="_self">exists</a>, <a href="../../../org/specs/io/FileSystem.html#canRead%28String%29" target="_self">canRead</a>, <a href="../../../org/specs/io/FileSystem.html#canWrite%28String%29" target="_self">canWrite</a>, <a href="../../../org/specs/io/FileSystem.html#isAbsolute%28String%29" target="_self">isAbsolute</a>, <a href="../../../org/specs/io/FileSystem.html#isFile%28String%29" target="_self">isFile</a>, <a href="../../../org/specs/io/FileSystem.html#isDirectory%28String%29" target="_self">isDirectory</a>, <a href="../../../org/specs/io/FileSystem.html#isHidden%28String%29" target="_self">isHidden</a>, <a href="../../../org/specs/io/FileSystem.html#getName%28String%29" target="_self">getName</a>, <a href="../../../org/specs/io/FileSystem.html#getAbsolutePath%28String%29" target="_self">getAbsolutePath</a>, <a href="../../../org/specs/io/FileSystem.html#getCanonicalPath%28String%29" target="_self">getCanonicalPath</a>, <a href="../../../org/specs/io/FileSystem.html#getParent%28String%29" target="_self">getParent</a>, <a href="../../../org/specs/io/FileSystem.html#listFiles%28String%29" target="_self">listFiles</a>, <a href="../../../org/specs/io/FileSystem.html#copyDir%28java.net.URL%2CString%29" target="_self">copyDir</a>, <a href="../../../org/specs/io/FileSystem.html#copyDir%28java.net.URL%2CString%2Corg.specs.specification.Tagged%29" target="_self">copyDir</a>, <a href="../../../org/specs/io/FileSystem.html#copyDir%28String%2CString%29" target="_self">copyDir</a>, <a href="../../../org/specs/io/FileSystem.html#copyDir%28String%2CString%2Corg.specs.specification.Tagged%29" target="_self">copyDir</a>, <a href="../../../org/specs/io/FileSystem.html#copyFile%28String%2CString%29" target="_self">copyFile</a>, <a href="../../../org/specs/io/FileSystem.html#unjar%28String%2CString%29" target="_self">unjar</a>, <a href="../../../org/specs/io/FileSystem.html#unjar%28String%2CString%2CString%29" target="_self">unjar</a>, <a href="../../../org/specs/io/FileSystem.html#copy%28java.io.InputStream%2Cjava.io.OutputStream%29" target="_self">copy</a>, <a href="../../../org/specs/io/FileSystem.html#copySpecResourcesDir%28String%2CString%29" target="_self">copySpecResourcesDir</a>, <a href="../../../org/specs/io/FileSystem.html#getResourcesNamed%28String%29" target="_self">getResourcesNamed</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/io/FileWriter.html" target="_self">FileWriter</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/io/FileWriter.html#write%28String%29" target="_self">write</a>, <a href="../../../org/specs/io/FileWriter.html#createFile%28String%29" target="_self">createFile</a>, <a href="../../../org/specs/io/FileWriter.html#mkdirs%28String%29" target="_self">mkdirs</a>, <a href="../../../org/specs/io/FileWriter.html#writeFile%28String%2C%3D%3EString%29" target="_self">writeFile</a>, <a href="../../../org/specs/io/FileWriter.html#getWriter%28String%29" target="_self">getWriter</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/io/FileReader.html" target="_self">FileReader</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/io/FileReader.html#readFile%28String%29" target="_self">readFile</a>, <a href="../../../org/specs/io/FileReader.html#inputStream%28String%29" target="_self">inputStream</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      <table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Additional Constructor Details</td></tr>
+        </table><div><a name="this%28%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>this</em> : <a href="../../../org/specs/runner/HtmlRunner.html" target="_self">HtmlRunner</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Alternative constructor with no specific specifications and default values.
+   This runner can report specifications using the report method.
+   This capacity is used in conjunction with the Runner class:<pre>
+   object runner extends Runner(spec1 :: spec2, HtmlRunner() :: XmlRunner())
+   </pre></dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="this%28org.specs.Specification*%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>this</em>(<em>specifications</em> : <a href="../../../org/specs/Specification.html" target="_self">Specification</a>*) : <a href="../../../org/specs/runner/HtmlRunner.html" target="_self">HtmlRunner</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Alternative constructor with a default value for the output directory.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="this%28org.specs.Specification%2CString%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>this</em>(<em>specification</em> : <a href="../../../org/specs/Specification.html" target="_self">Specification</a>, <em>outputDirPath</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/runner/HtmlRunner.html" target="_self">HtmlRunner</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Alternative constructor with one specification only.</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="this%28org.specs.Specification%2CString%2C%28org.specs.specification.BaseSpecification%29%3D%3EString%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>this</em>(<em>spec</em> : <a href="../../../org/specs/Specification.html" target="_self">Specification</a>, <em>outputDirPath</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>fName</em> : (<a href="../../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>) =&gt; <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/runner/HtmlRunner.html" target="_self">HtmlRunner</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Alternative constructor with one specification only.</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="fileName%28org.specs.specification.BaseSpecification%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>fileName</em>(<em>spec</em> : <a href="../../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>) : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>definition of the file name of a specification.</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/runner/FileReporter.html" target="_self">FileReporter</a>.<a href="../../../org/specs/runner/FileReporter.html#fileName%28org.specs.specification.BaseSpecification%29" target="_self">fileName</a>, <a href="../../../org/specs/runner/Html.html" target="_self">Html</a>.<a href="../../../org/specs/runner/Html.html#fileName%28org.specs.specification.BaseSpecification%29" target="_self">fileName</a>
+        </dd>
+      </dl><hr></hr>
+<a name="outputDir"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>outputDir</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>definition of the output directory of the report.</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/runner/FileReporter.html" target="_self">FileReporter</a>.<a href="../../../org/specs/runner/FileReporter.html#outputDir" target="_self">outputDir</a>, <a href="../../../org/specs/runner/Html.html" target="_self">Html</a>.<a href="../../../org/specs/runner/Html.html#outputDir" target="_self">outputDir</a>
+        </dd>
+      </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

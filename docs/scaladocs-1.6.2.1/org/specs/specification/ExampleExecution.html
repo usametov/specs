@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>class ExampleExecution in org.specs.specification</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/specification$package.html" target="_self">org.specs.specification</a>
+        <br></br>
+        <span class="entity">class  ExampleExecution</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/specification/ExampleExecution"><code>org/specs/specification/ExampleExecution.scala</code></a>]
+      </div><hr></hr>
+      <a name="ExampleExecution"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>class</code>
+        <em>ExampleExecution</em>(<code>val </code><em>example</em> : <a href="../../../org/specs/specification/Examples.html" target="_self">Examples</a>, <code>val </code><em>expectations</em> : (<a href="../../../org/specs/specification/Examples.html" target="_self">Examples</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)
+      </dt>
+      <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
+    </dl>
+      <dl><dd>This class encapsulates the execution of an example.
+ It will check if the example is tagged for execution ("accepted") and it will execute the expectations as
+ long as the untilr predicate is not satisfied (if there is one)</dd></dl>
+      <dl></dl>
+    
+      
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Value Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/ExampleExecution.html#execution" target="_self">execution</a></em>
+         : () =&gt; <a href="../../../org/specs/specification/Examples.html" target="_self">Examples</a>
+        
+        <div>execution of the example expectations. The example lifecycle methods are used here:<ul>
+   <li>beforeExample: add an error and skip the rest if an exception is thrown</li>
+   <li>beforeExpectations</li>
+   <li>executeExpectations</li>
+   <li>afterExpectations</li>
+   <li>afterExample: add an error if an exception is thrown</li>
+   <ul/></div>
+      </td>
+    </tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/ExampleExecution.html#execute" target="_self">execute</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>execute the example, setting a flag to make sure that it is only executed once</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/specification/ExampleExecution.html#resetForExecution" target="_self">resetForExecution</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+        
+        <div>reset the execution so that a new call to execute will indeed execute the expectations again</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Value Details</td></tr>
+        </table><div><a name="execution"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>val</code>
+        <em>execution</em> : () =&gt; <a href="../../../org/specs/specification/Examples.html" target="_self">Examples</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>execution of the example expectations. The example lifecycle methods are used here:<ul>
+   <li>beforeExample: add an error and skip the rest if an exception is thrown</li>
+   <li>beforeExpectations</li>
+   <li>executeExpectations</li>
+   <li>afterExpectations</li>
+   <li>afterExample: add an error if an exception is thrown</li>
+   <ul/></dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="execute"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>execute</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>execute the example, setting a flag to make sure that it is only executed once</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="resetForExecution"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>resetForExecution</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>reset the execution so that a new call to execute will indeed execute the expectations again</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

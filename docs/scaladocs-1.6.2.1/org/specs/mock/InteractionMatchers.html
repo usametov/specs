@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait InteractionMatchers in org.specs.mock</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/mock$package.html" target="_self">org.specs.mock</a>
+        <br></br>
+        <span class="entity">trait  InteractionMatchers</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/mock/InteractionMatchers"><code>org/specs/mock/InteractionMatchers.scala</code></a>]
+      </div><hr></hr>
+      <a name="InteractionMatchers"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>InteractionMatchers</em>
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/specification/ExpectableFactory.html" target="_self">ExpectableFactory</a></dd>
+    </dl>
+      <dl><dd>This trait provides an additional matcher to check if no more methods have been called on a mock:<code>
+   mock had noMoreCalls
+ </code></dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/mock/Mockito.html" target="_self">Mockito</a></dd>
+      </dl><hr></hr>
+      
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Value Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>protected abstract val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/InteractionMatchers.html#mocker" target="_self">mocker</a></em>
+         : <a href="../../../org/mockito/MockitoMocker.html" target="_self">MockitoMocker</a>
+        
+        <div>delegate to Mockito.</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/specification/ExampleExpectationsListener.html" target="_self">ExampleExpectationsListener</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExampleExpectationsListener.html#expectationsListener" target="_self">expectationsListener</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/InteractionMatchers.html#noMoreCalls" target="_self">noMoreCalls</a></em>
+        [<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>] : <a href="../../../org/specs/mock/InteractionMatchers.NoMoreCalls.html" target="_self">NoMoreCalls</a>[<a href="../../../org/specs/mock/InteractionMatchers.html#noMoreCalls#T" target="_self">T</a>]
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/InteractionMatchers.html#theMock%28%3D%3ET%29" target="_self">theMock</a></em>
+        [<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<em>m</em> : =&gt; <a href="../../../org/specs/mock/InteractionMatchers.html#theMock%28%3D%3ET%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/InteractionMatchers.MockObject.html" target="_self">MockObject</a>[<a href="../../../org/specs/mock/InteractionMatchers.html#theMock%28%3D%3ET%29#T" target="_self">T</a>]
+        
+        <div></div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/ExpectableFactory.html" target="_self">ExpectableFactory</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExpectableFactory.html#createFailure%28String%2Corg.specs.specification.Result%5BT%5D%29" target="_self">createFailure</a>, <a href="../../../org/specs/specification/ExpectableFactory.html#theValue%28%3D%3EA%29" target="_self">theValue</a>, <a href="../../../org/specs/specification/ExpectableFactory.html#theString%28%3D%3EString%29" target="_self">theString</a>, <a href="../../../org/specs/specification/ExpectableFactory.html#theBlock%28%3D%3ENothing%29" target="_self">theBlock</a>, <a href="../../../org/specs/specification/ExpectableFactory.html#theStrings%28%3D%3EIterable%5BString%5D%29" target="_self">theStrings</a>, <a href="../../../org/specs/specification/ExpectableFactory.html#theIterable%28%3D%3EIterable%5BI%5D%29" target="_self">theIterable</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/SuccessValues.html" target="_self">SuccessValues</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/SuccessValues.html#successValueToBoolean%28org.specs.specification.SuccessValue%29" target="_self">successValueToBoolean</a>, <a href="../../../org/specs/specification/SuccessValues.html#successValueToString%28org.specs.specification.SuccessValue%29" target="_self">successValueToString</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/ExampleExpectationsListener.html" target="_self">ExampleExpectationsListener</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExampleExpectationsListener.html#forExample" target="_self">forExample</a> (abstract), <a href="../../../org/specs/specification/ExampleExpectationsListener.html#lastExample" target="_self">lastExample</a> (abstract), <a href="../../../org/specs/specification/ExampleExpectationsListener.html#addExpectation" target="_self">addExpectation</a>, <a href="../../../org/specs/specification/ExampleExpectationsListener.html#addExpectation%28Option%5Borg.specs.specification.Expectable%5BT%5D%5D%29" target="_self">addExpectation</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/specification/ExpectationsListener.html" target="_self">ExpectationsListener</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/specification/ExpectationsListener.html#anyToExpectationCounter%28%3D%3ET%29" target="_self">anyToExpectationCounter</a>, <a href="../../../org/specs/specification/ExpectationsListener.html#isExpectation%28%3D%3ET%29" target="_self">isExpectation</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Class Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/InteractionMatchers.InteractionMatcher.html" target="_self">InteractionMatcher</a></em>
+        [<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>]<code> extends </code><a href="../../../org/specs/matcher/Matcher.html" target="_self">Matcher</a>[<a href="../../../org/specs/mock/InteractionMatchers.InteractionMatcher.html#T" target="_self">T</a>]
+        
+        <div>This class allows the expecations to potentially use other ways of checking the interactions on a mock.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/InteractionMatchers.MockObject.html" target="_self">MockObject</a></em>
+        [<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<em>m</em> : =&gt; <a href="../../../org/specs/mock/InteractionMatchers.MockObject.html#T" target="_self">T</a>)<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>object allowing the creation of expectations for mock interactions like: mock had noMoreCalls.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/InteractionMatchers.NoMoreCalls.html" target="_self">NoMoreCalls</a></em>
+        [<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>]<code> extends </code><a href="../../../org/specs/mock/InteractionMatchers.InteractionMatcher.html" target="_self">InteractionMatcher</a>[<a href="../../../org/specs/mock/InteractionMatchers.NoMoreCalls.html#T" target="_self">T</a>]
+        
+        <div>This matcher checks if the mock had no more calls by calling Mockito.verifyNoMoreInteractions</div>
+      </td>
+    </tr>
+      </table>
+
+      
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Value Details</td></tr>
+        </table><div><a name="mocker"></a><dl>
+      <dt>
+        
+        <code>protected abstract</code>
+        <code>val</code>
+        <em>mocker</em> : <a href="../../../org/mockito/MockitoMocker.html" target="_self">MockitoMocker</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>delegate to Mockito.</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="theMock%28%3D%3ET%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>theMock</em>[<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<em>m</em> : =&gt; <a href="../../../org/specs/mock/InteractionMatchers.html#theMock%28%3D%3ET%29#T" target="_self">T</a>) : <a href="../../../org/specs/mock/InteractionMatchers.MockObject.html" target="_self">MockObject</a>[<a href="../../../org/specs/mock/InteractionMatchers.html#theMock%28%3D%3ET%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>an object allowing the creation of expectations for mock interactions.</dd></dl>
+    <hr></hr>
+<a name="noMoreCalls"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>noMoreCalls</em>[<em>T</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>] : <a href="../../../org/specs/mock/InteractionMatchers.NoMoreCalls.html" target="_self">NoMoreCalls</a>[<a href="../../../org/specs/mock/InteractionMatchers.html#noMoreCalls#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>a NoMoreCallsMatcher.</dd></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

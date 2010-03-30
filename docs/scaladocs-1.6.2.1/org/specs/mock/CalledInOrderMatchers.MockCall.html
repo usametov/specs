@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>class MockCall in org.specs.mock.CalledInOrderMatchers</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/mock/CalledInOrderMatchers.html" target="_self">org.specs.mock.CalledInOrderMatchers</a>
+        <br></br>
+        <span class="entity">class  MockCall</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/mock/CalledInOrderMatchers"><code>org/specs/mock/CalledInOrderMatchers.scala</code></a>]
+      </div><hr></hr>
+      <a name="MockCall"></a><dl>
+      <dt>
+        
+        <code>case</code>
+        <code>class</code>
+        <em>MockCall</em>(<code>val </code><em>mock</em> : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>], <code>val </code><em>result</em> : () =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/mock/HasInOrderVerificationMode.html" target="_self">HasInOrderVerificationMode</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a></dd>
+    </dl>
+      <dl><dd>provides methods creating in order calls expectations.</dd></dl>
+      <dl></dl>
+    
+      <table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Additional Constructor Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/CalledInOrderMatchers.MockCall.html#this%28%28%29%3D%3EAny%29" target="_self">this</a></em>
+        (<em>result</em> : () =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="../../../org/specs/mock/CalledInOrderMatchers.MockCall.html" target="_self">MockCall</a>
+        
+        
+      </td>
+    </tr>
+      </table>
+
+<table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/mock/HasInOrderVerificationMode.html" target="_self">HasInOrderVerificationMode</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/mock/HasInOrderVerificationMode.html#verificationMode" target="_self">verificationMode</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/Sugar.html" target="_self">Sugar</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/Sugar.html#ok" target="_self">ok</a>, <a href="../../../org/specs/Sugar.html#ko" target="_self">ko</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/CalledInOrderMatchers.MockCall.html#equals%28Any%29" target="_self">equals</a></em>
+        (<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div>This method is used to compare the receiver object (<code>this</code>)
+    with the argument object (<code>arg0</code>) for equivalence.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/CalledInOrderMatchers.MockCall.html#hashCode%28%29" target="_self">hashCode</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+        
+        <div>Returns a hash code value for the object.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/CalledInOrderMatchers.MockCall.html#productArity" target="_self">productArity</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/CalledInOrderMatchers.MockCall.html#productElement%28Int%29" target="_self">productElement</a></em>
+        (<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/CalledInOrderMatchers.MockCall.html#productPrefix" target="_self">productPrefix</a></em>
+         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/CalledInOrderMatchers.MockCall.html#then%28CalledInOrderMatchers.this.MockCall%29" target="_self">then</a></em>
+        (<em>other</em> : <a href="../../../org/specs/mock/CalledInOrderMatchers.MockCall.html" target="_self">MockCall</a>) : <a href="../../../org/specs/mock/CalledInOrderMatchers.MockCallsList.html" target="_self">MockCallsList</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/CalledInOrderMatchers.MockCall.html#toString%28%29" target="_self">toString</a></em>
+         : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+        
+        <div>Returns a string representation of the object.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/mock/CalledInOrderMatchers.MockCall.html#verifInOrderMode" target="_self">verifInOrderMode</a></em>
+         : <a href="" target="contentFrame" class="org/mockito/internal/verification/api/VerificationInOrderMode">org.mockito.internal.verification.api.VerificationInOrderMode</a>
+        
+        
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/mock/HasInOrderVerificationMode.html" target="_self">HasInOrderVerificationMode</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/mock/HasInOrderVerificationMode.html#once" target="_self">once</a>, <a href="../../../org/specs/mock/HasInOrderVerificationMode.html#twice" target="_self">twice</a>, <a href="../../../org/specs/mock/HasInOrderVerificationMode.html#times%28Int%29" target="_self">times</a>, <a href="../../../org/specs/mock/HasInOrderVerificationMode.html#atLeastOnce" target="_self">atLeastOnce</a>, <a href="../../../org/specs/mock/HasInOrderVerificationMode.html#atLeastTwice" target="_self">atLeastTwice</a>, <a href="../../../org/specs/mock/HasInOrderVerificationMode.html#atLeast%28HasInOrderVerificationMode.this.RangeInt%29" target="_self">atLeast</a>, <a href="../../../org/specs/mock/HasInOrderVerificationMode.html#setVerificationMode%28org.mockito.internal.verification.api.VerificationMode%29" target="_self">setVerificationMode</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/Sugar.html" target="_self">Sugar</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/Sugar.html#anyPrintable%28T%29" target="_self">anyPrintable</a>, <a href="../../../org/specs/Sugar.html#iterableToPrintable%28Iterable%5BT%5D%29" target="_self">iterableToPrintable</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/NumberOfTimes.html" target="_self">NumberOfTimes</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/NumberOfTimes.html#integerToRange%28Int%29" target="_self">integerToRange</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/io/ConsoleOutput.html" target="_self">ConsoleOutput</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/io/ConsoleOutput.html#println%28Any%29" target="_self">println</a>, <a href="../../../org/specs/io/ConsoleOutput.html#printf%28String%2CAny*%29" target="_self">printf</a>, <a href="../../../org/specs/io/ConsoleOutput.html#flush%28%29" target="_self">flush</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/io/Output.html" target="_self">Output</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/io/Output.html#printStackTrace%28Throwable%29" target="_self">printStackTrace</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/util/Products.html" target="_self">Products</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/util/Products.html#unitToList%28Unit%29" target="_self">unitToList</a>, <a href="../../../org/specs/util/Products.html#anyToList%28T%29" target="_self">anyToList</a>, <a href="../../../org/specs/util/Products.html#productToList1%28Product1%5BT%5D%29" target="_self">productToList1</a>, <a href="../../../org/specs/util/Products.html#productToList2%28Product2%5BT%2CT%5D%29" target="_self">productToList2</a>, <a href="../../../org/specs/util/Products.html#productToList3%28Product3%5BT%2CT%2CT%5D%29" target="_self">productToList3</a>, <a href="../../../org/specs/util/Products.html#productToList4%28Product4%5BT%2CT%2CT%2CT%5D%29" target="_self">productToList4</a>, <a href="../../../org/specs/util/Products.html#productToList5%28Product5%5BT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList5</a>, <a href="../../../org/specs/util/Products.html#productToList6%28Product6%5BT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList6</a>, <a href="../../../org/specs/util/Products.html#productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList7</a>, <a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList8</a>, <a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList9</a>, <a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList10</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList11</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList12</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList13</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList14</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList15</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList16</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList17</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList18</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList19</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      <table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Additional Constructor Details</td></tr>
+        </table><div><a name="this%28%28%29%3D%3EAny%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>this</em>(<em>result</em> : () =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="../../../org/specs/mock/CalledInOrderMatchers.MockCall.html" target="_self">MockCall</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr></div>
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="verifInOrderMode"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>verifInOrderMode</em> : <a href="" target="contentFrame" class="org/mockito/internal/verification/api/VerificationInOrderMode">org.mockito.internal.verification.api.VerificationInOrderMode</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="then%28CalledInOrderMatchers.this.MockCall%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>then</em>(<em>other</em> : <a href="../../../org/specs/mock/CalledInOrderMatchers.MockCall.html" target="_self">MockCall</a>) : <a href="../../../org/specs/mock/CalledInOrderMatchers.MockCallsList.html" target="_self">MockCallsList</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="hashCode%28%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>hashCode</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns a hash code value for the object.  
+    <p>
+    The default hashing algorithm is platform dependent.  
+    Note that it is allowed for two objects to have identical hash
+    codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet not be
+    equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A
+    degenerate implementation could always return <code>0</code>.
+    However, it is required that if two objects are equal
+    (<code>o1.equals(o2)</code> returns <code>true</code>) that they
+    have identical hash codes
+    (<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when
+    overriding this method, be sure to verify that the behavior is
+    consistent with the <code>equals</code> method.
+    </p>
+    <p></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the hash code value for the object.      </p></dd></dl>
+    <hr></hr>
+<a name="toString%28%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>toString</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Returns a string representation of the object.  
+    <p>
+    The default representation is platform dependent.</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>a string representation of the object.     </p></dd></dl>
+    <hr></hr>
+<a name="equals%28Any%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>equals</em>(<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>This method is used to compare the receiver object (<code>this</code>)
+    with the argument object (<code>arg0</code>) for equivalence.  
+    
+    <p>
+    The default implementations of this method is an <a
+    href="http://en.wikipedia.org/wiki/Equivalence_relation">equivalence
+    relation</a>:
+      <ul>
+      <li>It is reflexive: for any instance <code>x</code> of type <code>Any</code>, 
+      <code>x.equals(x)</code> should return <code>true</code>.</li>
+      <li>It is symmetric: for any instances <code>x</code> and <code>y</code> of type 
+      <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and only 
+      if <code>y.equals(x)</code> returns <code>true</code>.</li>
+      <li>It is transitive: for any instances 
+      <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code>
+      if <code>x.equals(y)</code> returns <code>true</code> and 
+      <code>y.equals(z)</code> returns 
+      <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</li>
+    </ul>
+    </p>
+    <p>
+    If you override this method, you should verify that
+    your implementation remains an equivalence relation.
+    Additionally, when overriding this method it is often necessary to
+    override <code>hashCode</code> to ensure that objects that are
+    "equal" (<code>o1.equals(o2)</code> returns <code>true</code>)
+    hash to the same <a href="Int.html"><code>Int</code></a>
+    (<code>o1.hashCode.equals(o2.hashCode)</code>).</dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Parameters</b></dt><dd><code>arg0 - </code>the object to compare against this object for equality.</dd><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.    </p></dd></dl>
+    <hr></hr>
+<a name="productPrefix"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>productPrefix</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="" target="contentFrame" class="scala/Product">scala.Product</a>.<a href="#productPrefix" target="contentFrame" class="scala/Product">scala.Product.productPrefix</a>
+        </dd>
+      </dl><hr></hr>
+<a name="productArity"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>productArity</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="" target="contentFrame" class="scala/Product">scala.Product</a>.<a href="#productArity" target="contentFrame" class="scala/Product">scala.Product.productArity</a>
+        </dd>
+      </dl><hr></hr>
+<a name="productElement%28Int%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>productElement</em>(<em>arg0</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+      </dt>
+      <dd></dd>
+    </dl><dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="" target="contentFrame" class="scala/Product">scala.Product</a>.<a href="#productElement" target="contentFrame" class="scala/Product">scala.Product.productElement</a>
+        </dd>
+      </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

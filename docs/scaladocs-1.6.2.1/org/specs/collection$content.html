@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>All classes and objects in org.specs.collection</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
+        </head>
+        <body onload="init()"><div class="page-title"><div>specs 1.6.2.1 API</div></div><p><div>This document is the API specification for specs 1.6.2.1 API</div></p><table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Class Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/collection/JavaConversions.html" target="_self">JavaConversions</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait provides some implicit conversions between Java collections and scala.collection.List</div>
+      </td>
+    </tr>        
+        </table>
+<table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Object Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/collection/ExtendedIterable$object.html" target="_self">ExtendedIterable</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>The ExtendedIterable object offers utility methods applicable to iterables like:<ul>
+ <li><code>toStream</code>
+ <li><code>toDeepString</code>: calls toString recursively on the iterable elements
+ <li><code>sameElementsAs</code>: compares 2 iterables recursively
+ </ul></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/collection/ExtendedList$object.html" target="_self">ExtendedList</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This object provides useful functions for Lists, like:<ul>
+ <li><code>everyOrder</code>: return all permutations of the list elements 
+ <li><code>mix</code>: from one list and one element, return all the lists created by inserting this element in the original list
+ <li><code>removeFirst</code>: return a list minus the first element matching a given element according to a predicate
+ </ul></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/collection/JavaCollectionsConversion$object.html" target="_self">JavaCollectionsConversion</a></em>
+        <code> extends </code><a href="../../org/specs/collection/JavaConversions.html" target="_self">JavaConversions</a>
+        
+        <div>Copyright (c) 2007-2010 Eric Torreborre <etorreborre@yahoo.com>
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+ the Software. Neither the name of specs nor the names of its contributors may be used to endorse or promote
+ products derived from this software without specific prior written permission.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+ TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS IN THE SOFTWARE.</div>
+      </td>
+    </tr>        
+        </table></body>
+      </html>

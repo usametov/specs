@@ -1,0 +1,820 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>All classes and objects in org.specs.runner</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
+        </head>
+        <body onload="init()"><div class="page-title"><div>specs 1.6.2.1 API</div></div><p><div>This document is the API specification for specs 1.6.2.1 API</div></p><table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Class Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/ClassRunner.html" target="_self">ClassRunner</a></em>
+        <code> extends </code><a href="../../org/specs/util/Classes.html" target="_self">Classes</a><code> with </code><a href="../../org/specs/runner/OutputReporter.html" target="_self">OutputReporter</a>
+        
+        <div>Copyright (c) 2007-2009 Eric Torreborre <etorreborre@yahoo.com>
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+ the Software. Neither the name of specs nor the names of its contributors may be used to endorse or promote
+ products derived from this software without specific prior written permission.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+ TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS INTHE SOFTWARE.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/Console.html" target="_self">Console</a></em>
+        <code> extends </code><a href="../../org/specs/runner/OutputReporter.html" target="_self">OutputReporter</a><code> with </code><a href="../../org/specs/io/ConsoleOutput.html" target="_self">ConsoleOutput</a>
+        
+        <div>Implementation of the <code>OutputReporter</code> with a <code>ConsoleOutput</code>
+ and a <code>SimpleTimer</code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/ConsoleNotifier.html" target="_self">ConsoleNotifier</a></em>
+        <code> extends </code><a href="../../org/specs/runner/Notifier.html" target="_self">Notifier</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Simple implementation of the Notifier trait to display messages in the console</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/ConsoleRunner.html" target="_self">ConsoleRunner</a></em>
+        (<code>val </code><em>specifications</em> : <a href="../../org/specs/Specification.html" target="_self">Specification</a>*)<code> extends </code><a href="../../org/specs/runner/Console.html" target="_self">Console</a>
+        
+        <div>This class implements the <code>Console</code> trait and can be initialized with specifications directly<br>
+ Usage: <code>object mySpecRunner extends ConsoleRunner(mySpec1, mySpec2)</code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/DefaultEventHandler.html" target="_self">DefaultEventHandler</a></em>
+        <code> extends </code><a href="" target="contentFrame" class="org/scalatools/testing/EventHandler">org.scalatools.testing.EventHandler</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/ExampleTestCase.html" target="_self">ExampleTestCase</a></em>
+        (<code>val </code><em>example</em> : <a href="../../org/specs/specification/Examples.html" target="_self">Examples</a>, <em>description</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="" target="contentFrame" class="junit/framework/TestCase">junit.framework.TestCase</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>A <code>ExampleTestCase</code> reports the result of an example</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/ExamplesTestSuite.html" target="_self">ExamplesTestSuite</a></em>
+        (<em>description</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>examples</em> : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../org/specs/specification/Examples.html" target="_self">Examples</a>], <em>skipped</em> : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="" target="contentFrame" class="java/lang/Throwable">java.lang.Throwable</a>])<code> extends </code><a href="../../org/specs/runner/JUnitSuite.html" target="_self">JUnitSuite</a><code> with </code><a href="../../org/specs/util/Stacktraces.html" target="_self">Stacktraces</a>
+        
+        <div>A <code>ExamplesTestSuite</code> is a JUnitSuite reporting the results of
+ a System under test (sus) as a list of examples, represented by ExampleTestCase objects.
+ If an example has subExamples, they won't be shown as sub tests because that would necessitate to
+ run the example during the initialization time.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/File.html" target="_self">File</a></em>
+        <code> extends </code><a href="../../org/specs/io/FileSystem.html" target="_self">FileSystem</a><code> with </code><a href="../../org/specs/log/ConsoleLog.html" target="_self">ConsoleLog</a><code> with </code><a href="../../org/specs/runner/SpecsHolder.html" target="_self">SpecsHolder</a><code> with </code><a href="../../org/specs/runner/Console.html" target="_self">Console</a>
+        
+        <div>This trait groups the functionalities of runners creating files from
+ specification executions.
+ 
+ It requires the definition of:<ul>
+ <li>a file name function</li>
+ <li>an output directory function</li>
+ <li>a specs holder having all the specifications to report</li>
+ <li>a specOutput function creating the output string to copy to the target file</li>
+ </ul>
+ 
+ Concrete implementations of that trait can be found in HtmlRunner and XmlRunner.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/FileReporter.html" target="_self">FileReporter</a></em>
+        (<em>outputDirPath</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>fName</em> : (<a href="../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>) =&gt; <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="../../org/specs/runner/File.html" target="_self">File</a>
+        
+        <div>A FileReporter class is used to have a constructor setting the required variables of the File trait.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/FileSuite.html" target="_self">FileSuite</a></em>
+        (<em>outputDirPath</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>fName</em> : (<a href="../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>) =&gt; <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="../../org/specs/runner/File.html" target="_self">File</a>
+        
+        <div>A FileSuite is like a FileReporter but supports being extended with the JUnit trait</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/Html.html" target="_self">Html</a></em>
+        <code> extends </code><a href="../../org/specs/runner/File.html" target="_self">File</a>
+        
+        <div>The Html trait outputs the results of a specification execution as an html
+ file in a given output directory.
+
+ The default file name for the report is "specs-report.html" and that report
+ contains all examples description with their execution status: error, failure, success, skipped.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/HtmlRunner.html" target="_self">HtmlRunner</a></em>
+        (<code>val </code><em>specs</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../org/specs/Specification.html" target="_self">Specification</a>], <em>outputDirPath</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>fName</em> : (<a href="../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>) =&gt; <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="../../org/specs/runner/FileReporter.html" target="_self">FileReporter</a><code> with </code><a href="../../org/specs/runner/Html.html" target="_self">Html</a>
+        
+        <div>Copyright (c) 2007-2010 Eric Torreborre <etorreborre@yahoo.com>
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+ the Software. Neither the name of specs nor the names of its contributors may be used to endorse or promote
+ products derived from this software without specific prior written permission.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+ TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS IN THE SOFTWARE.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/HtmlSuite.html" target="_self">HtmlSuite</a></em>
+        (<code>val </code><em>specs</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../org/specs/Specification.html" target="_self">Specification</a>], <code>val </code><em>outputDirPath</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>fName</em> : (<a href="../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>) =&gt; <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="../../org/specs/runner/FileSuite.html" target="_self">FileSuite</a><code> with </code><a href="../../org/specs/runner/Html.html" target="_self">Html</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>The HtmlSuite class is almost the same as the HtmlRunner class but can be extended with a JUnit trait.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/JUnit.html" target="_self">JUnit</a></em>
+        <code> extends </code><a href="../../org/specs/runner/JUnitSuite.html" target="_self">JUnitSuite</a><code> with </code><a href="../../org/specs/runner/Reporter.html" target="_self">Reporter</a>
+        
+        <div>Extension of a JUnitSuite initializing the suite with one or more specifications</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/JUnit3.html" target="_self">JUnit3</a></em>
+        (<code>val </code><em>specifications</em> : <a href="../../org/specs/Specification.html" target="_self">Specification</a>*)<code> extends </code><a href="../../org/specs/runner/JUnit.html" target="_self">JUnit</a>
+        
+        <div>Concrete class providing specifications to be used as a JUnitSuite</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/JUnit4.html" target="_self">JUnit4</a></em>
+        (<code>val </code><em>specifications</em> : <a href="../../org/specs/Specification.html" target="_self">Specification</a>*)<code> extends </code><a href="../../org/specs/runner/JUnit.html" target="_self">JUnit</a>
+        
+        <div>Concrete class providing specifications to be used as a JUnitSuite</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/JUnitSuite.html" target="_self">JUnitSuite</a></em>
+        <code> extends </code><a href="" target="contentFrame" class="junit/framework/Test">junit.framework.Test</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>The strategy for running Specifications with JUnit is as follow:</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/JUnitSuiteRunner.html" target="_self">JUnitSuiteRunner</a></em>
+        (<em>klass</em> : <a href="" target="contentFrame" class="java/lang/Class">java.lang.Class</a>[<a href="" target="contentFrame" class="junit/framework/Test">junit.framework.Test</a>])<code> extends </code><a href="" target="contentFrame" class="org/junit/runner/Runner">org.junit.runner.Runner</a><code> with </code><a href="" target="contentFrame" class="org/junit/runner/manipulation/Filterable">org.junit.runner.manipulation.Filterable</a><code> with </code><a href="" target="contentFrame" class="org/junit/runner/manipulation/Sortable">org.junit.runner.manipulation.Sortable</a><code> with </code><a href="../../org/specs/runner/TestDescription.html" target="_self">TestDescription</a>
+        
+        <div>The JUnitSuiteRunner provides a JUnit4 annotation to run <code>JUnitSuite</code> test suites created from specifications
+ <code>klass</code> is a JUnitSuite which implements the junit.framework.Test interface</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/Notifier.html" target="_self">Notifier</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This is a generic trait for defining a notified object which will know about the state of a run.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/NotifierRunner.html" target="_self">NotifierRunner</a></em>
+        (<code>val </code><em>specs</em> : <a href="" target="contentFrame" class="scala/Array">scala.Array</a>[<a href="../../org/specs/Specification.html" target="_self">Specification</a>], <code>val </code><em>notifiers</em> : <a href="" target="contentFrame" class="scala/Array">scala.Array</a>[<a href="../../org/specs/runner/Notifier.html" target="_self">Notifier</a>])<code> extends </code><a href="../../org/specs/runner/Reporter.html" target="_self">Reporter</a>
+        
+        <div>This reporter reports specification by executing them and specifying the results to Notifiers.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/OldTestClassAdaptingListener.html" target="_self">OldTestClassAdaptingListener</a></em>
+        (<em>notifier</em> : <a href="" target="contentFrame" class="org/junit/runner/notification/RunNotifier">org.junit.runner.notification.RunNotifier</a>)<code> extends </code><a href="" target="contentFrame" class="junit/framework/TestListener">junit.framework.TestListener</a><code> with </code><a href="../../org/specs/runner/TestDescription.html" target="_self">TestDescription</a>
+        
+        <div>This class listens for JUnit3 results (as a TestListener) and notifies a JUnit4 RunNotifier</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/OutputReporter.html" target="_self">OutputReporter</a></em>
+        <code> extends </code><a href="../../org/specs/runner/Reporter.html" target="_self">Reporter</a><code> with </code><a href="../../org/specs/io/Output.html" target="_self">Output</a>
+        
+        <div>This trait reports the result of a specification on a simple <code>Output</code>
+ which must support <code>print</code>-like methods</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/Reporter.html" target="_self">Reporter</a></em>
+        <code> extends </code><a href="../../org/specs/runner/SpecsFilter.html" target="_self">SpecsFilter</a><code> with </code><a href="../../org/specs/log/ConsoleLog.html" target="_self">ConsoleLog</a>
+        
+        <div>An object using the reporter trait should be able to report the result of the execution of several specifications.
+ Those specifications are usually provided by the object when using the reportSpecs method, but
+ the report functionality can also be accessed by passing other specifications directly to the report(specs) method.
+
+ Any object using the Reporter trait will also inherit a main method controlling:<ul>
+ <li>the reading of command line arguments</li>
+ <li>the display of stacktraces</li>
+ <li>the acception or rejection of some tags</li>
+ </ul>
+
+ The accepted arguments are:<ul>
+ <li>-ns or --nostacktrace to avoid displaying stacktraces</li>
+ <li>-acc, --accept followed by a comma separated list of tag names for the tags to accept</li>
+ <li>-rej, --reject followed by a comma separated list of tag names for the tags to reject</li>
+ </ul>
+
+ When subclassing the Reporter trait, the subclasses should usually override the report(specs) method
+ to provide concrete reporting behavior.<p/>
+
+ Subclasses must not forget to insert a super.report call at the beginning of their processing
+ to allow the chaining of several reporters as traits:
+ object runner extends Runner(spec) with Html with Xml for example</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/Runner.html" target="_self">Runner</a></em>
+        (<code>val </code><em>specifications</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../org/specs/Specification.html" target="_self">Specification</a>], <code>val </code><em>reporters</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../org/specs/runner/Reporter.html" target="_self">Reporter</a>])<code> extends </code><a href="../../org/specs/runner/Reporter.html" target="_self">Reporter</a>
+        
+        <div>The Runner class is an abstract class referencing one or several specifications to run. It should be extended
+ with at least one runner trait which will use the <code>specifications</code>.
+ Usage:<code>
+ class mySpecRunner extends Runner(mySpec) with JUnit with Console with ScalaTest
+ or
+ class mySpecRunner extends Runner(mySpec) with JUnit with Xml with ScalaTest
+ which will also output the results in an xml file
+ <code>
+
+ Then mySpecRunner class can be executed in many ways:<ul>
+ <li>scala -cp ... -e "new mySpecRunner.reportSpecs"
+ <li>java -cp ... org.scalatest.Runner -g -s mySpecRunner
+ <li>java -cp ... org.junit.runner.JUnitCore mySpecRunner
+ </ul>
+
+ It is annotated with a JUnit annotation because JUnit requires that annotation should be placed on the class which will be executed.
+ In the example above, Runner(mySpec) is the only class; JUnit, Console and ScalaTest are all traits.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/ScalaTest.html" target="_self">ScalaTest</a></em>
+        <code> extends </code><a href="../../org/specs/runner/SpecsFilter.html" target="_self">SpecsFilter</a><code> with </code><a href="../../org/specs/FailOrSkip.html" target="_self">FailOrSkip</a><code> with </code><a href="" target="contentFrame" class="org/scalatest/Suite">org.scalatest.Suite</a>
+        
+        <div>This trait is a ScalaTest suite which is build from one or more specifications (provided by the inherited SpecsHolder)
+ The subspecifications, as well the system under test (sus) are provided as nested suites
+ Usage:<code>
+ class mySpecRunner extends Runner(mySpec) with ScalaTest
+ <code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/ScalaTestSuite.html" target="_self">ScalaTestSuite</a></em>
+        (<em>specifications</em> : <a href="../../org/specs/Specification.html" target="_self">Specification</a>*)<code> extends </code><a href="../../org/specs/runner/ScalaTest.html" target="_self">ScalaTest</a>
+        
+        <div>Concrete class for the ScalaTest trait.
+ Usage:<code>
+ class mySpecRunner extends ScalaTestSuite(mySpec)
+ </code>
+ Then it can be run with the ScalaTest gui runner: <code>java -cp ... org.scalatest.Runner -g -s mySpecRunner</code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/SkippedAssertionError.html" target="_self">SkippedAssertionError</a></em>
+        (<em>t</em> : <a href="" target="contentFrame" class="java/lang/Throwable">java.lang.Throwable</a>)<code> extends </code><a href="../../org/specs/runner/SpecAssertionFailedError.html" target="_self">SpecAssertionFailedError</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/SpecAssertionFailedError.html" target="_self">SpecAssertionFailedError</a></em>
+        (<em>t</em> : <a href="" target="contentFrame" class="java/lang/Throwable">java.lang.Throwable</a>)<code> extends </code><a href="" target="contentFrame" class="junit/framework/AssertionFailedError">junit.framework.AssertionFailedError</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This class refines the <code>AssertionFailedError</code> from junit
+ and provides the stackTrace of an exception which occured during the specification execution</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/SpecError.html" target="_self">SpecError</a></em>
+        (<em>t</em> : <a href="" target="contentFrame" class="java/lang/Throwable">java.lang.Throwable</a>)<code> extends </code><a href="" target="contentFrame" class="java/lang/Error">java.lang.Error</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This class represents errors thrown in an example. It needs to be set as something
+ different from an AssertionFailedError so that tools like Ant can make the distinction between failures and errors</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/SpecificationsFinder.html" target="_self">SpecificationsFinder</a></em>
+        <code> extends </code><a href="../../org/specs/io/FileSystem.html" target="_self">FileSystem</a><code> with </code><a href="../../org/specs/util/Classes.html" target="_self">Classes</a>
+        
+        <div>This trait browses files on a given path and returns what can be matching specification class names.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/SpecsFileRunner.html" target="_self">SpecsFileRunner</a></em>
+        (<em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>specFilterPattern</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>susFilter</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>exampleFilter</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="../../org/specs/runner/SpecsFinder.html" target="_self">SpecsFinder</a><code> with </code><a href="../../org/specs/runner/Console.html" target="_self">Console</a>
+        
+        <div>This class can be used to search for specifications on a given path
+ and execute them.<br>
+ Usage: <code>object myFileRunner extends SpecsFileRunner(path, pattern)</code><br>
+ Where <code>path</code> is a path to a directory containing scala files (it can be a glob: i.e. "dir*spec.scala")
+ and <code>pattern</code> is a regular expression which is supposed to match an object name extending a Specification
+ class named ".*Spec.*"
+
+ The systems and examples can also be filtered by specifying patterns. These patterns can be passed as System properties,
+ by specifying -Dsus="regexp" or -Dexample="regexp".</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/SpecsFilter.html" target="_self">SpecsFilter</a></em>
+        <code> extends </code><a href="../../org/specs/runner/SpecsHolder.html" target="_self">SpecsHolder</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Copyright (c) 2007-2010 Eric Torreborre <etorreborre@yahoo.com>
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+ the Software. Neither the name of specs nor the names of its contributors may be used to endorse or promote
+ products derived from this software without specific prior written permission.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+ TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS IN THE SOFTWARE.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/SpecsFilterPatternException.html" target="_self">SpecsFilterPatternException</a></em>
+        (<code>val </code><em>description</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>cause</em> : <a href="" target="contentFrame" class="java/lang/Exception">java.lang.Exception</a>)<code> extends </code><a href="" target="contentFrame" class="java/lang/Exception">java.lang.Exception</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>specific exception for pattern compilation errors</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/SpecsFinder.html" target="_self">SpecsFinder</a></em>
+        (<code>val </code><em>path</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>pattern</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>asOneSpecification</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>)<code> extends </code><a href="../../org/specs/runner/SpecificationsFinder.html" target="_self">SpecificationsFinder</a><code> with </code><a href="../../org/specs/runner/SpecsFilter.html" target="_self">SpecsFilter</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>The SpecsFinder class can be used to hold the specifications found on a given path, with a given pattern.
+ Those specifications will either be combined into a big one or kept separate as a Sequence.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/SpecsFramework.html" target="_self">SpecsFramework</a></em>
+        <code> extends </code><a href="" target="contentFrame" class="org/scalatools/testing/Framework">org.scalatools.testing.Framework</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Implementation of the Framework interface for the sbt tool.
+ It declares the classes which can be executed by the specs library.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/SpecsHolder.html" target="_self">SpecsHolder</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>The SpecsHolder trait is used by any class providing access to a sequence of specifications</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/SusSuite.html" target="_self">SusSuite</a></em>
+        (<em>sus</em> : <a href="../../org/specs/specification/Sus.html" target="_self">Sus</a>)<code> extends </code><a href="" target="contentFrame" class="org/scalatest/Suite">org.scalatest.Suite</a>
+        
+        <div>This class is a ScalaTest suite which is build from a system under test
+ its subspecifications or its systems under test (sus)</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/TeamCityOutput.html" target="_self">TeamCityOutput</a></em>
+        <code> extends </code><a href="../../org/specs/io/Output.html" target="_self">Output</a>
+        
+        <div>The TeamCityOutput trait prints messages respecting the TeamCity format on the standard output.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/TeamCityReporter.html" target="_self">TeamCityReporter</a></em>
+        <code> extends </code><a href="../../org/specs/runner/OutputReporter.html" target="_self">OutputReporter</a><code> with </code><a href="../../org/specs/runner/TeamCityOutput.html" target="_self">TeamCityOutput</a>
+        
+        <div>The TeamCityReporter is an output reporter tailored to output
+ messages using the TeamCity format.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/TeamCityRunner.html" target="_self">TeamCityRunner</a></em>
+        (<code>val </code><em>specs</em> : <a href="../../org/specs/Specification.html" target="_self">Specification</a>*)<code> extends </code><a href="../../org/specs/runner/TeamCityReporter.html" target="_self">TeamCityReporter</a>
+        
+        <div>This runner provides a main method to take a list of specifications and
+ report them one by one.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/TestDescription.html" target="_self">TestDescription</a></em>
+        <code> extends </code><a href="../../org/specs/util/Stacktraces.html" target="_self">Stacktraces</a>
+        
+        <div>Common methods to create descriptions from a test or a test suite.
+ If the test is executed from Maven, its description can be simplified and not include
+ the test hashcode.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/TestInterfaceNotifier.html" target="_self">TestInterfaceNotifier</a></em>
+        (<em>handler</em> : <a href="" target="contentFrame" class="org/scalatools/testing/EventHandler">org.scalatools.testing.EventHandler</a>, <em>loggers</em> : <a href="" target="contentFrame" class="scala/Array">scala.Array</a>[<a href="" target="contentFrame" class="org/scalatools/testing/Logger">org.scalatools.testing.Logger</a>], <em>configuration</em> : <a href="../../org/specs/util/Configuration.html" target="_self">Configuration</a>)<code> extends </code><a href="../../org/specs/runner/Notifier.html" target="_self">Notifier</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>The TestInterface notifier notifies the EventHandler of the specification execution</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/TestInterfaceRunner.html" target="_self">TestInterfaceRunner</a></em>
+        (<em>loader</em> : <a href="" target="contentFrame" class="java/lang/ClassLoader">java.lang.ClassLoader</a>, <em>loggers</em> : <a href="" target="contentFrame" class="scala/Array">scala.Array</a>[<a href="" target="contentFrame" class="org/scalatools/testing/Logger">org.scalatools.testing.Logger</a>])<code> extends </code><a href="" target="contentFrame" class="org/scalatools/testing/Runner">org.scalatools.testing.Runner</a><code> with </code><a href="../../org/specs/util/Classes.html" target="_self">Classes</a>
+        
+        <div>Runner for TestInterface.
+ It creates a Specification class with the given classLoader the classes which can be executed by the specs library.
+ 
+ Then it uses a NotifierRunner to notify the EventHandler of the test events.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/UserError.html" target="_self">UserError</a></em>
+        (<code>val </code><em>t</em> : <a href="" target="contentFrame" class="java/lang/Throwable">java.lang.Throwable</a>, <code>val </code><em>context</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="" target="contentFrame" class="java/lang/Throwable">java.lang.Throwable</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/Xml.html" target="_self">Xml</a></em>
+        <code> extends </code><a href="../../org/specs/runner/File.html" target="_self">File</a>
+        
+        <div>The <code>Xml</code> trait is used to create an xml file, in a specified output directory
+ with the results of a specification execution.
+ 
+ If the output directory is not specified <pre>object runner extends XmlRunner(mySpec)</pre> then the
+ current directory will be used
+
+ Usage:<code>
+ class mySpecRunner extends Runner(mySpec) with Xml
+ <code>
+ 
+ The output directory can be overriden if necessary:<pre>
+ class mySpecRunner extends Runner(mySpec) with Xml { override def outputDir = "./results/specs" }</pre></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/XmlRunner.html" target="_self">XmlRunner</a></em>
+        (<code>val </code><em>specs</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../org/specs/Specification.html" target="_self">Specification</a>], <code>val </code><em>outputDirPath</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>fName</em> : (<a href="../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>) =&gt; <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="../../org/specs/runner/FileReporter.html" target="_self">FileReporter</a><code> with </code><a href="../../org/specs/runner/Xml.html" target="_self">Xml</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>Concrete class for the Xml trait. It allows to select a specification to run and an output path
+ Usage: <code>object runner extends XmlRunner("./results/specs", mySpec)</code>
+
+ The name of the generated file is specification.name by default but can be overriden:<pre>
+ object runner extends XmlRunner(mySpec, "./results/specs"){ override def fileName(s: Specification)="spec-report.xml" }</pre></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/XmlSuite.html" target="_self">XmlSuite</a></em>
+        (<code>val </code><em>specs</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../org/specs/Specification.html" target="_self">Specification</a>], <code>val </code><em>outputDirPath</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>fName</em> : (<a href="../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>) =&gt; <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="../../org/specs/runner/FileSuite.html" target="_self">FileSuite</a><code> with </code><a href="../../org/specs/runner/Xml.html" target="_self">Xml</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>The XmlSuite is the same class as XmlRunner but can be extended with the JUnit trait.</div>
+      </td>
+    </tr>        
+        </table>
+<table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Object Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/AnsiColors$object.html" target="_self">AnsiColors</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This object provides AnsiColors codes for the OutputReporter</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/HtmlNamingFunction$object.html" target="_self">HtmlNamingFunction</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/HtmlSuite$object.html" target="_self">HtmlSuite</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../org/specs/Specification.html" target="_self">Specification</a>], <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, (<a href="../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>) =&gt; <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) =&gt; <a href="../../org/specs/runner/HtmlSuite.html" target="_self">HtmlSuite</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/JUnitOptions$object.html" target="_self">JUnitOptions</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait allows to pass system options to Tests and TestSuites</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/NamingFunction$object.html" target="_self">NamingFunction</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/RunnerMain$object.html" target="_self">RunnerMain</a></em>
+        <code> extends </code><a href="../../org/specs/runner/SpecificationsFinder.html" target="_self">SpecificationsFinder</a>
+        
+        <div>The RunnerMain object is a utility which can be used to run a reporter class passed as a 
+ argument on the command line.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/SpecsFilterPatternException$object.html" target="_self">SpecsFilterPatternException</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <a href="" target="contentFrame" class="java/lang/Exception">java.lang.Exception</a>) =&gt; <a href="../../org/specs/runner/SpecsFilterPatternException.html" target="_self">SpecsFilterPatternException</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/SpecsFinder$object.html" target="_self">SpecsFinder</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Companion SpecsFinder object to create a SpecsFinder returning an aggregate Specification of
+ all the found specifications.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/TeamCityUtils$object.html" target="_self">TeamCityUtils</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>TeamCity string formatting utilities.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/UserError$object.html" target="_self">UserError</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/Throwable">java.lang.Throwable</a>, <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) =&gt; <a href="../../org/specs/runner/UserError.html" target="_self">UserError</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/XmlNamingFunction$object.html" target="_self">XmlNamingFunction</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/XmlRunner$object.html" target="_self">XmlRunner</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../org/specs/Specification.html" target="_self">Specification</a>], <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, (<a href="../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>) =&gt; <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) =&gt; <a href="../../org/specs/runner/XmlRunner.html" target="_self">XmlRunner</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/runner/XmlSuite$object.html" target="_self">XmlSuite</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="../../org/specs/Specification.html" target="_self">Specification</a>], <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, (<a href="../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>) =&gt; <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) =&gt; <a href="../../org/specs/runner/XmlSuite.html" target="_self">XmlSuite</a>
+        
+        
+      </td>
+    </tr>        
+        </table></body>
+      </html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait ConfigurationFactory in org.specs.util</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/util$package.html" target="_self">org.specs.util</a>
+        <br></br>
+        <span class="entity">trait  ConfigurationFactory</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/util/ConfigurationFactory"><code>org/specs/util/ConfigurationFactory.scala</code></a>]
+      </div><hr></hr>
+      <a name="ConfigurationFactory"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>ConfigurationFactory</em>
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/io/FileSystem.html" target="_self">FileSystem</a></dd>
+    </dl><dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/util/Configuration.html" target="_self">Configuration</a></dd>
+      </dl><hr></hr>
+      
+
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/ConfigurationFactory.html#boolean%28java.util.Properties%2CString%2CBoolean%29" target="_self">boolean</a></em>
+        (<em>properties</em> : <a href="" target="contentFrame" class="java/util/Properties">java.util.Properties</a>, <em>propName</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>defaultValue</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/ConfigurationFactory.html#getConfiguration%28String%29" target="_self">getConfiguration</a></em>
+        (<em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/util/Configuration.html" target="_self">Configuration</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/ConfigurationFactory.html#getConfigurationFromClass%28String%29" target="_self">getConfigurationFromClass</a></em>
+        (<em>className</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../../org/specs/util/Configuration.html" target="_self">Configuration</a>]
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/ConfigurationFactory.html#getConfigurationFromPropertiesFile%28String%29" target="_self">getConfigurationFromPropertiesFile</a></em>
+        (<em>filePath</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../../org/specs/util/Configuration.html" target="_self">Configuration</a>]
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/ConfigurationFactory.html#getDefaultConfiguration" target="_self">getDefaultConfiguration</a></em>
+         : <a href="../../../org/specs/util/Configuration.html" target="_self">Configuration</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/ConfigurationFactory.html#getUserConfiguration" target="_self">getUserConfiguration</a></em>
+         : <a href="../../../org/specs/util/Configuration.html" target="_self">Configuration</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/ConfigurationFactory.html#getUserConfigurationFromClass" target="_self">getUserConfigurationFromClass</a></em>
+         : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../../org/specs/util/Configuration.html" target="_self">Configuration</a>]
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/ConfigurationFactory.html#getUserConfigurationFromPropertiesFile" target="_self">getUserConfigurationFromPropertiesFile</a></em>
+         : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../../org/specs/util/Configuration.html" target="_self">Configuration</a>]
+        
+        <div></div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/io/FileSystem.html" target="_self">FileSystem</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/io/FileSystem.html#filePaths%28String%29" target="_self">filePaths</a>, <a href="../../../org/specs/io/FileSystem.html#globToPattern%28String%29" target="_self">globToPattern</a>, <a href="../../../org/specs/io/FileSystem.html#isDir%28String%29" target="_self">isDir</a>, <a href="../../../org/specs/io/FileSystem.html#createDir%28String%29" target="_self">createDir</a>, <a href="../../../org/specs/io/FileSystem.html#removeDir%28String%29" target="_self">removeDir</a>, <a href="../../../org/specs/io/FileSystem.html#exists%28String%29" target="_self">exists</a>, <a href="../../../org/specs/io/FileSystem.html#canRead%28String%29" target="_self">canRead</a>, <a href="../../../org/specs/io/FileSystem.html#canWrite%28String%29" target="_self">canWrite</a>, <a href="../../../org/specs/io/FileSystem.html#isAbsolute%28String%29" target="_self">isAbsolute</a>, <a href="../../../org/specs/io/FileSystem.html#isFile%28String%29" target="_self">isFile</a>, <a href="../../../org/specs/io/FileSystem.html#isDirectory%28String%29" target="_self">isDirectory</a>, <a href="../../../org/specs/io/FileSystem.html#isHidden%28String%29" target="_self">isHidden</a>, <a href="../../../org/specs/io/FileSystem.html#getName%28String%29" target="_self">getName</a>, <a href="../../../org/specs/io/FileSystem.html#getAbsolutePath%28String%29" target="_self">getAbsolutePath</a>, <a href="../../../org/specs/io/FileSystem.html#getCanonicalPath%28String%29" target="_self">getCanonicalPath</a>, <a href="../../../org/specs/io/FileSystem.html#getParent%28String%29" target="_self">getParent</a>, <a href="../../../org/specs/io/FileSystem.html#listFiles%28String%29" target="_self">listFiles</a>, <a href="../../../org/specs/io/FileSystem.html#copyDir%28java.net.URL%2CString%29" target="_self">copyDir</a>, <a href="../../../org/specs/io/FileSystem.html#copyDir%28java.net.URL%2CString%2Corg.specs.specification.Tagged%29" target="_self">copyDir</a>, <a href="../../../org/specs/io/FileSystem.html#copyDir%28String%2CString%29" target="_self">copyDir</a>, <a href="../../../org/specs/io/FileSystem.html#copyDir%28String%2CString%2Corg.specs.specification.Tagged%29" target="_self">copyDir</a>, <a href="../../../org/specs/io/FileSystem.html#copyFile%28String%2CString%29" target="_self">copyFile</a>, <a href="../../../org/specs/io/FileSystem.html#unjar%28String%2CString%29" target="_self">unjar</a>, <a href="../../../org/specs/io/FileSystem.html#unjar%28String%2CString%2CString%29" target="_self">unjar</a>, <a href="../../../org/specs/io/FileSystem.html#copy%28java.io.InputStream%2Cjava.io.OutputStream%29" target="_self">copy</a>, <a href="../../../org/specs/io/FileSystem.html#copySpecResourcesDir%28String%2CString%29" target="_self">copySpecResourcesDir</a>, <a href="../../../org/specs/io/FileSystem.html#getResourcesNamed%28String%29" target="_self">getResourcesNamed</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/io/FileWriter.html" target="_self">FileWriter</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/io/FileWriter.html#write%28String%29" target="_self">write</a>, <a href="../../../org/specs/io/FileWriter.html#createFile%28String%29" target="_self">createFile</a>, <a href="../../../org/specs/io/FileWriter.html#mkdirs%28String%29" target="_self">mkdirs</a>, <a href="../../../org/specs/io/FileWriter.html#writeFile%28String%2C%3D%3EString%29" target="_self">writeFile</a>, <a href="../../../org/specs/io/FileWriter.html#getWriter%28String%29" target="_self">getWriter</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/io/FileReader.html" target="_self">FileReader</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/io/FileReader.html#readFile%28String%29" target="_self">readFile</a>, <a href="../../../org/specs/io/FileReader.html#inputStream%28String%29" target="_self">inputStream</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="getDefaultConfiguration"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>getDefaultConfiguration</em> : <a href="../../../org/specs/util/Configuration.html" target="_self">Configuration</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the default configuration class</dd></dl>
+    <hr></hr>
+<a name="getUserConfiguration"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>getUserConfiguration</em> : <a href="../../../org/specs/util/Configuration.html" target="_self">Configuration</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the user configuration class</dd></dl>
+    <hr></hr>
+<a name="getConfiguration%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>getConfiguration</em>(<em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../org/specs/util/Configuration.html" target="_self">Configuration</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the configuration class named className and the default configuration otherwise.</dd></dl>
+    <hr></hr>
+<a name="getConfigurationFromClass%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>getConfigurationFromClass</em>(<em>className</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../../org/specs/util/Configuration.html" target="_self">Configuration</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the configuration object from a class file</dd></dl>
+    <hr></hr>
+<a name="getConfigurationFromPropertiesFile%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>getConfigurationFromPropertiesFile</em>(<em>filePath</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../../org/specs/util/Configuration.html" target="_self">Configuration</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the user configuration object from a properties file</dd></dl>
+    <hr></hr>
+<a name="boolean%28java.util.Properties%2CString%2CBoolean%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>boolean</em>(<em>properties</em> : <a href="" target="contentFrame" class="java/util/Properties">java.util.Properties</a>, <em>propName</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <em>defaultValue</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>) : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="getUserConfigurationFromClass"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>getUserConfigurationFromClass</em> : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../../org/specs/util/Configuration.html" target="_self">Configuration</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the user configuration object from a class file</dd></dl>
+    <hr></hr>
+<a name="getUserConfigurationFromPropertiesFile"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>getUserConfigurationFromPropertiesFile</em> : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../../org/specs/util/Configuration.html" target="_self">Configuration</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Returns</b></dt><dd>the user configuration from a properties file</dd></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

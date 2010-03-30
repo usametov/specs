@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait Sugar in org.specs</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../org/specs$package.html" target="_self">org.specs</a>
+        <br></br>
+        <span class="entity">trait  Sugar</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/Sugar"><code>org/specs/Sugar.scala</code></a>]
+      </div><hr></hr>
+      <a name="Sugar"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>Sugar</em>
+      </dt>
+      <dd><code> extends </code><a href="../../org/specs/util/Products.html" target="_self">Products</a><code> with </code><a href="../../org/specs/io/ConsoleOutput.html" target="_self">ConsoleOutput</a><code> with </code><a href="../../org/specs/NumberOfTimes.html" target="_self">NumberOfTimes</a></dd>
+    </dl>
+      <dl><dd>Synctactic sugar for specifications. Since it makes heavy uses of implicit definitions,<br>
+ The name reminds that it must be used with caution</dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../org/specs/Sugar$object.html" target="_self">Sugar</a>, <a href="../../org/specs/mock/HasInOrderVerificationMode.html" target="_self">HasInOrderVerificationMode</a>, <a href="../../org/spex/Specification.html" target="_self">Specification</a></dd>
+      </dl><hr></hr>
+      
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Value Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/Sugar.html#ko" target="_self">ko</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div>alias for the value false. Allows to write <code> myObject.status mustBe ko </code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> val</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/Sugar.html#ok" target="_self">ok</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        <div>alias for the value true. Allows to write <code> myObject.status mustBe ok </code></div>
+      </td>
+    </tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/Sugar.html#anyPrintable%28T%29" target="_self">anyPrintable</a></em>
+        [<em>T</em>](<em>a</em> : <a href="../../org/specs/Sugar.html#anyPrintable%28T%29#T" target="_self">T</a>) : <a href="../../org/specs/Sugar.Printable.html" target="_self">Printable</a>[<a href="../../org/specs/Sugar.html#anyPrintable%28T%29#T" target="_self">T</a>]
+        
+        <div>This implicit definition allows to print any object to the console with:<br/>
+   <code>myObject.pln</code> or <code>myObject.println</code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/Sugar.html#iterableToPrintable%28Iterable%5BT%5D%29" target="_self">iterableToPrintable</a></em>
+        [<em>T</em>](<em>a</em> : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../org/specs/Sugar.html#iterableToPrintable%28Iterable%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../org/specs/Sugar.PrintableIterable.html" target="_self">PrintableIterable</a>[<a href="../../org/specs/Sugar.html#iterableToPrintable%28Iterable%5BT%5D%29#T" target="_self">T</a>]
+        
+        <div>This implicit definition allows to print any iterable to the console with:<br/>
+   <code>myIterable.printEach</code>. It also returns the iterable for better method insertion</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../org/specs/NumberOfTimes.html" target="_self">NumberOfTimes</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../org/specs/NumberOfTimes.html#integerToRange%28Int%29" target="_self">integerToRange</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../org/specs/io/ConsoleOutput.html" target="_self">ConsoleOutput</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../org/specs/io/ConsoleOutput.html#println%28Any%29" target="_self">println</a>, <a href="../../org/specs/io/ConsoleOutput.html#printf%28String%2CAny*%29" target="_self">printf</a>, <a href="../../org/specs/io/ConsoleOutput.html#flush%28%29" target="_self">flush</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../org/specs/io/Output.html" target="_self">Output</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../org/specs/io/Output.html#printStackTrace%28Throwable%29" target="_self">printStackTrace</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../org/specs/util/Products.html" target="_self">Products</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../org/specs/util/Products.html#unitToList%28Unit%29" target="_self">unitToList</a>, <a href="../../org/specs/util/Products.html#anyToList%28T%29" target="_self">anyToList</a>, <a href="../../org/specs/util/Products.html#productToList1%28Product1%5BT%5D%29" target="_self">productToList1</a>, <a href="../../org/specs/util/Products.html#productToList2%28Product2%5BT%2CT%5D%29" target="_self">productToList2</a>, <a href="../../org/specs/util/Products.html#productToList3%28Product3%5BT%2CT%2CT%5D%29" target="_self">productToList3</a>, <a href="../../org/specs/util/Products.html#productToList4%28Product4%5BT%2CT%2CT%2CT%5D%29" target="_self">productToList4</a>, <a href="../../org/specs/util/Products.html#productToList5%28Product5%5BT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList5</a>, <a href="../../org/specs/util/Products.html#productToList6%28Product6%5BT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList6</a>, <a href="../../org/specs/util/Products.html#productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList7</a>, <a href="../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList8</a>, <a href="../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList9</a>, <a href="../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList10</a>, <a href="../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList11</a>, <a href="../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList12</a>, <a href="../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList13</a>, <a href="../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList14</a>, <a href="../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList15</a>, <a href="../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList16</a>, <a href="../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList17</a>, <a href="../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList18</a>, <a href="../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList19</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Class Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/Sugar.Printable.html" target="_self">Printable</a></em>
+        [<em>T</em>](<em>a</em> : <a href="../../org/specs/Sugar.Printable.html#T" target="_self">T</a>)<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/Sugar.PrintableIterable.html" target="_self">PrintableIterable</a></em>
+        [<em>T</em>](<em>a</em> : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../org/specs/Sugar.PrintableIterable.html#T" target="_self">T</a>])<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+      </table>
+
+      
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Value Details</td></tr>
+        </table><div><a name="ok"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>val</code>
+        <em>ok</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>alias for the value true. Allows to write <code> myObject.status mustBe ok </code></dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="ko"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>val</code>
+        <em>ko</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>alias for the value false. Allows to write <code> myObject.status mustBe ko </code></dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="anyPrintable%28T%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>anyPrintable</em>[<em>T</em>](<em>a</em> : <a href="../../org/specs/Sugar.html#anyPrintable%28T%29#T" target="_self">T</a>) : <a href="../../org/specs/Sugar.Printable.html" target="_self">Printable</a>[<a href="../../org/specs/Sugar.html#anyPrintable%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>This implicit definition allows to print any object to the console with:<br/>
+   <code>myObject.pln</code> or <code>myObject.println</code></dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="iterableToPrintable%28Iterable%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>iterableToPrintable</em>[<em>T</em>](<em>a</em> : <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../org/specs/Sugar.html#iterableToPrintable%28Iterable%5BT%5D%29#T" target="_self">T</a>]) : <a href="../../org/specs/Sugar.PrintableIterable.html" target="_self">PrintableIterable</a>[<a href="../../org/specs/Sugar.html#iterableToPrintable%28Iterable%5BT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>This implicit definition allows to print any iterable to the console with:<br/>
+   <code>myIterable.printEach</code>. It also returns the iterable for better method insertion</dd></dl>
+      <dl></dl>
+    <hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

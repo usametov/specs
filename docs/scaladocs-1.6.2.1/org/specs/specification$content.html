@@ -1,0 +1,875 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>All classes and objects in org.specs.specification</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../script.js"></script>
+        </head>
+        <body onload="init()"><div class="page-title"><div>specs 1.6.2.1 API</div></div><p><div>This document is the API specification for specs 1.6.2.1 API</div></p><table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Class Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/AfterSpecFailureException.html" target="_self">AfterSpecFailureException</a></em>
+        (<em>e</em> : <a href="../../org/specs/execute/FailureException.html" target="_self">FailureException</a>)<code> extends </code><a href="../../org/specs/specification/SpecFailureException.html" target="_self">SpecFailureException</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a></em>
+        <code> extends </code><a href="../../org/specs/util/TreeNode.html" target="_self">TreeNode</a><code> with </code><a href="../../org/specs/specification/SpecificationSystems.html" target="_self">SpecificationSystems</a><code> with </code><a href="../../org/specs/specification/SpecificationExecutor.html" target="_self">SpecificationExecutor</a><code> with </code><a href="../../org/specs/specification/ExampleExpectationsListener.html" target="_self">ExampleExpectationsListener</a><code> with </code><a href="../../org/specs/specification/Tagged.html" target="_self">Tagged</a><code> with </code><a href="../../org/specs/execute/HasResults.html" target="_self">HasResults</a><code> with </code><a href="../../org/specs/specification/LinkedSpecification.html" target="_self">LinkedSpecification</a><code> with </code><a href="../../org/specs/specification/SpecificationConfiguration.html" target="_self">SpecificationConfiguration</a>
+        
+        <div>This class provides the base structure of a specification.<br>
+ A specification has a name, a description and is composed of:<ul>
+ <li>sub specifications and/or</li>
+ <li>systems under specification (systems)</li>
+ </ul>
+ <p/>
+ In turn the systems can contain recursively contain examples.
+ <p/>
+ The description of a specification is its class name by default but which can be also overriden for better readibility.
+ For example, it is possible to declare a Specification using a constructor taking the full name of the specification:
+ <code>
+ class messagingSpec extends Specification("Specification for the messaging system")
+ </code>
+ <p/>
+
+ A <code>BaseSpecification</code> implements several traits:<ul>
+ <li>TreeNode: allowing the specification, its systems and examples to be considered as a generic tree of nodes</li>
+ <li>SpecificationSystems: trait holding the systems declaration and navigation functions</li>
+ <li>SpecificationExecutor: this enables the execution of examples in isolation, by executing them in a clone of the specification, so that any local variable used
+ by the example is set to its initial value as if other examples never had modified it. This trait specialize the ExampleLifeCycle trait defining all steps of an example execution</li>
+ <li>ExampleExpectationsListener: this trait allows an expectation to be added to the current example being executed</li>
+ <li>Tagged: allow to tag the specification with some name so that accepted and rejected tags define what should be executed or not</li>
+ <li>HasResults: generic trait for anything declaring failures, successes, errors and skipped</li>
+ <li>LinkedSpecification: this allow the declaration of links between literal specifications</li>
+ <li>SpecificationConfiguration: this defines variables which affect the behaviour of the specification. For example if examples without expectations 
+ should be marked as pending</li>
+ </ul></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/BeforeAfter.html" target="_self">BeforeAfter</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This traits adds before / after capabilities to specifications, so that a context can be defined for
+ each system under test being specified and trigger some actions before or after each example.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/BeforeSpecFailureException.html" target="_self">BeforeSpecFailureException</a></em>
+        (<em>e</em> : <a href="../../org/specs/execute/FailureException.html" target="_self">FailureException</a>)<code> extends </code><a href="../../org/specs/specification/SpecFailureException.html" target="_self">SpecFailureException</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/Context.html" target="_self">Context</a></em>
+        <code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>Case class holding before and after functions to be set on a system under test.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/Contexts.html" target="_self">Contexts</a></em>
+        <code> extends </code><a href="../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a><code> with </code><a href="../../org/specs/specification/BeforeAfter.html" target="_self">BeforeAfter</a>
+        
+        <div>This trait helps creating Context objects encapsulating the before/after actions which can be associated to a sus.
+ 
+ It provides factory methods to create Context objects, with before example actions only, or after example actions only, etc,...
+ 
+ A context object can be passed to a sus description:<code>
+   "a system" ->-(context) should { ... }
+ </code>
+ 
+ A context for a whole specification can also be created:<code>
+ 
+ object specWithDatabase extends Specification {
+   new SpecContext {
+     beforeSpec(initDb)
+     beforeExample(deleteUserTable)
+   }
+   "A repository" should { ... }
+ }
+ </code>
+ 
+ This context can contain beforeSpec/afterSpec methods and will be applied to every system in the specification.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/DefaultExampleExpectationsListener.html" target="_self">DefaultExampleExpectationsListener</a></em>
+        <code> extends </code><a href="../../org/specs/specification/ExampleExpectationsListener.html" target="_self">ExampleExpectationsListener</a>
+        
+        <div>Trait adding an expectation on a default unused example.
+
+ It is used to provide a default behavior when examples are not necessary, i.e. when using SpecsMatchers only.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/DefaultExpectableFactory.html" target="_self">DefaultExpectableFactory</a></em>
+        <code> extends </code><a href="../../org/specs/specification/ExpectableFactory.html" target="_self">ExpectableFactory</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/DelegatedExpectableFactory.html" target="_self">DelegatedExpectableFactory</a></em>
+        (<code>val </code><em>delegate</em> : <a href="../../org/specs/specification/ExpectableFactory.html" target="_self">ExpectableFactory</a>)<code> extends </code><a href="../../org/specs/specification/ExpectableFactory.html" target="_self">ExpectableFactory</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/Detailed.html" target="_self">Detailed</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>abstract data type representing Detailed information about failures</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/DetailedFailures.html" target="_self">DetailedFailures</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This traits adds the possibility to add declarations for detailed failures when matching strings.<br/>
+ Generally detailed failures can be configured with:<ul>
+ <li>the expected separators: [] are the default</li>
+ <li>a trigger size: the minimal size of the string to match for which to show detailed failures</li>
+ <li>a shorten size: the size of text which should show up between 2 differences, the rest being elided</li>
+ </ul></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/Example.html" target="_self">Example</a></em>
+        (<code>val </code><em>exampleDesc</em> : <a href="../../org/specs/specification/ExampleDescription.html" target="_self">ExampleDescription</a>, <code>private </code><em>p</em> : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../org/specs/specification/ExampleContext.html" target="_self">ExampleContext</a>])<code> extends </code><a href="../../org/specs/specification/Examples.html" target="_self">Examples</a>
+        
+        <div>The Example class represents a block of code with expectations.<br/>
+ 
+ It has a description and an optional context.
+ 
+ Usage: <code>"this is an example" in { // code containing expectations }</code> or<br>
+ <code>"this is an example" >> { // code containing expectations }</code><br>
+ ">>" can be used instead of "in" if that word makes no sense in the specification</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/ExampleContext.html" target="_self">ExampleContext</a></em>
+        <code> extends </code><a href="../../org/specs/specification/ExampleLifeCycle.html" target="_self">ExampleLifeCycle</a>
+        
+        <div>This trait extends the ExampleLifeCycle with the capability to store actions 
+ to be executed before and after examples.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/ExampleDescription.html" target="_self">ExampleDescription</a></em>
+        (<code>val </code><em>desc</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>toXhtml</em> : <a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>)<code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>Description of the example. It can possibly be a piece of html code to display in a literate specification</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/ExampleExecution.html" target="_self">ExampleExecution</a></em>
+        (<code>val </code><em>example</em> : <a href="../../org/specs/specification/Examples.html" target="_self">Examples</a>, <code>val </code><em>expectations</em> : (<a href="../../org/specs/specification/Examples.html" target="_self">Examples</a>) =&gt; <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>)<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This class encapsulates the execution of an example.
+ It will check if the example is tagged for execution ("accepted") and it will execute the expectations as
+ long as the untilr predicate is not satisfied (if there is one)</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/ExampleExpectationsListener.html" target="_self">ExampleExpectationsListener</a></em>
+        <code> extends </code><a href="../../org/specs/specification/ExpectationsListener.html" target="_self">ExpectationsListener</a>
+        
+        <div>Trait adding the new expectation to an example, creating one if necessary.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/ExampleLifeCycle.html" target="_self">ExampleLifeCycle</a></em>
+        <code> extends </code><a href="../../org/specs/specification/LifeCycle.html" target="_self">LifeCycle</a><code> with </code><a href="../../org/specs/specification/ExampleStructure.html" target="_self">ExampleStructure</a>
+        
+        <div>Implementation of a LifeCycle backed up by an ExampleStructure which can
+ be added any subexample created during the Example execution.
+ 
+ It will also check that the executed example contains expectations,
+ otherwise will mark the example as "PENDING"</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/ExampleStructure.html" target="_self">ExampleStructure</a></em>
+        <code> extends </code><a href="../../org/specs/util/TreeNode.html" target="_self">TreeNode</a><code> with </code><a href="../../org/specs/specification/Tagged.html" target="_self">Tagged</a><code> with </code><a href="../../org/specs/execute/DefaultResults.html" target="_self">DefaultResults</a>
+        
+        <div>This trait models the structure of an Example with:<ul>
+ <li>subexamples</li>
+ <li>an example filter, which is a function filtering examples to execute</li>
+ </ul></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/Examples.html" target="_self">Examples</a></em>
+        (<code>val </code><em>exampleDescription</em> : <a href="../../org/specs/specification/ExampleDescription.html" target="_self">ExampleDescription</a>, <code>val </code><em>parentCycle</em> : <a href="" target="contentFrame" class="scala/Option">scala.Option</a>[<a href="../../org/specs/specification/LifeCycle.html" target="_self">LifeCycle</a>])<code> extends </code><a href="../../org/specs/specification/ExampleContext.html" target="_self">ExampleContext</a><code> with </code><a href="../../org/specs/execute/DefaultResults.html" target="_self">DefaultResults</a>
+        
+        <div>The <code>Examples</code> class specifies a list of examples of a system behaviour.<br/>
+ It either is an example containing other subexamples or a "terminal" example defining expectations on the
+ system behaviour.
+ It has:<ul>
+ <li>a description explaining what is being done
+ <li>an optional <code>ExampleLifeCycle</code> which defines behaviour before/after example and test</ul>
+ <p/>
+ 
+ Concrete instances of this class are the Example class and the Sus class. The main difference between those two classes 
+ is the methods they offer to create their body:<br/> 
+ <code>"this" should {...} for a Sus</code><br/> and 
+ <code>"this must behave like this" in {...}</code><br/>
+ 
+ One important thing to note is that subexamples are only created when the parent <code>Examples</code> is executed.
+ 
+ A Sus can also have a literate description when defined in a LiterateSpecification.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/Expectable.html" target="_self">Expectable</a></em>
+        [<em>T</em>](<em>value</em> : =&gt; <a href="../../org/specs/specification/Expectable.html#T" target="_self">T</a>)<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>An expectable is an object supporting the execution of expectations through matchers.<pre>
+   thisExpectable must passMatcher
+ </pre>
+ It can be optionally related to an example when created for an anonymous example.
+ Otherwise it just fires a FailureException when failing:<pre>
+ object spec extends Specification {
+   // is automatically related to an anonymous example
+   // it will be executed only once the example is executed
+   // @see org.specs.specification.ExpectableFactory
+   // @see org.specs.specification.ExampleExpectationsListener
+   1 must_== 1
+
+   // in that case, no example is set but during the execution of the "in" part
+   // the failure exception will be caught by the example and stored
+   "this example fails" in { 1 must_== 0 }
+ }
+ object test extends SpecsMatchers {
+   // this expectable is not related to any example and executes right away throwing an exception if failing
+   1 must_== 1
+ }
+ </pre></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/ExpectableFactory.html" target="_self">ExpectableFactory</a></em>
+        <code> extends </code><a href="../../org/specs/specification/ExampleExpectationsListener.html" target="_self">ExampleExpectationsListener</a><code> with </code><a href="../../org/specs/specification/SuccessValues.html" target="_self">SuccessValues</a><code> with </code><a href="../../org/specs/specification/FailureFactory.html" target="_self">FailureFactory</a>
+        
+        <div>This trait defines implicit definitions which are used to create Expectable objects
+ and associate them with the latest defined example<br>
+ Usage: <code>
+ 2.1 must beCloseTo(2.0, .1)
+ </code>or<br><code
+ theDouble(2.1) must beCloseTo(2.0, .1)
+ </code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/Expectation.html" target="_self">Expectation</a></em>
+        [<em>T</em>](<em>value</em> : =&gt; <a href="../../org/specs/specification/Expectation.html#T" target="_self">T</a>)<code> extends </code><a href="../../org/specs/specification/Expectable.html" target="_self">Expectable</a>[<a href="../../org/specs/specification/Expectation.html#T" target="_self">T</a>]
+        
+        <div>The Expect class adds matcher methods to objects which are being specified<br>
+ Usage: <code>new Expect(value, example) must beMatching(otherValue)</code></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/ExpectationsListener.html" target="_self">ExpectationsListener</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Trait declaring the ability to add a new expectation to an Example.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/FailureExceptionWithResult.html" target="_self">FailureExceptionWithResult</a></em>
+        [<em>T</em>](<code>val </code><em>m</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>result</em> : <a href="../../org/specs/specification/Result.html" target="_self">Result</a>[<a href="../../org/specs/specification/FailureExceptionWithResult.html#T" target="_self">T</a>])<code> extends </code><a href="../../org/specs/execute/FailureException.html" target="_self">FailureException</a><code> with </code><a href="../../org/specs/specification/HasResult.html" target="_self">HasResult</a>[<a href="../../org/specs/specification/FailureExceptionWithResult.html#T" target="_self">T</a>]
+        
+        <div>Special failure exception carrying a Result object, carrying an Expectable.
+ This Exception is necessary to handle the "OR" case "value must be equalTo(bad) or be equalTo(good)"
+ where the first match is not ok.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/FailureFactory.html" target="_self">FailureFactory</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait abstracts the creation of a failure when an expectation fails.
+ The only expectation is that the failure is a Throwable and can hold the result of a previous match</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/HasResult.html" target="_self">HasResult</a></em>
+        [<em>T</em>]<code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Trait marking anything that holds a Result. It is used to find a commonality between Specs and JUnit failures
+ which are holding a Result.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/IterableExpectable.html" target="_self">IterableExpectable</a></em>
+        [<em>I</em> &lt;: <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>](<em>value</em> : =&gt; <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../org/specs/specification/IterableExpectable.html#I" target="_self">I</a>])<code> extends </code><a href="../../org/specs/specification/Expectable.html" target="_self">Expectable</a>[<a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="../../org/specs/specification/IterableExpectable.html#I" target="_self">I</a>]]
+        
+        <div>Specialized expectable class with iterable matchers aliases</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/IterableStringExpectable.html" target="_self">IterableStringExpectable</a></em>
+        (<em>value</em> : =&gt; <a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>])<code> extends </code><a href="../../org/specs/specification/Expectable.html" target="_self">Expectable</a>[<a href="" target="contentFrame" class="scala/Iterable">scala.Iterable</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>]]
+        
+        <div>Specialized expectable class with iterable[String] matchers aliases</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/LifeCycle.html" target="_self">LifeCycle</a></em>
+        <code> extends </code><a href="../../org/specs/specification/SequentialExecution.html" target="_self">SequentialExecution</a>
+        
+        <div>This trait models the execution cycle of an example.
+ 
+ LifeCycles can be chained with a "parent" relationship, where the parent LifeCycle of an example is his 
+ enclosing sus and the parent LifeCycle of a Sus is its enclosing specification.
+ 
+ Since a Specification mixes in this trait, some methods can be overriden to provide more specialized behaviour:
+ <ul>
+ <li>before(/after)Example: code to execute before(/after) the example</li>
+ <li>before(/after)Expectations: code to execute before(/after) the example expectations. The difference with beforeExample is that 
+ any FailureException thrown by this method will be counted as an example failure (whereas it is counted as an exception in beforeExample)</li>
+ <li>executeExpectations: execute the example expectations</li>
+ <li>executeExample: strategy for executing the example. The default strategy is implemented in the ExampleLifeCycle trait. 
+ In this trait, we check if the example is the first one to execute. If so, it is executed right away. If not, the execution is 
+ delegated to the parent LifeCycle which ultimately is the SpecificationExecutor trait which executes the example in
+ isolation from other examples by executing it in a clone of the Specification.
+ </li>
+ </ul></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/LinkedSpecification.html" target="_self">LinkedSpecification</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait adds the possibility to declare an included specification as "linked" in order to 
+ control its reporting in a separate file for example.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/LiterateDescription.html" target="_self">LiterateDescription</a></em>
+        (<code>val </code><em>desc</em> : <a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>)<code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>support class representing the formatted literate description of a SUS</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/OrResults.html" target="_self">OrResults</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>this implicit def allows a result to be or-ed with a matcher.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/PathException.html" target="_self">PathException</a></em>
+        (<code>val </code><em>m</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="" target="contentFrame" class="java/lang/Exception">java.lang.Exception</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/Result.html" target="_self">Result</a></em>
+        [<em>T</em>](<em>expectable</em> : =&gt; <a href="../../org/specs/specification/Expectable.html" target="_self">Expectable</a>[<a href="../../org/specs/specification/Result.html#T" target="_self">T</a>], <em>display</em> : (<a href="../../org/specs/specification/SuccessValue.html" target="_self">SuccessValue</a>) =&gt; <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="../../org/specs/specification/SuccessValue.html" target="_self">SuccessValue</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Result of a match
+ 
+ This object carries the Expectable object, in order to apply further matches if necessary.
+ 
+ It has a display function which can be used to set the toString function to an empty string,
+ in the case of Literate specifications where we want to embed expectations without having their
+ result printed in the specification text.
+ 
+ It can also be set to "already ok" in order to court-circuit any further matches in the case of "or-ed"
+ matchers with a successful first match.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/SequentialExecution.html" target="_self">SequentialExecution</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait defines if the examples must be executed as soon as they are defined</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/Snippet.html" target="_self">Snippet</a></em>
+        (<code>val </code><em>snippetCode</em> : <a href="../../org/specs/util/Property.html" target="_self">Property</a>[<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>])<code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/Snippets.html" target="_self">Snippets</a></em>
+        <code> extends </code><a href="../../org/specs/util/ScalaInterpreter.html" target="_self">ScalaInterpreter</a>
+        
+        <div>Copyright (c) 2007-2010 Eric Torreborre <etorreborre@yahoo.com>
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+ the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+ the Software. Neither the name of specs nor the names of its contributors may be used to endorse or promote
+ products derived from this software without specific prior written permission.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+ TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ DEALINGS IN THE SOFTWARE.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/SpecFailureException.html" target="_self">SpecFailureException</a></em>
+        (<em>message</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="../../org/specs/execute/FailureException.html" target="_self">FailureException</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/SpecificationConfiguration.html" target="_self">SpecificationConfiguration</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait defines some optional behaviour for a specification such as executing examples in a copy of the specification
+ to be isolated from any other example modifying local variables.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/SpecificationExecutor.html" target="_self">SpecificationExecutor</a></em>
+        <code> extends </code><a href="../../org/specs/specification/LifeCycle.html" target="_self">LifeCycle</a>
+        
+        <div>This trait executes an example by cloning the enclosing specification first.
+ 
+ This way, the example is executed in a total isolation so as not to share local variables between examples
+ and avoid side-effects.
+ 
+ Warning: this works by considering that the "examples" method is stable on a BaseSpecification and
+ will always return the same examples in the same order</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/SpecificationSystems.html" target="_self">SpecificationSystems</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait abstracts the building and storing of the systems of a Specification.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/SpecsFailureFactory.html" target="_self">SpecsFailureFactory</a></em>
+        <code> extends </code><a href="../../org/specs/specification/FailureFactory.html" target="_self">FailureFactory</a><code> with </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Specs implementation of a Failure Factory</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/StringExpectable.html" target="_self">StringExpectable</a></em>
+        [<em>A</em> &lt;: <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>](<em>value</em> : =&gt; <a href="../../org/specs/specification/StringExpectable.html#A" target="_self">A</a>)<code> extends </code><a href="../../org/specs/specification/Expectable.html" target="_self">Expectable</a>[<a href="../../org/specs/specification/StringExpectable.html#A" target="_self">A</a>]
+        
+        <div>Specialized expectable class with string matchers aliases</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/SuccessValue.html" target="_self">SuccessValue</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>value returned by an expectable whose string representation can vary.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/SuccessValues.html" target="_self">SuccessValues</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>This trait transforms SuccessValue objects to a Boolean value if it is necessary, for example in
+ ScalaCheck properties.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/Sus.html" target="_self">Sus</a></em>
+        (<code>val </code><em>desc</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>specification</em> : <a href="../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>)<code> extends </code><a href="../../org/specs/specification/Examples.html" target="_self">Examples</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>The <code>Sus</code> class represents a system under specification<br>
+ It has:<ul>
+ <li>a description declaring what kind of system it is
+ <li>an <code>ExampleLifeCycle</code> which defines behaviour before/after example and test</ul>
+ It is also an <code>ExampleLifeCycle</code> so it can refine the passed cycle</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/Tag.html" target="_self">Tag</a></em>
+        (<code>val </code><em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>This class encapsulate tag strings as an object. The tag name is interpreted as a regex</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/Tagged.html" target="_self">Tagged</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>The Tagged trait allows to add tags to a Specification or a System under test.<p/>
+ The tags will be propagated to the specification or the sus components using the tagWith method. With this rule, 
+ a Tagged component should always have its parent tags (and possibly more).<p/>
+ 
+ Tags can be used when executing a Specification to restrict the executed examples. In that case, the examples are marked as skipped:<pre>
+ object mySpec extends Specification
+ mySpec.accept("unit").reject("functional") // this means that only the examples tagged as "unit" and not "functional" will be executed. 
+ </pre>
+ 
+ Any Tagged object can be tagged using the "tag" method, accepting any number of strings:<pre>
+ "this example is tagged" in {
+   // expect something
+ } tag("unit", "sample")
+ </pre></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/fullDetails.html" target="_self">fullDetails</a></em>
+        (<code>val </code><em>separators</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>startDiffSize</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>, <code>val </code><em>shortenSize</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>)<code> extends </code><a href="../../org/specs/specification/Detailed.html" target="_self">Detailed</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>all details should be shown</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/noDetails.html" target="_self">noDetails</a></em>
+        <code> extends </code><a href="../../org/specs/specification/Detailed.html" target="_self">Detailed</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>no details should be shown</div>
+      </td>
+    </tr>        
+        </table>
+<table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Object Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/Context$object.html" target="_self">Context</a></em>
+        <code> extends </code>() =&gt; <a href="../../org/specs/specification/Context.html" target="_self">Context</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/DefaultLifeCycle$object.html" target="_self">DefaultLifeCycle</a></em>
+        <code> extends </code><a href="../../org/specs/specification/Example.html" target="_self">Example</a>
+        
+        <div>Default LifeCycle with no actions before or after.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/ExampleDescription$object.html" target="_self">ExampleDescription</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Case object to build Example descriptions with just a string.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/FailureExceptionWithResult$object.html" target="_self">FailureExceptionWithResult</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/LiterateDescription$object.html" target="_self">LiterateDescription</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>) =&gt; <a href="../../org/specs/specification/LiterateDescription.html" target="_self">LiterateDescription</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/PathException$object.html" target="_self">PathException</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) =&gt; <a href="../../org/specs/specification/PathException.html" target="_self">PathException</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/Snippet$object.html" target="_self">Snippet</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/Snippets$object.html" target="_self">Snippets</a></em>
+        <code> extends </code><a href="../../org/specs/specification/Snippets.html" target="_self">Snippets</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/Sus$object.html" target="_self">Sus</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <a href="../../org/specs/specification/BaseSpecification.html" target="_self">BaseSpecification</a>) =&gt; <a href="../../org/specs/specification/Sus.html" target="_self">Sus</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/Tag$object.html" target="_self">Tag</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) =&gt; <a href="../../org/specs/specification/Tag.html" target="_self">Tag</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/fullDetails$object.html" target="_self">fullDetails</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Int.html" target="_self">Int</a>) =&gt; <a href="../../org/specs/specification/fullDetails.html" target="_self">fullDetails</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../org/specs/specification/noDetails$object.html" target="_self">noDetails</a></em>
+        <code> extends </code>() =&gt; <a href="../../org/specs/specification/noDetails.html" target="_self">noDetails</a>
+        
+        
+      </td>
+    </tr>        
+        </table></body>
+      </html>

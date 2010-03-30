@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait DefaultExecutable in org.specs.execute</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/execute$package.html" target="_self">org.specs.execute</a>
+        <br></br>
+        <span class="entity">trait  DefaultExecutable</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/execute/DefaultExecutable"><code>org/specs/execute/DefaultExecutable.scala</code></a>]
+      </div><hr></hr>
+      <a name="DefaultExecutable"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>DefaultExecutable</em>
+      </dt>
+      <dd><code> extends </code><a href="../../../org/specs/execute/DefaultResults.html" target="_self">DefaultResults</a><code> with </code><a href="../../../org/specs/execute/Executable.html" target="_self">Executable</a><code> with </code><a href="../../../org/specs/execute/Commentable.html" target="_self">Commentable</a></dd>
+    </dl>
+      <dl><dd>This trait represents something that's executable and has results.
+ 
+ It can also be commented and not be executed in that case.
+ 
+ Subclasses can access the execution status with the "executionStarted" and "executed" variables.</dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/form/Field.html" target="_self">Field</a>, <a href="../../../org/specs/form/FormEnabled.html" target="_self">FormEnabled</a>, <a href="../../../org/specs/form/Prop.html" target="_self">Prop</a></dd>
+      </dl><hr></hr>
+      
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Value Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>protected var</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/execute/DefaultExecutable.html#executed" target="_self">executed</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>protected var</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/execute/DefaultExecutable.html#executionStarted" target="_self">executionStarted</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+        
+        
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="../../../org/specs/execute/DefaultResults.html" target="_self">DefaultResults</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/execute/DefaultResults.html#thisFailures" target="_self">thisFailures</a>, <a href="../../../org/specs/execute/DefaultResults.html#thisErrors" target="_self">thisErrors</a>, <a href="../../../org/specs/execute/DefaultResults.html#thisSkipped" target="_self">thisSkipped</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/execute/DefaultExecutable.html#execute" target="_self">execute</a></em>
+         : <a href="../../../org/specs/execute/DefaultExecutable.html" target="_self">DefaultExecutable</a>
+        
+        <div>Execute this only if it is not commented.
+   
+   The execution starts by a reset(), then catches and FailureException, SkippedException or Throwables to store results</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>protected abstract def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/execute/DefaultExecutable.html#executeThis" target="_self">executeThis</a></em>
+         : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        
+        <div>Extending classes must define this method to define the executed behavior</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>override def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/execute/DefaultExecutable.html#reset%28%29" target="_self">reset</a></em>
+         : <a href="../../../org/specs/execute/DefaultExecutable.html" target="_self">DefaultExecutable</a>
+        
+        <div>reset the execution to "not executed". This also resets the results.</div>
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/execute/Commentable.html" target="_self">Commentable</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/execute/Commentable.html#comment%28%29" target="_self">comment</a>, <a href="../../../org/specs/execute/Commentable.html#uncomment%28%29" target="_self">uncomment</a>, <a href="../../../org/specs/execute/Commentable.html#isCommented" target="_self">isCommented</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/execute/DefaultResults.html" target="_self">DefaultResults</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/execute/DefaultResults.html#addFailure%28org.specs.execute.FailureException%29" target="_self">addFailure</a>, <a href="../../../org/specs/execute/DefaultResults.html#addError%28Throwable%29" target="_self">addError</a>, <a href="../../../org/specs/execute/DefaultResults.html#addSkipped%28org.specs.execute.SkippedException%29" target="_self">addSkipped</a>, <a href="../../../org/specs/execute/DefaultResults.html#failures" target="_self">failures</a>, <a href="../../../org/specs/execute/DefaultResults.html#errors" target="_self">errors</a>, <a href="../../../org/specs/execute/DefaultResults.html#skipped" target="_self">skipped</a>, <a href="../../../org/specs/execute/DefaultResults.html#copyResults%28org.specs.execute.HasResults%29" target="_self">copyResults</a>, <a href="../../../org/specs/execute/DefaultResults.html#hardCopyResults%28org.specs.execute.DefaultResults%29" target="_self">hardCopyResults</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="../../../org/specs/execute/HasResults.html" target="_self">HasResults</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="../../../org/specs/execute/HasResults.html#statusClass" target="_self">statusClass</a>, <a href="../../../org/specs/execute/HasResults.html#statusAsText" target="_self">statusAsText</a>, <a href="../../../org/specs/execute/HasResults.html#hasFailureOrErrors" target="_self">hasFailureOrErrors</a>, <a href="../../../org/specs/execute/HasResults.html#failureAndErrors" target="_self">failureAndErrors</a>, <a href="../../../org/specs/execute/HasResults.html#issues" target="_self">issues</a>, <a href="../../../org/specs/execute/HasResults.html#issueMessages" target="_self">issueMessages</a>, <a href="../../../org/specs/execute/HasResults.html#hasIssues" target="_self">hasIssues</a>, <a href="../../../org/specs/execute/HasResults.html#isOk" target="_self">isOk</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Value Details</td></tr>
+        </table><div><a name="executionStarted"></a><dl>
+      <dt>
+        
+        <code>protected</code>
+        <code>var</code>
+        <em>executionStarted</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="executed"></a><dl>
+      <dt>
+        
+        <code>protected</code>
+        <code>var</code>
+        <em>executed</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Boolean.html" target="_self">Boolean</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr></div>
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="reset%28%29"></a><dl>
+      <dt>
+        
+        <code>override</code>
+        <code>def</code>
+        <em>reset</em> : <a href="../../../org/specs/execute/DefaultExecutable.html" target="_self">DefaultExecutable</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>reset the execution to "not executed". This also resets the results.</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/execute/DefaultResults.html" target="_self">DefaultResults</a>.<a href="../../../org/specs/execute/DefaultResults.html#reset%28%29" target="_self">reset</a>
+        </dd>
+      </dl><hr></hr>
+<a name="executeThis"></a><dl>
+      <dt>
+        
+        <code>protected abstract</code>
+        <code>def</code>
+        <em>executeThis</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Extending classes must define this method to define the executed behavior</dd></dl>
+      <dl></dl>
+    <hr></hr>
+<a name="execute"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>execute</em> : <a href="../../../org/specs/execute/DefaultExecutable.html" target="_self">DefaultExecutable</a>
+      </dt>
+      <dd></dd>
+    </dl>
+      <dl><dd>Execute this only if it is not commented.
+   
+   The execution starts by a reset(), then catches and FailureException, SkippedException or Throwables to store results</dd></dl>
+      <dl></dl>
+    <dl>
+        <dt style="margin:10px 0 0 20px;">
+          <b>Overrides</b>
+        </dt>
+        <dd>
+        <a href="../../../org/specs/execute/Executable.html" target="_self">Executable</a>.<a href="../../../org/specs/execute/Executable.html#execute" target="_self">execute</a>
+        </dd>
+      </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>

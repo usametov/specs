@@ -1,0 +1,512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>trait Products in org.specs.util</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../org/specs/util$package.html" target="_self">org.specs.util</a>
+        <br></br>
+        <span class="entity">trait  Products</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="org/specs/util/Products"><code>org/specs/util/Products.scala</code></a>]
+      </div><hr></hr>
+      <a name="Products"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>trait</code>
+        <em>Products</em>
+      </dt>
+      <dd><code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a></dd>
+    </dl>
+      <dl><dd>The Products trait allows the following declarations:<ul>
+   <li>val list0 = ()
+   <li>val list1 = ("a")
+   <li>val list2 = ("a", "b")</ul>
+  Produced with the following ruby code:<pre>
+   (1..19).each do |i|
+     puts "implicit def productToList#{i}[T](t: Product#{i}[#{(1..i).map{|x|"T"}.join(", ")}]) = List(#{(1..i).map {|j| "t._" + j.to_s}.join(", ")})"
+    end
+   </pre></dd></dl>
+      <dl></dl>
+    <dl>
+      <dt style="margin:10px 0 0 20px;"><b>Direct Known Subclasses:</b></dt>
+      <dd><a href="../../../org/specs/Sugar.html" target="_self">Sugar</a>, <a href="../../../org/specs/util/Products$object.html" target="_self">Products</a></dd>
+      </dl><hr></hr>
+      
+
+
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#anyToList%28T%29" target="_self">anyToList</a></em>
+        [<em>T</em>](<em>a</em> : <a href="../../../org/specs/util/Products.html#anyToList%28T%29#T" target="_self">T</a>) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#anyToList%28T%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#productToList1%28Product1%5BT%5D%29" target="_self">productToList1</a></em>
+        [<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product1">scala.Product1</a>[<a href="../../../org/specs/util/Products.html#productToList1%28Product1%5BT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList1%28Product1%5BT%5D%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList10</a></em>
+        [<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product10">scala.Product10</a>[<a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList11</a></em>
+        [<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product11">scala.Product11</a>[<a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList12</a></em>
+        [<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product12">scala.Product12</a>[<a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList13</a></em>
+        [<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product13">scala.Product13</a>[<a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList14</a></em>
+        [<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product14">scala.Product14</a>[<a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList15</a></em>
+        [<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product15">scala.Product15</a>[<a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList16</a></em>
+        [<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product16">scala.Product16</a>[<a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList17</a></em>
+        [<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product17">scala.Product17</a>[<a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList18</a></em>
+        [<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product18">scala.Product18</a>[<a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList19</a></em>
+        [<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product19">scala.Product19</a>[<a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#productToList2%28Product2%5BT%2CT%5D%29" target="_self">productToList2</a></em>
+        [<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product2">scala.Product2</a>[<a href="../../../org/specs/util/Products.html#productToList2%28Product2%5BT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList2%28Product2%5BT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList2%28Product2%5BT%2CT%5D%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#productToList3%28Product3%5BT%2CT%2CT%5D%29" target="_self">productToList3</a></em>
+        [<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product3">scala.Product3</a>[<a href="../../../org/specs/util/Products.html#productToList3%28Product3%5BT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList3%28Product3%5BT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList3%28Product3%5BT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList3%28Product3%5BT%2CT%2CT%5D%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#productToList4%28Product4%5BT%2CT%2CT%2CT%5D%29" target="_self">productToList4</a></em>
+        [<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product4">scala.Product4</a>[<a href="../../../org/specs/util/Products.html#productToList4%28Product4%5BT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList4%28Product4%5BT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList4%28Product4%5BT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList4%28Product4%5BT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList4%28Product4%5BT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#productToList5%28Product5%5BT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList5</a></em>
+        [<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product5">scala.Product5</a>[<a href="../../../org/specs/util/Products.html#productToList5%28Product5%5BT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList5%28Product5%5BT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList5%28Product5%5BT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList5%28Product5%5BT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList5%28Product5%5BT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList5%28Product5%5BT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#productToList6%28Product6%5BT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList6</a></em>
+        [<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product6">scala.Product6</a>[<a href="../../../org/specs/util/Products.html#productToList6%28Product6%5BT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList6%28Product6%5BT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList6%28Product6%5BT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList6%28Product6%5BT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList6%28Product6%5BT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList6%28Product6%5BT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList6%28Product6%5BT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList7</a></em>
+        [<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product7">scala.Product7</a>[<a href="../../../org/specs/util/Products.html#productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList8</a></em>
+        [<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product8">scala.Product8</a>[<a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29" target="_self">productToList9</a></em>
+        [<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product9">scala.Product9</a>[<a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>implicit def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../org/specs/util/Products.html#unitToList%28Unit%29" target="_self">unitToList</a></em>
+        (<em>a</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="http://www.scala-lang.org/docu/files/api/scala/Nothing.html" target="_self">Nothing</a>]
+        
+        
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="unitToList%28Unit%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>unitToList</em>(<em>a</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Unit.html" target="_self">Unit</a>) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="http://www.scala-lang.org/docu/files/api/scala/Nothing.html" target="_self">Nothing</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="anyToList%28T%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>anyToList</em>[<em>T</em>](<em>a</em> : <a href="../../../org/specs/util/Products.html#anyToList%28T%29#T" target="_self">T</a>) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#anyToList%28T%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="productToList1%28Product1%5BT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>productToList1</em>[<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product1">scala.Product1</a>[<a href="../../../org/specs/util/Products.html#productToList1%28Product1%5BT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList1%28Product1%5BT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="productToList2%28Product2%5BT%2CT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>productToList2</em>[<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product2">scala.Product2</a>[<a href="../../../org/specs/util/Products.html#productToList2%28Product2%5BT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList2%28Product2%5BT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList2%28Product2%5BT%2CT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="productToList3%28Product3%5BT%2CT%2CT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>productToList3</em>[<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product3">scala.Product3</a>[<a href="../../../org/specs/util/Products.html#productToList3%28Product3%5BT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList3%28Product3%5BT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList3%28Product3%5BT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList3%28Product3%5BT%2CT%2CT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="productToList4%28Product4%5BT%2CT%2CT%2CT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>productToList4</em>[<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product4">scala.Product4</a>[<a href="../../../org/specs/util/Products.html#productToList4%28Product4%5BT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList4%28Product4%5BT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList4%28Product4%5BT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList4%28Product4%5BT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList4%28Product4%5BT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="productToList5%28Product5%5BT%2CT%2CT%2CT%2CT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>productToList5</em>[<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product5">scala.Product5</a>[<a href="../../../org/specs/util/Products.html#productToList5%28Product5%5BT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList5%28Product5%5BT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList5%28Product5%5BT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList5%28Product5%5BT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList5%28Product5%5BT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList5%28Product5%5BT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="productToList6%28Product6%5BT%2CT%2CT%2CT%2CT%2CT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>productToList6</em>[<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product6">scala.Product6</a>[<a href="../../../org/specs/util/Products.html#productToList6%28Product6%5BT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList6%28Product6%5BT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList6%28Product6%5BT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList6%28Product6%5BT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList6%28Product6%5BT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList6%28Product6%5BT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList6%28Product6%5BT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>productToList7</em>[<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product7">scala.Product7</a>[<a href="../../../org/specs/util/Products.html#productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList7%28Product7%5BT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>productToList8</em>[<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product8">scala.Product8</a>[<a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList8%28Product8%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>productToList9</em>[<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product9">scala.Product9</a>[<a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList9%28Product9%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>productToList10</em>[<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product10">scala.Product10</a>[<a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList10%28Product10%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>productToList11</em>[<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product11">scala.Product11</a>[<a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList11%28Product11%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>productToList12</em>[<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product12">scala.Product12</a>[<a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList12%28Product12%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>productToList13</em>[<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product13">scala.Product13</a>[<a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList13%28Product13%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>productToList14</em>[<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product14">scala.Product14</a>[<a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList14%28Product14%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>productToList15</em>[<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product15">scala.Product15</a>[<a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList15%28Product15%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>productToList16</em>[<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product16">scala.Product16</a>[<a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList16%28Product16%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>productToList17</em>[<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product17">scala.Product17</a>[<a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList17%28Product17%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>productToList18</em>[<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product18">scala.Product18</a>[<a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList18%28Product18%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr>
+<a name="productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29"></a><dl>
+      <dt>
+        
+        <code>implicit</code>
+        <code>def</code>
+        <em>productToList19</em>[<em>T</em>](<em>t</em> : <a href="" target="contentFrame" class="scala/Product19">scala.Product19</a>[<a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>, <a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]) : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../../../org/specs/util/Products.html#productToList19%28Product19%5BT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%2CT%5D%29#T" target="_self">T</a>]
+      </dt>
+      <dd></dd>
+    </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <div>Copyright (c) 2007-2010. All Rights Reserved.</div><table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">specs 1.6.2.1 API</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+      </body>
+      </html>
