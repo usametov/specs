@@ -8,7 +8,7 @@ The following libraries are necessary to run specifications.
 
 http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *Please check carefully the version numbers!*
 
- * [http://scala-tools.org/repo-releases/org/scala-tools/testing/specs/1.6.2 specs-1.6.2.jar]
+ * [http://scala-tools.org/repo-releases/org/scala-tools/testing/specs/1.6.2.1 specs-1.6.2.13.jar]
  * [http://scala-tools.org/repo-releases/org/scala-lang/scala-library/2.7.7 scala-library-2.7.7.jar]
  * [http://repo1.maven.org/maven2/junit/junit/4.7 junit-4.7.jar]
 
@@ -335,7 +335,7 @@ You can use the following Ant build file as a starter to compile and execute you
     <path refid="scala.classpath" />
     <pathelement location="${build.dir}" />
     <pathelement location="${repository.home}/junit/junit/4.4/junit-4.4.jar" />
-    <pathelement location="${repository.home}/org/scala-tools/testing/specs/1.6.1/specs-1.6.1.jar" />
+    <pathelement location="${repository.home}/org/scala-tools/testing/specs/1.6.2.1/specs-1.6.2.1.jar" />
     <pathelement location="http://scala-tools.org/repo-snapshots/org/scala-tools/testing/scalacheck/1.6/scalacheck-1.6.jar" />
   </path>
   <!-- 4. Define scala compiler command. -->
