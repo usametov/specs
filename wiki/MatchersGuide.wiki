@@ -512,8 +512,6 @@ val actual = <a><b name="value" name2="value2"></b></a>
 actual must have \("b", "name"->"value") 
 }}}
  
-(*from specs 1.6.2.1*)
-
 It must be noted that you don't need to specify all the expected attributes and attributes values, but only the ones relevant to your example. If however you want the match to be exact (no additional attributes for instance), you would need to add `exactly` to the matcher:
 {{{
 val actual = <a><b name="value" name2="value2"></b></a> 
