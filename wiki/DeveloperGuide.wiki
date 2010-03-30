@@ -1,20 +1,15 @@
 #summary If you want to hack and extend specs
 
-= Get the source code =
+= Get the stable source code =
 
-All the source code of *specs* is kept in [http://specs.googlecode.com/svn the Subversion repository] of the project.
+All the stable source code of *specs* is kept in [http://specs.googlecode.com/svn the Subversion repository] of the project. In that repository you'll find tags for all the specs releases.
 
-= How is the versioning managed? =
+= Get the development source code =
 
-The code for the release 1.1 is kept in a branch named [http://specs.googlecode.com/svn/branches/SPECS-1.1]
-
-The official 1.1 release has the tag: SPECS-1.1
-
-This branch will get every bug fix on the 1.1 release and each bugfix/small increment release will be tagged SPECS-1.1.x, x being the number of the bugfix/small increment release for version 1.1.
-
+You can get development branches (with no guarantees whatsoever) on [http://github.com/etorreborre/specs Github].
 
 =How to compile specs?=
 
 The easiest way to compile the project is to:
-  * install Maven-2.0.7+
+  * install Maven-2.0.9
   * compile with: 'mvn compile'
