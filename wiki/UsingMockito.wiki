@@ -10,7 +10,7 @@
 
 = Read this first! =
 
-http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png If you're new to *specs* and Mockito you should use the latest snapshots (for either Scala 2.7.7 or Scala 2.8.0) and go to this [http://code.google.com/p/specs/wiki/UsingMockito#Mockito_1.8.4_upgrade section].
+http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png If you're new to *specs* and Mockito you should use the latest *specs* snapshots (for either Scala 2.7.7 or Scala 2.8.0) and go to this [http://code.google.com/p/specs/wiki/UsingMockito#Mockito_1.8.4_upgrade section].
 
 = Usage (Mockito 1.8.0) =
 
