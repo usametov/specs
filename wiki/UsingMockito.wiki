@@ -8,6 +8,10 @@
 
 *specs* integrates Mockito expectations and add some syntactic sugar for an even easier experience of Mockito.
 
+= Read this first! =
+
+http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png If you're new to specs and Mockito you should use the latest snapshots (for either Scala 2.7.7 or Scala 2.8.0) and [http://code.google.com/p/specs/wiki/UsingMockito#Mockito_1.8.4_upgrade Mockito 1.8.4].
+
 = Usage (Mockito 1.8.0) =
 
 In order to use Mockito mocks in your specification, you need to mix in the Mockito trait.
