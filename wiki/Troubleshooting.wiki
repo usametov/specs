@@ -37,3 +37,7 @@ The example shows as 'skipped' because it is a warning that it is not specifying
 }}}
 
 If you don't like this default behavior you can override it by changing your specs configuration: http://code.google.com/p/specs/wiki/RunningSpecs#Override_specs_default_behavior
+
+  * *The objects to compare have the same toString value* 
+
+For example you're comparing `List("1")` to `List(1)` using `must_==`. After the fix for issue 141 you will get a warning saying `Values have the same string representation but possibly different types like List[Int] and List[String]`.
