@@ -405,6 +405,24 @@ Then, mixing the `org.specs.ScalaCheck` trait to your specification, you can che
 
 _Note_: the `property` function is deprecated from `ScalaCheck` 1.5. You should use Prop.forAll instead.
 
+ * Partial functions 
+
+(*next release*)
+
+The `testData must pass(function)` syntax can be improved by using a partial function where variables don't have to be explicitly typed. However there are some [http://groups.google.com/group/specs-users/t/4d76a276e044a47b overloading limitations] in Scala which require the use of a new method:
+
+{{{
+  // the general form is `generator must validate(partial function)`
+  testData must validate { case (prefixes, prefix) => prefixes must contain(prefix) }
+}}}
+
+A shorthand is also provided so that the previous expression is reduced to:
+
+{{{
+  // the general form is `generator validates (partial function)`
+  testData validates { case (prefixes, prefix) => prefixes must contain(prefix) }
+}}}
+
 
 ===!ScalaCheck parameters===
 
