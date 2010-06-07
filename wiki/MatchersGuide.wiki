@@ -137,6 +137,15 @@ You can combine matchers with logical operators: `and`, `or`, `xor`, `verifyAll`
 
 `verifyAll` must be ok for all matchers and `verifyAny` must be ok for at least one matcher.
 
+(*next release*)
+
+A matcher for a single element can be transformed to a matcher for an iterable can be created with `toIterable`:
+
+{{{
+  List(1, 2, 3) must beLessThan(5).toIterable // is ok!
+  List(1, 6, 3) must beLessThan(5).toIterable // is ko!
+}}}
+
 ===Limit the applicability of a matcher===
 
 In some cases, you may want to specify that a matcher is only applicable depending on some conditions:
