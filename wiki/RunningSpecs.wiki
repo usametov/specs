@@ -12,7 +12,7 @@ http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.p
  * [http://scala-tools.org/repo-releases/org/scala-lang/scala-library/2.7.7 scala-library-2.7.7.jar]
  * [http://repo1.maven.org/maven2/junit/junit/4.7 junit-4.7.jar]
 
-The junit library also allows you to run the specifications as JUnit suites by mixing-in the `org.specs.runner.JUnit` trait. The junit library is a requirement for specs because the @RunWith annotations on the JUnit is unfortunately not inherited by the `Specification` class.
+The junit library also allows you to run the specifications as JUnit suites by mixing-in the `org.specs.runner.JUnit` trait. The junit library is a requirement for specs because the `@RunWith` annotations on the JUnit is unfortunately not inherited by the `Specification` class.
 
 
 If you use `ScalaCheck` you must add
@@ -35,7 +35,7 @@ If you use mock objects with Mockito, add
 
  * [http://repo1.maven.org/maven2/org/mockito/mockito-all/1.8.0 mockito-all-1.8.0.jar] 
 
-If you use mock objects with EasyMock, add
+If you use mock objects with `EasyMock`, add
 
  * [http://repo1.maven.org/maven2/org/easymock/easymock/2.5.1 easymock-2.5.1.jar] 
  * [http://repo1.maven.org/maven2/org/easymock/easymockclassextension/2.4 easymockclassextension-2.4.jar] 
