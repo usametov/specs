@@ -5,9 +5,13 @@
 
 This page lists tips on errors you may encounter while using *specs*.
 
-  * *!NoSuchMethodError*. You may have dependencies issues. Please check the version numbers of all the libraries you're using: [http://code.google.com/p/specs/wiki/RunningSpecs#Dependencies dependencies]
+== *!NoSuchMethodError* ==
 
-  * *Strange compilation error*. The following spec would raise a compilation error:
+You may have dependencies issues. Please check the version numbers of all the libraries you're using: [http://code.google.com/p/specs/wiki/RunningSpecs#Dependencies dependencies]
+
+==  *Strange compilation error* ==
+
+The following spec would raise a compilation error:
 {{{
 "My Thing" should {
   "do something" {
@@ -22,9 +26,11 @@ This would generate:
    required: Int
 }}}
 
-  This is because there is a missing "in" after the example description, so everything inside the accolade is expected to be an Int used to access one character of "do something" (see issue 22)
+This is because there is a missing "in" after the example description, so everything inside the accolade is expected to be an Int used to access one character of "do something" (see issue 22)
 
-  * *Skipped example* This example would appear as "skipped" in the reports:
+== *Skipped example* ==
+
+This example would appear as "skipped" in the reports:
 {{{
   "my example" in {
     doSomething()     // appears as skipped
@@ -40,6 +46,6 @@ The example shows as 'skipped' because it is a warning that it is not specifying
 
 If you don't like this default behavior you can override it by changing your specs configuration: http://code.google.com/p/specs/wiki/RunningSpecs#Override_specs_default_behavior
 
-  * *The objects to compare have the same toString value* 
+== *The objects to compare have the same toString value* ==
 
 For example you're comparing `List("1")` to `List(1)` using `must_==`. After the fix for issue 141 you will get a warning saying `Values have the same string representation but possibly different types like List[Int] and List[String]`.
