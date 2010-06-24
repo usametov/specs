@@ -5,11 +5,11 @@ This page lists tips on errors you may encounter while using *specs*.
 
 <wiki:toc/>
 
-= *!NoSuchMethodError* =
+= !NoSuchMethodError =
 
 You may have dependencies issues. Please check the version numbers of all the libraries you're using: [http://code.google.com/p/specs/wiki/RunningSpecs#Dependencies dependencies]
 
-=  *Strange compilation error* =
+= Strange compilation error =
 
 The following spec would raise a compilation error:
 {{{
@@ -28,7 +28,7 @@ This would generate:
 
 This is because there is a missing "in" after the example description, so everything inside the accolade is expected to be an Int used to access one character of "do something" (see issue 22)
 
-= *Skipped example* =
+= Skipped example =
 
 This example would appear as "skipped" in the reports:
 {{{
@@ -46,6 +46,10 @@ The example shows as 'skipped' because it is a warning that it is not specifying
 
 If you don't like this default behavior you can override it by changing your specs configuration: http://code.google.com/p/specs/wiki/RunningSpecs#Override_specs_default_behavior
 
-= *The objects to compare have the same toString value* =
+= The objects to compare have the same toString value =
 
 For example you're comparing `List("1")` to `List(1)` using `must_==`. After the fix for issue 141 you will get a warning saying `Values have the same string representation but possibly different types like List[Int] and List[String]`.
+
+= My specification is leaking some resources =
+
+This may be a case like issue 150 where specs is executing examples in isolation by cloning the specification but not always calling doAfter to clean the resources. You can read more [http://code.google.com/p/specs/wiki/DeclareSpecifications?ts=1277341088&updated=DeclareSpecifications#Warning! here] and [http://code.google.com/p/specs/wiki/DeclareSpecifications?ts=1277341088&updated=DeclareSpecifications#With_nested_examples there].
