@@ -274,7 +274,7 @@ object spec extends Specification {
 
 This simplifies the set-up of examples because [http://en.wikipedia.org/wiki/Test_fixture fixtures] can be created without having to use [http://code.google.com/p/specs/DeclareSpecifications#Call_a_function_before_or_after_each_example before/after] declarations to clean-up the mutated variables/objects or a special fixture-passing mechanism to re-initialize fixture state.
 
-===Warning!===
+==Warning!==
 
 The scheme described above works by cloning the original specification for each example that needs to be executed in isolation. However there may be issues if the creation of your specification has some side-effects. Here is an example of what can go wrong.
 
