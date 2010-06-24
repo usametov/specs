@@ -21,9 +21,11 @@ The following spec would raise a compilation error:
 }}}
 This would generate:
 {{{
-   error: type mismatch;
-   found   : org.specs.specification.Result[java.lang.String]
-   required: Int
+> "message without in" { "value" must beEqual("anotherValue") }
+> error: type mismatch;
+> found   : org.specs.specification.Result[java.lang.String]
+> required: Int
+>       "message without in" { "value" must beEqual("anotherValue") }
 }}}
 
 This is because there is a missing "in" after the example description, so everything inside the accolade is expected to be an Int used to access one character of "do something" (see issue 22)
