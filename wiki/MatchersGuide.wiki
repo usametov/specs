@@ -606,7 +606,27 @@ For files:
 
 Note: for the above matchers, when paths are compared, separators are always ignored.
 
-=Matchers composition for object graphs=
+=Matchers adaptation=
+
+A matcher can be created from another one just by adapting the kind of input it checks. Let's take an example:
+{{{
+  def beTrimmedEqual  = be_==(_:String) ^^ ((_:String).trim)
+  
+  // the actual value is trimmed before comparison
+  " s " must beTrimmedEqual("s")
+}}}
+
+It is also possible to adapt both the actual and expected values with the `^^^` operator:
+{{{
+  // note that type inference may not be as good in that case
+  def beTrimmedEqual = ((s: String) => be_==(s)) ^^^ ((_:String).trim)
+  
+  // both the actual and expected values are trimmed before comparison
+  " s " must beTrimmedEqual("  s  ")
+}}}
+
+
+==Matchers composition for object graphs==
 
 You may want to combine several existing matchers to be able to match an entire object graph. For example, given the following class definitions:
 
