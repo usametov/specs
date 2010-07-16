@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>Scaladoc for org.specs.literate</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		      <script type="text/javascript" src="../../../lib/jquery.js"></script>
+          
+      <link href="../../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+    
+        </head>
+        <body class="value">
+
+      <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.specs">specs</a></p>
+
+      <div id="definition">
+        <img src="../../../lib/package_big.png" />
+        <h1>literate</h1>
+      </div>
+
+      <h4 class="signature" id="signature">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">literate</span>
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment"></div>
+      
+      <div id="template">
+
+        <div id="mbrsel">
+          
+          <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+          </div>
+        </div>
+        
+                
+        
+        <div class="members" id="types">
+              <h3>Type Members</h3>
+              <ol><li visbl="pub" name="org.specs.literate.Html">
+      <h4 class="signature"><a href="Html.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Html</span><span class="result"> extends HtmlFormatting with Wiki</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.literate.HtmlFormatter">
+      <h4 class="signature"><a href="HtmlFormatter.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">HtmlFormatter</span><span class="result"> extends HtmlFormatting</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.literate.HtmlFormatting">
+      <h4 class="signature"><a href="HtmlFormatting.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">HtmlFormatting</span><span class="result"> extends WikiFormatter</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.literate.Links">
+      <h4 class="signature"><a href="Links.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Links</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provides a default implementation for linking specifications together
+</p>
+    </li><li visbl="pub" name="org.specs.literate.LiterateBaseSpecification">
+      <h4 class="signature"><a href="LiterateBaseSpecification.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">LiterateBaseSpecification</span><span class="result"> extends BaseSpecification with ExpectableFactory with WikiFormatter</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.literate.LiterateDataTables">
+      <h4 class="signature"><a href="LiterateDataTables.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">LiterateDataTables</span><span class="result"> extends BaseSpecification with DataTables with ExpectableFactory</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait helps declaring datatables inside the Literate Specification
+</p>
+    </li><li visbl="pub" name="org.specs.literate.LiterateDescriptionFormatter">
+      <h4 class="signature"><a href="LiterateDescriptionFormatter.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">LiterateDescriptionFormatter</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.literate.LiterateForms">
+      <h4 class="signature"><a href="LiterateForms.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">LiterateForms</span><span class="result"> extends BaseSpecification with ExpectableFactory</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait adds shortcut to declare forms in the specification text
+</p>
+    </li><li visbl="pub" name="org.specs.literate.LiterateProperties">
+      <h4 class="signature"><a href="LiterateProperties.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">LiterateProperties</span><span class="result"> extends Properties with ExpectableFactory</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait adds shortcut to declare properties in the specification text
+</p>
+    </li><li visbl="pub" name="org.specs.literate.LiterateShortcuts">
+      <h4 class="signature"><a href="LiterateShortcuts.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">LiterateShortcuts</span><span class="result"> extends BaseSpecification with ExpectableFactory with FailOrSkip</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait adds shortcut methods to define expectations, to silence expressions
+</p>
+    </li><li visbl="pub" name="org.specs.literate.LiterateSnippets">
+      <h4 class="signature"><a href="LiterateSnippets.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">LiterateSnippets</span><span class="result"> extends SnipIt with ExpectableFactory with Matchers</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait adds the possibility to define and execute fragments of code in Literate specifications
+</p>
+    </li><li visbl="pub" name="org.specs.literate.LiterateSpecification">
+      <h4 class="signature"><a href="LiterateSpecification.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">LiterateSpecification</span><span class="result"> extends Specification with LiterateBaseSpecification with LiterateSpecificationLinks with LiterateDataTables with LiterateForms with LiterateProperties with LiterateShortcuts</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait supports writing literate specifications for acceptance testing.</p>
+    </li><li visbl="pub" name="org.specs.literate.LiterateSpecificationLinks">
+      <h4 class="signature"><a href="LiterateSpecificationLinks.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">LiterateSpecificationLinks</span><span class="result"> extends LinkedSpecification with Links</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait allows to add links to other specifications inside a literate specification.</p>
+    </li><li visbl="pub" name="org.specs.literate.Markdown">
+      <h4 class="signature"><a href="Markdown.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Markdown</span><span class="result"> extends MarkdownFormatting with MarkdownWiki</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.literate.MarkdownFormatter">
+      <h4 class="signature"><a href="MarkdownFormatter.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">MarkdownFormatter</span><span class="result"> extends MarkdownFormatting</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.literate.MarkdownFormatting">
+      <h4 class="signature"><a href="MarkdownFormatting.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">MarkdownFormatting</span><span class="result"> extends WikiFormatter</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.literate.MarkdownWiki">
+      <h4 class="signature"><a href="MarkdownWiki.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">MarkdownWiki</span><span class="result"> extends Wiki</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.literate.SnipIt">
+      <h4 class="signature"><a href="SnipIt.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">SnipIt</span><span class="result"> extends Snippets with Wiki</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.literate.Text">
+      <h4 class="signature"><a href="Text.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Text</span><span class="result"> extends TextFormatting with Wiki</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.literate.TextFormatter">
+      <h4 class="signature"><a href="TextFormatter.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">TextFormatter</span><span class="result"> extends TextFormatting</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.literate.TextFormatting">
+      <h4 class="signature"><a href="TextFormatting.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">TextFormatting</span><span class="result"> extends LiterateDescriptionFormatter</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.literate.Textile">
+      <h4 class="signature"><a href="Textile.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Textile</span><span class="result"> extends TextileFormatting with TextileWiki</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.literate.TextileFormatter">
+      <h4 class="signature"><a href="TextileFormatter.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">TextileFormatter</span><span class="result"> extends TextileFormatting</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.literate.TextileFormatting">
+      <h4 class="signature"><a href="TextileFormatting.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">TextileFormatting</span><span class="result"> extends WikiFormatter</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.literate.TextileWiki">
+      <h4 class="signature"><a href="TextileWiki.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">TextileWiki</span><span class="result"> extends Wiki</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.literate.Wiki">
+      <h4 class="signature"><a href="Wiki.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Wiki</span><span class="result"> extends Properties with Links</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provides functions which can be used to ease the use of wiki markup
+</p>
+    </li><li visbl="pub" name="org.specs.literate.WikiFormatter">
+      <h4 class="signature"><a href="WikiFormatter.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">WikiFormatter</span><span class="result"> extends LiterateDescriptionFormatter with ConsoleLog with Wiki</span>
+      </span>
+      </a></h4>
+      
+    </li></ol>
+            </div>
+        
+        
+                
+      </div>
+      
+      <div id="tooltip"></div>
+      
+    </body>
+      </html>

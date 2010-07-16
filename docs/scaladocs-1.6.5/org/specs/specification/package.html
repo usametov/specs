@@ -1,0 +1,514 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>Scaladoc for org.specs.specification</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		      <script type="text/javascript" src="../../../lib/jquery.js"></script>
+          
+      <link href="../../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+    
+        </head>
+        <body class="value">
+
+      <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.specs">specs</a></p>
+
+      <div id="definition">
+        <img src="../../../lib/package_big.png" />
+        <h1>specification</h1>
+      </div>
+
+      <h4 class="signature" id="signature">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">specification</span>
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment"></div>
+      
+      <div id="template">
+
+        <div id="mbrsel">
+          
+          <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+          </div>
+        </div>
+        
+                
+        
+        <div class="members" id="types">
+              <h3>Type Members</h3>
+              <ol><li visbl="pub" name="org.specs.specification.AfterSpecFailureException">
+      <h4 class="signature"><a href="AfterSpecFailureException.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">AfterSpecFailureException</span><span class="result"> extends SpecFailureException</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification">
+      <h4 class="signature"><a href="BaseSpecification.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">BaseSpecification</span><span class="result"> extends TreeNode with SpecificationSystems with SpecificationExecutor with ExampleExpectationsListener with Tagged with HasResults with LinkedSpecification with SpecificationConfiguration with ComposedSpecifications with LazyParameters</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class provides the base structure of a specification.</p>
+    </li><li visbl="pub" name="org.specs.specification.BeforeAfter">
+      <h4 class="signature"><a href="BeforeAfter.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">BeforeAfter</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This traits adds before / after capabilities to specifications, so that a context can be defined for
+each system under test being specified and trigger some actions before or after each example.</p>
+    </li><li visbl="pub" name="org.specs.specification.BeforeSpecFailureException">
+      <h4 class="signature"><a href="BeforeSpecFailureException.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">BeforeSpecFailureException</span><span class="result"> extends SpecFailureException</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.specification.ComposedSpecifications">
+      <h4 class="signature"><a href="ComposedSpecifications.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ComposedSpecifications</span><span class="result"> extends LazyParameters</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.specification.Context">
+      <h4 class="signature"><a href="Context.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Context</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">class holding before and after functions to be set on a system under test.</p>
+    </li><li visbl="pub" name="org.specs.specification.Contexts">
+      <h4 class="signature"><a href="Contexts.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Contexts</span><span class="result"> extends BaseSpecification with BeforeAfter</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait helps creating Context objects encapsulating the before/after actions which can be associated to a sus.</p>
+    </li><li visbl="pub" name="org.specs.specification.DefaultExampleExpectationsListener">
+      <h4 class="signature"><a href="DefaultExampleExpectationsListener.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">DefaultExampleExpectationsListener</span><span class="result"> extends ExampleExpectationsListener</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Trait adding an expectation on a default unused example.</p>
+    </li><li visbl="pub" name="org.specs.specification.DefaultExpectableFactory">
+      <h4 class="signature"><a href="DefaultExpectableFactory.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">DefaultExpectableFactory</span><span class="result"> extends ExpectableFactory</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.specification.DelegatedExpectableFactory">
+      <h4 class="signature"><a href="DelegatedExpectableFactory.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">DelegatedExpectableFactory</span><span class="result"> extends ExpectableFactory</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.specification.Detailed">
+      <h4 class="signature"><a href="Detailed.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Detailed</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">abstract data type representing Detailed information about failures</p>
+    </li><li visbl="pub" name="org.specs.specification.DetailedFailures">
+      <h4 class="signature"><a href="DetailedFailures.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">DetailedFailures</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This traits adds the possibility to add declarations for detailed failures when matching strings.</p>
+    </li><li visbl="pub" name="org.specs.specification.Example">
+      <h4 class="signature"><a href="Example.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Example</span><span class="result"> extends Examples</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The Example class represents a block of code with expectations.</p>
+    </li><li visbl="pub" name="org.specs.specification.ExampleContext">
+      <h4 class="signature"><a href="ExampleContext.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ExampleContext</span><span class="result"> extends ExampleLifeCycle</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait extends the ExampleLifeCycle with the capability to store actions
+to be executed before and after examples.</p>
+    </li><li visbl="pub" name="org.specs.specification.ExampleDescription">
+      <h4 class="signature"><a href="ExampleDescription.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ExampleDescription</span><span class="params">(<span name="desc">desc: String</span>, <span name="toXhtml">toXhtml: Node</span>)</span><span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Description of the example.</p>
+    </li><li visbl="pub" name="org.specs.specification.ExampleExecution">
+      <h4 class="signature"><a href="ExampleExecution.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ExampleExecution</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class encapsulates the execution of an example.</p>
+    </li><li visbl="pub" name="org.specs.specification.ExampleExpectationsListener">
+      <h4 class="signature"><a href="ExampleExpectationsListener.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ExampleExpectationsListener</span><span class="result"> extends ExpectationsListener</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Trait adding the new expectation to an example, creating one if necessary.</p>
+    </li><li visbl="pub" name="org.specs.specification.ExampleLifeCycle">
+      <h4 class="signature"><a href="ExampleLifeCycle.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ExampleLifeCycle</span><span class="result"> extends LifeCycle with ExampleStructure</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Implementation of a LifeCycle backed up by an ExampleStructure which can
+be added any subexample created during the Example execution.</p>
+    </li><li visbl="pub" name="org.specs.specification.ExampleStructure">
+      <h4 class="signature"><a href="ExampleStructure.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ExampleStructure</span><span class="result"> extends TreeNode with Tagged with DefaultResults</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait models the structure of an Example with:</p>
+    </li><li visbl="pub" name="org.specs.specification.Examples">
+      <h4 class="signature"><a href="Examples.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Examples</span><span class="result"> extends ExampleContext with DefaultResults</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>Examples</code> class specifies a list of examples of a system behaviour.</p>
+    </li><li visbl="pub" name="org.specs.specification.Expectable">
+      <h4 class="signature"><a href="Expectable.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Expectable</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">An expectable is an object supporting the execution of expectations through matchers.</p>
+    </li><li visbl="pub" name="org.specs.specification.ExpectableFactory">
+      <h4 class="signature"><a href="ExpectableFactory.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ExpectableFactory</span><span class="result"> extends ExampleExpectationsListener with SuccessValues with FailureFactory</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait defines implicit definitions which are used to create Expectable objects
+and associate them with the latest defined example<br>Usage: <code>2.</p>
+    </li><li visbl="pub" name="org.specs.specification.Expectation">
+      <h4 class="signature"><a href="Expectation.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Expectation</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends Expectable[T]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The Expect class adds matcher methods to objects which are being specified<br>Usage: <code>new Expect(value, example) must beMatching(otherValue)</code></p>
+    </li><li visbl="pub" name="org.specs.specification.ExpectationsListener">
+      <h4 class="signature"><a href="ExpectationsListener.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ExpectationsListener</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Trait declaring the ability to add a new expectation to an Example.</p>
+    </li><li visbl="pub" name="org.specs.specification.FailureExceptionWithResult">
+      <h4 class="signature"><a href="FailureExceptionWithResult.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">FailureExceptionWithResult</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends FailureException with HasResult[T]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Special failure exception carrying a Result object, carrying an Expectable.</p>
+    </li><li visbl="pub" name="org.specs.specification.FailureFactory">
+      <h4 class="signature"><a href="FailureFactory.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">FailureFactory</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait abstracts the creation of a failure when an expectation fails.</p>
+    </li><li visbl="pub" name="org.specs.specification.HasResult">
+      <h4 class="signature"><a href="HasResult.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">HasResult</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Trait marking anything that holds a Result.</p>
+    </li><li visbl="pub" name="org.specs.specification.IterableExpectable">
+      <h4 class="signature"><a href="IterableExpectable.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">IterableExpectable</span><span class="tparams">[<span name="I">I &lt;: AnyRef</span>]</span><span class="result"> extends Expectable[Iterable[I]]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Specialized expectable class with iterable matchers aliases</p>
+    </li><li visbl="pub" name="org.specs.specification.IterableStringExpectable">
+      <h4 class="signature"><a href="IterableStringExpectable.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">IterableStringExpectable</span><span class="result"> extends Expectable[Iterable[String]]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Specialized expectable class with iterable[String] matchers aliases</p>
+    </li><li visbl="pub" name="org.specs.specification.LifeCycle">
+      <h4 class="signature"><a href="LifeCycle.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">LifeCycle</span><span class="result"> extends SequentialExecution</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait models the execution cycle of an example.</p>
+    </li><li visbl="pub" name="org.specs.specification.LinkedSpecification">
+      <h4 class="signature"><a href="LinkedSpecification.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">LinkedSpecification</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait adds the possibility to declare an included specification as &quot;linked&quot; in order to
+control its reporting in a separate file for example.</p>
+    </li><li visbl="pub" name="org.specs.specification.LiterateDescription">
+      <h4 class="signature"><a href="LiterateDescription.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">LiterateDescription</span><span class="params">(<span name="desc">desc: Node</span>)</span><span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">support class representing the formatted literate description of a SUS</p>
+    </li><li visbl="pub" name="org.specs.specification.OrResults">
+      <h4 class="signature"><a href="OrResults.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">OrResults</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.specification.PathException">
+      <h4 class="signature"><a href="PathException.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">PathException</span><span class="params">(<span name="m">m: String</span>)</span><span class="result"> extends Exception with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.specification.PendingUntilFixed">
+      <h4 class="signature"><a href="PendingUntilFixed.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">PendingUntilFixed</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait allows examples to be marked as PENDING if their body is failing.</p>
+    </li><li visbl="pub" name="org.specs.specification.Result">
+      <h4 class="signature"><a href="Result.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Result</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends SuccessValue</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Result of a match</p>
+    </li><li visbl="pub" name="org.specs.specification.SequentialExecution">
+      <h4 class="signature"><a href="SequentialExecution.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">SequentialExecution</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait defines if the examples must be executed as soon as they are defined</p>
+    </li><li visbl="pub" name="org.specs.specification.Snippet">
+      <h4 class="signature"><a href="Snippet.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Snippet</span><span class="params">(<span name="prelude">prelude: String = <span class="default">&quot;&quot;</span></span>, <span name="body">body: String = <span class="default">&quot;&quot;</span></span>)</span><span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">A Snippet is an object representing a piece of code with:
+- an optional prelude
+- an optional body</p>
+    </li><li visbl="pub" name="org.specs.specification.Snippets">
+      <h4 class="signature"><a href="Snippets.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Snippets</span><span class="result"> extends ScalaInterpreter</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provides ways to create a piece of code, a &quot;Snippet&quot;.</p>
+    </li><li visbl="pub" name="org.specs.specification.SpecFailureException">
+      <h4 class="signature"><a href="SpecFailureException.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">SpecFailureException</span><span class="result"> extends FailureException</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: abstract 
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.specification.SpecificationConfiguration">
+      <h4 class="signature"><a href="SpecificationConfiguration.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">SpecificationConfiguration</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait defines some optional behaviour for a specification such as executing examples in a copy of the specification
+to be isolated from any other example modifying local variables.</p>
+    </li><li visbl="pub" name="org.specs.specification.SpecificationExecutor">
+      <h4 class="signature"><a href="SpecificationExecutor.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">SpecificationExecutor</span><span class="result"> extends LifeCycle</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait executes an example by cloning the enclosing specification first.</p>
+    </li><li visbl="pub" name="org.specs.specification.SpecificationSystems">
+      <h4 class="signature"><a href="SpecificationSystems.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">SpecificationSystems</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait abstracts the building and storing of the systems of a Specification.</p>
+    </li><li visbl="pub" name="org.specs.specification.SpecsFailureFactory">
+      <h4 class="signature"><a href="SpecsFailureFactory.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">SpecsFailureFactory</span><span class="result"> extends FailureFactory</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Specs implementation of a Failure Factory
+</p>
+    </li><li visbl="pub" name="org.specs.specification.StringExpectable">
+      <h4 class="signature"><a href="StringExpectable.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">StringExpectable</span><span class="tparams">[<span name="A">A &lt;: String</span>]</span><span class="result"> extends Expectable[A]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Specialized expectable class with string matchers aliases</p>
+    </li><li visbl="pub" name="org.specs.specification.SuccessValue">
+      <h4 class="signature"><a href="SuccessValue.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">SuccessValue</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">value returned by an expectable whose string representation can vary.</p>
+    </li><li visbl="pub" name="org.specs.specification.SuccessValues">
+      <h4 class="signature"><a href="SuccessValues.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">SuccessValues</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait transforms SuccessValue objects to a Boolean value if it is necessary, for example in
+ScalaCheck properties.</p>
+    </li><li visbl="pub" name="org.specs.specification.Sus">
+      <h4 class="signature"><a href="Sus.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Sus</span><span class="params">(<span name="desc">desc: String</span>, <span name="specification">specification: BaseSpecification</span>)</span><span class="result"> extends Examples with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>Sus</code> class represents a system under specification<br>It has:</p>
+    </li><li visbl="pub" name="org.specs.specification.Tag">
+      <h4 class="signature"><a href="Tag.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Tag</span><span class="params">(<span name="name">name: String</span>)</span><span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class encapsulate tag strings as an object.</p>
+    </li><li visbl="pub" name="org.specs.specification.Tagged">
+      <h4 class="signature"><a href="Tagged.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Tagged</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The Tagged trait allows to add tags to a Specification or a System under test.</p>
+    </li><li visbl="pub" name="org.specs.specification.fullDetails">
+      <h4 class="signature"><a href="fullDetails.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">fullDetails</span><span class="params">(<span name="separators">separators: String</span>, <span name="startDiffSize">startDiffSize: Int</span>, <span name="shortenSize">shortenSize: Int</span>)</span><span class="result"> extends Detailed with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">all details should be shown</p>
+    </li><li visbl="pub" name="org.specs.specification.noDetails">
+      <h4 class="signature"><a href="noDetails.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">noDetails</span><span class="params">()</span><span class="result"> extends Detailed with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">no details should be shown</p>
+    </li></ol>
+            </div>
+        
+        <div class="members" id="values">
+              <h3>Value Members</h3>
+              <ol><li visbl="pub" name="org.specs.specification.DefaultLifeCycle">
+      <h4 class="signature"><a href="DefaultLifeCycle$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">DefaultLifeCycle</span><span class="result"> extends Example</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Default LifeCycle with no actions before or after.</p>
+    </li><li visbl="pub" name="org.specs.specification.ExampleDescription">
+      <h4 class="signature"><a href="ExampleDescription$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">ExampleDescription</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Case object to build Example descriptions with just a string.</p>
+    </li><li visbl="pub" name="org.specs.specification.Snippets">
+      <h4 class="signature"><a href="Snippets$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Snippets</span><span class="result"> extends Snippets</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This object can be used to import Snippets functionalities
+</p>
+    </li></ol>
+            </div>
+                
+      </div>
+      
+      <div id="tooltip"></div>
+      
+    </body>
+      </html>

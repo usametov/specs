@@ -1,0 +1,289 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>Scaladoc for org.specs</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		      <script type="text/javascript" src="../../lib/jquery.js"></script>
+          
+      <link href="../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+    
+        </head>
+        <body class="value">
+
+      <p id="owner"><a href="../package.html" class="extype" name="org">org</a></p>
+
+      <div id="definition">
+        <img src="../../lib/package_big.png" />
+        <h1>specs</h1>
+      </div>
+
+      <h4 class="signature" id="signature">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">specs</span>
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment"></div>
+      
+      <div id="template">
+
+        <div id="mbrsel">
+          
+          <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+          </div>
+        </div>
+        
+                
+        
+        <div class="members" id="types">
+              <h3>Type Members</h3>
+              <ol><li visbl="pub" name="org.specs.Expectations">
+      <h4 class="signature"><a href="Expectations.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Expectations</span><span class="result"> extends Matchers with OrResults with ExpectableFactory with DetailedFailures</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait can be used to access Matchers functionalities outside a Specification.</p>
+    </li><li visbl="pub" name="org.specs.FailOrSkip">
+      <h4 class="signature"><a href="FailOrSkip.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">FailOrSkip</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait gives some flexibility when mixing in the ScalaTest trait because it uses the same method names
+</p>
+    </li><li visbl="pub" name="org.specs.HtmlSpecification">
+      <h4 class="signature"><a href="HtmlSpecification.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">HtmlSpecification</span><span class="result"> extends LiterateSpecification with Html with Textile</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">LiterateSpecification with Html reporting and Textile markup
+</p>
+    </li><li visbl="pub" name="org.specs.HtmlSpecificationWithJUnit">
+      <h4 class="signature"><a href="HtmlSpecificationWithJUnit.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">HtmlSpecificationWithJUnit</span><span class="result"> extends HtmlSpecification with JUnit</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">LiterateSpecification with Html reporting, runnable as a JUnit suite, where each
+system is a Test suite and each example a test.</p>
+    </li><li visbl="pub" name="org.specs.MarkdownSpecification">
+      <h4 class="signature"><a href="MarkdownSpecification.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">MarkdownSpecification</span><span class="result"> extends LiterateSpecification with Html with Markdown</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">LiterateSpecification with Html reporting and Markdown markup
+</p>
+    </li><li visbl="pub" name="org.specs.NumberOfTimes">
+      <h4 class="signature"><a href="NumberOfTimes.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">NumberOfTimes</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.RepeatedActions">
+      <h4 class="signature"><a href="RepeatedActions.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">RepeatedActions</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.ScalaCheck">
+      <h4 class="signature"><a href="ScalaCheck.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ScalaCheck</span><span class="result"> extends ScalaCheckMatchers with ScalaCheckParameters with ScalaCheckVerifications</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait can be mixed with a specification to allow the use of ScalaCheck in a specification
+</p>
+    </li><li visbl="pub" name="org.specs.ScalaCheckVerifications">
+      <h4 class="signature"><a href="ScalaCheckVerifications.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ScalaCheckVerifications</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait defines the &quot;verify&quot; operator which can be used to specify properties to check as examples.</p>
+    </li><li visbl="pub" name="org.specs.Specification">
+      <h4 class="signature"><a href="Specification.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Specification</span><span class="result"> extends BaseSpecification with Expectations with FailOrSkip with Console with SpecsFilter with Contexts</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class is the main class for declaring a new specification<br>In the context of a specification, you can:</p>
+    </li><li visbl="pub" name="org.specs.SpecificationWithJUnit">
+      <h4 class="signature"><a href="SpecificationWithJUnit.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">SpecificationWithJUnit</span><span class="result"> extends Specification with JUnit</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class is a Specification which is runnable as a JUnit suite, where each
+system is a Test suite and each example a test.</p>
+    </li><li visbl="pub" name="org.specs.SpecsMatchers">
+      <h4 class="signature"><a href="SpecsMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">SpecsMatchers</span><span class="result"> extends Expectations with DefaultExampleExpectationsListener</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait can be reused in any test based framework to access Matchers functionalities
+</p>
+    </li><li visbl="pub" name="org.specs.Sugar">
+      <h4 class="signature"><a href="Sugar.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Sugar</span><span class="result"> extends Products with ConsoleOutput with RepeatedActions</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Synctactic sugar for specifications.</p>
+    </li></ol>
+            </div>
+        
+        <div class="members" id="values">
+              <h3>Value Members</h3>
+              <ol><li visbl="pub" name="org.specs.RepeatedActions">
+      <h4 class="signature"><a href="RepeatedActions$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">RepeatedActions</span><span class="result"> extends RepeatedActions</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.SpecUtils">
+      <h4 class="signature"><a href="SpecUtils$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">SpecUtils</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">utility object to indent a string with 2 spaces</p>
+    </li><li visbl="pub" name="org.specs.Sugar">
+      <h4 class="signature"><a href="Sugar$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Sugar</span><span class="result"> extends Sugar</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Synctactic sugar for specifications.</p>
+    </li><li visbl="pub" name="org.specs.collection">
+      <h4 class="signature"><a href="collection/package.html">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">collection</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.execute">
+      <h4 class="signature"><a href="execute/package.html">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">execute</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.form">
+      <h4 class="signature"><a href="form/package.html">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">form</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.io">
+      <h4 class="signature"><a href="io/package.html">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">io</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.literate">
+      <h4 class="signature"><a href="literate/package.html">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">literate</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.log">
+      <h4 class="signature"><a href="log/package.html">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">log</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher">
+      <h4 class="signature"><a href="matcher/package.html">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">matcher</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.mock">
+      <h4 class="signature"><a href="mock/package.html">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">mock</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.runner">
+      <h4 class="signature"><a href="runner/package.html">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">runner</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.specification">
+      <h4 class="signature"><a href="specification/package.html">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">specification</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.util">
+      <h4 class="signature"><a href="util/package.html">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">util</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.xml">
+      <h4 class="signature"><a href="xml/package.html">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">xml</span>
+      </span>
+      </a></h4>
+      
+    </li></ol>
+            </div>
+                
+      </div>
+      
+      <div id="tooltip"></div>
+      
+    </body>
+      </html>

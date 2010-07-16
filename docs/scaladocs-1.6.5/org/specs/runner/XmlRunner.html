@@ -1,0 +1,2688 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>Scaladoc for org.specs.runner.XmlRunner</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		      <script type="text/javascript" src="../../../lib/jquery.js"></script>
+          
+      <link href="../../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+    
+        </head>
+        <body class="type">
+
+      <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.specs">specs</a>.<a href="package.html" class="extype" name="org.specs.runner">runner</a></p>
+
+      <div id="definition">
+        <img src="../../../lib/class_big.png" />
+        <h1>XmlRunner</h1>
+      </div>
+
+      <h4 class="signature" id="signature">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">XmlRunner</span><span class="params">(<span name="specs">specs: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a>]</span>, <span name="outputDirPath">outputDirPath: <span class="extype" name="java.lang.String">String</span></span>, <span name="fName">fName: (<a href="../specification/BaseSpecification.html" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a>) ⇒ <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result"> extends <a href="FileReporter.html" class="extype" name="org.specs.runner.FileReporter">FileReporter</a> with <a href="Xml.html" class="extype" name="org.specs.runner.Xml">Xml</a> with <span class="extype" name="scala.Product">Product</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment"><div class="comment cmt"><p>Concrete class for the Xml trait. It allows to select a specification to run and an output path
+Usage: <code>object runner extends XmlRunner(&quot;./results/specs&quot;, mySpec)</code></p><p>The name of the generated file is specification.name by default but can be overriden:<pre>object runner extends XmlRunner(mySpec, &quot;./results/specs&quot;){ override def fileName(s: Specification)=&quot;spec-report.xml&quot; }</pre></p></div><div class="block">
+            go to: <a href="XmlRunner$.html">companion</a>
+          </div>
+            
+            
+            
+            
+          </div>
+      
+      <div id="template">
+
+        <div id="mbrsel">
+          <div id="ancestors">
+                <span class="filtertype">Inherited</span>
+                <ol><li class="hideall">Hide All</li><li class="showall">Show all</li></ol>
+                <ol id="linearization"><li class="in" name="scala.Product">Product</li><li class="in" name="scala.Equals">Equals</li><li class="in" name="org.specs.runner.Xml">Xml</li><li class="in" name="org.specs.runner.FileReporter">FileReporter</li><li class="in" name="org.specs.runner.File">File</li><li class="in" name="org.specs.runner.Console">Console</li><li class="in" name="org.specs.runner.OutputReporter">OutputReporter</li><li class="in" name="org.specs.runner.Reporter">Reporter</li><li class="in" name="org.specs.runner.SpecsFilter">SpecsFilter</li><li class="in" name="org.specs.runner.SpecsHolder">SpecsHolder</li><li class="in" name="org.specs.log.ConsoleLog">ConsoleLog</li><li class="in" name="org.specs.log.Log">Log</li><li class="in" name="org.specs.io.ConsoleOutput">ConsoleOutput</li><li class="in" name="org.specs.io.Output">Output</li><li class="in" name="org.specs.io.FileSystem">FileSystem</li><li class="in" name="org.specs.io.FileWriter">FileWriter</li><li class="in" name="org.specs.io.FileReader">FileReader</li><li class="in" name="scala.AnyRef">AnyRef</li><li class="in" name="scala.Any">Any</li></ol>
+              </div>
+          <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+          </div>
+        </div>
+        
+        <div class="members" id="constructors">
+              <h3>Instance constructors</h3>
+              <ol><li visbl="pub" name="org.specs.runner.XmlRunner#this">
+      <h4 class="signature">
+      <span class="kind">new</span>
+      <span class="symbol">
+        <span class="name">XmlRunner</span><span class="params">(<span name="spec">spec: <a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a></span>, <span name="outputDirPath">outputDirPath: <span class="extype" name="java.lang.String">String</span></span>, <span name="fName">fName: (<a href="../specification/BaseSpecification.html" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a>) ⇒ <span class="extype" name="java.lang.String">String</span></span>)</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">alternate constructor with one specification only.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>alternate constructor with one specification only.</p></div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.XmlRunner#this">
+      <h4 class="signature">
+      <span class="kind">new</span>
+      <span class="symbol">
+        <span class="name">XmlRunner</span><span class="params">(<span name="spec">spec: <a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a></span>, <span name="outputDirPath">outputDirPath: <span class="extype" name="java.lang.String">String</span></span>)</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">alternate constructor with one specification only.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>alternate constructor with one specification only. The output dir is the current directory</p></div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.XmlRunner#this">
+      <h4 class="signature">
+      <span class="kind">new</span>
+      <span class="symbol">
+        <span class="name">XmlRunner</span><span class="params">(<span name="specifications">specifications: <a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a>*</span>)</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">alternate constructor with the specification only.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>alternate constructor with the specification only. The output dir is the current directory</p></div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.XmlRunner#this">
+      <h4 class="signature">
+      <span class="kind">new</span>
+      <span class="symbol">
+        <span class="name">XmlRunner</span><span class="params">()</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Alternative constructor with no specific specifications and default values.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Alternative constructor with no specific specifications and default values.
+This runner can report specifications using the report method.
+This capacity is used in conjunction with the Runner class:<pre>object runner extends Runner(spec1 :: spec2, HtmlRunner() :: XmlRunner())</pre></p></div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.XmlRunner#this">
+      <h4 class="signature">
+      <span class="kind">new</span>
+      <span class="symbol">
+        <span class="name">XmlRunner</span><span class="params">(<span name="specs">specs: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a>]</span>, <span name="outputDirPath">outputDirPath: <span class="extype" name="java.lang.String">String</span></span>, <span name="fName">fName: (<a href="../specification/BaseSpecification.html" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a>) ⇒ <span class="extype" name="java.lang.String">String</span></span>)</span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>        
+        
+        <div class="members" id="types">
+              <h3>Type Members</h3>
+              <ol><li visbl="pub" name="org.specs.runner.OutputReporter.AddableTuple">
+      <h4 class="signature"><a href="OutputReporter$AddableTuple.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">AddableTuple</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li></ol>
+            </div>
+        
+        <div class="members" id="values">
+              <h3>Value Members</h3>
+              <ol><li visbl="pub" name="scala.AnyRef#!=">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">!=</span><span class="params">(<span name="arg0">arg0: AnyRef</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" name="scala.Any#!=">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o != arg0</code> is the same as <code>!(o == (arg0))</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o != arg0</code> is the same as <code>!(o == (arg0))</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for dis-equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>false</code> if the receiver object is equivalent to the argument; <code>true</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.AnyRef###">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef → Any
+        </div></div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#$asInstanceOf">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">$asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">()</span><span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#$isInstanceOf">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">$isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Reporter#::">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">::</span><span class="params">(<span name="r">r: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a></span>)</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div></div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#==">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">==</span><span class="params">(<span name="arg0">arg0: AnyRef</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o == arg0</code> is the same as <code>if (o eq null) arg0 eq null else o.equals(arg0)</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o == arg0</code> is the same as <code>if (o eq null) arg0 eq null else o.equals(arg0)</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.Any#==">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o == arg0</code> is the same as <code>o.equals(arg0)</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o == arg0</code> is the same as <code>o.equals(arg0)</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.log.Log#Debug">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">Debug</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="../log/Log.html" class="extype" name="org.specs.log.Log">Log</a>
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.log.Log#Error">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">Error</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="../log/Log.html" class="extype" name="org.specs.log.Log">Log</a>
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.log.Log#Info">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">Info</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="../log/Log.html" class="extype" name="org.specs.log.Log">Log</a>
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.log.Log#Warning">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">Warning</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="../log/Log.html" class="extype" name="org.specs.log.Log">Log</a>
+        </div></div>
+          
+    </li><li visbl="prt" name="org.specs.runner.Reporter#argValue">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">argValue</span><span class="params">(<span name="arguments">arguments: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="java.lang.String">String</span>]</span>, <span name="argumentNames">argumentNames: <span class="extype" name="scala.collection.immutable.List">List</span>[<span class="extype" name="java.lang.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the argument value in a list of arguments for a given flag in the argumentNames list.
+for example: argValue(Array(&quot;-ex&quot;, &quot;.*ex.*&quot;), List(&quot;-ex&quot;, &quot;--example&quot;)) = Some(&quot;.*ex.*&quot;)
+</p></dd></dl><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Reporter#args">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">args</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Reporter#args_=">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">args_=</span><span class="params">(<span name="a">a: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="java.lang.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div></div>
+          
+    </li><li visbl="pub" name="scala.Any#asInstanceOf">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to cast the receiver object to be of type <code>T0</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to cast the receiver object to be of type <code>T0</code>.</p><p>Note that the success of a cast at runtime is modulo Scala's erasure semantics.  Therefore the expression<code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at runtime, while the expression<code>List(1).asInstanceOf[List[String]]</code> will not.  In the latter example, because the type argument is erased as
+part of compilation it is not possible to check whether the contents of the list are of the requested typed.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Xml#asXml">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">asXml</span><span class="params">(<span name="skipped">skipped: <a href="../execute/SkippedException.html" class="extype" name="org.specs.execute.SkippedException">SkippedException</a></span>)</span><span class="result">: <span class="extype" name="scala.xml.Elem">Elem</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><div class="block">
+          definition classes: <a href="Xml.html" class="extype" name="org.specs.runner.Xml">Xml</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Xml#asXml">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">asXml</span><span class="params">(<span name="failure">failure: <a href="../execute/FailureException.html" class="extype" name="org.specs.execute.FailureException">FailureException</a></span>)</span><span class="result">: <span class="extype" name="scala.xml.Elem">Elem</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><div class="block">
+          definition classes: <a href="Xml.html" class="extype" name="org.specs.runner.Xml">Xml</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Xml#asXml">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">asXml</span><span class="params">(<span name="error">error: <span class="extype" name="java.lang.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="scala.xml.Elem">Elem</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><div class="block">
+          definition classes: <a href="Xml.html" class="extype" name="org.specs.runner.Xml">Xml</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Xml#asXml">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">asXml</span><span class="params">(<span name="e">e: <a href="../specification/Example.html" class="extype" name="org.specs.specification.Example">Example</a></span>)</span><span class="result">: <span class="extype" name="scala.xml.Elem">Elem</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><div class="block">
+          definition classes: <a href="Xml.html" class="extype" name="org.specs.runner.Xml">Xml</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Xml#asXml">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">asXml</span><span class="params">(<span name="sus">sus: <a href="../specification/Sus.html" class="extype" name="org.specs.specification.Sus">Sus</a></span>)</span><span class="result">: <span class="extype" name="scala.xml.Elem">Elem</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><div class="block">
+          definition classes: <a href="Xml.html" class="extype" name="org.specs.runner.Xml">Xml</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Xml#asXml">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">asXml</span><span class="params">(<span name="s">s: <a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a></span>)</span><span class="result">: <span class="extype" name="scala.xml.Elem">Elem</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><div class="block">
+          definition classes: <a href="Xml.html" class="extype" name="org.specs.runner.Xml">Xml</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.XmlRunner#canEqual">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">canEqual</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.runner.XmlRunner">XmlRunner</a> → Equals
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#canRead">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">canRead</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if the file can be read</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#canWrite">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">canWrite</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if the file can be written</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" name="scala.AnyRef#clone">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: AnyRef</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method creates and returns a copy of the receiver object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method creates and returns a copy of the receiver object.</p><p>The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#copy">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">copy</span><span class="params">(<span name="input">input: <span class="extype" name="java.io.InputStream">InputStream</span></span>, <span name="output">output: <span class="extype" name="java.io.OutputStream">OutputStream</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Copy an input stream to an output stream.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Copy an input stream to an output stream.</p></div><dl class="paramcmts block"><dt class="param">input</dt><dd class="cmt"><p>input stream</p></dd><dt class="param">output</dt><dd class="cmt"><p>output stream
+</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#copyDir">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">copyDir</span><span class="params">(<span name="src">src: <span class="extype" name="java.lang.String">String</span></span>, <span name="dest">dest: <span class="extype" name="java.lang.String">String</span></span>, <span name="tagged">tagged: <a href="../specification/Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">copy the content of a directory to another.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>copy the content of a directory to another.</p></div><dl class="paramcmts block"><dt class="param">dest</dt><dd class="cmt"><p>destination directory path</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#copyDir">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">copyDir</span><span class="params">(<span name="src">src: <span class="extype" name="java.lang.String">String</span></span>, <span name="dest">dest: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">copy the content of a directory to another.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>copy the content of a directory to another.</p></div><dl class="paramcmts block"><dt class="param">dest</dt><dd class="cmt"><p>destination directory path
+</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#copyDir">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">copyDir</span><span class="params">(<span name="url">url: <span class="extype" name="java.net.URL">URL</span></span>, <span name="dest">dest: <span class="extype" name="java.lang.String">String</span></span>, <span name="tagged">tagged: <a href="../specification/Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">copy the content of a directory to another.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>copy the content of a directory to another.</p></div><dl class="paramcmts block"><dt class="param">url</dt><dd class="cmt"><p>url of the directory to copy</p></dd><dt class="param">dest</dt><dd class="cmt"><p>destination directory path</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#copyDir">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">copyDir</span><span class="params">(<span name="url">url: <span class="extype" name="java.net.URL">URL</span></span>, <span name="dest">dest: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">copy the content of a directory to another.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>copy the content of a directory to another.</p></div><dl class="paramcmts block"><dt class="param">url</dt><dd class="cmt"><p>url of the directory to copy</p></dd><dt class="param">dest</dt><dd class="cmt"><p>destination directory path
+</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#copyFile">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">copyFile</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>, <span name="dest">dest: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Copy the content of a directory to another.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Copy the content of a directory to another.</p></div><dl class="paramcmts block"><dt class="param">path</dt><dd class="cmt"><p>path of the file to copy</p></dd><dt class="param">dest</dt><dd class="cmt"><p>destination directory path
+</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#copySpecResourcesDir">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">copySpecResourcesDir</span><span class="params">(<span name="src">src: <span class="extype" name="java.lang.String">String</span></span>, <span name="outputDir">outputDir: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Copy specs resources found either in the specs jar or in the classpath directories to an output directory.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Copy specs resources found either in the specs jar or in the classpath directories to an output directory.
+Current limitations!! This only works if the jar holding the resources contains the word &quot;specs&quot;.</p></div><dl class="paramcmts block"><dt class="param">src</dt><dd class="cmt"><p>name of the resource directory to copy</p></dd><dt class="param">outputDir</dt><dd class="cmt"><p>output directory where to copy the files to
+</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#createDir">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">createDir</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">creates a directory for a given path
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>creates a directory for a given path
+</p></div><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileWriter#createFile">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">createFile</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.AnyVal">AnyVal</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">creates a file for a given path.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>creates a file for a given path. Create the parent directory if necessary.
+</p></div><div class="block">
+          definition classes: <a href="../io/FileWriter.html" class="extype" name="org.specs.io.FileWriter">FileWriter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.log.Log#debug">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">debug</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">prints the message if the log level is Debug</p>
+            <div class="fullcomment"><div class="comment cmt"><p>prints the message if the log level is Debug</p></div><div class="block">
+          definition classes: <a href="../log/Log.html" class="extype" name="org.specs.log.Log">Log</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" name="org.specs.runner.Reporter#displayHelp">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">displayHelp</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display all help options.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display all help options.</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" name="org.specs.runner.Reporter#displayOptions">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">displayOptions</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display the options summary.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display the options summary.</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" name="org.specs.runner.Reporter#displayOptionsDescription">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">displayOptionsDescription</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display the options description.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display the options description.</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" name="org.specs.runner.Reporter#displayUsage">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">displayUsage</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display the usage.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display the usage.</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#eq">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: AnyRef</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to test whether the argument (<code>arg0</code>) is a reference to the
+receiver object (<code>this</code>).</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to test whether the argument (<code>arg0</code>) is a reference to the
+receiver object (<code>this</code>).</p><p>The <code>eq</code> method implements an [http://en.wikipedia.org/wiki/Equivalence_relation equivalence relation] on
+non-null instances of <code>AnyRef</code>:
+ * It is reflexive: for any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(x)</code> returns <code>true</code>.
+ * It is symmetric: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, <code>x.eq(y)</code> returns <code>true</code> if and
+   only if <code>y.eq(x)</code> returns <code>true</code>.
+ * It is transitive: for any non-null instances <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code> if <code>x.eq(y)</code> returns <code>true</code>   and <code>y.eq(z)</code> returns <code>true</code>, then <code>x.eq(z)</code> returns <code>true</code>.</p><p>Additionally, the <code>eq</code> method has three other properties.
+ * It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+   <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.
+ * For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.
+ * <code>null.eq(null)</code> returns <code>true</code>.</p><p>When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for reference equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.XmlRunner#equals">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to compare the receiver object (<code>this</code>) with the argument object (<code>arg0</code>) for equivalence.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to compare the receiver object (<code>this</code>) with the argument object (<code>arg0</code>) for equivalence.</p><p>The default implementations of this method is an [http://en.wikipedia.org/wiki/Equivalence_relation equivalence
+relation]:
+ * It is reflexive: for any instance <code>x</code> of type <code>Any</code>, <code>x.equals(x)</code> should return <code>true</code>.
+ * It is symmetric: for any instances <code>x</code> and <code>y</code> of type <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and
+   only if <code>y.equals(x)</code> returns <code>true</code>.
+ * It is transitive: for any instances <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code> if <code>x.equals(y)</code> returns <code>true</code> and
+   <code>y.equals(z)</code> returns <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</p><p>If you override this method, you should verify that your implementation remains an equivalence relation.
+Additionally, when overriding this method it is often necessary to override <code>hashCode</code> to ensure that objects
+that are &quot;equal&quot; (<code>o1.equals(o2)</code> returns <code>true</code>) hash to the same 
+scala.Int
+(<code>o1.hashCode.equals(o2.hashCode)</code>).
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.runner.XmlRunner">XmlRunner</a> → Equals → AnyRef → Any
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.log.Log#error">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">error</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">prints the message if the log level is &lt;= Error</p>
+            <div class="fullcomment"><div class="comment cmt"><p>prints the message if the log level is &lt;= Error</p></div><div class="block">
+          definition classes: <a href="../log/Log.html" class="extype" name="org.specs.log.Log">Log</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.SpecsFilter#exampleFilter">
+      <h4 class="signature">
+      <span class="kind">lazy val</span>
+      <span class="symbol">
+        <span class="name">exampleFilter</span><span class="result">: <span class="extype" name="java.util.regex.Pattern">Pattern</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="SpecsFilter.html" class="extype" name="org.specs.runner.SpecsFilter">SpecsFilter</a>
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Reporter#exampleFilterPattern">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">exampleFilterPattern</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">regexp for filtering examples.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>regexp for filtering examples.</p></div><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a> → <a href="SpecsFilter.html" class="extype" name="org.specs.runner.SpecsFilter">SpecsFilter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.SpecsFilter#examplePattern">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">examplePattern</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>either the system property named &quot;example&quot; or the class attribute
+</p></dd></dl><div class="block">
+          definition classes: <a href="SpecsFilter.html" class="extype" name="org.specs.runner.SpecsFilter">SpecsFilter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#exists">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">exists</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if the file exists</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.XmlRunner#fName">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">fName</span><span class="result">: (<a href="../specification/BaseSpecification.html" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a>) ⇒ <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="org.specs.runner.OutputReporter#failureColored">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">failureColored</span><span class="params">(<span name="text">text: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">colors the text in red if colors are enabled</p>
+            <div class="fullcomment"><div class="comment cmt"><p>colors the text in red if colors are enabled</p></div><div class="block">
+          definition classes: <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.XmlRunner#fileName">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">fileName</span><span class="params">(<span name="spec">spec: <a href="../specification/BaseSpecification.html" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a></span>)</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">definition of the file name of a specification.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>definition of the file name of a specification.</p></div><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.runner.XmlRunner">XmlRunner</a> → <a href="Xml.html" class="extype" name="org.specs.runner.Xml">Xml</a> → <a href="FileReporter.html" class="extype" name="org.specs.runner.FileReporter">FileReporter</a> → <a href="File.html" class="extype" name="org.specs.runner.File">File</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.File#filePath">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">filePath</span><span class="params">(<span name="spec">spec: <a href="../specification/BaseSpecification.html" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a></span>)</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">the default path is the output dir + file name
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>the default path is the output dir + file name
+</p></div><div class="block">
+          definition classes: <a href="File.html" class="extype" name="org.specs.runner.File">File</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#filePaths">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">filePaths</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">path</dt><dd class="cmt"><p>glob expression, for example: <code>./dir/**/.xml</code></p></dd><dt>returns</dt><dd class="cmt"><p>the list of paths represented by the &quot;glob&quot; definition <code>path&lt;/path&gt;
+</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.SpecsFilter#filter">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">filter</span><span class="params">(<span name="sus">sus: <a href="../specification/Sus.html" class="extype" name="org.specs.specification.Sus">Sus</a></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<a href="../specification/Sus.html" class="extype" name="org.specs.specification.Sus">Sus</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">filter a SUS.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>filter a SUS.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>None if the sus doesn't match the description
+</p></dd></dl><div class="block">
+          definition classes: <a href="SpecsFilter.html" class="extype" name="org.specs.runner.SpecsFilter">SpecsFilter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.SpecsFilter#filter">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">filter</span><span class="params">(<span name="specification">specification: <a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">filter a specification.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>filter a specification.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>None if the resulting specification has no subspecifications
+</p></dd></dl><div class="block">
+          definition classes: <a href="SpecsFilter.html" class="extype" name="org.specs.runner.SpecsFilter">SpecsFilter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.SpecsFilter#filter">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">filter</span><span class="params">(<span name="specifications">specifications: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a>]</span>)</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">filter a list of specifications.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>filter a list of specifications.</p></div><div class="block">
+          definition classes: <a href="SpecsFilter.html" class="extype" name="org.specs.runner.SpecsFilter">SpecsFilter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.SpecsFilter#filterExample">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">filterExample</span><span class="params">(<span name="example">example: <a href="../specification/Example.html" class="extype" name="org.specs.specification.Example">Example</a></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<a href="../specification/Example.html" class="extype" name="org.specs.specification.Example">Example</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">filter one example.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>filter one example.</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>None if the example does not match the expected regular expression
+</p></dd></dl><div class="block">
+          definition classes: <a href="SpecsFilter.html" class="extype" name="org.specs.runner.SpecsFilter">SpecsFilter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.SpecsFilter#filteredSpecs">
+      <h4 class="signature">
+      <span class="kind">lazy val</span>
+      <span class="symbol">
+        <span class="name">filteredSpecs</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="SpecsFilter.html" class="extype" name="org.specs.runner.SpecsFilter">SpecsFilter</a>
+        </div></div>
+          
+    </li><li visbl="prt" name="scala.AnyRef#finalize">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is called by the garbage collector on the receiver object when garbage collection determines that
+there are no more references to the object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is called by the garbage collector on the receiver object when garbage collection determines that
+there are no more references to the object.</p><p>The details of when and if the <code>finalize</code> method are invoked, as well as the interaction between <code>finalize</code>and non-local returns and exceptions, are all platform dependent.</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.ConsoleOutput#flush">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">flush</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">flushes the content if necessary
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>flushes the content if necessary
+</p></div><div class="block">
+          definition classes: <a href="../io/ConsoleOutput.html" class="extype" name="org.specs.io.ConsoleOutput">ConsoleOutput</a> → <a href="../io/Output.html" class="extype" name="org.specs.io.Output">Output</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#getAbsolutePath">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">getAbsolutePath</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the file absolute path</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#getCanonicalPath">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">getCanonicalPath</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the file canonical path</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#getClass">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: java.lang.Class[_]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns a representation that corresponds to the dynamic class of the receiver object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns a representation that corresponds to the dynamic class of the receiver object.</p><p>The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#getName">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">getName</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the file name</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#getParent">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">getParent</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the file parent path</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#getResourcesNamed">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">getResourcesNamed</span><span class="params">(<span name="name">name: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<span class="extype" name="java.net.URL">URL</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Return urls of the resources containing the name &quot;name&quot; from this ClassLoader and the System classLoader.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Return urls of the resources containing the name &quot;name&quot; from this ClassLoader and the System classLoader.</p></div><dl class="paramcmts block"><dt class="param">name</dt><dd class="cmt"><p>name of the resource to find</p></dd><dt>returns</dt><dd class="cmt"><p>a list of URL
+</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileWriter#getWriter">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">getWriter</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.io.Writer">Writer</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">The getWriter function can be overriden to provide a mock writer writing to the console for example</p>
+            <div class="fullcomment"><div class="comment cmt"><p>The getWriter function can be overriden to provide a mock writer writing to the console for example</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a Writer object opened on the file designated by <code>path</code></p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileWriter.html" class="extype" name="org.specs.io.FileWriter">FileWriter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#globToPattern">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">globToPattern</span><span class="params">(<span name="glob">glob: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the regular expression equivalent to a glob pattern (see the specs for examples)
+</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.XmlRunner#hashCode">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns a hash code value for the object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns a hash code value for the object.</p><p>The default hashing algorithm is platform dependent.</p><p>Note that it is allowed for two objects to have identical hash codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet
+not be equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A degenerate implementation could always return <code>0</code>.
+However, it is required that if two objects are equal (<code>o1.equals(o2)</code> returns <code>true</code>) that they have
+identical hash codes (<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when overriding this method, be sure
+to verify that the behavior is consistent with the <code>equals</code> method.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for the object.</p></dd></dl><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.runner.XmlRunner">XmlRunner</a> → AnyRef → Any
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.log.Log#info">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">info</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">prints the message if the log level is &lt;= Info</p>
+            <div class="fullcomment"><div class="comment cmt"><p>prints the message if the log level is &lt;= Info</p></div><div class="block">
+          definition classes: <a href="../log/Log.html" class="extype" name="org.specs.log.Log">Log</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.OutputReporter#infoColored">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">infoColored</span><span class="params">(<span name="text">text: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">colors the text in blue if colors are enabled</p>
+            <div class="fullcomment"><div class="comment cmt"><p>colors the text in blue if colors are enabled</p></div><div class="block">
+          definition classes: <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileReader#inputStream">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">inputStream</span><span class="params">(<span name="filePath">filePath: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.io.InputStream">InputStream</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><div class="block">
+          definition classes: <a href="../io/FileReader.html" class="extype" name="org.specs.io.FileReader">FileReader</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#isAbsolute">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isAbsolute</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if the file is absolute</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#isDir">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isDir</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if the File represented by this path is a directory
+</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#isDirectory">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isDirectory</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if the file is a directory</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#isFile">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isFile</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if the file is a file</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#isHidden">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isHidden</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if the file is hidden</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.Any#isInstanceOf">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to test whether the dynamic type of the receiver object is <code>T0</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to test whether the dynamic type of the receiver object is <code>T0</code>.</p><p>Note that the test result of the test is modulo Scala's erasure semantics.  Therefore the expression<code>1.isInstanceOf[String]</code> will return <code>false</code>, while the expression <code>List(1).isInstanceOf[List[String]]</code> will
+return <code>true</code>.  In the latter example, because the type argument is erased as part of compilation it is not
+possible to check whether the contents of the list are of the requested typed.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.log.Log#level">
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">level</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="../log/Log.html" class="extype" name="org.specs.log.Log">Log</a>
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#listFiles">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">listFiles</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the files of that directory</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem.logger">
+      <h4 class="signature"><a href="../io/FileSystem$logger$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">logger</span><span class="result"> extends Log with ConsoleOutput</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.runner.Reporter#main">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">main</span><span class="params">(<span name="arguments">arguments: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="java.lang.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Main method for the Reporter trait.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Main method for the Reporter trait.</p><p>It first agregates all arguments: passed to the class and passed from the command line.
+Then it calls the reportSpecs method and exit the System with the appropriate error code,
+depending on the specification success or not.
+</p></div><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileWriter#mkdirs">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">mkdirs</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">creates a new directory</p>
+            <div class="fullcomment"><div class="comment cmt"><p>creates a new directory</p></div><div class="block">
+          definition classes: <a href="../io/FileWriter.html" class="extype" name="org.specs.io.FileWriter">FileWriter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#ne">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: AnyRef</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o.ne(arg0)</code> is the same as <code>!(o.eq(arg0))</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o.ne(arg0)</code> is the same as <code>!(o.eq(arg0))</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for reference dis-equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>false</code> if the argument is not a reference to the receiver object; <code>true</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.File#normalize">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">normalize</span><span class="params">(<span name="dir">dir: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><div class="block">
+          definition classes: <a href="File.html" class="extype" name="org.specs.runner.File">File</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#notify">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.</p></div><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#notifyAll">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.</p></div><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.XmlRunner#outputDir">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">outputDir</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">definition of the output directory of the report.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>definition of the output directory of the report.</p></div><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.runner.XmlRunner">XmlRunner</a> → <a href="Xml.html" class="extype" name="org.specs.runner.Xml">Xml</a> → <a href="FileReporter.html" class="extype" name="org.specs.runner.FileReporter">FileReporter</a> → <a href="File.html" class="extype" name="org.specs.runner.File">File</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.XmlRunner#outputDirPath">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">outputDirPath</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="org.specs.io.Output#printStackTrace">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">printStackTrace</span><span class="params">(<span name="t">t: <span class="extype" name="java.lang.Throwable">Throwable</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">prints stacktraces
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>prints stacktraces
+</p></div><div class="block">
+          definition classes: <a href="../io/Output.html" class="extype" name="org.specs.io.Output">Output</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.OutputReporter#printStats">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">printStats</span><span class="params">(<span name="stat">stat: (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)</span>, <span name="padding">padding: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">prints the statistics for a specification
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>prints the statistics for a specification
+</p></div><div class="block">
+          definition classes: <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.OutputReporter#printStats">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">printStats</span><span class="params">(<span name="sus">sus: <a href="../specification/Sus.html" class="extype" name="org.specs.specification.Sus">Sus</a></span>, <span name="padding">padding: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">prints the statistics for a sus
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>prints the statistics for a sus
+</p></div><div class="block">
+          definition classes: <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.OutputReporter#printSus">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">printSus</span><span class="params">(<span name="sus">sus: <a href="../specification/Sus.html" class="extype" name="org.specs.specification.Sus">Sus</a></span>, <span name="padding">padding: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">prints one sus specification
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>prints one sus specification
+</p></div><div class="block">
+          definition classes: <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.ConsoleOutput#printf">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">printf</span><span class="params">(<span name="format">format: <span class="extype" name="java.lang.String">String</span></span>, <span name="args">args: <span class="extype" name="scala.Any">Any</span>*</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">prints several objects according to a format string (see Console.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>prints several objects according to a format string (see Console.printf)
+</p></div><div class="block">
+          definition classes: <a href="../io/ConsoleOutput.html" class="extype" name="org.specs.io.ConsoleOutput">ConsoleOutput</a> → <a href="../io/Output.html" class="extype" name="org.specs.io.Output">Output</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.ConsoleOutput#println">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">println</span><span class="params">(<span name="m">m: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">prints an object with a newline
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>prints an object with a newline
+</p></div><div class="block">
+          definition classes: <a href="../io/ConsoleOutput.html" class="extype" name="org.specs.io.ConsoleOutput">ConsoleOutput</a> → <a href="../io/Output.html" class="extype" name="org.specs.io.Output">Output</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.XmlRunner#productArity">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">productArity</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.runner.XmlRunner">XmlRunner</a> → Product
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.runner.XmlRunner#productElement">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">productElement</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.runner.XmlRunner">XmlRunner</a> → Product
+        </div></div>
+          
+    </li><li visbl="pub" name="scala.Product#productElements">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name deprecated">productElements</span><span class="result">: <span class="extype" name="scala.collection.Iterator">Iterator</span>[<span class="extype" name="scala.Any">Any</span>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: Product
+        </div><div class="block"><ol>deprecated:
+          <li><p>use productIterator instead</p></li>
+        </ol></div></div>
+          
+    </li><li visbl="pub" name="scala.Product#productIterator">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">productIterator</span><span class="result">: <span class="extype" name="scala.collection.Iterator">Iterator</span>[<span class="extype" name="scala.Any">Any</span>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: Product
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.runner.XmlRunner#productPrefix">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">productPrefix</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.runner.XmlRunner">XmlRunner</a> → Product
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileReader#readFile">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">readFile</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">reads the content of a file</p>
+            <div class="fullcomment"><div class="comment cmt"><p>reads the content of a file</p></div><dl class="paramcmts block"><dt class="param">path</dt><dd class="cmt"><p>the path of the file to read</p></dd><dt>returns</dt><dd class="cmt"><p>the content of the file at path
+</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileReader.html" class="extype" name="org.specs.io.FileReader">FileReader</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#removeDir">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">removeDir</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">deletes the directory and all directory contents at the specified path and return the parent path of that directory
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>deletes the directory and all directory contents at the specified path and return the parent path of that directory
+</p></div><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.File#report">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">report</span><span class="params">(<span name="specifications">specifications: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a>]</span>)</span><span class="result">: <a href="File.html" class="extype" name="org.specs.runner.File">File</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">get the specification output from specOutput and write it to the target file.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>get the specification output from specOutput and write it to the target file.
+</p></div><div class="block">
+          definition classes: <a href="File.html" class="extype" name="org.specs.runner.File">File</a> → <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a> → <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.OutputReporter#report">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">report</span><span class="params">(<span name="specs">specs: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a>]</span>, <span name="padding">padding: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">reports a list of specifications with a given space separator to display before the results.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>reports a list of specifications with a given space separator to display before the results.<br>This method may be called recursively by the <code>reportSpec</code> method if a specification
+has subSpecifications, hence the <code>padding</code> will be incremented
+</p></div><div class="block">
+          definition classes: <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.OutputReporter#reportExample">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">reportExample</span><span class="params">(<span name="example">example: <a href="../specification/Examples.html" class="extype" name="org.specs.specification.Examples">Examples</a></span>, <span name="padding">padding: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">reports one example: + if it succeeds, x if it fails, its description, its failures or errors
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>reports one example: + if it succeeds, x if it fails, its description, its failures or errors
+</p></div><div class="block">
+          definition classes: <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.OutputReporter#reportExamples">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">reportExamples</span><span class="params">(<span name="examples">examples: <span class="extype" name="scala.collection.Iterable">Iterable</span>[<a href="../specification/Example.html" class="extype" name="org.specs.specification.Example">Example</a>]</span>, <span name="padding">padding: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">reports a list of examples and indent subexamples if there are some
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>reports a list of examples and indent subexamples if there are some
+</p></div><div class="block">
+          definition classes: <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.OutputReporter#reportSpec">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">reportSpec</span><span class="params">(<span name="spec">spec: <a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a></span>, <span name="padding">padding: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">reports a specification with a given space separator to display before the results.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>reports a specification with a given space separator to display before the results.<br>This method may be called recursively by the <code>reportSpec</code> method if a specification
+has subSpecifications, hence the <code>padding</code> will be incremented
+</p></div><div class="block">
+          definition classes: <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Reporter#reportSpecs">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">reportSpecs</span><span class="result">: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">report the list of specifications held by the object mixing this trait.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>report the list of specifications held by the object mixing this trait.</p></div><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.OutputReporter#reportSus">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">reportSus</span><span class="params">(<span name="sus">sus: <a href="../specification/Sus.html" class="extype" name="org.specs.specification.Sus">Sus</a></span>, <span name="padding">padding: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">reports one sus results: print the sus specifications, then the statistics
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>reports one sus results: print the sus specifications, then the statistics
+</p></div><div class="block">
+          definition classes: <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.OutputReporter#reportSystems">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">reportSystems</span><span class="params">(<span name="systems">systems: <span class="extype" name="scala.collection.Iterable">Iterable</span>[<a href="../specification/Sus.html" class="extype" name="org.specs.specification.Sus">Sus</a>]</span>, <span name="padding">padding: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">reports the sus results.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>reports the sus results. If there are more than one, then report stats for each
+else just print the specification of the sus, the parent specification will display the total
+for that sus
+</p></div><div class="block">
+          definition classes: <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Reporter#resetOptions">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">resetOptions</span><span class="params">()</span><span class="result">: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">reset all options.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>reset all options.</p></div><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Reporter#runConfiguration">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">runConfiguration</span><span class="result">: <a href="../util/Configuration.html" class="extype" name="org.specs.util.Configuration">Configuration</a></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Reporter#setColorize">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">setColorize</span><span class="params">()</span><span class="result">: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">allow subclasses to add colorization to the output.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>allow subclasses to add colorization to the output.</p></div><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Reporter#setConfiguration">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">setConfiguration</span><span class="params">(<span name="className">className: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="java.lang.String">String</span>]</span>)</span><span class="result">: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">set a new configuration object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>set a new configuration object.</p></div><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Reporter#setFailedAndErrorsOnly">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">setFailedAndErrorsOnly</span><span class="params">()</span><span class="result">: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">allow subclasses to remove the ok and skipped examples.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>allow subclasses to remove the ok and skipped examples.</p></div><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Reporter#setFinalStatisticsOnly">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">setFinalStatisticsOnly</span><span class="params">()</span><span class="result">: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">allow subclasses to print the final statistics.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>allow subclasses to print the final statistics.only</p></div><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Reporter#setNoStacktrace">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">setNoStacktrace</span><span class="params">()</span><span class="result">: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">allow subclasses to remove the stacktrace display.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>allow subclasses to remove the stacktrace display.</p></div><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Reporter#setNoStatistics">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">setNoStatistics</span><span class="params">()</span><span class="result">: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">allow subclasses to remove the statistics.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>allow subclasses to remove the statistics.</p></div><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Reporter#setOptionsFromConfig">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">setOptionsFromConfig</span><span class="params">()</span><span class="result">: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Reporter#setPlanOnly">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">setPlanOnly</span><span class="params">()</span><span class="result">: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">allow subclasses to display high-level descriptions only.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>allow subclasses to display high-level descriptions only.</p></div><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.OutputReporter#skipColored">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">skipColored</span><span class="params">(<span name="text">text: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">colors the text in yellow if colors are enabled</p>
+            <div class="fullcomment"><div class="comment cmt"><p>colors the text in yellow if colors are enabled</p></div><div class="block">
+          definition classes: <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Xml#specOutput">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">specOutput</span><span class="params">(<span name="spec">spec: <a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a></span>)</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">definition of xml output.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>definition of xml output.</p></div><div class="block">
+          definition classes: <a href="Xml.html" class="extype" name="org.specs.runner.Xml">Xml</a> → <a href="File.html" class="extype" name="org.specs.runner.File">File</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.XmlRunner#specs">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">specs</span><span class="result">: <span class="extype" name="scala.collection.Seq">Seq</span>[<a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.runner.XmlRunner">XmlRunner</a> → <a href="SpecsHolder.html" class="extype" name="org.specs.runner.SpecsHolder">SpecsHolder</a>
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.runner.OutputReporter#stats">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">stats</span><span class="params">(<span name="example">example: <a href="../specification/Example.html" class="extype" name="org.specs.specification.Example">Example</a></span>)</span><span class="result">: (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the number of examples, expectations, failures and errors for an example
+by collecting those numbers on this example and on sub-examples
+</p></dd></dl><div class="block">
+          definition classes: <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.OutputReporter#stats">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">stats</span><span class="params">(<span name="sus">sus: <a href="../specification/Sus.html" class="extype" name="org.specs.specification.Sus">Sus</a></span>)</span><span class="result">: (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the number of examples, expectations, failures and errors for a sus
+by collecting those numbers on examples
+</p></dd></dl><div class="block">
+          definition classes: <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.OutputReporter#stats">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">stats</span><span class="params">(<span name="spec">spec: <a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a></span>)</span><span class="result">: (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the number of examples, expectations, failures and errors for a specification
+by collecting those numbers on sub-specifications and systems
+</p></dd></dl><div class="block">
+          definition classes: <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.OutputReporter#successColored">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">successColored</span><span class="params">(<span name="text">text: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">colors the text in green if colors are enabled</p>
+            <div class="fullcomment"><div class="comment cmt"><p>colors the text in green if colors are enabled</p></div><div class="block">
+          definition classes: <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.SpecsFilter#susFilter">
+      <h4 class="signature">
+      <span class="kind">lazy val</span>
+      <span class="symbol">
+        <span class="name">susFilter</span><span class="result">: <span class="extype" name="java.util.regex.Pattern">Pattern</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="SpecsFilter.html" class="extype" name="org.specs.runner.SpecsFilter">SpecsFilter</a>
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Reporter#susFilterPattern">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">susFilterPattern</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">regexp for filtering systems.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>regexp for filtering systems.</p></div><div class="block">
+          definition classes: <a href="Reporter.html" class="extype" name="org.specs.runner.Reporter">Reporter</a> → <a href="SpecsFilter.html" class="extype" name="org.specs.runner.SpecsFilter">SpecsFilter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.SpecsFilter#susPattern">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">susPattern</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>either the system property named &quot;sus&quot; or the class attribute
+</p></dd></dl><div class="block">
+          definition classes: <a href="SpecsFilter.html" class="extype" name="org.specs.runner.SpecsFilter">SpecsFilter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#synchronized">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: T0</span>)</span><span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.runner.Console#timer">
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">timer</span><span class="result">: <a href="../util/SimpleTimer.html" class="extype" name="org.specs.util.SimpleTimer">SimpleTimer</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">this timer uses java Calendar to compute hours, minutes, seconds and milliseconds</p>
+            <div class="fullcomment"><div class="comment cmt"><p>this timer uses java Calendar to compute hours, minutes, seconds and milliseconds</p></div><div class="block">
+          definition classes: <a href="Console.html" class="extype" name="org.specs.runner.Console">Console</a> → <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.OutputReporter#toAddableTuple">
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">toAddableTuple</span><span class="params">(<span name="t1">t1: (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Int">Int</span>)</span>)</span><span class="result">: <a href="OutputReporter$AddableTuple.html" class="extype" name="org.specs.runner.OutputReporter.AddableTuple">AddableTuple</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">utility implicit definition to be able to add tuples</p>
+            <div class="fullcomment"><div class="comment cmt"><p>utility implicit definition to be able to add tuples</p></div><div class="block">
+          attributes: implicit 
+        </div><div class="block">
+          definition classes: <a href="OutputReporter.html" class="extype" name="org.specs.runner.OutputReporter">OutputReporter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.runner.XmlRunner#toString">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns a string representation of the object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns a string representation of the object.</p><p>The default representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a string representation of the object.</p></dd></dl><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.runner.XmlRunner">XmlRunner</a> → AnyRef → Any
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#unjar">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">unjar</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>, <span name="dirPath">dirPath: <span class="extype" name="java.lang.String">String</span></span>, <span name="regexFilter">regexFilter: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Unjar the jar (or zip file) specified by &quot;path&quot; to the &quot;dest&quot; directory.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Unjar the jar (or zip file) specified by &quot;path&quot; to the &quot;dest&quot; directory.
+Filters files which shouldn't be extracted with a regular expression.</p></div><dl class="paramcmts block"><dt class="param">path</dt><dd class="cmt"><p>path of the jar file</p></dd><dt class="param">regexFilter</dt><dd class="cmt"><p>regular expression filtering files which shouldn't be extracted
+</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileSystem#unjar">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">unjar</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>, <span name="dest">dest: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Unjar the jar (or zip file) specified by &quot;path&quot; to the &quot;dest&quot; directory.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Unjar the jar (or zip file) specified by &quot;path&quot; to the &quot;dest&quot; directory.</p></div><dl class="paramcmts block"><dt class="param">path</dt><dd class="cmt"><p>path of the jar file</p></dd><dt class="param">dest</dt><dd class="cmt"><p>destination directory path
+</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileSystem.html" class="extype" name="org.specs.io.FileSystem">FileSystem</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#wait">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#wait">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#wait">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.log.Log#warning">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">warning</span><span class="params">(<span name="msg">msg: ⇒ <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">prints the message if the log level is &lt;= Warning</p>
+            <div class="fullcomment"><div class="comment cmt"><p>prints the message if the log level is &lt;= Warning</p></div><div class="block">
+          definition classes: <a href="../log/Log.html" class="extype" name="org.specs.log.Log">Log</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileWriter#write">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">write</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="params">(<span name="function">function: (<span class="extype" name="java.io.Writer">Writer</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">writes some content to a file and take care of closing the file.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>writes some content to a file and take care of closing the file.</p><p>Usage: <pre>write(&quot;./dir/hello.txt&quot;) { out =&gt;
+  out.write(&quot;content&quot;)
+}</pre></p></div><dl class="paramcmts block"><dt class="param">path</dt><dd class="cmt"><p>path of the file to write
+</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileWriter.html" class="extype" name="org.specs.io.FileWriter">FileWriter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.io.FileWriter#writeFile">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">writeFile</span><span class="params">(<span name="path">path: <span class="extype" name="java.lang.String">String</span></span>, <span name="content">content: ⇒ <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">writes some content to a file.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>writes some content to a file.</p></div><dl class="paramcmts block"><dt class="param">path</dt><dd class="cmt"><p>path of the file to read</p></dd></dl><div class="block">
+          definition classes: <a href="../io/FileWriter.html" class="extype" name="org.specs.io.FileWriter">FileWriter</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li></ol>
+            </div>
+                
+      </div>
+      
+      <div id="tooltip"></div>
+      
+    </body>
+      </html>

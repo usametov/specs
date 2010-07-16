@@ -1,0 +1,689 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>Scaladoc for org.specs.matcher</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		      <script type="text/javascript" src="../../../lib/jquery.js"></script>
+          
+      <link href="../../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+    
+        </head>
+        <body class="value">
+
+      <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.specs">specs</a></p>
+
+      <div id="definition">
+        <img src="../../../lib/package_big.png" />
+        <h1>matcher</h1>
+      </div>
+
+      <h4 class="signature" id="signature">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">matcher</span>
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment"></div>
+      
+      <div id="template">
+
+        <div id="mbrsel">
+          
+          <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+          </div>
+        </div>
+        
+                
+        
+        <div class="members" id="types">
+              <h3>Type Members</h3>
+              <ol><li visbl="pub" name="org.specs.matcher.AbstractMatcher">
+      <h4 class="signature"><a href="AbstractMatcher.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">AbstractMatcher</span><span class="tparams">[<span name="T">-T</span>]</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>AbstractMatcher</code> class is the base class for Matchers.</p>
+    </li><li visbl="pub" name="org.specs.matcher.AnyBaseMatchers">
+      <h4 class="signature"><a href="AnyBaseMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">AnyBaseMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>AnyBaseMatchers</code> trait provides matchers which are applicable to any scala reference or value
+</p>
+    </li><li visbl="pub" name="org.specs.matcher.AnyBeHaveMatchers">
+      <h4 class="signature"><a href="AnyBeHaveMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">AnyBeHaveMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.AnyMatchers">
+      <h4 class="signature"><a href="AnyMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">AnyMatchers</span><span class="result"> extends AnyBaseMatchers with AnyBeHaveMatchers</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>AnyMatchers</code> trait provides matchers which are applicable to any scala reference or value
+and can be used with a be/have + matcher syntax
+</p>
+    </li><li visbl="pub" name="org.specs.matcher.ArticleMatcher">
+      <h4 class="signature"><a href="ArticleMatcher.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ArticleMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends OkWordMatcher[T]</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.BaseMatchers">
+      <h4 class="signature"><a href="BaseMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">BaseMatchers</span><span class="result"> extends AnyBaseMatchers with LogicalMatchers with StringBaseMatchers with IterableBaseMatchers with MapBaseMatchers with NumericBaseMatchers with EitherBaseMatchers with PatternBaseMatchers with XmlBaseMatchers with FileBaseMatchers with MatcherResult with EventuallyMatchers</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>BaseMatchers</code> trait provides all existing Matchers to the<code>Specification</code> trait
+They can't be used with be/have + matcher syntax
+</p>
+    </li><li visbl="pub" name="org.specs.matcher.BeCloseTo">
+      <h4 class="signature"><a href="BeCloseTo.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">BeCloseTo</span><span class="tparams">[<span name="S">S</span>]</span><span class="result"> extends Matcher[S]</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.BeEqualTo">
+      <h4 class="signature"><a href="BeEqualTo.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">BeEqualTo</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends Matcher[T]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Reusable equalTo matcher
+</p>
+    </li><li visbl="pub" name="org.specs.matcher.BeEqualToIgnoringCase">
+      <h4 class="signature"><a href="BeEqualToIgnoringCase.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">BeEqualToIgnoringCase</span><span class="tparams">[<span name="T">T &lt;: String</span>]</span><span class="result"> extends Matcher[T]</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.BeLessThan">
+      <h4 class="signature"><a href="BeLessThan.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">BeLessThan</span><span class="tparams">[<span name="S">S</span>]</span><span class="result"> extends Matcher[S]</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.BeLessThanOrEqualTo">
+      <h4 class="signature"><a href="BeLessThanOrEqualTo.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">BeLessThanOrEqualTo</span><span class="tparams">[<span name="S">S</span>]</span><span class="result"> extends Matcher[S]</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.BeNull">
+      <h4 class="signature"><a href="BeNull.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">BeNull</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends Matcher[T]</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.BeVerbMatcher">
+      <h4 class="signature"><a href="BeVerbMatcher.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">BeVerbMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends OkWordMatcher[T]</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.EitherBaseMatchers">
+      <h4 class="signature"><a href="EitherBaseMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">EitherBaseMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">no summary matey</p>
+    </li><li visbl="pub" name="org.specs.matcher.EitherBeHaveMatchers">
+      <h4 class="signature"><a href="EitherBeHaveMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">EitherBeHaveMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.EitherMatchers">
+      <h4 class="signature"><a href="EitherMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">EitherMatchers</span><span class="result"> extends EitherBaseMatchers with EitherBeHaveMatchers</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">no summary matey</p>
+    </li><li visbl="pub" name="org.specs.matcher.EqualIgnoringSpaceMatcher">
+      <h4 class="signature"><a href="EqualIgnoringSpaceMatcher.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">EqualIgnoringSpaceMatcher</span><span class="result"> extends Matcher[Seq[Node]]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Matcher for equalIgnoreSpace comparison, ignoring the nodes order
+</p>
+    </li><li visbl="pub" name="org.specs.matcher.EqualIgnoringSpaceMatcherOrdered">
+      <h4 class="signature"><a href="EqualIgnoringSpaceMatcherOrdered.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">EqualIgnoringSpaceMatcherOrdered</span><span class="result"> extends Matcher[Seq[Node]]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Matcher for equalIgnoreSpace comparison, considering the node order
+</p>
+    </li><li visbl="pub" name="org.specs.matcher.EventuallyMatchers">
+      <h4 class="signature"><a href="EventuallyMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">EventuallyMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provides functions to delay the evaluation of a matcher.</p>
+    </li><li visbl="pub" name="org.specs.matcher.FileBaseMatchers">
+      <h4 class="signature"><a href="FileBaseMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">FileBaseMatchers</span><span class="result"> extends PathMatchers</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.FileBeHaveMatchers">
+      <h4 class="signature"><a href="FileBeHaveMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">FileBeHaveMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.FileMatchers">
+      <h4 class="signature"><a href="FileMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">FileMatchers</span><span class="result"> extends FileBaseMatchers with FileBeHaveMatchers</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>FileMatchers</code> trait provides matchers which are applicable to files
+</p>
+    </li><li visbl="pub" name="org.specs.matcher.HaveTheSameElementsAs">
+      <h4 class="signature"><a href="HaveTheSameElementsAs.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">HaveTheSameElementsAs</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends Matcher[Iterable[T]]</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.HaveVerbMatcher">
+      <h4 class="signature"><a href="HaveVerbMatcher.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">HaveVerbMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends OkWordMatcher[T]</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.IterableBaseMatchers">
+      <h4 class="signature"><a href="IterableBaseMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">IterableBaseMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.IterableBeHaveMatchers">
+      <h4 class="signature"><a href="IterableBeHaveMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">IterableBeHaveMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.IterableMatchers">
+      <h4 class="signature"><a href="IterableMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">IterableMatchers</span><span class="result"> extends IterableBaseMatchers with IterableBeHaveMatchers</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>IterableMatchers</code> trait provides matchers which are applicable to Iterable objects
+</p>
+    </li><li visbl="pub" name="org.specs.matcher.JUnitFailureExceptionWithResult">
+      <h4 class="signature"><a href="JUnitFailureExceptionWithResult.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">JUnitFailureExceptionWithResult</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="message">message: String</span>, <span name="result">result: Result[T]</span>)</span><span class="result"> extends AssertionFailedError with HasResult[T] with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Specialized AssertionFailedError holding a result in order to cope with the case where matchers are being or-ed together
+</p>
+    </li><li visbl="pub" name="org.specs.matcher.JUnitMatchers">
+      <h4 class="signature"><a href="JUnitMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">JUnitMatchers</span><span class="result"> extends SpecsMatchers</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provides the possibility to use specs matchers in a JUnit test case.</p>
+    </li><li visbl="pub" name="org.specs.matcher.LogicalMatchers">
+      <h4 class="signature"><a href="LogicalMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">LogicalMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provides functions which can be use on matchers: not, verifyAll, verifyAny
+</p>
+    </li><li visbl="pub" name="org.specs.matcher.MapBaseMatchers">
+      <h4 class="signature"><a href="MapBaseMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">MapBaseMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.MapBeHaveMatchers">
+      <h4 class="signature"><a href="MapBeHaveMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">MapBeHaveMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.MapMatchers">
+      <h4 class="signature"><a href="MapMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">MapMatchers</span><span class="result"> extends MapBaseMatchers with MapBeHaveMatchers</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>MapMatchers</code> trait provides matchers which are applicable to Map objects<br>It currently accepts any Iterable[(K, V)] whereas it should only accept Map[K, V].</p>
+    </li><li visbl="pub" name="org.specs.matcher.MatchExactly">
+      <h4 class="signature"><a href="MatchExactly.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">MatchExactly</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.Matcher">
+      <h4 class="signature"><a href="Matcher.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Matcher</span><span class="tparams">[<span name="T">-T</span>]</span><span class="result"> extends AbstractMatcher[T] with MatcherResult</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class is the base class for checking if a given value, of type T, is matching an expected value</p>
+    </li><li visbl="pub" name="org.specs.matcher.MatcherResult">
+      <h4 class="signature"><a href="MatcherResult.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">MatcherResult</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Result of <code>Matcher.</p>
+    </li><li visbl="pub" name="org.specs.matcher.Matchers">
+      <h4 class="signature"><a href="Matchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Matchers</span><span class="result"> extends AnyMatchers with LogicalMatchers with StringMatchers with IterableMatchers with MapMatchers with NumericMatchers with EitherMatchers with PatternMatchers with XmlMatchers with FileMatchers with MatcherResult with EventuallyMatchers</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>Matchers</code> trait provides all existing Matchers to the<code>Specification</code> trait
+They can be used with be/have + matcher syntax
+</p>
+    </li><li visbl="pub" name="org.specs.matcher.MockMatchers">
+      <h4 class="signature"><a href="MockMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">MockMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Matcher for mock objects.</p>
+    </li><li visbl="pub" name="org.specs.matcher.Monoid">
+      <h4 class="signature"><a href="Monoid.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Monoid</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.NotMatcher">
+      <h4 class="signature"><a href="NotMatcher.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">NotMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends Matcher[T]</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.NumericBaseMatchers">
+      <h4 class="signature"><a href="NumericBaseMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">NumericBaseMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.NumericBeHaveMatchers">
+      <h4 class="signature"><a href="NumericBeHaveMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">NumericBeHaveMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.NumericMatchers">
+      <h4 class="signature"><a href="NumericMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">NumericMatchers</span><span class="result"> extends NumericBaseMatchers with NumericBeHaveMatchers</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>NumericMatchers</code> trait provides matchers which allow numerical comparisons
+</p>
+    </li><li visbl="pub" name="org.specs.matcher.OkWordMatcher">
+      <h4 class="signature"><a href="OkWordMatcher.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">OkWordMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends Matcher[T]</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: abstract 
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.matcher.Parameters">
+      <h4 class="signature"><a href="Parameters.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Parameters</span><span class="params">(<span name="params">params: Map[Symbol, Int]</span>)</span><span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class is the base class for the display and set case classes.</p>
+    </li><li visbl="pub" name="org.specs.matcher.PathBaseMatchers">
+      <h4 class="signature"><a href="PathBaseMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">PathBaseMatchers</span><span class="result"> extends FileSystem</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.PathBeHaveMatchers">
+      <h4 class="signature"><a href="PathBeHaveMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">PathBeHaveMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.PathFunction">
+      <h4 class="signature"><a href="PathFunction.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">PathFunction</span><span class="result"> extends (Seq[Node]) ⇒ Seq[Node] with XPathFunctions with MatchExactly</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The PathFunction object encapsulate a search for a node and/or attributes or attributeValues with an XPath function
+If <code>node</code> has some children, then they are searched using equality
+</p>
+    </li><li visbl="pub" name="org.specs.matcher.PathMatchers">
+      <h4 class="signature"><a href="PathMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">PathMatchers</span><span class="result"> extends PathBaseMatchers with PathBeHaveMatchers</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>PathMatchers</code> trait provides matchers which are applicable to strings representing paths
+</p>
+    </li><li visbl="pub" name="org.specs.matcher.PatternBaseMatchers">
+      <h4 class="signature"><a href="PatternBaseMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">PatternBaseMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.PatternBeHaveMatchers">
+      <h4 class="signature"><a href="PatternBeHaveMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">PatternBeHaveMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.PatternMatchers">
+      <h4 class="signature"><a href="PatternMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">PatternMatchers</span><span class="result"> extends PatternBaseMatchers with PatternBeHaveMatchers</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>PatternMatchers</code> trait provides matchers which allow to use pattern matching
+to match expressions.</p>
+    </li><li visbl="pub" name="org.specs.matcher.ScalaCheckFunctions">
+      <h4 class="signature"><a href="ScalaCheckFunctions.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ScalaCheckFunctions</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait is used to facilitate testing by mocking ScalaCheck functionalities
+</p>
+    </li><li visbl="pub" name="org.specs.matcher.ScalaCheckMatchers">
+      <h4 class="signature"><a href="ScalaCheckMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ScalaCheckMatchers</span><span class="result"> extends ConsoleOutput with ScalaCheckFunctions with ScalaCheckParameters with SuccessValues with ExpectationsListener</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>ScalaCheckMatchers</code> trait provides matchers which allow to
+assess properties multiple times with generated data.</p>
+    </li><li visbl="pub" name="org.specs.matcher.ScalaCheckParameters">
+      <h4 class="signature"><a href="ScalaCheckParameters.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ScalaCheckParameters</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provides generation parameters to use with the <code>ScalaCheckMatchers</code></p>
+    </li><li visbl="pub" name="org.specs.matcher.SizeMatcher">
+      <h4 class="signature"><a href="SizeMatcher.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">SizeMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends Matcher[T]</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.StringBaseMatchers">
+      <h4 class="signature"><a href="StringBaseMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">StringBaseMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.StringBeHaveMatchers">
+      <h4 class="signature"><a href="StringBeHaveMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">StringBeHaveMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.StringEmptyMatcher">
+      <h4 class="signature"><a href="StringEmptyMatcher.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">StringEmptyMatcher</span><span class="result"> extends Matcher[String]</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.StringMatchers">
+      <h4 class="signature"><a href="StringMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">StringMatchers</span><span class="result"> extends StringBaseMatchers with StringBeHaveMatchers</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>StringMatchers</code> trait provides matchers which are applicable to String objects
+</p>
+    </li><li visbl="pub" name="org.specs.matcher.XPathFunctions">
+      <h4 class="signature"><a href="XPathFunctions.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">XPathFunctions</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.XmlBaseMatchers">
+      <h4 class="signature"><a href="XmlBaseMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">XmlBaseMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.XmlBeHaveMatchers">
+      <h4 class="signature"><a href="XmlBeHaveMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">XmlBeHaveMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.XmlMatcher">
+      <h4 class="signature"><a href="XmlMatcher.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">XmlMatcher</span><span class="params">(<span name="functions">functions: List[PathFunction]</span>)</span><span class="result"> extends Matcher[Seq[Node]] with MatchExactly with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The XmlMatcher class matches an xml Node, or a list of Nodes against a list of search functions, which can either search for:</p>
+    </li><li visbl="pub" name="org.specs.matcher.XmlMatchers">
+      <h4 class="signature"><a href="XmlMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">XmlMatchers</span><span class="result"> extends XmlBaseMatchers with XmlBeHaveMatchers</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>XmlMatchers</code> trait provides matchers which are applicable to xml nodes
+</p>
+    </li><li visbl="pub" name="org.specs.matcher.xUnit">
+      <h4 class="signature"><a href="xUnit.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">xUnit</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provides methods to help the transition for xUnit users
+</p>
+    </li></ol>
+            </div>
+        
+        <div class="members" id="values">
+              <h3>Value Members</h3>
+              <ol><li visbl="pub" name="org.specs.matcher.AnyMatchers">
+      <h4 class="signature"><a href="AnyMatchers$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">AnyMatchers</span><span class="result"> extends AnyMatchers</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>AnyMatchers</code> object allows the import of matchers from the AnyMatchers trait.</p>
+    </li><li visbl="pub" name="org.specs.matcher.EventuallyMatchers">
+      <h4 class="signature"><a href="EventuallyMatchers$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">EventuallyMatchers</span><span class="result"> extends EventuallyMatchers</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.MatcherUtils">
+      <h4 class="signature"><a href="MatcherUtils$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">MatcherUtils</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This object provides utility functions for matchers
+</p>
+    </li><li visbl="pub" name="org.specs.matcher.Matchers">
+      <h4 class="signature"><a href="Matchers$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Matchers</span><span class="result"> extends Matchers</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>Matchers</code> object allows to import the functions from the <code>Matchers</code> trait.</p>
+    </li><li visbl="pub" name="org.specs.matcher.NumericMatchersUtil">
+      <h4 class="signature"><a href="NumericMatchersUtil$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">NumericMatchersUtil</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.PatternMatchers">
+      <h4 class="signature"><a href="PatternMatchers$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">PatternMatchers</span><span class="result"> extends PatternMatchers</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Companion object for PatternMatchers.</p>
+    </li><li visbl="pub" name="org.specs.matcher.StringToElem">
+      <h4 class="signature"><a href="StringToElem$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">StringToElem</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.XmlBaseMatchers">
+      <h4 class="signature"><a href="XmlBaseMatchers$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">XmlBaseMatchers</span><span class="result"> extends XmlBaseMatchers</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.matcher.xpath">
+      <h4 class="signature"><a href="xpath$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">xpath</span><span class="result"> extends XPathFunctions</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This object provides XPath functions in order to use them as parameters
+</p>
+    </li></ol>
+            </div>
+                
+      </div>
+      
+      <div id="tooltip"></div>
+      
+    </body>
+      </html>

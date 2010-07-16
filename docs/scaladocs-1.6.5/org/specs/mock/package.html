@@ -1,0 +1,419 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>Scaladoc for org.specs.mock</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		      <script type="text/javascript" src="../../../lib/jquery.js"></script>
+          
+      <link href="../../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+    
+        </head>
+        <body class="value">
+
+      <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.specs">specs</a></p>
+
+      <div id="definition">
+        <img src="../../../lib/package_big.png" />
+        <h1>mock</h1>
+      </div>
+
+      <h4 class="signature" id="signature">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">mock</span>
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment"></div>
+      
+      <div id="template">
+
+        <div id="mbrsel">
+          
+          <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+          </div>
+        </div>
+        
+                
+        
+        <div class="members" id="types">
+              <h3>Type Members</h3>
+              <ol><li visbl="pub" name="org.specs.mock.CallConstraint">
+      <h4 class="signature"><a href="CallConstraint.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">CallConstraint</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class is used to specify constraints on a sequence of expected calls.</p>
+    </li><li visbl="pub" name="org.specs.mock.CalledMatchers">
+      <h4 class="signature"><a href="CalledMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">CalledMatchers</span><span class="result"> extends ExpectableFactory with NumberOfTimes with TheMockitoMocker</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provides methods to declare expectations on mock calls:<code></p>
+    </li><li visbl="pub" name="org.specs.mock.ClassMocker">
+      <h4 class="signature"><a href="ClassMocker.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ClassMocker</span><span class="result"> extends Imposterizer</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait allows to mock classes instead of interfaces only.</p>
+    </li><li visbl="pub" name="org.specs.mock.CountingNamingScheme">
+      <h4 class="signature"><a href="CountingNamingScheme.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">CountingNamingScheme</span><span class="result"> extends MockObjectNamingScheme</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Naming scheme adding a number to each anonymous mock
+</p>
+    </li><li visbl="pub" name="org.specs.mock.EasyMock">
+      <h4 class="signature"><a href="EasyMock.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">EasyMock</span><span class="result"> extends ExpectationsListener with EasyMockLifeCycle</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait integrates EasyMock in specs so that mock exceptions are correctly
+reported as specs failures and adds some syntactic sugar to allow an easier syntax.</p>
+    </li><li visbl="pub" name="org.specs.mock.EasyMockLifeCycle">
+      <h4 class="signature"><a href="EasyMockLifeCycle.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">EasyMockLifeCycle</span><span class="result"> extends LifeCycle</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait transforms EasyMock errors into specs failures
+</p>
+    </li><li visbl="pub" name="org.specs.mock.Exclusivity">
+      <h4 class="signature"><a href="Exclusivity.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Exclusivity</span><span class="params">(<span name="isExclusive">isExclusive: Boolean</span>)</span><span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: sealed 
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.mock.ExpectedCall">
+      <h4 class="signature"><a href="ExpectedCall.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ExpectedCall</span><span class="params">(<span name="method">method: String</span>)</span><span class="result"> extends SpecifiedCall with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Specifies that a method is expected to be called.</p>
+    </li><li visbl="pub" name="org.specs.mock.HamcrestMatcherAdapter">
+      <h4 class="signature"><a href="HamcrestMatcherAdapter.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">HamcrestMatcherAdapter</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="m">m: Matcher[T]</span>)</span><span class="result"> extends TypeSafeMatcher[T] with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Adapter class to use specs matchers as Hamcrest matchers</p>
+    </li><li visbl="pub" name="org.specs.mock.HamcrestMatchers">
+      <h4 class="signature"><a href="HamcrestMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">HamcrestMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provide methods to build Hamcrest matchers.</p>
+    </li><li visbl="pub" name="org.specs.mock.Imposterizer">
+      <h4 class="signature"><a href="Imposterizer.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Imposterizer</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Abstract trait for creating a mocking context.</p>
+    </li><li visbl="pub" name="org.specs.mock.JMockActions">
+      <h4 class="signature"><a href="JMockActions.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">JMockActions</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provide methods to build jMock actions
+</p>
+    </li><li visbl="pub" name="org.specs.mock.JMocker">
+      <h4 class="signature"><a href="JMocker.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">JMocker</span><span class="result"> extends JMockerExampleLifeCycle with HamcrestMatchers with JMockActions with ExpectationsListener</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The JMocker trait is used to give access to the mocking functionalities of the JMock library
+</p>
+    </li><li visbl="pub" name="org.specs.mock.JMockerContext">
+      <h4 class="signature"><a href="JMockerContext.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">JMockerContext</span><span class="result"> extends Imposterizer</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait contains the jMock Mockery object and current expectations
+</p>
+    </li><li visbl="pub" name="org.specs.mock.JMockerExampleLifeCycle">
+      <h4 class="signature"><a href="JMockerExampleLifeCycle.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">JMockerExampleLifeCycle</span><span class="result"> extends LifeCycle with JMockerContext</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait defines when a jMock context will be created and expectations checked.</p>
+    </li><li visbl="pub" name="org.specs.mock.Mocker">
+      <h4 class="signature"><a href="Mocker.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Mocker</span><span class="result"> extends ProtocolTypes with LifeCycle with MockMatchers with ExpectationsListener</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait allows to define mocked method and to specify how they can be called
+It is used in 3 steps:</p>
+    </li><li visbl="pub" name="org.specs.mock.Mockito">
+      <h4 class="signature"><a href="Mockito.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Mockito</span><span class="result"> extends MockitoLifeCycle with CalledMatchers with MockitoStubs with MockitoMatchers with MockitoFunctions</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The Mockito trait can be mixed with Specifications to provide mocking capabilities using the Mockito library.</p>
+    </li><li visbl="pub" name="org.specs.mock.MockitoFunctions">
+      <h4 class="signature"><a href="MockitoFunctions.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">MockitoFunctions</span><span class="result"> extends TheMockitoMocker</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">shortcuts to standard Mockito functions
+</p>
+    </li><li visbl="pub" name="org.specs.mock.MockitoLifeCycle">
+      <h4 class="signature"><a href="MockitoLifeCycle.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">MockitoLifeCycle</span><span class="result"> extends LifeCycle</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait allows the initialization of mocks when defined with an annotation:</p>
+    </li><li visbl="pub" name="org.specs.mock.MockitoMatchers">
+      <h4 class="signature"><a href="MockitoMatchers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">MockitoMatchers</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Type-inference friendly Mockito matcher for 'any'
+</p>
+    </li><li visbl="pub" name="org.specs.mock.MockitoStubs">
+      <h4 class="signature"><a href="MockitoStubs.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">MockitoStubs</span><span class="result"> extends MocksCreation</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provides functionalities to declare stub values on method calls.</p>
+    </li><li visbl="pub" name="org.specs.mock.MocksCreation">
+      <h4 class="signature"><a href="MocksCreation.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">MocksCreation</span><span class="result"> extends TheMockitoMocker</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provides methods to create mocks and spies.</p>
+    </li><li visbl="pub" name="org.specs.mock.Protocol">
+      <h4 class="signature"><a href="Protocol.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Protocol</span><span class="result"> extends ProtocolTypes</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>Protocol</code> class stores the expectations of mocks, alongside with the actual received calls
+It can be exclusive or not: i.</p>
+    </li><li visbl="pub" name="org.specs.mock.ProtocolDef">
+      <h4 class="signature"><a href="ProtocolDef.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ProtocolDef</span><span class="params">(<span name="protocolType">protocolType: ProtocolType</span>, <span name="expectedCalls">expectedCalls: List[SpecifiedCall]</span>)</span><span class="result"> extends SpecifiedCall with ProtocolTypes with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Specifies that a set of methods or other protocol definitions are expected to be called
+according to a protocol type
+</p>
+    </li><li visbl="pub" name="org.specs.mock.ProtocolType">
+      <h4 class="signature"><a href="ProtocolType.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ProtocolType</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>ProtocolType&lt;/class&gt; specifies if a sequence of <code>ReceivedCall</code> can match
+a sequence of <code>SpecifiedCall</code></p>
+    </li><li visbl="pub" name="org.specs.mock.ProtocolTypes">
+      <h4 class="signature"><a href="ProtocolTypes.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ProtocolTypes</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait adds some frequent protocol types and some
+syntactic sugar to be able to specify such protocol types</p>
+    </li><li visbl="pub" name="org.specs.mock.ReceivedCall">
+      <h4 class="signature"><a href="ReceivedCall.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ReceivedCall</span><span class="params">(<span name="method">method: String</span>)</span><span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Specifies that a method has been received.</p>
+    </li><li visbl="pub" name="org.specs.mock.SpecifiedCall">
+      <h4 class="signature"><a href="SpecifiedCall.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">SpecifiedCall</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Specifies which kind of received calls can be expected
+</p>
+    </li><li visbl="pub" name="org.specs.mock.TheMockitoMocker">
+      <h4 class="signature"><a href="TheMockitoMocker.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">TheMockitoMocker</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">delegate to Mockito static methods with appropriate type inference.</p>
+    </li><li visbl="pub" name="org.specs.mock.atLeastN">
+      <h4 class="signature"><a href="atLeastN.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">atLeastN</span><span class="params">(<span name="n">n: Int</span>)</span><span class="result"> extends CallConstraint with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class expects at least n received calls matching a specified call
+</p>
+    </li><li visbl="pub" name="org.specs.mock.atLeastNOf">
+      <h4 class="signature"><a href="atLeastNOf.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">atLeastNOf</span><span class="params">(<span name="n">n: Int</span>)</span><span class="result"> extends inAnyOrder with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.mock.atMostN">
+      <h4 class="signature"><a href="atMostN.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">atMostN</span><span class="params">(<span name="n">n: Int</span>)</span><span class="result"> extends CallConstraint with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class expects at most n received calls matching a specified call
+</p>
+    </li><li visbl="pub" name="org.specs.mock.atMostNOf">
+      <h4 class="signature"><a href="atMostNOf.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">atMostNOf</span><span class="params">(<span name="n">n: Int</span>)</span><span class="result"> extends inAnyOrder with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.mock.exactlyN">
+      <h4 class="signature"><a href="exactlyN.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">exactlyN</span><span class="params">(<span name="n">n: Int</span>)</span><span class="result"> extends CallConstraint with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class expects exactly n received calls matching a specified call
+</p>
+    </li><li visbl="pub" name="org.specs.mock.exactlyNOf">
+      <h4 class="signature"><a href="exactlyNOf.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">exactlyNOf</span><span class="params">(<span name="n">n: Int</span>)</span><span class="result"> extends inAnyOrder with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.mock.inAnyOrder">
+      <h4 class="signature"><a href="inAnyOrder.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">inAnyOrder</span><span class="result"> extends ProtocolType</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>inAnyOrder</code> protocol type will try to consume expected calls
+in any order.</p>
+    </li><li visbl="pub" name="org.specs.mock.inSequence">
+      <h4 class="signature"><a href="inSequence.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">inSequence</span><span class="result"> extends ProtocolType</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>inSequence</code> protocol type will try to consume expected calls
+in sequence.</p>
+    </li></ol>
+            </div>
+        
+        <div class="members" id="values">
+              <h3>Value Members</h3>
+              <ol><li visbl="pub" name="org.specs.mock.JMocker">
+      <h4 class="signature"><a href="JMocker$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">JMocker</span><span class="result"> extends JMocker</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This object can be used to import and rename some functions in case of a conflict with some other trait.</p>
+    </li><li visbl="pub" name="org.specs.mock.exclusively">
+      <h4 class="signature"><a href="exclusively$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">exclusively</span><span class="result"> extends Exclusivity</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.mock.inAnyOrder">
+      <h4 class="signature"><a href="inAnyOrder$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">inAnyOrder</span><span class="result"> extends inAnyOrder with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.mock.inSequence">
+      <h4 class="signature"><a href="inSequence$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">inSequence</span><span class="result"> extends inSequence with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.mock.nonExclusively">
+      <h4 class="signature"><a href="nonExclusively$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">nonExclusively</span><span class="result"> extends Exclusivity</span>
+      </span>
+      </a></h4>
+      
+    </li></ol>
+            </div>
+                
+      </div>
+      
+      <div id="tooltip"></div>
+      
+    </body>
+      </html>

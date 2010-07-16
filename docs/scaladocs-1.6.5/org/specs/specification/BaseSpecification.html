@@ -1,0 +1,2180 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>Scaladoc for org.specs.specification.BaseSpecification</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		      <script type="text/javascript" src="../../../lib/jquery.js"></script>
+          
+      <link href="../../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+    
+        </head>
+        <body class="type">
+
+      <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.specs">specs</a>.<a href="package.html" class="extype" name="org.specs.specification">specification</a></p>
+
+      <div id="definition">
+        <img src="../../../lib/class_big.png" />
+        <h1>BaseSpecification</h1>
+      </div>
+
+      <h4 class="signature" id="signature">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">BaseSpecification</span><span class="result"> extends <a href="../util/TreeNode.html" class="extype" name="org.specs.util.TreeNode">TreeNode</a> with <a href="SpecificationSystems.html" class="extype" name="org.specs.specification.SpecificationSystems">SpecificationSystems</a> with <a href="SpecificationExecutor.html" class="extype" name="org.specs.specification.SpecificationExecutor">SpecificationExecutor</a> with <a href="ExampleExpectationsListener.html" class="extype" name="org.specs.specification.ExampleExpectationsListener">ExampleExpectationsListener</a> with <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a> with <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a> with <a href="LinkedSpecification.html" class="extype" name="org.specs.specification.LinkedSpecification">LinkedSpecification</a> with <a href="SpecificationConfiguration.html" class="extype" name="org.specs.specification.SpecificationConfiguration">SpecificationConfiguration</a> with <a href="ComposedSpecifications.html" class="extype" name="org.specs.specification.ComposedSpecifications">ComposedSpecifications</a> with <a href="../util/LazyParameters.html" class="extype" name="org.specs.util.LazyParameters">LazyParameters</a></span>
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment"><div class="comment cmt"><p>This class provides the base structure of a specification.<br>A specification has a name, a description and is composed of:</p><ul><li>sub specifications and/or</li><li>systems under specification (systems)</li></ul><p>In turn the systems can contain recursively contain examples.</p><p>The description of a specification is its class name by default but which can be also overriden for better readibility.
+For example, it is possible to declare a Specification using a constructor taking the full name of the specification:<code>class messagingSpec extends Specification(&quot;Specification for the messaging system&quot;)</code></p><p>A <code>BaseSpecification</code> implements several traits:</p><ul><li>TreeNode: allowing the specification, its systems and examples to be considered as a generic tree of nodes</li><li>SpecificationSystems: trait holding the systems declaration and navigation functions</li><li>SpecificationExecutor: this enables the execution of examples in isolation, by executing them in a clone of the specification, so that any local variable used
+by the example is set to its initial value as if other examples never had modified it. This trait specialize the ExampleLifeCycle trait defining all steps of an example execution</li><li>ExampleExpectationsListener: this trait allows an expectation to be added to the current example being executed</li><li>Tagged: allow to tag the specification with some name so that accepted and rejected tags define what should be executed or not</li><li>HasResults: generic trait for anything declaring failures, successes, errors and skipped</li><li>LinkedSpecification: this allow the declaration of links between literal specifications</li><li>SpecificationConfiguration: this defines variables which affect the behaviour of the specification. For example if examples without expectations
+should be marked as pending</li></ul></div><div class="block">
+            known subclasses: <a href="Contexts.html" class="extype" name="org.specs.specification.Contexts">Contexts</a>, <a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a>, <a href="../literate/LiterateBaseSpecification.html" class="extype" name="org.specs.literate.LiterateBaseSpecification">LiterateBaseSpecification</a>, <a href="../literate/LiterateDataTables.html" class="extype" name="org.specs.literate.LiterateDataTables">LiterateDataTables</a>, <a href="../literate/LiterateForms.html" class="extype" name="org.specs.literate.LiterateForms">LiterateForms</a>, <a href="../literate/LiterateShortcuts.html" class="extype" name="org.specs.literate.LiterateShortcuts">LiterateShortcuts</a>
+          </div>
+            
+            
+            
+            
+          </div>
+      
+      <div id="template">
+
+        <div id="mbrsel">
+          <div id="ancestors">
+                <span class="filtertype">Inherited</span>
+                <ol><li class="hideall">Hide All</li><li class="showall">Show all</li></ol>
+                <ol id="linearization"><li class="in" name="org.specs.specification.ComposedSpecifications">ComposedSpecifications</li><li class="in" name="org.specs.util.LazyParameters">LazyParameters</li><li class="in" name="org.specs.specification.SpecificationConfiguration">SpecificationConfiguration</li><li class="in" name="org.specs.specification.LinkedSpecification">LinkedSpecification</li><li class="in" name="org.specs.execute.HasResults">HasResults</li><li class="in" name="org.specs.specification.Tagged">Tagged</li><li class="in" name="org.specs.specification.ExampleExpectationsListener">ExampleExpectationsListener</li><li class="in" name="org.specs.specification.ExpectationsListener">ExpectationsListener</li><li class="in" name="org.specs.specification.SpecificationExecutor">SpecificationExecutor</li><li class="in" name="org.specs.specification.LifeCycle">LifeCycle</li><li class="in" name="org.specs.specification.SequentialExecution">SequentialExecution</li><li class="in" name="org.specs.specification.SpecificationSystems">SpecificationSystems</li><li class="in" name="org.specs.util.TreeNode">TreeNode</li><li class="in" name="org.specs.util.Tree">Tree</li><li class="in" name="scala.AnyRef">AnyRef</li><li class="in" name="scala.Any">Any</li></ol>
+              </div>
+          <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+          </div>
+        </div>
+        
+        <div class="members" id="constructors">
+              <h3>Instance constructors</h3>
+              <ol><li visbl="pub" name="org.specs.specification.BaseSpecification#this">
+      <h4 class="signature">
+      <span class="kind">new</span>
+      <span class="symbol">
+        <span class="name">BaseSpecification</span><span class="params">()</span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>        
+        
+        <div class="members" id="types">
+              <h3>Type Members</h3>
+              <ol><li visbl="pub" name="org.specs.specification.ComposedSpecifications.ComposedSpecification">
+      <h4 class="signature"><a href="ComposedSpecifications$ComposedSpecification.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ComposedSpecification</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification.ExampleSpecification">
+      <h4 class="signature"><a href="BaseSpecification$ExampleSpecification.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ExampleSpecification</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" name="org.specs.specification.ExpectationsListener.ExpectationCounter">
+      <h4 class="signature"><a href="ExpectationsListener$ExpectationCounter.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ExpectationCounter</span><span class="tparams">[<span name="T">T</span>]</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Adds an isExpectation method to any block of code to better count the number of expectations
+</p>
+    </li><li visbl="pub" name="org.specs.specification.SpecificationSystems.SpecifiedSus">
+      <h4 class="signature"><a href="SpecificationSystems$SpecifiedSus.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">SpecifiedSus</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">this class is used instead of using the Sus directly in order to make sure that only &quot;should&quot; and &quot;can&quot; are added
+to Strings
+</p>
+    </li></ol>
+            </div>
+        
+        <div class="members" id="values">
+              <h3>Value Members</h3>
+              <ol><li visbl="pub" name="scala.AnyRef#!=">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">!=</span><span class="params">(<span name="arg0">arg0: AnyRef</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" name="scala.Any#!=">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o != arg0</code> is the same as <code>!(o == (arg0))</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o != arg0</code> is the same as <code>!(o == (arg0))</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for dis-equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>false</code> if the receiver object is equivalent to the argument; <code>true</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.AnyRef###">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef → Any
+        </div></div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#$asInstanceOf">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">$asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">()</span><span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#$isInstanceOf">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">$isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#==">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">==</span><span class="params">(<span name="arg0">arg0: AnyRef</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o == arg0</code> is the same as <code>if (o eq null) arg0 eq null else o.equals(arg0)</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o == arg0</code> is the same as <code>if (o eq null) arg0 eq null else o.equals(arg0)</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.Any#==">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o == arg0</code> is the same as <code>o.equals(arg0)</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o == arg0</code> is the same as <code>o.equals(arg0)</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.Tagged#accept">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">accept</span><span class="params">(<span name="t">t: <a href="Tag.html" class="extype" name="org.specs.specification.Tag">Tag</a>*</span>)</span><span class="result">: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Declare that this element should be accepted only if it has one of the accepted tags.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Declare that this element should be accepted only if it has one of the accepted tags.
+ This method declares the same thing for the components of this element.
+</p></div><div class="block">
+          definition classes: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.Tagged#acceptAnyTag">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">acceptAnyTag</span><span class="result">: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">reset accepted and rejected to an empty queue</p>
+            <div class="fullcomment"><div class="comment cmt"><p>reset accepted and rejected to an empty queue</p></div><div class="block">
+          definition classes: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.Tagged#acceptTag">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">acceptTag</span><span class="params">(<span name="s">s: <span class="extype" name="java.lang.String">String</span>*</span>)</span><span class="result">: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">alias for the acceptTag method</p>
+            <div class="fullcomment"><div class="comment cmt"><p>alias for the acceptTag method</p></div><div class="block">
+          definition classes: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.Tagged#acceptTags">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">acceptTags</span><span class="params">(<span name="s">s: <span class="extype" name="java.lang.String">String</span>*</span>)</span><span class="result">: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">alias for the accept method with strings</p>
+            <div class="fullcomment"><div class="comment cmt"><p>alias for the accept method with strings</p></div><div class="block">
+          definition classes: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.util.Tree#addChild">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">addChild</span><span class="params">(<span name="t">t: <a href="../util/TreeNode.html" class="extype" name="org.specs.util.TreeNode">TreeNode</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">add a new child and set its parent
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>add a new child and set its parent
+</p></div><div class="block">
+          definition classes: <a href="../util/Tree.html" class="extype" name="org.specs.util.Tree">Tree</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.ExampleExpectationsListener#addExpectation">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">addExpectation</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="expectable">expectable: <span class="extype" name="scala.Option">Option</span>[<a href="Expectable.html" class="extype" name="org.specs.specification.Expectable">Expectable</a>[T]]</span>)</span><span class="result">: <a href="Examples.html" class="extype" name="org.specs.specification.Examples">Examples</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Add an expectation to the last created example.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Add an expectation to the last created example.
+If there is none, create a new one with the forExample function.</p><p>If an expectable is given, then this expectable should be assigned the created example.
+This is the case when adding an expectation for a one-liner jmock expectation:<pre>  // in the expects method a new expectation is created with isExpectation
+  // see org.specs.mock.JMocker
+  classOf[MyClass].expects(one(_).method) in { _.method }</pre></p></div><div class="block">
+          definition classes: <a href="ExampleExpectationsListener.html" class="extype" name="org.specs.specification.ExampleExpectationsListener">ExampleExpectationsListener</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.ExampleExpectationsListener#addExpectation">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">addExpectation</span><span class="result">: <a href="Examples.html" class="extype" name="org.specs.specification.Examples">Examples</a></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="ExampleExpectationsListener.html" class="extype" name="org.specs.specification.ExampleExpectationsListener">ExampleExpectationsListener</a> → <a href="ExpectationsListener.html" class="extype" name="org.specs.specification.ExpectationsListener">ExpectationsListener</a>
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.specification.Tagged#addTag">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">addTag</span><span class="params">(<span name="t">t: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Add one tag to this element</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Add one tag to this element</p></div><div class="block">
+          definition classes: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.Tagged#addTags">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">addTags</span><span class="params">(<span name="t">t: <span class="extype" name="java.lang.String">String</span>*</span>)</span><span class="result">: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Add one or several tags to this element</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Add one or several tags to this element</p></div><div class="block">
+          definition classes: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.SpecificationSystems#addToSusVerb">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">addToSusVerb</span><span class="params">(<span name="complement">complement: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <span class="extype" name="org.specs.specification.PrefixedExamples">PrefixedExamples</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">add a textual complement to the sus verb.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>add a textual complement to the sus verb.
+For example, it is possible to declare:<code>&quot;the system&quot; should provide {...}</code>if the following function is declared:<code>def provide = addToSusVerb(&quot;provide&quot;)</code></p></div><div class="block">
+          definition classes: <a href="SpecificationSystems.html" class="extype" name="org.specs.specification.SpecificationSystems">SpecificationSystems</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#afterExample">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">afterExample</span><span class="params">(<span name="ex">ex: <a href="Examples.html" class="extype" name="org.specs.specification.Examples">Examples</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">override the afterExample method to execute actions after the
+last example of the last sus
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>override the afterExample method to execute actions after the
+last example of the last sus
+</p></div><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a> → <a href="LifeCycle.html" class="extype" name="org.specs.specification.LifeCycle">LifeCycle</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.LifeCycle#afterExpectations">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">afterExpectations</span><span class="params">(<span name="ex">ex: <a href="Examples.html" class="extype" name="org.specs.specification.Examples">Examples</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">define actions to be done just after the example expectations, as if they were part of the example</p>
+            <div class="fullcomment"><div class="comment cmt"><p>define actions to be done just after the example expectations, as if they were part of the example</p></div><div class="block">
+          definition classes: <a href="LifeCycle.html" class="extype" name="org.specs.specification.LifeCycle">LifeCycle</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#afterSpec">
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">afterSpec</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[() ⇒ <span class="extype" name="scala.Any">Any</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">the afterAllSystems function will be invoked after all systems</p>
+            <div class="fullcomment"><div class="comment cmt"><p>the afterAllSystems function will be invoked after all systems</p></div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#allExamples">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">allExamples</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<a href="Examples.html" class="extype" name="org.specs.specification.Examples">Examples</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>recursively all the examples included in this specification</p></dd></dl>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#allSystems">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">allSystems</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<a href="Sus.html" class="extype" name="org.specs.specification.Sus">Sus</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>recursively all the systems included in this specification</p></dd></dl>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.ExpectationsListener#anyToExpectationCounter">
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">anyToExpectationCounter</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="a">a: ⇒ T</span>)</span><span class="result">: <a href="ExpectationsListener$ExpectationCounter.html" class="extype" name="org.specs.specification.ExpectationsListener.ExpectationCounter">ExpectationCounter</a>[T]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Adds an isExpectation method to any block of code (mock expectation, scalacheck property) to better count the number of expectations
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Adds an isExpectation method to any block of code (mock expectation, scalacheck property) to better count the number of expectations
+</p></div><div class="block">
+          attributes: implicit 
+        </div><div class="block">
+          definition classes: <a href="ExpectationsListener.html" class="extype" name="org.specs.specification.ExpectationsListener">ExpectationsListener</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#areSpecifiedBy">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">areSpecifiedBy</span><span class="params">(<span name="specifications">specifications: <a href="../util/LazyParameter.html" class="extype" name="org.specs.util.LazyParameter">LazyParameter</a>[<a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a>]*</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">alias for isSpecifiedBy</p>
+            <div class="fullcomment"><div class="comment cmt"><p>alias for isSpecifiedBy</p></div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.Any#asInstanceOf">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to cast the receiver object to be of type <code>T0</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to cast the receiver object to be of type <code>T0</code>.</p><p>Note that the success of a cast at runtime is modulo Scala's erasure semantics.  Therefore the expression<code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at runtime, while the expression<code>List(1).asInstanceOf[List[String]]</code> will not.  In the latter example, because the type argument is erased as
+part of compilation it is not possible to check whether the contents of the list are of the requested typed.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#beforeExample">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">beforeExample</span><span class="params">(<span name="ex">ex: <a href="Examples.html" class="extype" name="org.specs.specification.Examples">Examples</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">override the beforeExample method to execute actions before the
+first example of the first sus
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>override the beforeExample method to execute actions before the
+first example of the first sus
+</p></div><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a> → <a href="LifeCycle.html" class="extype" name="org.specs.specification.LifeCycle">LifeCycle</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.LifeCycle#beforeExpectations">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">beforeExpectations</span><span class="params">(<span name="ex">ex: <a href="Examples.html" class="extype" name="org.specs.specification.Examples">Examples</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">define actions to be done just before the example expectations, as if they were part of the example</p>
+            <div class="fullcomment"><div class="comment cmt"><p>define actions to be done just before the example expectations, as if they were part of the example</p></div><div class="block">
+          definition classes: <a href="LifeCycle.html" class="extype" name="org.specs.specification.LifeCycle">LifeCycle</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#beforeSpec">
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">beforeSpec</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[() ⇒ <span class="extype" name="scala.Any">Any</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">the beforeAllSystems function will be invoked before all systems</p>
+            <div class="fullcomment"><div class="comment cmt"><p>the beforeAllSystems function will be invoked before all systems</p></div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification.behave">
+      <h4 class="signature"><a href="BaseSpecification$behave$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">behave</span><span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Syntactic sugar for examples sharing between systems under test.</p>
+    </li><li visbl="pub" name="org.specs.util.Tree#childNodes">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">childNodes</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<a href="../util/TreeNode.html" class="extype" name="org.specs.util.TreeNode">TreeNode</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="../util/Tree.html" class="extype" name="org.specs.util.Tree">Tree</a>
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.specification.Tagged#clearTags">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">clearTags</span><span class="result">: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Clear all tags, accepted and rejected</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Clear all tags, accepted and rejected</p></div><div class="block">
+          definition classes: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" name="scala.AnyRef#clone">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: AnyRef</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method creates and returns a copy of the receiver object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method creates and returns a copy of the receiver object.</p><p>The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#contains">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">contains</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if it contains the specification recursively</p></dd></dl>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.execute.HasResults#copyResults">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">copyResults</span><span class="params">(<span name="other">other: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a></span>)</span><span class="result">: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">copy the results of another HasResult object</p>
+            <div class="fullcomment"><div class="comment cmt"><p>copy the results of another HasResult object</p></div><div class="block">
+          definition classes: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.ComposedSpecifications#declare">
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">declare</span><span class="params">(<span name="newName">newName: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <a href="ComposedSpecifications$ComposedSpecification.html" class="extype" name="org.specs.specification.ComposedSpecifications.ComposedSpecification">ComposedSpecification</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">implicit definition allowing to declare a composition inside the current specification:<code>&quot;A complex specification&quot;.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>implicit definition allowing to declare a composition inside the current specification:<code>&quot;A complex specification&quot;.isSpecifiedBy(spec1, spec2)</code>It changes the name of this specification with the parameter
+</p></div><div class="block">
+          attributes: implicit 
+        </div><div class="block">
+          definition classes: <a href="ComposedSpecifications.html" class="extype" name="org.specs.specification.ComposedSpecifications">ComposedSpecifications</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#description">
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">description</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">description of the specification</p>
+            <div class="fullcomment"><div class="comment cmt"><p>description of the specification</p></div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.SpecificationConfiguration#dontShareVariables">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">dontShareVariables</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">use this method *not* to use the same specification object to execute Examples, effectively *not* sharing
+variables between them.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>use this method *not* to use the same specification object to execute Examples, effectively *not* sharing
+variables between them.
+</p></div><div class="block">
+          definition classes: <a href="SpecificationConfiguration.html" class="extype" name="org.specs.specification.SpecificationConfiguration">SpecificationConfiguration</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#eq">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: AnyRef</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to test whether the argument (<code>arg0</code>) is a reference to the
+receiver object (<code>this</code>).</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to test whether the argument (<code>arg0</code>) is a reference to the
+receiver object (<code>this</code>).</p><p>The <code>eq</code> method implements an [http://en.wikipedia.org/wiki/Equivalence_relation equivalence relation] on
+non-null instances of <code>AnyRef</code>:
+ * It is reflexive: for any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(x)</code> returns <code>true</code>.
+ * It is symmetric: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, <code>x.eq(y)</code> returns <code>true</code> if and
+   only if <code>y.eq(x)</code> returns <code>true</code>.
+ * It is transitive: for any non-null instances <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code> if <code>x.eq(y)</code> returns <code>true</code>   and <code>y.eq(z)</code> returns <code>true</code>, then <code>x.eq(z)</code> returns <code>true</code>.</p><p>Additionally, the <code>eq</code> method has three other properties.
+ * It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+   <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.
+ * For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.
+ * <code>null.eq(null)</code> returns <code>true</code>.</p><p>When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for reference equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#equals">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to compare the receiver object (<code>this</code>) with the argument object (<code>arg0</code>) for equivalence.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to compare the receiver object (<code>this</code>) with the argument object (<code>arg0</code>) for equivalence.</p><p>The default implementations of this method is an [http://en.wikipedia.org/wiki/Equivalence_relation equivalence
+relation]:
+ * It is reflexive: for any instance <code>x</code> of type <code>Any</code>, <code>x.equals(x)</code> should return <code>true</code>.
+ * It is symmetric: for any instances <code>x</code> and <code>y</code> of type <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and
+   only if <code>y.equals(x)</code> returns <code>true</code>.
+ * It is transitive: for any instances <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code> if <code>x.equals(y)</code> returns <code>true</code> and
+   <code>y.equals(z)</code> returns <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</p><p>If you override this method, you should verify that your implementation remains an equivalence relation.
+Additionally, when overriding this method it is often necessary to override <code>hashCode</code> to ensure that objects
+that are &quot;equal&quot; (<code>o1.equals(o2)</code> returns <code>true</code>) hash to the same 
+scala.Int
+(<code>o1.hashCode.equals(o2.hashCode)</code>).
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          definition classes: AnyRef → Any
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#errors">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">errors</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<span class="extype" name="java.lang.Throwable">Throwable</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the errors of each sus</p></dd></dl><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a> → <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" name="org.specs.specification.BaseSpecification#exampleContainer">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">exampleContainer</span><span class="result">: <a href="Examples.html" class="extype" name="org.specs.specification.Examples">Examples</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">utility method to track the last example list being currently defined.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>utility method to track the last example list being currently defined.<br>It is either the current sus (one  gets created with specify if there's not any) or
+the current example
+</p></div><div class="block">
+          attributes: protected[<a href="package.html" class="extype" name="org.specs.specification">specification</a>] 
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#examples">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">examples</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<a href="Example.html" class="extype" name="org.specs.specification.Example">Example</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>all the examples</p></dd></dl>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.SpecificationExecutor#executeExample">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">executeExample</span><span class="params">(<span name="example">example: <a href="Examples.html" class="extype" name="org.specs.specification.Examples">Examples</a></span>)</span><span class="result">: <a href="" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a> with <a href="ExampleExpectationsListener.html" class="extype" name="org.specs.specification.ExampleExpectationsListener">ExampleExpectationsListener</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">execute an example by cloning the specification and executing the cloned example</p>
+            <div class="fullcomment"><div class="comment cmt"><p>execute an example by cloning the specification and executing the cloned example</p></div><div class="block">
+          definition classes: <a href="SpecificationExecutor.html" class="extype" name="org.specs.specification.SpecificationExecutor">SpecificationExecutor</a> → <a href="LifeCycle.html" class="extype" name="org.specs.specification.LifeCycle">LifeCycle</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.LifeCycle#executeExpectations">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">executeExpectations</span><span class="params">(<span name="ex">ex: <a href="Examples.html" class="extype" name="org.specs.specification.Examples">Examples</a></span>, <span name="t">t: ⇒ <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">define how to execute the example expectations</p>
+            <div class="fullcomment"><div class="comment cmt"><p>define how to execute the example expectations</p></div><div class="block">
+          definition classes: <a href="LifeCycle.html" class="extype" name="org.specs.specification.LifeCycle">LifeCycle</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.ExampleExpectationsListener#expectationsListener">
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">expectationsListener</span><span class="result">: <a href="ExampleExpectationsListener.html" class="extype" name="org.specs.specification.ExampleExpectationsListener">ExampleExpectationsListener</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">By default the listener is this.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>By default the listener is this. However it may be changed to another listener
+when the specification is cloned for isolated execution</p></div><div class="block">
+          definition classes: <a href="ExampleExpectationsListener.html" class="extype" name="org.specs.specification.ExampleExpectationsListener">ExampleExpectationsListener</a>
+        </div>
+            
+            
+            <div class="block"><ol>see also:
+                  <li><p>SpecificationExecutor
+</p></li>
+                </ol></div>
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#expectationsNb">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">expectationsNb</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the total number of expectations for each sus</p></dd></dl>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.execute.HasResults#failureAndErrors">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">failureAndErrors</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<span class="extype" name="java.lang.Throwable">Throwable</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>failures and errors</p></dd></dl><div class="block">
+          definition classes: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#failures">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">failures</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<a href="../execute/FailureException.html" class="extype" name="org.specs.execute.FailureException">FailureException</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the failures of each sus</p></dd></dl><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a> → <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" name="scala.AnyRef#finalize">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is called by the garbage collector on the receiver object when garbage collection determines that
+there are no more references to the object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is called by the garbage collector on the receiver object when garbage collection determines that
+there are no more references to the object.</p><p>The details of when and if the <code>finalize</code> method are invoked, as well as the interaction between <code>finalize</code>and non-local returns and exceptions, are all platform dependent.</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#firstLevelExamplesNb">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">firstLevelExamplesNb</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the first level examples number (i.e. without subexamples)</p></dd></dl>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#forExample">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">forExample</span><span class="result">: <a href="Example.html" class="extype" name="org.specs.specification.Example">Example</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Create an anonymous example, giving it a number depending on the existing created examples/
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Create an anonymous example, giving it a number depending on the existing created examples/
+</p></div><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a> → <a href="ExampleExpectationsListener.html" class="extype" name="org.specs.specification.ExampleExpectationsListener">ExampleExpectationsListener</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#forExample">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">forExample</span><span class="params">(<span name="desc">desc: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <a href="Example.html" class="extype" name="org.specs.specification.Example">Example</a></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" name="scala.AnyRef#getClass">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: java.lang.Class[_]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns a representation that corresponds to the dynamic class of the receiver object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns a representation that corresponds to the dynamic class of the receiver object.</p><p>The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#getExample">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">getExample</span><span class="params">(<span name="path">path: <a href="../util/TreePath.html" class="extype" name="org.specs.util.TreePath">TreePath</a></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<a href="Examples.html" class="extype" name="org.specs.specification.Examples">Examples</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the example corresponding to a given Tree path, searching in the incl</p></dd></dl>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.execute.HasResults#hasFailureOrErrors">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">hasFailureOrErrors</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if there are failures or errors</p></dd></dl><div class="block">
+          definition classes: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.execute.HasResults#hasIssues">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">hasIssues</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if there are issues</p></dd></dl><div class="block">
+          definition classes: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#hashCode">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns a hash code value for the object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns a hash code value for the object.</p><p>The default hashing algorithm is platform dependent.</p><p>Note that it is allowed for two objects to have identical hash codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet
+not be equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A degenerate implementation could always return <code>0</code>.
+However, it is required that if two objects are equal (<code>o1.equals(o2)</code> returns <code>true</code>) that they have
+identical hash codes (<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when overriding this method, be sure
+to verify that the behavior is consistent with the <code>equals</code> method.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for the object.</p></dd></dl><div class="block">
+          definition classes: AnyRef → Any
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#include">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">include</span><span class="params">(<span name="specifications">specifications: <a href="../util/LazyParameter.html" class="extype" name="org.specs.util.LazyParameter">LazyParameter</a>[<a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a>]*</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">include a list of specifications inside this one
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>include a list of specifications inside this one
+</p></div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.Tagged#isAccepted">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isAccepted</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Return true if this Tagged element:</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Return true if this Tagged element:</p><ul><li>doesn't have any tags and no tags are marked as accepted</li><li>or doesn't have any accepted tags</li><li>or has at least one of the accepted tags and doesn't have any of the rejected tags</li></ul></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if the element can be accepted, considering the tags it owns and the accepted/rejected tags
+</p></dd></dl><div class="block">
+          definition classes: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.ExpectationsListener#isExpectation">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isExpectation</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="a">a: ⇒ T</span>)</span><span class="result">: T</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Declares a block of code to count as an expectation
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Declares a block of code to count as an expectation
+</p></div><div class="block">
+          definition classes: <a href="ExpectationsListener.html" class="extype" name="org.specs.specification.ExpectationsListener">ExpectationsListener</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#isFailing">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isFailing</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if there are failures or errors</p></dd></dl>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.Any#isInstanceOf">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to test whether the dynamic type of the receiver object is <code>T0</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to test whether the dynamic type of the receiver object is <code>T0</code>.</p><p>Note that the test result of the test is modulo Scala's erasure semantics.  Therefore the expression<code>1.isInstanceOf[String]</code> will return <code>false</code>, while the expression <code>List(1).isInstanceOf[List[String]]</code> will
+return <code>true</code>.  In the latter example, because the type argument is erased as part of compilation it is not
+possible to check whether the contents of the list are of the requested typed.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.execute.HasResults#isOk">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isOk</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if there are no issues</p></dd></dl><div class="block">
+          definition classes: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.SequentialExecution#isSequential">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isSequential</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if if examples should be executed as soon as defined</p></dd></dl><div class="block">
+          definition classes: <a href="SequentialExecution.html" class="extype" name="org.specs.specification.SequentialExecution">SequentialExecution</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#isSpecifiedBy">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isSpecifiedBy</span><span class="params">(<span name="specifications">specifications: <a href="../util/LazyParameter.html" class="extype" name="org.specs.util.LazyParameter">LazyParameter</a>[<a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a>]*</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">this declares that a specification is composed of other specifications</p>
+            <div class="fullcomment"><div class="comment cmt"><p>this declares that a specification is composed of other specifications</p></div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.execute.HasResults#issueMessages">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">issueMessages</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>issues as a list of messages, comma-separated</p></dd></dl><div class="block">
+          definition classes: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.execute.HasResults#issues">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">issues</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<span class="extype" name="java.lang.Throwable">Throwable</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>issues = anything that's not a success</p></dd></dl><div class="block">
+          definition classes: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#lastExample">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">lastExample</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<a href="Examples.html" class="extype" name="org.specs.specification.Examples">Examples</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Return the example being currently executed if any
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Return the example being currently executed if any
+</p></div><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a> → <a href="ExampleExpectationsListener.html" class="extype" name="org.specs.specification.ExampleExpectationsListener">ExampleExpectationsListener</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.LinkedSpecification#linkTo">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">linkTo</span><span class="params">(<span name="subSpec">subSpec: <a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a></span>)</span><span class="result">: <a href="" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">link this specification to a subordinate one</p>
+            <div class="fullcomment"><div class="comment cmt"><p>link this specification to a subordinate one</p></div><div class="block">
+          definition classes: <a href="LinkedSpecification.html" class="extype" name="org.specs.specification.LinkedSpecification">LinkedSpecification</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.LinkedSpecification#linkedSpecifications">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">linkedSpecifications</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the linked specifications</p></dd></dl><div class="block">
+          definition classes: <a href="LinkedSpecification.html" class="extype" name="org.specs.specification.LinkedSpecification">LinkedSpecification</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.Tagged#makeTagged">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">makeTagged</span><span class="params">(<span name="s">s: <span class="extype" name="java.lang.String">String</span>*</span>)</span><span class="result">: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">create another tagged with this new tags</p>
+            <div class="fullcomment"><div class="comment cmt"><p>create another tagged with this new tags</p></div><div class="block">
+          definition classes: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#name">
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">name</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">name of the specification</p>
+            <div class="fullcomment"><div class="comment cmt"><p>name of the specification</p></div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#ne">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: AnyRef</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o.ne(arg0)</code> is the same as <code>!(o.eq(arg0))</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o.ne(arg0)</code> is the same as <code>!(o.eq(arg0))</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for reference dis-equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>false</code> if the argument is not a reference to the receiver object; <code>true</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#notify">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.</p></div><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#notifyAll">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.</p></div><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#parentSpecification">
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">parentSpecification</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<a href="" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">specification which includes this one</p>
+            <div class="fullcomment"><div class="comment cmt"><p>specification which includes this one</p></div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#parentSpecifications">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">parentSpecifications</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<a href="" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>all the parent specifications of this specification, starting with the most immediate parent</p></dd></dl>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.LinkedSpecification#partitionLinkedSpecifications">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">partitionLinkedSpecifications</span><span class="result">: (<span class="extype" name="scala.collection.immutable.List">List</span>[<a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a>], <span class="extype" name="scala.collection.immutable.List">List</span>[<a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a>])</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">partitions the subspecifications in a pair where the first member is the list of linked specifications,
+and the second member is the unlinked ones
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>partitions the subspecifications in a pair where the first member is the list of linked specifications,
+and the second member is the unlinked ones
+</p></div><div class="block">
+          definition classes: <a href="LinkedSpecification.html" class="extype" name="org.specs.specification.LinkedSpecification">LinkedSpecification</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.util.Tree#pathFromRoot">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">pathFromRoot</span><span class="result">: <a href="../util/TreePath.html" class="extype" name="org.specs.util.TreePath">TreePath</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a list of integer representing the path from the root node to this node
+</p></dd></dl><div class="block">
+          definition classes: <a href="../util/Tree.html" class="extype" name="org.specs.util.Tree">Tree</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.Tagged#reject">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">reject</span><span class="params">(<span name="t">t: <a href="Tag.html" class="extype" name="org.specs.specification.Tag">Tag</a>*</span>)</span><span class="result">: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Declare that this element should be rejected if it has one of the rejected tags.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Declare that this element should be rejected if it has one of the rejected tags.
+ This method declares the same thing for the components of this element.
+</p></div><div class="block">
+          definition classes: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.Tagged#rejectTag">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">rejectTag</span><span class="params">(<span name="s">s: <span class="extype" name="java.lang.String">String</span>*</span>)</span><span class="result">: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">alias for the reject method with strings</p>
+            <div class="fullcomment"><div class="comment cmt"><p>alias for the reject method with strings</p></div><div class="block">
+          definition classes: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.Tagged#rejectTags">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">rejectTags</span><span class="params">(<span name="s">s: <span class="extype" name="java.lang.String">String</span>*</span>)</span><span class="result">: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">alias for the reject method with several strings</p>
+            <div class="fullcomment"><div class="comment cmt"><p>alias for the reject method with several strings</p></div><div class="block">
+          definition classes: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#resetForExecution">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">resetForExecution</span><span class="result">: <a href="" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">reset in order to be able to run the examples again</p>
+            <div class="fullcomment"><div class="comment cmt"><p>reset in order to be able to run the examples again</p></div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" name="org.specs.specification.SequentialExecution#sequential">
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">sequential</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">this variable defines if examples should be executed as soon as defined</p>
+            <div class="fullcomment"><div class="comment cmt"><p>this variable defines if examples should be executed as soon as defined</p></div><div class="block">
+          attributes: protected[<a href="../package.html" class="extype" name="org.specs">specs</a>] 
+        </div><div class="block">
+          definition classes: <a href="SequentialExecution.html" class="extype" name="org.specs.specification.SequentialExecution">SequentialExecution</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.SequentialExecution#setNotSequential">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">setNotSequential</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">examples should not be executed as soon as defined</p>
+            <div class="fullcomment"><div class="comment cmt"><p>examples should not be executed as soon as defined</p></div><div class="block">
+          definition classes: <a href="SequentialExecution.html" class="extype" name="org.specs.specification.SequentialExecution">SequentialExecution</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#setParent">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">setParent</span><span class="params">(<span name="s">s: <a href="" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a></span>)</span><span class="result">: <a href="" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">set the parent specification of this one</p>
+            <div class="fullcomment"><div class="comment cmt"><p>set the parent specification of this one</p></div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.SequentialExecution#setSequential">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">setSequential</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">examples should be executed as soon as defined</p>
+            <div class="fullcomment"><div class="comment cmt"><p>examples should be executed as soon as defined</p></div><div class="block">
+          definition classes: <a href="SequentialExecution.html" class="extype" name="org.specs.specification.SequentialExecution">SequentialExecution</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.SequentialExecution#setSequentialIs">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">setSequentialIs</span><span class="params">(<span name="b">b: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">setter for is sequential</p>
+            <div class="fullcomment"><div class="comment cmt"><p>setter for is sequential</p></div><div class="block">
+          definition classes: <a href="SequentialExecution.html" class="extype" name="org.specs.specification.SequentialExecution">SequentialExecution</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.SpecificationConfiguration#shareVariables">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">shareVariables</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">use this method to use the same specification object to execute Examples, effectively sharing
+variables between them.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>use this method to use the same specification object to execute Examples, effectively sharing
+variables between them.
+</p></div><div class="block">
+          definition classes: <a href="SpecificationConfiguration.html" class="extype" name="org.specs.specification.SpecificationConfiguration">SpecificationConfiguration</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#skipped">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">skipped</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<a href="../execute/SkippedException.html" class="extype" name="org.specs.execute.SkippedException">SkippedException</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the skipped of each sus</p></dd></dl><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a> → <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.SpecificationSystems#specify">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">specify</span><span class="result">: <a href="Sus.html" class="extype" name="org.specs.specification.Sus">Sus</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">specifies an anonymous Sus included in this specification
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>specifies an anonymous Sus included in this specification
+</p></div><div class="block">
+          definition classes: <a href="SpecificationSystems.html" class="extype" name="org.specs.specification.SpecificationSystems">SpecificationSystems</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.SpecificationSystems#specify">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">specify</span><span class="params">(<span name="desc">desc: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <a href="Sus.html" class="extype" name="org.specs.specification.Sus">Sus</a></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="SpecificationSystems.html" class="extype" name="org.specs.specification.SpecificationSystems">SpecificationSystems</a>
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#specifyExample">
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">specifyExample</span><span class="params">(<span name="desc">desc: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <a href="BaseSpecification$ExampleSpecification.html" class="extype" name="org.specs.specification.BaseSpecification.ExampleSpecification">ExampleSpecification</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">implicit definition allowing to declare a new example described by a string <code>desc</code><br>Usage: <code>&quot;return 0 when asked for (0+0)&quot; in {.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>implicit definition allowing to declare a new example described by a string <code>desc</code><br>Usage: <code>&quot;return 0 when asked for (0+0)&quot; in {...}</code><br>Alternatively, it could be created with:<code>forExample(&quot;return 0 when asked for (0+0)&quot;).in {...}</code></p></div><div class="block">
+          attributes: implicit 
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.SpecificationSystems#specifySus">
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">specifySus</span><span class="params">(<span name="desc">desc: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <a href="SpecificationSystems$SpecifiedSus.html" class="extype" name="org.specs.specification.SpecificationSystems.SpecifiedSus">SpecifiedSus</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">implicit definition allowing to declare a new system under test described by a string <code>desc</code><br>Usage: <code>&quot;my system under test&quot; should {}</code><br>Alternatively, it could be created with:<code>specify(&quot;my system under test&quot;).</p>
+            <div class="fullcomment"><div class="comment cmt"><p>implicit definition allowing to declare a new system under test described by a string <code>desc</code><br>Usage: <code>&quot;my system under test&quot; should {}</code><br>Alternatively, it could be created with:<code>specify(&quot;my system under test&quot;).should {}</code></p></div><div class="block">
+          attributes: implicit 
+        </div><div class="block">
+          definition classes: <a href="SpecificationSystems.html" class="extype" name="org.specs.specification.SpecificationSystems">SpecificationSystems</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.execute.HasResults#statusAsText">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">statusAsText</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the status as a text icon. x for an issue, o for a skip, + for a success</p></dd></dl><div class="block">
+          definition classes: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.execute.HasResults#statusClass">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">statusClass</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a string showing the status. &quot;error&quot; if there are errors, then &quot;failure&quot;, &quot;skipped&quot; or finally &quot;success&quot;</p></dd></dl><div class="block">
+          definition classes: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.Tagged#stringToTag">
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">stringToTag</span><span class="params">(<span name="s">s: <span class="extype" name="java.lang.String">String</span></span>)</span><span class="result">: <a href="Tag.html" class="extype" name="org.specs.specification.Tag">Tag</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">transforms a string to a Tag object</p>
+            <div class="fullcomment"><div class="comment cmt"><p>transforms a string to a Tag object</p></div><div class="block">
+          attributes: implicit 
+        </div><div class="block">
+          definition classes: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#subSpecifications">
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">subSpecifications</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">specifications contained by the current specification.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>specifications contained by the current specification. An empty list by default</p></div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#successes">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">successes</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<a href="Example.html" class="extype" name="org.specs.specification.Example">Example</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>all the examples with no errors, failures or skip messages</p></dd></dl>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#synchronized">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: T0</span>)</span><span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" name="org.specs.specification.SpecificationSystems#systems">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">systems</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<a href="Sus.html" class="extype" name="org.specs.specification.Sus">Sus</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the list of systems under test</p></dd></dl><div class="block">
+          definition classes: <a href="SpecificationSystems.html" class="extype" name="org.specs.specification.SpecificationSystems">SpecificationSystems</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.Tagged#tag">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">tag</span><span class="params">(<span name="t">t: <span class="extype" name="java.lang.String">String</span>*</span>)</span><span class="result">: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Add one or several tags to this element</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Add one or several tags to this element</p></div><div class="block">
+          definition classes: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.Tagged#tagNames">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">tagNames</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the list of tags</p></dd></dl><div class="block">
+          definition classes: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.Tagged#tagSpec">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">tagSpec</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a description of the Tagged element showing the owned tags, the accepted and rejected tags</p></dd></dl><div class="block">
+          definition classes: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.Tagged#tagWith">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">tagWith</span><span class="params">(<span name="other">other: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a></span>)</span><span class="result">: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">add the tags specification from another tagged element.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>add the tags specification from another tagged element. This is used when propagating the tags from a specification to a sus for example</p></div><div class="block">
+          definition classes: <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#taggedComponents">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">taggedComponents</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Declare the subspecifications and systems as components to be tagged when the specification is tagged</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Declare the subspecifications and systems as components to be tagged when the specification is tagged</p></div><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a> → <a href="Tagged.html" class="extype" name="org.specs.specification.Tagged">Tagged</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.util.LazyParameters#toLazyParameter">
+      <h4 class="signature">
+      <span class="kind">implicit def</span>
+      <span class="symbol">
+        <span class="name">toLazyParameter</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span name="value">value: ⇒ T</span>)</span><span class="result">: <a href="../util/LazyParameter.html" class="extype" name="org.specs.util.LazyParameter">LazyParameter</a>[T]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">transform a value to a zero-arg function returning that value</p>
+            <div class="fullcomment"><div class="comment cmt"><p>transform a value to a zero-arg function returning that value</p></div><div class="block">
+          attributes: implicit 
+        </div><div class="block">
+          definition classes: <a href="../util/LazyParameters.html" class="extype" name="org.specs.util.LazyParameters">LazyParameters</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.BaseSpecification#toString">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the name of the specification</p></dd></dl><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.specification.BaseSpecification">BaseSpecification</a> → AnyRef → Any
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.LinkedSpecification#unlinkedSpecifications">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">unlinkedSpecifications</span><span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[<a href="../Specification.html" class="extype" name="org.specs.Specification">Specification</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the unlinked specifications</p></dd></dl><div class="block">
+          definition classes: <a href="LinkedSpecification.html" class="extype" name="org.specs.specification.LinkedSpecification">LinkedSpecification</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="org.specs.specification.LifeCycle#until">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">until</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">no summary matey</p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if there is an until predicate, and if it is true</p></dd></dl><div class="block">
+          definition classes: <a href="LifeCycle.html" class="extype" name="org.specs.specification.LifeCycle">LifeCycle</a>
+        </div>
+            
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#wait">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#wait">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" name="scala.AnyRef#wait">
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li></ol>
+            </div>
+                
+      </div>
+      
+      <div id="tooltip"></div>
+      
+    </body>
+      </html>
