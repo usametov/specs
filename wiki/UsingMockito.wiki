@@ -12,7 +12,7 @@
 
 http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png If you're new to *specs* and Mockito you should use the latest *specs* snapshots (for either Scala 2.7.7 or Scala 2.8.0) and go to this [http://code.google.com/p/specs/wiki/UsingMockito#Mockito_1.8.4_upgrade section].
 
-= Usage (Mockito 1.8.0) =
+= Usage =
 
 In order to use Mockito mocks in your specification, you need to mix in the Mockito trait.
 {{{
@@ -31,11 +31,10 @@ In order to use Mockito mocks in your specification, you need to mix in the Mock
     m.get(0)
   
     // verify that the call happened, this is an expectation which will throw a FailureException if that is not the case
-    m.get(0) was called
+    there was one(m).get(0)
     
     // we can also check that another call did not occur
-    m.get(1) wasnt called // or m.get(1) was notCalled
-                          
+    there was no(m).get(1)
   }
 
 }}}
@@ -80,7 +79,6 @@ Hamcrest matchers can also be used, allowing to create your own Hamcrest matcher
 {{{
    // stubbing using hamcrest (let's say IsNull returns your own hamcrest matcher):
    mockedList.contains(argThat(new IsNull)) returns true
-
 }}}
 
 While Mockito matchers are pretty exhaustive, for convenience a `any[T]` matcher is available:
@@ -147,83 +145,6 @@ If anything fails a new `FailureException` will be thrown creating a failure for
 
 You can be more precise when specifying the number of calls on a mock: 
 {{{
-  val mockedList = mock[List[String]]
-
-  mockedList.add("one")
-  2.times { i => mockedList.add("two") } 
-  3.times { i => mockedList.add("three") } 
-  
-  mockedList.add("one") was called.once
-  mockedList.add("two") was called.twice
-  mockedList.add("two") was called.atLeastOnce
-  // fails with The method was not called as expected: list.add("one"); Wanted 2 times but was 1
-  mockedList.add("one") was called.twice
-
-  // It is also possible to check that there are no unexpected calls on a mock:
-  mockedList had noMoreCalls
-
-}}}
-
-== Order of calls ==
-
-The order of method calls can be checked by creating calls and chaining them with `then`: 
-{{{
-  val m1 = mock[List[String]]
-  val m2 = mock[List[String]]
-
-  m1.get(0)
-  m1.get(0)
-  m2.get(0)
-
-  // mock calls
-  theMethod(m1.get(0)).on(m1).twice then
-  theMethod(m2.get(0)).on(m2)       were called.inOrder
-}}}
-  
-The implicit definition can also be removed but additional parenthesis are needed:
-{{{
-     (m1.get(0) on m1).twice then
-     (m2.get(0) on m2)       were calledInOrder // alias for called.inOrder
-}}}
-
-= Spies =
-
-Spies can also be used in order to do some "partial mocking" of real objects:
-{{{
-
-   val spiedList = spy(new LinkedList[String])
-
-   // methods can be stubbed on a spy
-   spiedList.size returns 100
-
-   // other methods can also be used
-   spiedList.add("one")
-   spiedList.add("two") 
-   
-   // and verification can happen on a spy
-   spiedList.add("one") was called
-}}}
-
-However, working with spies can be tricky:
-{{{
-  // if the list is empty, this will throws an IndexOutOfBoundsException
-  spiedList.get(0) returns "one"
-}}}
-
-As advised in the Mockito documentation, `doReturn` must be used in that case: 
-{{{
-  doReturn("one").when(spiedList).get(0)
-}}}
-
-=Mockito 1.8.4 upgrade =
-(*next release*)
-
-http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *API CHANGES*
-
-With the upgrade of Mockito to the version 1.8.4, the verification api in specs has to change because the way mocks are verified is slightly different.
-
-Here are some examples of this new syntax:
-{{{
  there was one(mockedList).get(0)          // one call only to get(0)
  there was no(mockedList).get(0)           // no calls to get(0)
  
@@ -252,14 +173,51 @@ It is also possible to add all verifications inside a block, when several mocks 
   }
 }}}
 
-==Ordered calls==
+== Order of calls ==
 
-The syntax for ordered calls has also evolved to be:
+The order of method calls can be checked by creating calls and chaining them with `then`: 
+
 {{{
+  val m1 = mock[List[String]]
+  val m2 = mock[List[String]]
+
+  m1.get(0)
+  m1.get(0)
+  m2.get(0)
+
   there was one(m1).get(0) then one(m1).get(1)
 
   // when several mocks are involved, the expected order must be given
   // whereas it is not necessary if the methods of one mock only are to
   // be checked in order
   there was one(m2).get(0) then one(m1).get(2) orderedBy (m1, m2)
+}}}
+  
+= Spies =
+
+Spies can also be used in order to do some "partial mocking" of real objects:
+{{{
+
+   val spiedList = spy(new LinkedList[String])
+
+   // methods can be stubbed on a spy
+   spiedList.size returns 100
+
+   // other methods can also be used
+   spiedList.add("one")
+   spiedList.add("two") 
+   
+   // and verification can happen on a spy
+   there was one(spiedList).add("one")
+}}}
+
+However, working with spies can be tricky:
+{{{
+  // if the list is empty, this will throws an IndexOutOfBoundsException
+  spiedList.get(0) returns "one"
+}}}
+
+As advised in the Mockito documentation, `doReturn` must be used in that case: 
+{{{
+  doReturn("one").when(spiedList).get(0)
 }}}
