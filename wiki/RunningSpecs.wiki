@@ -8,8 +8,8 @@ The following libraries are necessary to run specifications.
 
 http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Nuvola_apps_important.png/20px-Nuvola_apps_important.png *Please check carefully the version numbers!*
 
- * [http://scala-tools.org/repo-releases/org/scala-tools/testing/specs/1.6.2.1 specs-1.6.2.1.jar]
- * [http://scala-tools.org/repo-releases/org/scala-lang/scala-library/2.7.7 scala-library-2.7.7.jar]
+ * [http://scala-tools.org/repo-releases/org/scala-tools/testing/specs_2.8.0/1.6.5 specs-1.6.5.jar]
+ * [http://scala-tools.org/repo-releases/org/scala-lang/scala-library/2.8.0 scala-library-2.8.0.jar]
  * [http://repo1.maven.org/maven2/junit/junit/4.7 junit-4.7.jar]
 
 The junit library also allows you to run the specifications as JUnit suites by mixing-in the `org.specs.runner.JUnit` trait. The junit library is a requirement for specs because the `@RunWith` annotations on the JUnit is unfortunately not inherited by the `Specification` class.
@@ -17,7 +17,7 @@ The junit library also allows you to run the specifications as JUnit suites by m
 
 If you use `ScalaCheck` you must add
 
- * [http://scala-tools.org/repo-releases/org/scala-tools/testing/scalacheck/1.6 scalacheck-1.6.jar]
+ * [http://scala-tools.org/repo-releases/org/scala-tools/testing/scalacheck_2.8.0/1.7 scalacheck-1.7.jar]
 
 If you use mock objects with jMock, add
 
@@ -33,7 +33,7 @@ And if you mock classes or traits with attributes you will need
 
 If you use mock objects with Mockito, add
 
- * [http://repo1.maven.org/maven2/org/mockito/mockito-all/1.8.0 mockito-all-1.8.0.jar] 
+ * [http://repo1.maven.org/maven2/org/mockito/mockito-all/1.8.4 mockito-all-1.8.4.jar] 
 
 If you use mock objects with `EasyMock`, add
 
