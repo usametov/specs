@@ -165,7 +165,7 @@ In case #2 you would have 2 options:
  * either you add a `skip(msg)` statement at the beginning of each example.
    Examples won't be executed and be marked as `PENDING` until you remove the `skip`.
 
- * (*next release*) or you can extend the `org.specs.specification.PendingUntilFixed` trait and use the `pendingUntilFixed` method to enclose your example code:
+ * or you can extend the `org.specs.specification.PendingUntilFixed` trait and use the `pendingUntilFixed` method to enclose your example code:
 
 {{{
   object s extends Specification with PendingUntilFixed { 
@@ -337,7 +337,6 @@ _Note_: you can also use syntactic sugar and write:
 }}}
 
 ===With nested examples===
-(*next release*)
 
 When there are nested examples the doBefore/doAfter clause are only executed for "leaf" examples to avoid spending resources on the execution of non-leaf examples.
 
