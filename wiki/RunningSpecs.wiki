@@ -42,7 +42,7 @@ If you use mock objects with `EasyMock`, add
 
 If you want to run the specifications as `ScalaTest` suites, use
 
- * [http://scala-tools.org/repo-releases/org/scalatest/scalatest/1.0 scalatest-1.0.jar]
+ * [http://scala-tools.org/repo-releases/org/scalatest/scalatest/1.2 scalatest-1.2.jar]
 
 If you want to use Textile markup in Literate Specifications, you need to add
 
@@ -207,7 +207,8 @@ import org.specs.runner.SpecsFileRunner
 object allSpecsRunner extends SpecsFileRunner("project/**/*.scala", "all.*")
 }}}
  
-The `SpecsFileRunner` will find possible specification names with the `SpecsFinder` and will try to instantiate them, keeping them only if the resulting object is an instance of `Specification`.
+The `SpecsFileRunner` will find possible specification names with the `SpecsFinder` and will try to instantiate them, keeping them ottp://code.google.com
+Content-Tn instance of `Specification`.
 
 ==How to redirect the results on a different output==
 
