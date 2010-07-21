@@ -54,6 +54,8 @@ my system should
 ...rest of the specification
 }}}
 
+Note that you can not nest SUS inside SUS or examples so that SUS are always top-level in a Specification.
+
 ===Alias for the should keyword===
 You can declare several system in a specification. In that case you can, for instance, specify the main functionalities of your system using a `should` method and add another section using ,,can,, for advanced features:
 {{{
