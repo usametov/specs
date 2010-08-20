@@ -322,6 +322,10 @@ object mySpec extends Specification {
 }
 }}}
 
+(*next release*)
+
+The sequential mode of execution can lead to issues if variables are not shared (see [http://groups.google.com/group/specs-users/browse_thread/thread/bbcc4ccfc05957f2 this  discussion]). So now when `setSequential()` is used `shareVariables()` is automatically set.
+
 ==Call a function before or after each example==
 
 Given the "isolated" execution model in specs, you usually don't need before/after functions to set or reset state before and after each example. However, when mutating external resources (database, files) or static objects you may needto use `doBefore` and `doAfter` functions to reset your system state:
