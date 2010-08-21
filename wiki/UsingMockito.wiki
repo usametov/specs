@@ -218,6 +218,32 @@ As advised in the Mockito documentation, `doReturn` must be used in that case:
   doReturn("one").when(spiedList).get(0)
 }}}
 
+= Using Mockito with !ScalaTest =
+
+You can use the `Mockito` trait with !ScalaTest specifications but for this to work you also need to mix in the `DefaultExamplesExpectations` trait like this:
+{{{
+package test
+
+import org.specs.mock.Mockito
+import org.scalatest.WordSpec
+import org.specs.specification._
+
+/**
+ * DefaultExampleExpectationsListener provides default behavior for specs creation of
+ * examples and expectations.
+ */
+class ScalaTestAndMockitoSpec extends WordSpec with Mockito with DefaultExampleExpectationsListener {
+  "it" should {
+    "be possible to use the Mockito trait from specs" in {
+      val m = mock[java.util.List[String]]
+      m.get(0) returns "one"
+      m.get(0)
+      there was one(m).get(0)
+    }
+  }
+}
+}}}
+
 
 = Deprecations =
 
