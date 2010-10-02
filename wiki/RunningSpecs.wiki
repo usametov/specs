@@ -279,6 +279,15 @@ In order to be able to select your JUnit4 classes, you need to add the output di
 
 You should now be able to select the JUnit4 classes of your Scala project.
 
+_Note_: for undetermined reasons the trick above might not even work! In that case your best chance is to put explicitly the following annotation on your specification class:
+{{{
+  import org.junit.runner.RunWith
+  import org.specs.runner.JUnitSuiteRunner
+
+  @RunWith(classOf[JUnitSuiteRunner])
+  class MySpec extends SpecificationWithJUnit
+
+}}}
 =Run your specifications with JUnit4 and Maven =
 
 By default, you need to respect the surefire plugin naming convention:
