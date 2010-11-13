@@ -1,0 +1,2769 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>org.specs.form.Field</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
+      <script type="text/javascript" src="../../../lib/jquery.js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+    
+        </head>
+        <body class="type" onload="windowTitle();">
+
+      <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.specs">specs</a>.<a href="package.html" class="extype" name="org.specs.form">form</a></p>
+
+      <div id="definition">
+        <img src="../../../lib/class_big.png" />
+        <h1>Field</h1>
+      </div>
+
+      <h4 class="signature" id="signature">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Field</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends <a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a> with <a href="ValueFormatter.html" class="extype" name="org.specs.form.ValueFormatter">ValueFormatter</a>[T] with <a href="Copyable.html" class="extype" name="org.specs.form.Copyable">Copyable</a>[<a href="" class="extype" name="org.specs.form.Field">Field</a>[T]] with <a href="../execute/DefaultExecutable.html" class="extype" name="org.specs.execute.DefaultExecutable">DefaultExecutable</a></span>
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment"><div class="comment cmt"><p>A Field is a property which is used only to display input values or output values.
+The apply method can be used to retrieve the Fields value:&lt;code&gt;
+  val f = Field(label, 1)
+  f() must_== 1
+&lt;/code&gt;</p><p>The value is stored in a Property object so it will not be evaluated until explicitly queried.
+</p></div><div class="block">
+            go to: <a href="Field$.html">companion</a>
+          </div><div class="block">
+            linear super types: <a href="../execute/DefaultExecutable.html" class="extype" name="org.specs.execute.DefaultExecutable">DefaultExecutable</a>, <a href="../execute/Commentable.html" class="extype" name="org.specs.execute.Commentable">Commentable</a>, <a href="../execute/Executable.html" class="extype" name="org.specs.execute.Executable">Executable</a>, <a href="../execute/DefaultResults.html" class="extype" name="org.specs.execute.DefaultResults">DefaultResults</a>, <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>, <a href="ValueFormatter.html" class="extype" name="org.specs.form.ValueFormatter">ValueFormatter</a>[T], <a href="GenericFormatter.html" class="extype" name="org.specs.form.GenericFormatter">GenericFormatter</a>, <a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>, <a href="Copyable.html" class="extype" name="org.specs.form.Copyable">Copyable</a>[<a href="" class="extype" name="org.specs.form.Field">Field</a>[T]], <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a>, <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>, <a href="HasLabel.html" class="extype" name="org.specs.form.HasLabel">HasLabel</a>, AnyRef, <span class="extype" name="scala.Any">Any</span>
+          </div><div class="block">
+            known subclasses: <a href="LineField.html" class="extype" name="org.specs.form.LineField">LineField</a>
+          </div>
+            
+            
+            
+          </div>
+
+      <div id="template">
+
+        <div id="mbrsel">
+          <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+          <div id="order">
+                <span class="filtertype">Ordering</span>
+                <ol><li class="alpha in">Alphabetic</li><li class="inherit out">By inheritance</li></ol>
+              </div>
+          <div id="ancestors">
+                <span class="filtertype">Inherited</span>
+                <ol><li class="hideall">Hide All</li><li class="showall">Show all</li></ol>
+                <ol id="linearization"><li class="in" name="org.specs.form.Field">Field</li><li class="in" name="org.specs.execute.DefaultExecutable">DefaultExecutable</li><li class="in" name="org.specs.execute.Commentable">Commentable</li><li class="in" name="org.specs.execute.Executable">Executable</li><li class="in" name="org.specs.execute.DefaultResults">DefaultResults</li><li class="in" name="org.specs.execute.HasResults">HasResults</li><li class="in" name="org.specs.form.ValueFormatter">ValueFormatter</li><li class="in" name="org.specs.form.GenericFormatter">GenericFormatter</li><li class="in" name="org.specs.form.LabeledXhtml">LabeledXhtml</li><li class="in" name="org.specs.form.Copyable">Copyable</li><li class="in" name="org.specs.form.ToXhtml">ToXhtml</li><li class="in" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</li><li class="in" name="org.specs.form.HasLabel">HasLabel</li><li class="in" name="scala.AnyRef">AnyRef</li><li class="in" name="scala.Any">Any</li></ol>
+              </div>
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+            </div>
+          <div id="impl">
+              <span class="filtertype">Impl.</span>
+              <ol><li class="concrete in">Concrete</li><li class="abstract in">Abstract</li></ol>
+            </div>
+        </div>
+
+        <div class="members" id="constructors">
+              <h3>Instance constructors</h3>
+              <ol><li visbl="pub" data-isabs="false" name="org.specs.form.Field#this">
+      <a id="this:Field[T]"></a>
+      <h4 class="signature">
+      <span class="kind">new</span>
+      <span class="symbol">
+        <span class="name">Field</span>
+        
+        <span class="params">(<span name="label">label: String</span>, <span name="value">value: <a href="../util/Property.html" class="extype" name="org.specs.util.Property">Property</a>[T]</span>)</span>
+        
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div class="values members" id="values">
+              <h3>Value Members</h3>
+              <ol><li visbl="pub" data-isabs="false" name="scala.AnyRef#!=">
+      <a id="!=(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">!=</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#!=">
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">!=</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o != arg0</code> is the same as <code>!(o == (arg0))</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o != arg0</code> is the same as <code>!(o == (arg0))</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for dis-equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>false</code> if the receiver object is equivalent to the argument; <code>true</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef###">
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">##</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef → Any
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#$asInstanceOf">
+      <a id="$asInstanceOf[T0]():T0"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">$asInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        <span class="params">()</span>
+        <span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#$isInstanceOf">
+      <a id="$isInstanceOf[T0]():Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">$isInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#==">
+      <a id="==(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">==</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o == arg0</code> is the same as <code>if (o eq null) arg0 eq null else o.equals(arg0)</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o == arg0</code> is the same as <code>if (o eq null) arg0 eq null else o.equals(arg0)</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#==">
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">==</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o == arg0</code> is the same as <code>o.equals(arg0)</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o == arg0</code> is the same as <code>o.equals(arg0)</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.DefaultResults#addError">
+      <a id="addError(Throwable):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">addError</span>
+        
+        <span class="params">(<span name="t">t: Throwable</span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">add a new error</p>
+            <div class="fullcomment"><div class="comment cmt"><p>add a new error</p></div><div class="block">
+          definition classes: <a href="../execute/DefaultResults.html" class="extype" name="org.specs.execute.DefaultResults">DefaultResults</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.DefaultResults#addFailure">
+      <a id="addFailure(FailureException):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">addFailure</span>
+        
+        <span class="params">(<span name="f">f: <a href="../execute/FailureException.html" class="extype" name="org.specs.execute.FailureException">FailureException</a></span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">add a new failure</p>
+            <div class="fullcomment"><div class="comment cmt"><p>add a new failure</p></div><div class="block">
+          definition classes: <a href="../execute/DefaultResults.html" class="extype" name="org.specs.execute.DefaultResults">DefaultResults</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.DefaultResults#addSkipped">
+      <a id="addSkipped(SkippedException):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">addSkipped</span>
+        
+        <span class="params">(<span name="s">s: <a href="../execute/SkippedException.html" class="extype" name="org.specs.execute.SkippedException">SkippedException</a></span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">add a new skipped</p>
+            <div class="fullcomment"><div class="comment cmt"><p>add a new skipped</p></div><div class="block">
+          definition classes: <a href="../execute/DefaultResults.html" class="extype" name="org.specs.execute.DefaultResults">DefaultResults</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Field#apply">
+      <a id="apply():T"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">apply</span>
+        
+        <span class="params">()</span>
+        <span class="result">: T</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the field value</p></dd></dl>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Field#apply">
+      <a id="apply(⇒ T):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">apply</span>
+        
+        <span class="params">(<span name="v">v: ⇒ T</span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">set a new value on the field.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>set a new value on the field.
+</p></div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#asInstanceOf">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        
+        <span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to cast the receiver object to be of type <code>T0</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to cast the receiver object to be of type <code>T0</code>.</p><p>Note that the success of a cast at runtime is modulo Scala's erasure semantics.  Therefore the expression<code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at runtime, while the expression<code>List(1).asInstanceOf[List[String]]</code> will not.  In the latter example, because the type argument is erased as
+part of compilation it is not possible to check whether the contents of the list are of the requested typed.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#bold">
+      <a id="bold:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">bold</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#boldLabel">
+      <a id="boldLabel:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">boldLabel</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#boldLabels">
+      <a id="boldLabels:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">boldLabels</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#boldValue">
+      <a id="boldValue:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">boldValue</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#boldValues">
+      <a id="boldValues:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">boldValues</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="prt" data-isabs="false" name="scala.AnyRef#clone">
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">clone</span>
+        
+        <span class="params">()</span>
+        <span class="result">: AnyRef</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method creates and returns a copy of the receiver object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method creates and returns a copy of the receiver object.</p><p>The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.Commentable#comment">
+      <a id="comment():Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">comment</span>
+        
+        <span class="params">()</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="../execute/Commentable.html" class="extype" name="org.specs.execute.Commentable">Commentable</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Field#copy">
+      <a id="copy(Field[T]):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">copy</span>
+        
+        <span class="params">(<span name="f">f: <a href="" class="extype" name="org.specs.form.Field">Field</a>[T]</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Field#copy">
+      <a id="copy:Field[T]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">copy</span>
+        
+        
+        <span class="result">: <a href="" class="extype" name="org.specs.form.Field">Field</a>[T]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of this Field with the same value</p></dd></dl><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.form.Field">Field</a> → <a href="Copyable.html" class="extype" name="org.specs.form.Copyable">Copyable</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.ValueFormatter#copy">
+      <a id="copy(ValueFormatter[T]):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">copy</span>
+        
+        <span class="params">(<span name="c">c: <a href="ValueFormatter.html" class="extype" name="org.specs.form.ValueFormatter">ValueFormatter</a>[T]</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="ValueFormatter.html" class="extype" name="org.specs.form.ValueFormatter">ValueFormatter</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LabeledXhtml#copy">
+      <a id="copy(LabeledXhtml):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">copy</span>
+        
+        <span class="params">(<span name="c">c: <a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.ToXhtml#copy">
+      <a id="copy(ToXhtml):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">copy</span>
+        
+        <span class="params">(<span name="c">c: <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#copy">
+      <a id="copy(DecoratedXhtml):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">copy</span>
+        
+        <span class="params">(<span name="c">c: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.DefaultResults#copyResults">
+      <a id="copyResults(HasResults):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">copyResults</span>
+        
+        <span class="params">(<span name="other">other: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a></span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">copy the results of another HasResult object</p>
+            <div class="fullcomment"><div class="comment cmt"><p>copy the results of another HasResult object</p></div><div class="block">
+          definition classes: <a href="../execute/DefaultResults.html" class="extype" name="org.specs.execute.DefaultResults">DefaultResults</a> → <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateLabel">
+      <a id="decorateLabel(String):Node"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateLabel</span>
+        
+        <span class="params">(<span name="label">label: String</span>)</span>
+        <span class="result">: <span class="extype" name="scala.xml.Node">Node</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateLabelCell">
+      <a id="decorateLabelCell(Node):Node"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateLabelCell</span>
+        
+        <span class="params">(<span name="labelCell">labelCell: <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.xml.Node">Node</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateLabelCellWith">
+      <a id="decorateLabelCellWith((Node) ⇒ Node):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateLabelCellWith</span>
+        
+        <span class="params">(<span name="x">x: (<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">appends a new function to decorate the cell values on the field/property/form - singular form for fields and properties</p>
+            <div class="fullcomment"><div class="comment cmt"><p>appends a new function to decorate the cell values on the field/property/form - singular form for fields and properties</p></div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateLabelWith">
+      <a id="decorateLabelWith((Node) ⇒ Node):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateLabelWith</span>
+        
+        <span class="params">(<span name="x">x: (<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">appends a new function to decorate the labels on the field/property/form - singular form for fields and properties</p>
+            <div class="fullcomment"><div class="comment cmt"><p>appends a new function to decorate the labels on the field/property/form - singular form for fields and properties</p></div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateLabelsCellsWith">
+      <a id="decorateLabelsCellsWith((Node) ⇒ Node):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateLabelsCellsWith</span>
+        
+        <span class="params">(<span name="x">x: (<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">appends a new function to decorate the label cells on the field/property/form - singular form for fields and properties</p>
+            <div class="fullcomment"><div class="comment cmt"><p>appends a new function to decorate the label cells on the field/property/form - singular form for fields and properties</p></div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateLabelsWith">
+      <a id="decorateLabelsWith((Node) ⇒ Node):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateLabelsWith</span>
+        
+        <span class="params">(<span name="x">x: (<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">appends a new function to decorate the labels on the field/property/form</p>
+            <div class="fullcomment"><div class="comment cmt"><p>appends a new function to decorate the labels on the field/property/form</p></div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateValue">
+      <a id="decorateValue(String):Node"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateValue</span>
+        
+        <span class="params">(<span name="value">value: String</span>)</span>
+        <span class="result">: <span class="extype" name="scala.xml.Node">Node</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateValueCell">
+      <a id="decorateValueCell(Node):Node"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateValueCell</span>
+        
+        <span class="params">(<span name="valueCell">valueCell: <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.xml.Node">Node</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateValueCellWith">
+      <a id="decorateValueCellWith((Node) ⇒ Node):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateValueCellWith</span>
+        
+        <span class="params">(<span name="x">x: (<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">appends a new function to decorate the cell values on the field/property/form - singular form for fields and properties</p>
+            <div class="fullcomment"><div class="comment cmt"><p>appends a new function to decorate the cell values on the field/property/form - singular form for fields and properties</p></div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateValueWith">
+      <a id="decorateValueWith((Node) ⇒ Node):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateValueWith</span>
+        
+        <span class="params">(<span name="x">x: (<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">appends a new function to decorate the values on the field/property/form - singular form for fields and properties</p>
+            <div class="fullcomment"><div class="comment cmt"><p>appends a new function to decorate the values on the field/property/form - singular form for fields and properties</p></div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateValuesCellsWith">
+      <a id="decorateValuesCellsWith((Node) ⇒ Node):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateValuesCellsWith</span>
+        
+        <span class="params">(<span name="x">x: (<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">appends a new function to decorate the cell values on the field/property/form - singular form for fields and properties</p>
+            <div class="fullcomment"><div class="comment cmt"><p>appends a new function to decorate the cell values on the field/property/form - singular form for fields and properties</p></div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateValuesWith">
+      <a id="decorateValuesWith((Node) ⇒ Node):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateValuesWith</span>
+        
+        <span class="params">(<span name="x">x: (<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">appends a new function to decorate the values on the field/property/form</p>
+            <div class="fullcomment"><div class="comment cmt"><p>appends a new function to decorate the values on the field/property/form</p></div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#eq">
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">eq</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to test whether the argument (<code>arg0</code>) is a reference to the
+receiver object (<code>this</code>).</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to test whether the argument (<code>arg0</code>) is a reference to the
+receiver object (<code>this</code>).</p><p>The <code>eq</code> method implements an [http://en.wikipedia.org/wiki/Equivalence_relation equivalence relation] on
+non-null instances of <code>AnyRef</code>:
+ * It is reflexive: for any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(x)</code> returns <code>true</code>.
+ * It is symmetric: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, <code>x.eq(y)</code> returns <code>true</code> if and
+   only if <code>y.eq(x)</code> returns <code>true</code>.
+ * It is transitive: for any non-null instances <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code> if <code>x.eq(y)</code> returns <code>true</code>   and <code>y.eq(z)</code> returns <code>true</code>, then <code>x.eq(z)</code> returns <code>true</code>.</p><p>Additionally, the <code>eq</code> method has three other properties.
+ * It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+   <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.
+ * For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.
+ * <code>null.eq(null)</code> returns <code>true</code>.</p><p>When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for reference equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Field#equals">
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">equals</span>
+        
+        <span class="params">(<span name="a">a: <span class="extype" name="scala.Any">Any</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to compare the receiver object (<code>this</code>) with the argument object (<code>arg0</code>) for equivalence.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to compare the receiver object (<code>this</code>) with the argument object (<code>arg0</code>) for equivalence.</p><p>The default implementations of this method is an [http://en.wikipedia.org/wiki/Equivalence_relation equivalence
+relation]:
+ * It is reflexive: for any instance <code>x</code> of type <code>Any</code>, <code>x.equals(x)</code> should return <code>true</code>.
+ * It is symmetric: for any instances <code>x</code> and <code>y</code> of type <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and
+   only if <code>y.equals(x)</code> returns <code>true</code>.
+ * It is transitive: for any instances <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code> if <code>x.equals(y)</code> returns <code>true</code> and
+   <code>y.equals(z)</code> returns <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</p><p>If you override this method, you should verify that your implementation remains an equivalence relation.
+Additionally, when overriding this method it is often necessary to override <code>hashCode</code> to ensure that objects
+that are &quot;equal&quot; (<code>o1.equals(o2)</code> returns <code>true</code>) hash to the same 
+scala.Int
+(<code>o1.hashCode.equals(o2.hashCode)</code>).
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.form.Field">Field</a> → AnyRef → Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#errorLabel">
+      <a id="errorLabel:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">errorLabel</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#errorLabels">
+      <a id="errorLabels:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">errorLabels</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#errorValue">
+      <a id="errorValue:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">errorValue</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#errorValues">
+      <a id="errorValues:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">errorValues</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.DefaultResults#errors">
+      <a id="errors:List[Throwable]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">errors</span>
+        
+        
+        <span class="result">: List[Throwable]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the list of errors</p></dd></dl><div class="block">
+          definition classes: <a href="../execute/DefaultResults.html" class="extype" name="org.specs.execute.DefaultResults">DefaultResults</a> → <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.DefaultExecutable#execute">
+      <a id="execute:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">execute</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Execute this only if it is not commented.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Execute this only if it is not commented.</p><p>The execution starts by a reset(), then catches and FailureException, SkippedException or Throwables to store results
+</p></div><div class="block">
+          definition classes: <a href="../execute/DefaultExecutable.html" class="extype" name="org.specs.execute.DefaultExecutable">DefaultExecutable</a> → <a href="../execute/Executable.html" class="extype" name="org.specs.execute.Executable">Executable</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Field#executeThis">
+      <a id="executeThis:Field[T]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">executeThis</span>
+        
+        
+        <span class="result">: <a href="" class="extype" name="org.specs.form.Field">Field</a>[T]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">executing a field does nothing</p>
+            <div class="fullcomment"><div class="comment cmt"><p>executing a field does nothing</p></div><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.form.Field">Field</a> → <a href="../execute/DefaultExecutable.html" class="extype" name="org.specs.execute.DefaultExecutable">DefaultExecutable</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.execute.DefaultExecutable#executed">
+      <a id="executed:Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">executed</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="../execute/DefaultExecutable.html" class="extype" name="org.specs.execute.DefaultExecutable">DefaultExecutable</a>
+        </div></div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.execute.DefaultExecutable#executionStarted">
+      <a id="executionStarted:Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">executionStarted</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="../execute/DefaultExecutable.html" class="extype" name="org.specs.execute.DefaultExecutable">DefaultExecutable</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.HasResults#failureAndErrors">
+      <a id="failureAndErrors:List[Throwable]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">failureAndErrors</span>
+        
+        
+        <span class="result">: List[Throwable]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>failures and errors</p></dd></dl><div class="block">
+          definition classes: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#failureLabel">
+      <a id="failureLabel:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">failureLabel</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#failureLabels">
+      <a id="failureLabels:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">failureLabels</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#failureValue">
+      <a id="failureValue:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">failureValue</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#failureValues">
+      <a id="failureValues:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">failureValues</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.DefaultResults#failures">
+      <a id="failures:List[FailureException]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">failures</span>
+        
+        
+        <span class="result">: List[<a href="../execute/FailureException.html" class="extype" name="org.specs.execute.FailureException">FailureException</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the list of failures</p></dd></dl><div class="block">
+          definition classes: <a href="../execute/DefaultResults.html" class="extype" name="org.specs.execute.DefaultResults">DefaultResults</a> → <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" data-isabs="false" name="scala.AnyRef#finalize">
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">finalize</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is called by the garbage collector on the receiver object when garbage collection determines that
+there are no more references to the object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is called by the garbage collector on the receiver object when garbage collection determines that
+there are no more references to the object.</p><p>The details of when and if the <code>finalize</code> method are invoked, as well as the interaction between <code>finalize</code>and non-local returns and exceptions, are all platform dependent.</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.ValueFormatter#format">
+      <a id="format(T):String"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">format</span>
+        
+        <span class="params">(<span name="s">s: T</span>)</span>
+        <span class="result">: String</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">format the value.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>format the value. If it is a Double, use a DecimalFormat(&quot;#.###############&quot;) to display the value
+</p></div><div class="block">
+          definition classes: <a href="ValueFormatter.html" class="extype" name="org.specs.form.ValueFormatter">ValueFormatter</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.ValueFormatter#format">
+      <a id="format(Option[T]):String"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">format</span>
+        
+        <span class="params">(<span name="s">s: <span class="extype" name="scala.Option">Option</span>[T]</span>)</span>
+        <span class="result">: String</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">format the value.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>format the value. If it is a Double, use a DecimalFormat(&quot;#.###############&quot;) to display the value
+</p></div><div class="block">
+          definition classes: <a href="ValueFormatter.html" class="extype" name="org.specs.form.ValueFormatter">ValueFormatter</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.ValueFormatter#formatWith">
+      <a id="formatWith((Option[T]) ⇒ String):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">formatWith</span>
+        
+        <span class="params">(<span name="function">function: (<span class="extype" name="scala.Option">Option</span>[T]) ⇒ String</span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">change the value formatter to display the value differently
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>change the value formatter to display the value differently
+</p></div><div class="block">
+          definition classes: <a href="ValueFormatter.html" class="extype" name="org.specs.form.ValueFormatter">ValueFormatter</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.ValueFormatter#formatterIs">
+      <a id="formatterIs((T) ⇒ String):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">formatterIs</span>
+        
+        <span class="params">(<span name="function">function: (T) ⇒ String</span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">change the value formatter to display the value differently.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>change the value formatter to display the value differently. This formatter displays &quot;&quot; for a missing value
+</p></div><div class="block">
+          definition classes: <a href="ValueFormatter.html" class="extype" name="org.specs.form.ValueFormatter">ValueFormatter</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.GenericFormatter#genericFormatterIs">
+      <a id="genericFormatterIs((String) ⇒ String):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">genericFormatterIs</span>
+        
+        <span class="params">(<span name="function">function: (String) ⇒ String</span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="GenericFormatter.html" class="extype" name="org.specs.form.GenericFormatter">GenericFormatter</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Field#get">
+      <a id="get:T"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">get</span>
+        
+        
+        <span class="result">: T</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">alias for apply()</p>
+            <div class="fullcomment"><div class="comment cmt"><p>alias for apply()</p></div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#getClass">
+      <a id="getClass():java.lang.Class[_]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">getClass</span>
+        
+        <span class="params">()</span>
+        <span class="result">: java.lang.Class[_]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns a representation that corresponds to the dynamic class of the receiver object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns a representation that corresponds to the dynamic class of the receiver object.</p><p>The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.DefaultResults#hardCopyResults">
+      <a id="hardCopyResults(DefaultResults):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">hardCopyResults</span>
+        
+        <span class="params">(<span name="other">other: <a href="../execute/DefaultResults.html" class="extype" name="org.specs.execute.DefaultResults">DefaultResults</a></span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="../execute/DefaultResults.html" class="extype" name="org.specs.execute.DefaultResults">DefaultResults</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.HasResults#hasFailureOrErrors">
+      <a id="hasFailureOrErrors:Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">hasFailureOrErrors</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if there are failures or errors</p></dd></dl><div class="block">
+          definition classes: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.HasResults#hasIssues">
+      <a id="hasIssues:Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">hasIssues</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if there are issues</p></dd></dl><div class="block">
+          definition classes: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Field#hashCode">
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">hashCode</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns a hash code value for the object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns a hash code value for the object.</p><p>The default hashing algorithm is platform dependent.</p><p>Note that it is allowed for two objects to have identical hash codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet
+not be equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A degenerate implementation could always return <code>0</code>.
+However, it is required that if two objects are equal (<code>o1.equals(o2)</code> returns <code>true</code>) that they have
+identical hash codes (<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when overriding this method, be sure
+to verify that the behavior is consistent with the <code>equals</code> method.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for the object.</p></dd></dl><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.form.Field">Field</a> → AnyRef → Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#infoLabel">
+      <a id="infoLabel:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">infoLabel</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#infoLabels">
+      <a id="infoLabels:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">infoLabels</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#infoValue">
+      <a id="infoValue:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">infoValue</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#infoValues">
+      <a id="infoValues:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">infoValues</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.Commentable#isCommented">
+      <a id="isCommented:Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isCommented</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="../execute/Commentable.html" class="extype" name="org.specs.execute.Commentable">Commentable</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#isInstanceOf">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to test whether the dynamic type of the receiver object is <code>T0</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to test whether the dynamic type of the receiver object is <code>T0</code>.</p><p>Note that the test result of the test is modulo Scala's erasure semantics.  Therefore the expression<code>1.isInstanceOf[String]</code> will return <code>false</code>, while the expression <code>List(1).isInstanceOf[List[String]]</code> will
+return <code>true</code>.  In the latter example, because the type argument is erased as part of compilation it is not
+possible to check whether the contents of the list are of the requested typed.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.HasResults#isOk">
+      <a id="isOk:Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isOk</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>true if there are no issues</p></dd></dl><div class="block">
+          definition classes: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.HasResults#issueMessages">
+      <a id="issueMessages:String"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">issueMessages</span>
+        
+        
+        <span class="result">: String</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>issues as a list of messages, comma-separated</p></dd></dl><div class="block">
+          definition classes: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.HasResults#issues">
+      <a id="issues:List[Throwable]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">issues</span>
+        
+        
+        <span class="result">: List[Throwable]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>issues = anything that's not a success</p></dd></dl><div class="block">
+          definition classes: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#italic">
+      <a id="italic:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">italic</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#italicLabel">
+      <a id="italicLabel:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">italicLabel</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#italicLabels">
+      <a id="italicLabels:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">italicLabels</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#italicValue">
+      <a id="italicValue:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">italicValue</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#italicValues">
+      <a id="italicValues:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">italicValues</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Field#label">
+      <a id="label:String"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">label</span>
+        
+        
+        <span class="result">: String</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.form.Field">Field</a> → <a href="HasLabel.html" class="extype" name="org.specs.form.HasLabel">HasLabel</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#labelBgcolor">
+      <a id="labelBgcolor(String):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">labelBgcolor</span>
+        
+        <span class="params">(<span name="value">value: String</span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#labelCellAttribute">
+      <a id="labelCellAttribute(String,String):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">labelCellAttribute</span>
+        
+        <span class="params">(<span name="name">name: String</span>, <span name="value">value: String</span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.DecoratedXhtml#labelsCellsDecorators">
+      <a id="labelsCellsDecorators:List[(Node) ⇒ Node]"></a>
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">labelsCellsDecorators</span>
+        
+        
+        <span class="result">: List[(<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">this functions will decorate the label cell on the field/property/form</p>
+            <div class="fullcomment"><div class="comment cmt"><p>this functions will decorate the label cell on the field/property/form</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.DecoratedXhtml#labelsDecorators">
+      <a id="labelsDecorators:List[(Node) ⇒ Node]"></a>
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">labelsDecorators</span>
+        
+        
+        <span class="result">: List[(<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">this functions will decorate the labels on the field/property/form</p>
+            <div class="fullcomment"><div class="comment cmt"><p>this functions will decorate the labels on the field/property/form</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#ne">
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">ne</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o.ne(arg0)</code> is the same as <code>!(o.eq(arg0))</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o.ne(arg0)</code> is the same as <code>!(o.eq(arg0))</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for reference dis-equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>false</code> if the argument is not a reference to the receiver object; <code>true</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#notify">
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">notify</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.</p></div><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#notifyAll">
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">notifyAll</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.</p></div><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#pre">
+      <a id="pre:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">pre</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#preLabel">
+      <a id="preLabel:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">preLabel</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#preLabels">
+      <a id="preLabels:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">preLabels</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#preValue">
+      <a id="preValue:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">preValue</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#preValues">
+      <a id="preValues:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">preValues</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.DefaultExecutable#reset">
+      <a id="reset():Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">reset</span>
+        
+        <span class="params">()</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">reset the execution to &quot;not executed&quot;.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>reset the execution to &quot;not executed&quot;. This also resets the results.</p></div><div class="block">
+          definition classes: <a href="../execute/DefaultExecutable.html" class="extype" name="org.specs.execute.DefaultExecutable">DefaultExecutable</a> → <a href="../execute/DefaultResults.html" class="extype" name="org.specs.execute.DefaultResults">DefaultResults</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.DefaultResults#skipped">
+      <a id="skipped:List[SkippedException]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">skipped</span>
+        
+        
+        <span class="result">: List[<a href="../execute/SkippedException.html" class="extype" name="org.specs.execute.SkippedException">SkippedException</a>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the list of skipped</p></dd></dl><div class="block">
+          definition classes: <a href="../execute/DefaultResults.html" class="extype" name="org.specs.execute.DefaultResults">DefaultResults</a> → <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#skippedLabel">
+      <a id="skippedLabel:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">skippedLabel</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#skippedLabels">
+      <a id="skippedLabels:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">skippedLabels</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#skippedValue">
+      <a id="skippedValue:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">skippedValue</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#skippedValues">
+      <a id="skippedValues:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">skippedValues</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.HasResults#statusAsText">
+      <a id="statusAsText:String"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">statusAsText</span>
+        
+        
+        <span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the status as a text icon. x for an issue, o for a skip, + for a success</p></dd></dl><div class="block">
+          definition classes: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.HasResults#statusClass">
+      <a id="statusClass:String"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">statusClass</span>
+        
+        
+        <span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a string showing the status. &quot;error&quot; if there are errors, then &quot;failure&quot;, &quot;skipped&quot; or finally &quot;success&quot;</p></dd></dl><div class="block">
+          definition classes: <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.ToXhtml#statusClass">
+      <a id="statusClass(String):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">statusClass</span>
+        
+        <span class="params">(<span name="s">s: String</span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">set the status code</p>
+            <div class="fullcomment"><div class="comment cmt"><p>set the status code</p></div><div class="block">
+          definition classes: <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.ToXhtml#statusCode">
+      <a id="statusCode:Property[String]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">statusCode</span>
+        
+        
+        <span class="result">: <a href="../util/Property.html" class="extype" name="org.specs.util.Property">Property</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">status code value</p>
+            <div class="fullcomment"><div class="comment cmt"><p>status code value</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#strike">
+      <a id="strike:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">strike</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#strikeLabel">
+      <a id="strikeLabel:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">strikeLabel</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#strikeLabels">
+      <a id="strikeLabels:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">strikeLabels</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#strikeValue">
+      <a id="strikeValue:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">strikeValue</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#strikeValues">
+      <a id="strikeValues:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">strikeValues</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#successLabel">
+      <a id="successLabel:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">successLabel</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#successLabels">
+      <a id="successLabels:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">successLabels</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#successValue">
+      <a id="successValue:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">successValue</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#successValues">
+      <a id="successValues:Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">successValues</span>
+        
+        
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#synchronized">
+      <a id="synchronized[T0](T0):T0"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">synchronized</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        <span class="params">(<span name="arg0">arg0: T0</span>)</span>
+        <span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.execute.DefaultResults#thisErrors">
+      <a id="thisErrors:ListBuffer[Throwable]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">thisErrors</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.collection.mutable.ListBuffer">ListBuffer</span>[Throwable]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="../execute/DefaultResults.html" class="extype" name="org.specs.execute.DefaultResults">DefaultResults</a>
+        </div></div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.execute.DefaultResults#thisFailures">
+      <a id="thisFailures:ListBuffer[FailureException]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">thisFailures</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.collection.mutable.ListBuffer">ListBuffer</span>[<a href="../execute/FailureException.html" class="extype" name="org.specs.execute.FailureException">FailureException</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="../execute/DefaultResults.html" class="extype" name="org.specs.execute.DefaultResults">DefaultResults</a>
+        </div></div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.execute.DefaultResults#thisSkipped">
+      <a id="thisSkipped:ListBuffer[SkippedException]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">thisSkipped</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.collection.mutable.ListBuffer">ListBuffer</span>[<a href="../execute/SkippedException.html" class="extype" name="org.specs.execute.SkippedException">SkippedException</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="../execute/DefaultResults.html" class="extype" name="org.specs.execute.DefaultResults">DefaultResults</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Field#toEmbeddedXhtml">
+      <a id="toEmbeddedXhtml:NodeSeq"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toEmbeddedXhtml</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.xml.NodeSeq">NodeSeq</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">don't add a supplementary <td> when embedding the xhtml@return the Xhtml embedded in a <td> cell with the status code and alignment</p>
+            <div class="fullcomment"><div class="comment cmt"><p>don't add a supplementary <td> when embedding the xhtml@return the Xhtml embedded in a <td> cell with the status code and alignment</p></div><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.form.Field">Field</a> → <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.ToXhtml#toHtml">
+      <a id="toHtml:String"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toHtml</span>
+        
+        
+        <span class="result">: String</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the Html as a String</p></dd></dl><div class="block">
+          definition classes: <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Field#toString">
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toString</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>&quot;label: value&quot;</p></dd></dl><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.form.Field">Field</a> → AnyRef → Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Field#toStringField">
+      <a id="toStringField:Field[String]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toStringField</span>
+        
+        
+        <span class="result">: <a href="" class="extype" name="org.specs.form.Field">Field</a>[String]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">transforms this typed Field as a Field containing the toString value of the Fields value</p>
+            <div class="fullcomment"><div class="comment cmt"><p>transforms this typed Field as a Field containing the toString value of the Fields value</p></div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Field#toXhtml">
+      <a id="toXhtml:NodeSeq"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toXhtml</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.xml.NodeSeq">NodeSeq</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">return the value <td> cell with a td cell for the label if it is not empty@return the Xhtml as a String</p>
+            <div class="fullcomment"><div class="comment cmt"><p>return the value <td> cell with a td cell for the label if it is not empty@return the Xhtml as a String</p></div><div class="block">
+          definition classes: <a href="" class="extype" name="org.specs.form.Field">Field</a> → <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.Commentable#uncomment">
+      <a id="uncomment():Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">uncomment</span>
+        
+        <span class="params">()</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="../execute/Commentable.html" class="extype" name="org.specs.execute.Commentable">Commentable</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.ToXhtml#valign">
+      <a id="valign(String):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">valign</span>
+        
+        <span class="params">(<span name="s">s: String</span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">set the valign value</p>
+            <div class="fullcomment"><div class="comment cmt"><p>set the valign value</p></div><div class="block">
+          definition classes: <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.ToXhtml#valignment">
+      <a id="valignment:Property[String]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">valignment</span>
+        
+        
+        <span class="result">: <a href="../util/Property.html" class="extype" name="org.specs.util.Property">Property</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">valign value</p>
+            <div class="fullcomment"><div class="comment cmt"><p>valign value</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Field#value">
+      <a id="value:Property[T]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">value</span>
+        
+        
+        <span class="result">: <a href="../util/Property.html" class="extype" name="org.specs.util.Property">Property</a>[T]</span>
+      </span>
+      </h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#valueBgcolor">
+      <a id="valueBgcolor(String):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">valueBgcolor</span>
+        
+        <span class="params">(<span name="value">value: String</span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.Field#valueCell">
+      <a id="valueCell:Elem"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">valueCell</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.xml.Elem">Elem</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">return the value in a <td> cell, formated and decorated</p>
+            <div class="fullcomment"><div class="comment cmt"><p>return the value in a <td> cell, formated and decorated</p></div><div class="block">
+          attributes: protected 
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#valueCellAttribute">
+      <a id="valueCellAttribute(String,String):Field.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">valueCellAttribute</span>
+        
+        <span class="params">(<span name="name">name: String</span>, <span name="value">value: String</span>)</span>
+        <span class="result">: Field.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.DecoratedXhtml#valuesCellsDecorators">
+      <a id="valuesCellsDecorators:List[(Node) ⇒ Node]"></a>
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">valuesCellsDecorators</span>
+        
+        
+        <span class="result">: List[(<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">this functions will decorate the value cell on the field/property/form</p>
+            <div class="fullcomment"><div class="comment cmt"><p>this functions will decorate the value cell on the field/property/form</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.DecoratedXhtml#valuesDecorators">
+      <a id="valuesDecorators:List[(Node) ⇒ Node]"></a>
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">valuesDecorators</span>
+        
+        
+        <span class="result">: List[(<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">this functions will decorate the values on the field/property/form</p>
+            <div class="fullcomment"><div class="comment cmt"><p>this functions will decorate the values on the field/property/form</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#wait">
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#wait">
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#wait">
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li></ol>
+            </div>
+
+        <div class="parent" name="org.specs.execute.DefaultExecutable">
+              <h3>Inherited from <a href="../execute/DefaultExecutable.html" class="extype" name="org.specs.execute.DefaultExecutable">DefaultExecutable</a></h3>
+            </div><div class="parent" name="org.specs.execute.Commentable">
+              <h3>Inherited from <a href="../execute/Commentable.html" class="extype" name="org.specs.execute.Commentable">Commentable</a></h3>
+            </div><div class="parent" name="org.specs.execute.Executable">
+              <h3>Inherited from <a href="../execute/Executable.html" class="extype" name="org.specs.execute.Executable">Executable</a></h3>
+            </div><div class="parent" name="org.specs.execute.DefaultResults">
+              <h3>Inherited from <a href="../execute/DefaultResults.html" class="extype" name="org.specs.execute.DefaultResults">DefaultResults</a></h3>
+            </div><div class="parent" name="org.specs.execute.HasResults">
+              <h3>Inherited from <a href="../execute/HasResults.html" class="extype" name="org.specs.execute.HasResults">HasResults</a></h3>
+            </div><div class="parent" name="org.specs.form.ValueFormatter">
+              <h3>Inherited from <a href="ValueFormatter.html" class="extype" name="org.specs.form.ValueFormatter">ValueFormatter</a>[T]</h3>
+            </div><div class="parent" name="org.specs.form.GenericFormatter">
+              <h3>Inherited from <a href="GenericFormatter.html" class="extype" name="org.specs.form.GenericFormatter">GenericFormatter</a></h3>
+            </div><div class="parent" name="org.specs.form.LabeledXhtml">
+              <h3>Inherited from <a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a></h3>
+            </div><div class="parent" name="org.specs.form.Copyable">
+              <h3>Inherited from <a href="Copyable.html" class="extype" name="org.specs.form.Copyable">Copyable</a>[<a href="" class="extype" name="org.specs.form.Field">Field</a>[T]]</h3>
+            </div><div class="parent" name="org.specs.form.ToXhtml">
+              <h3>Inherited from <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a></h3>
+            </div><div class="parent" name="org.specs.form.DecoratedXhtml">
+              <h3>Inherited from <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a></h3>
+            </div><div class="parent" name="org.specs.form.HasLabel">
+              <h3>Inherited from <a href="HasLabel.html" class="extype" name="org.specs.form.HasLabel">HasLabel</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from AnyRef</h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+
+      </div>
+      
+      <div id="tooltip"></div>
+      
+    </body>
+      </html>

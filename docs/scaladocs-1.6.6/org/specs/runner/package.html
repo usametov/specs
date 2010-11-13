@@ -1,0 +1,797 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>org.specs.runner</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
+      <script type="text/javascript" src="../../../lib/jquery.js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+    
+        </head>
+        <body class="value" onload="windowTitle();">
+
+      <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.specs">specs</a></p>
+
+      <div id="definition">
+        <img src="../../../lib/package_big.png" />
+        <h1>runner</h1>
+      </div>
+
+      <h4 class="signature" id="signature">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">runner</span>
+        
+        
+        
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment"></div>
+
+      <div id="template">
+
+        <div id="mbrsel">
+          <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+          
+          
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+            </div>
+          <div id="impl">
+              <span class="filtertype">Impl.</span>
+              <ol><li class="concrete in">Concrete</li><li class="abstract in">Abstract</li></ol>
+            </div>
+        </div>
+
+        
+
+        <div class="types members" id="types">
+              <h3>Type Members</h3>
+              <ol><li visbl="pub" data-isabs="false" name="org.specs.runner.ClassRunner">
+      <a id="ClassRunner:ClassRunner"></a>
+      <h4 class="signature"><a href="ClassRunner.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ClassRunner</span>
+        
+        
+        <span class="result"> extends Classes with OutputReporter</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.Console">
+      <a id="Console:Console"></a>
+      <h4 class="signature"><a href="Console.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Console</span>
+        
+        
+        <span class="result"> extends OutputReporter with ConsoleOutput</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Implementation of the <code>OutputReporter</code> with a <code>ConsoleOutput</code>and a <code>SimpleTimer</code></p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.ConsoleNotifier">
+      <a id="ConsoleNotifier:ConsoleNotifier"></a>
+      <h4 class="signature"><a href="ConsoleNotifier.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ConsoleNotifier</span>
+        
+        
+        <span class="result"> extends Notifier</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Simple implementation of the Notifier trait to display messages in the console
+</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.ConsoleRunner">
+      <a id="ConsoleRunner:ConsoleRunner"></a>
+      <h4 class="signature"><a href="ConsoleRunner.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ConsoleRunner</span>
+        
+        
+        <span class="result"> extends Console</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class implements the <code>Console</code> trait and can be initialized with specifications directly<br>Usage: <code>object mySpecRunner extends ConsoleRunner(mySpec1, mySpec2)</code></p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.DefaultEventHandler">
+      <a id="DefaultEventHandler:DefaultEventHandler"></a>
+      <h4 class="signature"><a href="DefaultEventHandler.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">DefaultEventHandler</span>
+        
+        
+        <span class="result"> extends EventHandler</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.ExampleTestCase">
+      <a id="ExampleTestCase:ExampleTestCase"></a>
+      <h4 class="signature"><a href="ExampleTestCase.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ExampleTestCase</span>
+        
+        
+        <span class="result"> extends TestCase</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">A <code>ExampleTestCase</code> reports the result of an example</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.ExamplesTestSuite">
+      <a id="ExamplesTestSuite:ExamplesTestSuite"></a>
+      <h4 class="signature"><a href="ExamplesTestSuite.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ExamplesTestSuite</span>
+        
+        
+        <span class="result"> extends JUnitSuite with ExtendedJUnitSuite</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">A <code>ExamplesTestSuite</code> is a JUnitSuite reporting the results of
+a System under test (sus) as a list of examples, represented by ExampleTestCase objects.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.ExtendedJUnitSuite">
+      <a id="ExtendedJUnitSuite:ExtendedJUnitSuite"></a>
+      <h4 class="signature"><a href="ExtendedJUnitSuite.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ExtendedJUnitSuite</span>
+        
+        
+        <span class="result"> extends Stacktraces</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.File">
+      <a id="File:File"></a>
+      <h4 class="signature"><a href="File.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">File</span>
+        
+        
+        <span class="result"> extends FileSystem with ConsoleLog with SpecsHolder with Console</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait groups the functionalities of runners creating files from
+specification executions.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.FileReporter">
+      <a id="FileReporter:FileReporter"></a>
+      <h4 class="signature"><a href="FileReporter.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">FileReporter</span>
+        
+        
+        <span class="result"> extends File</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">A FileReporter class is used to have a constructor setting the required variables of the File trait.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.FileSuite">
+      <a id="FileSuite:FileSuite"></a>
+      <h4 class="signature"><a href="FileSuite.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">FileSuite</span>
+        
+        
+        <span class="result"> extends File</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: abstract 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.HandlerEvents">
+      <a id="HandlerEvents:HandlerEvents"></a>
+      <h4 class="signature"><a href="HandlerEvents.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">HandlerEvents</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.Html">
+      <a id="Html:Html"></a>
+      <h4 class="signature"><a href="Html.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Html</span>
+        
+        
+        <span class="result"> extends File</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The Html trait outputs the results of a specification execution as an html
+file in a given output directory.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.HtmlRunner">
+      <a id="HtmlRunner:HtmlRunner"></a>
+      <h4 class="signature"><a href="HtmlRunner.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">HtmlRunner</span>
+        
+        
+        <span class="result"> extends FileReporter with Html</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.HtmlSuite">
+      <a id="HtmlSuite:HtmlSuite"></a>
+      <h4 class="signature"><a href="HtmlSuite.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">HtmlSuite</span>
+        
+        <span class="params">(<span name="specs">specs: Seq[Specification]</span>, <span name="outputDirPath">outputDirPath: String</span>, <span name="fName">fName: (BaseSpecification) ⇒ String</span>)</span>
+        <span class="result"> extends FileSuite with Html with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The HtmlSuite class is almost the same as the HtmlRunner class but can be extended with a JUnit trait.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.JUnit">
+      <a id="JUnit:JUnit"></a>
+      <h4 class="signature"><a href="JUnit.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">JUnit</span>
+        
+        
+        <span class="result"> extends JUnitSuite with Reporter with ExtendedJUnitSuite</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Extension of a JUnitSuite initializing the suite with one or more specifications
+</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.JUnit3">
+      <a id="JUnit3:JUnit3"></a>
+      <h4 class="signature"><a href="JUnit3.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name deprecated">JUnit3</span>
+        
+        
+        <span class="result"> extends JUnit</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Concrete class providing specifications to be used as a JUnitSuite</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.JUnit4">
+      <a id="JUnit4:JUnit4"></a>
+      <h4 class="signature"><a href="JUnit4.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">JUnit4</span>
+        
+        
+        <span class="result"> extends JUnit</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Concrete class providing specifications to be used as a JUnitSuite
+</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.JUnitSuite">
+      <a id="JUnitSuite:JUnitSuite"></a>
+      <h4 class="signature"><a href="JUnitSuite.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">JUnitSuite</span>
+        
+        
+        <span class="result"> extends Test</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The strategy for running Specifications with JUnit is as follow:</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.JUnitSuiteRunner">
+      <a id="JUnitSuiteRunner:JUnitSuiteRunner"></a>
+      <h4 class="signature"><a href="JUnitSuiteRunner.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">JUnitSuiteRunner</span>
+        
+        
+        <span class="result"> extends Runner with Filterable with Sortable with TestDescription</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The JUnitSuiteRunner provides a JUnit4 annotation to run <code>JUnitSuite</code> test suites created from specifications<code>klass</code> is a JUnitSuite which implements the junit.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.Notifier">
+      <a id="Notifier:Notifier"></a>
+      <h4 class="signature"><a href="Notifier.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Notifier</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This is a generic trait for defining a notified object which will know about the state of a run.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.NotifierRunner">
+      <a id="NotifierRunner:NotifierRunner"></a>
+      <h4 class="signature"><a href="NotifierRunner.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">NotifierRunner</span>
+        
+        
+        <span class="result"> extends Reporter</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This reporter reports specification by executing them and specifying the results to Notifiers.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.OldTestClassAdaptingListener">
+      <a id="OldTestClassAdaptingListener:OldTestClassAdaptingListener"></a>
+      <h4 class="signature"><a href="OldTestClassAdaptingListener.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">OldTestClassAdaptingListener</span>
+        
+        
+        <span class="result"> extends TestListener with TestDescription</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class listens for JUnit3 results (as a TestListener) and notifies a JUnit4 RunNotifier
+</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.OutputReporter">
+      <a id="OutputReporter:OutputReporter"></a>
+      <h4 class="signature"><a href="OutputReporter.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">OutputReporter</span>
+        
+        
+        <span class="result"> extends Reporter with Output</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait reports the result of a specification on a simple <code>Output</code>which must support <code>print</code>-like methods
+</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.Reporter">
+      <a id="Reporter:Reporter"></a>
+      <h4 class="signature"><a href="Reporter.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Reporter</span>
+        
+        
+        <span class="result"> extends SpecsFilter with ConsoleLog</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">An object using the reporter trait should be able to report the result of the execution of several specifications.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.Runner">
+      <a id="Runner:Runner"></a>
+      <h4 class="signature"><a href="Runner.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Runner</span>
+        
+        
+        <span class="result"> extends Reporter</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The Runner class is an abstract class referencing one or several specifications to run.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.ScalaTest">
+      <a id="ScalaTest:ScalaTest"></a>
+      <h4 class="signature"><a href="ScalaTest.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ScalaTest</span>
+        
+        
+        <span class="result"> extends SpecsFilter with FailOrSkip with Suite</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait is a ScalaTest suite which is build from one or more specifications (provided by the inherited SpecsHolder)
+The subspecifications, as well the system under test (sus) are provided as nested suites
+Usage:&lt;code&gt;
+class mySpecRunner extends Runner(mySpec) with ScalaTest
+&lt;code&gt;
+</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.ScalaTestSuite">
+      <a id="ScalaTestSuite:ScalaTestSuite"></a>
+      <h4 class="signature"><a href="ScalaTestSuite.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ScalaTestSuite</span>
+        
+        
+        <span class="result"> extends ScalaTest</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Concrete class for the ScalaTest trait.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.SkippedAssertionError">
+      <a id="SkippedAssertionError:SkippedAssertionError"></a>
+      <h4 class="signature"><a href="SkippedAssertionError.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">SkippedAssertionError</span>
+        
+        
+        <span class="result"> extends SpecAssertionFailedError</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.SpecAssertionFailedError">
+      <a id="SpecAssertionFailedError:SpecAssertionFailedError"></a>
+      <h4 class="signature"><a href="SpecAssertionFailedError.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">SpecAssertionFailedError</span>
+        
+        
+        <span class="result"> extends AssertionFailedError</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class refines the <code>AssertionFailedError</code> from junit
+and provides the stackTrace of an exception which occured during the specification execution
+</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.SpecError">
+      <a id="SpecError:SpecError"></a>
+      <h4 class="signature"><a href="SpecError.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">SpecError</span>
+        
+        
+        <span class="result"> extends Error</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class represents errors thrown in an example.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.SpecificationsFinder">
+      <a id="SpecificationsFinder:SpecificationsFinder"></a>
+      <h4 class="signature"><a href="SpecificationsFinder.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">SpecificationsFinder</span>
+        
+        
+        <span class="result"> extends FileSystem with Classes</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait browses files on a given path and returns what can be matching specification class names.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.SpecsFileRunner">
+      <a id="SpecsFileRunner:SpecsFileRunner"></a>
+      <h4 class="signature"><a href="SpecsFileRunner.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">SpecsFileRunner</span>
+        
+        
+        <span class="result"> extends SpecsFinder with Console</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class can be used to search for specifications on a given path
+and execute them.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.SpecsFilter">
+      <a id="SpecsFilter:SpecsFilter"></a>
+      <h4 class="signature"><a href="SpecsFilter.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">SpecsFilter</span>
+        
+        
+        <span class="result"> extends SpecsHolder</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.SpecsFilterPatternException">
+      <a id="SpecsFilterPatternException:SpecsFilterPatternException"></a>
+      <h4 class="signature"><a href="SpecsFilterPatternException.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">SpecsFilterPatternException</span>
+        
+        <span class="params">(<span name="description">description: String</span>, <span name="cause">cause: Exception</span>)</span>
+        <span class="result"> extends Exception with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">specific exception for pattern compilation errors</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.SpecsFinder">
+      <a id="SpecsFinder:SpecsFinder"></a>
+      <h4 class="signature"><a href="SpecsFinder.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">SpecsFinder</span>
+        
+        <span class="params">(<span name="path">path: String</span>, <span name="pattern">pattern: String</span>, <span name="asOneSpecification">asOneSpecification: Boolean</span>)</span>
+        <span class="result"> extends SpecificationsFinder with SpecsFilter with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The SpecsFinder class can be used to hold the specifications found on a given path, with a given pattern.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.SpecsFramework">
+      <a id="SpecsFramework:SpecsFramework"></a>
+      <h4 class="signature"><a href="SpecsFramework.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">SpecsFramework</span>
+        
+        
+        <span class="result"> extends Framework</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Implementation of the Framework interface for the sbt tool.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.SpecsHolder">
+      <a id="SpecsHolder:SpecsHolder"></a>
+      <h4 class="signature"><a href="SpecsHolder.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">SpecsHolder</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The SpecsHolder trait is used by any class providing access to a sequence of specifications
+</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.SusSuite">
+      <a id="SusSuite:SusSuite"></a>
+      <h4 class="signature"><a href="SusSuite.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">SusSuite</span>
+        
+        
+        <span class="result"> extends Suite</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class is a ScalaTest suite which is build from a system under test
+its subspecifications or its systems under test (sus)
+</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.TeamCityOutput">
+      <a id="TeamCityOutput:TeamCityOutput"></a>
+      <h4 class="signature"><a href="TeamCityOutput.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">TeamCityOutput</span>
+        
+        
+        <span class="result"> extends Output</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The TeamCityOutput trait prints messages respecting the TeamCity format on the standard output.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.TeamCityReporter">
+      <a id="TeamCityReporter:TeamCityReporter"></a>
+      <h4 class="signature"><a href="TeamCityReporter.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">TeamCityReporter</span>
+        
+        
+        <span class="result"> extends OutputReporter with TeamCityOutput</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The TeamCityReporter is an output reporter tailored to output
+messages using the TeamCity format.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.TeamCityRunner">
+      <a id="TeamCityRunner:TeamCityRunner"></a>
+      <h4 class="signature"><a href="TeamCityRunner.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">TeamCityRunner</span>
+        
+        
+        <span class="result"> extends TeamCityReporter</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This runner provides a main method to take a list of specifications and
+report them one by one.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.TestDescription">
+      <a id="TestDescription:TestDescription"></a>
+      <h4 class="signature"><a href="TestDescription.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">TestDescription</span>
+        
+        
+        <span class="result"> extends Stacktraces</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Common methods to create descriptions from a test or a test suite.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.TestInterfaceNotifier">
+      <a id="TestInterfaceNotifier:TestInterfaceNotifier"></a>
+      <h4 class="signature"><a href="TestInterfaceNotifier.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">TestInterfaceNotifier</span>
+        
+        
+        <span class="result"> extends Notifier with HandlerEvents with TestLoggers</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The TestInterface notifier notifies the EventHandler of the specification execution
+</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.TestInterfaceRunner">
+      <a id="TestInterfaceRunner:TestInterfaceRunner"></a>
+      <h4 class="signature"><a href="TestInterfaceRunner.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">TestInterfaceRunner</span>
+        
+        
+        <span class="result"> extends Runner with HandlerEvents with TestLoggers</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Runner for TestInterface.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.TestLoggers">
+      <a id="TestLoggers:TestLoggers"></a>
+      <h4 class="signature"><a href="TestLoggers.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">TestLoggers</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.UserError">
+      <a id="UserError:UserError"></a>
+      <h4 class="signature"><a href="UserError.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">UserError</span>
+        
+        <span class="params">(<span name="t">t: Throwable</span>, <span name="context">context: String</span>)</span>
+        <span class="result"> extends Throwable with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="true" name="org.specs.runner.Xml">
+      <a id="Xml:Xml"></a>
+      <h4 class="signature"><a href="Xml.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Xml</span>
+        
+        
+        <span class="result"> extends File</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The <code>Xml</code> trait is used to create an xml file, in a specified output directory
+with the results of a specification execution.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.XmlRunner">
+      <a id="XmlRunner:XmlRunner"></a>
+      <h4 class="signature"><a href="XmlRunner.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">XmlRunner</span>
+        
+        <span class="params">(<span name="specs">specs: Seq[Specification]</span>, <span name="outputDirPath">outputDirPath: String</span>, <span name="fName">fName: (BaseSpecification) ⇒ String</span>)</span>
+        <span class="result"> extends FileReporter with Xml with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Concrete class for the Xml trait.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.XmlSuite">
+      <a id="XmlSuite:XmlSuite"></a>
+      <h4 class="signature"><a href="XmlSuite.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">XmlSuite</span>
+        
+        <span class="params">(<span name="specs">specs: Seq[Specification]</span>, <span name="outputDirPath">outputDirPath: String</span>, <span name="fName">fName: (BaseSpecification) ⇒ String</span>)</span>
+        <span class="result"> extends FileSuite with Xml with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The XmlSuite is the same class as XmlRunner but can be extended with the JUnit trait.</p>
+    </li></ol>
+            </div>
+
+        <div class="values members" id="values">
+              <h3>Value Members</h3>
+              <ol><li visbl="pub" data-isabs="false" name="org.specs.runner.AnsiColors">
+      <a id="AnsiColors:AnsiColors"></a>
+      <h4 class="signature"><a href="AnsiColors$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">AnsiColors</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This object provides AnsiColors codes for the OutputReporter</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.HtmlNamingFunction">
+      <a id="HtmlNamingFunction:HtmlNamingFunction"></a>
+      <h4 class="signature"><a href="HtmlNamingFunction$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">HtmlNamingFunction</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.JUnitOptions">
+      <a id="JUnitOptions:JUnitOptions"></a>
+      <h4 class="signature"><a href="JUnitOptions$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">JUnitOptions</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait allows to pass system options to Tests and TestSuites
+</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.NamingFunction">
+      <a id="NamingFunction:NamingFunction"></a>
+      <h4 class="signature"><a href="NamingFunction$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">NamingFunction</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.RunnerMain">
+      <a id="RunnerMain:RunnerMain"></a>
+      <h4 class="signature"><a href="RunnerMain$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">RunnerMain</span>
+        
+        
+        <span class="result"> extends SpecificationsFinder</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The RunnerMain object is a utility which can be used to run a reporter class passed as a
+argument on the command line.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.SpecsFinder">
+      <a id="SpecsFinder:SpecsFinder"></a>
+      <h4 class="signature"><a href="SpecsFinder$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">SpecsFinder</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Companion SpecsFinder object to create a SpecsFinder returning an aggregate Specification of
+all the found specifications.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.TeamCityUtils">
+      <a id="TeamCityUtils:TeamCityUtils"></a>
+      <h4 class="signature"><a href="TeamCityUtils$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">TeamCityUtils</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">TeamCity string formatting utilities.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.runner.XmlNamingFunction">
+      <a id="XmlNamingFunction:XmlNamingFunction"></a>
+      <h4 class="signature"><a href="XmlNamingFunction$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">XmlNamingFunction</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+      </div>
+      
+      <div id="tooltip"></div>
+      
+    </body>
+      </html>

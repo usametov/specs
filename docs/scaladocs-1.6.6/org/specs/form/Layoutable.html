@@ -1,0 +1,2755 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>org.specs.form.Layoutable</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
+      <script type="text/javascript" src="../../../lib/jquery.js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+    
+        </head>
+        <body class="type" onload="windowTitle();">
+
+      <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.specs">specs</a>.<a href="package.html" class="extype" name="org.specs.form">form</a></p>
+
+      <div id="definition">
+        <img src="../../../lib/trait_big.png" />
+        <h1>Layoutable</h1>
+      </div>
+
+      <h4 class="signature" id="signature">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Layoutable</span>
+        
+        
+        <span class="result"> extends <a href="Layout.html" class="extype" name="org.specs.form.Layout">Layout</a> with <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a> with <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a> with <a href="Tabs.html" class="extype" name="org.specs.form.Tabs">Tabs</a></span>
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment"><div class="comment cmt"><p>This trait allows to display ToXhtml elements in rows or tabs.</p><p>It is itself a ToXhtml element which will return itself as a set of rows</p><p>The main method is tr which declares values which must be displayed on the same row.</p><p>tr(a1, a2) // tr for &quot;table row&quot;
+tr(a3)</p><p>Several display functions are also available:</p><p>tr(empty)                // displays a small empty line
+p(values)                // &quot;paragraph&quot;: displays an empty line and the values on the next row
+th1(&quot;header&quot;)            // display the title in a small box on a new row
+th2(&quot;header&quot;)            // display the title in a <th> on a new row
+th3(&quot;header&quot;)            // display the title in a <th> on a new row, aligned left
+th3(&quot;header&quot;, Status.Success) // display the title in a <th> on a new row, aligned left, with a special class attribute</p><p>Tabs can also be created with the tabs() and tab() case classes:</p><p>new tabs() {
+  new tab() {
+    tr(v1, v2)
+  }
+}
+</p></div><div class="block">
+            linear super types: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>, <a href="Tabs.html" class="extype" name="org.specs.form.Tabs">Tabs</a>, <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a>, <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>, <a href="Layout.html" class="extype" name="org.specs.form.Layout">Layout</a>, <a href="../util/IncludeExclude.html" class="extype" name="org.specs.util.IncludeExclude">IncludeExclude</a>[<a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>], AnyRef, <span class="extype" name="scala.Any">Any</span>
+          </div><div class="block">
+            known subclasses: <a href="Tabs$tabs.html" class="extype" name="org.specs.form.Tabs.tabs">tabs</a>, <a href="Tabs$tabs$tab.html" class="extype" name="org.specs.form.Tabs.tabs.tab">tab</a>, <a href="FormEnabled.html" class="extype" name="org.specs.form.FormEnabled">FormEnabled</a>, <a href="TableFormEnabled.html" class="extype" name="org.specs.form.TableFormEnabled">TableFormEnabled</a>, <a href="SeqFormEnabled.html" class="extype" name="org.specs.form.SeqFormEnabled">SeqFormEnabled</a>, <a href="DataTableFormEnabled.html" class="extype" name="org.specs.form.DataTableFormEnabled">DataTableFormEnabled</a>, <a href="BagFormEnabled.html" class="extype" name="org.specs.form.BagFormEnabled">BagFormEnabled</a>, <a href="Form.html" class="extype" name="org.specs.form.Form">Form</a>, <a href="TableForm.html" class="extype" name="org.specs.form.TableForm">TableForm</a>, <a href="SeqForm.html" class="extype" name="org.specs.form.SeqForm">SeqForm</a>, <a href="LineForm.html" class="extype" name="org.specs.form.LineForm">LineForm</a>, <a href="InfoTable.html" class="extype" name="org.specs.form.InfoTable">InfoTable</a>, <a href="EntityLineForm.html" class="extype" name="org.specs.form.EntityLineForm">EntityLineForm</a>, <a href="DataTableSeqForm.html" class="extype" name="org.specs.form.DataTableSeqForm">DataTableSeqForm</a>, <a href="DataTableForm.html" class="extype" name="org.specs.form.DataTableForm">DataTableForm</a>, <a href="BagForm.html" class="extype" name="org.specs.form.BagForm">BagForm</a>, <a href="DataTableBagForm.html" class="extype" name="org.specs.form.DataTableBagForm">DataTableBagForm</a>
+          </div>
+            
+            
+            
+          </div>
+
+      <div id="template">
+
+        <div id="mbrsel">
+          <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+          <div id="order">
+                <span class="filtertype">Ordering</span>
+                <ol><li class="alpha in">Alphabetic</li><li class="inherit out">By inheritance</li></ol>
+              </div>
+          <div id="ancestors">
+                <span class="filtertype">Inherited</span>
+                <ol><li class="hideall">Hide All</li><li class="showall">Show all</li></ol>
+                <ol id="linearization"><li class="in" name="org.specs.form.Layoutable">Layoutable</li><li class="in" name="org.specs.form.LayoutFormats">LayoutFormats</li><li class="in" name="org.specs.form.Tabs">Tabs</li><li class="in" name="org.specs.form.ToXhtml">ToXhtml</li><li class="in" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</li><li class="in" name="org.specs.form.Layout">Layout</li><li class="in" name="org.specs.util.IncludeExclude">IncludeExclude</li><li class="in" name="scala.AnyRef">AnyRef</li><li class="in" name="scala.Any">Any</li></ol>
+              </div>
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+            </div>
+          <div id="impl">
+              <span class="filtertype">Impl.</span>
+              <ol><li class="concrete in">Concrete</li><li class="abstract in">Abstract</li></ol>
+            </div>
+        </div>
+
+        
+
+        <div class="types members" id="types">
+              <h3>Type Members</h3>
+              <ol><li visbl="pub" data-isabs="false" name="org.specs.form.Tabs.tabs">
+      <a id="tabs:tabs"></a>
+      <h4 class="signature"><a href="Tabs$tabs.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">tabs</span>
+        
+        <span class="params">()</span>
+        <span class="result"> extends Layoutable with LabeledXhtml with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">case class for creating a group of tabs</p>
+    </li></ol>
+            </div>
+
+        <div class="values members" id="values">
+              <h3>Value Members</h3>
+              <ol><li visbl="pub" data-isabs="false" name="scala.AnyRef#!=">
+      <a id="!=(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">!=</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#!=">
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">!=</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o != arg0</code> is the same as <code>!(o == (arg0))</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o != arg0</code> is the same as <code>!(o == (arg0))</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for dis-equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>false</code> if the receiver object is equivalent to the argument; <code>true</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef###">
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">##</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef → Any
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#$asInstanceOf">
+      <a id="$asInstanceOf[T0]():T0"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">$asInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        <span class="params">()</span>
+        <span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#$isInstanceOf">
+      <a id="$isInstanceOf[T0]():Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">$isInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#==">
+      <a id="==(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">==</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o == arg0</code> is the same as <code>if (o eq null) arg0 eq null else o.equals(arg0)</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o == arg0</code> is the same as <code>if (o eq null) arg0 eq null else o.equals(arg0)</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#==">
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">==</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o == arg0</code> is the same as <code>o.equals(arg0)</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o == arg0</code> is the same as <code>o.equals(arg0)</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.Layout#appendRows">
+      <a id="appendRows(List[Seq[LabeledXhtml]]):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">appendRows</span>
+        
+        <span class="params">(<span name="rows">rows: List[Seq[<a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>]]</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="Layout.html" class="extype" name="org.specs.form.Layout">Layout</a>
+        </div></div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.Layout#appendValues">
+      <a id="appendValues(LabeledXhtml*):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">appendValues</span>
+        
+        <span class="params">(<span name="values">values: <a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>*</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="Layout.html" class="extype" name="org.specs.form.Layout">Layout</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#asInstanceOf">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        
+        <span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to cast the receiver object to be of type <code>T0</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to cast the receiver object to be of type <code>T0</code>.</p><p>Note that the success of a cast at runtime is modulo Scala's erasure semantics.  Therefore the expression<code>1.asInstanceOf[String]</code> will throw a <code>ClassCastException</code> at runtime, while the expression<code>List(1).asInstanceOf[List[String]]</code> will not.  In the latter example, because the type argument is erased as
+part of compilation it is not possible to check whether the contents of the list are of the requested typed.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the receiver object.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#bold">
+      <a id="bold:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">bold</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#boldLabel">
+      <a id="boldLabel:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">boldLabel</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#boldLabels">
+      <a id="boldLabels:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">boldLabels</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#boldValue">
+      <a id="boldValue:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">boldValue</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#boldValues">
+      <a id="boldValues:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">boldValues</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="prt" data-isabs="false" name="scala.AnyRef#clone">
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">clone</span>
+        
+        <span class="params">()</span>
+        <span class="result">: AnyRef</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method creates and returns a copy of the receiver object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method creates and returns a copy of the receiver object.</p><p>The default implementation of the <code>clone</code> method is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a copy of the receiver object.</p></dd></dl><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.ToXhtml#copy">
+      <a id="copy(ToXhtml):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">copy</span>
+        
+        <span class="params">(<span name="c">c: <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#copy">
+      <a id="copy(DecoratedXhtml):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">copy</span>
+        
+        <span class="params">(<span name="c">c: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateLabel">
+      <a id="decorateLabel(String):Node"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateLabel</span>
+        
+        <span class="params">(<span name="label">label: String</span>)</span>
+        <span class="result">: <span class="extype" name="scala.xml.Node">Node</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateLabelCell">
+      <a id="decorateLabelCell(Node):Node"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateLabelCell</span>
+        
+        <span class="params">(<span name="labelCell">labelCell: <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.xml.Node">Node</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateLabelCellWith">
+      <a id="decorateLabelCellWith((Node) ⇒ Node):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateLabelCellWith</span>
+        
+        <span class="params">(<span name="x">x: (<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">appends a new function to decorate the cell values on the field/property/form - singular form for fields and properties</p>
+            <div class="fullcomment"><div class="comment cmt"><p>appends a new function to decorate the cell values on the field/property/form - singular form for fields and properties</p></div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateLabelWith">
+      <a id="decorateLabelWith((Node) ⇒ Node):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateLabelWith</span>
+        
+        <span class="params">(<span name="x">x: (<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">appends a new function to decorate the labels on the field/property/form - singular form for fields and properties</p>
+            <div class="fullcomment"><div class="comment cmt"><p>appends a new function to decorate the labels on the field/property/form - singular form for fields and properties</p></div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateLabelsCellsWith">
+      <a id="decorateLabelsCellsWith((Node) ⇒ Node):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateLabelsCellsWith</span>
+        
+        <span class="params">(<span name="x">x: (<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">appends a new function to decorate the label cells on the field/property/form - singular form for fields and properties</p>
+            <div class="fullcomment"><div class="comment cmt"><p>appends a new function to decorate the label cells on the field/property/form - singular form for fields and properties</p></div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateLabelsWith">
+      <a id="decorateLabelsWith((Node) ⇒ Node):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateLabelsWith</span>
+        
+        <span class="params">(<span name="x">x: (<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">appends a new function to decorate the labels on the field/property/form</p>
+            <div class="fullcomment"><div class="comment cmt"><p>appends a new function to decorate the labels on the field/property/form</p></div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateValue">
+      <a id="decorateValue(String):Node"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateValue</span>
+        
+        <span class="params">(<span name="value">value: String</span>)</span>
+        <span class="result">: <span class="extype" name="scala.xml.Node">Node</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateValueCell">
+      <a id="decorateValueCell(Node):Node"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateValueCell</span>
+        
+        <span class="params">(<span name="valueCell">valueCell: <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.xml.Node">Node</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateValueCellWith">
+      <a id="decorateValueCellWith((Node) ⇒ Node):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateValueCellWith</span>
+        
+        <span class="params">(<span name="x">x: (<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">appends a new function to decorate the cell values on the field/property/form - singular form for fields and properties</p>
+            <div class="fullcomment"><div class="comment cmt"><p>appends a new function to decorate the cell values on the field/property/form - singular form for fields and properties</p></div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateValueWith">
+      <a id="decorateValueWith((Node) ⇒ Node):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateValueWith</span>
+        
+        <span class="params">(<span name="x">x: (<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">appends a new function to decorate the values on the field/property/form - singular form for fields and properties</p>
+            <div class="fullcomment"><div class="comment cmt"><p>appends a new function to decorate the values on the field/property/form - singular form for fields and properties</p></div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateValuesCellsWith">
+      <a id="decorateValuesCellsWith((Node) ⇒ Node):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateValuesCellsWith</span>
+        
+        <span class="params">(<span name="x">x: (<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">appends a new function to decorate the cell values on the field/property/form - singular form for fields and properties</p>
+            <div class="fullcomment"><div class="comment cmt"><p>appends a new function to decorate the cell values on the field/property/form - singular form for fields and properties</p></div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#decorateValuesWith">
+      <a id="decorateValuesWith((Node) ⇒ Node):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">decorateValuesWith</span>
+        
+        <span class="params">(<span name="x">x: (<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span></span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">appends a new function to decorate the values on the field/property/form</p>
+            <div class="fullcomment"><div class="comment cmt"><p>appends a new function to decorate the values on the field/property/form</p></div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.LayoutFormats#embedInNewRow">
+      <a id="embedInNewRow(NodeSeq):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">embedInNewRow</span>
+        
+        <span class="params">(<span name="nodes">nodes: <span class="extype" name="scala.xml.NodeSeq">NodeSeq</span></span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">add a new Xhtml element on a new row</p>
+            <div class="fullcomment"><div class="comment cmt"><p>add a new Xhtml element on a new row</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.LayoutFormats#empty">
+      <a id="empty:MatcherProp[String]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">empty</span>
+        
+        
+        <span class="result">: <a href="MatcherProp.html" class="extype" name="org.specs.form.MatcherProp">MatcherProp</a>[String]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">empty string property which can be used to display blank lines.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>empty string property which can be used to display blank lines.</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#eq">
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">eq</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to test whether the argument (<code>arg0</code>) is a reference to the
+receiver object (<code>this</code>).</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to test whether the argument (<code>arg0</code>) is a reference to the
+receiver object (<code>this</code>).</p><p>The <code>eq</code> method implements an [http://en.wikipedia.org/wiki/Equivalence_relation equivalence relation] on
+non-null instances of <code>AnyRef</code>:
+ * It is reflexive: for any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(x)</code> returns <code>true</code>.
+ * It is symmetric: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, <code>x.eq(y)</code> returns <code>true</code> if and
+   only if <code>y.eq(x)</code> returns <code>true</code>.
+ * It is transitive: for any non-null instances <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code> if <code>x.eq(y)</code> returns <code>true</code>   and <code>y.eq(z)</code> returns <code>true</code>, then <code>x.eq(z)</code> returns <code>true</code>.</p><p>Additionally, the <code>eq</code> method has three other properties.
+ * It is consistent: for any non-null instances <code>x</code> and <code>y</code> of type <code>AnyRef</code>, multiple invocations of
+   <code>x.eq(y)</code> consistently returns <code>true</code> or consistently returns <code>false</code>.
+ * For any non-null instance <code>x</code> of type <code>AnyRef</code>, <code>x.eq(null)</code> and <code>null.eq(x)</code> returns <code>false</code>.
+ * <code>null.eq(null)</code> returns <code>true</code>.</p><p>When overriding the <code>equals</code> or <code>hashCode</code> methods, it is important to ensure that their behavior is
+consistent with reference equality.  Therefore, if two objects are references to each other (<code>o1 eq o2</code>), they
+should be equal to each other (<code>o1 == o2</code>) and they should hash to the same value (<code>o1.hashCode == o2.hashCode</code>).
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for reference equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the argument is a reference to the receiver object; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#equals">
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">equals</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to compare the receiver object (<code>this</code>) with the argument object (<code>arg0</code>) for equivalence.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to compare the receiver object (<code>this</code>) with the argument object (<code>arg0</code>) for equivalence.</p><p>The default implementations of this method is an [http://en.wikipedia.org/wiki/Equivalence_relation equivalence
+relation]:
+ * It is reflexive: for any instance <code>x</code> of type <code>Any</code>, <code>x.equals(x)</code> should return <code>true</code>.
+ * It is symmetric: for any instances <code>x</code> and <code>y</code> of type <code>Any</code>, <code>x.equals(y)</code> should return <code>true</code> if and
+   only if <code>y.equals(x)</code> returns <code>true</code>.
+ * It is transitive: for any instances <code>x</code>, <code>y</code>, and <code>z</code> of type <code>AnyRef</code> if <code>x.equals(y)</code> returns <code>true</code> and
+   <code>y.equals(z)</code> returns <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.</p><p>If you override this method, you should verify that your implementation remains an equivalence relation.
+Additionally, when overriding this method it is often necessary to override <code>hashCode</code> to ensure that objects
+that are &quot;equal&quot; (<code>o1.equals(o2)</code> returns <code>true</code>) hash to the same 
+scala.Int
+(<code>o1.hashCode.equals(o2.hashCode)</code>).
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is equivalent to the argument; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          definition classes: AnyRef → Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#errorLabel">
+      <a id="errorLabel:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">errorLabel</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#errorLabels">
+      <a id="errorLabels:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">errorLabels</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#errorValue">
+      <a id="errorValue:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">errorValue</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#errorValues">
+      <a id="errorValues:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">errorValues</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.IncludeExclude#exclude">
+      <a id="exclude(LabeledXhtml*):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">exclude</span>
+        
+        <span class="params">(<span name="ex">ex: <a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>*</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="../util/IncludeExclude.html" class="extype" name="org.specs.util.IncludeExclude">IncludeExclude</a>
+        </div></div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.util.IncludeExclude#excludeCheck">
+      <a id="excludeCheck(List[LabeledXhtml],LabeledXhtml):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">excludeCheck</span>
+        
+        <span class="params">(<span name="excludedValues">excludedValues: List[<a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>]</span>, <span name="value">value: <a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="../util/IncludeExclude.html" class="extype" name="org.specs.util.IncludeExclude">IncludeExclude</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#failureLabel">
+      <a id="failureLabel:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">failureLabel</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#failureLabels">
+      <a id="failureLabels:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">failureLabels</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#failureValue">
+      <a id="failureValue:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">failureValue</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#failureValues">
+      <a id="failureValues:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">failureValues</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.IncludeExclude#filter">
+      <a id="filter(Seq[LabeledXhtml]):Seq[LabeledXhtml]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">filter</span>
+        
+        <span class="params">(<span name="values">values: Seq[<a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>]</span>)</span>
+        <span class="result">: Seq[<a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>]</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="../util/IncludeExclude.html" class="extype" name="org.specs.util.IncludeExclude">IncludeExclude</a>
+        </div></div>
+          
+    </li><li visbl="prt" data-isabs="false" name="scala.AnyRef#finalize">
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">finalize</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is called by the garbage collector on the receiver object when garbage collection determines that
+there are no more references to the object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is called by the garbage collector on the receiver object when garbage collection determines that
+there are no more references to the object.</p><p>The details of when and if the <code>finalize</code> method are invoked, as well as the interaction between <code>finalize</code>and non-local returns and exceptions, are all platform dependent.</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#getClass">
+      <a id="getClass():java.lang.Class[_]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">getClass</span>
+        
+        <span class="params">()</span>
+        <span class="result">: java.lang.Class[_]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns a representation that corresponds to the dynamic class of the receiver object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns a representation that corresponds to the dynamic class of the receiver object.</p><p>The nature of the representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a representation that corresponds to the dynamic class of the receiver object.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#hashCode">
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">hashCode</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns a hash code value for the object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns a hash code value for the object.</p><p>The default hashing algorithm is platform dependent.</p><p>Note that it is allowed for two objects to have identical hash codes (<code>o1.hashCode.equals(o2.hashCode)</code>) yet
+not be equal (<code>o1.equals(o2)</code> returns <code>false</code>).  A degenerate implementation could always return <code>0</code>.
+However, it is required that if two objects are equal (<code>o1.equals(o2)</code> returns <code>true</code>) that they have
+identical hash codes (<code>o1.hashCode.equals(o2.hashCode)</code>).  Therefore, when overriding this method, be sure
+to verify that the behavior is consistent with the <code>equals</code> method.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the hash code value for the object.</p></dd></dl><div class="block">
+          definition classes: AnyRef → Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.LayoutFormats#inNewRow">
+      <a id="inNewRow(NodeSeq):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">inNewRow</span>
+        
+        <span class="params">(<span name="nodes">nodes: <span class="extype" name="scala.xml.NodeSeq">NodeSeq</span></span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">add a new Xhtml element on a new row, with no embedding in a separate <td></p>
+            <div class="fullcomment"><div class="comment cmt"><p>add a new Xhtml element on a new row, with no embedding in a separate <td></p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.IncludeExclude#include">
+      <a id="include(LabeledXhtml*):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">include</span>
+        
+        <span class="params">(<span name="in">in: <a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>*</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="../util/IncludeExclude.html" class="extype" name="org.specs.util.IncludeExclude">IncludeExclude</a>
+        </div></div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.util.IncludeExclude#includeCheck">
+      <a id="includeCheck(List[LabeledXhtml],LabeledXhtml):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">includeCheck</span>
+        
+        <span class="params">(<span name="includedValues">includedValues: List[<a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>]</span>, <span name="value">value: <a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="../util/IncludeExclude.html" class="extype" name="org.specs.util.IncludeExclude">IncludeExclude</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#infoLabel">
+      <a id="infoLabel:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">infoLabel</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#infoLabels">
+      <a id="infoLabels:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">infoLabels</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#infoValue">
+      <a id="infoValue:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">infoValue</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#infoValues">
+      <a id="infoValues:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">infoValues</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.Any#isInstanceOf">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">This method is used to test whether the dynamic type of the receiver object is <code>T0</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>This method is used to test whether the dynamic type of the receiver object is <code>T0</code>.</p><p>Note that the test result of the test is modulo Scala's erasure semantics.  Therefore the expression<code>1.isInstanceOf[String]</code> will return <code>false</code>, while the expression <code>List(1).isInstanceOf[List[String]]</code> will
+return <code>true</code>.  In the latter example, because the type argument is erased as part of compilation it is not
+possible to check whether the contents of the list are of the requested typed.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p><code>true</code> if the receiver object is an instance of erasure of type <code>T0</code>; <code>false</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#italic">
+      <a id="italic:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">italic</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#italicLabel">
+      <a id="italicLabel:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">italicLabel</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#italicLabels">
+      <a id="italicLabels:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">italicLabels</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#italicValue">
+      <a id="italicValue:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">italicValue</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#italicValues">
+      <a id="italicValues:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">italicValues</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#labelBgcolor">
+      <a id="labelBgcolor(String):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">labelBgcolor</span>
+        
+        <span class="params">(<span name="value">value: String</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#labelCellAttribute">
+      <a id="labelCellAttribute(String,String):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">labelCellAttribute</span>
+        
+        <span class="params">(<span name="name">name: String</span>, <span name="value">value: String</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.DecoratedXhtml#labelsCellsDecorators">
+      <a id="labelsCellsDecorators:List[(Node) ⇒ Node]"></a>
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">labelsCellsDecorators</span>
+        
+        
+        <span class="result">: List[(<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">this functions will decorate the label cell on the field/property/form</p>
+            <div class="fullcomment"><div class="comment cmt"><p>this functions will decorate the label cell on the field/property/form</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.DecoratedXhtml#labelsDecorators">
+      <a id="labelsDecorators:List[(Node) ⇒ Node]"></a>
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">labelsDecorators</span>
+        
+        
+        <span class="result">: List[(<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">this functions will decorate the labels on the field/property/form</p>
+            <div class="fullcomment"><div class="comment cmt"><p>this functions will decorate the labels on the field/property/form</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#ne">
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">ne</span>
+        
+        <span class="params">(<span name="arg0">arg0: AnyRef</span>)</span>
+        <span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"><code>o.ne(arg0)</code> is the same as <code>!(o.eq(arg0))</code>.</p>
+            <div class="fullcomment"><div class="comment cmt"><p><code>o.ne(arg0)</code> is the same as <code>!(o.eq(arg0))</code>.
+</p></div><dl class="paramcmts block"><dt class="param">arg0</dt><dd class="cmt"><p>the object to compare against this object for reference dis-equality.</p></dd><dt>returns</dt><dd class="cmt"><p><code>false</code> if the argument is not a reference to the receiver object; <code>true</code> otherwise.</p></dd></dl><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#notify">
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">notify</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Wakes up a single thread that is waiting on the receiver object's monitor.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Wakes up a single thread that is waiting on the receiver object's monitor.</p></div><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#notifyAll">
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">notifyAll</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Wakes up all threads that are waiting on the receiver object's monitor.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Wakes up all threads that are waiting on the receiver object's monitor.</p></div><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LayoutFormats#p">
+      <a id="p(LabeledXhtml*):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">p</span>
+        
+        <span class="params">(<span name="values">values: <a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>*</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display a &quot;paragraph&quot; = an empty row + the values</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display a &quot;paragraph&quot; = an empty row + the values</p></div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#pre">
+      <a id="pre:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">pre</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#preLabel">
+      <a id="preLabel:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">preLabel</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#preLabels">
+      <a id="preLabels:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">preLabels</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#preValue">
+      <a id="preValue:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">preValue</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#preValues">
+      <a id="preValues:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">preValues</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.IncludeExclude#reset">
+      <a id="reset():Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">reset</span>
+        
+        <span class="params">()</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="../util/IncludeExclude.html" class="extype" name="org.specs.util.IncludeExclude">IncludeExclude</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Layout#resetLayout">
+      <a id="resetLayout():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">resetLayout</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">remove all previously declared layout</p>
+            <div class="fullcomment"><div class="comment cmt"><p>remove all previously declared layout</p></div><div class="block">
+          definition classes: <a href="Layout.html" class="extype" name="org.specs.form.Layout">Layout</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.Layout#rowValues">
+      <a id="rowValues:ListBuffer[Seq[LabeledXhtml]]"></a>
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">rowValues</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.collection.mutable.ListBuffer">ListBuffer</span>[Seq[<a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>]]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">store row values</p>
+            <div class="fullcomment"><div class="comment cmt"><p>store row values</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="Layout.html" class="extype" name="org.specs.form.Layout">Layout</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Layout#rows">
+      <a id="rows:List[Seq[LabeledXhtml]]"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">rows</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.collection.immutable.List">List</span>[Seq[<a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>]]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>all rows as a List</p></dd></dl><div class="block">
+          definition classes: <a href="Layout.html" class="extype" name="org.specs.form.Layout">Layout</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Layout#rowsNb">
+      <a id="rowsNb:Int"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">rowsNb</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the number of rows</p></dd></dl><div class="block">
+          definition classes: <a href="Layout.html" class="extype" name="org.specs.form.Layout">Layout</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#skippedLabel">
+      <a id="skippedLabel:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">skippedLabel</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#skippedLabels">
+      <a id="skippedLabels:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">skippedLabels</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#skippedValue">
+      <a id="skippedValue:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">skippedValue</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#skippedValues">
+      <a id="skippedValues:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">skippedValues</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.ToXhtml#statusClass">
+      <a id="statusClass(String):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">statusClass</span>
+        
+        <span class="params">(<span name="s">s: String</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">set the status code</p>
+            <div class="fullcomment"><div class="comment cmt"><p>set the status code</p></div><div class="block">
+          definition classes: <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.ToXhtml#statusCode">
+      <a id="statusCode:Property[String]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">statusCode</span>
+        
+        
+        <span class="result">: <a href="../util/Property.html" class="extype" name="org.specs.util.Property">Property</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">status code value</p>
+            <div class="fullcomment"><div class="comment cmt"><p>status code value</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#strike">
+      <a id="strike:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">strike</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#strikeLabel">
+      <a id="strikeLabel:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">strikeLabel</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#strikeLabels">
+      <a id="strikeLabels:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">strikeLabels</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#strikeValue">
+      <a id="strikeValue:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">strikeValue</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#strikeValues">
+      <a id="strikeValues:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">strikeValues</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#successLabel">
+      <a id="successLabel:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">successLabel</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#successLabels">
+      <a id="successLabels:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">successLabels</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#successValue">
+      <a id="successValue:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">successValue</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#successValues">
+      <a id="successValues:Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">successValues</span>
+        
+        
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#synchronized">
+      <a id="synchronized[T0](T0):T0"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">synchronized</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        <span class="params">(<span name="arg0">arg0: T0</span>)</span>
+        <span class="result">: T0</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Tabs#tabs">
+      <a id="tabs[T&lt;:Form](String,T*):Form"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">tabs</span>
+        <span class="tparams">[<span name="T">T &lt;: <a href="Form.html" class="extype" name="org.specs.form.Form">Form</a></span>]</span>
+        <span class="params">(<span name="title">title: String</span>, <span name="formsToTab">formsToTab: T*</span>)</span>
+        <span class="result">: <a href="Form.html" class="extype" name="org.specs.form.Form">Form</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">create tabs with an overall title from a list of forms
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>create tabs with an overall title from a list of forms
+</p></div><div class="block">
+          definition classes: <a href="Tabs.html" class="extype" name="org.specs.form.Tabs">Tabs</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LayoutFormats#th1">
+      <a id="th1(LabeledXhtml):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">th1</span>
+        
+        <span class="params">(<span name="title">title: <a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a></span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display a big header as a box inside a row</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display a big header as a box inside a row</p></div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LayoutFormats#th1">
+      <a id="th1(String*):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">th1</span>
+        
+        <span class="params">(<span name="titles">titles: String*</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display a big header as a box inside a row</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display a big header as a box inside a row</p></div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LayoutFormats#th2">
+      <a id="th2(List[LabeledXhtml]):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">th2</span>
+        
+        <span class="params">(<span name="titles">titles: List[<a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>]</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display a th header</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display a th header</p></div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LayoutFormats#th2">
+      <a id="th2(String*):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">th2</span>
+        
+        <span class="params">(<span name="titles">titles: String*</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display a th header</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display a th header</p></div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LayoutFormats#th3">
+      <a id="th3(List[String],Value):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">th3</span>
+        
+        <span class="params">(<span name="titles">titles: List[String]</span>, <span name="status">status: <span class="extype" name="scala.Enumeration.Value">Value</span></span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display a list of th headers, left aligned, with a given class attribute</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display a list of th headers, left aligned, with a given class attribute</p></div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LayoutFormats#th3">
+      <a id="th3(String,Value):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">th3</span>
+        
+        <span class="params">(<span name="title">title: String</span>, <span name="status">status: <span class="extype" name="scala.Enumeration.Value">Value</span></span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display a th header, left aligned, with a given class attribute</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display a th header, left aligned, with a given class attribute</p></div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LayoutFormats#th3">
+      <a id="th3(List[LabeledXhtml]):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">th3</span>
+        
+        <span class="params">(<span name="titles">titles: List[<a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>]</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display a th header, left aligned</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display a th header, left aligned</p></div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LayoutFormats#th3">
+      <a id="th3(String*):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">th3</span>
+        
+        <span class="params">(<span name="titles">titles: String*</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display a th header, left aligned</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display a th header, left aligned</p></div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LayoutFormats#th3Error">
+      <a id="th3Error(List[String]):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">th3Error</span>
+        
+        <span class="params">(<span name="titles">titles: List[String]</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display a th header, left aligned, with an Error style</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display a th header, left aligned, with an Error style</p></div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LayoutFormats#th3Error">
+      <a id="th3Error(String):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">th3Error</span>
+        
+        <span class="params">(<span name="title">title: String</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display a th header, left aligned, with an error style</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display a th header, left aligned, with an error style</p></div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LayoutFormats#th3Failure">
+      <a id="th3Failure(List[String]):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">th3Failure</span>
+        
+        <span class="params">(<span name="titles">titles: List[String]</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display a th header, left aligned, with a Failure style</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display a th header, left aligned, with a Failure style</p></div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LayoutFormats#th3Failure">
+      <a id="th3Failure(String):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">th3Failure</span>
+        
+        <span class="params">(<span name="title">title: String</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display a th header, left aligned, with a failure style</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display a th header, left aligned, with a failure style</p></div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LayoutFormats#th3Info">
+      <a id="th3Info(List[String]):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">th3Info</span>
+        
+        <span class="params">(<span name="titles">titles: List[String]</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display a th header, left aligned, with an Info style</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display a th header, left aligned, with an Info style</p></div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LayoutFormats#th3Info">
+      <a id="th3Info(String):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">th3Info</span>
+        
+        <span class="params">(<span name="title">title: String</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display a th header, left aligned, with an Info style</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display a th header, left aligned, with an Info style</p></div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LayoutFormats#th3Skipped">
+      <a id="th3Skipped(List[String]):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">th3Skipped</span>
+        
+        <span class="params">(<span name="titles">titles: List[String]</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display a th header, left aligned, with a Skipped style</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display a th header, left aligned, with a Skipped style</p></div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LayoutFormats#th3Skipped">
+      <a id="th3Skipped(String):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">th3Skipped</span>
+        
+        <span class="params">(<span name="title">title: String</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display a th header, left aligned, with a Skipped style</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display a th header, left aligned, with a Skipped style</p></div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LayoutFormats#th3Success">
+      <a id="th3Success(List[String]):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">th3Success</span>
+        
+        <span class="params">(<span name="titles">titles: List[String]</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display a th header, left aligned, with a Success style</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display a th header, left aligned, with a Success style</p></div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LayoutFormats#th3Success">
+      <a id="th3Success(String):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">th3Success</span>
+        
+        <span class="params">(<span name="title">title: String</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">display a th header, left aligned, with a success style</p>
+            <div class="fullcomment"><div class="comment cmt"><p>display a th header, left aligned, with a success style</p></div><div class="block">
+          definition classes: <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.ToXhtml#toEmbeddedXhtml">
+      <a id="toEmbeddedXhtml:NodeSeq"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toEmbeddedXhtml</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.xml.NodeSeq">NodeSeq</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the Xhtml embedded in a <td> cell with the status code and alignment</p></dd></dl><div class="block">
+          definition classes: <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.ToXhtml#toHtml">
+      <a id="toHtml:String"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toHtml</span>
+        
+        
+        <span class="result">: String</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the Html as a String</p></dd></dl><div class="block">
+          definition classes: <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.Layout#toRow">
+      <a id="toRow(LabeledXhtml*):Elem"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toRow</span>
+        
+        <span class="params">(<span name="values">values: <a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>*</span>)</span>
+        <span class="result">: <span class="extype" name="scala.xml.Elem">Elem</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">create a row with the &quot;embedded&quot; Xhtml values, filtered according to the IncludeExclude trait.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>create a row with the &quot;embedded&quot; Xhtml values, filtered according to the IncludeExclude trait.
+</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="Layout.html" class="extype" name="org.specs.form.Layout">Layout</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#toString">
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toString</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">Returns a string representation of the object.</p>
+            <div class="fullcomment"><div class="comment cmt"><p>Returns a string representation of the object.</p><p>The default representation is platform dependent.
+</p></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>a string representation of the object.</p></dd></dl><div class="block">
+          definition classes: AnyRef → Any
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Tabs#toTabs">
+      <a id="toTabs[T&lt;:Form](String,(String, T)*):Form"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toTabs</span>
+        <span class="tparams">[<span name="T">T &lt;: <a href="Form.html" class="extype" name="org.specs.form.Form">Form</a></span>]</span>
+        <span class="params">(<span name="title">title: String</span>, <span name="formsToTab">formsToTab: (String, T)*</span>)</span>
+        <span class="result">: <a href="Form.html" class="extype" name="org.specs.form.Form">Form</a></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">create tabs with an overall title from a list of (tab title, form)
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>create tabs with an overall title from a list of (tab title, form)
+</p></div><div class="block">
+          definition classes: <a href="Tabs.html" class="extype" name="org.specs.form.Tabs">Tabs</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.ToXhtml#toXhtml">
+      <a id="toXhtml:NodeSeq"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">toXhtml</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.xml.NodeSeq">NodeSeq</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt"></p>
+            <div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt>returns</dt><dd class="cmt"><p>the Xhtml as a String</p></dd></dl><div class="block">
+          definition classes: <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Layout#tr">
+      <a id="tr(LabeledXhtml*):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">tr</span>
+        
+        <span class="params">(<span name="values">values: <a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>*</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">adding values on a row
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>adding values on a row
+</p></div><div class="block">
+          definition classes: <a href="Layout.html" class="extype" name="org.specs.form.Layout">Layout</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Layout#trs">
+      <a id="trs(List[Seq[LabeledXhtml]]):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">trs</span>
+        
+        <span class="params">(<span name="rows">rows: List[Seq[<a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>]]</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">adding several rows coming from another form
+</p>
+            <div class="fullcomment"><div class="comment cmt"><p>adding several rows coming from another form
+</p></div><div class="block">
+          definition classes: <a href="Layout.html" class="extype" name="org.specs.form.Layout">Layout</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.ToXhtml#valign">
+      <a id="valign(String):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">valign</span>
+        
+        <span class="params">(<span name="s">s: String</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">set the valign value</p>
+            <div class="fullcomment"><div class="comment cmt"><p>set the valign value</p></div><div class="block">
+          definition classes: <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.ToXhtml#valignment">
+      <a id="valignment:Property[String]"></a>
+      <h4 class="signature">
+      <span class="kind">val</span>
+      <span class="symbol">
+        <span class="name">valignment</span>
+        
+        
+        <span class="result">: <a href="../util/Property.html" class="extype" name="org.specs.util.Property">Property</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">valign value</p>
+            <div class="fullcomment"><div class="comment cmt"><p>valign value</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#valueBgcolor">
+      <a id="valueBgcolor(String):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">valueBgcolor</span>
+        
+        <span class="params">(<span name="value">value: String</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DecoratedXhtml#valueCellAttribute">
+      <a id="valueCellAttribute(String,String):Layoutable.this.type"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">valueCellAttribute</span>
+        
+        <span class="params">(<span name="name">name: String</span>, <span name="value">value: String</span>)</span>
+        <span class="result">: Layoutable.this.type</span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div></div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.DecoratedXhtml#valuesCellsDecorators">
+      <a id="valuesCellsDecorators:List[(Node) ⇒ Node]"></a>
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">valuesCellsDecorators</span>
+        
+        
+        <span class="result">: List[(<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">this functions will decorate the value cell on the field/property/form</p>
+            <div class="fullcomment"><div class="comment cmt"><p>this functions will decorate the value cell on the field/property/form</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="prt" data-isabs="false" name="org.specs.form.DecoratedXhtml#valuesDecorators">
+      <a id="valuesDecorators:List[(Node) ⇒ Node]"></a>
+      <h4 class="signature">
+      <span class="kind">var</span>
+      <span class="symbol">
+        <span class="name">valuesDecorators</span>
+        
+        
+        <span class="result">: List[(<span class="extype" name="scala.xml.Node">Node</span>) ⇒ <span class="extype" name="scala.xml.Node">Node</span>]</span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">this functions will decorate the values on the field/property/form</p>
+            <div class="fullcomment"><div class="comment cmt"><p>this functions will decorate the values on the field/property/form</p></div><div class="block">
+          attributes: protected 
+        </div><div class="block">
+          definition classes: <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#wait">
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span>
+        
+        <span class="params">()</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#wait">
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="scala.AnyRef#wait">
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">wait</span>
+        
+        <span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span>
+        <span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: final 
+        </div><div class="block">
+          definition classes: AnyRef
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Layout#xhtml">
+      <a id="xhtml:NodeSeq"></a>
+      <h4 class="signature">
+      <span class="kind">def</span>
+      <span class="symbol">
+        <span class="name">xhtml</span>
+        
+        
+        <span class="result">: <span class="extype" name="scala.xml.NodeSeq">NodeSeq</span></span>
+      </span>
+      </h4>
+      
+            <p class="shortcomment cmt">concatenate all rows as Xhtml</p>
+            <div class="fullcomment"><div class="comment cmt"><p>concatenate all rows as Xhtml</p></div><div class="block">
+          definition classes: <a href="Layout.html" class="extype" name="org.specs.form.Layout">Layout</a>
+        </div>
+            
+            
+            
+          </div>
+          
+    </li></ol>
+            </div>
+
+        <div class="parent" name="org.specs.form.LayoutFormats">
+              <h3>Inherited from <a href="LayoutFormats.html" class="extype" name="org.specs.form.LayoutFormats">LayoutFormats</a></h3>
+            </div><div class="parent" name="org.specs.form.Tabs">
+              <h3>Inherited from <a href="Tabs.html" class="extype" name="org.specs.form.Tabs">Tabs</a></h3>
+            </div><div class="parent" name="org.specs.form.ToXhtml">
+              <h3>Inherited from <a href="ToXhtml.html" class="extype" name="org.specs.form.ToXhtml">ToXhtml</a></h3>
+            </div><div class="parent" name="org.specs.form.DecoratedXhtml">
+              <h3>Inherited from <a href="DecoratedXhtml.html" class="extype" name="org.specs.form.DecoratedXhtml">DecoratedXhtml</a></h3>
+            </div><div class="parent" name="org.specs.form.Layout">
+              <h3>Inherited from <a href="Layout.html" class="extype" name="org.specs.form.Layout">Layout</a></h3>
+            </div><div class="parent" name="org.specs.util.IncludeExclude">
+              <h3>Inherited from <a href="../util/IncludeExclude.html" class="extype" name="org.specs.util.IncludeExclude">IncludeExclude</a>[<a href="LabeledXhtml.html" class="extype" name="org.specs.form.LabeledXhtml">LabeledXhtml</a>]</h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from AnyRef</h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+
+      </div>
+      
+      <div id="tooltip"></div>
+      
+    </body>
+      </html>
