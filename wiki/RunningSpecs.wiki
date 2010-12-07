@@ -46,7 +46,7 @@ If you want to run the specifications as `ScalaTest` suites, use
 
 If you want to use Textile markup in Literate Specifications, you need to add
 
- * [http://scala-tools.org/repo-releases/org/eclipse/mylyn/wikitext/wikitext.core/0.9.4.I20090220-1600-e3x wikitext.core-0.9.4.I20090220-1600-e3x.jar]
+ * [http://scala-tools.org/repo-releases/org/eclipse/mylyn/wikitext/wikitext/0.9.4.I20090220-1600-e3x/ wikitext-0.9.4.I20090220-1600-e3x.jar]
  * [http://scala-tools.org/repo-releases/org/eclipse/mylyn/wikitext/wikitext.textile/0.9.4.I20090220-1600-e3x wikitext.textile-0.9.4.I20090220-1600-e3x.jar] 
 
 =Run your specification in the Console=
