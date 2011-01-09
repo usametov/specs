@@ -1,0 +1,1058 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>org.specs.util</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
+      <script type="text/javascript" src="../../../lib/jquery.js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+    
+        </head>
+        <body class="value" onload="windowTitle();">
+
+      <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.specs">specs</a></p>
+
+      <div id="definition">
+        <img src="../../../lib/package_big.png" />
+        <h1>util</h1>
+      </div>
+
+      <h4 class="signature" id="signature">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">util</span>
+        
+        
+        
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment"></div>
+
+      <div id="template">
+
+        <div id="mbrsel">
+          <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+          
+          
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+            </div>
+          <div id="impl">
+              <span class="filtertype">Impl.</span>
+              <ol><li class="concrete in">Concrete</li><li class="abstract in">Abstract</li></ol>
+            </div>
+        </div>
+
+        
+
+        <div class="types members" id="types">
+              <h3>Type Members</h3>
+              <ol><li visbl="pub" data-isabs="true" name="org.specs.util.AbstractDataRow">
+      <a id="AbstractDataRow:AbstractDataRow"></a>
+      <h4 class="signature"><a href="AbstractDataRow.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">AbstractDataRow</span>
+        
+        
+        <span class="result"> extends DefaultResults with ExecutableHeader</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Abstract representation of a row without the column types.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.AllProperties">
+      <a id="AllProperties:AllProperties"></a>
+      <h4 class="signature"><a href="AllProperties.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">AllProperties</span>
+        
+        
+        <span class="result"> extends StringProperties with IntProperties with DoubleProperties with BooleanProperties with XmlProperties with CurrentProperty</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait adds all properties.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.BooleanProperties">
+      <a id="BooleanProperties:BooleanProperties"></a>
+      <h4 class="signature"><a href="BooleanProperties.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">BooleanProperties</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provides Boolean properterties with alphabetical names.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.Classes">
+      <a id="Classes:Classes"></a>
+      <h4 class="signature"><a href="Classes.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Classes</span>
+        
+        
+        <span class="result"> extends ConsoleOutput</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provides utility functions for classes.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.Configuration">
+      <a id="Configuration:Configuration"></a>
+      <h4 class="signature"><a href="Configuration.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Configuration</span>
+        
+        
+        <span class="result"> extends ConfigurationFactory</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.ConfigurationFactory">
+      <a id="ConfigurationFactory:ConfigurationFactory"></a>
+      <h4 class="signature"><a href="ConfigurationFactory.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ConfigurationFactory</span>
+        
+        
+        <span class="result"> extends FileSystem</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.CurrentProperty">
+      <a id="CurrentProperty:CurrentProperty"></a>
+      <h4 class="signature"><a href="CurrentProperty.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">CurrentProperty</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait sets one String property for a current value.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.DataRow">
+      <a id="DataRow:DataRow[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19]"></a>
+      <h4 class="signature"><a href="DataRow.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">DataRow</span>
+        <span class="tparams">[<span name="T0">+T0</span>, <span name="T1">+T1</span>, <span name="T2">+T2</span>, <span name="T3">+T3</span>, <span name="T4">+T4</span>, <span name="T5">+T5</span>, <span name="T6">+T6</span>, <span name="T7">+T7</span>, <span name="T8">+T8</span>, <span name="T9">+T9</span>, <span name="T10">+T10</span>, <span name="T11">+T11</span>, <span name="T12">+T12</span>, <span name="T13">+T13</span>, <span name="T14">+T14</span>, <span name="T15">+T15</span>, <span name="T16">+T16</span>, <span name="T17">+T17</span>, <span name="T18">+T18</span>, <span name="T19">+T19</span>]</span>
+        
+        <span class="result"> extends AbstractDataRow</span>
+      </span>
+      </a></h4>
+      
+            
+            <div class="fullcomment"><div class="block">
+          attributes: abstract 
+        </div></div>
+          
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow1">
+      <a id="DataRow1:DataRow1[T0]"></a>
+      <h4 class="signature"><a href="DataRow1.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow1</span>
+        <span class="tparams">[<span name="T0">T0</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>)</span>
+        <span class="result"> extends DataRow[T0, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow10">
+      <a id="DataRow10:DataRow10[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9]"></a>
+      <h4 class="signature"><a href="DataRow10.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow10</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>, <span name="T8">T8</span>, <span name="T9">T9</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>, <span name="v1">v1: T1</span>, <span name="v2">v2: T2</span>, <span name="v3">v3: T3</span>, <span name="v4">v4: T4</span>, <span name="v5">v5: T5</span>, <span name="v6">v6: T6</span>, <span name="v7">v7: T7</span>, <span name="v8">v8: T8</span>, <span name="v9">v9: T9</span>)</span>
+        <span class="result"> extends DataRow[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, None, None, None, None, None, None, None, None, None, None] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow11">
+      <a id="DataRow11:DataRow11[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10]"></a>
+      <h4 class="signature"><a href="DataRow11.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow11</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>, <span name="T8">T8</span>, <span name="T9">T9</span>, <span name="T10">T10</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>, <span name="v1">v1: T1</span>, <span name="v2">v2: T2</span>, <span name="v3">v3: T3</span>, <span name="v4">v4: T4</span>, <span name="v5">v5: T5</span>, <span name="v6">v6: T6</span>, <span name="v7">v7: T7</span>, <span name="v8">v8: T8</span>, <span name="v9">v9: T9</span>, <span name="v10">v10: T10</span>)</span>
+        <span class="result"> extends DataRow[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, None, None, None, None, None, None, None, None, None] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow12">
+      <a id="DataRow12:DataRow12[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11]"></a>
+      <h4 class="signature"><a href="DataRow12.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow12</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>, <span name="T8">T8</span>, <span name="T9">T9</span>, <span name="T10">T10</span>, <span name="T11">T11</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>, <span name="v1">v1: T1</span>, <span name="v2">v2: T2</span>, <span name="v3">v3: T3</span>, <span name="v4">v4: T4</span>, <span name="v5">v5: T5</span>, <span name="v6">v6: T6</span>, <span name="v7">v7: T7</span>, <span name="v8">v8: T8</span>, <span name="v9">v9: T9</span>, <span name="v10">v10: T10</span>, <span name="v11">v11: T11</span>)</span>
+        <span class="result"> extends DataRow[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, None, None, None, None, None, None, None, None] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow13">
+      <a id="DataRow13:DataRow13[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12]"></a>
+      <h4 class="signature"><a href="DataRow13.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow13</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>, <span name="T8">T8</span>, <span name="T9">T9</span>, <span name="T10">T10</span>, <span name="T11">T11</span>, <span name="T12">T12</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>, <span name="v1">v1: T1</span>, <span name="v2">v2: T2</span>, <span name="v3">v3: T3</span>, <span name="v4">v4: T4</span>, <span name="v5">v5: T5</span>, <span name="v6">v6: T6</span>, <span name="v7">v7: T7</span>, <span name="v8">v8: T8</span>, <span name="v9">v9: T9</span>, <span name="v10">v10: T10</span>, <span name="v11">v11: T11</span>, <span name="v12">v12: T12</span>)</span>
+        <span class="result"> extends DataRow[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, None, None, None, None, None, None, None] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow14">
+      <a id="DataRow14:DataRow14[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13]"></a>
+      <h4 class="signature"><a href="DataRow14.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow14</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>, <span name="T8">T8</span>, <span name="T9">T9</span>, <span name="T10">T10</span>, <span name="T11">T11</span>, <span name="T12">T12</span>, <span name="T13">T13</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>, <span name="v1">v1: T1</span>, <span name="v2">v2: T2</span>, <span name="v3">v3: T3</span>, <span name="v4">v4: T4</span>, <span name="v5">v5: T5</span>, <span name="v6">v6: T6</span>, <span name="v7">v7: T7</span>, <span name="v8">v8: T8</span>, <span name="v9">v9: T9</span>, <span name="v10">v10: T10</span>, <span name="v11">v11: T11</span>, <span name="v12">v12: T12</span>, <span name="v13">v13: T13</span>)</span>
+        <span class="result"> extends DataRow[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, None, None, None, None, None, None] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow15">
+      <a id="DataRow15:DataRow15[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14]"></a>
+      <h4 class="signature"><a href="DataRow15.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow15</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>, <span name="T8">T8</span>, <span name="T9">T9</span>, <span name="T10">T10</span>, <span name="T11">T11</span>, <span name="T12">T12</span>, <span name="T13">T13</span>, <span name="T14">T14</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>, <span name="v1">v1: T1</span>, <span name="v2">v2: T2</span>, <span name="v3">v3: T3</span>, <span name="v4">v4: T4</span>, <span name="v5">v5: T5</span>, <span name="v6">v6: T6</span>, <span name="v7">v7: T7</span>, <span name="v8">v8: T8</span>, <span name="v9">v9: T9</span>, <span name="v10">v10: T10</span>, <span name="v11">v11: T11</span>, <span name="v12">v12: T12</span>, <span name="v13">v13: T13</span>, <span name="v14">v14: T14</span>)</span>
+        <span class="result"> extends DataRow[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, None, None, None, None, None] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow16">
+      <a id="DataRow16:DataRow16[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15]"></a>
+      <h4 class="signature"><a href="DataRow16.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow16</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>, <span name="T8">T8</span>, <span name="T9">T9</span>, <span name="T10">T10</span>, <span name="T11">T11</span>, <span name="T12">T12</span>, <span name="T13">T13</span>, <span name="T14">T14</span>, <span name="T15">T15</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>, <span name="v1">v1: T1</span>, <span name="v2">v2: T2</span>, <span name="v3">v3: T3</span>, <span name="v4">v4: T4</span>, <span name="v5">v5: T5</span>, <span name="v6">v6: T6</span>, <span name="v7">v7: T7</span>, <span name="v8">v8: T8</span>, <span name="v9">v9: T9</span>, <span name="v10">v10: T10</span>, <span name="v11">v11: T11</span>, <span name="v12">v12: T12</span>, <span name="v13">v13: T13</span>, <span name="v14">v14: T14</span>, <span name="v15">v15: T15</span>)</span>
+        <span class="result"> extends DataRow[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, None, None, None, None] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow17">
+      <a id="DataRow17:DataRow17[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16]"></a>
+      <h4 class="signature"><a href="DataRow17.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow17</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>, <span name="T8">T8</span>, <span name="T9">T9</span>, <span name="T10">T10</span>, <span name="T11">T11</span>, <span name="T12">T12</span>, <span name="T13">T13</span>, <span name="T14">T14</span>, <span name="T15">T15</span>, <span name="T16">T16</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>, <span name="v1">v1: T1</span>, <span name="v2">v2: T2</span>, <span name="v3">v3: T3</span>, <span name="v4">v4: T4</span>, <span name="v5">v5: T5</span>, <span name="v6">v6: T6</span>, <span name="v7">v7: T7</span>, <span name="v8">v8: T8</span>, <span name="v9">v9: T9</span>, <span name="v10">v10: T10</span>, <span name="v11">v11: T11</span>, <span name="v12">v12: T12</span>, <span name="v13">v13: T13</span>, <span name="v14">v14: T14</span>, <span name="v15">v15: T15</span>, <span name="v16">v16: T16</span>)</span>
+        <span class="result"> extends DataRow[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, None, None, None] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow18">
+      <a id="DataRow18:DataRow18[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17]"></a>
+      <h4 class="signature"><a href="DataRow18.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow18</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>, <span name="T8">T8</span>, <span name="T9">T9</span>, <span name="T10">T10</span>, <span name="T11">T11</span>, <span name="T12">T12</span>, <span name="T13">T13</span>, <span name="T14">T14</span>, <span name="T15">T15</span>, <span name="T16">T16</span>, <span name="T17">T17</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>, <span name="v1">v1: T1</span>, <span name="v2">v2: T2</span>, <span name="v3">v3: T3</span>, <span name="v4">v4: T4</span>, <span name="v5">v5: T5</span>, <span name="v6">v6: T6</span>, <span name="v7">v7: T7</span>, <span name="v8">v8: T8</span>, <span name="v9">v9: T9</span>, <span name="v10">v10: T10</span>, <span name="v11">v11: T11</span>, <span name="v12">v12: T12</span>, <span name="v13">v13: T13</span>, <span name="v14">v14: T14</span>, <span name="v15">v15: T15</span>, <span name="v16">v16: T16</span>, <span name="v17">v17: T17</span>)</span>
+        <span class="result"> extends DataRow[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, None, None] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow19">
+      <a id="DataRow19:DataRow19[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18]"></a>
+      <h4 class="signature"><a href="DataRow19.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow19</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>, <span name="T8">T8</span>, <span name="T9">T9</span>, <span name="T10">T10</span>, <span name="T11">T11</span>, <span name="T12">T12</span>, <span name="T13">T13</span>, <span name="T14">T14</span>, <span name="T15">T15</span>, <span name="T16">T16</span>, <span name="T17">T17</span>, <span name="T18">T18</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>, <span name="v1">v1: T1</span>, <span name="v2">v2: T2</span>, <span name="v3">v3: T3</span>, <span name="v4">v4: T4</span>, <span name="v5">v5: T5</span>, <span name="v6">v6: T6</span>, <span name="v7">v7: T7</span>, <span name="v8">v8: T8</span>, <span name="v9">v9: T9</span>, <span name="v10">v10: T10</span>, <span name="v11">v11: T11</span>, <span name="v12">v12: T12</span>, <span name="v13">v13: T13</span>, <span name="v14">v14: T14</span>, <span name="v15">v15: T15</span>, <span name="v16">v16: T16</span>, <span name="v17">v17: T17</span>, <span name="v18">v18: T18</span>)</span>
+        <span class="result"> extends DataRow[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, None] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow2">
+      <a id="DataRow2:DataRow2[T0, T1]"></a>
+      <h4 class="signature"><a href="DataRow2.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow2</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>, <span name="v1">v1: T1</span>)</span>
+        <span class="result"> extends DataRow[T0, T1, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow20">
+      <a id="DataRow20:DataRow20[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19]"></a>
+      <h4 class="signature"><a href="DataRow20.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow20</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>, <span name="T8">T8</span>, <span name="T9">T9</span>, <span name="T10">T10</span>, <span name="T11">T11</span>, <span name="T12">T12</span>, <span name="T13">T13</span>, <span name="T14">T14</span>, <span name="T15">T15</span>, <span name="T16">T16</span>, <span name="T17">T17</span>, <span name="T18">T18</span>, <span name="T19">T19</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>, <span name="v1">v1: T1</span>, <span name="v2">v2: T2</span>, <span name="v3">v3: T3</span>, <span name="v4">v4: T4</span>, <span name="v5">v5: T5</span>, <span name="v6">v6: T6</span>, <span name="v7">v7: T7</span>, <span name="v8">v8: T8</span>, <span name="v9">v9: T9</span>, <span name="v10">v10: T10</span>, <span name="v11">v11: T11</span>, <span name="v12">v12: T12</span>, <span name="v13">v13: T13</span>, <span name="v14">v14: T14</span>, <span name="v15">v15: T15</span>, <span name="v16">v16: T16</span>, <span name="v17">v17: T17</span>, <span name="v18">v18: T18</span>, <span name="v19">v19: T19</span>)</span>
+        <span class="result"> extends DataRow[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow3">
+      <a id="DataRow3:DataRow3[T0, T1, T2]"></a>
+      <h4 class="signature"><a href="DataRow3.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow3</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>, <span name="T2">T2</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>, <span name="v1">v1: T1</span>, <span name="v2">v2: T2</span>)</span>
+        <span class="result"> extends DataRow[T0, T1, T2, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow4">
+      <a id="DataRow4:DataRow4[T0, T1, T2, T3]"></a>
+      <h4 class="signature"><a href="DataRow4.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow4</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>, <span name="v1">v1: T1</span>, <span name="v2">v2: T2</span>, <span name="v3">v3: T3</span>)</span>
+        <span class="result"> extends DataRow[T0, T1, T2, T3, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow5">
+      <a id="DataRow5:DataRow5[T0, T1, T2, T3, T4]"></a>
+      <h4 class="signature"><a href="DataRow5.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow5</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>, <span name="v1">v1: T1</span>, <span name="v2">v2: T2</span>, <span name="v3">v3: T3</span>, <span name="v4">v4: T4</span>)</span>
+        <span class="result"> extends DataRow[T0, T1, T2, T3, T4, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow6">
+      <a id="DataRow6:DataRow6[T0, T1, T2, T3, T4, T5]"></a>
+      <h4 class="signature"><a href="DataRow6.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow6</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>, <span name="v1">v1: T1</span>, <span name="v2">v2: T2</span>, <span name="v3">v3: T3</span>, <span name="v4">v4: T4</span>, <span name="v5">v5: T5</span>)</span>
+        <span class="result"> extends DataRow[T0, T1, T2, T3, T4, T5, None, None, None, None, None, None, None, None, None, None, None, None, None, None] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow7">
+      <a id="DataRow7:DataRow7[T0, T1, T2, T3, T4, T5, T6]"></a>
+      <h4 class="signature"><a href="DataRow7.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow7</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>, <span name="v1">v1: T1</span>, <span name="v2">v2: T2</span>, <span name="v3">v3: T3</span>, <span name="v4">v4: T4</span>, <span name="v5">v5: T5</span>, <span name="v6">v6: T6</span>)</span>
+        <span class="result"> extends DataRow[T0, T1, T2, T3, T4, T5, T6, None, None, None, None, None, None, None, None, None, None, None, None, None] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow8">
+      <a id="DataRow8:DataRow8[T0, T1, T2, T3, T4, T5, T6, T7]"></a>
+      <h4 class="signature"><a href="DataRow8.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow8</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>, <span name="v1">v1: T1</span>, <span name="v2">v2: T2</span>, <span name="v3">v3: T3</span>, <span name="v4">v4: T4</span>, <span name="v5">v5: T5</span>, <span name="v6">v6: T6</span>, <span name="v7">v7: T7</span>)</span>
+        <span class="result"> extends DataRow[T0, T1, T2, T3, T4, T5, T6, T7, None, None, None, None, None, None, None, None, None, None, None, None] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataRow9">
+      <a id="DataRow9:DataRow9[T0, T1, T2, T3, T4, T5, T6, T7, T8]"></a>
+      <h4 class="signature"><a href="DataRow9.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataRow9</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>, <span name="T8">T8</span>]</span>
+        <span class="params">(<span name="v0">v0: T0</span>, <span name="v1">v1: T1</span>, <span name="v2">v2: T2</span>, <span name="v3">v3: T3</span>, <span name="v4">v4: T4</span>, <span name="v5">v5: T5</span>, <span name="v6">v6: T6</span>, <span name="v7">v7: T7</span>, <span name="v8">v8: T8</span>)</span>
+        <span class="result"> extends DataRow[T0, T1, T2, T3, T4, T5, T6, T7, T8, None, None, None, None, None, None, None, None, None, None, None] with Product</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataTable">
+      <a id="DataTable:DataTable[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19]"></a>
+      <h4 class="signature"><a href="DataTable.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">DataTable</span>
+        <span class="tparams">[<span name="T0">T0</span>, <span name="T1">T1</span>, <span name="T2">T2</span>, <span name="T3">T3</span>, <span name="T4">T4</span>, <span name="T5">T5</span>, <span name="T6">T6</span>, <span name="T7">T7</span>, <span name="T8">T8</span>, <span name="T9">T9</span>, <span name="T10">T10</span>, <span name="T11">T11</span>, <span name="T12">T12</span>, <span name="T13">T13</span>, <span name="T14">T14</span>, <span name="T15">T15</span>, <span name="T16">T16</span>, <span name="T17">T17</span>, <span name="T18">T18</span>, <span name="T19">T19</span>]</span>
+        <span class="params">(<span name="header">header: TableHeader</span>, <span name="rows">rows: List[DataRow[T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19]]</span>, <span name="shouldExecute">shouldExecute: Boolean</span>)</span>
+        <span class="result"> extends ExecutableDataTable with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">A DataTable contains: a header describing the columns, datarows containing values, a function to execute on each row
+In the following example of a DataTable:&lt;code&gt;
+val datatable = &quot;a&quot; | &quot;b&quot; | &quot;c = a + b&quot; |&gt;
+                 1  !  2  !     3       |
+                 2  !  2  !     4       |
+                 3  !  2  !     5       | {
+               (a: Int, b: Int, c: Int) =&gt; c must_== calc.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DataTableFailureException">
+      <a id="DataTableFailureException:DataTableFailureException"></a>
+      <h4 class="signature"><a href="DataTableFailureException.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">DataTableFailureException</span>
+        
+        
+        <span class="result"> extends FailureException</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Extension of a FailureException to allow a better display of this kind of failure (used in HtmlRunner)
+</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.DataTables">
+      <a id="DataTables:DataTables"></a>
+      <h4 class="signature"><a href="DataTables.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">DataTables</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The Datatables trait provides implicit methods to start table headers
+and DataRows.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DefaultConfiguration">
+      <a id="DefaultConfiguration:DefaultConfiguration"></a>
+      <h4 class="signature"><a href="DefaultConfiguration.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">DefaultConfiguration</span>
+        
+        
+        <span class="result"> extends Configuration</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DefaultIncludeExclude">
+      <a id="DefaultIncludeExclude:DefaultIncludeExclude[T]"></a>
+      <h4 class="signature"><a href="DefaultIncludeExclude.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">DefaultIncludeExclude</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends IncludeExclude[T]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Default class for the Include/Exclude behaviour
+</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.DoubleProperties">
+      <a id="DoubleProperties:DoubleProperties"></a>
+      <h4 class="signature"><a href="DoubleProperties.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">DoubleProperties</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provides Double properterties with alphabetical names.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.Duration">
+      <a id="Duration:Duration"></a>
+      <h4 class="signature"><a href="Duration.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Duration</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Time duration.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.EditDistance">
+      <a id="EditDistance:EditDistance"></a>
+      <h4 class="signature"><a href="EditDistance.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">EditDistance</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The EditDistance trait provides methods to compute and display the shortest distance between 2 strings.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.ExecutableDataTable">
+      <a id="ExecutableDataTable:ExecutableDataTable"></a>
+      <h4 class="signature"><a href="ExecutableDataTable.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ExecutableDataTable</span>
+        
+        
+        <span class="result"> extends HasResults</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.ExtendedFunction">
+      <a id="ExtendedFunction:ExtendedFunction[A, B]"></a>
+      <h4 class="signature"><a href="ExtendedFunction.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ExtendedFunction</span>
+        <span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">this class allows to use a function as if it was a partial function.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.ExtendedFunctions">
+      <a id="ExtendedFunctions:ExtendedFunctions"></a>
+      <h4 class="signature"><a href="ExtendedFunctions.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ExtendedFunctions</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.HmsTimer">
+      <a id="HmsTimer:HmsTimer"></a>
+      <h4 class="signature"><a href="HmsTimer.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">HmsTimer</span>
+        
+        
+        <span class="result"> extends Timer</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provides Timer functionalities based on the Java Calendar milliseconds
+</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.IncludeExclude">
+      <a id="IncludeExclude:IncludeExclude[T]"></a>
+      <h4 class="signature"><a href="IncludeExclude.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">IncludeExclude</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait adds the possibility to declare some elements as included or excluded.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.IntProperties">
+      <a id="IntProperties:IntProperties"></a>
+      <h4 class="signature"><a href="IntProperties.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">IntProperties</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provides Int properterties with alphabetical names.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.LazyParameter">
+      <a id="LazyParameter:LazyParameter[T]"></a>
+      <h4 class="signature"><a href="LazyParameter.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">LazyParameter</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">class holding a value to be evaluated lazily</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.LazyParameters">
+      <a id="LazyParameters:LazyParameters"></a>
+      <h4 class="signature"><a href="LazyParameters.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">LazyParameters</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait can be used to allow some function to be called with varargs, with
+values being evaluated lazily:&lt;code&gt;</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.ListsToTuples">
+      <a id="ListsToTuples:ListsToTuples"></a>
+      <h4 class="signature"><a href="ListsToTuples.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ListsToTuples</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.Matching">
+      <a id="Matching:Matching"></a>
+      <h4 class="signature"><a href="Matching.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Matching</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.Products">
+      <a id="Products:Products"></a>
+      <h4 class="signature"><a href="Products.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Products</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The Products trait allows the following declarations:</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.Properties">
+      <a id="Properties:Properties"></a>
+      <h4 class="signature"><a href="Properties.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Properties</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.Property">
+      <a id="Property:Property[T]"></a>
+      <h4 class="signature"><a href="Property.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Property</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class represent properties which can be updated and retrieved using customized getter and setter functions.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.ReinitProperty">
+      <a id="ReinitProperty:ReinitProperty[T]"></a>
+      <h4 class="signature"><a href="ReinitProperty.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">ReinitProperty</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends Property[T]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class is a Property which can be reinitialized with its first value</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.ScalaInterpreter">
+      <a id="ScalaInterpreter:ScalaInterpreter"></a>
+      <h4 class="signature"><a href="ScalaInterpreter.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ScalaInterpreter</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.SimpleTimer">
+      <a id="SimpleTimer:SimpleTimer"></a>
+      <h4 class="signature"><a href="SimpleTimer.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">SimpleTimer</span>
+        
+        
+        <span class="result"> extends HmsTimer</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Default class for the HmsTimer trait
+</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.Stacktraces">
+      <a id="Stacktraces:Stacktraces"></a>
+      <h4 class="signature"><a href="Stacktraces.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Stacktraces</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait contains helper functions for stacktraces
+</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.StringProperties">
+      <a id="StringProperties:StringProperties"></a>
+      <h4 class="signature"><a href="StringProperties.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">StringProperties</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provides String properterties with alphabetical names.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.TableHeader">
+      <a id="TableHeader:TableHeader"></a>
+      <h4 class="signature"><a href="TableHeader.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">TableHeader</span>
+        
+        <span class="params">(<span name="titles">titles: List[String]</span>, <span name="isOk">isOk: Boolean</span>, <span name="context">context: Option[Context]</span>)</span>
+        <span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The TableHeader case class models the header of a data table which should be a list of strings.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.Time">
+      <a id="Time:Time"></a>
+      <h4 class="signature"><a href="Time.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Time</span>
+        
+        
+        <span class="result"> extends Duration</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.Timer">
+      <a id="Timer:Timer"></a>
+      <h4 class="signature"><a href="Timer.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Timer</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The Timer trait acts as a simple stopwatch.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.Tree">
+      <a id="Tree:Tree[T]"></a>
+      <h4 class="signature"><a href="Tree.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Tree</span>
+        <span class="tparams">[<span name="T">T &lt;: Tree[T]</span>]</span>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait declares a generic tree structure with a parent and a list of children.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.TreeNode">
+      <a id="TreeNode:TreeNode"></a>
+      <h4 class="signature"><a href="TreeNode.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">TreeNode</span>
+        
+        
+        <span class="result"> extends Tree[TreeNode]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait is used to tag specifications, systems and examples and give them children/parent/path functionalities
+This is especially used to find an example in a specification from its path from the root
+</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.TreePath">
+      <a id="TreePath:TreePath"></a>
+      <h4 class="signature"><a href="TreePath.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">TreePath</span>
+        
+        <span class="params">(<span name="path">path: List[Int]</span>)</span>
+        <span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">List of nodes representing a path in a tree
+</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.WaitFor">
+      <a id="WaitFor:WaitFor"></a>
+      <h4 class="signature"><a href="WaitFor.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">WaitFor</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The WaitFor trait can be used to add some Thread.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.util.XmlProperties">
+      <a id="XmlProperties:XmlProperties"></a>
+      <h4 class="signature"><a href="XmlProperties.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">XmlProperties</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait provides Xml properterties with alphabetical names.</p>
+    </li></ol>
+            </div>
+
+        <div class="values members" id="values">
+              <h3>Value Members</h3>
+              <ol><li visbl="pub" data-isabs="false" name="org.specs.util.AllProperties">
+      <a id="AllProperties:AllProperties"></a>
+      <h4 class="signature"><a href="AllProperties$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">AllProperties</span>
+        
+        
+        <span class="result"> extends AllProperties</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.Classes">
+      <a id="Classes:Classes"></a>
+      <h4 class="signature"><a href="Classes$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Classes</span>
+        
+        
+        <span class="result"> extends Classes</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This object provides simple functions to instantiate classes.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.Configuration">
+      <a id="Configuration:Configuration"></a>
+      <h4 class="signature"><a href="Configuration$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Configuration</span>
+        
+        
+        <span class="result"> extends Configuration</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.Control">
+      <a id="Control:Control"></a>
+      <h4 class="signature"><a href="Control$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Control</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This object provides useful control abstractions
+</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.DiffShortener">
+      <a id="DiffShortener:DiffShortener"></a>
+      <h4 class="signature"><a href="DiffShortener$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">DiffShortener</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This object help shortening strings between differences when the strings are too long
+</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.EditDistance">
+      <a id="EditDistance:EditDistance"></a>
+      <h4 class="signature"><a href="EditDistance$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">EditDistance</span>
+        
+        
+        <span class="result"> extends EditDistance</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The EditDistance object provides methods to compute and display the shortest distance between 2 strings.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.ExtendedFunctions">
+      <a id="ExtendedFunctions:ExtendedFunctions"></a>
+      <h4 class="signature"><a href="ExtendedFunctions$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">ExtendedFunctions</span>
+        
+        
+        <span class="result"> extends ExtendedFunctions</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.ExtendedString">
+      <a id="ExtendedString:ExtendedString"></a>
+      <h4 class="signature"><a href="ExtendedString$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">ExtendedString</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The ExtendedString object adds utility functions like 'uncapitalize' to Strings</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.ExtendedThrowable">
+      <a id="ExtendedThrowable:ExtendedThrowable"></a>
+      <h4 class="signature"><a href="ExtendedThrowable$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">ExtendedThrowable</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This object allows to add some utility methods to &lt;/code&gt;Throwable&lt;/code&gt; objects.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.Matching">
+      <a id="Matching:Matching"></a>
+      <h4 class="signature"><a href="Matching$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Matching</span>
+        
+        
+        <span class="result"> extends Matching</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.Plural">
+      <a id="Plural:Plural"></a>
+      <h4 class="signature"><a href="Plural$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Plural</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.Products">
+      <a id="Products:Products"></a>
+      <h4 class="signature"><a href="Products$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Products</span>
+        
+        
+        <span class="result"> extends Products</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The Products object allows the following declarations:</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.Properties">
+      <a id="Properties:Properties"></a>
+      <h4 class="signature"><a href="Properties$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Properties</span>
+        
+        
+        <span class="result"> extends Properties</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.Property">
+      <a id="Property:Property"></a>
+      <h4 class="signature"><a href="Property$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Property</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Companion object to create properties with possibly no initial value
+</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.ReinitProperty">
+      <a id="ReinitProperty:ReinitProperty"></a>
+      <h4 class="signature"><a href="ReinitProperty$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">ReinitProperty</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Companion object to create reinitializable properties with possibly no initial value
+</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.ScalaInterpreter">
+      <a id="ScalaInterpreter:ScalaInterpreter"></a>
+      <h4 class="signature"><a href="ScalaInterpreter$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">ScalaInterpreter</span>
+        
+        
+        <span class="result"> extends ScalaInterpreter</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.Time">
+      <a id="Time:Time"></a>
+      <h4 class="signature"><a href="Time$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Time</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Use <code>Time.now</code> in your app instead of <code>System.currentTimeMillis</code>, and
+unit tests will be able to adjust the current time to verify timeouts
+and other time-dependent behavior, without calling <code>sleep</code>.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.util.TimeConversions">
+      <a id="TimeConversions:TimeConversions"></a>
+      <h4 class="signature"><a href="TimeConversions$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">TimeConversions</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This object provides functions to describe units of time
+</p>
+    </li></ol>
+            </div>
+
+        
+
+      </div>
+      
+      <div id="tooltip"></div>
+      
+    </body>
+      </html>

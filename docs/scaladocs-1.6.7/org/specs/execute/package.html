@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>org.specs.execute</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
+      <script type="text/javascript" src="../../../lib/jquery.js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+    
+        </head>
+        <body class="value" onload="windowTitle();">
+
+      <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.specs">specs</a></p>
+
+      <div id="definition">
+        <img src="../../../lib/package_big.png" />
+        <h1>execute</h1>
+      </div>
+
+      <h4 class="signature" id="signature">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">execute</span>
+        
+        
+        
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment"></div>
+
+      <div id="template">
+
+        <div id="mbrsel">
+          <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+          
+          
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+            </div>
+          <div id="impl">
+              <span class="filtertype">Impl.</span>
+              <ol><li class="concrete in">Concrete</li><li class="abstract in">Abstract</li></ol>
+            </div>
+        </div>
+
+        
+
+        <div class="types members" id="types">
+              <h3>Type Members</h3>
+              <ol><li visbl="pub" data-isabs="true" name="org.specs.execute.Commentable">
+      <a id="Commentable:Commentable"></a>
+      <h4 class="signature"><a href="Commentable.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Commentable</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait can be added to anything that can be commented.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.execute.DefaultExecutable">
+      <a id="DefaultExecutable:DefaultExecutable"></a>
+      <h4 class="signature"><a href="DefaultExecutable.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">DefaultExecutable</span>
+        
+        
+        <span class="result"> extends DefaultResults with Executable with Commentable</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait represents something that's executable and has results.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.execute.DefaultResults">
+      <a id="DefaultResults:DefaultResults"></a>
+      <h4 class="signature"><a href="DefaultResults.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">DefaultResults</span>
+        
+        
+        <span class="result"> extends HasResults</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Default implementation for the HasResults trait using lists.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.execute.Executable">
+      <a id="Executable:Executable"></a>
+      <h4 class="signature"><a href="Executable.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Executable</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Anything that's executable and returns itself</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.FailureException">
+      <a id="FailureException:FailureException"></a>
+      <h4 class="signature"><a href="FailureException.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">FailureException</span>
+        
+        <span class="params">(<span name="message">message: String</span>)</span>
+        <span class="result"> extends RuntimeException with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">RuntimeException carrying a matcher ko message</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.execute.HasResults">
+      <a id="HasResults:HasResults"></a>
+      <h4 class="signature"><a href="HasResults.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">HasResults</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait is useful to get a common interface for anything holding results made of
+failures, errors and skipped anything, like Specifications, Sus and Examples.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.execute.SkippedException">
+      <a id="SkippedException:SkippedException"></a>
+      <h4 class="signature"><a href="SkippedException.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">SkippedException</span>
+        
+        <span class="params">(<span name="message">message: String</span>)</span>
+        <span class="result"> extends RuntimeException with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">RuntimeException carrying a matcher skip message</p>
+    </li></ol>
+            </div>
+
+        <div class="values members" id="values">
+              <h3>Value Members</h3>
+              <ol><li visbl="pub" data-isabs="false" name="org.specs.execute.Status">
+      <a id="Status:Status"></a>
+      <h4 class="signature"><a href="Status$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Status</span>
+        
+        
+        <span class="result"> extends Enumeration</span>
+      </span>
+      </a></h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+      </div>
+      
+      <div id="tooltip"></div>
+      
+    </body>
+      </html>

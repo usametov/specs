@@ -1,0 +1,650 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>org.specs.form</title>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" rel="stylesheet" type="text/css" media="screen" />
+      <script type="text/javascript" src="../../../lib/jquery.js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+    
+        </head>
+        <body class="value" onload="windowTitle();">
+
+      <p id="owner"><a href="../../package.html" class="extype" name="org">org</a>.<a href="../package.html" class="extype" name="org.specs">specs</a></p>
+
+      <div id="definition">
+        <img src="../../../lib/package_big.png" />
+        <h1>form</h1>
+      </div>
+
+      <h4 class="signature" id="signature">
+      <span class="kind">package</span>
+      <span class="symbol">
+        <span class="name">form</span>
+        
+        
+        
+      </span>
+      </h4>
+      <div class="fullcomment" id="comment"></div>
+
+      <div id="template">
+
+        <div id="mbrsel">
+          <div id="textfilter"><span class="pre"></span><span class="input"><input accesskey="/" type="text" /></span><span class="post"></span></div>
+          
+          
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in">Public</li><li class="all out">All</li></ol>
+            </div>
+          <div id="impl">
+              <span class="filtertype">Impl.</span>
+              <ol><li class="concrete in">Concrete</li><li class="abstract in">Abstract</li></ol>
+            </div>
+        </div>
+
+        
+
+        <div class="types members" id="types">
+              <h3>Type Members</h3>
+              <ol><li visbl="pub" data-isabs="false" name="org.specs.form.AnyConstraint">
+      <a id="AnyConstraint:AnyConstraint[T]"></a>
+      <h4 class="signature"><a href="AnyConstraint.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">AnyConstraint</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="executor">executor: () ⇒ Any</span>)</span>
+        <span class="result"> extends Constraint[T] with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class represents an arbitrary constraint which may be executed when a Prop is executed.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.BagForm">
+      <a id="BagForm:BagForm[T]"></a>
+      <h4 class="signature"><a href="BagForm.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">BagForm</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends TableForm with BagFormEnabled[T]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">A BagForm is a TableForm containing a Bag of LineForms
+and using a Bag of values as the actual values.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.BagFormEnabled">
+      <a id="BagFormEnabled:BagFormEnabled[T]"></a>
+      <h4 class="signature"><a href="BagFormEnabled.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">BagFormEnabled</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends TableFormEnabled</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.Builder">
+      <a id="Builder:Builder[T]"></a>
+      <h4 class="signature"><a href="Builder.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Builder</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Some Forms can be declared as building an element of type T
+</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.Constraint">
+      <a id="Constraint:Constraint[T]"></a>
+      <h4 class="signature"><a href="Constraint.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Constraint</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Base class for constraints executed on an expected value.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.Conversions">
+      <a id="Conversions:Conversions"></a>
+      <h4 class="signature"><a href="Conversions.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Conversions</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Implicit useful conversions
+</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.Copyable">
+      <a id="Copyable:Copyable[T]"></a>
+      <h4 class="signature"><a href="Copyable.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Copyable</span>
+        <span class="tparams">[<span name="T">+T</span>]</span>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait declares that an instance can return a copy of itself via the copy method.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DataTableBagForm">
+      <a id="DataTableBagForm:DataTableBagForm[T]"></a>
+      <h4 class="signature"><a href="DataTableBagForm.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">DataTableBagForm</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends BagForm[T] with DataTableFormEnabled</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DataTableForm">
+      <a id="DataTableForm:DataTableForm"></a>
+      <h4 class="signature"><a href="DataTableForm.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">DataTableForm</span>
+        
+        
+        <span class="result"> extends TableForm with DataTableFormEnabled</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.DataTableFormEnabled">
+      <a id="DataTableFormEnabled:DataTableFormEnabled"></a>
+      <h4 class="signature"><a href="DataTableFormEnabled.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">DataTableFormEnabled</span>
+        
+        
+        <span class="result"> extends TableFormEnabled with DataTables</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.DataTableSeqForm">
+      <a id="DataTableSeqForm:DataTableSeqForm[T]"></a>
+      <h4 class="signature"><a href="DataTableSeqForm.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">DataTableSeqForm</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends SeqForm[T] with DataTableFormEnabled</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.DecoratedXhtml">
+      <a id="DecoratedXhtml:DecoratedXhtml"></a>
+      <h4 class="signature"><a href="DecoratedXhtml.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">DecoratedXhtml</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.EntityLineForm">
+      <a id="EntityLineForm:EntityLineForm[T]"></a>
+      <h4 class="signature"><a href="EntityLineForm.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">EntityLineForm</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends LineForm</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.EntityLineProp">
+      <a id="EntityLineProp:EntityLineProp[E, T]"></a>
+      <h4 class="signature"><a href="EntityLineProp.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">EntityLineProp</span>
+        <span class="tparams">[<span name="E">E</span>, <span name="T">T</span>]</span>
+        
+        <span class="result"> extends LineProp[T]</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Field">
+      <a id="Field:Field[T]"></a>
+      <h4 class="signature"><a href="Field.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Field</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends LabeledXhtml with ValueFormatter[T] with Copyable[Field[T]] with DefaultExecutable</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">A Field is a property which is used only to display input values or output values.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Form">
+      <a id="Form:Form"></a>
+      <h4 class="signature"><a href="Form.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Form</span>
+        
+        
+        <span class="result"> extends DelegatedExpectableFactory with FormEnabled</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait defines Forms which are used to group and display Props properties together.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.FormEnabled">
+      <a id="FormEnabled:FormEnabled"></a>
+      <h4 class="signature"><a href="FormEnabled.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">FormEnabled</span>
+        
+        
+        <span class="result"> extends DefaultExecutable with LabeledXhtml with Layoutable with ExpectableFactory with Copyable[FormEnabled] with GenericFormatter</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.FunctionConstraint">
+      <a id="FunctionConstraint:FunctionConstraint[T]"></a>
+      <h4 class="signature"><a href="FunctionConstraint.html">
+      <span class="kind">case class</span>
+      <span class="symbol">
+        <span class="name">FunctionConstraint</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        <span class="params">(<span name="actual">actual: T</span>, <span name="executor">executor: (T, T) ⇒ Any</span>)</span>
+        <span class="result"> extends Constraint[T] with Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This general constraint uses a function taking an actual valuen and an expected value to do the match.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.GenericFormatter">
+      <a id="GenericFormatter:GenericFormatter"></a>
+      <h4 class="signature"><a href="GenericFormatter.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">GenericFormatter</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.HasLabel">
+      <a id="HasLabel:HasLabel"></a>
+      <h4 class="signature"><a href="HasLabel.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">HasLabel</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">generic trait for anything having a label, to unify Props and Forms
+</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.InfoTable">
+      <a id="InfoTable:InfoTable"></a>
+      <h4 class="signature"><a href="InfoTable.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">InfoTable</span>
+        
+        
+        <span class="result"> extends TableForm</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This class can be used to create a table with columns headers and string values only
+</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.LabeledXhtml">
+      <a id="LabeledXhtml:LabeledXhtml"></a>
+      <h4 class="signature"><a href="LabeledXhtml.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">LabeledXhtml</span>
+        
+        
+        <span class="result"> extends HasLabel with ToXhtml with Copyable[LabeledXhtml]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">alias type</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.Layout">
+      <a id="Layout:Layout"></a>
+      <h4 class="signature"><a href="Layout.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Layout</span>
+        
+        
+        <span class="result"> extends IncludeExclude[LabeledXhtml]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The Layout trait allows to put ToXhtml values on rows
+</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.LayoutFormats">
+      <a id="LayoutFormats:LayoutFormats"></a>
+      <h4 class="signature"><a href="LayoutFormats.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">LayoutFormats</span>
+        
+        
+        <span class="result"> extends Layout with Tabs</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The LayoutFormats trait provides pre-defined formatting rows for headers and paragraphs
+</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.Layoutable">
+      <a id="Layoutable:Layoutable"></a>
+      <h4 class="signature"><a href="Layoutable.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Layoutable</span>
+        
+        
+        <span class="result"> extends Layout with ToXhtml with LayoutFormats with Tabs</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait allows to display ToXhtml elements in rows or tabs.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LineField">
+      <a id="LineField:LineField[T]"></a>
+      <h4 class="signature"><a href="LineField.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">LineField</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends Field[T]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">A LineField is a Field which is displayed on a line without its lable
+</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LineForm">
+      <a id="LineForm:LineForm"></a>
+      <h4 class="signature"><a href="LineForm.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">LineForm</span>
+        
+        
+        <span class="result"> extends Form</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">A LineForm is a set of LineProps or LineFields which are displayed on the same line.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LineProp">
+      <a id="LineProp:LineProp[T]"></a>
+      <h4 class="signature"><a href="LineProp.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">LineProp</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends MatcherProp[T]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">A LineProp is a property which is displayed on a line without its lable
+</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.MatcherConstraint">
+      <a id="MatcherConstraint:MatcherConstraint[T]"></a>
+      <h4 class="signature"><a href="MatcherConstraint.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">MatcherConstraint</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends Constraint[T]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">A MatcherConstraint uses a matcher to evaluate an expected value.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.MatcherProp">
+      <a id="MatcherProp:MatcherProp[T]"></a>
+      <h4 class="signature"><a href="MatcherProp.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">MatcherProp</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends Prop[T]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">A MatcherProp contains a MatcherConstraint which matcher can be changed from the default BeEqualTo matcher
+</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.MatcherPropIterable">
+      <a id="MatcherPropIterable:MatcherPropIterable[T]"></a>
+      <h4 class="signature"><a href="MatcherPropIterable.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">MatcherPropIterable</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends MatcherProp[Iterable[T]]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Matcher prop on an Iterable value.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Prop">
+      <a id="Prop:Prop[T]"></a>
+      <h4 class="signature"><a href="Prop.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">Prop</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends DefaultExecutable with LabeledXhtml with ValueFormatter[T] with Copyable[Prop[T]]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">The Prop class is a named property which holds:</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.SeqForm">
+      <a id="SeqForm:SeqForm[T]"></a>
+      <h4 class="signature"><a href="SeqForm.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">SeqForm</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends TableForm with SeqFormEnabled[T]</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">A SeqForm is a TableForm containing a sequence of LineForms
+and using a sequence of values as the actual values</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.SeqFormEnabled">
+      <a id="SeqFormEnabled:SeqFormEnabled[T]"></a>
+      <h4 class="signature"><a href="SeqFormEnabled.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">SeqFormEnabled</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends TableFormEnabled</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.TableForm">
+      <a id="TableForm:TableForm"></a>
+      <h4 class="signature"><a href="TableForm.html">
+      <span class="kind">class</span>
+      <span class="symbol">
+        <span class="name">TableForm</span>
+        
+        
+        <span class="result"> extends Form with TableFormEnabled</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">A Table form is a set of forms, one form per row.</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.TableFormEnabled">
+      <a id="TableFormEnabled:TableFormEnabled"></a>
+      <h4 class="signature"><a href="TableFormEnabled.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">TableFormEnabled</span>
+        
+        
+        <span class="result"> extends FormEnabled</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.Tabs">
+      <a id="Tabs:Tabs"></a>
+      <h4 class="signature"><a href="Tabs.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">Tabs</span>
+        
+        
+        <span class="result"> extends Layout</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait adds Tabulations to a table
+</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.ToXhtml">
+      <a id="ToXhtml:ToXhtml"></a>
+      <h4 class="signature"><a href="ToXhtml.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ToXhtml</span>
+        
+        
+        <span class="result"> extends DecoratedXhtml</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">This trait declares objects with can render themselves as Xhtml</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.ValueFormatter">
+      <a id="ValueFormatter:ValueFormatter[T]"></a>
+      <h4 class="signature"><a href="ValueFormatter.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ValueFormatter</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends GenericFormatter</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Format values using a default formatter (for Doubles) or a custom one (set with the formatWith  function)
+</p>
+    </li><li visbl="pub" data-isabs="true" name="org.specs.form.ValuesFormatter">
+      <a id="ValuesFormatter:ValuesFormatter[T]"></a>
+      <h4 class="signature"><a href="ValuesFormatter.html">
+      <span class="kind">trait</span>
+      <span class="symbol">
+        <span class="name">ValuesFormatter</span>
+        <span class="tparams">[<span name="T">T</span>]</span>
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Formatter for an Iterable
+</p>
+    </li></ol>
+            </div>
+
+        <div class="values members" id="values">
+              <h3>Value Members</h3>
+              <ol><li visbl="pub" data-isabs="false" name="org.specs.form.EntityLineProp">
+      <a id="EntityLineProp:EntityLineProp"></a>
+      <h4 class="signature"><a href="EntityLineProp$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">EntityLineProp</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Field">
+      <a id="Field:Field"></a>
+      <h4 class="signature"><a href="Field$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Field</span>
+        
+        
+        <span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Factory methods for creating Fields.</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LineField">
+      <a id="LineField:LineField"></a>
+      <h4 class="signature"><a href="LineField$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">LineField</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LineForm">
+      <a id="LineForm:LineForm"></a>
+      <h4 class="signature"><a href="LineForm$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">LineForm</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.LineProp">
+      <a id="LineProp:LineProp"></a>
+      <h4 class="signature"><a href="LineProp$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">LineProp</span>
+        
+        
+        <span class="result"> extends AnyRef</span>
+      </span>
+      </a></h4>
+      
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.Prop">
+      <a id="Prop:Prop"></a>
+      <h4 class="signature"><a href="Prop$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">Prop</span>
+        
+        
+        <span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Companion object containing default factory methods
+</p>
+    </li><li visbl="pub" data-isabs="false" name="org.specs.form.PropIterable">
+      <a id="PropIterable:PropIterable"></a>
+      <h4 class="signature"><a href="PropIterable$.html">
+      <span class="kind">object</span>
+      <span class="symbol">
+        <span class="name">PropIterable</span>
+        
+        
+        <span class="result"> extends Product</span>
+      </span>
+      </a></h4>
+      <p class="comment cmt">Companion object containing default factory methods
+</p>
+    </li></ol>
+            </div>
+
+        
+
+      </div>
+      
+      <div id="tooltip"></div>
+      
+    </body>
+      </html>
