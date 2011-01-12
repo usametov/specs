@@ -307,7 +307,7 @@ In any case, it is possible to deactivate the detailed differences with a call t
 
  * `a must containAll(b)` is ok if `b.forall(x => a.exists(_ == x))`
  * `a must notContainAll(b)` is an alias for `containAll(b).not`
- * `a must containInOrder(b)` is ok if `containAll(b)` and b's elements order is respected
+ * `a must containInOrder(b1, b2)` is ok if `a` contains each `b` and the order is respected
 
 
  * `a must exist(f)` is ok if a contains an element verifying the function f (alias: `mustExist`)
