@@ -230,7 +230,7 @@ Or we can check the exception type *and* message:
 
 Or we can use pattern matching for more specific checks:
 
- * `a must throwA(new Exception) like {case Exception(m) => m.startsWith("bad")} ` is ok if evaluating `a` throws an Exception and the message starts with "bad"
+ * `a must throwA(new Exception).like {case Exception(m) => m.startsWith("bad")} ` is ok if evaluating `a` throws an Exception and the message starts with "bad"
 
 
 =Matchers applicable to Strings=
