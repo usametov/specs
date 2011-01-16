@@ -1,6 +1,6 @@
 #summary Notable changes to specs releases
 #labels Featured
-||_to be released_|| *specs* 1.6.8 ||  ||
+||_to be released_|| *specs* 1.6.8 || fixed issue 170 ||
 ||1/9/2011|| *specs* 1.6.7 || fixed issue 164, issue 165, issue 166, issue 168. API change for the `containInOrder` matcher [http://bit.ly/i7OPgu taking varargs] ||
 ||11/10/2010|| *specs* 1.6.6 || fixed issue 155, issue 156, issue 163 ||
 ||07/16/2010|| *specs* 1.6.5 (for Scala-2.8.0) || Added a [http://code.google.com/p/specs/wiki/DeclareSpecifications#Pending_system_implementation PendingUntilFixed] trait (from an idea of Bill Venners of [http://www.scalatest.org/ scalatest] fame). Added a toIterable method to transform a `Matcher[T]` to a `Matcher[Iterable[T]]`. Removed the unnecessary indentation in reports for an anonymous sus. Added the label reporting for !ScalaCheck. Fixed issue 130 (better fix), issue 132, issue 134, issue 141, issue 142, issue 145, issue 146, issue 147, issue 152 ||
