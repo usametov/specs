@@ -446,7 +446,7 @@ Once you've defined a context, you can reuse it with the "threading" operator `-
   }
 }}}
 
-_There are alias methods for the cryptic `->-` operator_ 
+_There are alias methods for the cryptic `->-` operator (the only difference being that they're not call-by-name)_ 
 {{{
   "A full stack" definedAs full should { ... }
   "A stack" when empty should { ... }
