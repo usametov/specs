@@ -1,6 +1,7 @@
 #summary Notable changes to specs releases
 #labels Featured
-||_to be released_|| *specs* 1.6.8 || fixed issue 170, issue 171, issue 172, issue 173, issue 174, issue 175 ||
+||11/04/2011|| *specs* 1.6.9 || fixed issue 184, issue 185 ||
+||5/13/2011|| *specs* 1.6.8 || fixed issue 170, issue 171, issue 172, issue 173, issue 174, issue 175 ||
 ||01/23/2011|| *specs* 1.6.7.2 || fixed issue 173 ||
 ||01/22/2011|| *specs* 1.6.7.1 || fixed issue 170, issue 171, issue 172 ||
 ||1/9/2011|| *specs* 1.6.7 || fixed issue 164, issue 165, issue 166, issue 168. API change for the `containInOrder` matcher [http://bit.ly/i7OPgu taking varargs] ||
